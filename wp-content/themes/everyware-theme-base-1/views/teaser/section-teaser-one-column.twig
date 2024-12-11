@@ -1,0 +1,84 @@
+<article class="section-teaser teaser {{ teaser_classes|default('teaser--standard') }}" data-uuid="{{ uuid }}" data-comment-id="{{ comment_id }}">
+    	<div class="row">
+
+        {% if image %}
+            {% set image = image|merge({ 'image_endpoint_url': image_endpoint_url }) %}
+            {% set image = image|merge({ 'teaser_source': 'section_teaser_one_columns' }) %}
+            
+            <div class="teaser-image col-md-4">
+                <a href="{{ permalink }}">
+                    {{ render_partial('@base/teaser/partial/image', image) }}
+                </a>
+
+            {% if section_teaser_one_column_category_overlay_display == 'true' %}
+                <div class="category_overlay">
+                    {% for category in categories %}
+                        {% if loop.first %}
+                            {{ category.name }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            
+            </div>
+        {% elseif image_uuid %}
+            <div class="teaser-image col-md-4">
+                <a href="{{ permalink }}">
+                    <img src="{{ image_endpoint_url }}/?uuid={{ image_uuid }}&function=hardcrop&type=preview&source=false&width=500&height=300">
+                </a>
+            
+                {% if section_teaser_one_column_category_overlay_display == 'true' %}
+                    <div class="category_overlay">
+                        {% for category in categories %}
+                            {% if loop.first %}
+                                {{ category.name }}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                
+            </div>
+        {% endif %}
+
+        {% if image or image_uuid %}
+            <div class="teaser-content image col-md-8">
+        {% else %}
+            <div class="teaser-content col-md-12">
+        {% endif %}
+            
+        <div class="entry-title">
+            <a href="{{ permalink }}">
+	        {% block headline %}{% include "@base/teaser/partial/headline.twig" %}{% endblock %}
+            </a>
+        </div>
+
+        <div class="teaser_byline">
+            {% for author in authors %}
+                {% if loop.first %}
+                    By {{ author.name }}
+                {% elseif loop.last %}
+                    and {{ author.name }}
+                {% else %}
+                    , {{ author.name }}
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        {% if teaser_time_display == 'on'%}
+            {% block dateline %}{% include "@base/teaser/partial/dateline.twig" %}{% endblock %}
+        {% endif %}
+
+        <div class="teaser-body">
+            {% if text %}
+                {{ text }}
+            {% elseif leadin %}
+                {% block leadin %}{% include "@base/teaser/partial/leadin.twig" %}{% endblock %}
+            {% else %}
+                {{ story_text|striptags|slice(0, 160) ~ '...' }}
+            {% endif %}
+        </div>
+    
+        </div><!--Closing teaser-content-->
+
+    </div><!--Closing row-->
+</article>

@@ -1,0 +1,22 @@
+{% extends '@base/main.twig' %}
+
+{% block site_content %}
+    <div class="container" id="page404">
+        <img class="bubble-404" src="{{ get_template_directory_uri() }}/assets/images/ojda.png" alt="Ojdå pratbubbla"/>
+
+        <h2>Sidan du söker finns tyvärr inte.</h2>
+        <p>Tyvärr fungerar inte den länk du försökt använda. Kontrollera stavningen eller kanske prova sök nedan?.</p>
+
+        <h2>This is somewhat embarrassing...</h2>
+        <p>It looks like nothing was found at this location. Maybe try a search?</p>
+
+        <form method="get" action="{{ search_page_url }}" class="form-inline justify-content-center">
+            <div class="form-group col-10 col-md-8 mb-0 pl-0">
+                <label class="sr-only" for="search-input">Sök</label>
+                <input type="search" class="form-control" id="search-input" placeholder="Sök" name="s" aria-placeholder="Sök"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Sök</button>
+        </form>
+
+    </div>
+{% endblock %}

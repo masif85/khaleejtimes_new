@@ -1,0 +1,10 @@
+<rss version="2.0" xmlns:content="https://purl.org/rss/1.0/modules/content/">
+   <channel>
+      <title>Khaleej Times Feed</title>
+      <link>https://www.khaleejtimes.com/</link>
+      <description>Latest News from Khaleej Times</description>
+      <language>en-ae</language>
+      <lastBuildDate>{{ "now"|date("Y-m-d") }}T{{ "now"|date("H:i:s") }}Z</lastBuildDate>
+       {{ articles|raw }}
+   </channel>
+</rss>

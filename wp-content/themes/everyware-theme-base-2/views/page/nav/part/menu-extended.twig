@@ -1,0 +1,64 @@
+<nav class="navbar navbar-light navbar-extended multi-collapse collapse">
+
+	{% block menu_expand_header %}
+		<span class="navbar-text navbar-text-extended d-lg-none d-flex w-100 ">
+			{{ __('Menu', 'ew-base-theme-2') }}
+			<i class="fa fa-times ml-auto align-self-center pr-3" data-toggle="collapse" data-target=".multi-collapse"></i>
+		</span>
+
+		<section class="d-flex d-lg-none w-100">
+			{% include '@base/page/nav/part/search-bar.twig' with {'class': 'form-inline-extended'} %}
+		</section>
+	{% endblock %}
+
+	{% block menu_expand_nav %}
+		<ul class="navbar-nav navbar-nav-parent">
+			{% for item in menu %}
+				<li class="nav-item p-0 d-flex nav-item-parent {% if get_permalink()|lower == item.url|lower  %}active{% endif %}">
+					<a class="nav-link" href="{{ item.url }}">{{ item.title }}
+					</a>
+					{% if item.children.isNotEmpty %}
+						<a class="nav-link nav-link-expand ml-auto d-md-none d-flex" aria-expanded="false" data-toggle="collapse" href="#menu-id-{{ item.ID }}">
+							<i class="fas fa-chevron-down align-self-center"></i>
+							<i class="fas fa-chevron-up align-self-center"></i>
+						</a>
+						<ul class="navbar-nav pl-2 collapse navbar-nav-child align-self-center" id="menu-id-{{ item.ID }}">
+							{% for subitem in item.children %}
+								<li class="nav-item nav-item-child p-0">
+									<a class="nav-link px-2 {% if get_permalink() starts with subitem.url %}active{% endif %}" href="{{ subitem.url }}">
+										{{ subitem.title }}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	{% endblock %}
+
+	{% block menu_expand_links %}
+		<section class="navbar-section">
+			<ul class="navbar-nav p-3">
+				{% for item in topmenu %}
+					<li class="nav-item d-flex flex-wrap {% if get_permalink()|lower == item.url|lower  %}active{% endif %}">
+						<a class="nav-link" href="{{ item.url }}">{{ item.title }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+			{% block menu_expand_links_extra %}
+				{% include "@base/page/nav/part/social-links.twig" %}
+			{% endblock %}
+		</section>
+	{% endblock %}
+
+	{% block menu_expand_footer %}
+		<span class="navbar-text d-lg-none d-flex w-100 justify-content-center">
+			{{ __('Close', 'ew-base-theme-2') }}
+			<i class="fa fa-times align-self-center pl-2" data-toggle="collapse" role="button" data-target=".multi-collapse"></i>
+		</span>
+	{% endblock %}
+
+</nav>
+<a class="menu-expand-backdrop" data-toggle="collapse" href="#navbarToggleExternalContent" role="backdrop" aria-expanded="false"></a>

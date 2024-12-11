@@ -1,0 +1,33 @@
+{% apply spaceless %}
+  <!-- tabs teaser frontpage nf -->
+  <article class="post top-image-bottom-content-tcl-tv" data-uuid="{{ uuid }}">
+    {% if image %}
+      <div class="post-thumbnail">
+        <a href="{{ permalink }}"
+		data-gm5=" {{ conceptsectionuuids }}">
+          {{ render_partial('@base/teasers/partial/image', image|merge({ 'alttext': headline|striptags|replace({'"':'\''}) })) }}
+        </a>
+      </div>
+    {% endif %}
+    <div class="entry-container">
+      <div class="entry-header">
+        {% if sectionName %}
+          <p class="category-btn">
+            {% include '@base/teasers/partial/concept.twig' %}
+          </p>
+        {% endif %}
+        {% include '@base/teasers/partial/headline.twig' %}
+      </div>
+      <div class="entry-summary">
+        {% include '@base/teasers/partial/leadin.twig' %}
+        <p class="category">
+          {% if sectionName %}
+            {% include '@base/teasers/partial/concept.twig' %}
+          {% endif %}
+           <!-- {% include '@base/teasers/partial/date.twig' %} -->
+          {% include '@base/teasers/partial/icons.twig' %}
+        </p>
+      </div>
+    </div>
+  </article>
+{% endapply %}

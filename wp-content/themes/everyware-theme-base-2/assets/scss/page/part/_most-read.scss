@@ -1,0 +1,31 @@
+.ew-most-read-google-analytics {
+
+  @include article-list;
+
+  &__item {
+    a {
+      padding-left: 0 !important;
+    }
+
+    &::before {
+      display: flex;
+      color: #191919;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-lg;
+      padding: $half-gutter-width 0 0 $half-gutter-width;
+      font-family: $font-family-serif;
+      content: counter(step-counter) " ";
+      flex-basis: 2em;
+      line-height: $teaser-title-line-height;
+    }
+  }
+}
+
+.row {
+  &.media-section,
+  &.full-black-container {
+    .ew-most-read-google-analytics {
+      @include article-list-dark;
+    }
+  }
+}

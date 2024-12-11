@@ -1,0 +1,86 @@
+
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+
+<style>
+  .toggle-mobile-sub-menu {display:none!important;}
+</style>
+
+
+  <main>
+      <div class="container" style="margin-bottom: 12px;">
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center d-block">
+         {% include "@base/page/part/tv-ticker.twig" %}
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center d-block">
+          <!-- /78059622/Responsive-Section-Leaderboard-1 -->
+          <div id='div-gpt-ad-1613546905867-0'>
+            <script>
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613546905867-0'); });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-12">
+          <div class="movie-listing">
+            <div class="row">
+              <div class="col-12">
+                <div class="sub-header">
+                  <ul class="sub-menu" data-id="mobile-sub-menu">
+                    <li class="sub-menu-item">
+                    <h1>Gold &amp; Forex Rates</h1>
+                      <!-- <img src="{{ get_stylesheet_directory_uri() }}/assets/images/gold-forex-logo.jpg" alt="Gold and Forex Rates" width="225" height="44"> -->
+                    </li>
+                    <!-- {% for slug, title in goldforex.menu %}
+                      <li class="sub-menu-item {{ page.post_name == slug ? 'active' : '' }}">
+                        {% if loop.first %}
+                          <a href="/{{ slug }}">{{ title }}</a>
+                        {% else %}
+                          <a href="/gold-forex/{{ slug }}">{{ title }}</a>
+                        {% endif %}
+                      </li>
+                    {% endfor %} -->
+                  </ul>
+                  <!-- <ul id="mobile-sub-menu" class="mobile-sub-menu shadow-sm"><li class="sub-menu-item" style="display:none;"></li></ul> -->
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div class="col-12">
+                <div class="inner-page-main-head-nf goldfx-mainhead">
+                  <h1>Gold and Forex Rates</h1>
+                </div>
+              </div>
+            </div> -->
+            <div class="row ">
+              <aside class="col-sm-12 col-md-12 col-lg-8">
+                {% if  (page.post_name == 'gold-forex-nf') %}
+                  {% include "@base/page/part/gold-forex-nf/uae.twig" %}
+                {% else %}
+                  {% include '@base/page/part/gold-forex-nf/' ~ page.post_name ~ '.twig' %}
+                {% endif %}
+              </aside>
+              <div class="col-lg-4 board-col-xs-12 board-col-sm-12 board-col-md-4 board-col-lg-4">
+                {{ render_sidebar("gold-forex-sidebar") }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      {{ the_content() }}
+    </div>
+  </main>
+{% endblock %}

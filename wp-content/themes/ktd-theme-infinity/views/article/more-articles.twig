@@ -1,0 +1,15 @@
+<!-- More news from this concept -->
+<div class="row no-gutters">
+  <div class="section-header col">
+    <h5 class="section-title text-uppercase font-weight-bold bordered-left">More news from {{ section }}</h5>
+  </div>
+</div>
+
+{% for article in moreFromThisConcept %}
+  {% if loop.first %}<div class="row">{% endif %}
+  <div class="col-lg-3">
+    {{ render_partial('@base/teasers/notice-teaser-with-image.twig', article) }}
+  </div>
+  {% if loop.index == 4 %}</div><div class="row">{% endif %}
+  {% if loop.last %}</div>{% endif %}
+{% endfor %}

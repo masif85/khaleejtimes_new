@@ -1,0 +1,68 @@
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+
+
+<style>
+
+.top-main-menu {
+    max-width: 1126px;
+    margin: 0px auto;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1126px;
+    margin: 0 auto;
+    box-shadow: none;
+    background: #FFF;
+}
+
+.article-wrapper h1 {
+    padding-top: 2rem;
+}
+
+
+@media (max-width: 991px) {
+
+  div#ew-custom-html-32 {
+    display: none;
+}
+
+div#ew-custom-html-8 {
+ display: none;
+}
+
+}
+
+</style>
+
+  <main>
+
+    <div class="single">
+      <div class="container ">
+        <div class="row">
+          <aside class="col-sm-12 col-md-12 col-lg-3 left-sidebar">
+            <div class="article-lt-section about-us">
+              <h6>Contact Information</h6>
+              <p>Khaleej Times welcomes your comments regarding this Statement of Privacy. For any questions or clarification please contact us or call us at +97143383535</p>
+              <hr class="gray-line">
+            </div>
+          </aside>
+          <div class="col-lg-9 article-wrapper">
+
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- Content -->
+                {{ the_content() }}
+              </div>
+            </div>
+
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+  </main>
+{% endblock %}

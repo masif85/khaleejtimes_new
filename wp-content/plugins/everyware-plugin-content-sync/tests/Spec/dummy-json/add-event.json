@@ -1,0 +1,14 @@
+{
+  "id": 7107,
+  "uuid": "c12bb71b-11a5-5081-8bbd-3d32537eac82",
+  "eventType": "ADD",
+  "created": "2021-05-24T06:08:23.000Z",
+  "content": {
+    "uuid": "c12bb71b-11a5-5081-8bbd-3d32537eac82",
+    "version": 1,
+    "created": "2021-05-24T06:07:21.000Z",
+    "source": "cca",
+    "contentType": "Image",
+    "batch": false
+  }
+}

@@ -1,0 +1,31 @@
+<div class="article__tags article__tags--{{ position }}">
+    {% set concepts = { 'stories': stories, 'categories': categories, 'tags': tags, 'places': places } %}
+    {% set first = true %}
+    <ul class="article__metabox-list">
+        {% for key, concept in concepts %}
+            {% if concept | length > 0 %}
+                {% for tag in concept %}
+                    {% if first == true %}
+                        {% set first = false %}
+                        <li class="list-inline-item list-inline-item-{{ key }} list-item-primary">
+                            {% embed "@base/article/link.twig" with {'href': tag.permalink, 'itemprop': 'keywords'} %}
+                                {% block inner %}
+                                    {{ tag.name }}
+                                {% endblock %}
+                            {% endembed %}
+                        </li>
+                        <li class="title__tag--border"></li>
+                    {% else %}
+                        <li class="list-inline-item list-inline-item-{{ key }} list-item-secondary">
+                            {% embed "@base/article/link.twig" with {'href': tag.permalink, 'itemprop': 'keywords'} %}
+                                {% block inner %}
+                                    {{ tag.name }}
+                                {% endblock %}
+                            {% endembed %}
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

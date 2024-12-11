@@ -1,0 +1,18 @@
+{% apply spaceless %}
+  <!-- 2024 notice teaser with image -->
+  
+   
+     <div  class="col-lg-12 col-md-12 col-12" data-uuid="{{ uuid }}">
+                      <div class="post-title-rows">
+                       {% if image %}
+                        <div class="thumb-with-image image-zoom"> <a href="{{ permalink }}" title="{{ headline }}">
+   {{ render_partial('@base/teasers/partial/image', image|merge({ 'alttext': headline|striptags|replace({'"':'\''}) })) }}
+                         </a> </div>
+                         {% endif %}
+                        <h4> <a href="{{ permalink }}" title="{{ headline }}"> {{headline|striptags|replace({'"':'\''}) }} </a> </h4>
+                        <p><a href="{{ permalink }}" title="{{ headline }}">{{teaserbody}}</a></p>
+                      </div>
+                    </div>
+                   
+ 
+{% endapply %}

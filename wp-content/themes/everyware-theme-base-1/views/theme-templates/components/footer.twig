@@ -1,0 +1,260 @@
+{% if use_footer_copyright == 'yes' %}
+	<div class="wrapper copyright" id="wrapper-footer">
+{% else %}
+	<div class="wrapper" id="wrapper-footer">
+{% endif %}
+	<div class="container">
+		<div class="row">
+
+		{% if footer_main_position == 'left' %}
+			<div class="footer-main col-md-4 push-sm-8">
+				
+				<div class="row">
+					{% if footer_logo_switch == 'on' %}
+						<div class="footer-logo col-md-12 {{ footer_main_position }}">
+							{% if footer_logo_image == '' %}
+								<a class="navbar-brand" rel="home" href="/" title="{{ site_name }}"><img class="footer_logo_image" src="{{ default_footer_logo }}"></a>
+							{% else %}
+								<a class="navbar-brand" rel="home" href="/" title="{{ site_name }}"><img class="footer_logo_image" src="{{ footer_logo_image }}"></a>
+							{% endif %}
+						</div>
+					{% endif %}
+
+					{% if use_footer_menu_contactinfo == 'yes' %}
+						<div class="footer-logo-contactinfo {% if use_footer_social_media == 'yes' %}col-md-4{% else %}col-md-12{% endif %} {{ footer_main_position }}">
+							{% if footer_menu_contactinfo_street != '' %}
+								<div class="footer-logo-contactinfo-item street">{{ footer_menu_contactinfo_street }}</div>
+							{% endif %}
+							{% if footer_menu_contactinfo_city_state_zip != '' %}
+								<div class="footer-logo-contactinfo-item city_state_zip">{{ footer_menu_contactinfo_city_state_zip }}</div>
+							{% endif %}
+							{% if footer_menu_contactinfo_phone != '' %}
+								<div class="footer-logo-contactinfo-item phone">{{ footer_menu_contactinfo_phone }} </div>
+							{% endif %}
+						</div>
+					{% endif %}
+
+					{% if use_footer_social_media == 'yes' %}
+						<div class="footer-social-media {% if use_footer_menu_contactinfo == 'yes' %}col-md-8{% else %}col-md-12{% endif %} {{ footer_main_position }}">
+							{% if footer_social_media_facebook != '' %}
+								<span class="footer-social-media-icon facebook"><a href="{{ footer_social_media_facebook }}"><i class="fa fa-facebook-f"></i></a></span>
+							{% endif %}
+							{% if footer_social_media_instagram != '' %}
+								<span class="footer-social-media-icon instagram"><a href="{{ footer_social_media_instagram }}"><i class="fa fa-instagram"></i></a></span>
+							{% endif %}
+							{% if footer_social_media_youtube != '' %}
+								<span class="footer-social-media-icon youtube"><a href="{{ footer_social_media_youtube }}"><i class="fa fa-youtube"></i></a></span>
+							{% endif %}
+							{% if footer_social_media_twitter != '' %}
+								<span class="footer-social-media-icon twitter"><a href="{{ footer_social_media_twitter }}"><i class="fa fa-twitter"></i></a></span>
+							{% endif %}
+						</div>
+					{% endif %}	
+				</div>	
+
+			</div>
+		{% endif %}
+
+		{% if (footer_logo_switch == 'on' or use_footer_menu_contactinfo == 'yes') and footer_main_position == 'center' %}
+			<div class="col-md-12 col-12 {{ footer_main_position }}" id="footer-menu">
+		{% elseif (footer_logo_switch == 'on' or use_footer_menu_contactinfo == 'yes') and footer_main_position == 'left' %}
+			<div class="col-md-8 col-12 {{ footer_main_position }}" id="footer-menu">
+		{% elseif (footer_logo_switch == 'on' or use_footer_menu_contactinfo == 'yes') and footer_main_position == 'right' %}
+			<div class="col-md-8 pull-sm-4 col-12 {{ footer_main_position }}" id="footer-menu">
+		{% elseif footer_logo_switch == 'off' and use_footer_menu_contactinfo == 'no' %}
+			<div class="col-md-12 col-12" id="footer-menu">
+		{% endif %}
+
+		{# Open Nav for Footer Menus and determine to pull left or pull right. #}
+		{% if footer_main_position == 'left' %}
+			<nav class="pull-right">
+		{% elseif footer_main_position == 'right' %}
+			<nav class="pull-left">
+		{% else %}
+			<nav>
+		{% endif %}
+
+					
+		<div class="footer-menus">
+			<div class="container">
+				<div class="row">
+				{% if use_footer_menu_one == 'yes' %}
+					{% if use_footer_menu_two == 'no' and use_footer_menu_three == 'no' and use_footer_menu_four == 'no' %}
+						<div class="col-md-12 col-12">
+					{% elseif use_footer_menu_two == 'no' and use_footer_menu_three == 'yes' and use_footer_menu_four == 'yes' %} 
+						<div class="col-md-4 col-6">
+					{% elseif use_footer_menu_two == 'no' and use_footer_menu_three == 'no' and use_footer_menu_four == 'yes' %}
+						<div class="col-md-6 col-6">
+					{% elseif use_footer_menu_two == 'yes' and use_footer_menu_three == 'no' and use_footer_menu_four == 'no' %}
+						<div class="col-md-6 col-6">
+					{% else %}
+						<div class="col-md-3 col-6">
+					{% endif %}
+					<div class="footer-first-menu footer-menu">
+						{% if footer_menu_one_heading != '' %}
+							<div class="footer-first-menu-heading footer-heading">{{ footer_menu_one_heading }}</div> 
+						{% endif %}
+
+						{{ footer_menu_1|raw }}
+					
+						</div>		
+					</div>
+				{% endif %}
+
+				{% if use_footer_menu_two == 'yes' %}
+					{% if use_footer_menu_one == 'no' and use_footer_menu_three == 'no' and use_footer_menu_four == 'no' %}
+						<div class="col-md-12 col-12">
+					{% elseif use_footer_menu_one == 'no' and use_footer_menu_three == 'yes' and use_footer_menu_four == 'yes' %}
+						<div class="col-md-4 col-6">
+					{% elseif use_footer_menu_one == 'no' and use_footer_menu_three == 'no' and use_footer_menu_four == 'yes' %}
+						<div class="col-md-6 col-6">
+					{% elseif use_footer_menu_one == 'yes' and use_footer_menu_three == 'no' and use_footer_menu_four == 'no' %}
+						<div class="col-md-6 col-6">
+					{% else %}
+						<div class="col-md-3 col-6">
+					{% endif %}
+					<div class="footer-second-menu footer-menu">
+						{% if footer_menu_two_heading != '' %}
+							<div class="footer-second-menu-heading footer-heading">{{ footer_menu_two_heading }}</div> 
+						{% endif %}
+
+						{{ footer_menu_2|raw }}
+
+						</div>
+					</div>
+				{% endif %}
+
+				{% if use_footer_menu_three == 'yes' %}
+					{% if use_footer_menu_one == 'no' and use_footer_menu_two == 'no' and use_footer_menu_four == 'no' %}
+						<div class="col-md-12 col-12">
+					{% elseif use_footer_menu_one == 'no' and use_footer_menu_two == 'yes' and use_footer_menu_four == 'yes' %}
+						<div class="col-md-4 col-6">
+					{% elseif use_footer_menu_one == 'no' and use_footer_menu_two == 'no' and use_footer_menu_four == 'yes' %}
+						<div class="col-md-6 col-6">
+					{% elseif use_footer_menu_one == 'yes' and use_footer_menu_two == 'no' and use_footer_menu_four == 'no' %}
+						<div class="col-md-6 col-6">
+					{% else %}
+						<div class="col-md-3 col-6">
+					{% endif %}
+						<div class="footer-third-menu footer-menu">
+							{% if footer_menu_three_heading != '' %}
+								<div class="footer-third-menu-heading footer-heading">{{ footer_menu_three_heading }}</div>
+							{% endif %}
+
+						{{ footer_menu_3|raw }}
+
+						</div>
+					</div>
+				{% endif %}
+
+				{% if use_footer_menu_four == 'yes' %}
+					{% if use_footer_menu_one == 'no' and use_footer_menu_two == 'no' and use_footer_menu_three == 'no' %}
+						<div class="col-md-12 col-12">
+					{% elseif use_footer_menu_one == 'no' and use_footer_menu_two == 'yes' and use_footer_menu_three == 'yes' %}
+						<div class="col-md-4 col-6">
+					{% elseif use_footer_menu_one == 'no' and use_footer_menu_two == 'no' and use_footer_menu_three == 'yes' %}
+						<div class="col-md-6 col-6">
+					{% elseif use_footer_menu_one == 'yes' and use_footer_menu_two == 'no' and use_footer_menu_three == 'no' %}
+						<div class="col-md-6 col-6">
+					{% else %}
+						<div class="col-md-3 col-6">
+					{% endif %}
+
+						<div class="footer-fourth-menu footer-menu">
+							{% if footer_menu_four_heading != '' %}
+								<div class="footer-fourth-menu-heading footer-heading">{{ footer_menu_four_heading }}</div>
+							{% endif %}
+
+						{{ footer_menu_4|raw }}
+
+						</div>
+					</div>
+				{% endif %}
+
+				</div>{# End Row Div #}
+			</div>{# End Container Div #}
+		</div>{# End Footer-Menus Div #}
+
+		</nav>{# Close Nav for Footer Menus and determine to pull left or pull right. #}
+		</div>
+
+		{% if footer_main_position == 'right' or footer_main_position == 'center' %}
+			
+			{% if footer_main_position == 'center' %}
+				<div class="footer-main col-md-12">
+			{% else %}
+				<div class="footer-main col-md-4">
+			{% endif %}
+
+			<div class="row">
+				{% if footer_logo_switch == 'on' %}
+					<div class="footer-logo col-md-12 {{ footer_main_position }}">
+						{% if footer_logo_image == '' %}
+							<a class="navbar-brand" rel="home" href="/" title="{{ site_name }}"><img class="footer_logo_image" src="{{ default_footer_logo }}"></a>
+						{% else %}
+							<a class="navbar-brand" rel="home" href="/" title="{{ site_name }}"><img class="footer_logo_image" src="{{ footer_logo_image }}"></a>
+						{% endif %}
+					</div>
+				{% endif %}
+
+				{% if footer_main_position == 'center' %}
+					<div class="footer-data-center col-md-4 offset-md-4">
+						<div class="row">
+				{% endif %}
+
+				{% if use_footer_menu_contactinfo == 'yes' %}
+					<div class="footer-logo-contactinfo {% if use_footer_social_media == 'yes' %}{% if footer_main_position == 'center' %}col-md-6{% else %}col-md-4{% endif %}{% else %}col-md-12{% endif %} {{ footer_main_position }}">
+						{% if footer_menu_contactinfo_street != '' %}
+							<div class="footer-logo-contactinfo-item street">{{ footer_menu_contactinfo_street }}</div>
+						{% endif %}
+						{% if footer_menu_contactinfo_city_state_zip != '' %}
+							<div class="footer-logo-contactinfo-item city_state_zip">{{ footer_menu_contactinfo_city_state_zip }}</div>
+						{% endif %}
+						{% if footer_menu_contactinfo_phone != '' %}
+							<div class="footer-logo-contactinfo-item phone">{{ footer_menu_contactinfo_phone }} </div>
+						{% endif %}
+					</div>
+				{% endif %}
+
+				{% if use_footer_social_media == 'yes' %}
+					<div class="footer-social-media {% if use_footer_menu_contactinfo == 'yes' %}{% if footer_main_position == 'center' %}col-md-6{% else %}col-md-8{% endif %}{% else %}col-md-12{% endif %} {{ footer_main_position }}">
+						{% if footer_social_media_facebook != '' %}
+							<span class="footer-social-media-icon facebook"><a href="{{ footer_social_media_facebook }}"><i class="fa fa-facebook-f"></i></a></span>
+						{% endif %}
+						{% if footer_social_media_instagram != '' %}
+							<span class="footer-social-media-icon instagram"><a href="{{ footer_social_media_instagram }}"><i class="fa fa-instagram"></i></a></span>
+						{% endif %}
+						{% if footer_social_media_youtube != '' %}
+							<span class="footer-social-media-icon youtube"><a href="{{ footer_social_media_youtube }}"><i class="fa fa-youtube"></i></a></span>
+						{% endif %}
+						{% if footer_social_media_twitter != '' %}
+							<span class="footer-social-media-icon twitter"><a href="{{ footer_social_media_twitter }}"><i class="fa fa-twitter"></i></a></span>
+						{% endif %}
+					</div>
+				{% endif %}	
+
+				{% if footer_main_position == 'center' %}
+						</div>
+					</div>
+				{% endif %}
+
+			</div>	
+
+			</div>
+
+		{% endif %}
+			
+		{% if use_footer_copyright == 'yes' %}
+			{% if footer_copyright_position %}
+				<div class="footer_copyright {{ footer_copyright_position }}">{{ footer_copyright_text }}</div>
+			{% else %}
+				<div class="footer_copyright">{{ footer_copyright_text }}</div>
+			{% endif %}
+		{% endif %}
+
+			</div>
+		</div>
+
+		</div>{# End Row Div #}
+	</div>{# End Container Div #}
+</div>{# End Wrapper Div #}

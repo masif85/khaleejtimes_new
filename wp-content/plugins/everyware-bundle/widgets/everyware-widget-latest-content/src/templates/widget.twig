@@ -1,0 +1,16 @@
+{% apply spaceless %}
+  <div class="module-2 latest-media latest-archive">
+    <div class="row no-gutters">
+      <div class="col-12">
+        <div class="partner-content {{ settings.class_prefix }}-container">
+          {% include '@ew-latest-content/filter.twig' with sections %}
+
+          <div class="loader"></div>
+          <div class="row {{ settings.class_prefix }}-articles">
+            {% include '@ew-latest-content/articles.twig' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endapply %}

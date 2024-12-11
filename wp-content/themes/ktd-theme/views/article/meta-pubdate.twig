@@ -1,0 +1,4 @@
+<p><span>Published:</span> {{ pubdate|date("D j M Y, g:i A") }}</p>
+{% if date(objectUpdated|date("F j, Y, g:i A")) > date(pubdate|date("F j, Y, g:i A")) %}
+  <p><span>Last updated:</span> {{ objectUpdated|date("D j M Y, g:i A") }}</p>
+{% endif %}

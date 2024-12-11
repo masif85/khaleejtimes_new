@@ -1,0 +1,48 @@
+<div class="cinema-listing">
+  <div class="row">
+    <div class="col-12 section-header ">
+      <h5 class="section-title text-uppercase font-weight-bold bordered-left">CINEMA LOCATIONS</h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="filter">
+        {% include "@base/page/part/cinema-listing/filter.twig" with {
+          'class': 'cinema-location-filter',
+          'filter_id': 'emirates',
+          'current_filter': '',
+          'filter': cinema_filter
+        } %}
+      </div>
+    </div>
+  </div>
+
+  <div class="row no-gutters">
+    <div class="col-12 col-md-4 cinema-heading">
+      <p class="label">NAME</p>
+    </div>
+    <div class="col-12 col-md-4 cinema-heading">
+      <p class="label">LOCATION</p>
+    </div>
+    <div class="col-12 col-md-4 cinema-heading">
+      <p class="label">CONTACT DETAILS</p>
+    </div>
+  </div>
+
+  {% for location, cinemas in cinema_locations %}
+    {% for cinema in cinemas %}
+      <div class="row no-gutters cinema-location" data-location="{{ location }}">
+        <div class="col-12 col-md-4 cinema" data-label="NAME">
+          <p>{{ cinema.name }}</p>
+        </div>
+        <div class="col-12 col-md-4 cinema" data-label="LOCATION">
+          <p>{{ cinema.location }}</p>
+        </div>
+        <div class="col-12 col-md-4 cinema" data-label="CONTACT DETAILS">
+          <p>{{ cinema.contact_details }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  {% endfor %}
+</div>

@@ -1,0 +1,9 @@
+{% extends '@base/main.twig' %}
+
+{% block site_content %}
+    <div class="wrapper">
+        {% for concept in concepts %}
+           {{ concept|raw }}
+        {% endfor %}
+    </div>
+{% endblock %}

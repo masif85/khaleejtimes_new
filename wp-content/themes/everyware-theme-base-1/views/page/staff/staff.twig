@@ -1,0 +1,37 @@
+{% for staff in staff %}
+    <div class="staff">
+        <div class="row">
+
+            {% if staff.image_uuids %}
+            <div class="image col-md-6 col-12">
+                    {% for image_uuid in staff.image_uuids %}
+                        <img src="{{ image_endpoint_url }}/?uuid={{ image_uuid }}&function=cover&type=preview&source=false&width=400">
+                    {% endfor %}
+            </div>    
+            {% endif %}
+            
+            <div class="info col-md-6 col-12">
+                <div class="name">{{ staff.name }}
+                
+                <span class="social-media">
+                    {% for socialmedia in staff.related_links %}
+                        {% if 'facebook' in socialmedia %}
+                            <span class="facebook"><a href="{{ socialmedia }}"><i class="fa fa-facebook"></i></a></span>
+                        {% endif %}
+                        {% if 'twitter' in socialmedia %}
+                            <span class="twitter"><a href="{{ socialmedia }}"><i class="fa fa-twitter"></i></a></span>
+                        {% endif %}
+                    {% endfor %}
+                </span>
+                
+                </div>
+
+                {% if staff.meta_data.phone %}<div class="phone"><span class="icon"><i class="fa fa-phone"></i></span> {{ staff.meta_data.phone }}</div>{% endif %}
+                {% if staff.meta_data.email %}<div class="email"><span class="icon"><i class="fa fa-envelope"></i></span> {{ staff.meta_data.email }}</div>{% endif %}
+                
+                <div class="description">{{ staff.description|raw }}</div>
+            </div>
+        
+        </div>
+    </div>
+{% endfor %}

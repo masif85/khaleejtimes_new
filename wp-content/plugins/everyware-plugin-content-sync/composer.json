@@ -1,0 +1,47 @@
+{
+    "name": "infomaker/everyware-plugin-content-sync",
+    "description": "Plugin to handle events from the Naviga Content Sync service.",
+    "version": "1.0.1",
+    "homepage": "https://navigaglobal.com/",
+    "license": "GPL-3.0-or-later",
+    "type": "wordpress-plugin",
+    "support": {
+        "docs": "https://docs.navigaglobal.com/everyware/starter-kit-packages/everyware-plugin-content-sync",
+        "source": "https://composer.infomaker.io/#infomaker/everyware-plugin-content-sync"
+    },
+    "authors": [
+        {
+            "name": "Naviga Web Team",
+            "homepage": "https://www.navigaglobal.com/web/"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.infomaker.io/"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-json": "*",
+        "psr/event-dispatcher": "^1.0",
+        "aws/aws-sdk-php": "^3.209",
+        "infomaker/everyware-support": ">=0.6.0"
+    },
+    "require-dev": {
+        "johnpbloch/wordpress-core": "^4.9 || ^5.5",
+        "roave/security-advisories": "dev-master",
+        "phpspec/phpspec": "^7.1",
+        "fetzi/phpspec-watcher": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Everyware\\Plugin\\ContentSync\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spec\\Everyware\\Plugin\\ContentSync\\": "tests/Spec/"
+        }
+    }
+}

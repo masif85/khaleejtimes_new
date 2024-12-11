@@ -1,0 +1,22 @@
+{% set textAlign = 'left' %}
+{% set orderBy = label|lower %}
+{% set orderLink = pageUrl ~ '&orderby='~ orderBy %}
+{% set orderAsc = orderBy == activeOrderBy and activeOrder == 'asc' ? 'desc' : 'asc' %}
+
+{% if align %}
+    {% set textAlign = align %}
+{% endif %}
+
+{% if order is not defined %}
+    {% set order = true %}
+{% endif %}
+
+<th class="concepts-table__header text-{{ textAlign }}{{ orderBy == activeOrderBy ? ' active' : ''}}">
+    {% if order %}
+        <a href="{{ orderLink }}&order={{ orderAsc }}">{{ label }}
+            <i class="concepts-table__indicator fa {{ orderAsc == 'asc' ? 'fa-caret-down' : 'fa-caret-up' }}"></i>
+        </a>
+    {% else %}
+        {{ label }}
+    {% endif %}
+</th>

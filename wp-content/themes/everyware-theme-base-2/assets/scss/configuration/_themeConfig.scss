@@ -1,0 +1,147 @@
+/*
+* === NAV ===
+*/
+$nav-form-border-radius: 4px !default;
+$nav-color: $white !default;
+$nav-form-color: rgba(255, 255, 255, 0.15) !default;
+$nav-form-width: 17.5rem !default;
+$nav-background-color: $primary !default;
+$nav-shadow-color: rgba(0, 0, 0, 0.25) !default;
+$nav-border-color: rgba(255, 255, 255, 0.1) !default;
+$nav-border: 1px solid $nav-border-color !default;
+
+// full width dark row
+$dark-row-background-color: #353535;
+
+// Social links
+$color-article-social-links: #F7F7F7 !default;
+$color-social-links: $white !default;
+$color-social-links-background: transparent !default;
+
+
+// Search
+$color-search-dark: $white !default;
+$color-searchbox-light: #EBEBEB !default;
+$color-search-background: rgba(255, 255, 255, .15) !default;
+
+
+$color-main-light: $primary !default; // TODO correct values
+$color-main-dark: $secondary !default; // TODO correct values
+/*
+* === TEASERS ===
+*/
+// Title
+$teaser-title-font-size-base: 1rem !default;
+$teaser-title-font-size-xxl: ($teaser-title-font-size-base * 3.75) !default; // 60px
+$teaser-title-font-size-xl: ($teaser-title-font-size-base * 3) !default; // 48px
+$teaser-title-font-size-lg: ($teaser-title-font-size-base * 2.25) !default; // 36px
+$teaser-title-font-size-md: ($teaser-title-font-size-base * 2) !default; // 32px
+$teaser-title-font-size-sm: ($teaser-title-font-size-base * 1.5) !default; // 24px
+$teaser-title-font-size-xs: ($teaser-title-font-size-base * 1.125) !default; // 18px
+$teaser-title-font-size-xxs: ($teaser-title-font-size-base * 0.9375) !default; // 15px
+
+$teaser-title-line-height: 1.35;
+
+$teaser-title-font-weight: $font-weight-bold !default;
+
+$teaser-dark-title-color: $white !default;
+
+//Kicker
+$teaser-kicker-font-size: ($teaser-title-font-size-base * 0.875) !default; // 14px
+$teaser-kicker-color: $secondary !default;
+$teaser-dark-kicker-color: $dark-secondary !default;
+
+// Leadin
+$teaser-leadin-font-size: ($teaser-title-font-size-base * 0.875) !default; // 14px
+$teaser-dark-leadin-color: #D9D9D9 !default;
+
+//Pubdate
+$teaser-pubdate-font-size: ($teaser-title-font-size-base * 0.8125) !default; // 13px
+$teaser-pubdate-color: $gray-500 !default;
+$teaser-dark-pubdate-color: #D9D9D9 !default;
+
+$teaser-gallery-color: $yellow !default;
+$teaser-gallery-icon-color: $yellow !default;
+
+// Other
+$teaser-notice-container-padding: 10px 10px 10px 0 !default;
+$teaser-notice-image-padding: $half-gutter-width 0 $half-gutter-width 10px !default;
+$teaser-notice-image-size: 95px !default;
+
+/*
+* === PAGES ===
+*/
+$h1-font-size-lg: ($h1-font-size * 1.429) !default; // 40px
+$page-preamble: $font-size-base !default;
+$content-padding-bottom: 2rem !default;
+
+// Factbox
+$factbox-subject-color: $secondary !default;
+$factbox-background: rgba(0, 0, 0, 0.03) !default;
+
+// Blockquotes
+$blockquote-border-left: 2px solid $secondary;
+
+// Default margin bottom for page elements e.x h1, h2, p, tables, fact-boxes
+$page-elements-margin-bottom: $spacer * 1.75 !default;
+
+// Tables
+$table-font-size: $font-size-base !default; // 16px
+$table-cell-padding-footer: 15px 16px !default;
+$table-border-widths: (
+  top: 3px,
+  header: 1px,
+  footer: 2px,
+  scrollbar: 2px
+) !default;
+
+// Line heights
+$line-height-normal: 19px !default; // TODO not pixel based?
+$line-height-medium: 18px !default; // TODO not pixel based?
+
+// Animation
+$transition-all: all 0.2s;
+$transition-article: all 0.3s;
+
+// Paddings
+$padding-small: 3px !default;
+
+// Container
+$max-width-container: 1380px !default;
+
+// Articles
+$margin-border: 10px !default;
+
+// Social
+$social-link-size: 38px !default;
+$social-link-font-size: $font-size-md !default;
+
+//Scrollbar
+$scrollbar-size: 0.75rem !default;
+
+// Borders
+$divider: $border-width solid $border-color !default;
+$border-solid: $border-width solid $border-color !default;
+$border-solid-faded: $border-width solid $border-color-faded !default;
+$dark-border-solid-faded: $border-width solid $dark-border-color-faded !default;
+
+// Footer
+$back-to-top-btn-margin: 1rem;
+$back-to-top-btn-padding: 0.5rem 1.35rem;
+$back-to-top-btn-radius: 2rem;
+
+$eb-screen-sm-min: map-get($grid-breakpoints, "md");
+$eb-screen-md-min: map-get($grid-breakpoints, "lg");
+$eb-screen-lg-min: map-get($grid-breakpoints, "xl");
+
+$section-colors: (
+  default: $blue
+) !default;
+
+$add-teaser-min-width: (
+  xs: 4,
+  sm: 3,
+  md: 3,
+  lg: 2,
+  xl: 2
+);

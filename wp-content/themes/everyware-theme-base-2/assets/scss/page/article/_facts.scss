@@ -1,0 +1,15 @@
+
+.facts {
+  &__container {
+    border-top: 3px solid $secondary;
+    background-color: $factbox-background;
+    padding: 15px;
+    font-size: $font-size-base;
+  }
+  &__subject {
+    color: $factbox-subject-color;
+  }
+  &__inner > :last-child {
+    margin-bottom: 15px;
+  }
+}

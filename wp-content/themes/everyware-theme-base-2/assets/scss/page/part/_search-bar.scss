@@ -1,0 +1,58 @@
+.search-bar {
+  .input-group {
+    border-radius: $nav-form-border-radius;
+    font-size: $font-size-sm;
+    border: 1px solid $nav-form-color;
+    > * {
+      background-color: $nav-form-color;
+    }
+  }
+  .input-group-append {
+    border-radius: 0 $nav-form-border-radius $nav-form-border-radius 0;
+  }
+  .fa-search {
+    color: $nav-color;
+  }
+  // clears the 'X' from Internet Explorer
+  input[type="search"]::-ms-clear,
+  input[type="search"]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  // clears the 'X' from Chrome
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+  }
+  .form-control {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .form-control,
+  .input-group-append {
+    height: 34px;
+  }
+  .input-group:focus-within {
+    input, .input-group-append {
+      background-color: $color-searchbox-light;
+      color: rgba(0, 0, 0, 0.45);
+      @include input-placeholder {
+        color: rgba(0, 0, 0, 0.45);
+      }
+      button i {
+        color: $color-main-dark;
+      }
+    }
+  }
+  input:focus, button:focus {
+    border: none;
+    box-shadow: none;
+  }
+  .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: $font-size-sm;
+    padding: 0;
+  }
+}

@@ -1,0 +1,49 @@
+// Teaser small styles
+
+// Headline size for different block sizes
+// TODO refactor with sass variables for font sizes
+
+.teaser {
+  &--article-large {
+
+    &.not-loaded {
+      opacity: 0;
+    }
+
+    &.loaded {
+      opacity: 1;
+      transition: $transition-article;
+    }
+
+    .teaser {
+      &__image {
+        width: 33%;
+        padding-left: 10px;
+      }
+
+      &__leadin {
+        @include teaser-title($font-size-sm, $line-height-medium)
+      }
+
+      &__pubdate {
+        margin-right: $grid-gutter-width;
+        color: $black;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// Title for board content size
+@include content-size-title(article-large, 12, 32px, 1, 24px, 22px);
+@include content-size-title(article-large, 11, 24px, 1, 24px, 22px);
+@include content-size-title(article-large, 10, 24px, 1, 24px, 22px);
+@include content-size-title(article-large, 9, 18px, 1, 17px, 16px);
+@include content-size-title(article-large, 8, 18px, 1, 17px, 16px);
+@include content-size-title(article-large, 7, 18px, 1, 17px, 16px);
+@include content-size-title(article-large, 6, 18px, 1, 17px, 16px);
+@include content-size-title(article-large, 5, 18px, 1, 17px, 16px);
+@include content-size-title(article-large, 4, 18px, 1, 17px, 16px);
+@include content-size-title(article-large, 3, 16px, 1, 17px, 16px);
+@include content-size-title(article-large, 2, 16px, 1, 17px, 16px);
+@include content-size-title(article-large, 1, 16px, 1, 17px, 16px);

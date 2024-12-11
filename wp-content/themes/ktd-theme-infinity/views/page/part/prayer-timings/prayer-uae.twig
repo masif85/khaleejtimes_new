@@ -1,0 +1,86 @@
+{% if contentPartData %}
+  {% if labels %}
+    <div class="row no-gutters">
+      {% for identifier, label in labels %}
+	  {% if contentPartData[identifier] %}
+        <div class="col-4 col-md prayer-times">
+          <p class="prayer-label">{{ label }}</p>
+          <p class="prayer-time">
+            <img src="{{ get_stylesheet_directory_uri() }}/assets/images/{{ identifier }}.png" width="40" height="40" alt="Khaleej Times Prayer {{ identifier }} Logo">
+            <span id="nav_pt_calculate_{{ identifier }}">{{ (contentPartData[identifier] ?? '')|slice(0, 5) }}</span>
+          </p>
+        </div>
+		{% endif %}
+		
+      {% endfor %}
+    </div>
+<p style="" class="user_attributes"></p>
+    <script>
+      var MS_PER_MINUTE = 60000;
+      var durationInMinutes = 0;
+      var navigaNewPrayerTime = new Date();
+
+      {{ page.post_name == 'abu-dhabi' ? 'durationInMinutes = 4;' : '' }}
+      {{ page.post_name == 'umm-al-quwain' ? 'durationInMinutes = -4;' : '' }}
+      {{ page.post_name == 'ras-al-khaimah' ? 'durationInMinutes = -4;' : '' }}
+      {{ page.post_name == 'fujairah' ? 'durationInMinutes = -6;' : '' }}
+
+      var prayerNames = new Array("fajr", "shuruq", "dhuhr", "asr", "magrib", "isha");
+      var prayerNameTimes = new Array(NCS_fajar_timeRight, NCS_shuruq_timeRight, NCS_duhar_timeRight, NCS_asr_timeRight, NCS_maghrib_timeRight, NCS_isha_timeRight);
+      for (i = 0; i < 6; i++) {
+        var navigaNewPrayerTime = new Date(prayerNameTimes[i].getTime() + durationInMinutes * MS_PER_MINUTE);
+
+        var navigaNewPrayerTime_hh = navigaNewPrayerTime.getHours();
+        var navigaNewPrayerTime_mm = navigaNewPrayerTime.getMinutes();
+
+        if (navigaNewPrayerTime_hh < 10) {
+          navigaNewPrayerTime_hh="0"+navigaNewPrayerTime_hh;
+        }
+        if (navigaNewPrayerTime_mm < 10) {
+          navigaNewPrayerTime_mm="0"+navigaNewPrayerTime_mm;
+        }
+
+        document.getElementById("nav_pt_calculate_" +prayerNames[i]).innerHTML = navigaNewPrayerTime_hh + ':' + navigaNewPrayerTime_mm;
+      }
+    </script>
+  {% endif %}
+{% endif %}
+
+{% if tableDataHeading and tableData %}
+
+  {# <pre>{{ dump( tableData ) }}</pre> #}
+
+  {# {{ render_partial('@base/page/part/prayer-timings/table.twig', tableData) }} #}
+
+  <div class="row no-gutters">
+  <div class="col-lg-12">
+      <div class="draft-rates-main-wrapper-nf">
+        <div class="draft-rates-rt-wrap">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                {% for headings in tableDataHeading %}
+                  <th scope="col">{{ headings }}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for tbody in tableData ?? [] %}
+                <tr>
+                  {% for value in tbody %}
+                    {% if loop.first %}
+                      <th scope="row">{{ value }}</th>
+                    {% else %}
+                      <td >{{ value }}</td>
+                    {% endif %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endif %}

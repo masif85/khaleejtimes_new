@@ -1,0 +1,44 @@
+@import 'meta-tags';
+@import 'byline';
+
+.article__metabox--bottom, .article__metabox--top {
+  font-weight: $font-weight-normal;
+  .article__meta--text {
+    margin: 0 0 5px 0;
+    display: block;
+    color: $text-muted;
+    font-size: $font-size-sm;
+  }
+  p {
+    color: $text-muted;
+  }
+}
+.article__metabox--bottom {
+  .social-links {
+    padding: $grid-gutter-width 0;
+  }
+}
+.article__metabox--top {
+  .social-links {
+    padding: $margin-border 0;
+  }
+}
+
+.article {
+  .authorbox__author--wrapper,
+  .article__tags {
+    @include links {
+      text-decoration: none;
+      & > * {
+        opacity: 1;
+        color: inherit;
+      }
+    }
+  }
+
+  &__metabox-list {
+    .list-item-secondary {
+      font-family: $secondary-font-family;
+    }
+  }
+}

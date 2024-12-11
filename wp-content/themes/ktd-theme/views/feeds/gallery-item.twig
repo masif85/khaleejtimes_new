@@ -1,0 +1,30 @@
+{%- if articles is iterable -%}
+    {% for article in articles %}
+        <item id="{{ article.uuid }}" postedOn="{{ article.pubdate|date("l, F d, Y") }}">
+            {% if article.teaser_headline %}
+                <title><![CDATA[{{ article.teaser_headline }} ]]></title>
+            {% endif %}
+            {% if article.permalink %}
+                <link>{{ article.permalink }}</link>
+            {% endif %}
+            {% if article.summary %}
+                <description><![CDATA[{{article.summary }}]]></description>
+            {% endif %}
+            {% if article.uuid %}
+                <guid isPermaLink="false">{{ article.uuid }}</guid>
+            {% endif %}
+            {% for image  in  article.gallery_image %}
+                {% if loop.first %}
+                    <enclosure url="{{ image_endpoint_url }}/?uuid={{ image.uuid }}&amp;function=original&amp;type=preview" length="0" type="image/jpeg"/>
+                {% else %}
+                    <content url="{{ image_endpoint_url }}/?uuid={{ image.uuid }}&amp;function=original&amp;type=preview" type="image/jpeg">
+                        <description><![CDATA[{{ image.caption }}]]></description>
+                        <copyright>Khaleej Times</copyright>
+                    </content>
+                {% endif %}
+            {% endfor %}
+        </item>
+    {% endfor %}
+{%- endif -%}
+
+

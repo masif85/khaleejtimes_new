@@ -1,0 +1,37 @@
+{# Standard Metadata #}
+<meta name="title" content="{{ headline|raw }}"/>
+
+{% if authors or byline %}
+{% for author in authors %}
+{% if author.name != 'MWC' %}
+<meta name="author" content="{{ author.name }}">
+{% else %}
+<meta name="author" content="{{ byline }}">
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if text|length > 25 %}
+<meta name="description" content="{% if text|replace({'"':'\''})|striptags|length > 200 %}{{ text|striptags|slice(0, 200) ~ '...' }}{% else %}{{ text|striptags }}{% endif %}">
+{% elseif leadin|length > 25 %}
+<meta name="description" content="{% if leadin|replace({'"':'\''})|striptags|length > 200 %}{{ leadin|striptags|slice(0, 200) ~ '...' }}{% else %}{{ leadin|striptags }}{% endif %}">
+{% else %}
+<meta name="description" content="{% if story_text|replace({'"':'\''})|striptags|length > 200 %}{{ story_text|striptags|slice(0, 200) ~ '...' }}{% else %}{{ story_text|striptags }}{% endif %}">
+{% endif %}
+
+{# Facebook Metadata #}
+<meta property="og:title" content="{{ headline|raw }}"/>
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{ permalink }}">
+{% if text|length > 25 %}
+<meta property="og:description" content="{% if text|replace({'"':'\''})|striptags|length > 200 %}{{ text|striptags|slice(0, 200) ~ '...' }}{% else %}{{ text|striptags }}{% endif %}">
+{% elseif leadin|length > 25 %}
+<meta property="og:description" content="{% if leadin|replace({'"':'\''})|striptags|length > 200 %}{{ leadin|striptags|slice(0, 200) ~ '...' }}{% else %}{{ leadin|striptags }}{% endif %}">
+{% else %}
+<meta property="og:description" content="{% if story_text|replace({'"':'\''})|striptags|length > 200 %}{{ story_text|striptags|slice(0, 200) ~ '...' }}{% else %}{{ story_text|striptags }}{% endif %}">
+{% endif %}
+{% for part in image_uuids %}
+{% if loop.index == 1 %}
+<meta property="og:image" content="{{ image_endpoint_url }}/?uuid={{ part }}&function=fit&type=preview">
+{% endif %}				
+{% endfor %}

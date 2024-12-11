@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html {{ language_attributes() }}>
+<head>
+  {% block page_head %}
+    {% include "@base/page/part/metatags.twig" %}
+  {% endblock %}
+
+  {{ get_header() }}
+  {% include "@base/page/part/custom-placeholder-top.twig" %}
+</head>
+<body {{ body_class() }} data-device="{{ device }}">
+
+{% block page_header %}
+  <header>
+    {% include "@base/page/part/top-ad.twig" %}
+    {% include "@base/page/part/logoarea.twig" %}
+    {% include "@base/page/nav/main-menu.twig" %}
+  </header>
+{% endblock %}
+
+
+{% block page_content %}
+  <main class="container site-container border-right border-left">
+      {{ the_content() }}
+  </main>
+{% endblock %}
+
+{% block page_footer %}
+  <footer>{% include "@base/page/part/footer.twig" %}</footer>
+  {{ get_footer() }}
+{% endblock %}
+
+{% block page_custom_js %}
+  {% include "@base/page/part/custom-placeholder-bottom.twig" %}
+{% endblock %}
+
+</body>
+</html>

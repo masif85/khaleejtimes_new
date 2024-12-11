@@ -1,0 +1,54 @@
+<item xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/">
+    {% if title %}
+        <title>{{ title|raw }}</title>
+    {% endif %}
+
+    {% if link %}
+        <link>{{ link }}</link>
+    {% endif %}
+
+    {% if description %}
+        <description><![CDATA[
+            {% if images %}
+                <div>
+                    <img src="{{ images[0].url }}" height="{{ images[0].height }}" width="{{ images[0].width }}"
+                         alt="" class="webfeedsFeaturedVisual"/>
+                </div>
+            {% endif %}
+            {{ description|raw }}
+            ]]>
+        </description>
+    {% endif %}
+
+    {% if creators %}
+        {% for creator in creators %}
+            <dc:creator>{{ creator }}</dc:creator>
+        {% endfor %}
+    {% endif %}
+
+    {% if guid %}
+        <guid isPermaLink="false">{{ guid }}</guid>
+    {% endif %}
+
+    {% if pubdate %}
+        <pubDate>{{ pubdate|date("r") }}</pubDate>
+    {% endif %}
+
+    {% if categories %}
+        {% for category in categories %}
+            <category>{{ category }}</category>
+        {% endfor %}
+    {% endif %}
+
+    {% if images %}
+        {% for image in images %}
+            <media:thumbnail url="{{ image.url }}" height="{{ image.height }}" width="{{ image.width }}">
+                {% if image.authors %}
+                    {% for author in image.authors %}
+                        <media:credit>{{ author }}</media:credit>
+                    {% endfor %}
+                {% endif %}
+            </media:thumbnail>
+        {% endfor %}
+    {% endif %}
+</item>

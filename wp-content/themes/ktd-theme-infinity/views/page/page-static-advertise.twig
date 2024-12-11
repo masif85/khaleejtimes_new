@@ -1,0 +1,49 @@
+{% extends '@base/main.twig' %}
+
+{% block page_head %}
+  {% include "@base/page/part/metatags.twig" %}
+  {{ wp_head() }}
+{% endblock %}
+
+{% block page_content %}
+  <main>
+
+    <div class="single advertise">
+      <div class="container">
+        <div class="row">
+          <aside class="col-sm-12 col-md-12 col-lg-3 left-sidebar">
+            <!-- Left side -->
+            <div class="article-lt-section advertise">
+              <h6>FOR ALL ADVERTISING QUERIES, PLEASE CONTACT</h6>
+
+              <!--<p><i class="fas fa-paper-plane"></i> news@khaleejtimes.com</p>-->
+              <p><i class="fas fa-phone"></i> +971-4-3383535</p>
+
+            </div>
+          </aside>
+          <div class="col-lg-6 article-wrapper">
+
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- Content -->
+                {{ the_content() }}
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-3">
+            <!-- Right side -->
+            {{ render_sidebar("default-sidebar") }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+{% endblock %}
+
+{% block page_stylesheets_scripts_bottom %}
+  {{ parent() }}
+  {{ wp_footer() }}
+{% endblock %}

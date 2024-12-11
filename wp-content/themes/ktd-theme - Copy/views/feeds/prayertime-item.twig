@@ -1,0 +1,14 @@
+{% if content %}
+{% for object in content.object %}
+{% if object["@attributes"].type == 'x-im/content-part' %}
+{% if object.links.link["@attributes"].uri == 'im://content-part/prayer-times' %}
+<Parent date="{{ "now"|date("F j, Y") }}" arabicdate="{{ object.data.islamicdate }}">
+    <prayer>
+        <prayertime imsak="" fajr="{{ object.data.fajr|slice(0, 5) }}" shuruq="{{ object.data.shuruq|slice(0, 5) }}" duhr="{{ object.data.dhuhr|slice(0, 5) }}" asr="{{ object.data.asr|slice(0, 5) }}" iftar="" maghrib="{{ object.data.magrib|slice(0, 5) }}" isha="{{ object.data.isha|slice(0, 5) }}"/>
+    </prayer>
+</Parent>
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}
+

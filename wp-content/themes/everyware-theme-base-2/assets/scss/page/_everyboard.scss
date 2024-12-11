@@ -1,0 +1,222 @@
+main {
+  .every_board {
+
+    .rendered_board_widget {
+      margin-bottom: $half-gutter-width;
+    }
+
+    .rendered_board_linked_widget .row {
+      margin: 0 0 12px 0;
+      padding-bottom: 12px;
+      border-bottom: $border-solid-faded;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      div[class*=" board-col-"]:first-child {
+        padding-left: 0;
+      }
+
+      div[class*=" board-col-"]:last-child {
+        padding-right: 0;
+      }
+    }
+
+    .row {
+      > div {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      @include board-col(12);
+      @include board-col(11);
+      @include board-col(10);
+      @include board-col(9);
+      @include board-col(8);
+      @include board-col(7);
+      @include board-col(6);
+      @include board-col(5);
+      @include board-col(4);
+      @include board-col(3);
+      @include board-col(2);
+      @include board-col(1);
+
+      div[class*=" col-"] {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .rendered_board_widget,
+      .rendered_board_article {
+        width: 100%;
+        position: relative;
+
+        .thumbnail {
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        &.no-divider {
+          &::before {
+            background: none;
+            width: 0;
+          }
+        }
+      }
+
+      .rendered_board_article {
+        padding-top: $half-gutter-width;
+        padding-bottom: $half-gutter-width;
+        border-bottom: $border-solid-faded;
+
+        &:first-child {
+          padding-top: 0;
+        }
+
+        &:last-child {
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+      }
+
+      :last-child {
+        > .rendered_board_widget,
+        > .rendered_board_article {
+          &::after {
+            content: "";
+            background: none;
+          }
+        }
+      }
+
+      .col-12 {
+        &.col-video {
+          @include media-breakpoint-down(md) {
+            padding: 0;
+          }
+        }
+
+        div {
+          &:last-child {
+            @include media-breakpoint-down(sm) {
+              .grid-border {
+                border: 0;
+              }
+            }
+          }
+        }
+
+        &:last-child {
+          .grid-border {
+            border: 0;
+          }
+        }
+
+        .teaser__container {
+          &__sides {
+            &.mobile {
+              @include media-breakpoint-down(sm) {
+                padding-left: $single-gutter-width;
+                padding-right: $single-gutter-width;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /*
+      Adds a full width background to everyboard rows with media-section class.
+    */
+    .row {
+      &.media-section,
+      &.full-black-container {
+        margin-top: -$border-width;
+        margin-bottom: 0;
+        //  color: $color-body-background;
+        background: none;
+        position: relative;
+        max-width: $max-width-container;
+
+        &::before {
+          content: "";
+          display: block;
+          background-color: $dark-row-background-color;
+          height: 100%;
+          position: absolute;
+          width: 100vw;
+          left: -$border-width;
+        }
+        & > *{
+          z-index: 1;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+          box-shadow: -$border-width 0 0 0 $dark-border-color-faded, $border-width 0 0 0 $dark-border-color-faded;
+        }
+
+        .section-headline,
+        .ew-article-list__title,
+        .ew-most-read-google-analytics__title {
+          color: $teaser-dark-title-color;
+          border-bottom-color: $teaser-dark-kicker-color;
+
+          a:hover {
+            color: inherit;
+          }
+
+          &::after {
+            background-color: $teaser-dark-kicker-color;
+          }
+        }
+
+        .rendered_board_widget {
+          padding: 0;
+        }
+
+        .rendered_board_widget .row,
+        .rendered_board_linked_widget .row,
+        .rendered_board_article {
+          border-bottom: $dark-border-solid-faded;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+
+        div[class*=" col-"]:before {
+          background-color: $dark-border-color-faded;
+        }
+
+        /*
+          When the viewport is bigger than container max width we've to
+          calculate how many pixels the media-section background should move to the left.
+        */
+        @media(min-width: $max-width-container) {
+          &::before {
+            left: calc(#{$max-width-container} / 2 - 50vw - 1px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.site-container > .every_board > .row {
+  margin-left: 0;
+  margin-right: 0;
+  border-bottom: $border-solid-faded;
+
+  > div[class*=" board-col-"] {
+    padding: 12px;
+  }
+}

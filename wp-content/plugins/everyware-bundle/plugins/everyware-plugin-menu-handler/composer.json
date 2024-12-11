@@ -1,0 +1,42 @@
+{
+    "name": "infomaker/everyware-plugin-menu-handler",
+    "description": "Plugin for handling menus (custom fields, color, etc.).",
+    "version": "0.1.3",
+    "homepage": "https://www.infomaker.se",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Kevin Ortiz",
+            "email": "kevin.ortiz@newscycle.com",
+            "role": "Developer"
+        }
+    ],
+    "type": "everyware-plugin",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.infomaker.io/"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "infomaker/everyware-project-plugin": "*",
+        "infomaker/everyware-base": "*"
+    },
+    "require-dev": {
+        "johnpbloch/wordpress-core": "^4.9",
+        "roave/security-advisories": "dev-master",
+        "phpspec/phpspec": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Everyware\\Plugin\\MenuHandler\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spec\\": "tests/Spec/"
+        }
+    }
+}

@@ -1,0 +1,6 @@
+<div class="gallery-slider">
+    {% for image in images %}
+            {% set imageItem = image|replace({'col-12 col-xl-8 offset-xl-4': ''}) %}
+            {{ imageItem|raw }}
+    {% endfor %}
+</div>

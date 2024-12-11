@@ -1,0 +1,32 @@
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function get-middle-point($from, $to) {
+  $diff: ceil($to - $from);
+
+  @return floor($diff / 2);
+}
+
+@function get-col-from-size($size, $screen-size, $col-count: 12) {
+  $col-size: floor(strip-unit($screen-size) / $col-count);
+  @return round($size / $col-size);
+}
+
+@function get-size-from-col($col, $screen-size, $col-count: 12) {
+  $col-size: floor(strip-unit($screen-size) / $col-count);
+
+  @return $col-size * $col;
+}
+
+@function create-content-size-classlist($content-size, $screen-min, $class-slug) {
+  $max-col: $content-size-grid-columns;
+  $classlist: ();
+
+  $size: get-col-from-size($content-size, $screen-min, $max-col);
+  @while $max-col >= $size {
+    $classlist : append($classlist, ".#{$class-slug}-#{$max-col}", 'comma');
+    $max-col: $max-col - 1;
+  }
+  @return $classlist;
+}

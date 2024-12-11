@@ -1,0 +1,17 @@
+{% apply spaceless %}
+  <!-- recommended-news-teaser-mobile-netcore -->  
+ <div class="recommend-wrap-mobile-lb"> 
+   <h3>Recommended For You</h3> </div>
+ <div class="recommended-mobile-with-image">
+  {% for item in items %}
+  <div class="recommended-mobile-with-image-box">  
+     <a href="{{ item.properties.link }}?utm_source=netcore&utm_medium=art-rcmd-api&utm_campaign=recommended-inarticle-mob" class="g4a_amn_track_sidebar">  
+    <img src="{{item.properties.image|replace({'original': "cropresize"})}}&source=false&q=75&crop_w=0.99999&crop_h=0.9&{{get_image_type(item.properties.image,350) }}&x=1.0E-5&y=0.05" style="aspect-ratio: 3 / 2;">
+     <h4>{{ item.properties.title|raw }}</h4>
+     </a>
+  </div> 
+  {% endfor %} 
+</div>
+<div class="recommend-wrap-mobile-lb2">&nbsp;</div>
+{% endapply %}
+

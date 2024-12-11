@@ -1,0 +1,49 @@
+{% extends '@projectPlugin/components/admin.twig' %}
+
+{% block form_header %}{% endblock %}
+{% block form %}
+  <div class="oc-query-box">
+    <div class="form-group">
+      <label for="{{ title.id() }}">Title {{ form.tooltip(translate('This is the headline of your list.', textdomain))|raw }}</label>
+      {{ form.input('text', title, { class: 'form-control' })|raw }}
+    </div>
+
+    <div class="form-group">
+      <label>Open Content query {{ form.tooltip(translate('Write a query to search Open Content for articles.<hr><i>This query is restricted to <b>contenttype:Article</b></i>.', textdomain), 'top')|raw }}</label>
+      {{ form.textarea(oc_query, { class: 'form-control oc-query-search','rows': 6 })|raw }}
+    </div>
+
+    <div class="form-group">
+      <label>Sort by {{ form.tooltip(translate('Use this field to sort the result.<hr><i>The sorting options are configured in Open Content</i>', textdomain))|raw }}</label>
+        {{ form.select(oc_query_sort, sortings, { class: 'form-control oc-query-sort' })|raw }}
+    </div>
+
+    <div class="form-group">
+      <label>Start from {{ form.tooltip(translate('Use this field to set the position from where the articles will be fetched.<hr><i>Default: 0</i>', textdomain))|raw }}</label>
+      {{ form.input('number', oc_query_start, { class: 'form-control oc-query-start' })|raw }}
+    </div>
+
+    <div class="form-group">
+      <label>Limit {{ form.tooltip(translate('Use this field to set the limit number of articles you would like to fetch.<hr><i>Default: 10</i>', textdomain))|raw }}</label>
+      {{ form.input('number', oc_query_limit, { class: 'form-control oc-query-limit' })|raw }}
+    </div>
+
+    <div class="oc-query-result"></div>
+    <button class="btn btn-primary btn-block oc-query-test">Test query</button>
+  </div>
+
+  <div class="form-group">
+    <label>First article teaser layout {{ form.tooltip(translate('Set the layout for the first article in the list.<hr><i>Default: ocarticle-default.php</i>', textdomain))|raw }}</label>
+    {{ form.select(first_article_template, templates, { class: 'form-control', placeholder: 'Use Template' })|raw }}
+  </div>
+
+  <div class="form-group">
+    <label>Teaser layout {{ form.tooltip(translate('Set the layout for the articles of the list.<hr><i>Default: ocarticle-default.php</i>', textdomain))|raw }}</label>
+    {{ form.select(template, templates, { class: 'form-control', placeholder: 'Use Template' })|raw }}
+  </div>
+
+  <div class="form-group">
+    <label>Class {{ form.tooltip(translate('Html class for article list.', textdomain))|raw }}</label>
+    {{ form.input('text', class, { class: 'form-control' })|raw }}
+  </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+<article class="breaking {{ teaser_classes|default('breaking') }}" data-uuid="{{ uuid }}" data-comment-id="{{ comment_id }}">
+	<div class="breaking_title">BREAKING NEWS</div>
+	 <div class="container">
+    	<div class="row">
+
+        {% if images %}
+            <div class="teaser-image breaking col-md-4">
+                <a href="{{ url }}">
+                {% block image %}{% include "@base/teaser/partial/image.twig" %}{% endblock %}
+                </a>
+            </div>
+        {% endif %}
+
+        {% if images %}
+        <div class="teaser-content breaking col-md-8">
+        {% else %}
+        <div class="teaser-content breaking col-md-12">
+        {% endif %}
+            <div class="entry-title breaking">
+                <a href="{{ url }}">
+	            {% block headline %}{% include "@base/teaser/partial/headline.twig" %}{% endblock %}
+                </a>
+            </div>
+            <div class="teaser-body breaking">
+	            {% block leadin %}{% include "@base/teaser/partial/leadin.twig" %}{% endblock %}
+            </div>
+        </div>
+
+        </div>
+    </div>
+</article>

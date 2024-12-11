@@ -1,0 +1,10 @@
+{% if content %}
+{% for object in content.object %}
+{% if object["@attributes"].type == 'x-im/content-part' %}
+{% if object.links.link["@attributes"].uri == 'im://content-part/prayer-times' %}
+<KT arabicdate="{{ object.data.islamicdate }}"></KT>
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}
+

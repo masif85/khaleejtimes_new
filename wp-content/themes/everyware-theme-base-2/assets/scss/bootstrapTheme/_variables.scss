@@ -1,0 +1,149 @@
+// Color System
+// ======================================================
+$white: #ffffff !default;
+$gray-100: #E5E5E5 !default;
+$gray-200: #CCCCCC !default;
+$gray-300: #B2B2B2 !default;
+$gray-400: #999999 !default;
+$gray-500: #7F7F7F !default;
+$gray-600: #666666 !default;
+$gray-700: #4C4C4C !default;
+$gray-800: #333333 !default;
+$gray-900: #191919 !default;
+$black: #000 !default;
+
+$blue: #1473E6 !default;
+$indigo: #411CB5 !default;
+$purple: #6950F6 !default;
+$pink: #e83e8c !default;
+$red: #B22C2F !default;
+$orange: #FF8B00 !default;
+$yellow: #FFDC33 !default;
+$green: #009C2A !default;
+$teal: #20c997 !default;
+$cyan: #008DA5 !default;
+
+$primary: $blue !default;
+$secondary: $gray-600 !default;
+$dark-secondary: #FFC107 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+
+// Typography
+// ======================================================
+@import url(https://use.fontawesome.com/releases/v5.7.2/css/all.css);
+$font-family-sans-serif: $secondary-font-family !default;
+$font-family-serif: $primary-font-family !default;
+$font-family-base: $font-family-serif !default;
+
+$font-size-base: 1rem !default; //  16px by default in most browsers
+// Should be used for body text
+$font-size-xl: ($font-size-base * 1.375) !default; //  22px
+$font-size-lg: ($font-size-base * 1.25) !default; //  20px
+$font-size-md: ($font-size-base * 1.125) !default; //  18px
+$font-size-sm: ($font-size-base * .875) !default; //  14px
+$font-size-xs: ($font-size-base * .8125) !default; //  13px
+$font-size-xxs: ($font-size-base * .750) !default; //  12px
+
+
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-semi-bold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+// Links
+//
+// Style anchor elements.
+
+$link-color: $secondary !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: none !default;
+
+// Grid variable for padding's
+$grid-gutter-width: 20px !default;
+$single-gutter-width: $grid-gutter-width / 2 !default;
+$half-gutter-width: 6px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+// Container
+$container-max-width: 1380px;
+
+$container-max-widths: (
+  sm: map-get($grid-breakpoints, "md") - 1,
+  md: map-get($grid-breakpoints, "lg") - 1,
+  lg: map-get($grid-breakpoints, "xl") - 1,
+  xl: max($container-max-width, map-get($grid-breakpoints, "xl"))
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+$spacer: 1rem !default;
+
+$paragraph-margin-bottom: $spacer * 1.75 !default;
+$body-bg: $white !default;
+$body-color: $gray-900 !default;
+$border-width: 1px !default;
+$border-color: #e0e0e0 !default;
+$border-color-faded: rgba(0,0,0,0.12) !default;
+$dark-border-color-faded: rgba(255,255,255,0.20) !default;
+
+$mark-bg: $yellow !default;
+$mark-padding: 0 !default;
+
+$text-muted: #4C4C4C !default;
+
+// Tables
+$table-caption-color: $body-color !default;
+$table-bg: #f7f7f7 !default;
+$table-accent-bg: rgba($black, .05) !default; // even row color
+$table-border-color: $secondary !default;
+$table-cell-padding: 13px 16px !default;
+$table-striped-order: even !default;
+$table-head-color: $secondary !default;
+
+// Figures
+$figure-caption-font-size: $font-size-sm !default;
+$figure-caption-color: #4C4C4C !default;
+
+// Blockquotes
+$blockquote-small-font-size: $font-size-base * 1.5 !default;
+$blockquote-font-size: $font-size-base * 1.5 !default;
+
+// Headings
+$h1-font-size: $font-size-base * 1.75 !default; // 28px
+$h2-font-size: $font-size-base * 1.375 !default; // 22px
+$h3-font-size: $font-size-base * 1.125 !default; // 18px
+$headings-margin-bottom: $spacer * 1.75 !default;
+$headings-line-height: 1.1 !default;
+$headings-font-weight: $font-weight-bold !default;
+
+// Buttons
+$btn-font-family:             $secondary-font-family   !default;
+$btn-font-size:               $font-size-base * 0.9375 !default; // 15px
+
+// Navbar
+$nav-link-padding-y:                0.75rem !default;
+$navbar-padding-y:                  3.5px !default;
+$navbar-padding-x:                  10px !default;
+
+$navbar-brand-font-size:            $font-size-lg !default;
+$navbar-toggler-font-size:          $font-size-xs !default;
+$navbar-light-color:                $white !default;
+$navbar-light-hover-color:          $white !default;
+$navbar-light-active-color:         $secondary !default;
+
+$navbar-light-brand-color:          $white !default;
+$navbar-light-brand-hover-color:    $white !default;

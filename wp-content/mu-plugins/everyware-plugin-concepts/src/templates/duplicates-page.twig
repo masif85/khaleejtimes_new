@@ -1,0 +1,80 @@
+{% extends '@conceptsPlugin/admin-page.twig' %}
+
+{% block pageContent %}
+    <div class="panel panel-default">
+        <div class="panel-heading concepts-settings__heading">
+            <div class="concepts-settings__heading-part concepts-settings__heading-part-left">
+                <form method="post">
+                    <button class="btn concepts-settings__btn--refresh concepts-js-spinner concepts-js-tooltip"
+                            type="submit"
+                            name="refresh"
+                            data-placement="right"
+                            title="{{ translations.refreshButtonDescription }}">
+                        {{ translations.refreshButtonLabel }}<i class="fa fa-repeat"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="concepts-settings__heading-part concepts-settings__heading-part--right">
+
+            </div>
+        </div>
+        <div class="panel-body">
+            <p class="description"><strong>{{ translations.resultLabel }}:</strong> {{ duplicates|length }}</p>
+            <div class="panel-group" id="duplicates-accordion" role="tablist" aria-multiselectable="true">
+                {% for uuid, conceptPosts in duplicates %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="heading-{{ uuid }}">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#duplicates-accordion"
+                                   href="#collapse-{{ uuid }}"
+                                   aria-expanded="false"
+                                   aria-controls="collapse-{{ uuid }}"><strong>{{ '#'~ loop.index }}</strong>
+                                    - {{ uuid }}
+                                    <button class="btn-icon concepts-js-copy concepts-js-tooltip"
+                                            data-copy="{{ uuid }}"
+                                            title="Copy to clipboard">
+                                        <i class="fa fa-clone"></i>
+                                    </button>
+                                    <span class="badge pull-right concepts-js-tooltip" data-placement="left"
+                                          title="{{ translations.duplicatePostCountTooltip }}">{{ conceptPosts|length }}</span>
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="collapse-{{ uuid }}" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="heading-{{ uuid }}">
+                            <ul class="list-group concepts__list-group">
+                                {% for conceptPost in conceptPosts %}
+                                    <li class="list-group-item concept-post__item">
+                                        <div class="concept-post__content">
+                                            <h3 class="concept-post__heading">{{ conceptPost.title() }}</h3>
+                                            <p class="concept-post__text">
+                                                <strong>{{ translations.postLabels.permalink }}:</strong>&nbsp;
+                                                <a href="{{ conceptPost.permalink()|raw }}">{{ conceptPost.permalink()|raw }}</a>
+                                            </p>
+                                        </div>
+                                        <div class="concept-post__actions">
+                                            <a href="{{ conceptPost.editUrl()|raw }}"
+                                               class="concept-post__action-btn concept-post__action-btn--edit concepts-js-tooltip"
+                                               title="{{ translations.postEditTooltip }}"
+                                               data-placement="left">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <button
+                                               class="concept-post__action-btn concept-post__action-btn--remove concepts-js-tooltip concepts-js-remove-post"
+                                               title="{{ translations.postRemoveTooltip }}"
+                                               data-id="{{ conceptPost.id }}"
+                                               data-placement="left">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{%- if articles is iterable -%}
+    {% for article in articles %}
+        <item id="{{ article.uuid }}" postedOn="{{ article.pubdate|date("l, F d, Y") }}">
+            {% if article.teaser_headline %}
+                <title><![CDATA[{{ article.teaser_headline }} ]]></title>
+            {% endif %}
+            {% if article.permalink %}
+                <link>{{ article.permalink }}</link>
+            {% endif %}
+            {% if article.teaser_body %}
+                <description><![CDATA[{{article.teaser_body }}]]></description>
+            {% endif %}
+            {% if article.uuid %}
+                <guid isPermaLink="false">{{ article.uuid }}</guid>
+            {% endif %}
+            {% if article.pubdate %}
+                <pubDate>{{ article.pubdate|date("r") }}</pubDate>
+            {% endif %}
+            {% for image  in  article.teaser_image_uuids %}
+                <enclosure url="{{ image_endpoint_url }}/?uuid={{ image }}&amp;function=original&amp;type=preview" length="0" type="image/jpeg"/>
+            {% endfor %}
+            {% if article.videoid %}
+                <media:content url="https://www.dailymotion.com/embed/video/{{ article.videoid }}?autoplay=1" type="image/jpeg">
+                    <media:description><![CDATA[{{article.teaser_body }}]]></media:description>
+                    <media:copyright>Khaleej Times</media:copyright>
+                </media:content>
+            {% endif %}
+        </item>
+    {% endfor %}
+{%- endif -%}
+
+

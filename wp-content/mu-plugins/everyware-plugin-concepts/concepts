@@ -1,0 +1,50 @@
+#!/usr/bin/env php
+
+<?php
+
+use Everyware\Concepts\Commands\ApiCommand;
+use Everyware\Concepts\Commands\BootstrapCommand;
+use Everyware\Concepts\Commands\LocalFilesystem;
+use Everyware\Concepts\Commands\LocalStorage;
+use Everyware\Concepts\Commands\StateHandler;
+use Everyware\Concepts\Admin\OpenContentClient;
+use Everyware\Concepts\Commands\SyncCommand;
+use Symfony\Component\Console\Application;
+
+// First look for local environment with plugin root outside of project
+$dir = __DIR__ . '/vendor';
+
+// Start location for usage is assumed to be in Composers "vendor/bin".
+if ( ! file_exists($dir . '/autoload.php')) {
+    $dir = __DIR__ . '/..';
+}
+
+// Else try from plugin root "wp-content/mu-plugins/everyware-plugin-concepts"
+if ( ! file_exists($dir . '/autoload.php')) {
+    $dir = __DIR__ . '/../../../vendor';
+}
+
+if ( ! file_exists($dir . '/autoload.php')) {
+    echo 'Autoload not found.';
+    exit(1);
+}
+
+require $dir . '/autoload.php';
+
+$appInfo = json_decode(file_get_contents(__DIR__ . '/composer.json'), true);
+
+$app = new Application('Concepts Cli', $appInfo['version'] ?? '0.1.0');
+
+/*
+|--------------------------------------------------------------------------
+| Register "Make" Commands
+|--------------------------------------------------------------------------
+*/
+$localStoragePath = __DIR__ . '/commandStorage';
+$stateHandler = new StateHandler(new LocalStorage(new LocalFilesystem(), __DIR__ . '/commandStorage'));
+
+$app->add(new BootstrapCommand(new OpenContentClient(), $stateHandler));
+$app->add(new SyncCommand(new OpenContentClient(), $stateHandler));
+$app->add(new ApiCommand(new OpenContentClient(), $stateHandler));
+
+$app->run();

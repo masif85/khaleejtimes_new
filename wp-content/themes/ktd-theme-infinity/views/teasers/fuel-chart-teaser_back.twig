@@ -1,0 +1,48 @@
+{% apply spaceless %}        
+	
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<canvas id="line-chart" width="800" height="450"></canvas>
+<script>
+
+jQuery(document).ready(function() {
+   new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: ['Dec-2022','Jan-2023','Feb-2023','Mar-2023','Apr-2023','May-2023'],
+    datasets: [
+		
+	{ 
+        data: [3.30,2.78,3.05,3.09,3.01,3.16],
+        label: "Super 98",
+        borderColor: "#F08080",
+        fill: false
+      },
+	  	
+	{ 
+        data: [3.18,2.67,2.93,2.97,2.90,3.05],
+        label: "Special 95",
+        borderColor: "#14b0bc",
+        fill: false
+      },
+	  	
+	{ 
+        data: [3.11,2.59,2.86,2.90,2.82,2.97],
+        label: "E Plus 91",
+        borderColor: "#58FF33",
+        fill: false
+      },
+	  	
+	{ 
+        data: [3.74,3.29,3.38,3.14,3.03,2.91],
+        label: "Diesel",
+        borderColor: "#FFB833",
+        fill: false
+      },
+	      ]
+  }
+});
+});
+</script>
+
+	
+{% endapply %}

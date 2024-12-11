@@ -1,0 +1,23 @@
+<div class="tab-wrap">
+  <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <button class="nav-link one-tab active ARTICLEnml"  data-bs-target=".ARTICLE" type="button">News</button>
+       </li>
+        <li class="nav-item">
+          <button class="nav-link two-tab GALLERYnml" data-bs-target=".GALLERY" type="button">Photos</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link three-tab VIDEOnml" data-bs-target=".VIDEO" type="button" >Videos</button>
+        </li>              
+  </ul>
+        <div class="drop-wrap">
+          <select name="sort"  class="search-sele-nf" placeholder="SORT BY"  >
+            {#for value, title in sortOrders #}
+              <!--<option value="{{ value }}"{% if sort == value %} selected=""{% endif %}>{{ title }}</option> -->
+             <!-- <option value="" disabled selected>Sort by: Newest</option> -->
+              <option value="newest">Sort by: Newest</option>
+              <option value="oldest">Oldest</option>
+            {# endfor #}
+          </select>
+        </div>     
+  </div>

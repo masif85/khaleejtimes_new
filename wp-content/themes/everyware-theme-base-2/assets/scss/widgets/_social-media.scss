@@ -1,0 +1,22 @@
+.social-links {
+  display: flex;
+  a:hover {
+    color: $black;
+  }
+  a {
+    font-size: $social-link-font-size;
+    display: flex;
+    border: 1px solid $color-main-dark;
+    background-color: $color-article-social-links;
+    border-radius: 100%;
+    margin-right: 7px;
+    color: $link-color;
+    .fab {
+      width: $social-link-size;
+      height: $social-link-size;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

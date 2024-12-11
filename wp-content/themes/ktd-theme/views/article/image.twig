@@ -1,0 +1,29 @@
+{% if objectProperties.presentation != 'fullwidth' %}
+  <!-- object: image -->
+  {# Remove duplicate images in body text #}
+  
+    <div class="img-wrap">
+        {% set showoriginal = 0 %}
+        {% for flag in flags %}
+            {% if 'disableAutomaticCrop' in flag %}
+                {% set showoriginal = 1%}
+            {% endif %}
+        {% endfor %}
+        {% if showoriginal == 1 %}
+          <img class="img-fluid lazyload"
+               srcset="{{ fitSrcset }}"
+               src="{{ fitSrc }}" style="width: 100%; height: auto;" height="{{ height }}" width="{{ width }}"
+               alt="{% if alttext %}{{ alttext|striptags|replace({'"':'\''}) }}{% elseif text %}{{ text|striptags|replace({'"':'\''}) }}{% else %}{{ teaser_headline|replace({"\n":'', "\r":'', '"':'\''})|raw }}{% endif %}">
+
+        {% else %}
+          <img class="img-fluid lazyload"
+               srcset="{{ srcset }}"
+               src="{{ src }}" style="width: 100%; height: auto;" height="{{ height }}" width="{{ width }}"
+               alt="{% if alttext %}{{ alttext|striptags|replace({'"':'\''}) }}{% elseif text %}{{ text|striptags|replace({'"':'\''}) }}{% else %}{{ teaser_headline|replace({"\n":'', "\r":'', '"':'\''})|raw }}{% endif %}">
+        {% endif %}
+         <p>
+      {{ text|raw }}
+    </p>
+     </div>  
+  
+{% endif %}

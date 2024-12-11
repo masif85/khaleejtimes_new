@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.khaleejtimes.stage",
+    "sha256_cert_fingerprints":
+    ["97:93:D9:A6:CA:A0:E7:74:82:15:76:D8:F3:75:4D:7C:A4:DA:13:75:69:28:16:07:60:63:34:E9:D2:79:1B:A7"]
+  }
+}]

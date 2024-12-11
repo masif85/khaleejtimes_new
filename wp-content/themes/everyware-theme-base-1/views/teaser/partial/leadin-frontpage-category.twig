@@ -1,0 +1,19 @@
+{% if text %}
+    <div class="teaser__text">
+        {% if text is iterable %}
+            {% for paragraph in text %}
+                {% if teaser_frontpage_length %}
+                    {{ text|raw|length > teaser_frontpage_length ? text|raw|slice(0, teaser_frontpage_length) ~ '...' : text|raw }}
+                {% else %}
+                    {{ text|raw|length > 80 ? text|raw|slice(0, 100) ~ '...' : text|raw }}
+                {% endif %}
+            {% endfor %}
+        {% else %}
+                {% if teaser_frontpage_length %}
+                    {{ text|raw|length > teaser_frontpage_length ? text|raw|slice(0, teaser_frontpage_length) ~ '...' : text|raw }}
+                {% else %}
+                    {{ text|raw|length > 80 ? text|raw|slice(0, 100) ~ '...' : text|raw }}
+                {% endif %}
+        {% endif %}
+    </div>
+{% endif %}

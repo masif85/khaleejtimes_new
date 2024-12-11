@@ -1,0 +1,8 @@
+{% apply spaceless %}
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <rss version="2.0">
+    {% for channel in channels %}
+        {% include '@rssFeedsPlugin/views/rss-channel.twig' with channel %}
+    {% endfor %}
+    </rss>
+{% endapply %}

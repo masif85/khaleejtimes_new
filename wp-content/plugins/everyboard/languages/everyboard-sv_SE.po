@@ -1,0 +1,4483 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Everyboard\n"
+"POT-Creation-Date: 2021-04-19 12:23+0200\n"
+"PO-Revision-Date: 2021-04-19 12:24+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;_ex;_n;_nx;_n_noop;"
+"_nx_noop\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: board\n"
+"X-Poedit-SearchPath-2: list\n"
+"X-Poedit-SearchPath-3: oclist\n"
+"X-Poedit-SearchPath-4: settings\n"
+"X-Poedit-SearchPath-5: src\n"
+"X-Poedit-SearchPath-6: widgetprefab\n"
+"X-Poedit-SearchPath-7: everyboard.php\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: bin\n"
+"X-Poedit-SearchPathExcluded-2: documentation\n"
+"X-Poedit-SearchPathExcluded-3: languages\n"
+"X-Poedit-SearchPathExcluded-4: node_modules\n"
+"X-Poedit-SearchPathExcluded-5: tests\n"
+"X-Poedit-SearchPathExcluded-6: vendor\n"
+
+#: board/board_custom_post_type.php:224
+msgid "Row"
+msgstr "Rad"
+
+#: board/board_custom_post_type.php:459 settings/settings.php:279
+msgid "success"
+msgstr "lyckades"
+
+#: board/board_custom_post_type.php:539 settings/settings.php:192
+msgid "Board Settings"
+msgstr "Board Inställningar"
+
+#: board/board_custom_post_type.php:570
+msgid ""
+"Upload JSON to import. <strong>Will override current board layout</strong>"
+msgstr ""
+"Ladda upp JSON för att importera. <strong>Detta kommer skriva över nuvarande "
+"board layout</strong>"
+
+#: board/board_custom_post_type.php:574
+msgid "Upload"
+msgstr "Ladda upp"
+
+#: board/board_custom_post_type.php:621
+msgid "No connections made yet"
+msgstr "Inga kopplingar gjorda"
+
+#: board/board_custom_post_type.php:624
+msgid "This board is active on:"
+msgstr "Denna board är aktiv på:"
+
+#: board/board_custom_post_type.php:637
+msgid "Use this board on page"
+msgstr "Använd denna board på sida"
+
+#: board/board_custom_post_type.php:651
+msgid "Add"
+msgstr "Lägg till"
+
+#: board/board_custom_post_type.php:661
+msgid "Preview on page"
+msgstr "Förhandsgranska på sida"
+
+#: board/board_custom_post_type.php:679
+msgid "Reload preview"
+msgstr "Ladda om förhandsgranskning"
+
+#: board/board_custom_post_type.php:702
+msgid ""
+"EveryBoards are templates that you can fill with content and set a page "
+"structure. After they are saved they can be applied to pages."
+msgstr ""
+"EveryBoards är mallar du kan strukturera upp och fylla med innehåll, för att "
+"sedan applicera på sidor."
+
+#: board/board_custom_post_type.php:734
+msgid "Versions"
+msgstr "Versioner"
+
+#: board/board_custom_post_type.php:738
+msgid "Share"
+msgstr "Delning"
+
+#: board/board_custom_post_type.php:774
+msgid "Make this board available to use by other sites within this network."
+msgstr ""
+"Gör denna board tillgänglig för användning av andra webbplatser inom detta "
+"nätverk."
+
+#: board/board_custom_post_type.php:1019
+msgid "Result for:"
+msgstr "Resultat för:"
+
+#: board/board_custom_post_type.php:1021
+msgid "Total hits:"
+msgstr "Antal träffar:"
+
+#: board/board_custom_post_type.php:1025
+msgid "Page:"
+msgstr "Sida:"
+
+#: board/board_custom_post_type.php:1026 widgetprefab/widgetprefab.php:139
+msgid "of"
+msgstr "av"
+
+#: board/board_custom_post_type.php:1030
+msgid "Save Search"
+msgstr "Spara sökning"
+
+#: board/board_custom_post_type.php:1073
+msgid "No Hits:"
+msgstr "Inga träffar:"
+
+#: board/board_custom_post_type.php:1074
+msgid "Empty or invalid query"
+msgstr "Tom eller felaktig fråga"
+
+#: board/board_custom_post_type.php:1237
+msgid "Product:"
+msgstr "Produkt:"
+
+#: board/board_custom_post_type.php:1243
+msgid "Section:"
+msgstr "Sektion:"
+
+#: board/board_custom_post_type.php:1251
+msgid "Pubdate:"
+msgstr "Publiceringsdatum:"
+
+#: board/board_custom_post_type.php:1268
+msgid "Tags:"
+msgstr "Tags:"
+
+#: board/board_custom_post_type.php:1275 board/board_custom_post_type.php:1293
+msgid "Author:"
+msgstr "Författare:"
+
+#: board/board_custom_post_type.php:1292
+msgid "Authors:"
+msgstr "Författare:"
+
+#: board/board_custom_post_type.php:1336
+msgid "No headline"
+msgstr "Ingen rubrik"
+
+#: board/board_custom_post_type.php:1395
+msgid "Published: "
+msgstr "Publicerad: "
+
+#: board/board_custom_post_type.php:1430
+msgid "The article"
+msgstr "Artikeln"
+
+#: board/board_custom_post_type.php:1431
+msgid "was removed from Open Content."
+msgstr "har blivit borttagen från Open Content."
+
+#: board/board_custom_post_type.php:1518
+msgid "Linked board"
+msgstr "Länkad board"
+
+#: board/board_custom_post_type.php:1529
+msgid "Template board"
+msgstr "Board Mall"
+
+#: board/board_custom_post_type.php:1544
+msgid "Embed Widget"
+msgstr "Inbäddad WIdget"
+
+#: board/board_custom_post_type.php:1550
+msgid "List item"
+msgstr "Listobjekt"
+
+#: board/board_custom_post_type.php:1562 board/board_custom_post_type.php:2238
+msgid "OC List item"
+msgstr "Listobjekt"
+
+#: board/board_custom_post_type.php:1574 board/board_custom_post_type.php:4547
+msgid "Content container"
+msgstr "Innehållscontainer"
+
+#: board/board_custom_post_type.php:1585 board/board_custom_post_type.php:1609
+#: board/board_custom_post_type.php:3865 board/board_custom_post_type.php:4265
+#: board/board_custom_post_type.php:4279
+msgid "Click to toggle"
+msgstr "Klicka för att växla"
+
+#: board/board_custom_post_type.php:1587
+msgid "Static widgets"
+msgstr "Statiska widgets"
+
+#: board/board_custom_post_type.php:1675
+msgid "Description:"
+msgstr "Beskrivning:"
+
+#: board/board_custom_post_type.php:1678
+msgid "No description found"
+msgstr "Ingen beskrivning hittades"
+
+#: board/board_custom_post_type.php:1725 board/board_custom_post_type.php:1726
+msgid "Undefined"
+msgstr "Odefinierad"
+
+#: board/board_custom_post_type.php:1755
+msgid "No content yet"
+msgstr "Inget innehåll än"
+
+#: board/board_custom_post_type.php:1796 board/board_custom_post_type.php:1891
+#, php-format
+msgid "Board selected: %s"
+msgstr "Vald board: %s"
+
+#: board/board_custom_post_type.php:1874 board/board_custom_post_type.php:1903
+#: board/board_custom_post_type.php:4521
+msgid "No board selected"
+msgstr "Ingen board är vald"
+
+#: board/board_custom_post_type.php:1875 board/board_custom_post_type.php:1928
+#: board/board_custom_post_type.php:1946 src/Widgets/ClientValidator.php:42
+msgid "No data source connected"
+msgstr "Ingen datakälla är kopplad"
+
+#: board/board_custom_post_type.php:1892
+#, php-format
+msgid "Requires %s articles"
+msgstr "Behöver %s artiklar"
+
+#: board/board_custom_post_type.php:1913
+msgid "Missing data source."
+msgstr "Saknar datakälla."
+
+#: board/board_custom_post_type.php:1937
+msgid "%num% articles from list (%list%)"
+msgstr "%num% artiklar från lista (%list%)"
+
+#: board/board_custom_post_type.php:1955
+msgid "%num% articles from query (%query%)"
+msgstr "%num% artiklar från sökfrågan (%query%)"
+
+#: board/board_custom_post_type.php:1963
+#, php-format
+msgid "Unknown data source \"%s\""
+msgstr "Okänd datakälla ”%s”"
+
+#: board/board_custom_post_type.php:1974
+#, php-format
+msgid "Data source: %s"
+msgstr "Datakälla: %s"
+
+#: board/board_custom_post_type.php:2006
+msgid "Not enough articles for positions in board"
+msgstr "Inte tillräckligt med artiklar för positionerna i boarden"
+
+#: board/board_custom_post_type.php:2026
+msgid "In Trash"
+msgstr "I soptunnan"
+
+#: board/board_custom_post_type.php:2030
+#, php-format
+msgid "Shared from %s"
+msgstr "Delad från %s"
+
+#: board/board_custom_post_type.php:2356
+msgid "Copy"
+msgstr "Kopiera"
+
+#: board/board_custom_post_type.php:2358
+msgid "Export"
+msgstr "Exportera"
+
+#: board/board_custom_post_type.php:2769
+msgid "EveryBoard requires jQuery to work properly but couldn't find it!"
+msgstr "EveryBoard kräver jQuery för att fungera korrekt men hittades ej!"
+
+#: board/board_custom_post_type.php:2771
+msgid "EveryBoard requires Everyware.js to work properly but couldn't find it!"
+msgstr ""
+"Everyware.js krävs för att EveryBoard ska fungera korrekt men hittades ej!"
+
+#: board/board_custom_post_type.php:2773
+msgid ""
+"EveryBoard need to have the Everyboard-variable to be localized by Wordpress "
+"in order to work properly!"
+msgstr ""
+"EveryBoard kräver att Everyboard-variabeln är lokaliserad av Wordpress för "
+"att fungera korrekt!"
+
+#: board/board_custom_post_type.php:2775
+msgid ""
+"EveryBoard need to have the ajaxurl-variable to be localized by Wordpress in "
+"order to work properly!"
+msgstr ""
+"EveryBoard kräver att ajaxurl-variabeln är lokaliserad av Wordpress för att "
+"fungera korrekt!"
+
+#: board/board_custom_post_type.php:2777
+msgid ""
+"EveryBoard need to have the article_templates-variable to be localized by "
+"Wordpress in order to work properly!"
+msgstr ""
+"EveryBoard kräver att article_templates-variabeln är lokaliserad av "
+"Wordpress för att fungera korrekt!"
+
+#: board/board_custom_post_type.php:2779
+msgid ""
+"EveryBoard need to have the framework-variable to be localized by Wordpress "
+"in order to work properly!"
+msgstr ""
+"EveryBoard kräver att framework-variabeln är lokaliserad av Wordpress för "
+"att fungera korrekt!"
+
+#: board/board_custom_post_type.php:2781
+msgid "EveryBoard requires Handlebars to work properly but couldn't find it!"
+msgstr ""
+"Handlebars krävs för att EveryBoard ska fungera korrekt men hittades ej!"
+
+#: board/board_custom_post_type.php:2783
+msgid "Settings"
+msgstr "Inställningar"
+
+#: board/board_custom_post_type.php:2784
+msgid "Template Board Settings"
+msgstr "Board Mall Inställningar"
+
+#: board/board_custom_post_type.php:2785
+msgid "Active layout"
+msgstr "Aktiv layout"
+
+#: board/board_custom_post_type.php:2786
+msgid "Internal linked board"
+msgstr "Intern länkad board"
+
+#: board/board_custom_post_type.php:2787
+msgid "External linked board"
+msgstr "Extern länkad board"
+
+#: board/board_custom_post_type.php:2788
+msgid "Board"
+msgstr "Board"
+
+#: board/board_custom_post_type.php:2789
+msgid "Shared board"
+msgstr "Spara board"
+
+#: board/board_custom_post_type.php:2790
+msgid "Name"
+msgstr "Namn"
+
+#: board/board_custom_post_type.php:2791 board/board_custom_post_type.php:2820
+#: settings/settings.php:422
+msgid "Description"
+msgstr "Beskrivning"
+
+#: board/board_custom_post_type.php:2792
+msgid "Content"
+msgstr "Innehåll"
+
+#: board/board_custom_post_type.php:2793
+msgid "Data source"
+msgstr "Datakälla"
+
+#: board/board_custom_post_type.php:2794
+msgid "Select List"
+msgstr "Välj lista"
+
+#: board/board_custom_post_type.php:2795
+msgid "Enter query"
+msgstr "Skriv sökfråga"
+
+#: board/board_custom_post_type.php:2796
+msgid "Select"
+msgstr "Välj"
+
+#: board/board_custom_post_type.php:2797 list/list.php:107
+msgid "List"
+msgstr "Lista"
+
+#: board/board_custom_post_type.php:2798
+msgid "Query"
+msgstr "Fråga"
+
+#: board/board_custom_post_type.php:2799
+msgid "Sorting order"
+msgstr "Sorterings ordniong"
+
+#: board/board_custom_post_type.php:2800
+msgid "Start from"
+msgstr "Börja från"
+
+#: board/board_custom_post_type.php:2801 board/board_custom_post_type.php:2808
+msgid "Limit"
+msgstr "Gräns"
+
+#: board/board_custom_post_type.php:2802
+msgid "Validate query"
+msgstr "Validera sökfråga"
+
+#: board/board_custom_post_type.php:2803
+msgid "Internal List"
+msgstr "Intern lista"
+
+#: board/board_custom_post_type.php:2804
+msgid "External List"
+msgstr "Extern lista"
+
+#: board/board_custom_post_type.php:2805
+msgid "List start"
+msgstr "List start"
+
+#: board/board_custom_post_type.php:2806
+msgid "List limit"
+msgstr "List antal"
+
+#: board/board_custom_post_type.php:2807
+msgid "Position"
+msgstr "Listposition"
+
+#: board/board_custom_post_type.php:2809
+msgid "device"
+msgstr "enhet"
+
+#: board/board_custom_post_type.php:2810
+msgid "width"
+msgstr "bredd"
+
+#: board/board_custom_post_type.php:2811
+msgid "hide"
+msgstr "dölj"
+
+#: board/board_custom_post_type.php:2812
+msgid "remove"
+msgstr "ta bort"
+
+#: board/board_custom_post_type.php:2813
+msgid "Save this row and its current settings as a template"
+msgstr "Spara denna rad och dess innehåll som en mall"
+
+#: board/board_custom_post_type.php:2815
+msgid "Close window"
+msgstr "Stäng fönstret"
+
+#: board/board_custom_post_type.php:2816
+msgid "Close form without saving"
+msgstr "Stäng fönstret utan att spara"
+
+#: board/board_custom_post_type.php:2817
+msgid "Save changes without closing form"
+msgstr "Spara ändringar utan att stänga fönstret"
+
+#: board/board_custom_post_type.php:2818
+msgid "Save changes & close form"
+msgstr "Spara ändringar och stäng fönster"
+
+#: board/board_custom_post_type.php:2819
+msgid "Save as template"
+msgstr "Spara som mall"
+
+#: board/board_custom_post_type.php:2821
+msgid "Add your HTML here!"
+msgstr "Lägg till din HTML här!"
+
+#: board/board_custom_post_type.php:2822
+msgid "Edit classes"
+msgstr "Editera klasser"
+
+#: board/board_custom_post_type.php:2823
+msgid "active classes"
+msgstr "aktiva klasser"
+
+#: board/board_custom_post_type.php:2824
+msgid "deactivate wrapper"
+msgstr "avaktivera wrapper"
+
+#: board/board_custom_post_type.php:2825
+msgid "Classlist"
+msgstr "Klasslista"
+
+#: board/board_custom_post_type.php:2826
+msgid "Done"
+msgstr "Klar"
+
+#: board/board_custom_post_type.php:2827 list/list.php:140
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: board/board_custom_post_type.php:2828
+msgid "Apply"
+msgstr "Tillämpa"
+
+#: board/board_custom_post_type.php:2829
+msgid "OK"
+msgstr "OK"
+
+#: board/board_custom_post_type.php:2830 board/board_custom_post_type.php:4494
+msgid "Inherited"
+msgstr "Ärvd"
+
+#: board/board_custom_post_type.php:2831 board/board_custom_post_type.php:4492
+msgid "Template:"
+msgstr "Mall:"
+
+#: board/board_custom_post_type.php:2832
+msgid "Saving"
+msgstr "Sparar"
+
+#: board/board_custom_post_type.php:2833
+msgid "This widget is not connected to a board"
+msgstr "Denna widget är inte kopplad till en board"
+
+#: board/board_custom_post_type.php:2834
+msgid "This widget is connected to"
+msgstr "Denna widget är kopplad till"
+
+#: board/board_custom_post_type.php:2835
+msgid "Remove item and its content?"
+msgstr "Ta bort objektet och dess innehåll?"
+
+#: board/board_custom_post_type.php:2836
+msgid "Do you want to remove this query permanently?"
+msgstr "Vill du ta bort denna sökfråga permanent?"
+
+#: board/board_custom_post_type.php:2837
+msgid "Do you want to save this query?"
+msgstr "Vill du spara denna sökfråga?"
+
+#: board/board_custom_post_type.php:2838
+msgid "Do you want to remove this row permanently?"
+msgstr "Vill du ta bort denna rad permanent?"
+
+#: board/board_custom_post_type.php:2839
+msgid "Hits"
+msgstr "Träffar"
+
+#: board/board_custom_post_type.php:2840
+msgid "Are you sure you want to restore the board to an earlier version?"
+msgstr ""
+"Är du säker på att du vill återställa denna board till en tidigare version?"
+
+#: board/board_custom_post_type.php:2842
+msgid "Could not restore to this version."
+msgstr "Kunde inte återställa till denna versionen."
+
+#: board/board_custom_post_type.php:2843
+msgid ""
+"No earlier versions of this board exists. If you publish the board a version "
+"will be created."
+msgstr ""
+"Inga tidigare versioner av denna board finns. Vid publicering kommer en "
+"version av borden skapas."
+
+#: board/board_custom_post_type.php:2845
+msgid "This board is active on"
+msgstr "Denna board är aktiv på"
+
+#: board/board_custom_post_type.php:2846
+msgid "No page was chosen!"
+msgstr "Inge sida vald!"
+
+#: board/board_custom_post_type.php:2847
+msgid "Loading article"
+msgstr "Laddar artikel"
+
+#: board/board_custom_post_type.php:2848
+msgid "Could not find article from OC."
+msgstr "Kunde inte hitta artikel i OC."
+
+#: board/board_custom_post_type.php:2849
+msgid "No OC connection found."
+msgstr "Ingen OC uppkoppling funnen."
+
+#: board/board_custom_post_type.php:2850
+msgid "Loading image"
+msgstr "Laddar bild"
+
+#: board/board_custom_post_type.php:2851
+msgid "Board Changed"
+msgstr "Board ändrad"
+
+#: board/board_custom_post_type.php:2852
+msgid ""
+"The Board content has changed. This change could have been made from another "
+"browser, user, or tab. Please go back or close this window and continue "
+"working with the board in the active window."
+msgstr ""
+"Innehållet i boarden har ändrats. Denna ändring kan ha gjorts från en annan "
+"browser, tabb eller av en annan användare. Vänligen gå tillbaka eller stäng "
+"detta fönster och fortsätt arbeta med boarden i det aktiva fönstret."
+
+#: board/board_custom_post_type.php:2854
+msgid "Go back"
+msgstr "Gå tillbaka"
+
+#: board/board_custom_post_type.php:2855
+msgid "Confirm delete"
+msgstr "Bekräfta radering"
+
+#: board/board_custom_post_type.php:2856
+msgid "Are you sure you want to delete this"
+msgstr "Är du säker på att du vill ta bort denna"
+
+#: board/board_custom_post_type.php:2857
+msgid "column"
+msgstr "kolumn"
+
+#: board/board_custom_post_type.php:2858
+msgid "row"
+msgstr "rad"
+
+#: board/board_custom_post_type.php:2859
+msgid "Please confirm delete by checking this."
+msgstr "Bekräfta radering."
+
+#: board/board_custom_post_type.php:2860
+msgid "Your drop was outside the content area"
+msgstr "Ditt drop var utanför kolumninnehållet"
+
+#: board/board_custom_post_type.php:2861
+msgid "from"
+msgstr "från"
+
+#: board/board_custom_post_type.php:2862
+msgid "Render board from source site."
+msgstr "Rendera board från ursprungssiten."
+
+#: board/board_custom_post_type.php:2863 list/views/admin.php:23
+msgid "List name"
+msgstr "Listnamn"
+
+#: board/board_custom_post_type.php:2864
+msgid "Render from site"
+msgstr "Rendera board från ursprungssiten"
+
+#: board/board_custom_post_type.php:2865
+msgid "Render items from source site."
+msgstr "Rendera från ursprungssiten."
+
+#: board/board_custom_post_type.php:3279 board/board_custom_post_type.php:3280
+msgid "Add New"
+msgstr "Lägg till ny"
+
+#: board/board_custom_post_type.php:3281
+msgid "Edit"
+msgstr "Editera"
+
+#: board/board_custom_post_type.php:3282
+msgid "New"
+msgstr "Ny"
+
+#: board/board_custom_post_type.php:3283
+msgid "View"
+msgstr "Se"
+
+#: board/board_custom_post_type.php:3284 board/board_custom_post_type.php:3860
+msgid "Search"
+msgstr "Sök"
+
+#: board/board_custom_post_type.php:3285
+msgid "Does not contain any"
+msgstr "Innehåller inga"
+
+#: board/board_custom_post_type.php:3286
+msgid "Trash does not contain any"
+msgstr "Papperskorgen innehåller inga"
+
+#: board/board_custom_post_type.php:3489
+msgid "You are working with draft."
+msgstr "Du arbetar med ett utkast."
+
+#: board/board_custom_post_type.php:3490
+msgid "Place link to no draft here"
+msgstr "Placera länk till en board som inte är utkast här"
+
+#: board/board_custom_post_type.php:3701
+msgid "Column"
+msgstr "Kolumn"
+
+#: board/board_custom_post_type.php:3833
+msgid "Search query"
+msgstr "Sökfråga"
+
+#: board/board_custom_post_type.php:3838
+msgid "Section"
+msgstr "Sektion"
+
+#: board/board_custom_post_type.php:3843
+msgid "Pubdate start"
+msgstr "Startdatum publicering"
+
+#: board/board_custom_post_type.php:3848
+msgid "Pubdate end"
+msgstr "Slutdatum publicering"
+
+#: board/board_custom_post_type.php:3852
+msgid "Sort by:"
+msgstr "Sortera efter:"
+
+#: board/board_custom_post_type.php:3866
+msgid "Saved searches:"
+msgstr "Sparade sökningar:"
+
+#: board/board_custom_post_type.php:3907
+msgid "Make Board Connections:"
+msgstr "Skapa boardkoppling:"
+
+#: board/board_custom_post_type.php:3911
+msgid "Import Board:"
+msgstr "Importera board:"
+
+#: board/board_custom_post_type.php:4069
+msgid "Show board with mobile layout"
+msgstr "Visa board med mobillayout"
+
+#: board/board_custom_post_type.php:4075
+msgid "Show board with tablet layout"
+msgstr "Visa board med tabletlayout"
+
+#: board/board_custom_post_type.php:4081
+msgid "Show board with desktop layout"
+msgstr "Visa board med desktoplayout"
+
+#: board/board_custom_post_type.php:4087
+msgid "Show board with big screen layout"
+msgstr "Visa board med storskärmslayout"
+
+#: board/board_custom_post_type.php:4116
+msgid "Save Board:"
+msgstr "Spara board:"
+
+#: board/board_custom_post_type.php:4122
+msgid "Structure"
+msgstr "Struktur"
+
+#: board/board_custom_post_type.php:4123
+msgid "Widgets"
+msgstr "Widgets"
+
+#: board/board_custom_post_type.php:4124
+msgid "Articles"
+msgstr "Artiklar"
+
+#: board/board_custom_post_type.php:4125
+msgid "Publish"
+msgstr "Publicera"
+
+#: board/board_custom_post_type.php:4203
+msgid "Publish board"
+msgstr "Publicera board"
+
+#: board/board_custom_post_type.php:4205
+msgid "Save draft"
+msgstr "Spara utkast"
+
+#: board/board_custom_post_type.php:4254
+msgid "Structure Items:"
+msgstr "Strukturbitar:"
+
+#: board/board_custom_post_type.php:4267
+msgid "Templates"
+msgstr "Mallar"
+
+#: board/board_custom_post_type.php:4281
+msgid "Saved Templates"
+msgstr "Sparade mallar"
+
+#: board/board_custom_post_type.php:4312
+msgid "Visibility"
+msgstr "Synlighet"
+
+#: board/board_custom_post_type.php:4320
+msgid "On mobile"
+msgstr "På mobil"
+
+#: board/board_custom_post_type.php:4328
+msgid "On tablet"
+msgstr "På tablet"
+
+#: board/board_custom_post_type.php:4336
+msgid "On desktop"
+msgstr "På desktop"
+
+#: board/board_custom_post_type.php:4357
+msgid "Filter widgets..."
+msgstr "Filtrera widgets..."
+
+#: board/board_custom_post_type.php:4527
+msgid "Selected board cannot be found"
+msgstr "Den valda boarden kan inte hittas"
+
+#: board/board_custom_post_type.php:4531
+msgid "Selected board has been moved to trash"
+msgstr "Vald board har flyttats till papperskorgen"
+
+#: board/board_page.php:112
+msgid "Choose an EveryBoard"
+msgstr "Välj en EveryBoard"
+
+#: board/board_page.php:116
+msgid "(No board)"
+msgstr "(Ingen board)"
+
+#: board/board_upgrader.php:21
+msgid "Board Upgrader"
+msgstr "Boarduppgraderare"
+
+#: board/board_upgrader.php:32
+msgid "Upgrade Everyboard"
+msgstr "Uppgradera EveryBoard"
+
+#: everyboard.php:75
+msgid ""
+"<strong>EveryBoard</strong> needs the <strong>Open Content Everyware</"
+"strong> plugin to be activated and has therefore been <strong>deactivated</"
+"strong>.\n"
+"            <br> Activate <strong>Open Content Everyware</strong> and try "
+"again"
+msgstr ""
+"<strong>EveryBoard</strong> har beroende till Open Content Everyware för att "
+"aktiveras och har därför blivit <strong>avaktiverat</strong>.<br />Aktivera "
+"<strong>Open Content Everyware</strong> och försök igen"
+
+#: everyboard.php:185
+msgid ""
+"Are you sure you want to move the widget from the Everyboard sidebar? Any "
+"active instance of the widget will be removed from the boards."
+msgstr ""
+"Är du säker att du vill flytta widgeten från Everyboard widgetfältet? Om det "
+"finns någon aktiv instans av widgeten så kommer den bli raderad från alla "
+"boards."
+
+#: list/list.php:79
+msgid "List User"
+msgstr "Listanvändare"
+
+#: list/list.php:101
+msgid "You do not have access to this page"
+msgstr "Du har inte rättighet att se denna sida"
+
+#: list/list.php:113
+msgid "List Settings"
+msgstr "Listinställningar"
+
+#: list/list.php:138
+msgid ""
+"Doing this will cause all changes not saved to be lost, are you sure you "
+"want to proceed?"
+msgstr ""
+"Alla osparade ändringar kommer försvinna, är du säker på att du vill "
+"fortsätta?"
+
+#: list/list.php:139
+msgid "Proceed"
+msgstr "Fortsätt"
+
+#: list/list.php:141
+msgid "Please fill in a list name"
+msgstr "Vänligen fyll i ett namn på listan"
+
+#: list/list.php:142
+msgid "The current list name already exists, please choose another one"
+msgstr "Det finns redan en lista med samma namn, vänligen välj ett annat"
+
+#: list/list.php:210 list/list.php:225
+msgid "Could not create board list"
+msgstr "Kunde inte skapa lista"
+
+#: list/list.php:383 list/list.php:398
+msgid "Could not fetch board list"
+msgstr "Kunde inte hämta listan"
+
+#: list/list.php:481
+msgid "List data is empty"
+msgstr "Listans data är tom"
+
+#: list/list.php:495
+msgid "Could not save list"
+msgstr "Kunde inte spara listan"
+
+#: list/list.php:505
+msgid ""
+"There is a newer version of this list available, please reload to get the "
+"latest changes."
+msgstr ""
+"Det finns en nyare version av listan tillgänglig, vänligen ladda om sidan "
+"för att få den nya versionen."
+
+#: list/list.php:549
+msgid "Something went wrong while trying to remove the list"
+msgstr "Något gick fel när listan skulle raderas"
+
+#: list/views/admin.php:8
+msgid "Choose a list"
+msgstr "Välj en lista"
+
+#: list/views/admin.php:14 list/views/admin.php:20
+msgid "Create new list"
+msgstr "Skapa ny lista"
+
+#: list/views/admin.php:30
+msgid "URL for NP"
+msgstr "URL till NP"
+
+#: list/views/admin.php:36
+msgid "Are you sure you'd like to remove this list?"
+msgstr "Är du säker på att du vill ta bort denna lista?"
+
+#: list/views/admin.php:37
+msgid "The article is already in the active list"
+msgstr "Artikeln finns redan i listan"
+
+#: list/views/settings.php:7
+msgid "Property to determine if a article is fully published"
+msgstr "Porperty som avgör om en artikel är publicerad eller ej"
+
+#: list/views/settings.php:30
+msgid ""
+"Settings for how many items that will be presented and save in EveryList. "
+"The other items will be deleted."
+msgstr ""
+"Inställning för hur många artiklar som blir visade och sparas i en "
+"EveryList. Andra objekt kommer att tas bort."
+
+#: oclist/oclist.php:59 oclist/views/settings.php:17
+msgid "Error"
+msgstr "Fel"
+
+#: oclist/oclist.php:60
+msgid "Failed to connect to Notifier"
+msgstr "Det gick inte att ansluta till Notifieraren"
+
+#: oclist/oclist.php:89 oclist/views/settings.php:49
+msgid "OC List Settings"
+msgstr "OC Listinställningar"
+
+#: oclist/oclist.php:438
+msgid ""
+"Could not find an relation property between List and Articles from the OC "
+"List settings."
+msgstr ""
+"Det gick inte att hitta en relationsegenskap mellan Lista och Artiklar från "
+"OC List-inställningarna."
+
+#: oclist/views/settings.php:18
+msgid "Warning"
+msgstr "Varning"
+
+#: oclist/views/settings.php:21
+msgid ""
+"We found multiple relational properties between lists and articles in your "
+"Open Content. Please select the property to use."
+msgstr ""
+"Vi hittade flera relations egenskaper (Properties) mellan artiklar och "
+"listor i din Open Content. Vänligen välj en egenskap i listan."
+
+#: oclist/views/settings.php:24
+#, php-format
+msgid ""
+"Could not find any article relations to list in your Open Content. Please "
+"make sure that the relation %s is set up."
+msgstr ""
+"Kunde inte hitta någon artikel relation till lista i Open Content. Var "
+"vänlig se till att relationen %s sätts upp."
+
+#: oclist/views/settings.php:33
+#, php-format
+msgid ""
+"The query will only fetch the content type %s. The default query fetches all "
+"lists from Open Content but you can further specify the query to filter "
+"which lists that should be available for your boards."
+msgstr ""
+"Sökfrågan kommer bara hämta objekt av typen %s. Som Utgångsläge kommer alla "
+"listor att efterfrågas från Open Content men du kan vidare specificera "
+"sökfrågan för vilka listor som ska finnas tillgängliga för dina boards."
+
+#: oclist/views/settings.php:37
+msgid "Article relation property is used to fetch data for articles in a list."
+msgstr ""
+"Artikelrelations-property används för att hämta data för artiklar som ligger "
+"i en listan."
+
+#: oclist/views/settings.php:40
+#, php-format
+msgid ""
+"Published property is a %s used to check if an article is published or not."
+msgstr ""
+"Property publicerad är en %s som används för att kontrollera om en artikel "
+"är publicerad eller inte."
+
+#: oclist/views/settings.php:43
+msgid ""
+"By registering a listener it will make sure that cached OC List documents "
+"are updated with events from Open Content."
+msgstr ""
+"Genom att registrera en lyssnare kommer den se till att OC List dokument, "
+"som är sparade i cache, uppdateras med händelser från Open Content."
+
+#: oclist/views/settings.php:55
+msgid "OC List Query"
+msgstr "OC List fråga"
+
+#: oclist/views/settings.php:63
+msgid "Published property"
+msgstr "Property publicerad"
+
+#: oclist/views/settings.php:67 oclist/views/settings.php:96
+msgid "-- Select --"
+msgstr "-- Välj --"
+
+#: oclist/views/settings.php:79
+msgid "Article relation property"
+msgstr "Artikelrelations-property"
+
+#: oclist/views/settings.php:83
+#, php-format
+msgid "Using the relation %s as value."
+msgstr "Använder relationen %s som värde."
+
+#: oclist/views/settings.php:119
+msgid "Notifier for OC Lists"
+msgstr "Notifierare för OC List"
+
+#: oclist/views/settings.php:125
+msgid "Notifier URL"
+msgstr "Notifierar URL"
+
+#: oclist/views/settings.php:147
+msgid "Listener"
+msgstr "Lyssnare"
+
+#: oclist/views/settings.php:194
+msgid "Register Listener"
+msgstr "Registrera Lyssnare"
+
+#: oclist/views/settings.php:195
+msgid "Deregister Listener"
+msgstr "Avregistrera Lyssnare"
+
+#: settings/settings.php:68
+msgid "Are you sure you want to remove this class?"
+msgstr "Är du säker på att du vill ta bort denna klass?"
+
+#: settings/settings.php:69
+msgid "Could not remove class, please try again or contact an administrator."
+msgstr ""
+"Kunde inte ta bort klass, var god försök igen eller kontakta en "
+"administratör."
+
+#: settings/settings.php:71
+msgid "Import failed, please check the format and try again."
+msgstr "Importering misslyckades, se över formatet och försök igen."
+
+#: settings/settings.php:72
+msgid "There was a problem adding the class, please try again."
+msgstr "Ett problem uppkom vid tillägg av klass, var god försök igen."
+
+#: settings/settings.php:73
+msgid ""
+"CSS Class name not valid, please try again. ( Only alphanumeric characters "
+"and \"-\" and \"_\" are allowed )."
+msgstr ""
+"CSS klassnamn är inte giltigt, var god försök igen. ( Endast alfanumeriska "
+"tecken samt \"-\" och \"_\" är tillåtna )."
+
+#: settings/settings.php:233 settings/settings.php:270
+#: settings/settings.php:275
+msgid "false"
+msgstr "falskt"
+
+#: settings/settings.php:297
+msgid "EveryBoard Settings"
+msgstr "EveryBoard Inställningar"
+
+#: settings/settings.php:303
+msgid "Board Rendering Framework"
+msgstr "Board Renderingsramverk"
+
+#: settings/settings.php:308
+msgid "Rendering Framework:"
+msgstr "Renderingsramverk:"
+
+#: settings/settings.php:310
+msgid ""
+"Choose the framework to use when rendering the board data. Normally this "
+"should be the same framework that your theme is built on (if any)."
+msgstr ""
+"Välj det ramverk som ska rendera boarddata. Vanligtvis bör detta vara samma "
+"ramverk som ditt tema är byggt på (om så är fallet)."
+
+#: settings/settings.php:324
+msgid "List widgets"
+msgstr "Widgets"
+
+#: settings/settings.php:334
+msgid "Active"
+msgstr "Aktiv"
+
+#: settings/settings.php:343
+msgid "Board Custom CSS Classes"
+msgstr "Anpassade Board CSS klasser"
+
+#: settings/settings.php:349
+msgid "Add board custom CSS class:"
+msgstr "Lägg till anpassad board CSS klass:"
+
+#: settings/settings.php:351
+msgid "Add a new CSS class that will be available when editing an board."
+msgstr ""
+"Lägg till ny CSS klass som kommer vara tilllgänglig vid editering av board."
+
+#: settings/settings.php:356
+msgid "Class Name"
+msgstr "Klassnamn"
+
+#: settings/settings.php:358
+msgid "the exact name of the actual css class"
+msgstr "det exakta namnet av css klassen"
+
+#: settings/settings.php:362
+msgid "Class Description"
+msgstr "Klassbeskrivning"
+
+#: settings/settings.php:364
+msgid "a description of the class for the end user"
+msgstr "en beskrivning av klassen för användaren"
+
+#: settings/settings.php:369
+msgid "Accessible to items of type:"
+msgstr "Tillgänglig för saker av typen:"
+
+#: settings/settings.php:372
+msgid "Board:"
+msgstr "Board:"
+
+#: settings/settings.php:378
+msgid "Row:"
+msgstr "Rad:"
+
+#: settings/settings.php:384
+msgid "Column:"
+msgstr "Kolumn:"
+
+#: settings/settings.php:390
+msgid "Article:"
+msgstr "Artikel:"
+
+#: settings/settings.php:396
+msgid "Widget:"
+msgstr "Widget:"
+
+#: settings/settings.php:405
+msgid "Add class"
+msgstr "Lägg till klass"
+
+#: settings/settings.php:413
+msgid "Current board custom CSS classes:"
+msgstr "Nuvarande boards egna CSS klasser:"
+
+#: settings/settings.php:415
+msgid "The CSS classes that are available to users when editing a board."
+msgstr ""
+"CSS klasser som är tillgängliga för användare vid editering av en board."
+
+#: settings/settings.php:421
+msgid "Class name"
+msgstr "Klassnamn"
+
+#: settings/settings.php:423
+msgid "For types"
+msgstr "För typer"
+
+#: settings/settings.php:431
+msgid "Export / Import board custom CSS classes:"
+msgstr "Exportera / Importera egna board CSS klasser:"
+
+#: settings/settings.php:433
+msgid ""
+"Paste CSS classes from another site or copy the existing ones to export to "
+"another site."
+msgstr ""
+"Klistra in CSS klasser från en annan sida eller kopiera befintliga och "
+"exportera dessa."
+
+#: settings/settings.php:441
+msgid "Import CSS Classes"
+msgstr "Importera CSS klasser"
+
+#: settings/settings.php:444
+msgid "Export CSS Classes"
+msgstr "Exportera CSS klasser"
+
+#: settings/settings.php:452
+msgid "Templates:"
+msgstr "Mallar:"
+
+#: settings/settings.php:454
+msgid ""
+"Tick the teaser layout templates you want to register for use in boards and "
+"widgets."
+msgstr ""
+"Klicka i vilka puff layout mallar du vill registrera för användning i boards "
+"och widgets."
+
+#: settings/settings.php:500
+msgid ""
+"Internal lists in Wordpress, lets you structure lists of articles and use "
+"them in boards."
+msgstr ""
+"Interna listor i Wordpress, låter dig strukturera listor av artiklar som du "
+"kan använda i boards."
+
+#: settings/settings.php:508
+msgid "External lists saved in Open Content, requires Open Content 2.1."
+msgstr "Externa listor som sparas i Open Content, kräver Open Content 2.1."
+
+#: src/DashboardWidget.php:89
+msgid "Could not fetch version information, check back later!"
+msgstr "Kunde inte hämta versionsinformation, kom tillbaka senare!"
+
+#: src/DashboardWidget.php:91
+msgid "Up to date with latest release."
+msgstr "Använder senaste versionen."
+
+#: src/DashboardWidget.php:93
+msgid ""
+"There is a newer version of Everyboard available, update or contact "
+"Infomaker for more information."
+msgstr ""
+"Det finns en nyare version av Everyboard tillgänglig, uppdatera eller "
+"kontakta Infomaker for more information."
+
+#: src/DashboardWidget.php:95
+msgid "Latest version"
+msgstr "Senaste version"
+
+#: src/DashboardWidget.php:99
+msgid "Currently running Everyboard version: "
+msgstr "Aktiv version av Everyboard: "
+
+#: src/OcApiHandler.php:41
+msgid "Invalid UUID"
+msgstr "Ogiltigt UUID"
+
+#: src/OcApiHandler.php:48
+msgid "No articles in list"
+msgstr "Inga artiklar i listan"
+
+#: src/OcApiHandler.php:54 src/OcApiHandler.php:92
+msgid "%n articles"
+msgstr "%n artiklar"
+
+#: src/OcApiHandler.php:79
+msgid "Invalid query, or unauthorized"
+msgstr "Ogiltig sökfråga eller obehörig"
+
+#: src/OcApiHandler.php:86 src/Widgets/ClientValidator.php:83
+msgid "No articles found"
+msgstr "Inga artiklar hittades"
+
+#: src/OcArticleProvider.php:138
+#, php-format
+msgid "Invalid query \"%s\", or unauthorized."
+msgstr "Ogiltig sökfråga ”%s” eller obehörig."
+
+#: src/OcArticleProvider.php:193
+#, php-format
+msgid "Invalid sorting \"%s\""
+msgstr "Ogiltig sortering ”%s”"
+
+#: src/OcValidator.php:32
+msgid "No articles found in List"
+msgstr "Inga artiklar hittades i listan"
+
+#: src/OcValidator.php:41 src/Widgets/ClientValidator.php:63
+msgid "Missing query"
+msgstr "Saknar sökfråga"
+
+#: src/Widgets/ClientValidator.php:47
+msgid "Failed to validate List"
+msgstr "Det gick inte att validera listan"
+
+#: src/Widgets/ClientValidator.php:53 src/Widgets/ClientValidator.php:87
+#, php-format
+msgid "%d articles"
+msgstr "%d artiklar"
+
+#: src/Widgets/ClientValidator.php:67
+msgid "Invalid limit"
+msgstr "Ogiltigt värde(limit)"
+
+#: src/Widgets/ClientValidator.php:72
+msgid "Failed to validate Query"
+msgstr "Det gick inte att validera sökfrågan"
+
+#: src/Widgets/ClientValidator.php:104
+#, php-format
+msgid "Can not validate type: %s"
+msgstr "Kan inte validera typen: %s"
+
+#: widgetprefab/widgetprefab.php:131
+msgid "Should the widget be removed?"
+msgstr "Ska widgeten tas bort?"
+
+#: widgetprefab/widgetprefab.php:132
+msgid "Hide widget filters"
+msgstr "Göm filtrering"
+
+#: widgetprefab/widgetprefab.php:133 widgetprefab/widgetprefab.php:408
+msgid "Show widget filters"
+msgstr "Visa filtrering"
+
+#: widgetprefab/widgetprefab.php:134
+msgid "Filter by type"
+msgstr "Filtrera widgettyp"
+
+#: widgetprefab/widgetprefab.php:135
+msgid "Filter by tag"
+msgstr "Filtrera på typ"
+
+#: widgetprefab/widgetprefab.php:136
+msgid "Filter by inactive widgets"
+msgstr "Filtrera inaktiva widgets"
+
+#: widgetprefab/widgetprefab.php:137
+msgid "Inactive"
+msgstr "Inaktiv"
+
+#: widgetprefab/widgetprefab.php:138
+msgid "Showing"
+msgstr "Visar"
+
+#: widgetprefab/widgetprefab.php:140
+msgid "widgets"
+msgstr "widgets"
+
+#: widgetprefab/widgetprefab.php:141
+msgid "Clear all filters"
+msgstr "Rensa filter"
+
+#: widgetprefab/widgetprefab.php:156
+msgid "Custom name:"
+msgstr "Anpassat namn:"
+
+#: widgetprefab/widgetprefab.php:164
+msgid "Name for EveryBoard..."
+msgstr "Namn på EveryBoard…"
+
+#: widgetprefab/widgetprefab.php:171
+msgid "Widget tags:"
+msgstr "Widget-taggar:"
+
+#: widgetprefab/widgetprefab.php:179
+msgid "Tags for widget..."
+msgstr "Taggar för widget..."
+
+#: widgetprefab/widgetprefab.php:184
+msgid "Active on boards:"
+msgstr "Aktiv på boards:"
+
+#: widgetprefab/widgetprefab.php:194
+msgid "Not active on any board."
+msgstr "Inte aktiv på något board."
+
+#: widgetprefab/widgetprefab.php:384
+msgid "Board widgets"
+msgstr "Board widgets"
+
+#: widgetprefab/widgetprefab.php:389
+msgid "Filter active widgets.."
+msgstr "Filtrera aktiva widgets..."
+
+#: widgetprefab/widgetprefab.php:419
+msgid "Available widgets"
+msgstr "Tillgängliga widgets"
+
+#: widgetprefab/widgetprefab.php:422
+msgid "Filter available widgets"
+msgstr "Filtrera tillgängliga widgets"
+
+#: widgetprefab/widgetprefab.php:470
+msgid "Active widgets"
+msgstr "Aktiva widgets"
+
+#~ msgid "Active on boards: "
+#~ msgstr "Aktiv på boards: "
+
+#~ msgid "description:"
+#~ msgstr "beskrivning:"
+
+#~ msgid "This widget is not connected to a board yet"
+#~ msgstr "Denna widget är inte kopplad till en board ännu"
+
+#~ msgid "This widget is connected to:"
+#~ msgstr "Denna widget är kopplad till:"
+
+#~ msgid "CSS Class"
+#~ msgstr "CSS klass"
+
+#~ msgid "Base article layout"
+#~ msgstr "Basartikel layout"
+
+#~ msgid "Register"
+#~ msgstr "Registrera "
+
+#~ msgid ""
+#~ "A test connection to your Open Content was successfully established and "
+#~ "closed!"
+#~ msgstr ""
+#~ "En testanslutning till din Open Content upprättades och stängdes "
+#~ "framgångsrikt!"
+
+#~ msgid "Could not establish a connection to your Open Content!"
+#~ msgstr "Det gick inte att upprätta en anslutning till din Open Content!"
+
+#~ msgid ""
+#~ "A test connection to your S3 Bucket was successfully established and "
+#~ "closed!"
+#~ msgstr ""
+#~ "En testanslutning till din S3 Bucket upprättades och stängdes "
+#~ "framgångsrikt!"
+
+#~ msgid "Could not establish a connection to your S3 Bucket!"
+#~ msgstr "Det gick inte att upprätta en anslutning till din S3 Bucket!"
+
+#~ msgid "Open Content Query Builder"
+#~ msgstr "Open Content Query Builder"
+
+#, fuzzy
+#~| msgid "Active on boards:"
+#~ msgid "Active rules:"
+#~ msgstr "Aktiv på boards:"
+
+#, fuzzy
+#~| msgid "Static widgets"
+#~ msgid "Set query to widget"
+#~ msgstr "Statiska widgets"
+
+#, fuzzy
+#~| msgid "Article relation property"
+#~ msgid "Add article slug property"
+#~ msgstr "Artikelrelations-property"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not remove class, please try again or contact an administrator."
+#~ msgid ""
+#~ "An error has occurred during removal of notifier, please contact an "
+#~ "administrator"
+#~ msgstr ""
+#~ "Kunde inte ta bort klass, var god försök igen eller kontakta en "
+#~ "administratör."
+
+#, fuzzy
+#~| msgid "Could not find article from OC."
+#~ msgid "Error: Could not purge article from cache"
+#~ msgstr "Kunde inte hitta artikel i OC."
+
+#, fuzzy
+#~| msgid "Could not find article from OC."
+#~ msgid "Could not fetch properties from OC"
+#~ msgstr "Kunde inte hitta artikel i OC."
+
+#, fuzzy
+#~| msgid "remove"
+#~ msgid "Remove"
+#~ msgstr "ta bort"
+
+#, fuzzy
+#~| msgid "Close window"
+#~ msgid "Choose binding"
+#~ msgstr "Stäng fönstret"
+
+#, fuzzy
+#~| msgid "Could not create board list"
+#~ msgid "Could not register download, please try again"
+#~ msgstr "Kunde inte skapa lista"
+
+#, fuzzy
+#~| msgid "Could not restore to this version."
+#~ msgid "Could not write to zip file."
+#~ msgstr "Kunde inte återställa till denna versionen."
+
+#, fuzzy
+#~| msgid "Articles"
+#~ msgid "Article"
+#~ msgstr "Artiklar"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add New Article"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy
+#~| msgid "Articles"
+#~ msgid "Edit Article"
+#~ msgstr "Artiklar"
+
+#, fuzzy
+#~| msgid "Articles"
+#~ msgid "New Article"
+#~ msgstr "Artiklar"
+
+#, fuzzy
+#~| msgid "Articles"
+#~ msgid "View Article"
+#~ msgstr "Artiklar"
+
+#, fuzzy
+#~| msgid "Articles"
+#~ msgid "Search Articles"
+#~ msgstr "Artiklar"
+
+#, fuzzy
+#~| msgid "No {$list} Found"
+#~ msgid "No Articles Found"
+#~ msgstr "Ingen {$list} funnen"
+
+#, fuzzy
+#~| msgid "Could Not Be Found In Trash"
+#~ msgid "No Articles Found In Trash"
+#~ msgstr "Kunde inte hittas i papperskorgen"
+
+#, fuzzy
+#~| msgid "Currently running Everyboard version: "
+#~ msgid "Currently running Everyware version: "
+#~ msgstr "Aktiv version av Everyboard: "
+
+#, fuzzy
+#~| msgid ""
+#~| "There is a newer version of Everyboard available, update or contact "
+#~| "Infomaker for more information."
+#~ msgid ""
+#~ "There is a newer version of Everyware available, update or contact "
+#~ "Infomaker for more information."
+#~ msgstr ""
+#~ "Det finns en nyare version av Everyboard tillgänglig, uppdatera eller "
+#~ "kontakta Infomaker for more information."
+
+#, fuzzy
+#~| msgid "Author:"
+#~ msgid "Use Auth:"
+#~ msgstr "Författare:"
+
+#, fuzzy
+#~| msgid "None"
+#~ msgid "No"
+#~ msgstr "Ingen"
+
+#, fuzzy
+#~| msgid "Saved searches:"
+#~ msgid "Save changes"
+#~ msgstr "Sparade sökningar:"
+
+#, fuzzy
+#~| msgid "OC List Settings"
+#~ msgid "Open Content Settings"
+#~ msgstr "OC Listinställningar"
+
+#, fuzzy
+#~| msgid "Settings"
+#~ msgid "OC Settings"
+#~ msgstr "Inställningar"
+
+#, fuzzy
+#~| msgid "List Settings"
+#~ msgid "URL Settings"
+#~ msgstr "Listinställningar"
+
+#, fuzzy
+#~| msgid "No OC connection found."
+#~ msgid "Test OC connection"
+#~ msgstr "Ingen OC uppkoppling funnen."
+
+#, fuzzy
+#~| msgid "Choose a list"
+#~ msgid "Choose image service"
+#~ msgstr "Välj en lista"
+
+#, fuzzy
+#~| msgid "Template Engine"
+#~ msgid "imengine"
+#~ msgstr "Renderingsmotor"
+
+#, fuzzy
+#~| msgid "OC List Settings"
+#~ msgid "Article URL Settings"
+#~ msgstr "OC Listinställningar"
+
+#, fuzzy
+#~| msgid "Article relation property"
+#~ msgid "Article Slug properties:"
+#~ msgstr "Artikelrelations-property"
+
+#, fuzzy
+#~| msgid "Board Settings"
+#~ msgid "Property Settings"
+#~ msgstr "Board Inställningar"
+
+#, fuzzy
+#~| msgid "Property"
+#~ msgid "Properties"
+#~ msgstr "Property"
+
+#, fuzzy
+#~| msgid "Query"
+#~ msgid "Query:"
+#~ msgstr "Fråga"
+
+#, fuzzy
+#~| msgid "Limit"
+#~ msgid "Limit:"
+#~ msgstr "Gräns"
+
+#, fuzzy
+#~| msgid "List Query"
+#~ msgid "Test query"
+#~ msgstr "OC List fråga"
+
+#~ msgid "None"
+#~ msgstr "Ingen"
+
+#, fuzzy
+#~| msgid "Preview on page"
+#~ msgid "Preview"
+#~ msgstr "Förhandsgranska på sida"
+
+#, fuzzy
+#~| msgid "Article:"
+#~ msgid "Article template:"
+#~ msgstr "Artikel:"
+
+#, fuzzy
+#~| msgid "Save as template"
+#~ msgid "Image template:"
+#~ msgstr "Spara som mall"
+
+#, fuzzy
+#~| msgid "Template engine:"
+#~ msgid "Template data input:"
+#~ msgstr "Renderingsmotor:"
+
+#, fuzzy
+#~| msgid "Settings"
+#~ msgid "Sorting:"
+#~ msgstr "Inställningar"
+
+#, fuzzy, php-format
+#~| msgid "Versions"
+#~ msgid "Version %s"
+#~ msgstr "Versioner"
+
+#, fuzzy
+#~| msgid "Change to board"
+#~ msgid "Go to Dashboard"
+#~ msgstr "Ändra till board"
+
+#, fuzzy
+#~| msgid "Export"
+#~ msgid "Import"
+#~ msgstr "Exportera"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this event?"
+#~ msgid "You are about to delete the following comment:"
+#~ msgstr "Är du säker på att du vill ta bort detta event?"
+
+#, fuzzy
+#~| msgid "Section:"
+#~ msgid "Caution:"
+#~ msgstr "Sektion:"
+
+#, fuzzy
+#~| msgid "Author:"
+#~ msgid "Author"
+#~ msgstr "Författare:"
+
+#, fuzzy
+#~| msgid "External List"
+#~ msgid "External Libraries"
+#~ msgstr "Extern lista"
+
+#, fuzzy
+#~| msgid "Choose a list"
+#~ msgid "Choose Image"
+#~ msgstr "Välj en lista"
+
+#, fuzzy
+#~| msgid "Position"
+#~ msgid "Image Position"
+#~ msgstr "Listposition"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Custom Header"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "Publish"
+#~ msgid "Crop and Publish"
+#~ msgstr "Publicera"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Customize"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "Could not save list"
+#~ msgid "Comments list"
+#~ msgstr "Kunde inte spara listan"
+
+#, fuzzy
+#~| msgid "The article is already in the active list"
+#~ msgid "This comment is already in the Trash."
+#~ msgstr "Artikeln finns redan i listan"
+
+#, fuzzy
+#~| msgid "Preview on page"
+#~ msgid "Preview post"
+#~ msgstr "Förhandsgranska på sida"
+
+#, fuzzy
+#~| msgid "View"
+#~ msgid "View post"
+#~ msgstr "Se"
+
+#, fuzzy
+#~| msgid "Preview on page"
+#~ msgid "Preview page"
+#~ msgstr "Förhandsgranska på sida"
+
+#, fuzzy
+#~| msgid "Preview on page"
+#~ msgid "View page"
+#~ msgstr "Förhandsgranska på sida"
+
+#, fuzzy
+#~| msgid "Confirm delete"
+#~ msgid "Custom field deleted."
+#~ msgstr "Bekräfta radering"
+
+#, fuzzy
+#~| msgid "Published: "
+#~ msgid "Post published."
+#~ msgstr "Publicerad: "
+
+#, fuzzy
+#~| msgid "Published: "
+#~ msgid "Page published."
+#~ msgstr "Publicerad: "
+
+#, fuzzy
+#~| msgid "Versions"
+#~ msgid "Revisions"
+#~ msgstr "Versioner"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Custom Fields"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "List Settings"
+#~ msgid "Publish Settings"
+#~ msgstr "Listinställningar"
+
+#, fuzzy
+#~| msgid "List Settings"
+#~ msgid "Discussion Settings"
+#~ msgstr "Listinställningar"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Namn"
+
+#, fuzzy
+#~| msgid "Change board at time"
+#~ msgid "Date and time"
+#~ msgstr "Ändra board vid tid"
+
+#, fuzzy
+#~| msgid "Linked board"
+#~ msgid "Link added."
+#~ msgstr "Länkad board"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Sorry, you are not allowed to delete this item."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Sorry, you are not allowed to delete these items."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Content"
+#~ msgid "Screen Content"
+#~ msgstr "Innehåll"
+
+#, fuzzy
+#~| msgid "Available widgets"
+#~ msgid "Available Actions"
+#~ msgstr "Tillgängliga widgets"
+
+#, fuzzy
+#~| msgid "Timeline Actions"
+#~ msgid "Bulk Actions"
+#~ msgstr "Tidslinjehändelse"
+
+#, fuzzy
+#~| msgid "Content container"
+#~ msgid "Content to export"
+#~ msgstr "Innehållscontainer"
+
+#, fuzzy
+#~| msgid "Content"
+#~ msgid "All content"
+#~ msgstr "Innehåll"
+
+#, fuzzy
+#~| msgid "Page:"
+#~ msgid "Pages"
+#~ msgstr "Sida:"
+
+#, fuzzy
+#~| msgid "Import failed, please check the format and try again."
+#~ msgid "An error has occurred. Please reload the page and try again."
+#~ msgstr "Importering misslyckades, se över formatet och försök igen."
+
+#, fuzzy, php-format
+#~| msgid "Save this row and its current settings as a template"
+#~ msgid "Saving is disabled: %s is currently editing this page."
+#~ msgstr "Spara denna rad och dess innehåll som en mall"
+
+#, fuzzy
+#~| msgid "No {$list} Found"
+#~ msgid "No items found."
+#~ msgstr "Ingen {$list} funnen"
+
+#, fuzzy
+#~| msgid "Published: "
+#~ msgid "Published"
+#~ msgstr "Publicerad: "
+
+#, fuzzy
+#~| msgid "Show widget filters"
+#~ msgid "Show details."
+#~ msgstr "Visa filtrering"
+
+#, fuzzy
+#~| msgid "Could not save list"
+#~ msgid "Could not copy files."
+#~ msgstr "Kunde inte spara listan"
+
+#, fuzzy
+#~| msgid "Active layout"
+#~ msgid "Activate Plugin"
+#~ msgstr "Aktiv layout"
+
+#, fuzzy
+#~| msgid "Could not create board list"
+#~ msgid "Could not remove the old plugin."
+#~ msgstr "Kunde inte skapa lista"
+
+#, fuzzy
+#~| msgid "Reload preview"
+#~ msgid "Live Preview"
+#~ msgstr "Ladda om förhandsgranskning"
+
+#, fuzzy
+#~| msgid "Could not restore to this version."
+#~ msgid "Could not remove the old theme."
+#~ msgstr "Kunde inte återställa till denna versionen."
+
+#, fuzzy
+#~| msgid "List item"
+#~ msgid "sub item"
+#~ msgstr "Listobjekt"
+
+#, fuzzy
+#~| msgid "Class Description"
+#~ msgid "CSS Classes (optional)"
+#~ msgstr "Klassbeskrivning"
+
+#, fuzzy
+#~| msgid "Could not save list"
+#~ msgid "Could not access filesystem."
+#~ msgstr "Kunde inte spara listan"
+
+#, fuzzy
+#~| msgid "No OC connection found."
+#~ msgid "No comments found."
+#~ msgstr "Ingen OC uppkoppling funnen."
+
+#, fuzzy
+#~| msgid "Filter by type"
+#~ msgid "Filter by comment type"
+#~ msgstr "Filtrera widgettyp"
+
+#, fuzzy
+#~| msgid "Settings"
+#~ msgid "Pings"
+#~ msgstr "Inställningar"
+
+#, fuzzy
+#~| msgid "Filter by tag"
+#~ msgid "Filter"
+#~ msgstr "Filtrera på typ"
+
+#, fuzzy
+#~| msgid "Show widget filters"
+#~ msgid "Show more details"
+#~ msgstr "Visa filtrering"
+
+#, fuzzy, php-format
+#~| msgid "Choose a engine to use."
+#~ msgid "Changing to %s"
+#~ msgstr "Välj en motor att använda."
+
+#, fuzzy
+#~| msgid "No {$list} Found"
+#~ msgid "No links found."
+#~ msgstr "Ingen {$list} funnen"
+
+#, fuzzy
+#~| msgid "Filter by tag"
+#~ msgid "Filter by category"
+#~ msgstr "Filtrera på typ"
+
+#, fuzzy
+#~| msgid "Visibility"
+#~ msgid "Visible"
+#~ msgstr "Synlighet"
+
+#, fuzzy
+#~| msgid "List item"
+#~ msgid "List View"
+#~ msgstr "Listobjekt"
+
+#, fuzzy
+#~| msgid "Filter by type"
+#~ msgid "Filter by date"
+#~ msgstr "Filtrera widgettyp"
+
+#, fuzzy
+#~| msgid "No content yet"
+#~ msgid "No comments"
+#~ msgstr "Inget innehåll än"
+
+#, fuzzy
+#~| msgid "Preview on page"
+#~ msgid "Previous page"
+#~ msgstr "Förhandsgranska på sida"
+
+#, fuzzy
+#~| msgid "View"
+#~ msgid "Grid View"
+#~ msgstr "Se"
+
+#, fuzzy
+#~| msgid "List name"
+#~ msgid "File name:"
+#~ msgstr "Listnamn"
+
+#, fuzzy
+#~| msgid "Published: "
+#~ msgid "Unpublished"
+#~ msgstr "Publicerad: "
+
+#, fuzzy
+#~| msgid "No {$list} Found"
+#~ msgid "No sites found."
+#~ msgstr "Ingen {$list} funnen"
+
+#, fuzzy
+#~| msgid "Section"
+#~ msgid "Actions"
+#~ msgstr "Sektion"
+
+#, fuzzy
+#~| msgid "Publish board"
+#~ msgid "Dashboard"
+#~ msgstr "Publicera board"
+
+#, fuzzy
+#~| msgid "Inactive"
+#~ msgid "Deactivate"
+#~ msgstr "Inaktiv"
+
+#, fuzzy
+#~| msgid "Visibility"
+#~ msgid "Visit"
+#~ msgstr "Synlighet"
+
+#, fuzzy
+#~| msgid "On tablet"
+#~ msgid "Enable"
+#~ msgstr "På tablet"
+
+#, fuzzy
+#~| msgid "Active widgets"
+#~ msgid "Active Theme"
+#~ msgstr "Aktiva widgets"
+
+#, fuzzy
+#~| msgid "Active widgets"
+#~ msgid "Active Child Theme"
+#~ msgstr "Aktiva widgets"
+
+#, fuzzy
+#~| msgid "Search query"
+#~ msgid "Search Results"
+#~ msgstr "Sökfråga"
+
+#, fuzzy
+#~| msgid "Upload"
+#~ msgid "Upload Plugin"
+#~ msgstr "Ladda upp"
+
+#, fuzzy
+#~| msgid "No {$list} Found"
+#~ msgid "No plugins found."
+#~ msgstr "Ingen {$list} funnen"
+
+#, fuzzy
+#~| msgid "Internal List"
+#~ msgid "Clear List"
+#~ msgstr "Intern lista"
+
+#, fuzzy
+#~| msgid "Inactive"
+#~ msgid "Inactive:"
+#~ msgstr "Inaktiv"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgid "Bulk Edit"
+#~ msgstr "Editera"
+
+#, fuzzy
+#~| msgid "Template:"
+#~ msgid "Template"
+#~ msgstr "Mall:"
+
+#, fuzzy
+#~| msgid "Saved Templates"
+#~ msgid "Default Template"
+#~ msgstr "Sparade mallar"
+
+#, fuzzy
+#~| msgid "Filter by inactive widgets"
+#~ msgid "Filter items list"
+#~ msgstr "Filtrera inaktiva widgets"
+
+#, fuzzy
+#~| msgid "List Settings"
+#~ msgid "Additional settings"
+#~ msgstr "Listinställningar"
+
+#, fuzzy
+#~| msgid "Column"
+#~ msgid "Columns"
+#~ msgstr "Kolumn"
+
+#, fuzzy
+#~| msgid "Position"
+#~ msgid "Pagination"
+#~ msgstr "Listposition"
+
+#, fuzzy
+#~| msgid "View"
+#~ msgid "View Mode"
+#~ msgstr "Se"
+
+#, fuzzy, php-format
+#~| msgid "Latest version"
+#~ msgid "Update to version %s"
+#~ msgstr "Senaste version"
+
+#, fuzzy, php-format
+#~| msgid "Preview on page"
+#~ msgid "Preview %s"
+#~ msgstr "Förhandsgranska på sida"
+
+#, fuzzy
+#~| msgid "Versions"
+#~ msgid "Version:"
+#~ msgstr "Versioner"
+
+#, fuzzy
+#~| msgid "Could not create board list"
+#~ msgid "Could not create directory."
+#~ msgstr "Kunde inte skapa lista"
+
+#, fuzzy
+#~| msgid "Board Changed"
+#~ msgid "Change"
+#~ msgstr "Board ändrad"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgid "Cancun"
+#~ msgstr "Avbryt"
+
+#, fuzzy
+#~| msgid "Publish"
+#~ msgid "Dublin"
+#~ msgstr "Publicera"
+
+#, fuzzy
+#~| msgid "Sort by:"
+#~ msgid "Port Moresby"
+#~ msgstr "Sortera efter:"
+
+#, fuzzy
+#~| msgid "Active widgets"
+#~ msgid "Activity"
+#~ msgstr "Aktiva widgets"
+
+#, fuzzy
+#~| msgid "View"
+#~ msgid "View all"
+#~ msgstr "Se"
+
+#, fuzzy
+#~| msgid "Confirm delete"
+#~ msgid "Configure"
+#~ msgstr "Bekräfta radering"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "Create a New Site"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "Create a New User"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "Search query"
+#~ msgid "Search Users"
+#~ msgstr "Sökfråga"
+
+#, fuzzy
+#~| msgid "Search query"
+#~ msgid "Search Sites"
+#~ msgstr "Sökfråga"
+
+#, fuzzy
+#~| msgid "Save draft"
+#~ msgid "Save Draft"
+#~ msgstr "Spara utkast"
+
+#, fuzzy
+#~| msgid "Publish board"
+#~ msgid "Publishing Soon"
+#~ msgstr "Publicera board"
+
+#, fuzzy
+#~| msgid "Published: "
+#~ msgid "Recently Published"
+#~ msgstr "Publicerad: "
+
+#, fuzzy
+#~| msgid "No content yet"
+#~ msgid "No activity yet!"
+#~ msgstr "Inget innehåll än"
+
+#, fuzzy
+#~| msgid "Upload"
+#~ msgid "Manage Uploads"
+#~ msgstr "Ladda upp"
+
+#, fuzzy
+#~| msgid "Timeline Actions"
+#~ msgid "More Actions"
+#~ msgstr "Tidslinjehändelse"
+
+#, fuzzy
+#~| msgid "Available widgets"
+#~ msgid "Manage widgets"
+#~ msgstr "Tillgängliga widgets"
+
+#, fuzzy
+#~| msgid "Confirm delete"
+#~ msgid "Category deleted."
+#~ msgstr "Bekräfta radering"
+
+#, fuzzy
+#~| msgid "Confirm delete"
+#~ msgid "Categories deleted."
+#~ msgstr "Bekräfta radering"
+
+#, fuzzy
+#~| msgid "Timeline Actions"
+#~ msgid "Theme Functions"
+#~ msgstr "Tidslinjehändelse"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search Form"
+#~ msgstr "Sök"
+
+#, fuzzy
+#~| msgid "Template:"
+#~ msgid "404 Template"
+#~ msgstr "Mall:"
+
+#, fuzzy
+#~| msgid "Template:"
+#~ msgid "Links Template"
+#~ msgstr "Mall:"
+
+#, fuzzy
+#~| msgid "Saved Templates"
+#~ msgid "Main Index Template"
+#~ msgstr "Sparade mallar"
+
+#, fuzzy
+#~| msgid "Template:"
+#~ msgid "Author Template"
+#~ msgstr "Mall:"
+
+#, fuzzy
+#~| msgid "Saved Templates"
+#~ msgid "Taxonomy Template"
+#~ msgstr "Sparade mallar"
+
+#, fuzzy
+#~| msgid "Saved Templates"
+#~ msgid "Category Template"
+#~ msgstr "Sparade mallar"
+
+#, fuzzy
+#~| msgid "Template:"
+#~ msgid "Tag Template"
+#~ msgstr "Mall:"
+
+#, fuzzy
+#~| msgid "Saved Templates"
+#~ msgid "Date Template"
+#~ msgstr "Sparade mallar"
+
+#, fuzzy
+#~| msgid "Saved Templates"
+#~ msgid "Singular Template"
+#~ msgstr "Sparade mallar"
+
+#, fuzzy
+#~| msgid "Saved Templates"
+#~ msgid "Attachment Template"
+#~ msgstr "Sparade mallar"
+
+#, fuzzy
+#~| msgid "Saved Templates"
+#~ msgid "Embed Template"
+#~ msgstr "Sparade mallar"
+
+#, fuzzy
+#~| msgid "Saved Templates"
+#~ msgid "Embed 404 Template"
+#~ msgstr "Sparade mallar"
+
+#, fuzzy
+#~| msgid "Saved Templates"
+#~ msgid "Embed Header Template"
+#~ msgstr "Sparade mallar"
+
+#, fuzzy
+#~| msgid "Saved Templates"
+#~ msgid "Embed Footer Template"
+#~ msgstr "Sparade mallar"
+
+#, fuzzy
+#~| msgid "Saved Templates"
+#~ msgid "Comments Template"
+#~ msgstr "Sparade mallar"
+
+#, fuzzy, php-format
+#~| msgid "Saved Templates"
+#~ msgid "%s Page Template"
+#~ msgstr "Sparade mallar"
+
+#, fuzzy
+#~| msgid "Import failed, please check the format and try again."
+#~ msgid "No such file exists! Double check the name and try again."
+#~ msgstr "Importering misslyckades, se över formatet och försök igen."
+
+#, fuzzy
+#~| msgid "Could not create board list"
+#~ msgid "Could not create Temporary file."
+#~ msgstr "Kunde inte skapa lista"
+
+#, fuzzy
+#~| msgid "Could not restore to this version."
+#~ msgid "Could not retrieve file from archive."
+#~ msgstr "Kunde inte återställa till denna versionen."
+
+#, fuzzy
+#~| msgid "Could not find article from OC."
+#~ msgid "Could not extract file from archive."
+#~ msgstr "Kunde inte hitta artikel i OC."
+
+#, fuzzy
+#~| msgid "Could not save list"
+#~ msgid "Could not copy file."
+#~ msgstr "Kunde inte spara listan"
+
+#, fuzzy
+#~| msgid "No OC connection found."
+#~ msgid "Connection Information"
+#~ msgstr "Ingen OC uppkoppling funnen."
+
+#, fuzzy
+#~| msgid "List name"
+#~ msgid "Hostname"
+#~ msgstr "Listnamn"
+
+#, fuzzy
+#~| msgid "No connections made yet"
+#~ msgid "Connection Type"
+#~ msgstr "Inga kopplingar gjorda"
+
+#, fuzzy
+#~| msgid "Published: "
+#~ msgid "Public Key:"
+#~ msgstr "Publicerad: "
+
+#, fuzzy
+#~| msgid "width"
+#~ msgid "scale width"
+#~ msgstr "bredd"
+
+#, fuzzy
+#~| msgid "Section"
+#~ msgid "Crop Selection"
+#~ msgstr "Sektion"
+
+#, fuzzy
+#~| msgid "Section:"
+#~ msgid "Selection:"
+#~ msgstr "Sektion:"
+
+#, fuzzy
+#~| msgid "List Settings"
+#~ msgid "Thumbnail Settings"
+#~ msgstr "Listinställningar"
+
+#, fuzzy
+#~| msgid "Upload"
+#~ msgid "Uploads"
+#~ msgstr "Ladda upp"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add Media"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy
+#~| msgid "Save draft"
+#~ msgid "Saved."
+#~ msgstr "Spara utkast"
+
+#, fuzzy
+#~| msgid "Filter by inactive widgets"
+#~ msgid "Alternative Text"
+#~ msgstr "Filtrera inaktiva widgets"
+
+#, fuzzy
+#~| msgid "Showing"
+#~ msgid "Show"
+#~ msgstr "Visar"
+
+#, fuzzy
+#~| msgid "Filter by type"
+#~ msgid "File type:"
+#~ msgstr "Filtrera widgettyp"
+
+#, fuzzy
+#~| msgid "Upload"
+#~ msgid "Upload date:"
+#~ msgstr "Ladda upp"
+
+#, fuzzy
+#~| msgid "Versions"
+#~ msgid "Dimensions:"
+#~ msgstr "Versioner"
+
+#, fuzzy, php-format
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "You are about to delete %s."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Content"
+#~ msgid "Continue"
+#~ msgstr "Innehåll"
+
+#, fuzzy
+#~| msgid "Saved searches:"
+#~ msgid "Save all changes"
+#~ msgstr "Sparade sökningar:"
+
+#, fuzzy
+#~| msgid "Sort by:"
+#~ msgid "Sort Order:"
+#~ msgstr "Sortera efter:"
+
+#, fuzzy
+#~| msgid "Board Settings"
+#~ msgid "Gallery Settings"
+#~ msgstr "Board Inställningar"
+
+#, fuzzy
+#~| msgid "Page Timeline"
+#~ msgid "Image File"
+#~ msgstr "Sidtidslinje"
+
+#, fuzzy
+#~| msgid "Search query"
+#~ msgid "Search Media"
+#~ msgstr "Sökfråga"
+
+#, fuzzy
+#~| msgid "Loading image"
+#~ msgid "Link to image"
+#~ msgstr "Laddar bild"
+
+#, fuzzy
+#~| msgid "You do not have access to this page"
+#~ msgid "Sorry, you are not allowed to access this page."
+#~ msgstr "Du har inte rättighet att se denna sida"
+
+#, fuzzy
+#~| msgid "Preview on page"
+#~ msgid "Preview Changes"
+#~ msgstr "Förhandsgranska på sida"
+
+#, fuzzy
+#~| msgid "Published: "
+#~ msgid "Privately Published"
+#~ msgstr "Publicerad: "
+
+#, fuzzy
+#~| msgid "List start"
+#~ msgid "Edit status"
+#~ msgstr "List start"
+
+#, fuzzy
+#~| msgid "List start"
+#~ msgid "Set status"
+#~ msgstr "List start"
+
+#, fuzzy
+#~| msgid "Visibility"
+#~ msgid "Visibility:"
+#~ msgstr "Synlighet"
+
+#, fuzzy
+#~| msgid "Publish"
+#~ msgid "Public"
+#~ msgstr "Publicera"
+
+#, fuzzy
+#~| msgid "Visibility"
+#~ msgid "Edit visibility"
+#~ msgstr "Synlighet"
+
+#, fuzzy, php-format
+#~| msgid "Published: "
+#~ msgid "Published on: <b>%1$s</b>"
+#~ msgstr "Publicerad: "
+
+#, fuzzy
+#~| msgid "No content yet"
+#~ msgid "No comments yet."
+#~ msgstr "Inget innehåll än"
+
+#, fuzzy
+#~| msgid "Pubdate:"
+#~ msgid "date"
+#~ msgstr "Publiceringsdatum:"
+
+#, fuzzy
+#~| msgid "Product:"
+#~ msgid "Introduction"
+#~ msgstr "Produkt:"
+
+#, fuzzy
+#~| msgid "View"
+#~ msgid "View Site"
+#~ msgstr "Se"
+
+#, fuzzy
+#~| msgid "Confirm delete"
+#~ msgid "Confirm Deletion"
+#~ msgstr "Bekräfta radering"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Custom Links"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "Page:"
+#~ msgid "Page"
+#~ msgstr "Sida:"
+
+#, fuzzy
+#~| msgid "View"
+#~ msgid "View All"
+#~ msgstr "Se"
+
+#, fuzzy
+#~| msgid "No {$list} Found"
+#~ msgid "No results found."
+#~ msgstr "Ingen {$list} funnen"
+
+#, fuzzy
+#~| msgid "Linked board"
+#~ msgid "Link Target"
+#~ msgstr "Länkad board"
+
+#, fuzzy
+#~| msgid "CSS Class"
+#~ msgid "CSS Classes"
+#~ msgstr "CSS klass"
+
+#, fuzzy
+#~| msgid "Search query"
+#~ msgid "Search plugins by:"
+#~ msgstr "Sökfråga"
+
+#, fuzzy
+#~| msgid "Search query"
+#~ msgid "Search Plugins"
+#~ msgstr "Sökfråga"
+
+#, fuzzy
+#~| msgid "Latest version"
+#~ msgid "Latest Version Installed"
+#~ msgstr "Senaste version"
+
+#, fuzzy, php-format
+#~| msgid "Could not restore to this version."
+#~ msgid "Could not fully remove the plugins %s."
+#~ msgstr "Kunde inte återställa till denna versionen."
+
+#, fuzzy
+#~| msgid "Board Changed"
+#~ msgid "Save Changes"
+#~ msgstr "Board ändrad"
+
+#, fuzzy
+#~| msgid "Search query"
+#~ msgid "Search by keyword"
+#~ msgstr "Sökfråga"
+
+#, fuzzy
+#~| msgid "Search query"
+#~ msgid "Search by author"
+#~ msgstr "Sökfråga"
+
+#, fuzzy
+#~| msgid "Filter by tag"
+#~ msgid "Search by tag"
+#~ msgstr "Filtrera på typ"
+
+#, fuzzy, php-format
+#~| msgid "Could not restore to this version."
+#~ msgid "Could not fully remove the theme %s."
+#~ msgstr "Kunde inte återställa till denna versionen."
+
+#, fuzzy
+#~| msgid "Section"
+#~ msgid "Education"
+#~ msgstr "Sektion"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Custom Logo"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "Filter widgets..."
+#~ msgid "Footer Widgets"
+#~ msgstr "Filtrera widgets..."
+
+#, fuzzy
+#~| msgid "Timeline Actions"
+#~ msgid "Theme Options"
+#~ msgstr "Tidslinjehändelse"
+
+#, fuzzy
+#~| msgid "Column"
+#~ msgid "One Column"
+#~ msgstr "Kolumn"
+
+#, fuzzy
+#~| msgid "Column"
+#~ msgid "Two Columns"
+#~ msgstr "Kolumn"
+
+#, fuzzy
+#~| msgid "Column"
+#~ msgid "Three Columns"
+#~ msgstr "Kolumn"
+
+#, fuzzy
+#~| msgid "Column"
+#~ msgid "Four Columns"
+#~ msgstr "Kolumn"
+
+#, fuzzy, php-format
+#~| msgid "Versions"
+#~ msgid "Version: %s"
+#~ msgstr "Versioner"
+
+#, fuzzy, php-format
+#~| msgid "Versions"
+#~ msgid "Get Version %s"
+#~ msgstr "Versioner"
+
+#, fuzzy
+#~| msgid "Latest version"
+#~ msgid "Latest"
+#~ msgstr "Senaste version"
+
+#, fuzzy
+#~| msgid "The current list name already exists, please choose another one"
+#~ msgid ""
+#~ "<strong>ERROR</strong>: This username is already registered. Please "
+#~ "choose another one."
+#~ msgstr "Det finns redan en lista med samma namn, vänligen välj ett annat"
+
+#, fuzzy
+#~| msgid "The current list name already exists, please choose another one"
+#~ msgid ""
+#~ "<strong>ERROR</strong>: This email is already registered, please choose "
+#~ "another one."
+#~ msgstr "Det finns redan en lista med samma namn, vänligen välj ett annat"
+
+#, fuzzy
+#~| msgid "Search query"
+#~ msgid "Search Requests"
+#~ msgstr "Sökfråga"
+
+#, fuzzy
+#~| msgid "External List"
+#~ msgid "Export Personal Data"
+#~ msgstr "Extern lista"
+
+#, fuzzy
+#~| msgid "Could not save list"
+#~ msgid "Email could not be sent."
+#~ msgstr "Kunde inte spara listan"
+
+#, fuzzy, php-format
+#~| msgid "List widgets"
+#~ msgid "Edit widget: %s"
+#~ msgstr "Widgets"
+
+#, fuzzy
+#~| msgid "Import Board:"
+#~ msgid "Important:"
+#~ msgstr "Importera board:"
+
+#, fuzzy
+#~| msgid "Confirm delete"
+#~ msgid "Confirm Password"
+#~ msgstr "Bekräfta radering"
+
+#, fuzzy
+#~| msgid "Visibility"
+#~ msgid "Site Visibility"
+#~ msgstr "Synlighet"
+
+#, fuzzy
+#~| msgid "Please fill in a list name"
+#~ msgid "Please provide a valid username."
+#~ msgstr "Vänligen fyll i ett namn på listan"
+
+#, fuzzy
+#~| msgid "success"
+#~ msgid "Success!"
+#~ msgstr "lyckades"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add New Link"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search Links"
+#~ msgstr "Sök"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgid "Edit Link"
+#~ msgstr "Editera"
+
+#, fuzzy
+#~| msgid "Pubdate end"
+#~ msgid "Update Media"
+#~ msgstr "Slutdatum publicering"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add New User"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy
+#~| msgid "Available widgets"
+#~ msgid "Available Tools"
+#~ msgstr "Tillgängliga widgets"
+
+#, fuzzy, php-format
+#~| msgid "Settings"
+#~ msgid "Settings %s"
+#~ msgstr "Inställningar"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Sorry, you are not allowed to delete this site."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Settings"
+#~ msgid "Settings saved."
+#~ msgstr "Inställningar"
+
+#, fuzzy
+#~| msgid "Board Settings"
+#~ msgid "Global Settings"
+#~ msgstr "Board Inställningar"
+
+#, fuzzy
+#~| msgid "Please fill in a list name"
+#~ msgid "Please enter a valid menu name."
+#~ msgstr "Vänligen fyll i ett namn på listan"
+
+#, fuzzy
+#~| msgid "Timeline Actions"
+#~ msgid "Theme Location"
+#~ msgstr "Tidslinjehändelse"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Menu Name"
+#~ msgstr "Namn"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "Create Menu"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "Save Search"
+#~ msgid "Save Menu"
+#~ msgstr "Spara sökning"
+
+#, fuzzy
+#~| msgid "Structure"
+#~ msgid "Menu Structure"
+#~ msgstr "Struktur"
+
+#, fuzzy
+#~| msgid "Settings"
+#~ msgid "Menu Settings"
+#~ msgstr "Inställningar"
+
+#, fuzzy
+#~| msgid "Templates"
+#~ msgid "Updates"
+#~ msgstr "Mallar"
+
+#, fuzzy
+#~| msgid "Upgrade Everyboard"
+#~ msgid "Upgrade Network"
+#~ msgstr "Uppgradera EveryBoard"
+
+#, fuzzy
+#~| msgid "Board Settings"
+#~ msgid "Network Settings"
+#~ msgstr "Board Inställningar"
+
+#, fuzzy
+#~| msgid "EveryBoard Settings"
+#~ msgid "Operational Settings"
+#~ msgstr "EveryBoard Inställningar"
+
+#, fuzzy
+#~| msgid "List Settings"
+#~ msgid "Registration Settings"
+#~ msgstr "Listinställningar"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add New Users"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy
+#~| msgid "List Settings"
+#~ msgid "New Site Settings"
+#~ msgstr "Listinställningar"
+
+#, fuzzy
+#~| msgid "Board Settings"
+#~ msgid "Upload Settings"
+#~ msgstr "Board Inställningar"
+
+#, fuzzy
+#~| msgid "List Settings"
+#~ msgid "Language Settings"
+#~ msgstr "Listinställningar"
+
+#, fuzzy
+#~| msgid "There was a problem adding the class, please try again."
+#~ msgid "There was an error creating the user."
+#~ msgstr "Ett problem uppkom vid tillägg av klass, var god försök igen."
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add New Site"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add Site"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "Site users list"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "Could not restore to this version."
+#~ msgid "User could not be added to this site."
+#~ msgstr "Kunde inte återställa till denna versionen."
+
+#, fuzzy
+#~| msgid "was removed from Open Content."
+#~ msgid "User removed from this site."
+#~ msgstr "har blivit borttagen från Open Content."
+
+#, fuzzy
+#~| msgid "List User"
+#~ msgid "Add Existing User"
+#~ msgstr "Listanvändare"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add User"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy, php-format
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "You are about to delete the site %s."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Confirm delete"
+#~ msgid "Confirm"
+#~ msgstr "Bekräfta radering"
+
+#, fuzzy, php-format
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Sorry, you are not allowed to delete the site %s."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "You are about to delete the following sites:"
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "was removed from Open Content."
+#~ msgid "Sites removed from spam."
+#~ msgstr "har blivit borttagen från Open Content."
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Sorry, you are not allowed to delete that site."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Site archived."
+#~ msgstr "Sök"
+
+#, fuzzy
+#~| msgid "Filter active widgets.."
+#~ msgid "Site activated."
+#~ msgstr "Filtrera aktiva widgets..."
+
+#, fuzzy
+#~| msgid "Filter active widgets.."
+#~ msgid "Site deactivated."
+#~ msgstr "Filtrera aktiva widgets..."
+
+#, fuzzy
+#~| msgid "was removed from Open Content."
+#~ msgid "Site removed from spam."
+#~ msgstr "har blivit borttagen från Open Content."
+
+#, fuzzy
+#~| msgid ""
+#~| "Make this board available to use by other sites within this network."
+#~ msgid "This theme may be active on other sites in the network."
+#~ msgstr ""
+#~ "Gör denna board tillgänglig för användning av andra webbplatser inom "
+#~ "detta nätverk."
+
+#, fuzzy
+#~| msgid ""
+#~| "Make this board available to use by other sites within this network."
+#~ msgid "These themes may be active on other sites in the network."
+#~ msgstr ""
+#~ "Gör denna board tillgänglig för användning av andra webbplatser inom "
+#~ "detta nätverk."
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this event?"
+#~ msgid "Are you sure you wish to delete this theme?"
+#~ msgstr "Är du säker på att du vill ta bort detta event?"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this event?"
+#~ msgid "Are you sure you wish to delete these themes?"
+#~ msgstr "Är du säker på att du vill ta bort detta event?"
+
+#, fuzzy
+#~| msgid "Filter by tag"
+#~ msgid "Filter users list"
+#~ msgstr "Filtrera på typ"
+
+#, fuzzy
+#~| msgid "Classlist"
+#~ msgid "Users list"
+#~ msgstr "Klasslista"
+
+#, fuzzy
+#~| msgid "was removed from Open Content."
+#~ msgid "Users removed from spam."
+#~ msgstr "har blivit borttagen från Open Content."
+
+#, fuzzy
+#~| msgid "Choose a list"
+#~ msgid "Comment Blacklist"
+#~ msgstr "Välj en lista"
+
+#, fuzzy
+#~| msgid "EveryBoard Settings"
+#~ msgid "General Settings"
+#~ msgstr "EveryBoard Inställningar"
+
+#, fuzzy
+#~| msgid "Page Timeline"
+#~ msgid "Tagline"
+#~ msgstr "Sidtidslinje"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Custom:"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Custom date format:"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "Preview on page"
+#~ msgid "Preview:"
+#~ msgstr "Förhandsgranska på sida"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Custom time format:"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "List Settings"
+#~ msgid "Media Settings"
+#~ msgstr "Listinställningar"
+
+#, fuzzy
+#~| msgid "width"
+#~ msgid "Width"
+#~ msgstr "bredd"
+
+#, fuzzy
+#~| msgid "Loading article"
+#~ msgid "Uploading Files"
+#~ msgstr "Laddar artikel"
+
+#, fuzzy
+#~| msgid "EveryBoard Settings"
+#~ msgid "Permalink Settings"
+#~ msgstr "EveryBoard Inställningar"
+
+#, fuzzy
+#~| msgid "Structure"
+#~ msgid "Custom Structures"
+#~ msgstr "Struktur"
+
+#, fuzzy
+#~| msgid "Settings"
+#~ msgid "Common Settings"
+#~ msgstr "Inställningar"
+
+#, fuzzy
+#~| msgid "List name"
+#~ msgid "Post name"
+#~ msgstr "Listnamn"
+
+#, fuzzy
+#~| msgid "Structure"
+#~ msgid "Custom Structure"
+#~ msgstr "Struktur"
+
+#, fuzzy
+#~| msgid "Available widgets"
+#~ msgid "Available tags:"
+#~ msgstr "Tillgängliga widgets"
+
+#, fuzzy
+#~| msgid "Board Settings"
+#~ msgid "Reading Settings"
+#~ msgstr "Board Inställningar"
+
+#, fuzzy
+#~| msgid "List Settings"
+#~ msgid "Writing Settings"
+#~ msgstr "Listinställningar"
+
+#, fuzzy
+#~| msgid "Remove item and its content?"
+#~ msgid "Selected file content:"
+#~ msgstr "Ta bort objektet och dess innehåll?"
+
+#, fuzzy
+#~| msgid "Add class"
+#~ msgid "Add Plugins"
+#~ msgstr "Lägg till klass"
+
+#, fuzzy
+#~| msgid ""
+#~| "Make this board available to use by other sites within this network."
+#~ msgid "This plugin may be active on other sites in the network."
+#~ msgstr ""
+#~ "Gör denna board tillgänglig för användning av andra webbplatser inom "
+#~ "detta nätverk."
+
+#, fuzzy
+#~| msgid ""
+#~| "Make this board available to use by other sites within this network."
+#~ msgid "These plugins may be active on other sites in the network."
+#~ msgstr ""
+#~ "Gör denna board tillgänglig för användning av andra webbplatser inom "
+#~ "detta nätverk."
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this event?"
+#~ msgid "Are you sure you wish to delete these files and data?"
+#~ msgstr "Är du säker på att du vill ta bort detta event?"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Are you sure you wish to delete these files?"
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "List Settings"
+#~ msgid "Privacy Settings"
+#~ msgstr "Listinställningar"
+
+#, fuzzy
+#~| msgid "Use this board on page"
+#~ msgid "Use This Page"
+#~ msgstr "Använd denna board på sida"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "Create New Page"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "Board Settings"
+#~ msgid "Before getting started"
+#~ msgstr "Board Inställningar"
+
+#, fuzzy
+#~| msgid "Class name"
+#~ msgid "Database name"
+#~ msgstr "Klassnamn"
+
+#, fuzzy
+#~| msgid "Class Name"
+#~ msgid "Database Name"
+#~ msgstr "Klassnamn"
+
+#, fuzzy
+#~| msgid "Edit classes"
+#~ msgid "Edit Themes"
+#~ msgstr "Editera klasser"
+
+#, fuzzy
+#~| msgid "Import failed, please check the format and try again."
+#~ msgid ""
+#~ "Oops, no such file exists! Double check the name and try again, merci."
+#~ msgstr "Importering misslyckades, se över formatet och försök igen."
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add New Theme"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy
+#~| msgid "Search query"
+#~ msgid "Search Themes"
+#~ msgstr "Sökfråga"
+
+#, fuzzy
+#~| msgid "Upload"
+#~ msgid "Upload Theme"
+#~ msgstr "Ladda upp"
+
+#, fuzzy
+#~| msgid "Preview on page"
+#~ msgid "Previewing and Installing"
+#~ msgstr "Förhandsgranska på sida"
+
+#, fuzzy
+#~| msgid "Filter by tag"
+#~ msgid "Filtering by:"
+#~ msgstr "Filtrera på typ"
+
+#, fuzzy
+#~| msgid "Edit classes"
+#~ msgid "Edit Filters"
+#~ msgstr "Editera klasser"
+
+#, fuzzy
+#~| msgid "Visibility"
+#~ msgid "Visit site"
+#~ msgstr "Synlighet"
+
+#, fuzzy
+#~| msgid "Show widget filters"
+#~ msgid "Show hidden updates"
+#~ msgstr "Visa filtrering"
+
+#, fuzzy
+#~| msgid "Hide widget filters"
+#~ msgid "Hide hidden updates"
+#~ msgstr "Göm filtrering"
+
+#, fuzzy
+#~| msgid "Versions"
+#~ msgid "Translations"
+#~ msgstr "Versioner"
+
+#, fuzzy, php-format
+#~| msgid "List User"
+#~ msgid "Edit User %s"
+#~ msgstr "Listanvändare"
+
+#, fuzzy
+#~| msgid "Do you want to save this query?"
+#~ msgid "Sorry, you are not allowed to edit this user."
+#~ msgstr "Vill du spara denna sökfråga?"
+
+#, fuzzy
+#~| msgid "There was a problem adding the class, please try again."
+#~ msgid "Error while saving the new email address. Please try again."
+#~ msgstr "Ett problem uppkom vid tillägg av klass, var god försök igen."
+
+#, fuzzy
+#~| msgid "Class Name"
+#~ msgid "First Name"
+#~ msgstr "Klassnamn"
+
+#, fuzzy
+#~| msgid "Class Name"
+#~ msgid "Last Name"
+#~ msgstr "Klassnamn"
+
+#, fuzzy
+#~| msgid "Versions"
+#~ msgid "Sessions"
+#~ msgstr "Versioner"
+
+#, fuzzy
+#~| msgid "List User"
+#~ msgid "Update User"
+#~ msgstr "Listanvändare"
+
+#, fuzzy
+#~| msgid "Could not restore to this version."
+#~ msgid "That user could not be added to this site."
+#~ msgstr "Kunde inte återställa till denna versionen."
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Sorry, you are not allowed to delete users."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Sorry, you are not allowed to delete that user."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Render from site"
+#~ msgid "Remove Users from Site"
+#~ msgstr "Rendera board från ursprungssiten"
+
+#, fuzzy
+#~| msgid "Confirm delete"
+#~ msgid "Confirm Removal"
+#~ msgstr "Bekräfta radering"
+
+#, fuzzy
+#~| msgid "Active widgets"
+#~ msgid "Inactive Widgets"
+#~ msgstr "Aktiva widgets"
+
+#, fuzzy, php-format
+#~| msgid "Widgets"
+#~ msgid "Widget %s"
+#~ msgstr "Widgets"
+
+#, fuzzy
+#~| msgid "Embed Widget"
+#~ msgid "Save Widget"
+#~ msgstr "Inbäddad WIdget"
+
+#, fuzzy
+#~| msgid "Change to board"
+#~ msgid "Changes saved."
+#~ msgstr "Ändra till board"
+
+#, fuzzy
+#~| msgid "Available widgets"
+#~ msgid "Available Widgets"
+#~ msgstr "Tillgängliga widgets"
+
+#, fuzzy
+#~| msgid "Filter active widgets.."
+#~ msgid "Clear Inactive Widgets"
+#~ msgstr "Filtrera aktiva widgets..."
+
+#, fuzzy
+#~| msgid "Embed Widget"
+#~ msgid "Add Widget"
+#~ msgstr "Inbäddad WIdget"
+
+#, fuzzy
+#~| msgid "remove"
+#~ msgid "URL removed"
+#~ msgstr "ta bort"
+
+#, fuzzy
+#~| msgid "Embed Widget"
+#~ msgid "Akismet Widget"
+#~ msgstr "Inbäddad WIdget"
+
+#, fuzzy
+#~| msgid "Board Upgrader"
+#~ msgid "Upgrade"
+#~ msgstr "Boarduppgraderare"
+
+#, fuzzy
+#~| msgid "Published: "
+#~ msgid "Published by"
+#~ msgstr "Publicerad: "
+
+#, fuzzy
+#~| msgid "Page:"
+#~ msgid "Pages:"
+#~ msgstr "Sida:"
+
+#, fuzzy
+#~| msgid "No {$list} Found"
+#~ msgid "Nothing Found"
+#~ msgstr "Ingen {$list} funnen"
+
+#, fuzzy
+#~| msgid "Widget tags:"
+#~ msgid "Widget Area"
+#~ msgstr "Widgettaggar"
+
+#, fuzzy
+#~| msgid "No content yet"
+#~ msgid "Skip to content"
+#~ msgstr "Inget innehåll än"
+
+#, fuzzy
+#~| msgid "Board widgets"
+#~ msgid "Menu and widgets"
+#~ msgstr "Board widgets"
+
+#, fuzzy
+#~| msgid "Preview on page"
+#~ msgid "Previous Image"
+#~ msgstr "Förhandsgranska på sida"
+
+#, fuzzy, php-format
+#~| msgid "Result for:"
+#~ msgid "Search Results for: %s"
+#~ msgstr "Resultat för:"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Custom"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "Column"
+#~ msgid "Two Column"
+#~ msgstr "Kolumn"
+
+#, fuzzy
+#~| msgid "Please fill in a list name"
+#~ msgid "Please define an SVG icon filename."
+#~ msgstr "Vänligen fyll i ett namn på listan"
+
+#, fuzzy
+#~| msgid "Tags:"
+#~ msgid "Tags"
+#~ msgstr "Tags:"
+
+#, fuzzy
+#~| msgid "Content"
+#~ msgid "Content Bottom 1"
+#~ msgstr "Innehåll"
+
+#, fuzzy
+#~| msgid "Content"
+#~ msgid "Content Bottom 2"
+#~ msgstr "Innehåll"
+
+#, fuzzy
+#~| msgid "Linked board"
+#~ msgid "Link Color"
+#~ msgstr "Länkad board"
+
+#, fuzzy
+#~| msgid "Visibility"
+#~ msgid "Visit Site"
+#~ msgstr "Synlighet"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgid "Edit Site"
+#~ msgstr "Editera"
+
+#, fuzzy
+#~| msgid "List User"
+#~ msgid "View User"
+#~ msgstr "Listanvändare"
+
+#, fuzzy
+#~| msgid "List User"
+#~ msgid "Edit User"
+#~ msgstr "Listanvändare"
+
+#, fuzzy
+#~| msgid "Tags:"
+#~ msgid "Tags: "
+#~ msgstr "Tags:"
+
+#, fuzzy
+#~| msgid "No connections made yet"
+#~ msgid "No connection to server"
+#~ msgstr "Inga kopplingar gjorda"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "Premature end of list"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "No connections made yet"
+#~ msgid "connection does not exist"
+#~ msgstr "Inga kopplingar gjorda"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgid "(Edit)"
+#~ msgstr "Editera"
+
+#, fuzzy
+#~| msgid "There was a problem adding the class, please try again."
+#~ msgid "There was an authentication problem. Please reload and try again."
+#~ msgstr "Ett problem uppkom vid tillägg av klass, var god försök igen."
+
+#, fuzzy, php-format
+#~| msgid "Custom name:"
+#~ msgid "Customize: %s"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this event?"
+#~ msgid "Are you sure you want to delete this theme?"
+#~ msgstr "Är du säker på att du vill ta bort detta event?"
+
+#, fuzzy
+#~| msgid "Change to board"
+#~ msgid "Change logo"
+#~ msgstr "Ändra till board"
+
+#, fuzzy
+#~| msgid "Choose a list"
+#~ msgid "Choose logo"
+#~ msgstr "Välj en lista"
+
+#, fuzzy
+#~| msgid "Board Settings"
+#~ msgid "Homepage Settings"
+#~ msgstr "Board Inställningar"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Custom Link"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "Section"
+#~ msgid "Menu Location"
+#~ msgstr "Sektion"
+
+#, fuzzy
+#~| msgid "Timeline Actions"
+#~ msgid "Menu Locations"
+#~ msgstr "Tidslinjehändelse"
+
+#, fuzzy
+#~| msgid "Confirm delete"
+#~ msgid "Menu item deleted"
+#~ msgstr "Bekräfta radering"
+
+#, fuzzy
+#~| msgid "Confirm delete"
+#~ msgid "Menu deleted"
+#~ msgstr "Bekräfta radering"
+
+#, fuzzy, php-format
+#~| msgid "Could not create board list"
+#~ msgid "%1$s could not be created: %2$s"
+#~ msgstr "Kunde inte skapa lista"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "Create New Menu"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "Search query"
+#~ msgid "Search Menu Items"
+#~ msgstr "Sökfråga"
+
+#, fuzzy
+#~| msgid "Clear all filters"
+#~ msgid "Clear Results"
+#~ msgstr "Rensa filter"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Customizing"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "No {$list} Found"
+#~ msgid "No widgets found."
+#~ msgstr "Ingen {$list} funnen"
+
+#, fuzzy
+#~| msgid "Embed Widget"
+#~ msgid "Add a Widget"
+#~ msgstr "Inbäddad WIdget"
+
+#, fuzzy
+#~| msgid "Static widgets"
+#~ msgid "Search Widgets"
+#~ msgstr "Statiska widgets"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Subscript"
+#~ msgstr "Beskrivning"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Superscript"
+#~ msgstr "Beskrivning"
+
+#, fuzzy
+#~| msgid "Close form without saving"
+#~ msgid "Clear formatting"
+#~ msgstr "Stäng fönstret utan att spara"
+
+#, fuzzy
+#~| msgid "description:"
+#~ msgid "Image description"
+#~ msgstr "beskrivning:"
+
+#, fuzzy
+#~| msgid "Versions"
+#~ msgid "Dimensions"
+#~ msgstr "Versioner"
+
+#, fuzzy
+#~| msgid "Save as template"
+#~ msgid "Paste as text"
+#~ msgstr "Spara som mall"
+
+#, fuzzy
+#~| msgid "Close window"
+#~ msgid "New window"
+#~ msgstr "Stäng fönstret"
+
+#, fuzzy
+#~| msgid "Could not find article from OC."
+#~ msgid "Could not find the specified string."
+#~ msgstr "Kunde inte hitta artikel i OC."
+
+#, fuzzy
+#~| msgid "On tablet"
+#~ msgid "Insert table"
+#~ msgstr "På tablet"
+
+#, fuzzy
+#~| msgid "Published property"
+#~ msgid "Table properties"
+#~ msgstr "Property publicerad"
+
+#, fuzzy
+#~| msgid "column"
+#~ msgid "Delete column"
+#~ msgstr "kolumn"
+
+#, fuzzy
+#~| msgid "Column"
+#~ msgid "Column group"
+#~ msgstr "Kolumn"
+
+#, fuzzy
+#~| msgid "For types"
+#~ msgid "Row type"
+#~ msgstr "För typer"
+
+#, fuzzy
+#~| msgid "Section"
+#~ msgid "Action"
+#~ msgstr "Sektion"
+
+#, fuzzy, php-format
+#~| msgid "Could not find article from OC."
+#~ msgid "Could not open handle for %1$s to %2$s."
+#~ msgstr "Kunde inte hitta artikel i OC."
+
+#, fuzzy
+#~| msgid "Could not create board list"
+#~ msgid "Could not read image size."
+#~ msgstr "Kunde inte skapa lista"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "March"
+#~ msgstr "Sök"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "am"
+#~ msgstr "Namn"
+
+#, fuzzy
+#~| msgid "Active layout"
+#~ msgid "Fixed Layout"
+#~ msgstr "Aktiv layout"
+
+#, fuzzy
+#~| msgid "Active layout"
+#~ msgid "Responsive Layout"
+#~ msgstr "Aktiv layout"
+
+#, fuzzy
+#~| msgid "Latest version"
+#~ msgid "Software Version"
+#~ msgstr "Senaste version"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Sorry, you are not allowed to delete this post."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Sorry, you are not allowed to delete this term."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Sorry, you are not allowed to delete this page."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Sorry, you are not allowed to delete this category."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this event?"
+#~ msgid "Sorry, you are not allowed to delete this comment."
+#~ msgstr "Är du säker på att du vill ta bort detta event?"
+
+#, fuzzy
+#~| msgid "Are you sure you'd like to remove this list?"
+#~ msgid "Sorry, you are not allowed to view this item."
+#~ msgstr "Är du säker på att du vill ta bort denna lista?"
+
+#, fuzzy
+#~| msgid "Save as template"
+#~ msgid "Leave a Reply"
+#~ msgstr "Spara som mall"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgid "Cancel reply"
+#~ msgstr "Avbryt"
+
+#, fuzzy
+#~| msgid "Could not create board list"
+#~ msgid "Could not update comment status"
+#~ msgstr "Kunde inte skapa lista"
+
+#, fuzzy
+#~| msgid "Content"
+#~ msgid "Comment Content"
+#~ msgstr "Innehåll"
+
+#, fuzzy
+#~| msgid "Loading image"
+#~ msgid "Hide image"
+#~ msgstr "Laddar bild"
+
+#, fuzzy
+#~| msgid "Loading image"
+#~ msgid "Add new image"
+#~ msgstr "Laddar bild"
+
+#, fuzzy
+#~| msgid "Close window"
+#~ msgid "Choose video"
+#~ msgstr "Stäng fönstret"
+
+#, fuzzy
+#~| msgid "Change to board"
+#~ msgid "Change audio"
+#~ msgstr "Ändra till board"
+
+#, fuzzy
+#~| msgid "Choose a list"
+#~ msgid "Choose audio"
+#~ msgstr "Välj en lista"
+
+#, fuzzy
+#~| msgid "Loading image"
+#~ msgid "Change image"
+#~ msgstr "Laddar bild"
+
+#, fuzzy
+#~| msgid "Choose a list"
+#~ msgid "Choose image"
+#~ msgstr "Välj en lista"
+
+#, fuzzy
+#~| msgid "Choose a list"
+#~ msgid "Choose file"
+#~ msgstr "Välj en lista"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add Items"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "+ Create New Menu"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgid "Edit Menu"
+#~ msgstr "Editera"
+
+#, fuzzy, php-format
+#~| msgid "Custom name:"
+#~ msgid "Customize theme: %s"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "Active layout"
+#~ msgid "Active theme"
+#~ msgstr "Aktiv layout"
+
+#, fuzzy
+#~| msgid "Preview on page"
+#~ msgid "Previewing theme"
+#~ msgstr "Förhandsgranska på sida"
+
+#, fuzzy
+#~| msgid "Filter by type"
+#~ msgid "Filter themes"
+#~ msgstr "Filtrera widgettyp"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Are you sure you want to do this?"
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy, php-format
+#~| msgid "Could not save list"
+#~ msgid "Could not write file %s"
+#~ msgstr "Kunde inte spara listan"
+
+#, fuzzy
+#~| msgid "Close window"
+#~ msgid "Close dialog"
+#~ msgstr "Stäng fönstret"
+
+#, fuzzy
+#~| msgid "Please fill in a list name"
+#~ msgid "Please log in again."
+#~ msgstr "Vänligen fyll i ett namn på listan"
+
+#, fuzzy, php-format
+#~| msgid "Page:"
+#~ msgid "Page %s"
+#~ msgstr "Sida:"
+
+#, fuzzy, php-format
+#~| msgid "Author:"
+#~ msgid "Author: %s"
+#~ msgstr "Författare:"
+
+#, fuzzy, php-format
+#~| msgid "Published: "
+#~ msgid "Posts published on %s"
+#~ msgstr "Publicerad: "
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgid "Edit This"
+#~ msgstr "Editera"
+
+#, fuzzy
+#~| msgid "Position"
+#~ msgid "Post navigation"
+#~ msgstr "Listposition"
+
+#, fuzzy
+#~| msgid "Position"
+#~ msgid "Posts navigation"
+#~ msgstr "Listposition"
+
+#, fuzzy
+#~| msgid "Upload"
+#~ msgid "Uploading"
+#~ msgstr "Ladda upp"
+
+#, fuzzy
+#~| msgid "Edit classes"
+#~ msgid "Edit Image"
+#~ msgstr "Editera klasser"
+
+#, fuzzy
+#~| msgid "Upload"
+#~ msgid "Uploaded on:"
+#~ msgstr "Ladda upp"
+
+#, fuzzy
+#~| msgid "Articles"
+#~ msgid "Artist"
+#~ msgstr "Artiklar"
+
+#, fuzzy
+#~| msgid "Upload"
+#~ msgid "Uploaded By"
+#~ msgstr "Ladda upp"
+
+#, fuzzy
+#~| msgid "Upload"
+#~ msgid "Uploaded To"
+#~ msgstr "Ladda upp"
+
+#, fuzzy
+#~| msgid "Section"
+#~ msgid "Edit Selection"
+#~ msgstr "Sektion"
+
+#, fuzzy
+#~| msgid "Linked board"
+#~ msgid "Link To"
+#~ msgstr "Länkad board"
+
+#, fuzzy
+#~| msgid "List Settings"
+#~ msgid "Playlist Settings"
+#~ msgstr "Listinställningar"
+
+#, fuzzy
+#~| msgid "Show widget filters"
+#~ msgid "Show Video List"
+#~ msgstr "Visa filtrering"
+
+#, fuzzy
+#~| msgid "List Settings"
+#~ msgid "Display Settings"
+#~ msgstr "Listinställningar"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Custom Size"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "CSS Class"
+#~ msgid "Image CSS Class"
+#~ msgstr "CSS klass"
+
+#, fuzzy
+#~| msgid "CSS Class"
+#~ msgid "Link CSS Class"
+#~ msgstr "CSS klass"
+
+#, fuzzy
+#~| msgid "Upload"
+#~ msgid "Preload"
+#~ msgstr "Ladda upp"
+
+#, fuzzy
+#~| msgid "Upload"
+#~ msgid "Upload Files"
+#~ msgstr "Ladda upp"
+
+#, fuzzy
+#~| msgid "Upload"
+#~ msgid "Upload Images"
+#~ msgstr "Ladda upp"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "Create a new gallery"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "Create a new playlist"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "Create a new video playlist"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "Section"
+#~ msgid "Cancel Selection"
+#~ msgstr "Sektion"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgid "Cancel Edit"
+#~ msgstr "Avbryt"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "Create Audio Playlist"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "Create Video Playlist"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "Please fill in a list name"
+#~ msgid "Please enter a username."
+#~ msgstr "Vänligen fyll i ett namn på listan"
+
+#, fuzzy
+#~| msgid "Please fill in a list name"
+#~ msgid "Please enter a site name."
+#~ msgstr "Vänligen fyll i ett namn på listan"
+
+#, fuzzy
+#~| msgid "The article is already in the active list"
+#~ msgid "The user is already active."
+#~ msgstr "Artikeln finns redan i listan"
+
+#, fuzzy
+#~| msgid "The article is already in the active list"
+#~ msgid "The site is already active."
+#~ msgstr "Artikeln finns redan i listan"
+
+#, fuzzy
+#~| msgid "Could not create board list"
+#~ msgid "Could not create user"
+#~ msgstr "Kunde inte skapa lista"
+
+#, fuzzy
+#~| msgid "The article is already in the active list"
+#~ msgid "That username is already activated."
+#~ msgstr "Artikeln finns redan i listan"
+
+#, fuzzy
+#~| msgid "Could not create board list"
+#~ msgid "Could not create site."
+#~ msgstr "Kunde inte skapa lista"
+
+#, fuzzy, php-format
+#~| msgid "Board Changed"
+#~ msgid "[%s] Password Changed"
+#~ msgstr "Board ändrad"
+
+#, fuzzy
+#~| msgid "Versions"
+#~ msgid "Revision"
+#~ msgstr "Versioner"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Custom CSS"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "Edit classes"
+#~ msgid "Edit Changeset"
+#~ msgstr "Editera klasser"
+
+#, fuzzy
+#~| msgid "Board Changed"
+#~ msgid "Search Changesets"
+#~ msgstr "Board ändrad"
+
+#, fuzzy
+#~| msgid "No OC connection found."
+#~ msgid "No changesets found."
+#~ msgstr "Ingen OC uppkoppling funnen."
+
+#, fuzzy
+#~| msgid "Could Not Be Found In Trash"
+#~ msgid "No changesets found in Trash."
+#~ msgstr "Kunde inte hittas i papperskorgen"
+
+#, fuzzy
+#~| msgid "Confirm delete"
+#~ msgid "Confirmed"
+#~ msgstr "Bekräfta radering"
+
+#, fuzzy
+#~| msgid "Confirm delete"
+#~ msgid "Completed"
+#~ msgstr "Bekräfta radering"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add New Post"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add New Page"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgid "Edit Post"
+#~ msgstr "Editera"
+
+#, fuzzy
+#~| msgid "Edit classes"
+#~ msgid "Edit Page"
+#~ msgstr "Editera klasser"
+
+#, fuzzy
+#~| msgid "Page:"
+#~ msgid "New Page"
+#~ msgstr "Sida:"
+
+#, fuzzy
+#~| msgid "View"
+#~ msgid "View Post"
+#~ msgstr "Se"
+
+#, fuzzy
+#~| msgid "View"
+#~ msgid "View Page"
+#~ msgstr "Se"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search Posts"
+#~ msgstr "Sök"
+
+#, fuzzy
+#~| msgid "Search query"
+#~ msgid "Search Pages"
+#~ msgstr "Sökfråga"
+
+#, fuzzy
+#~| msgid "No {$list} Found"
+#~ msgid "No posts found."
+#~ msgstr "Ingen {$list} funnen"
+
+#, fuzzy
+#~| msgid "No page was chosen!"
+#~ msgid "No pages found."
+#~ msgstr "Inge sida vald!"
+
+#, fuzzy
+#~| msgid "Could Not Be Found In Trash"
+#~ msgid "No posts found in Trash."
+#~ msgstr "Kunde inte hittas i papperskorgen"
+
+#, fuzzy
+#~| msgid "Could Not Be Found In Trash"
+#~ msgid "No pages found in Trash."
+#~ msgstr "Kunde inte hittas i papperskorgen"
+
+#, fuzzy
+#~| msgid "Filter by tag"
+#~ msgid "Filter posts list"
+#~ msgstr "Filtrera på typ"
+
+#, fuzzy
+#~| msgid "Filter by tag"
+#~ msgid "Filter pages list"
+#~ msgstr "Filtrera på typ"
+
+#, fuzzy
+#~| msgid "Classlist"
+#~ msgid "Posts list"
+#~ msgstr "Klasslista"
+
+#, fuzzy
+#~| msgid "Classlist"
+#~ msgid "Pages list"
+#~ msgstr "Klasslista"
+
+#, fuzzy
+#~| msgid "Loading image"
+#~ msgid "Manage Images"
+#~ msgstr "Laddar bild"
+
+#, fuzzy
+#~| msgid "Save as template"
+#~ msgid "Invalid page template."
+#~ msgstr "Spara som mall"
+
+#, fuzzy
+#~| msgid "a description of the class for the end user"
+#~ msgid "Description for the object, as it exists in the database."
+#~ msgstr "en beskrivning av klassen för användaren"
+
+#, fuzzy
+#~| msgid "Could not fetch board list"
+#~ msgid "Could not open file handle."
+#~ msgstr "Kunde inte hämta listan"
+
+#, fuzzy
+#~| msgid "a description of the class for the end user"
+#~ msgid "HTML description of the term."
+#~ msgstr "en beskrivning av klassen för användaren"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Sorry, you are not allowed to delete this user."
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "a description of the class for the end user"
+#~ msgid "Description of the user."
+#~ msgstr "en beskrivning av klassen för användaren"
+
+#, fuzzy
+#~| msgid "a description of the class for the end user"
+#~ msgid "Registration date for the user."
+#~ msgstr "en beskrivning av klassen för användaren"
+
+#, fuzzy
+#~| msgid "Choose a engine to use."
+#~ msgid "Roles assigned to the user."
+#~ msgstr "Välj en motor att använda."
+
+#, fuzzy
+#~| msgid "Could not find article from OC."
+#~ msgid "Could not delete meta value from database."
+#~ msgstr "Kunde inte hitta artikel i OC."
+
+#, fuzzy
+#~| msgid "a description of the class for the end user"
+#~ msgid "Enter a description of the image"
+#~ msgstr "en beskrivning av klassen för användaren"
+
+#, fuzzy
+#~| msgid "Choose a list"
+#~ msgid "Close italic tag"
+#~ msgstr "Välj en lista"
+
+#, fuzzy
+#~| msgid "OC List item"
+#~ msgid "Close list item tag"
+#~ msgstr "Listobjekt"
+
+#, fuzzy
+#~| msgid "Upload"
+#~ msgid "Upload failed."
+#~ msgstr "Ladda upp"
+
+#, fuzzy
+#~| msgid "Versions"
+#~ msgid "Persian"
+#~ msgstr "Versioner"
+
+#, fuzzy
+#~| msgid "Publish"
+#~ msgid "Polish"
+#~ msgstr "Publicera"
+
+#, fuzzy
+#~| msgid "List name"
+#~ msgid "Vietnamese"
+#~ msgstr "Listnamn"
+
+#, fuzzy
+#~| msgid "Save draft"
+#~ msgid "Saved"
+#~ msgstr "Spara utkast"
+
+#, fuzzy
+#~| msgid "Board Changed"
+#~ msgid "Discard changes"
+#~ msgstr "Board ändrad"
+
+#, fuzzy
+#~| msgid "Reload preview"
+#~ msgid "Site Preview"
+#~ msgstr "Ladda om förhandsgranskning"
+
+#, fuzzy
+#~| msgid "Are you sure you'd like to remove this list?"
+#~ msgid "Are you sure you&#8217;d like to discard your unpublished changes?"
+#~ msgstr "Är du säker på att du vill ta bort denna lista?"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this event?"
+#~ msgid ""
+#~ "Are you sure you want to edit this comment?\n"
+#~ "The changes you made will be lost."
+#~ msgstr "Är du säker på att du vill ta bort detta event?"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this event?"
+#~ msgid ""
+#~ "Are you sure you want to do this?\n"
+#~ "The comment changes you made will be lost."
+#~ msgstr "Är du säker på att du vill ta bort detta event?"
+
+#, fuzzy
+#~| msgid "remove"
+#~ msgid "Term removed."
+#~ msgstr "ta bort"
+
+#, fuzzy
+#~| msgid "Publish"
+#~ msgid "Publish on:"
+#~ msgstr "Publicera"
+
+#, fuzzy
+#~| msgid "Result for:"
+#~ msgid "Schedule for:"
+#~ msgstr "Resultat för:"
+
+#, fuzzy
+#~| msgid "Published: "
+#~ msgid "Published on:"
+#~ msgstr "Publicerad: "
+
+#, fuzzy
+#~| msgid "No OC connection found."
+#~ msgid "No more comments found."
+#~ msgstr "Ingen OC uppkoppling funnen."
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this event?"
+#~ msgid "Are you sure you want to install this plugin?"
+#~ msgstr "Är du säker på att du vill ta bort detta event?"
+
+#, fuzzy, php-format
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Are you sure you want to delete %s?"
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy, php-format
+#~| msgid "Are you sure you want to delete this event?"
+#~ msgid "Are you sure you want to delete %s and its data?"
+#~ msgstr "Är du säker på att du vill ta bort detta event?"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this event?"
+#~ msgid "Are you sure you want to delete the selected plugins and their data?"
+#~ msgstr "Är du säker på att du vill ta bort detta event?"
+
+#, fuzzy
+#~| msgid ""
+#~| "Doing this will cause all changes not saved to be lost, are you sure you "
+#~| "want to proceed?"
+#~ msgid ""
+#~ "Caution: These themes may be active on other sites in the network. Are "
+#~ "you sure you want to proceed?"
+#~ msgstr ""
+#~ "Alla osparade ändringar kommer försvinna, är du säker på att du vill "
+#~ "fortsätta?"
+
+#, fuzzy
+#~| msgid "Use this board on page"
+#~ msgid "Use as featured image"
+#~ msgstr "Använd denna board på sida"
+
+#, fuzzy
+#~| msgid "Saving"
+#~ msgid "Saving..."
+#~ msgstr "Sparar"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search Tags"
+#~ msgstr "Sök"
+
+#, fuzzy
+#~| msgid "Search query"
+#~ msgid "Search Categories"
+#~ msgstr "Sökfråga"
+
+#, fuzzy
+#~| msgid "Tags:"
+#~ msgid "All Tags"
+#~ msgstr "Tags:"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgid "Edit Tag"
+#~ msgstr "Editera"
+
+#, fuzzy
+#~| msgid "View"
+#~ msgid "View Tag"
+#~ msgstr "Se"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add New Tag"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add New Category"
+#~ msgstr "Lägg till ny"
+
+#, fuzzy
+#~| msgid "Close form without saving"
+#~ msgid "Choose from the most used tags"
+#~ msgstr "Stäng fönstret utan att spara"
+
+#, fuzzy
+#~| msgid "No {$list} Found"
+#~ msgid "No tags found."
+#~ msgstr "Ingen {$list} funnen"
+
+#, fuzzy
+#~| msgid "No OC connection found."
+#~ msgid "No categories found."
+#~ msgstr "Ingen OC uppkoppling funnen."
+
+#, fuzzy
+#~| msgid "Classlist"
+#~ msgid "Tags list"
+#~ msgstr "Klasslista"
+
+#, fuzzy
+#~| msgid "Create new list"
+#~ msgid "Categories list"
+#~ msgstr "Skapa ny lista"
+
+#, fuzzy
+#~| msgid "Could not find article from OC."
+#~ msgid "Could not split shared term."
+#~ msgstr "Kunde inte hitta artikel i OC."
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Customizer"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "User Description"
+#~ msgstr "Beskrivning"
+
+#, fuzzy
+#~| msgid "List User"
+#~ msgid "User"
+#~ msgstr "Listanvändare"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Show hierarchy"
+#~ msgstr "Sök"
+
+#, fuzzy
+#~| msgid "Custom name:"
+#~ msgid "Custom HTML"
+#~ msgstr "Anpassat namn:"
+
+#, fuzzy
+#~| msgid "Showing"
+#~ msgid "Show Link Image"
+#~ msgstr "Visar"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Show Link Description"
+#~ msgstr "Beskrivning"
+
+#, fuzzy
+#~| msgid "Showing"
+#~ msgid "Show Link Rating"
+#~ msgstr "Visar"
+
+#, fuzzy
+#~| msgid "Embed Widget"
+#~ msgid "Audio Widget"
+#~ msgstr "Inbäddad WIdget"
+
+#, fuzzy
+#~| msgid "Filter active widgets.."
+#~ msgid "Title for the widget"
+#~ msgstr "Filtrera aktiva widgets..."
+
+#, fuzzy
+#~| msgid "Embed Widget"
+#~ msgid "Image Widget"
+#~ msgstr "Inbäddad WIdget"
+
+#, fuzzy
+#~| msgid "Embed Widget"
+#~ msgid "Video Widget"
+#~ msgstr "Inbäddad WIdget"
+
+#, fuzzy
+#~| msgid "Embed Widget"
+#~ msgid "Add to Widget"
+#~ msgstr "Inbäddad WIdget"
+
+#, fuzzy
+#~| msgid "Embed Widget"
+#~ msgid "Media Widget"
+#~ msgstr "Inbäddad WIdget"
+
+#, fuzzy
+#~| msgid "Page Timeline"
+#~ msgid "Page title"
+#~ msgstr "Sidtidslinje"
+
+#, fuzzy
+#~| msgid "Page:"
+#~ msgid "Page ID"
+#~ msgstr "Sida:"
+
+#, fuzzy
+#~| msgid "Render board from source site."
+#~ msgid "A search form for your site."
+#~ msgstr "Rendera board från ursprungssiten."
+
+#, fuzzy
+#~| msgid "Content"
+#~ msgid "Content:"
+#~ msgstr "Innehåll"
+
+#, fuzzy
+#~| msgid "Are you sure you'd like to remove this list?"
+#~ msgid "Are you sure it exists?"
+#~ msgstr "Är du säker på att du vill ta bort denna lista?"
+
+#, fuzzy
+#~| msgid "Are you sure you want to remove this class?"
+#~ msgid "Are you sure you have the correct username and password?"
+#~ msgstr "Är du säker på att du vill ta bort denna klass?"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this"
+#~ msgid "Are you sure that you have typed the correct hostname?"
+#~ msgstr "Är du säker på att du vill ta bort denna "
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this event?"
+#~ msgid "Are you sure that the database server is running?"
+#~ msgstr "Är du säker på att du vill ta bort detta event?"
+
+#, fuzzy, php-format
+#~| msgid "Author:"
+#~ msgid "Author is %s"
+#~ msgstr "Författare:"
+
+#, fuzzy
+#~| msgid "List name"
+#~ msgid "sitename"
+#~ msgstr "Listnamn"
+
+#, fuzzy
+#~| msgid "Import failed, please check the format and try again."
+#~ msgid "There was a problem, please correct the form below and try again."
+#~ msgstr "Importering misslyckades, se över formatet och försök igen."
+
+#~ msgid ""
+#~ "The query that determines which lists will be fetched from Open Content "
+#~ "and available in your boards."
+#~ msgstr ""
+#~ "Denna fråga avgör vilka listor som kommer hämtas från Open Content och "
+#~ "vara tillgängliga i era boards."
+
+#~ msgid ""
+#~ "The query will only fetch the content type \"List\", default query "
+#~ "fetches all lists available."
+#~ msgstr ""
+#~ "Frågan kommer endast hämte content type “List”, standardfrågan hämtar "
+#~ "alla listor som är tillgängliga."
+
+#~ msgid ""
+#~ "Uncheck the templates that you want to deregister. The \"Standard Article"
+#~ "\" template will always be active by default."
+#~ msgstr ""
+#~ "Avmarkera de mallar ni vill avregistrera. Standardmallen kommer alltid "
+#~ "vara aktiv."
+
+#, fuzzy
+#~| msgid "Class name"
+#~ msgid "some_class_name"
+#~ msgstr "Klassnamn"
+
+#~ msgid "Change to board:"
+#~ msgstr "Ändra till board:"
+
+#~ msgid "- Choose a board - "
+#~ msgstr "- Välj en board -"
+
+#~ msgid "fail"
+#~ msgstr "misslyckades"
+
+#~ msgid "Drag prefabed widgets here to delete them"
+#~ msgstr "Dra fördefinierade widgets hit för att ta bort dem"
+
+#~ msgid "Could Not Be Found"
+#~ msgstr "Kunde inte hittas"

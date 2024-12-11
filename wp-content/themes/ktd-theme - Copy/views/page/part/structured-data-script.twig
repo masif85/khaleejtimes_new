@@ -1,0 +1,285 @@
+<{{ value }} type="application/ld+json">
+{% if tealiumGroup == 'homepage' %}
+{# -------------- DONE - ready test and compare with current #}
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        {% include "@base/page/part/structured-data-script-potentialAction.twig" %}
+        {% include "@base/page/part/structured-data-script-shared.twig" %}
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://www.khaleejtimes.com/#webpage",
+        "url":"https://www.khaleejtimes.com/",
+        "inLanguage":"en-US",
+        "name":"Khaleej Times - Dubai News, UAE News, Gulf, News, Latest news, Arab news, Sharjah News, Gulf News, Jobs in Dubai, Dubai Labour News",
+        "isPartOf":{
+          "@type":"WebSite",
+          "@id":"https://www.khaleejtimes.com/#website"
+        },
+        "description":"Khaleej Times Online provides complete UAE news and international news coverage and online utilities like Dubai Gold Rate, Dubai draft rate, UAE Exchange rate, silver rate"
+      }
+    ]
+  }
+  {% elseif tealiumGroup == 'gold-forex' %}
+  {
+    "@context":"https://schema.org",
+      "@graph":[
+      {
+        {% include "@base/page/part/structured-data-script-potentialAction.twig" %}
+        {% include "@base/page/part/structured-data-script-shared.twig" %}
+      },
+      {
+        "@type":"ImageObject",
+        "@id":"https://www.khaleejtimes.com/gold-forex/#image-Gold/forex",
+        "url":"https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/16142933/Gold-Forex-800x600-1.jpg",
+        "width":800,
+        "height":600
+      },
+      {
+        "@type":"WebPage",
+        "@id":"{{ get_permalink() }}#webpage",
+        "url":"{{ get_permalink() }}",
+        "inLanguage":"en-US",
+        "breadcrumb":"Home > Gold/forex",
+        "name":"{% if getMetaTitle %}{{ getMetaTitle }}{% else %}{{ get_bloginfo('name') }} - {{ metatitle }}{% endif %}",
+        "isPartOf":{
+          "@type":"WebSite",
+          "@id":"https://www.khaleejtimes.com/#website"
+        },
+        "primaryImageOfPage":{
+          "@id":"{{ get_permalink() }}#image"
+        },
+        "datePublished":"{{"now"|date("c")}}",
+        "dateModified":"{{"now"|date("c")}}",
+        "description":"{{ getMetaDescription  }}"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item":
+          {
+            "@id": "https://www.khaleejtimes.com",
+            "name": "Home"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item":
+          {
+            "@id": "{{ get_permalink() }}",
+            "name": "Gold-Forex"
+          }
+      }]
+    }]
+  }
+  {% elseif tealiumGroup == 'prayer-timings' %}
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+    {
+      {% include "@base/page/part/structured-data-script-potentialAction.twig" %}
+      {% include "@base/page/part/structured-data-script-shared.twig" %}
+    },
+    {
+      "@type":"WebPage",
+      "@id":"{{ get_permalink() }}/#webpage",
+      "url":"{{ get_permalink() }}",
+      "inLanguage":"en-US",
+      "name":"{% if getMetaTitle %}{{ getMetaTitle }}{% else %}{{ get_bloginfo('name') }} - {{ metatitle }}{% endif %}",
+      "isPartOf":{
+      "@type":"WebSite",
+      "@id":"https://www.khaleejtimes.com/#website"
+    },
+    "datePublished":"{{"now"|date("c")}}",
+    "dateModified":"{{"now"|date("c")}}",
+    "description":"{{ getMetaDescription  }}"
+    }]
+  }
+  {% elseif tealiumGroup == 'article' %}
+  {# -------------- DONE - ready test and compare with current #}
+  {		
+	{% if contentsubtype=='VIDEO' %}	
+          "@context":"http://schema.org",
+          "@type":"VideoObject",
+          "@id":"{{ get_permalink() }}",
+          "description":"{{ clean(teaser_body)|raw }}",
+          "url":"{{ get_permalink() }}",
+          "name":"{{ clean(headline)|raw }} - News | {{ get_bloginfo('name') }}",
+          "thumbnailUrl":"{% if get_part('thumbnailUrl',body)!=false %}{{get_part('thumbnailUrl',body)}}{%else%}{{mainImage.src|raw}}{% endif %}",
+          "publisher":
+          {
+          "@context":"http://schema.org",
+          "@type":"Organization",
+          "name":"Khaleej Times",
+          "logo":
+          {
+          "@context":"http://schema.org",
+          "@type":"ImageObject",
+         "url": "{% if mainImage %}{{ render_partial('@base/teasers/partial/image-url', mainImage) }}{% else %}https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/03170252/default_490x276.jpg{% endif %}",
+          "width": 200
+          },
+          "url":"https://www.khaleejtimes.com"
+          },
+           "embedUrl":"{% if get_part('embedUrl',body) %}{{get_part('embedUrl',body)}}{%else%}{{get_part('src',body)}}{%endif%}",         
+         "contentUrl":"{% if get_part('embedUrl',body)|split('=',2)[1] %}https://www.dailymotion.com/crawler/video/{{get_part('embedUrl',body)|split('=',2)[1]}}{%else%}{{get_part('src',body)}} {%endif%}",
+          "uploadDate":"{{ pubdate|date("c") }}",
+          "duration":"{{get_part('duration',body)}}" 
+		  
+	 {%else%}    
+	 
+			"@context": "https://schema.org",
+			"@type": "NewsArticle",
+			"inLanguage": "en",
+			"mainEntityOfPage":{
+			  "@type":"WebPage",
+			  "@id":"{{ get_permalink() }}"
+			},
+			"name": "{{  clean(headline)|raw }} - News | {{ get_bloginfo('name') }}",
+			"description": "{{ clean(teaser_body)|raw }}",
+			"headline": "{{ clean(headline)|raw }} - News | {{ get_bloginfo('name') }}",
+			"articleSection" : "{% for items in sections|slice(0, 1) %}{{ items.name }}{% endfor %}",
+			{% if keywords %}
+			  "keywords": "{{ keywords }}",
+			{% else %}
+			  {% if sections %}
+				"keywords": "{% for items in sections|sort|reverse %}{{ items.name }}{% if loop.last == false %}, {% endif %}{% endfor %}",
+			  {% endif %}
+			{% endif %}
+			"thumbnailUrl": "{% if mainImage %}{{mainImage.src|raw}}{% else %}https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/03170252/default_490x276.jpg{% endif %}",
+			"image": {
+			  "@type": "ImageObject",
+			  "url": "{% if mainImage %}{{mainImage.src|raw}}{% else %}https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/03170252/default_490x276.jpg{% endif %}",
+			  "width": 780,
+			  "height": 435
+			},
+			"datePublished": "{{ pubdate|date("c") }}",
+			"dateModified": "{{ objectUpdated|date("c")}}",
+			"author": [{% if authors %}{% for author in authors %}
+			
+			{
+			"@type": "Person",   
+			"name": "{% if contentsubtype == 'SPONSOREDCONTENT' %}Partner Content by KTEngage{% else %}{% if authors %}{{ author.name }}{% elseif author_byline %}{{ author_byline }}{% else %}None{% endif %}{% endif %}",	
+			"URL": {% if authors %}{% set link = get_concept_link(author.uuid) %}{% if link %}{% if loop.first %}{% else %}{% endif %}"{{ site_url() }}{{ link }}"{% else %}{% if loop.first %}{% else %}{% endif %}"-"{% endif %}{% else %}"-"{% endif %}
+			
+			}{% if loop.last %}{%else%},{%endif%}
+			{%endfor%}
+			{%endif%}			
+			],
+			{% include "@base/page/part/structured-data-script-shared.twig" %}
+	{%endif%}
+  }
+  {% elseif tealiumGroup == 'cinema-listing' %}  
+{
+	"@context":"https://schema.org",
+	"@type":"ItemList",
+	"itemListElement":[	
+	 {% for movie in movies %}	
+	{
+		"@type":"ListItem",
+		"position":{{ loop.index }},
+		"item": 
+		{
+            "@type": "Movie",
+            "url": "{{ movie.permalink }}",
+            "name": "{{ movie.headline }}",
+            "image": "{{ movie.image.src|raw }}",
+            "dateCreated": "{{ movie.pubdate|date("c") }}",
+            "director": 
+			{
+				"@type": "Person",
+                "name": "-"
+            }
+		}
+    }{% if loop.last %} {%else%},{%endif%}
+	{% endfor %}
+	
+	]
+}
+  {% elseif tealiumGroup == 'cinema-landing-page'%}
+  {
+	"@context":"https://schema.org",
+	"@type":"Movie",
+	"url":"{{permalink}}",
+	"name":"{{ headline }}",
+	"image":"{{mainImage.src|raw}}",
+	"description":"{{ teaser_body }}",
+	"datePublished":"{{ pubdate|date("c") }}",	
+	"trailer":
+	{
+		"@type":"VideoObject",
+		"name":"{{ headline }} Trailer",
+		"uploadDate":"{{ pubdate|date("c") }}",
+		"embedUrl":"{{get_iframe_src(trailer|raw,'src')}}",
+		"thumbnail":
+		{
+			"@type":"ImageObject",
+			"contentUrl":"{{mainImage.src|raw}}"
+		},
+		"thumbnailUrl":"{{mainImage.src|raw}}",
+		"description":"{{ headline }}"
+	},
+	"director":[
+	{
+		"@type":"Person",
+		"url":"-",
+		"name":"-"
+	}],
+	"publisher": 
+	{
+		"@type": "Organization",
+		"name": "Khaleej Times",
+		"url": "https://www.khaleejtimes.com",
+		"logo": 
+		{
+			"@type": "ImageObject",
+			"url": "https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/10/12171006/khaleej-times-logo.png",
+			"width": 200
+		}
+	},
+	"copyrightHolder": 
+	{
+	  "type": "Organization",
+	  "name": "Galadari Printing and Publishing LLC"
+	},
+	"sameAs" : [
+	  "https://twitter.com/khaleejtimes",
+	  "https://www.facebook.com/khaleejtimes",
+	  "https://www.linkedin.com/company/khaleejtimes",
+	  "https://www.instagram.com/khaleejtimes/",
+	  "https://www.youtube.com/c/khaleejtimes",
+	  "https://en.wikipedia.org/wiki/Khaleej_Times"
+	]
+}
+  {% else %}
+  {# fallback #}
+    {
+      "@context":"https://schema.org",
+      "@graph":[
+      {
+        {% include "@base/page/part/structured-data-script-potentialAction.twig" %}
+        {% include "@base/page/part/structured-data-script-shared.twig" %}
+      },
+      {
+      "@type":"WebPage",
+      "@id":"{{ get_permalink() }}/#webpage",
+      "url":"{{ get_permalink() }}",
+      "inLanguage":"en-US",
+      "name":"{% if getMetaTitle %}{{ getMetaTitle }}{% else %}{{ get_bloginfo('name') }} - {{ metatitle }}{% endif %}",
+      "isPartOf":{
+        "@type":"WebSite",
+        "@id":"https://www.khaleejtimes.com/#website"
+      },
+      "datePublished":"{{"now"|date("c")}}",
+      "dateModified":"{{"now"|date("c")}}",      
+        "description":"{%  if description  %}{{description}}{% else %}{{ getMetaDescription  }}{% endif %}"
+        }
+        ]
+      }
+  {% endif %}
+</{{ value }}>

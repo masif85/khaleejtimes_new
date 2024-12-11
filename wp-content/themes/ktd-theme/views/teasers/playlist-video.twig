@@ -1,0 +1,21 @@
+{% apply spaceless %}
+  <article class="post left-image-right-content">
+    {% if image %}
+      <div class="post-thumbnail">
+        <a href="{{ permalink }}">
+          {{ render_partial('@base/teasers/partial/image', image|merge({ 'alttext': headline|striptags|replace({'"':'\''}) })) }}
+        </a>
+      </div>
+    {% endif %}
+    <div class="entry-container">
+      <div class="entry-header">
+        {% include '@base/teasers/partial/headline.twig' %}
+      </div>
+      <div class="entry-summary">
+        {% if videolength %}
+          <p class="category">{{ videolength }}</p>
+        {% endif %}
+      </div>
+    </div>	
+  </article>
+{% endapply %}

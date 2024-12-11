@@ -1,0 +1,9 @@
+{# Meta data that all pages on this site share. #}
+<meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+<meta http-equiv="Content-Type" content="text/html; charset={{ get_bloginfo('charset') }}"/>
+<meta name="robots" content="noarchive">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% for meta in head_meta if meta %}
+    <meta {% for attr, value in meta %}{% if attr != 'use_raw' %}{{ attr }}="{% if meta.use_raw == 1 %}{{ value|raw }}{% else %}{{ value }}{% endif %}" {% endif %}{% endfor %}/>
+{% endfor %}

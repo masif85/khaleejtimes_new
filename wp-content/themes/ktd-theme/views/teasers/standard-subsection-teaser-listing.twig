@@ -1,0 +1,22 @@
+{% apply spaceless %}
+<!-- standard subsection teaser -->
+<article class="listing-normal-teasers card-article-list-item" style="display: block;" data-uuid="{{ uuid }}">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-4">
+      <div class="post-title-rows">
+      {% if image %}        
+        <div class="thumb-with-image image-zoom"> 
+          <a href="{{ permalink }}">
+            {{ render_partial('@base/teasers/partial/image', image|merge({ 'alttext': headline|striptags|replace({'"':'\''}) })) }}  
+          </a> 
+        </div>
+      {% endif %}
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-8">
+      <h3><a href="{{ permalink }}">{{ headline }}</a></h3>
+      <p><a href="{{ permalink }}">{{ teaserbody|striptags }}</a></p>
+    </div>
+  </div>
+</article>
+{% endapply %}

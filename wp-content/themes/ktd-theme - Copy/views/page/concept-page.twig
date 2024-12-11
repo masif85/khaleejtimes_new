@@ -1,0 +1,379 @@
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+
+<style> 
+
+.nav-overlay-nf {
+    max-width: 1126px;
+}
+
+.is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 1126px;
+    margin: 0 auto;
+    z-index: 1030;
+    padding: 0px 0 1px 0!important;
+}
+.wrapper .click {
+    visibility: visible!important;
+}
+
+.wrapper {
+
+    max-width: 1126px;
+
+}
+
+article .entry-header .post-title {
+    font-family: 'Montserrat', sans-serif!important;
+    font-size: 25px!important;
+    font-weight: 600!important;
+    line-height: 1.3!important;
+    min-height: auto;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    height: auto;
+}
+
+article .entry-summary .post-summary {
+    font-family: 'Montserrat', sans-serif!important;
+    font-size: 16px!important;
+    font-weight: normal!important;
+    line-height: 21px !important;
+    min-height: auto;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box !important;
+    height: auto;
+}
+
+.top-image-bottom-content-with-summary .entry-container .entry-summary .post-summary {
+     display: -webkit-box !important;
+}
+
+.subsection div[class*="col-"][class*="-12"] article.left-image-right-content-subsection .entry-header .post-title, .subsection div[class*="col-"][class*="-9"] article.left-image-right-content-subsection .entry-header .post-title {
+
+    font-size: 21px !important;
+    height: auto;
+    line-height: 1.2!important;
+
+    min-height:auto;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+
+.article-right-sidebar .newletter-widget-wrapper {
+    
+    max-width: 300px;
+    float: none;
+    margin: 30px auto;
+}
+
+.article-right-sidebar .newletter-widget-wrapper p {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif!important;
+    line-height: 20px;
+    padding-bottom: 0px;
+}
+
+.newletter-widget-wrapper h3 {
+    font-family: 'Montserrat', sans-serif!important;
+    font-weight: 600;
+    font-size: 21px;
+    color: #FFF;
+    line-height: 1.2;
+}
+
+
+article .entry-header .post-title {
+    font-family: 'Montserrat', sans-serif!important;
+    font-size: 25px!important;
+    font-weight: 600!important;
+    line-height: 1.3!important;
+}
+
+.newletter-widget-wrapper .subscribe-btn {
+    height: 44px;
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'proxima_novasemibold';
+    color: #FFF;
+    background-color: #0179c8;
+    border: 0;
+    -webkit-border-top-left-radius: 0;
+    -moz-border-radius-top-left: 0;
+    border-top-left-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius-bottom-left: 0;
+    border-bottom-left-radius: 0;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600;
+}
+
+article .entry-summary .post-summary {
+    font-family: 'Montserrat', sans-serif!important;
+    font-size: 16px!important;
+    font-weight: normal!important;
+    line-height: 21px !important;
+
+}
+
+.post.left-image-right-content-subsection .post-summary {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: auto;
+    min-height: auto;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box !important;
+}
+
+
+
+@media (max-width: 1399px) and (min-width: 992px) {
+  .newletter-widget-wrapper {
+    background: #222;
+    padding: 4%;
+  }
+
+.article-right-sidebar .newletter-widget-wrapper p {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif !important;
+  line-height: 20px;
+  padding-bottom: 10px;
+}
+
+}
+
+@media (max-width: 1139px) and (min-width: 1024px) {
+  .newletter-widget-wrapper h3 {
+    font-size: 18px !important;
+  }
+
+.newletter-widget-wrapper .subscribe-btn {
+  height: 40px;
+  font-size: 16px;
+
+}
+
+}
+
+@media (max-width: 1024px) {
+    .click {
+        display: none;
+    }
+    .pn-ProductNav_Contents {
+        float: left;
+    }
+    .pn-ProductNav {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        position: relative;
+    }
+    .pn-ProductNav_Contents ul {
+      margin-top: -10px;
+    }
+
+    .kt-nav-icon-nf {
+    width: 40px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 51%;
+    transform: translate(0,-50%);
+}
+
+}
+
+
+@media (max-width: 991px) {
+.article-right-sidebar .newletter-widget-wrapper {
+  float: none;
+  margin: 0px;
+  width: 100%;
+  clear: both;
+  max-width:100%;
+  padding: 3%;
+}
+
+}
+
+
+
+@media (max-width: 575.98px) {
+.subsection div[class*="col-"][class*="-12"] article.left-image-right-content-subsection .entry-header .post-title, .subsection div[class*="col-"][class*="-9"] article.left-image-right-content-subsection .entry-header .post-title {
+  font-size: 18px !important;
+  height: auto;
+  line-height: 1.2 !important;
+  min-height: auto;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+
+.post.left-image-right-content-subsection .post-summary {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  height: auto;
+  min-height: auto;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+}
+
+article .entry-summary .post-summary {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: normal !important;
+  line-height: 22px !important;
+}
+
+}
+
+
+
+</style>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 d-flex justify-content-center d-block">
+        <!-- /78059622/Responsive-Section-Leaderboard-1 -->
+        <!-- <div id='div-gpt-ad-1613546905867-0'>
+          <script>
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613546905867-0'); });
+          </script>
+        </div> -->
+        <!-- Tag ID: khaleejtimes_Responsive-Section-Leaderboard-1 -->
+        <div align="center" data-freestar-ad="__320x100 __970x250" id="khaleejtimes_Responsive-Section-Leaderboard-1">
+          <script data-cfasync="false" type="text/javascript">
+            freestar.config.enabled_slots.push({ placementName: "khaleejtimes_Responsive-Section-Leaderboard-1", slotId: "khaleejtimes_Responsive-Section-Leaderboard-1" });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="article-wrapper subsection-lead">
+          <div class="row">
+            <div class="col-lg-12">
+              {% if articles is not empty %}
+                {% for article in articles %}
+                  {% if loop.first %}
+                    {{ render_partial('@base/teasers/standard-teaser.twig', article) }}
+                  {% endif %}
+                {% endfor %}
+              {% else %}
+                <h1>Sorry, we didn't find what you were searching for.</h1>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        {% if articles is not empty %}
+          <div class="subsection">
+            <div class="row no-gutters">
+              <div class="section-header col">
+                <h1 class="section-title text-uppercase font-weight-bold bordered-left">MORE FROM {{ currentPage.post_title }}</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                {% for article in articles %}
+                  {% if loop.first %}
+                    <!-- Skip first -->
+                  {% else %}
+                    {{ render_partial('@base/teasers/standard-subsection-teaser.twig', article) }}
+						  {%if loop.index==4%}
+						<!-- googleoff: index -->
+						<div id="adsolut-listing"></div>
+						<!-- googleon: index -->
+					{%endif%}
+                    {% if loop.index == 5 %}
+                      <div class="mpu-ad-unit ad-unit">
+                        <!-- /78059622/Responsive-Section-Leaderboard-2 -->
+                        <!-- <div id='div-gpt-ad-1613547811534-0'>
+                          <script>
+                              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613547811534-0'); });
+                          </script>
+                        </div> -->
+                        <!-- Tag ID: khaleejtimes_Responsive-Section-Leaderboard-2 -->
+                        <div align="center" data-freestar-ad="__320x100 __728x90" id="khaleejtimes_Responsive-Section-Leaderboard-2">
+                          <script data-cfasync="false" type="text/javascript">
+                            freestar.config.enabled_slots.push({ placementName: "khaleejtimes_Responsive-Section-Leaderboard-2", slotId: "khaleejtimes_Responsive-Section-Leaderboard-2" });
+                          </script>
+                        </div>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="pagination-inline ">
+                {{ paginator.render() }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="module-5 billboard-banner">
+          <div class="container">
+            <div class="row">
+              <div class="col-auto mx-auto">
+                <!-- /78059622/Responsive-Section-Leaderboard-3 -->
+                <!-- <div id='div-gpt-ad-1613548422640-0'>
+                  <script>
+                      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613548422640-0'); });
+                  </script>
+                </div> -->
+                <!-- Tag ID: khaleejtimes_Responsive-Section-Leaderboard-3 -->
+                <div align="center" data-freestar-ad="__320x100 __728x90" id="khaleejtimes_Responsive-Section-Leaderboard-3">
+                  <script data-cfasync="false" type="text/javascript">
+                    freestar.config.enabled_slots.push({ placementName: "khaleejtimes_Responsive-Section-Leaderboard-3", slotId: "khaleejtimes_Responsive-Section-Leaderboard-3" });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="col-sm-12 col-md-12 col-lg-4">
+        <div class="article-right-sidebar">
+          <!-- Right side -->
+          {{ render_sidebar("subsection-sidebar") }}
+        </div>
+      </aside>
+    </div>
+  </div>  
+
+
+
+{% endblock %}

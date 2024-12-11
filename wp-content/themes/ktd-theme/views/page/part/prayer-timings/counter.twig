@@ -1,0 +1,33 @@
+<div class="col-12 col-lg-4 col-xl-4">
+  <div class="prayer-counter">
+    <div class="count-details">
+      <p class="remaining"><i class="far fa-clock" aria-hidden="true"></i> Remaining</p>
+      <p class="timer counter">
+        <span class="number hour e-m-hours" id="pray_time_jsRight_H" >00</span>:
+        <span class="number minute e-m-minutes" id="pray_time_jsRight_M">00</span>:
+        <span class="number second e-m-seconds" id="pray_time_jsRight_S">00</span>
+      </p>
+    </div>
+    <div class="count-info">
+      <img src="{{ get_stylesheet_directory_uri() }}/assets/images/asr.png">
+      <p id="pray_time_jsRight"></p>
+    </div>
+    {% if contentPartData %}
+      <script>
+        var NSC_pt_cyRight = (new Date).getFullYear();
+        var NSC_pt_cmRight = (new Date).getMonth();
+        var NSC_pt_cdRight = (new Date).getDate();
+        var NSC_pt_csRight = (new Date).getSeconds();
+
+        var NCS_fajar_timeRight   = new Date(NSC_pt_cyRight,(NSC_pt_cmRight+1),NSC_pt_cdRight,"{{ contentPartData.fajr|slice(0, 2) }}","{{ contentPartData.fajr|slice(3, 2) }}",NSC_pt_csRight); //24 Hour Based
+        var NCS_shuruq_timeRight  = new Date(NSC_pt_cyRight,(NSC_pt_cmRight+1),NSC_pt_cdRight,"{{ contentPartData.shuruq|slice(0, 2) }}","{{ contentPartData.shuruq|slice(3, 2) }}",NSC_pt_csRight); //24 Hour Based
+        var NCS_duhar_timeRight   = new Date(NSC_pt_cyRight,(NSC_pt_cmRight+1),NSC_pt_cdRight,"{{ contentPartData.dhuhr|slice(0, 2) }}","{{ contentPartData.dhuhr|slice(3, 2) }}",NSC_pt_csRight); //24 Hour Based
+        var NCS_asr_timeRight     = new Date(NSC_pt_cyRight,(NSC_pt_cmRight+1),NSC_pt_cdRight,"{{ contentPartData.asr|slice(0, 2) }}","{{ contentPartData.asr|slice(3, 2) }}",NSC_pt_csRight); //24 Hour Based
+        var NCS_maghrib_timeRight = new Date(NSC_pt_cyRight,(NSC_pt_cmRight+1),NSC_pt_cdRight,"{{ contentPartData.magrib|slice(0, 2) }}","{{ contentPartData.magrib|slice(3, 2) }}",NSC_pt_csRight); //24 Hour Based
+        var NCS_isha_timeRight    = new Date(NSC_pt_cyRight,(NSC_pt_cmRight+1),NSC_pt_cdRight,"{{ contentPartData.isha|slice(0, 2) }}","{{ contentPartData.isha|slice(3, 2) }}",NSC_pt_csRight); //24 Hour Based
+
+        RunClientPrayerTimes(2);
+      </script>
+    {% endif %}
+  </div>
+</div>

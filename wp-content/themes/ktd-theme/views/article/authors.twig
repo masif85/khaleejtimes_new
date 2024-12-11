@@ -1,0 +1,57 @@
+{% if contentsubtype != 'SPONSOREDCONTENT' %}
+{% if authors %}
+  {% for author in authors %}  
+   
+      <div class="follw-box  {% if author.avatar is empty %}blank {%endif%}">
+        {% if author.avatar is not empty %} 
+          <div class="image">
+          {% set link = get_concept_link(author.uuid) %}
+          {% if link %}
+            <a href="{{ link }}">
+          <div class="inner">
+            <img class="lazyload" src="{{ author.avatar|replace({'width=115':'width=300','height=115':'height=300'}) }}" alt="{{ author.name }}"   loading="lazy"/>
+          </div>
+            </a>
+          {% else %}
+            <div class="inner">
+            <img src="{{ author.avatar|replace({'width=115':'width=300','height=115':'height=300'}) }}" alt="{{ author.name }}" />
+            </div>
+          {% endif %}
+            </div>
+          {% else %}
+            <div class="image">
+                <div class="inner">
+                  <img src="/images/follow-user.svg" alt="">
+                </div>
+              </div>
+        {% endif %}
+    
+    <div class="details align-self-center {% if not author.meta_data.email %}ext-nf-detail{%endif%}">
+{% if author.meta_data.email %}
+    <div class="auth-wrap-inner-nf">
+{%endif%}
+        {% set link = get_concept_link(author.uuid) %}
+        {% if link %}
+          <a href="{{ link }}"><h4>{{ author.name }}</h4></a>
+        {% else %}
+          <h4>{{ author.name }}</h4>
+        {% endif %}
+
+        {% if author.description %}
+
+           <p class="more">{{ author.description }}</p>
+         <!-- <p id="shrinkMe{{loop.index}}{{skip}}" class="shrinkable">{{ author.description }}</p> -->
+
+        {%endif%}
+          <div class="auth-email-wrap-nf">{% if author.meta_data.email %}<img src="/images/mail.svg" alt=""> <a class="mail-line" href="mailto:{{ author.meta_data.email }}">{{ author.meta_data.email }}</a></div>{% endif %}
+       {% if author.meta_data.email %}
+        </div>
+        {%endif%}
+      </div>
+  </div>
+
+  {% endfor %}
+
+
+{% endif %}
+{% endif %}

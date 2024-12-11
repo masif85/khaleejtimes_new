@@ -1,0 +1,24 @@
+{% if content %}
+    {% if content.object["@attributes"].type == 'x-im/table' %}
+        <Parent date="{{ "now"|date("m/d/Y") }}">
+            {% for tr in content.object.data.tbody.tr %}
+                {% if loop.index == 1 %}
+                    {% set NodeName = 'india' %}
+                {% elseif loop.index == 2 %}
+                    {% set NodeName = 'pakistan' %}
+                {% elseif loop.index == 3 %}
+                    {% set NodeName = 'bangladesh' %}
+                {% elseif loop.index == 4 %}
+                    {% set NodeName = 'srilanka' %}
+                {% elseif loop.index == 5 %}
+                    {% set NodeName = 'nepal' %}
+                {% elseif loop.index == 6 %}
+                    {% set NodeName = 'egypt' %}
+                {% else %}
+                    {% set NodeName = 'philipine' %}
+                {% endif %}
+                <{{NodeName}}  uaedraftm="{{ tr.td[1]|trim }}" uaedrafte="{{ tr.td[2]|trim }}" uaedrafty="{{ tr.td[3]|trim }}" currency="{{ tr.td[0]|trim|title }}"/>
+            {% endfor %}
+        </Parent>
+    {% endif %}
+{% endif %}

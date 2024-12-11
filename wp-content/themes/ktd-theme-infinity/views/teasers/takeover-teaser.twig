@@ -1,0 +1,31 @@
+{% apply spaceless %}
+  <!-- takeover teaser -->
+  <section class="page-takeover"{% if image %} style="background: url('{{ render_partial('@base/teasers/partial/image-url', image) }}') no-repeat center center;background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;"{% endif %}>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-6">
+          <div class="takeover">
+            <article class="post takeover-post" style="width: 630px; height: 472.5px;" data-uuid="{{ uuid }}">
+              <div class="entry-container">
+                <div class="entry-header">
+                  {% include '@base/teasers/partial/headline.twig' %}
+                </div>
+                <div class="entry-summary">
+                  {% include '@base/teasers/partial/leadin.twig' %}
+                  <p class="category">
+                    {% if sectionName %}
+                      {% include '@base/teasers/partial/concept.twig' %}
+                    {% endif %}
+                    <!-- {% include '@base/teasers/partial/date.twig' %} -->
+                    {% include '@base/teasers/partial/icons.twig' %}
+                  </p>
+                  <p class="link"><a href="{{ permalink }}">Read more</a></p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endapply %}

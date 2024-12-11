@@ -1,0 +1,3 @@
+{% if authors %}
+    <div class="teaser__author">By:{% for author in authors %} {{ author.name }}{% if not loop.last %},{% endif %}{% endfor %}</div>
+{% endif %}

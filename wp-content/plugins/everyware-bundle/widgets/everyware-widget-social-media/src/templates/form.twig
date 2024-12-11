@@ -1,0 +1,11 @@
+{% extends '@projectPlugin/components/admin.twig' %}
+
+{% block form %}
+    {% for provider, field in fields %}
+      <div class="form-group">
+        <label for="{{ title.id() }}" class="ew-info-label"> Url for {{ provider }}
+        {{ form.tooltip(translate("This is the social media url for #{provider}", textdomain))|raw }}</label>
+        {{ form.input('text', _context[field], { class: 'form-control' })|raw }}
+      </div>
+    {% endfor %}
+{% endblock %}

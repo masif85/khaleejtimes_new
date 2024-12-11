@@ -1,0 +1,146 @@
+<form action="" method="post" class="form wp-core-ui redirect-original-urls-settings">
+    <p>
+        The settings listed below determine what Open Content should search for and redirect when a user requests the
+        original URL.
+    </p>
+    <table class="form-table">
+        <tr>
+            <th><h2>Search criteria</h2></th>
+        </tr>
+        <tr>
+            <th>
+                <label>
+                    Name of the <code>OriginalUrls</code> property
+                </label>
+            </th>
+            <td>
+                {{ form.input('text', original_urls_property_name, { class: 'form-control', required: true })|raw }}
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div class="js-oc-analysis">
+                    <div>
+                        <p>
+                            <button class="button js-oc-analyze-original-urls">Analyze migrated URLs and suggest
+                                settings
+                            </button>
+                            <span class="js-oc-analysis__waiting hidden"><i
+                                        class="fa fa-spinner fa-spin fa-2x fa-fw"></i></span>
+                        </p>
+                    </div>
+                    <div class="js-oc-analysis__instructions hidden">
+                        <p>
+                            <strong>Analysis complete!</strong><br>
+                            <span class="js-oc-analysis__instructions--adjust hidden">
+                                <span class="js-icons"></span>
+                                We recommend that you adjust URL outliers in Open Content articles
+                                to make sure all OriginalUrls match the expected format.
+                            </span>
+                        </p>
+                    </div>
+                    <div class="js-oc-analysis__error hidden">
+                        <p>
+                            <span class="js-oc-url-result__icon js-oc-url-result__icon--error dashicons dashicons-warning"></span>
+                            <strong>Error!</strong><br>
+                            <span class="js-oc-analysis__error__message"></span>
+                        </p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label>
+                    {{ form.radio(extent, 'paths', { id: 'extent_paths' })|raw }}
+                    Paths only
+                </label>
+            </th>
+            <td>
+                <code>/example/path</code>
+
+                <span id="oc-url-result__extent_paths"></span>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label>
+                    {{ form.radio(extent, 'urls', { id: 'extent_urls' })|raw }}
+                    Full URLs
+                </label>
+            </th>
+            <td>
+                <code>https://domain.com/example/path</code>
+                <span id="oc-url-result__extent_urls"></span>
+
+                <div class="js-extent_url">
+                    <fieldset>
+                        <legend>
+                            Schemes used:
+                        </legend>
+                        <label>
+                            {{ form.checkbox(schemes_https)|raw }}
+                            HTTPS
+                            <span id="oc-url-result__schemes_https"></span>
+                        </label>
+                        <br>
+                        <label>
+                            {{ form.checkbox(schemes_http)|raw }}
+                            HTTP
+                            <span id="oc-url-result__schemes_http"></span>
+                        </label>
+                    </fieldset>
+                    <p>
+                        <label>
+                            Domains used (in order of priority):
+                        </label>
+                        <br>
+                        {{ form.input('text', domains, { class: 'form-control', placeholder: 'domain1.com, domain2.com, domain3.com'})|raw }}
+                    </p>
+                    <div id="oc-url-result__domains"></div>
+                    <fieldset>
+                        <legend>
+                            Use domains:
+                        </legend>
+                        <label>
+                            {{ form.checkbox(www_subdomains_without)|raw }}
+                            as they are
+                            <span id="oc-url-result__www_subdomains_without"></span>
+                        </label>
+                        <br>
+                        <label>
+                            {{ form.checkbox(www_subdomains_with)|raw }}
+                            with <code>www.</code> as subdomain
+                            <span id="oc-url-result__www_subdomains_with"></span>
+                        </label>
+                    </fieldset>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                URLs end
+            </th>
+            <td>
+                <fieldset>
+                    <label>
+                        {{ form.checkbox(trailing_slashes_with)|raw }}
+                        with a trailing slash <code>..example/path/</code>
+                        <span id="oc-url-result__trailing_slashes_with"></span>
+                    </label>
+                    <br>
+                    <label>
+                        {{ form.checkbox(trailing_slashes_without)|raw }}
+                        without trailing slash <code>..example/path</code>
+                        <span id="oc-url-result__trailing_slashes_without"></span>
+                    </label>
+                </fieldset>
+            </td>
+        </tr>
+    </table>
+    <div class="form-group pull-left">
+        {{ form.input('hidden', current_version )|raw }}
+        <button class="button button-primary" type="submit">Save changes</button>
+    </div>
+</form>

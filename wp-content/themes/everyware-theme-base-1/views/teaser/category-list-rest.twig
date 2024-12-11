@@ -1,0 +1,9 @@
+<article class="teaser frontpagecategorylistrest {{ teaser_classes|default('teaser--standard') }}" data-uuid="{{ uuid }}" data-comment-id="{{ comment_id }}">
+    <div class="container">
+    	<div class="row">
+                <div class="teaser-content col-md-12">				
+                    <a href="{{ permalink }}"><div class="entry-title frontpagecategorylistrest">{% block headline %}{% include "@base/teaser/partial/headline.twig" %}{% endblock %}</div></a>
+                </div>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,24 @@
+{%- if articles is iterable -%}
+    {% for article in articles %}
+        <item>
+            {% if article.headline %}           
+			 <title><![CDATA[{{ article.headline|raw }} ]]>		
+			</title>
+            {% endif %}
+            {% if article.permalink %}
+                <link>{{ article.permalink }}</link>
+            {% endif %}
+			{% if article.teaser_image_uuids %}			
+               {% for image  in  article.teaser_image_uuids %}			   
+                  <media:thumbnail url="{{ image_endpoint_url }}/?uuid={{ image }}&amp;function=hardcrop&amp;type=preview&amp;width=480&amp;formats=.jpg" />				   
+               {% endfor %}			   
+            {% else %}
+                   <media:thumbnail url="https://www.dailymotion.com/thumbnail/video/{{ article.videoid }}" />
+            {% endif %}          
+            {% if article.pubdate %}
+                <pubDate>{{ article.pubdate|date("D, j M Y H:i:s") }}</pubDate>
+            {% endif %} 
+            <content:encoded><![CDATA[{{ article.body|replace({'<p>': '', '</p>': "<br />"})|replace({'&lt;': '<', '&gt;': ">"})|raw}}]]></content:encoded> 
+        </item>
+    {% endfor %}
+{%- endif -%}

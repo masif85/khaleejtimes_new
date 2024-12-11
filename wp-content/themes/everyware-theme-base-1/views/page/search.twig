@@ -1,0 +1,52 @@
+<div class="search_page_container">
+    <div class="search_page_title">Search</div>
+
+        {% if articles %}
+
+            <div class="search_results_query">{{ articleCount }} {% if articleCount > 1 %}results{% else %}result{% endif %} returned for search: "{{ query }}"{% if categoryFilter %} with category "{{ categoryFilter }}"{% endif %}</div>
+
+            <form method="get" id="searchform" class="search_page_form" action="/" role="search">
+                <label class="sr-only" for="s">Search</label>
+                <div class="input-group">
+                    <input class="field form-control" id="s" name="s" type="text"
+                        placeholder="Search ..." value="">
+                <span class="input-group-append">
+                    <input class="submit btn btn-primary fa fa-input" id="searchsubmit" type="submit"
+                    value="&#xf002">
+                </span>
+                </div>
+            </form>
+
+        <div class="row">
+            <div class="searchSortFilter col-md-2">
+                <button class="btn btn-secondary dropdown-toggle searchSortFilterButton" type="button" id="searchSortFilter" data-toggle="dropdown">
+                    Sort
+                </button>
+                <div class="dropdown-menu" aria-labelledby="searchSortFilter">
+                    <a class="dropdown-item {% if sort == 'asc' %}active{% endif %}" href="/search/?q={{ query }}{% if categoryFilter %}&category={{ categoryFilter }}{% endif %}&sort=asc">Newest First</a>
+                    <a class="dropdown-item {% if sort == 'desc' %}active{% endif %}" href="/search/?q={{ query }}{% if categoryFilter %}&category={{ categoryFilter }}{% endif %}&sort=desc">Oldest First</a>
+                </div>
+            </div>
+
+            <div class="searchCategoryFilter col-md-2">
+                <button class="btn btn-secondary dropdown-toggle searchCategoryFilterButton" type="button" id="searchCategoryFilter" data-toggle="dropdown">
+                    Category
+                </button>
+                <div class="dropdown-menu" aria-labelledby="searchCategoryFilter">
+                    {% for category in searchCategoryArray %}
+                        <a class="dropdown-item {% if category == categoryFilter %}active{% endif %}" href="/search/?q={{ query }}&category={{ category }}">{{ category }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+            {{ articles | raw }}
+
+        {% else %}
+
+            <div class="noSearchResults">There are no search results for the search: "{{ query }}"</div>
+        
+        {% endif %}
+
+</div>

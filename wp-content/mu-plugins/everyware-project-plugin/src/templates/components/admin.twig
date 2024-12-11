@@ -1,0 +1,22 @@
+<div class="ew-form ew-wrap">
+    {% block form_header %}
+        <header class="ew-form__header">
+            <div class="ew-form__version-message">
+                {% if not settings.up_to_date %}
+                    <span class="version-message-new">Ny</span>
+                {% endif %}
+            </div>
+            {% if settings.name %}
+                <h1 class="ew-form__title">{{ settings.name }}
+                    {%- if settings.version -%}
+                        <small class="ew-form__version">v{{ settings.version }}</small>
+                    {%- endif -%}
+                </h1>
+            {% endif %}
+            <p class="description">{{ settings.description }}</p>
+        </header>
+    {% endblock %}
+    {% block form %}{% endblock %}
+    {% block form_footer %}{% endblock %}
+    {% if current_version %}{{ form.input('hidden', current_version)|raw }}{% endif %}
+</div>

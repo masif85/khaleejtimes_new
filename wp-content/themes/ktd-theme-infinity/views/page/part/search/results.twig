@@ -1,0 +1,33 @@
+ <div class="subsection">
+  <div class="row">
+    <div class="col-lg-12">
+      {% if articles is not empty %}
+        {% for article in articles %}
+          {{ render_partial('@base/teasers/standard-subsection-teaser.twig', article) }}
+		   {% if loop.index == 2 %}
+		   <!-- googleoff: index -->
+		   <div id="adsolut-listing"></div>
+		   <!-- googleon: index -->
+		   
+		   {% endif %}
+          {% if loop.index == 5 %}
+            <div class="mpu-ad-unit ad-unit">
+              <!-- /78059622/Responsive-Section-Leaderboard-2 -->
+              {% include "@base/page/part/ad.twig" with { ad_id: '1613547811534-0' } %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <h1>Sorry, we didn't find what you were searching for.</h1>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="pagination-inline">
+      {{ paginator.render() }}
+    </div>
+  </div>
+</div>

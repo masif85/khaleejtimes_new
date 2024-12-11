@@ -1,0 +1,15 @@
+{
+    "name": "everyware/wordpress-mu-domain-mapping",
+    "description": "Map any blog on a WordPress website to another domain. A fork of the plugin \"WordPress MU Domain Mapping\" v0.5.5.1. ",
+    "version": "0.1.1",
+    "type": "wordpress-plugin",
+    "homepage": "https://navigaglobal.com/",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Claes Tillborg",
+            "email": "claes.tillborg@navigaglobal.com",
+            "role": "Developer"
+        }
+    ]
+}

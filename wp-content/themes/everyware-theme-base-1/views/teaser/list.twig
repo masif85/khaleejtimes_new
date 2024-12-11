@@ -1,0 +1,15 @@
+{% if headline %}
+	<article class="teaser teaser--list" data-uuid="{{ uuid }}" data-comment-id="{{ comment_id }}">
+		{% block teaser %}
+			<a class="teaser__link" href="{{ url }}">
+				{% block content %}
+					<div class="teaser__content-wrapper">
+						<section class="teaser__content">
+							{% block headline %}{% include "@base/teaser/partial/headline.twig" %}{% endblock %}
+						</section>
+					</div>
+				{% endblock %}
+			</a>
+		{% endblock %}
+	</article>
+{% endif %}

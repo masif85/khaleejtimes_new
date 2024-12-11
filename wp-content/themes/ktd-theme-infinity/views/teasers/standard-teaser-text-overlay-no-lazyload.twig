@@ -1,0 +1,46 @@
+{% apply spaceless %}
+  <!-- standard teaser, text overlay no lazyload -->
+  <article class="post content-over-image" data-uuid="{{ uuid }}">
+    <div class="post-thumbnail">
+      <a href="{{ permalink }}" data-gm="{{ headline }}" 
+	  data-gm2="{{ uuid }}" 
+	  data-gm3="{{ loop.index }}" 
+	  data-gm4=" {{ sectionName }}"
+	  data-gm5=" {{ conceptsectionuuids }}"		
+	data-gm6=" {{ contentsubtype }}"
+	data-gm7=" {{ datasourcetype }}"
+	data-gm8=" {{ sourcetype }}"
+	data-gm9=" {{ data_source_type_list }}"
+	data-loop="{{ loop.index }}">
+        {% if image %}
+		
+		   {{ render_partial('@base/teasers/partial/image-no-lazyload', image|merge({ 'alttext': headline|striptags|replace({'"':'\''}) })) }}
+		  
+        {% else %}
+          {# Image fallback to avoid layout break #}
+          <img src="https://cdn.cultofmac.com/wp-content/uploads/2013/06/linen1.jpg">
+        {% endif %}
+      </a>
+    </div>
+    <div class="entry-container">
+      <div class="entry-header">
+        {% if sectionName %}
+          <p class="category-btn">
+            {% include '@base/teasers/partial/concept.twig' %}
+          </p>
+        {% endif %}
+        {% include '@base/teasers/partial/headline.twig' %}
+      </div>
+       <!-- <div class="entry-summary">
+        {% include '@base/teasers/partial/leadin.twig' %}
+        <p class="category">
+          {% if sectionName %}
+            {% include '@base/teasers/partial/concept.twig' %}
+          {% endif %}
+          {% include '@base/teasers/partial/date.twig' %} 
+          {% include '@base/teasers/partial/icons.twig' %}
+        </p>
+      </div> -->
+    </div>
+  </article>
+{% endapply %}

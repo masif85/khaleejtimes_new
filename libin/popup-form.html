@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Modal After the form Submission</title>    
+     
+</head>
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.voucher-cnt224-libin {
+  width: 100%;
+  max-width: 618px;
+  min-width: 360px;
+  margin: 30px auto;
+  background: none;
+  position: relative;
+  z-index: 103;
+  padding: 15px 0px;
+}
+
+.voucher-libin .voucher-cnt224-libin h1 {
+  font-size: 25px;
+  background: #0179c8;
+  border-radius: 10px 10px 0px 0px;
+  color: #fff;
+  font-weight: bold;
+  padding: 23px;
+  margin: 0px;
+}
+
+
+#popup-voucher-overlay-libin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  opacity: 0.7;
+  z-index: 100;
+  display: none;
+}
+.popup-voucher-cnt2024-libin a {
+  text-decoration: none;
+}
+.popup-voucher-libin {
+  width: 100%;
+  margin: 0 auto;
+
+  position: fixed;
+  z-index: 101;
+  top: 0px;
+  left: 0px;
+}
+.popup-voucher-cnt2024-libin {
+  width: 40%;
+  max-width: 620px;
+  min-height: 380px;
+  margin: 100px auto;
+  background: url('https://static.khaleejtimes.com/wp-content/uploads/sites/2/2024/01/11125222/gift-voucher-bg.jpg') no-repeat;
+  position: relative;
+  z-index: 103;
+  padding: 15px 35px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #000;
+}
+.coupon-bg {
+  background: url('https://static.khaleejtimes.com/wp-content/uploads/sites/2/2024/01/11131228/coupon-bg.png') no-repeat;
+  padding: 15px 10px;
+  width: auto;
+  margin: 40px auto;
+  min-height: 260px;
+  background-size: contain;
+}
+.coupon-bg .content-text {
+  width: 75%;
+  float: left;
+  margin-top: 0px;
+}
+.coupon-bg .content-text h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: #0179c8;
+  font-size: 100px;
+  text-align: center;
+}
+.popup-voucher-cnt2024-libin .coupon-bg .content-text p {
+  clear: both;
+  color: #231f20;
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  line-height: 28px;
+  margin: 5px 0px 0px 0px;
+}
+.popup-voucher-cnt2024-libin .coupon-bg .content-text b {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+.popup-voucher-cnt2024-libin .x {
+  float: right;
+  height: 35px;
+  left: 22px;
+  position: relative;
+  top: -25px;
+  width: 34px;
+}
+.popup-voucher-cnt2024-libin .x:hover {
+  cursor: pointer;
+}
+.popup-voucher-close-libin {
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #0179c8;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #fff;
+  padding: 4px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  text-align: center;
+}
+.popup-voucher-close-libin:hover {
+  background: #0179c8;
+  color: #fff;
+}
+
+/*Responsive*/
+
+@media (max-width: 1366px) {
+  .popup-voucher-cnt2024-libin {
+    width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .popup-voucher-cnt2024-libin {
+    width: 100%;
+    min-width: 380px;
+    min-height: 300px;
+  }
+  .popup-voucher-libin {
+    width: 90%;
+    margin: 0 auto;
+    display: none;
+    position: fixed;
+    z-index: 101;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+  }
+  .coupon-bg .content-text {
+    margin-top: 10px;
+  }
+  .coupon-bg .content-text h4 {
+    font-size: 95px;
+  }
+}
+@media (max-width: 600px) {
+  .coupon-bg .content-text {
+    margin-top: 0px;
+  }
+}
+@media screen and (max-width: 520px) {
+ 
+
+ 
+  .voucher-libin .voucher-cnt224-libin h1 {
+    font-size: 19px;
+  }
+  .voucher-libin {
+    padding: 0px 10px;
+    margin: 0px;
+  }
+  .coupon-bg {
+    padding: 8px 5px;
+    width: auto;
+    margin: 35px auto;
+    min-height: 200px;
+    background-size: contain;
+  }
+  .popup-voucher-cnt2024-libin .coupon-bg .content-text p {
+    margin: 0px 0px 0px 0px;
+  }
+  .coupon-bg .content-text {
+    width: 70%;
+    margin-top: 0px;
+  }
+  .coupon-bg .content-text h4 {
+    font-size: 60px;
+  }
+  .popup-voucher-cnt2024-libin .coupon-bg .content-text p {
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .coupon-bg .content-text {
+    margin-top: 0px;
+  }
+  .popup-voucher-cnt2024-libin {
+    width: 100%;
+    min-width: 336px;
+    min-height: 270px;
+  }
+  .popup-voucher-cnt2024-libin {
+    width: 100%;
+    margin: 45px auto;
+    padding: 15px 10px;
+  }
+  .popup-voucher-libin {
+    width: 93%;
+  }
+
+  .voucher-libin {
+    padding: 0px 5px;
+    margin: 0px;
+  }
+
+}
+
+ @media screen and (max-width: 380px) { 
+
+.voucher-cnt224-libin {
+  min-width: 340px;
+ 
+}
+
+}
+</style>
+<div class="popup-voucher-libin">
+        <div class="popup-voucher-cnt2024-libin">
+            <div class="coupon-bg">
+                <div class="content-text">
+               
+<p> <img src="/pincode.png" style="width:34%;"> </p>
+ 
+            <p> Your Gift Voucher<br /></p>        
+                
+            <h4><img  src="/barcode2.php?text='.strtoupper($barcode['barcode']).'&print=true&size=100&sizefactor=2&codetype=code128a" style="width:75%"/> </h4> </div>
+             </div>        
+        </div>
+    </div>
+
+</html>

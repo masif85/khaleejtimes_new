@@ -1,0 +1,28 @@
+{% if speakol_id=='6248' %}
+{% set textz="spk-dt-space-nf" %}
+{% else %}
+{%  set textz="" %}
+{%endif%}
+<div class="{{ textz }}">
+
+<div class="speakol-widget" id="sp-wi-{{ speakol_id }}">
+  {% if infinite %}
+    <script>
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        (spksdk = window.spksdk || []).push({
+          widget_id: "wi-{{ speakol_id }}",
+          element: "sp-wi-{{ speakol_id }}"
+        });
+      }
+    </script>
+  {% else %}
+    <script>
+      (spksdk = window.spksdk || []).push({
+        widget_id: "wi-{{ speakol_id }}",
+        element: "sp-wi-{{ speakol_id }}"
+      });
+    </script>
+  {% endif %}
+</div>
+</div>
+

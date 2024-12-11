@@ -1,0 +1,39 @@
+<div class='sidebarmenu top-bar d-lg-none {% if logo_top_bar_mobile_on_scroll == 'move_logo' %}top_bar_logo_on_scroll_user_info{% endif %} {% if logo_top_bar_mobile == 'top_bar' %}with-top-image{% else %}no-top-image{% endif %}'>
+	{% if search_form_location_mobile_toggle == 'top_bar' %}
+		<div class="top-bar-mobile-search-container dropdown d-lg-none btn-group">
+			<div class="top-bar-mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<div class="top-bar-mobile-search-icon d-lg-none">
+					<i class="fa fa-search submit"></i>
+				</div>
+			</div>
+			<div class="dropdown-menu dropdown-menu-right">
+				<div class="dropdown-item top-bar-mobile-search-form d-lg-none">
+					<form method="get" class="searchform" action="/" role="search">
+						<label class="sr-only" for="s">Search</label>
+						<div class="input-group">
+							<input class="field form-control s" name="s" type="text" placeholder="Search" value="">
+							<span class="input-group-append">
+								<input class="fa fa-search" type="submit"value="&#xf002">
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+
+	<div class="top-bar-user-menu dropdown">
+		<div data-toggle="dropdown"><i class='fa fa-user-circle-o welcomeicon'></i></div>
+		{% if logged_in == 1 %} {# If user is logged in, show Welcome with user and Login, else show Logout. #}
+			<div class="dropdown-menu dropdown-menu-right">
+				<div class='dropdown-item welcomeicon mobile d-lg-none {% if logo_top_bar_mobile == 'top_bar' %}with-top-image{% endif %}'><a href='/wp-admin/index.php'>Welcome, {{ current_user_name }}</a></div>
+				<div class='dropdown-item login top-navigation-login mobile d-lg-none {% if logo_top_bar_mobile == 'top_bar' %}with-top-image{% endif %}'><a href={{ logout_url }}>Logout</a></div>
+			</div>
+		{% else %}
+			<div class="dropdown-menu dropdown-menu-right">
+				<div class='dropdown-item welcomeicon mobile d-lg-none {% if logo_top_bar_mobile == 'top_bar' %}with-top-image{% endif %}'><a href='/wp-admin/index.php'>Welcome, User</a></div>
+					<div class='dropdown-item login top-navigation-login mobile d-lg-none {% if logo_top_bar_mobile == 'top_bar' %}with-top-image{% endif %}'><a href='' id='show_login'>Login</a></div>
+				</div>
+		{% endif %}
+	</div>
+</div>

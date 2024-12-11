@@ -1,0 +1,79 @@
+{% extends '@base/main.twig' %}
+
+
+
+{% block page_head %}
+  {% include "@base/article/part/metatags.twig" %}
+  <link rel="amphtml" href="{{ get_permalink() }}?amp=1">
+  {{ get_header() }}
+{% endblock %}
+
+
+{% block page_stylesheets_scripts %}
+  {{ parent() }}
+{% endblock %}
+
+
+
+{% block page_ad_takeover %}
+{% endblock %}
+
+{% block page_content %}
+{% set firstcount=0 %}
+<div class="storytelling wrapper">
+{% if uuid == '61363712-aef9-4b6e-96cb-ef7880514fc6' %}
+    {% for element in body %} 
+    {% if element matches '{div}' and firstcount==0 %}  
+      <div class="bg-video parallax-image">
+      <!-- <div class="blur-edges"></div> --> 
+      <h1 class="article__headline">{{heading}}</h1>
+      <h3 class="preamble-nf"><span id="dateline"></span>{{tbody}}</h3>
+      <video id="BgVideo" class="bg-video__content" muted autoplay playsinline loop>
+        <source src="{{headingvideo}}" type="video/mp4">
+        <!-- <source src="https://api.khaleejtimes.com/kt-show-vdo/dxb.webm" type="video/webm"> -->
+        <img src="https://api.khaleejtimes.com/hublot-video/hublot-thumb2.jpg" alt="Hublot">
+      </video>
+      </div>  
+      
+     
+    {% set firstcount=1 %}      
+    {%elseif element matches '{<!-- element: headline -->}' or element matches '{<!-- element: preamble -->}' %}
+      
+    {%else%}
+     {{ element|raw }}
+    {% endif %} 
+    {% endfor %}
+  
+  {%else%}  
+    {% for element in body %}     
+     {{ element|raw }}    
+    {% endfor %}
+  {% endif %} 
+
+  <style>
+@media (max-width: 520px) {
+.sticky-header-wrap.sticky-div.is-sticky.shadow-sm {position: relative!important;}
+}
+</style>
+
+    <script>
+
+jQuery(document).ready(function(){
+ 
+
+jQuery(window).scroll(function(){
+if (typeof stickyElemPos3 !== 'undefined') {
+if(stickyElemPos3 < 107) {jQuery(".storytelling-small").addClass('libin-gallery-stick');} else {jQuery(".storytelling-small").removeClass('libin-gallery-stick');}
+}
+  });
+
+
+//jQuery('#BgVideo').trigger('play');
+
+  });
+
+</script>
+ 
+
+</div>
+{% endblock %}

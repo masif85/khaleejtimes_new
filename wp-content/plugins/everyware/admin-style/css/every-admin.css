@@ -1,0 +1,328 @@
+/*
+Here is a partial list of the important style references used in the Administration Panels. Per CSS web standards, # denotes a style ID and . denotes a style class.
+
+#wphead - The main title of the admin panel. Used to display the name of the blog and a link to View Site.
+
+#adminmenu ul - The main level navigation bar, for links: Dashboard, Write, Manage, etc.
+
+#adminmenu2 ul - The sub level navigation bar, for links (example: under Manage: Posts, Pages, Categories).
+
+.wrap - The basic wrapper for all content in the admin panel, set in a <div>.
+
+#zeitgeist - The sidebar on the Dashboard displaying Latest Activity and Blog Stats.
+
+#footer - The footer at the bottom, with Wordpress logo, version number, and help links.
+
+.wrap h2 - Individual Page headers for the various subpanels, like General Options.
+
+*/
+
+.right{ float: right;}
+.left{ float: left;}
+.clearfix{clear:both;}
+.ajax_loader {
+    background-image: url('../images/ajax-loader.gif');
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+.slug_hidden, .ew-hidden {
+	display: none;
+}
+
+/* OC Settings page */
+
+form.oc_settings_form h3{
+	padding-bottom: 2px;
+	border-bottom: 1px solid #dbdbdb;
+}
+
+div.updated.next_step_div{
+    margin: 10px 0 10px 0;
+}
+
+div.updated.not_ok_oc_con, div.updated.ok_oc_con{
+	margin: 10px 0 0px 0;
+}
+
+div.updated.not_ok_oc_con p, div.updated.ok_oc_con p{
+    font-size: 1.2em;
+		font-weight: normal;
+}
+
+div.updated.not_ok_oc_con{
+    background-color: #ff696d;
+    border-color: #471F24;
+}
+
+.notifier_head_row th{
+	margin-bottom: -20px!important;
+}
+
+div.updated.ok_oc_con{
+    background-color: #9cff96;
+    -border-color: #88ff83;
+}
+
+.modal_imengine_info_link, .modal_notifier_info_link, .analytics_info_link{
+	font-style: italic;
+	font-size: 0.8em;
+}
+
+
+/* END OC Settings page */
+
+/* Property mapper */
+
+span.pm_no_match{
+	color: #b94a48;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	padding: 4px 5px 5px 5px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+div.alert-info {
+	max-width: 400px;
+	text-align: center;
+	color: #3a87ad;
+	background-color: #d9edf7;
+	border: 1px solid #bce8f1;
+	padding: 8px 35px 8px 14px;
+	margin-bottom: 20px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+div.unsaved{
+	display: none;
+	width: 400px;
+	color: #b94a48;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	padding: 8px 35px 8px 14px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+/* End Prop mapp */
+
+#wpbody{
+    /*background-image: url('../images/logo.png');
+    background-repeat:no-repeat;
+    background-position:center bottom;
+    padding-bottom: 150px;
+    margin-bottom: 100px;*/
+}
+
+.wp-badge{
+    background-image: url('../images/logo.png');
+    background-repeat:no-repeat;
+    background-size: 100%;
+    background-position:center;
+    text-indent: -9999px;
+}
+
+/* Show/hide text-area on page edit*/
+#postdivrich {
+    display: none;
+}
+
+#postdiv.postarea, #postdivrich.postarea {
+    margin: 0;
+}
+
+#post-status-info {
+    line-height: 1.4em;
+    font-size: 13px;
+}
+
+#custom_editor .inside {
+    margin: 2px 6px 6px 6px;
+}
+
+#ed_toolbar {
+    display: none;
+}
+
+#postdiv #ed_toolbar, #postdivrich #ed_toolbar {
+    display: block;
+}
+
+/* End Show/hide text-area on page edit*/
+
+/* Query Builder */
+
+.mask {
+    position:absolute;
+    z-index:9000;
+    background-color:#000;
+    display:none;
+}
+
+.dialog_window {
+    position:fixed;
+    width:440px;
+    height:200px;
+    display:none;
+    z-index:9999;
+    padding:20px !important;
+}
+
+.dialog_window h3 {
+    margin: 0;
+    padding: 0;
+}
+
+#modal_query_builder {
+    position: relative;
+}
+
+.dialog_window .query_builder_added_rules {
+
+}
+
+.dialog_window .query_builder_added_rules .rule, td.slug_properties .slug_property {
+    background-color: #444;
+    padding: 5px 25px 5px 5px;
+    margin: 5px 5px 5px 0;
+    border-radius: 5px;
+    display: inline-block;
+    color: #e0e2e0;
+    position: relative;
+}
+
+td.slug_properties .slug_property {
+	display: block;
+	width: 200px;
+	cursor: move;
+	background-image: url('../images/draggable.png');
+	background-repeat: no-repeat;
+	background-position: 5px 6px;
+}
+
+td.slug_properties .slug_property .slug_property_name {
+	padding: 0 0 0 15px;
+}
+
+#add_slug_property_button {
+	margin: 0 0 0 5px;
+}
+
+.dialog_window .remove_active_rule_link, td.slug_properties .slug_property .slug_property_delete_link {
+    width: 13px;
+    height: 13px;
+    background-image: url('../images/remove.png');
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 7px;
+}
+
+.dialog_window .generated_query_preview {
+    width: 400px;
+    height: 100px;
+}
+
+/* OC Query */
+.oc_fieldset{
+    border: 1px solid #d3d3d3;
+    padding: 5px;
+    box-shadow: 3px 3px 3px #bababa;
+    margin: 2px 0 10px 0;
+    border-radius: 3px;
+}
+
+.oc_query_text_area{
+
+}
+
+.start_limit_div {
+    margin: -5px 0 -15px 0;
+}
+
+.start_limit_div p:last-child{
+    margin-left: 10px;
+}
+.sort_by_div{
+    margin: -5px 0 10px 0;
+}
+
+.sort_select{
+    min-width: 133px;
+}
+
+
+/* Ajax-test OC query */
+.ajax_result_div{
+    padding: 5px;
+    display: none;
+    margin: -5px 0 10px 0;
+    background-color: white;
+    border: 1px solid #DFDFDF;
+    border-radius: 3px;
+}
+
+.ajax_result_div h4{
+    margin: 0 0 -2px 0;
+}
+
+.ajax_result_div p{
+    margin: 0 0 0 0 !important;
+}
+
+.ajax_result_div .loader{
+    margin: 2px 0 -5px 0;
+}
+
+table .notifier-debug {
+    border-spacing: 0px;
+    padding: 2px;
+    text-align: center;
+}
+
+table .notifier-debug th {
+    background-color: #222;
+    text-align: center;
+    color: #f8f8f8;
+    padding: 10px;
+}
+
+table .notifier-debug td {
+    font-size: 14px;
+    padding: 8px;
+}
+
+table .notifier-debug tr:nth-of-type(even) {
+    background-color: #ddd;
+}
+
+table .notifier-debug td.not-event {
+    width: 20%;
+}
+
+table .notifier-debug td.not-content {
+    width: 15%;
+}
+
+table .notifier-debug td.not-received {
+    width: 20%;
+}
+
+#oc_password {
+	vertical-align: top;
+	margin-right: 5px;
+}
+
+.password-lock {
+  cursor: pointer;
+  margin-top: 2px;
+}

@@ -1,0 +1,18 @@
+{% apply spaceless %}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  {% for video in videos %}
+    <url>
+      <loc>{{ video.url }}</loc>
+      <video:video>
+        {% if video.thumbnail %}
+          <video:thumbnail_loc>{{ video.thumbnail }}</video:thumbnail_loc>
+        {% endif %}
+        <video:title>{{ video.headline }}</video:title>
+        <video:description>{{ video.description }}</video:description>
+        <video:player_loc allow_embed="no">https://www.dailymotion.com/embed/video/{{ video.videoId }}</video:player_loc>
+      </video:video>
+    </url>
+  {% endfor %}
+</urlset>
+{% endapply %}

@@ -1,0 +1,215 @@
+{% extends '@base/main.twig' %}
+
+{% block page_head %}
+  {% include "@base/page/part/metatags.twig" %}
+  {{ wp_head() }}
+{% endblock %}
+
+{% block page_content %}
+<style>
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 2px solid rgb(0 0 0);
+}
+h1{
+font-size:34px !important;
+}
+.sub-menu ul li.active a, .sub-menu ul li a:hover {
+    text-decoration:none;
+     color: #0179c8;
+  font-weight: 600;
+}
+.sub-menu li.sub-menu-item.active a {
+font-weight: bold;
+    color: #0179c8;
+}
+.single{
+margin: 0px !important;
+}
+.sub-menu li.sub-menu-item:first-child  {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+
+@media(max-width:991px) {
+
+	.sub-menu li.sub-menu-item:not(:first-child) {
+	    align-items: center!important;
+	}
+
+	.sub-menu li.sub-menu-item:first-child {
+   	    align-items: center!important;
+	}
+
+}
+
+@media(max-width:420px) {
+
+.sub-menu {
+    padding-right: 50px!important;
+}
+
+.toggle-mobile-sub-menu {
+    margin-right: -30px!important;
+}
+
+.toggle-mobile-sub-menu {
+   padding: 15px 0!important;
+
+}
+
+}
+</style>
+  <main>
+
+    <div class=" single contactpage-lt" style="margin: 0px;">
+      <div class="container">
+	  
+<div class="row">
+
+   <div class="col-12">  
+    <div class="col-12"><h1>{{type}}</h1></div>
+      <ul class="sub-menu" data-id="mobile-sub-menu">
+       
+ <li class="sub-menu-item">
+            <a href="/trading">Overview</a>
+         </li>
+         <li class="sub-menu-item">
+            <a href="/trading/stock-market">Stock Market</a>
+         </li>
+	     <li class="sub-menu-item">
+            <a href="/trading/forex-rates">Forex Rates</a>
+         </li>
+         <li class="sub-menu-item">
+            <a href="/trading/cryptocurrency">Cryptocurrency</a>
+         </li>
+	
+		     <li class="sub-menu-item">
+            <a href="/trading/gold-price">Gold Price</a>
+         </li>
+	     <li class="sub-menu-item">
+            <a href="/trading/world-economy">World Economy</a>
+         </li>
+		  	     <li class="sub-menu-item">
+            <a href="/trading/indices">Indices</a>
+         </li>
+		     <li class="sub-menu-item">
+            <a href="/trading/bonds">Bonds</a>
+         </li>
+	
+   <li class="sub-menu-item">
+            <a href="/trading/oil">Oil</a>
+         </li>
+      </ul>
+
+      <ul id="mobile-sub-menu" class="mobile-sub-menu shadow-sm"></ul>
+	 
+   </div>
+</div>
+	  
+	  
+	
+	  
+<div class="row">	
+{% if get_symbol(id) %}  
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>  
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js" async>
+  {
+  "width": "100%",
+  "height": "250",
+  "colorTheme": "light",
+  "isTransparent": false,
+  "symbol": "{{id}}",
+  "locale": "en",
+  "largeChartUrl": "https://www.khaleejtimes.com/trading/detail"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+<div style="padding:5px;"><hr/></div>
+{% endif %}
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+  {
+  "symbols": [
+    [
+      "{{id}}|All"
+    ]
+  ],
+  "chartOnly": false,
+  "width": "100%",
+  "height": "500",
+  "locale": "en",
+  "colorTheme": "light",
+  "autosize": false,
+  "showVolume": false,
+  "showMA": false,
+  "hideDateRanges": false,
+  "hideMarketStatus": false,
+  "hideSymbolLogo": false,
+  "scalePosition": "right",
+  "scaleMode": "Normal",
+  "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+  "fontSize": "10",
+  "noTimeScale": false,
+  "valuesTracking": "1",
+  "changeMode": "price-and-percent",
+  "chartType": "area",
+  "maLineColor": "#2962FF",
+  "maLineWidth": 1,
+  "maLength": 9,
+  "lineWidth": 2,
+  "lineType": 0
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+<div style="padding:5px;"><hr/></div>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container" style="width:100%;">
+  <div id="tradingview_742e7"></div>  
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+  {
+    "width": "100%",
+  "height": "550",
+  "symbol": "{{id}}",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "light",
+  "style": "1",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "allow_symbol_change": true,
+  "container_id": "tradingview_742e7"
+}
+  );
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+        </div>
+
+      
+
+      </div>
+    </div>
+
+  </main>
+{% endblock %}
+
+{% block page_stylesheets_scripts_bottom %}
+  {{ parent() }}
+  {{ wp_footer() }}
+{% endblock %}

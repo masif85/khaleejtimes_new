@@ -1,0 +1,15 @@
+<div class="section-header col-12">
+  <div class="sub-header">
+    <ul class="sub-menu" data-id="mobile-sub-menu">
+      <li class="sub-menu-item">
+        <h1 class="section-title font-weight-bold">Prayer Timings</h1>
+      </li>
+      {% for menuItem in prayertimesMenu %}
+        <li class="sub-menu-item {{ (menuItem.object_id == activePage.id or menuItem.object_id == activePage.post_parent) ? 'active' : '' }}">
+          <a href="{{ menuItem.url }}">{{ menuItem.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <ul id="mobile-sub-menu" class="mobile-sub-menu shadow-sm"></ul>
+  </div>
+</div>

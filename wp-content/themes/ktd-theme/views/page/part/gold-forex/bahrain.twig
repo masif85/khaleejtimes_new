@@ -1,0 +1,58 @@
+
+
+<article class="draft-rates-wrapper">
+
+  
+ <div class="draft-rates-main-wrapper-nf main-contan-border">
+      <div class="draft-heading-wrap-lat-nf">
+	<div class="draft-heading-wrap-lat-nf-lt">
+		<h3>Bahrain Draft Rate </h3>
+		
+		<h6>Selected Asian currencies in Bahrain Dinar (Rates in 1 Dinar)</h6>
+	</div>
+	<div class="draft-heading-wrap-lat-nf-rt">
+		<h6 class="date-blue">{{ articles["3"].pubdate|date("F d, Y") }}</h6>
+		<h6>Updated <span class="time">{{ articles["3"].timeago }}</span>…</h6>
+	</div>
+	
+	  
+  </div>
+
+   {% if articles["3"].forextable %}
+      {% for object in articles["3"].forextable %}
+        {% if object["@attributes"].type == 'x-im/table' %}
+          <div class="draft-rates-rt-wrap">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                {% for value in object.data.thead.tr.th %}
+                  <th scope="col">{{ value }}</th>
+                {% endfor %}
+              </tr>
+              </thead>
+              <tbody>
+              {% for tr in object.data.tbody.tr %}
+                <tr>
+                  {% for value in tr.td %}
+                    {% if loop.first %}
+                      <th scope="row">{{ value }}</th>
+                    {% else %}
+
+                      <td >{{ value is iterable ? '' : value }}</td>
+                    {% endif %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+  
+<div class="source-info"><h4><span class="red-star">*</span>Source : UAE Exchange Centre L.L.C., UAE. Rates are subject to fluctuation</h4></div> 
+   
+  
+</article>
+

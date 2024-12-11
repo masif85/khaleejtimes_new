@@ -1,0 +1,520 @@
+<!--- Article infinite scroll begin -->
+<div class="nextarticle-nf nextarticle{{skip}}" style="display:none;">{{skip}}</div>
+{% set replaced_link = get_permalink()|replace({'https://www.khaleejtimes.com' : ""}) %}
+<script>
+var event_timestamp_utc = dNow.getUTCFullYear() + '-' + ('0' + (dNow.getUTCMonth() + 1)).slice(-2) + '-' + ('0' + dNow.getUTCDate()).slice(-2) + ' ' + ('0' + dNow.getUTCHours()).slice(-2) + ':' + ('0' + dNow.getUTCMinutes()).slice(-2) + ':' + ('0' + dNow.getUTCSeconds()).slice(-2);
+/*
+var tealium_visitor_id = /(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null;
+*/
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+
+
+console.log('infinite-scroll-utag-trigger');
+ var utag_data = {
+  "article_authors"      : "{% if authors %}{% for author in authors %}{{ author.name }}{% if loop.last == false %}, {% endif %}{% endfor %}{% elseif author_byline %}{{ author_byline }}{% else %}None{% endif %}",
+  "article_id"           : "{{ uuid }}",
+  "article_publish_date" : "{{ pubdate|date('Y-m-d') }}T{{ pubdate|date('H:i:s') }}Z",
+  "article_title"        : "{{ teaser_headline|replace({"\n":'', "\r":''}) }}",
+  "article_type"         : "{% if contentsubtype == 'VIDEO' %}VIDEO{% elseif contentsubtype == 'GALLERY' %}GALLERY{% else %}ARTICLE{% endif %}",
+  "event_type"           : "page_view",
+  "is_article_premium"   : "0",
+  "page_path"            : "{{ replaced_link }}",
+  "page_url"             : "{{ get_permalink() }}",
+  "page_category"        : "{% for items in sections|sort|reverse|slice(0, 1) %}{{ items.name }}{% endfor %}",
+  "page_country"         : "eg",
+  "page_currency_code"   : "AED",
+  "page_lang"            : "English",
+  "page_section"         : "{% for items in sections|sort|reverse|slice(0, 1) %}{{ items.name }}{% endfor %}",
+  "chartbeat_section"     : [{% if sections %}{% for sectionzs in sections %}"{{ sectionzs.name }}"{% if loop.last == false %}, {% endif %}{% endfor %}{% endif %}],
+  {% if section_parent %}
+     "page_subsection"       : "{% for items in sections|slice(0, 1) %}{{ items.name }}{% endfor %}",
+  {% endif %}
+  "page_type"            : "{% if contentsubtype == 'VIDEO' %}video page{% elseif contentsubtype == 'GALLERY' %}gallery page{% else %}article page{% endif %}",
+  "tealium_event"        : "{% if contentsubtype == 'VIDEO' %}additional_video_view{% elseif contentsubtype == 'GALLERY' %}additional_gallery_view{% else %}additional_article_view{% endif %}",
+  "user_application"     : "{{ every_device }}",
+  /*
+    "google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,
+  */
+  "eventtimestamp":event_timestamp_utc,
+  "NewsKeywords":newsKeywords
+ }
+ ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+
+
+ pSUPERFLY.virtualPage({
+      sections:  [{% if sections %}{% for sectionzs in sections %}"{{ sectionzs.name }}"{% if loop.last == false %}, {% endif %}{% endfor %}{% endif %}],
+      authors: "{% if authors %}{% for author in authors %}{{ author.name }}{% if loop.last == false %}, {% endif %}{% endfor %}{% elseif author_byline %}{{ author_byline }}{% else %}None{% endif %}",
+      path: "{{ replaced_link }}",
+      title: "{{ teaser_headline|replace({"\n":'', "\r":''}) }}"
+    });
+
+gtag('config', 'G-2VVVMDVFQ8', {
+    page_title: "{{ teaser_headline|replace({"\n":'', "\r":''}) }}",
+    page_location: "{{ replaced_link }}",
+    send_page_view: true 
+ });
+
+</script>
+
+<section class="article-top">
+ <div class="container">
+    <div class="col-lg-12 d-flex justify-content-center d-block fix-billboard-nf infinite-leaderboard-1-nf" id="adarticle{{skip}}">
+    <div class="fix-billboard-nf-inner">
+      <!-- <div class="adslot-leaderboard-footer-{{ skip }}" id="adslot-leaderboard-footer-{{ skip }}"></div> -->
+      <!-- Tag ID: KhaleejTimes_Responsive-Article-Leaderboard-footer -->
+      <div align="center" data-freestar-ad="__320x100 __970x250" id="adslot-leaderboard-footer-{{ skip }}">
+      <script data-cfasync="false" type="text/javascript">
+        freestar.config.enabled_slots.push({ 
+           placementName: "khaleejtimes_Responsive-Article-Leaderboard-footer", slotId: "adslot-leaderboard-footer-{{ skip }}" });
+       </script></div>
+    </div>
+  </div>
+ <div class="row khaleej-row">
+ <div class="col-12 col-lg-8 col-md-8 article-top-left  nextarticleid{{ skip }}" data-uuid="{{ uuid }}" data-triggerView data-url="{{ get_self_link()|split('?')|first }}" data-articlez="{{ skip }}" viewed="">
+     
+<div id="floater-bt-article-lb" class="floater-article-btn-{{skip}}" article-id="{{skip}}" style="display:none;"> <a class="g4a_amn_track_readnext"> Read next story <img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2024/05/15185234/down-arrow-01.png" style="width:12px; height:13px; margin-left:5px;" alt="Read next infinite - Khaleej Times">  </a></div>
+
+   
+      <script>
+        jQuery.noConflict();
+        (function($) {
+          $(document).ready(function() {
+
+              //In-Article-MPU--Ad-Unit
+              var count{{ skip }} = jQuery('.nextarticleid{{ skip }} .article-paragraph-wrapper').find("p").length;
+
+              var insertion{{ skip }}=Math.floor(count{{ skip }}/2.5);
+
+            // jQuery.each(jQuery('.nextarticleid{{ skip }} .article-paragraph-wrapper p'), function (index{{ skip }}, paragraph{{ skip }}) {
+              //  if (index{{ skip }} == insertion{{ skip }}) { //second element
+                //  jQuery(paragraph{{ skip }}).after("<div class='mpu-ad-unit ad-unit d-flex justify-content-center mt-3'>"+
+                  //  "<div id='adslot-insidead-{{ skip }}'></div>"+
+                  //  "</div>");
+               // }
+             // }); 
+        
+         jQuery.each(jQuery('.nextarticleid{{ skip }} .article-paragraph-wrapper p'), function (index{{ skip }}, paragraph{{ skip }}) {
+                if (index{{ skip }} == insertion{{ skip }}) { //second element
+                  jQuery(paragraph{{ skip }}).after("<div class='mpu-ad-unit ad-unit d-flex justify-content-center mt-3'>"+
+                "<div id='div-gpt-ad-1644479678407-0'>"+
+                "<script>"+
+                "googletag.cmd.push(function() {"+
+                " googletag.display('div-gpt-ad-1644479678407-0');"+
+                " });"+
+                "<\/script>"+
+                "</div>");
+                }
+              });
+
+          });
+        })(jQuery);
+      </script>
+
+     
+      <div class="breadcrumbs">
+
+          <ul class="breadcrumbs">
+            {% include "@base/article/breadcrumb.twig" %}
+          </ul>
+</div>
+            {% set metasocial = true %}
+            {% set authorbox = true %}
+            {% set firstimage = true %}
+            {% set firstparagraph = true %}
+            {% set videonotembed = true %}
+            {% set scounter2=false %}
+            {% set icount = 1 %}
+            {% set iscount = 1 %}
+            {% if dateline is not null and dateline is not empty %}
+                {% set dateline = dateline ~ ' - ' %}
+            {% endif %}
+      {% set totalpara2= body|length %}
+    {# set paraend2= (totalpara2-(15/100*totalpara2))|round(0, 'ceil') #}
+
+        {% set paraend2= totalpara2 %}
+      {% set counterset2=(totalpara2-(totalpara2)/3)|round(0, 'ceil')  %}
+             {% for paragraph in body %}
+                {% if paragraph is not empty %}
+
+                    {# Inside Author Box Start #}
+                    {% if paragraph matches '{<!-- element: (body|fallback) -->}' and authorbox %}
+                        {% set authorbox = false %}
+                        {# include "@base/article/inline-author-article.twig" #}
+                    {% endif %}
+                    {# Inside Author Box End #}
+
+                    {# check if dailymotion is embed #}
+                    {% if paragraph matches '{dailymotion.com/embed/video}'  %}
+                        {% set videonotembed = false %}
+                    {% endif %}
+                    {# check if dailymotion is embed #}
+            {% if loop.index==counterset2 and scounter2==false %}
+                 {% set scounter2=true %}
+                 <div class="secondpara-{{skip}}">  
+                  {% endif %}
+                  {% if loop.index==paraend2 %}                   
+                    </div>    
+                   {% endif %}
+                    {% if contentsubtype == 'VIDEO' or  contentsubtype == 'GALLERY'%}
+                          {% if firstimage %}
+                         <div class="row recent-bottom reverse">   
+                            <!-- <div class="col-12 col-lg-3 col-md-3 top-stories top-sty-widget">  
+                               <div class="article-leftbar-wrap-nf sticky"> 
+                              {# render_sidebar("leftside-default-article-sidebar") #}  
+                               </div>       
+                               </div> -->       
+                            <div class="col-12 col-lg-12 col-md-12 details article-center-wrap-nf">            
+                                <div class="inner innermixmatch"> 
+                                 {% set firstimage = false %}
+                              {% endif %}
+                       {% if paragraph matches '{<!-- object: image -->}'  %}
+                                {# set firstimage = false #}                         
+                        {% else %}
+                            {{ paragraph|replace({'<span id="dateline"></span>':dateline})|raw }}
+                        {% endif %}
+                    {% else %}
+              {% if (paragraph matches '{<!-- object: image -->}'  and firstimage) or (scounter2==true and firstimage and  contentsubtype != 'VIDEO' and  contentsubtype != 'GALLERY') %}         
+             
+                <div class="row recent-bottom reverse infinity">             
+                      <div class="col-12 col-lg-3 col-md-3 top-stories top-sty-widget"> 
+                 <div class="article-leftbar-wrap-nf sticky  leftside_{{skip}}">   
+                      {# render_sidebar("leftside-default-article-sidebar") #}  
+                 </div>         
+                 </div>                         
+                              <div class="col-12 col-lg-9 col-md-9 details article-center-wrap-nf">
+                  <div class="inner innermixmatch{{skip}}">               
+                               {% set firstimage = false %}
+                                {{ paragraph|replace({'image-wrapper':'image-wrapper image-wrapper-first'})|raw }}      
+                             {% else %}
+                         {{ paragraph|replace({'<span id="dateline"></span>':dateline})|raw }}
+                          {% if paragraph matches '{<!-- element: body -->}'  and  icount==2 %}
+              {% set iscount=iscount+1 %}   
+               {% if iscount==3 %}
+                        <div id="PA_In-article_{{skip}}"></div>
+                   {% endif %}            
+               {% endif %}
+                {% if  paragraph matches '{<!-- element: body -->}' and iscount==4 %}                
+                <!-- googleoff: index -->               
+                        <!-- /78059622/Responsive-InArticle-MPU2-300x250 -->
+                        <!-- <div id='div-gpt-ad-1711370958901-0' style='max-width: 300px; max-height: 250px;margin:0px auto; text-align:center;'>
+                        <script>
+                        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1711370958901-0'); });
+                        </script>
+                        </div><br/> -->
+                        <!-- /23110992253/InArticle-300x250-2 -->
+                        <div class="adslot-inarticle-mpu2-{{ skip }}" id="adslot-inarticle-mpu2-{{ skip }}" style="max-width: 300px; max-height: 250px;margin:0px auto; text-align:center;"></div>
+                        <br/>
+                <!-- googleon: index -->
+                {% endif %}
+                            {% if paragraph matches '{<!-- element: body -->}' and firstparagraph and icount==2 %}                       
+                                {% set firstparagraph = false %}
+                                <!-- /78059622/Responsive-InArticle-MPU-300x250 -->
+                                <!--  <div id='div-gpt-ad-1711370705840-0' style='max-width: 300px; max-height: 250px;margin:0px auto; text-align:center;'>
+                                  <script>
+                                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1711370705840-0'); });
+                                  </script>
+                                  </div><br/> -->
+                                <!-- /23110992253/InArticle-300x250-1 -->
+                                <div class="adslot-inarticle-mpu1-{{ skip }}" id="adslot-inarticle-mpu1-{{ skip }}" style="max-width: 300px; max-height: 250px;margin:0px auto; text-align:center;"></div>
+                                <br/> 
+                                 <div class="middle_{{skip}}">
+                                  {# render_sidebar("middle-recommended-article-mobile") #} 
+                                  </div>
+                                {% else %}
+                             {% if paragraph matches '{<!-- element: body -->}' and firstparagraph and icount==1 %}
+                             {% set icount = 2 %}
+                             {% endif %}
+                           {% endif %}
+                        {% endif %}           
+                        {% endif %}
+                        {# Social medie icons Start #}
+                        {% if paragraph matches '{<!-- element: (preamble|body|fallback) -->}' and metasocial %}
+                            {% set metasocial = false %}
+                            {% include "@base/article/meta-social.twig" %}
+                        {% endif %}
+                        {# Social medie icons End #}            
+                    {% endif %}
+              {% if loop.last %}                 
+                   <!-- /78059622/Responsive-InArticle-MPU3-300x250 -->
+                    <!--  <div id='div-gpt-ad-1711372673668-0' style='max-width: 300px; max-height: 250px;margin:0px auto; text-align:center;'>
+                      <script>
+                      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1711372673668-0'); });
+                      </script>
+                      </div> -->
+                      <!-- /23110992253/InArticle-300x250-3 -->
+                      <div class="adslot-inarticle-mpu3-{{ skip }}" id="adslot-inarticle-mpu3-{{ skip }}" style="max-width: 300px; max-height: 250px;margin:0px auto; text-align:center;"></div>                      
+                   {% endif %}
+            {% endfor %}
+            {% if contentsubtype == 'VIDEO' and videonotembed%}
+                {% if videoid %}
+                  <div class="facebook-responsive-video mt-4">
+                    <iframe type="text/html"
+                            src="https://www.dailymotion.com/embed/video/{{ videoid }}?autoplay=1"
+                            allow="autoplay"
+                            allowfullscreen=""
+                            width="100%"
+                            height="100%"
+                            frameborder="0">
+                    </iframe>
+                  </div>
+                {% endif %}
+            {% endif %}
+ <div class="follow-wrap">
+
+          {# include "@base/article/concepts.twig" #}
+
+
+       <!-- </div> -->
+
+        {% include "@base/article/authors.twig" %}
+    </div>
+    <div id="agora-article-below-{{ skip + 1 }}"></div>
+    
+    
+   </div>
+   
+        {% if loadMoreArticles[skip] is not empty %}
+          <div class="load-next-article" data-triggerLoadArticle data-article="{{ skip + 1 }}"></div>
+        {% endif %}
+
+        {# include "@base/article/part/vuukle-infinite.twig" #}
+    
+        <div class="row">
+          <div class="col-lg-12">
+            <!-- Speakol Scripts Start -->
+           <!-- {# include "@base/article/part/speakol.twig" with { speakol_id: 6248, infinite: 1 } #} -->
+            <br />
+            <!-- Speakol Scripts End -->
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+   </div>
+ 
+
+    
+
+
+ <div class="col-12 col-lg-4 col-md-4 article-top-right article-top-right{{skip}}">
+
+           <div class="article-right-sidebar fixedsticky">
+           <!-- <div class="adslot-sidebar-mpu2-{{ skip }}" id="adslot-sidebar-mpu2-{{ skip }}"></div> -->
+            <!-- Tag ID: KhaleejTimes_Responsive-Article-MPU-2 -->
+            <div align="center" data-freestar-ad="__300x250" id="adslot-sidebar-mpu2-{{ skip }}">
+            <script data-cfasync="false" type="text/javascript">
+              freestar.config.enabled_slots.push({ 
+                 placementName: "khaleejtimes_Responsive-Article-MPU-2", slotId: "adslot-sidebar-mpu2-{{ skip }}" });
+             </script></div>
+
+            <div class="recommended_{{skip}}">
+            {# render_sidebar("default-infinite-rec-article-sidebar") #}
+            </div>
+
+            <!-- <div class="adslot-sidebar-mpu1-{{ skip }}" id="adslot-sidebar-mpu1-{{ skip }}"></div> -->
+            <!-- Tag ID: KhaleejTimes_Responsive-Article-MPU-1 -->
+        <div align="center" data-freestar-ad="__300x250" id="adslot-sidebar-mpu1-{{ skip }}">
+            <script data-cfasync="false" type="text/javascript">
+              freestar.config.enabled_slots.push({ 
+                placementName: "khaleejtimes_Responsive-Article-MPU-1", slotId: "adslot-sidebar-mpu1-{{ skip }}" });
+             </script></div>
+            <!-- <div class="trending_{#skip#}">
+             {# render_sidebar("default-infinite-tre-article-sidebar") #}
+             </div> -->
+              {{ render_sidebar("default-infinite-tre-article-sidebar") }}
+
+             <!-- Tag ID: khaleejtimes_Desktop_Article_Page_RHS_300x600 -->
+                <div align="center" data-freestar-ad="__300x600" id="adslot-sidebar-mpu-halfpage-{{ skip }}">
+                        <script data-cfasync="false" type="text/javascript">
+                                 freestar.config.enabled_slots.push({ 
+                              placementName: "khaleejtimes_Desktop_Article_Page_RHS_300x600", slotId: "adslot-sidebar-mpu-halfpage-{{ skip }}" });
+                        </script>
+                </div>
+        </div>
+        </div>
+
+ </div>
+
+  <script>ga('send', 'pageview');</script>
+ <script>
+jQuery(".leftside_{{skip}}").html(jQuery(".leftside_0").html());
+jQuery(".recommended_{{skip}}").html(jQuery(".recommended_0").html());
+//jQuery(".trending_{#skip#}").html(jQuery(".trending_0").html());
+jQuery(".middle_{{skip}}").html(jQuery(".middle_0").html());
+
+    jQuery('.dropdown1{{skip}}').hover(function(){ 
+      jQuery('.dropdown-toggle1{{skip}}', this).trigger('click'); 
+    });
+  if(jQuery(".infinity").prev('.image-top').length){
+  jQuery(".image-top").each(function(){ jQuery( this ).insertBefore('.innermixmatch{{skip}}');  return false;});
+    }
+
+  if(jQuery('.nextarticleid{{skip}}').find('.article-top-right{{skip}}').length == 1) {  
+    jQuery(".article-top-right{{skip}}").insertAfter(".nextarticleid{{skip}}");
+  }
+
+jQuery(document).ready(function() {
+    jQuery(window).scroll(function() { 
+    if (jQuery(".secondpara-{{skip}}").isInViewportz() == true && jQuery('.nextarticle{{skip}}').contents().length>0) {
+          if({{skip}}!=4)   
+          {
+            jQuery(".floater-article-btn-{{skip}}").show();        
+          }
+     //jQuery(".floater-article-btn").attr("article-id",next+1);    nextarticle{{skip}}
+    }   
+    else
+    {      
+       jQuery(".floater-article-btn-{{skip}}").hide();    
+    }  
+});
+
+  {% if every_device=='mobile'%} 
+    jQuery(".floater-article-btn-{{skip}}").click(function(){     
+   // next=jQuery(".load-next-article").attr("data-article");
+    jQuery('html, body').scrollTop(jQuery(".nextarticleid{{skip+1}}").offset().top-200);    
+  });
+
+    jQuery(".floater-article-btn-0").click(function(){     
+   // next=jQuery(".load-next-article").attr("data-article");
+    jQuery('html, body').scrollTop(jQuery(".nextarticleid1").offset().top-200);    
+  });  
+  {% else %}
+  jQuery(".floater-article-btn-{{skip}}").click(function(){     
+   // next=jQuery(".load-next-article").attr("data-article");
+    jQuery('html, body').scrollTop(jQuery(".nextarticleid{{skip+1}}").offset().top-350);    
+  });
+    jQuery(".floater-article-btn-0").click(function(){     
+   // next=jQuery(".load-next-article").attr("data-article");
+    jQuery('html, body').scrollTop(jQuery(".nextarticleid1").offset().top-350);    
+  });
+   
+{%endif%}  
+});
+  </script>
+  </div>
+</section>
+{% if skip!=4 %}
+    <section class="separation">
+  <div class="container">
+    <div class="col-12">
+      <div class="inner">
+        <span>Next Story</span>
+      </div>
+    </div>
+  </div>
+ 
+</section>
+{% endif %}
+<script>
+jQuery(document).ready(function() {
+    var showChar = 98;
+    var ellipsestext = "...";
+    var moretext = "More <i class='fas fa-angle-right'></i>";
+    var lesstext = " Less";
+    jQuery('.more{{skip}}').each(function() {
+        var content = jQuery(this).html();
+
+        if(content.length > showChar) {
+            var c = content.substr(0, showChar);
+            var h = content.substr(showChar, content.length - showChar);
+            var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span><a href="" class="morelink{{skip}}">' + moretext + '</a></span>';
+
+            jQuery(this).html(html);
+        }
+
+    });
+
+    jQuery(".morelink{{skip}}").click(function(){
+        if(jQuery(this).hasClass("less")) {           
+            jQuery(this).removeClass("less");
+            jQuery(this).html(moretext);
+        } else {
+            jQuery(this).addClass("less");
+
+            jQuery(this).html(lesstext);
+        }
+        jQuery(this).parent().prev().toggle();
+        jQuery(this).prev().toggle();
+        return false;
+    });
+});
+
+  /* var boxAds = document.querySelector( "#adarticle{{skip}}" );
+  document.addEventListener('scroll', function () {
+      var isDivVisible = isInViewport(boxAds);
+      if( isDivVisible ){
+          jQuery( "#adarticle{{skip}}" ).css({
+              'position' : 'fixed',
+              'top' : 0,
+              'left' : 0,
+              'z-index' : 9999,
+              'background-color': 'rgb(255, 255, 255,0.5)'
+          });
+
+          setTimeout(function() { 
+              jQuery( "#adarticle{{skip}}" ).removeAttr('style');
+              jQuery( "#adarticle{{skip}}" ).removeAttr('id');
+          }, 3000);
+          console.log( "StickyAd{{skip}}" );
+
+          document.removeEventListener('scroll',function(){
+            console.log('Event Removed');
+          });
+      }
+      
+  }, {
+      passive: true
+  }); */
+  
+  /* var counter = "{{skip}}";
+  jQuery(document).on('scroll',function(){
+    var boxAds = document.querySelector( "#adarticle{{skip}}" );
+    var isDivVisible = isInViewport(boxAds);
+    if( isDivVisible ){
+      var dt = new Date();
+      var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+      console.log('Time St {{skip}}-' + time);
+
+      jQuery( "#adarticle{{skip}}" ).css({
+          'position' : 'fixed',
+          'top' : 0,
+          'left' : 0,
+          'z-index' : 9999,
+          'background-color': 'rgb(255, 255, 255,0.5)'
+      });
+
+      var timer = 3000;
+      if( counter == '1' ){
+        timer = 1000;
+      }
+
+      var intervalAd = setInterval(function() { 
+          jQuery( "#adarticle{{skip}}" ).removeAttr('style');
+          jQuery( "#adarticle{{skip}}" ).removeAttr('id');
+          
+          var dt = new Date();
+          var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+          console.log('Time Ed {{skip}}-' + time);
+
+          clearInterval(intervalAd);
+
+      }, timer );
+
+      console.log( "StickyAd{{skip}}" );
+      jQuery(document).off('scroll');
+    }
+  }); */
+
+</script>
+<!--- Article infinite scroll end -->

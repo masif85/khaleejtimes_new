@@ -1,0 +1,32 @@
+{% apply spaceless %}
+<article class="{{ render_classes([
+    'teaser',
+    'teaser--gallery',
+    image ? 'teaser--with-image' : 'teaser--without-image',
+    classList|join(' ')
+]) }}" data-uuid="{{ uuid }}">
+  <div class="teaser__gallery-container h-100">
+    <a href="{{ permalink }}" class="teaser-link teaser__link">
+      <div class="teaser__gallery-image">
+        {% if image %}
+          {{ render_partial('@base/teasers/partial/gallery', image) }}
+        {% else %}
+          <div class="teaser__gallery-placeholder"></div>
+        {% endif %}
+        <div class="teaser__gallery-icon">
+          <i class="fa fa-camera"></i>
+        </div>
+      </div>
+      <div class="teaser__container teaser__gallery-text">
+          <div class="teaser__content">
+              {% include '@base/teasers/partial/kicker.twig' %}
+              {% include '@base/teasers/partial/headline.twig' %}
+          </div>
+          <div class="teaser__footer">
+              {% include '@base/teasers/partial/byline.twig' %}
+          </div>
+      </div>
+    </a>
+  </div>
+</article>
+{% endapply %}

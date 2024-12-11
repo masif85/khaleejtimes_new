@@ -1,0 +1,13 @@
+{% set lSlug = url|replace({(site_url()) : ""}) %}
+<url>
+  <loc>{{ domain }}{% if lang %}/{{ lang }}{% endif %}{{ lSlug }}</loc>
+  <lastmod>{{ last_updated }}</lastmod>
+  <news:news>
+    <news:publication>
+      <news:name>Khaleejtimes</news:name>
+      <news:language>en</news:language>
+    </news:publication>
+       <news:publication_date>{{ pubdate|date("Y-m-d\\TH:i:m+04:00") }}</news:publication_date>
+    <news:title>{{ headline }}</news:title>
+  </news:news>
+</url>

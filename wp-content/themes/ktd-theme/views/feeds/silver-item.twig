@@ -1,0 +1,19 @@
+{% if content %}
+{% if content.object["@attributes"].type == 'x-im/table' %}
+<Parent date="{{ "now"|date("m/d/Y") }}">
+    {% for tr in content.object.data.tbody.tr %}
+        {% if loop.index == 1 %}
+            <silverpricettp id="{{ loop.index }}">
+        {% else %}
+            <silverprice24p id="{{ loop.index }}">
+        {% endif %}
+                <price silvergold="{{ tr.td[1]|trim }}" silvergoldo="{{ tr.td[2]|trim }}" silvergoldy="{{ tr.td[3]|trim }}"/>
+        {% if loop.index == 1 %}
+            </silverpricettp>
+        {% else %}
+            </silverprice24p>
+        {% endif %}
+    {% endfor %}
+</Parent>
+{% endif %}
+{% endif %}

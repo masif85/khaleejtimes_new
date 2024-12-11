@@ -1,0 +1,39 @@
+.btn {
+  &--load-more {
+    position: relative;
+    display: block;
+    margin: $grid-gutter-width * 2 auto 0;
+    padding: 5px 25px;
+    border: none;
+
+    &[data-status="loading"] {
+      span {
+        visibility: hidden;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        left: 50%;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: 1.5px solid;
+        border-color: #fff #fff #fff transparent;
+        animation: a-loading-spinner 1s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes a-loading-spinner {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

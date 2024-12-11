@@ -1,0 +1,13 @@
+{% if contentsubtype == 'SPONSOREDCONTENT' %}
+  	{% if search_url_part('50-mena-leaders')%}	
+	{% else %}
+	 PARTNER CONTENT
+	{% endif %}
+{% else %}
+  {% set link = get_concept_link(conceptsectionuuids) %}
+  {% if link %}
+    <a href="{{ link }}">{{ createsection_asf(permalink,sectionName) }}</a>
+  {% else %}
+    {{ sectionName }}
+  {% endif %}
+{% endif %}

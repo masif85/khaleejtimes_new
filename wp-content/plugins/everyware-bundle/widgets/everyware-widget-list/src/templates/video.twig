@@ -1,0 +1,45 @@
+{% apply spaceless %}
+  <div class="list-module latest-videos">
+      <div class="row">
+        <div class="section-header col">
+          <h5 class="section-title text-uppercase font-weight-bold bordered-left text-white">
+            <a href="/videos">{{ title }}</a>
+          </h5>
+        </div>
+      </div>
+      {% if articles %}
+        <div class="videos mb-3">
+          <div class="row">
+            <div class="col-12 col-lg-8">
+              <article class="post videos">
+                <div class="video-player">
+                  {% set article = articles|first %}
+                  {% if article.videoId %}
+                    <div class="video-embed">
+                      <iframe frameborder="0" type="text/html" src="https://geo.dailymotion.com/player/x57eb.html?video={{ article.videoId }}" width="100%" height="100%" allowfullscreen allow="autoplay" title="{{ article.headline }}"></iframe>                   
+					</div>
+                  {% endif %}
+                </div>
+              </article>
+            </div>
+
+            <div class="col-12 col-lg-4 board-col-xs-12 board-col-sm-12 board-col-md-4 board-col-lg-4 tracks">
+              <div class="playlist">
+                {% for article in articles|slice(1, 5) %}
+                  {{ render_partial('@base/teasers/playlist-video.twig', article) }}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          {% for article in articles|slice(6, 6) %}
+            <div class="col-6 col-md-6 col-lg-2 board-col-xs-12 board-col-sm-6 board-col-md-3 board-col-lg-2">
+              {{ render_partial('@base/teasers/notice-teaser-with-image.twig', article) }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+  </div>
+{% endapply %}

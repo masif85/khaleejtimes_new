@@ -1,0 +1,7 @@
+<nav id="main-menu">
+	<ul class="list-unstyled list-inline border-light border-bottom border-top py-2">
+		{% for item in main_menu.elements %}
+			<li class="list-inline-item"><a class="p-3" href="{{ item.url }}">{{ item.title }}</a></li>
+		{% endfor %}
+	</ul>
+</nav>

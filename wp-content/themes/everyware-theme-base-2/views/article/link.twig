@@ -1,0 +1,9 @@
+{% apply spaceless %}
+    {% if href %}
+        <a href="{{ href }}" {% if itemprop %} itemprop="{{itemprop}}" {% endif %}>
+    {% endif %}
+        {% block inner %}{% endblock %}
+    {% if href %}
+        </a>
+    {% endif %}
+{% endapply %}

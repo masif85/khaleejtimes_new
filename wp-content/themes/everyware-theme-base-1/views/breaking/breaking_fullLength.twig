@@ -1,0 +1,14 @@
+<article class="breaking_fullLength">
+	 <div class="container">
+    	<div class="row">
+
+        <div class="breaking_fullLength_title col-md-2">BREAKING NEWS:</div>
+
+        <div class="col-md-10">
+        {% if articles %}
+            {{ articles | raw }}
+        {% endif %}
+
+        </div>
+    </div>
+</article>

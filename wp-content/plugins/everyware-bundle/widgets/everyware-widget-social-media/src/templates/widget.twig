@@ -1,0 +1,7 @@
+{% apply spaceless %}
+    <div class="social-links">
+        {% for provider, url in social_media_urls %}
+          {% if url %}<a href="{{ url }}" target="_blank"><i class="{{ icons[provider] }}"></i></a>{% endif %}
+        {% endfor %}
+    </div>
+{% endapply %}

@@ -1,0 +1,20 @@
+// Render the content of a list if it has content
+@mixin render-list($list) {
+  @if length($list) > 0 {
+    #{$list} { @content; };
+  }
+}
+
+// Render a media query
+@mixin render-content-size-media($min, $max, $content-size, $content-size-class ) {
+  $media: "#{$eb-content-size-media} and (min-width: #{$min})";
+
+  @if $max != false {
+    $media: "#{$media} and (max-width: #{$max})";
+  }
+
+  @media #{$media} {
+    $content-size-list: create-content-size-classlist($content-size, $min, $content-size-class);
+    @include render-list($content-size-list) { @content; }
+  }
+}

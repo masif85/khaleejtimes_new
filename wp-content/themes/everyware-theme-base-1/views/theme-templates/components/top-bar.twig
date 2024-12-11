@@ -1,0 +1,163 @@
+{% if topbar_right_toggle == 'on' and topbar_center_toggle == 'off' %}{% if use_hamburger_menu == 'yes' %}{% set top_bar_menu_spacing_menu = 'col-md-5' %}{% set top_bar_menu_spacing_widget = 'col-md-3' %}{% else %}{% set top_bar_menu_spacing_menu = 'col-md-6' %}{% set top_bar_menu_spacing_widget = 'col-md-4' %}{% endif %}{% endif %}
+{% if topbar_right_toggle == 'on' and topbar_center_toggle == 'on' %}{% if use_hamburger_menu == 'yes' %}{% set top_bar_menu_spacing_menu = 'col-md-3' %}{% set top_bar_menu_spacing_widget = 'col-md-3' %}{% else %}{% set top_bar_menu_spacing_menu = 'col-md-4' %}{% set top_bar_menu_spacing_widget = 'col-md-4' %}{% endif %}{% endif %}
+{% if topbar_right_toggle == 'off' and topbar_center_toggle == 'off' %}{% if use_hamburger_menu == 'yes' %}{% set top_bar_menu_spacing_menu = 'col-md-6' %}{% set top_bar_menu_spacing_widget = 'col-md-11' %}{% else %}{% set top_bar_menu_spacing_menu = 'col-md-6' %}{% set top_bar_menu_spacing_widget = 'col-md-12' %}{% endif %}{% endif %}
+{% if topbar_right_toggle == 'off' and topbar_center_toggle == 'on' %}{% if use_hamburger_menu == 'yes' %}{% set top_bar_menu_spacing_menu = 'col-md-3' %}{% set top_bar_menu_spacing_widget = 'col-md-5' %}{% else %}{% set top_bar_menu_spacing_menu = 'col-md-4' %}{% set top_bar_menu_spacing_widget = 'col-md-6' %}{% endif %}{% endif %}
+
+<div id="top-bar" class="{% if topbar_full_width == 'full_width' %}full-width{% endif %} {% if use_hamburger_menu == 'no' %}no_sidebar_menu{% endif %}">
+    {% if topbar_full_width == 'container' %}<div class="container">{% endif %}
+        <div class="row">
+
+        {% if topbar_left_toggle == 'on' %}
+            {% if topbar_left_choice == 'menu' %}
+                {% if use_hamburger_menu == 'yes' %}
+
+                    {# SIDEMENU TRIGGER #}
+                    {% if hamburger_menu_type == 'sidebar' %}
+                        <div class="sidemenuTrigger {% if hamburger_menu_text == 'None' %}noText{% endif %} col-md-1 d-none d-lg-block" onclick="openNav('{{ hamburger_menu_width }}')">
+                            {% if hamburger_menu_text and hamburger_menu_text != 'None' %}<span class="sidebarTriggerText">{{ hamburger_menu_text }}</span> &#9776;{% else %}<i class="fa fa-bars" aria-hidden="true"></i>{% endif %}
+                        </div>
+                    {% endif %}
+
+					<div class="sidemenuTrigger mobile d-lg-none" onclick="openNav('{{ hamburger_menu_width }}')"><i class="fa fa-bars" aria-hidden="true"></i></div>
+
+                    {% if hamburger_menu_type == 'dropdown' %}
+                        {% include "@base/theme-templates/components/top-bar-templates/hamburger-menu.twig" %}
+                    {% endif %}
+
+                    {# MOBILE TOP BAR #}
+                    <div class='top-bar-mobile top-bar sidebarmenu d-lg-none'>
+                        {% if search_form_location_mobile_toggle == 'top_bar' %}
+                            {% include "@base/theme-templates/components/top-bar-templates/mobile-top-bar.twig" %}
+                        {% endif %}
+                    </div>
+
+                    {# OPENING NAV TAG #}
+                    <nav class="left-top-bar-menu navbar navbar-expand-md navbar-light bg-primary {{ top_bar_menu_spacing_menu }} d-none d-lg-block">
+                        <div class="top-bar-left-menu">{{ top_menu_left|raw }}</div>
+                    </nav>
+
+                {% else %}
+                    
+                    {% if search_form_location_mobile_toggle == 'top_bar' %}
+                        {% include "@base/theme-templates/components/top-bar-templates/mobile-top-bar.twig" %}
+                    {% endif %}
+
+                    <nav class="left-top-bar-menu navbar navbar-expand-md navbar-light bg-primary {{ top_bar_menu_spacing_menu }} d-none d-lg-block">
+                        <div class="top-bar-left-menu">{{ top_menu_left|raw }}</div>
+                    </nav>
+
+                {% endif %}{# END TOP LEFT SIDEBAR USED OR NOT #}
+            {% endif %}{# END TOP BAR LEFT CHOICE - MENU #}
+
+            {% if topbar_left_choice == 'widget_area' %}
+                {% if use_hamburger_menu == 'yes' %}    
+                    {# SIDEMENU TRIGGER #}
+                    {% if hamburger_menu_type == 'sidebar' %}
+                        <div class="sidemenuTrigger {% if hamburger_menu_text == 'None' %}noText{% endif %} col-md-1 d-none d-lg-block" onclick="openNav('{{ hamburger_menu_width }}')">
+                            {% if hamburger_menu_text and hamburger_menu_text != 'None' %}<span class="sidebarTriggerText">{{ hamburger_menu_text }}</span> &#9776;{% else %}<i class="fa fa-bars" aria-hidden="true"></i>{% endif %}
+                        </div>
+                    {% endif %}
+
+					<div class="sidemenuTrigger mobile d-lg-none" onclick="openNav('{{ hamburger_menu_width }}')"><i class="fa fa-bars" aria-hidden="true"></i></div>
+
+                    {% if hamburger_menu_type == 'dropdown' %}
+                        {% include "@base/theme-templates/components/top-bar-templates/hamburger-menu.twig" %}
+                    {% endif %}
+
+                    <div class='sidebarmenu top-bar d-lg-none'>
+                        <div class='top-bar-mobile top-bar sidebarmenu d-lg-none'>
+                            {% if search_form_location_mobile_toggle == 'top_bar' %}
+                               {% include "@base/theme-templates/components/top-bar-templates/mobile-top-bar.twig" %}
+                            {% endif %}
+                        </div>
+                    </div>
+
+					<div class="top-bar-widget-left {{ top_bar_menu_spacing_widget }} d-none d-lg-block">
+                        {% if left_widget_active == true %}{{ left_widget_area|raw }}{% endif %}
+                    </div>
+                {% else %}
+
+                    <div class='top-bar-mobile top-bar sidebarmenu d-lg-none'>
+                        {% if search_form_location_mobile_toggle == 'top_bar' %}
+                            {% include "@base/theme-templates/components/top-bar-templates/mobile-top-bar.twig" %}
+                        {% endif %}
+                    </div>
+
+					<div class="top-bar-widget-left {{ top_bar_menu_spacing_widget }} d-none d-lg-block">
+                        {% if left_widget_active == true %}{{ left_widget_area|raw }}{% endif %}
+                    </div>
+
+                {% endif %}
+            {% endif %}{# END TOP BAR LEFT CHOICE - WIDGET AREA #}
+
+        {% endif %}{# END TOP BAR LEFT TOGGLE#}
+
+        {% if topbar_center_toggle == 'on' %}
+            {% if topbar_center_choice == 'menu' %}
+                <nav class="navbar navbar-expand-md navbar-light bg-primary col-md-4 {% if topbar_center_choice == 'menu' %}d-none{% else %}offset-md-4 d-none{% endif %} d-lg-block">
+                    <div class="top-bar-center-menu">
+                        {{ top_menu_center|raw }}
+                    </div>
+				</nav>
+            {% endif %}
+
+            {% if topbar_center_choice == 'widget_area' %}
+			    {% if topbar_left_toggle == 'on' and topbar_right_toggle == 'on' %}
+				    <div class="top-bar-widget-center col-md-4 d-none d-lg-block">
+			    {% elseif topbar_left_toggle == 'on' and topbar_right_toggle == 'off' %}
+				    <div class="top-bar-widget-center col-md-4 d-none d-lg-block">
+			    {% elseif topbar_left_toggle == 'off' and topbar_right_toggle == 'on' %}
+				    <div class="top-bar-widget-center col-md-4 offset-md-4 d-none d-lg-block">
+			    {% elseif topbar_left_toggle == 'off' and topbar_right_toggle == 'off' %}
+				    <div class="top-bar-widget-center col-md-4 offset-md-4 d-none d-lg-block">
+			    {% endif %} 
+                
+                    {% if center_widget_active == true %} 
+                        {{ center_widget_area|raw }}
+                    {% endif %}
+
+					</div>  
+            {% endif %}
+
+        {% endif %}
+
+        {% if topbar_right_toggle == 'on' %}
+            {% if topbar_right_choice == 'menu' %}
+                {% if topbar_left_toggle == 'on' and topbar_center_toggle == 'on' %}
+                    <nav class="navbar navbar-expand-md navbar-light bg-primary d-none d-lg-block col-md-4">
+                {% elseif topbar_left_toggle == 'on' and topbar_center_toggle == 'off' %}
+                    <nav class="navbar navbar-expand-md navbar-light bg-primary d-none d-lg-block col-md-6">
+                {% elseif topbar_left_toggle == 'off' and topbar_center_toggle == 'on' %}
+                    <nav class="navbar navbar-expand-md navbar-light bg-primary d-none d-lg-block col-md-4">
+                {% elseif topbar_left_toggle == 'off' and topbar_center_toggle == 'off' %}
+                    <nav class="navbar navbar-expand-md navbar-light bg-primary d-none d-lg-block col-md-6 offset-md-6">
+                {% endif %}
+
+						<div class="top-bar-right-menu">
+								{{ top_menu_right|raw }}
+						</div>
+
+                	</nav>
+            {% endif %}
+            {% if topbar_right_choice == 'widget_area' %}
+                {% if topbar_left_toggle == 'on' and topbar_center_toggle == 'on' %}
+                    <div class="top-bar-widget-right d-none d-lg-block col-md-4">
+                {% elseif topbar_left_toggle == 'on' and topbar_center_toggle == 'off' %}
+                    <div class="top-bar-widget-right d-none d-lg-block col-md-6">
+                {% elseif topbar_left_toggle == 'off' and topbar_center_toggle == 'on' %}
+                    <div class="top-bar-widget-right d-none d-lg-block col-md-4">
+                {% elseif topbar_left_toggle == 'off' and topbar_center_toggle == 'off' %}
+                    <div class="top-bar-widget-right d-none d-lg-block col-md-6 offset-md-6">
+                {% endif %}
+
+                    {% if right_widget_active == true %} 
+                        {{ right_widget_area|raw }}
+                    {% endif %}
+
+                    </div>
+            {% endif %}
+        {% endif %}
+
+        </div>
+    {% if topbar_full_width == 'container' %}</div>{% endif %}
+</div>

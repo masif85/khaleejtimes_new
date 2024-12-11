@@ -1,0 +1,310 @@
+{
+    "typePropertyClassReference": {
+        "Article": "EuKit\\Base\\Parts\\NewsMLArticle",
+        "Concept": "EuKit\\Base\\Parts\\Concept"
+    },
+    "typePropertyMap": {
+        "CustomerExchangeRate": {
+            "forexBody": {
+                "name": "CustomerForex"
+            },
+            "updated": {
+                "name": "updated"
+            },
+            "uuid": {
+                "name": "uuid"
+            },
+            "contenttype": {
+                "name": "contenttype"
+            }
+        },
+        "Article": {
+            "articles": {
+                "name": "Articles",
+                "propertyMapReference": "RelatedArticle",
+                "transforms": [
+                    "toMultiValue"
+                ]
+            },
+            "authors": {
+                "name": "Authors",
+                "propertyMapReference": "Concept",
+                "transforms": [
+                    "toMultiValue"
+                ]
+            },
+            "author_byline": {
+                "name": "CustomerAuthorByline"
+            },
+            "body_raw": {
+                "name": "BodyRaw"
+            },
+            "canonicaltagging": {
+                "name": "CustomerCanonicalTagging"
+            },
+            "keywords": {
+                "name": "CustomerKeywords"
+            },
+			
+	    "headingvideo": {
+                "name": "CustomerHeadingvideo"
+            },
+			
+            "videoid": {
+                "name": "CustomerVideoId"
+            },
+            "videolength": {
+                "name": "CustomerVideoLength"
+            },
+            "oldGuid": {
+                "name": "CustomerOldGuid"
+            },
+            "conceptsectionuuids": {
+                "name": "ConceptSectionUuids"
+            },
+            "contentsubtype": {
+                "name": "CustomerContentSubType"
+            },
+            "cinemalisting_language": {
+                "name": "CustomerCinemaListingLang"
+            },
+            "cinemalisting_rating": {
+                "name": "CustomerCinemaListingRating"
+            },
+            "cinemalisting_mpaa": {
+                "name": "CustomerCinemaListingMpaa"
+            },
+            "categories": {
+                "name": "Categories",
+                "propertyMapReference": "Concept",
+                "transforms": [
+                    "toMultiValue"
+                ]
+            },
+            "contenttype": {
+                "name": "contenttype"
+            },
+            "dateline": {
+                "name": "Dateline"
+            },
+            "headline": {
+                "name": "Headline"
+            },
+            "is_plus": {
+                "name": "IsPlus",
+                "transforms": [
+                    "toBoolValue"
+                ]
+            },
+            "noindex": {
+              "name": "CustomerNoIndex"
+            },
+            "originalUrls": {
+                "name": "OriginalUrls",
+                "transforms": [
+                    "toMultiValue"
+                ]
+            },
+            "places": {
+                "name": "Places",
+                "propertyMapReference": "Concept",
+                "transforms": [
+                    "toMultiValue"
+                ]
+            },
+            "pubdate": {
+                "name": "Pubdate",
+                "transforms": [
+                    "toDateValue"
+                ]
+            },
+            "published": {
+                "name": "Published",
+                "transforms": [
+                    "toBoolValue"
+                ]
+            },
+            "objectUpdated": {
+                "name": "ObjectUpdated",
+                "transforms": [
+                    "toDateValue"
+                ]
+            },
+            "section": {
+                "name": "Section"
+            },
+            "section_parent": {
+                "name": "CustomerSectionParent"
+            },
+            "section_parent_uuid": {
+                "name": "CustomerSectionParentUuid"
+            },
+			"sections": {
+                "name": "Sections",
+                "propertyMapReference": "Concept",
+                "transforms": [
+                    "toMultiValue"
+                ]
+            },
+
+
+            "social_teaser_raw": {
+                "name": "SocialTeaserRaw"
+            },
+            "sponsor_teaser_raw": {
+                "name": "CustomerSponsorTeaserRaw"
+            },
+            "stories": {
+                "name": "Stories",
+                "propertyMapReference": "Concept",
+                "transforms": [
+                    "toMultiValue"
+                ]
+            },
+            "tags": {
+                "name": "Tags",
+                "propertyMapReference": "Concept",
+                "transforms": [
+                    "toMultiValue"
+                ]
+            },
+            "teaser_headline": {
+                "name": "TeaserHeadline"
+            },
+            "teaser_body": {
+                "name": "TeaserBody"
+            },
+            "teaser_image_uuids": {
+                "name": "TeaserImageUuids",
+                "transforms": [
+                    "toMultiValue"
+                ]
+            },
+            "teaser_raw": {
+                "name": "TeaserRaw"
+            },
+            "uuid": {
+                "name": "uuid"
+            },
+            "status": {
+                "name": "Status"
+
+            },
+            "categoryname": {
+              "name": "CategoryName",
+              "transforms": [
+                "toMultiValue"
+              ]
+            }
+        },
+        "Concept": {
+            "image_uuids": {
+                "name": "ImageUuids",
+                "transforms": [
+                    "toMultiValue"
+                ]
+            },
+            "meta_data": {
+                "name": "ConceptMetaData"
+            },
+            "contenttype": {
+                "name": "contenttype"
+            },
+            "description": {
+                "name": "Description"
+            },
+            "description_short": {
+                "name": "DescriptionShort"
+            },
+            "name": {
+                "name": "Name"
+            },
+            "related_links": {
+                "name": "RelatedLinks",
+                "transforms": [
+                    "toMultiValue"
+                ]
+            },
+            "related_links_raw": {
+                "name": "RelatedLinksRaw"
+            },
+            "type": {
+                "name": "Type"
+            },
+            "uuid": {
+                "name": "uuid"
+            },
+            "parent_uuid": {
+                "name": "ParentUuid"
+            },
+            "status": {
+                "name": "Status"
+            }
+        },
+        "RelatedArticle": {
+            "authors": {
+                "name": "Authors",
+                "propertyMapReference": "Author"
+            },
+            "categories": {
+                "name": "Categories",
+                "propertyMapReference": "Category"
+            },
+            "contenttype": {
+                "name": "contenttype"
+            },
+            "headline": {
+                "name": "Headline"
+            },
+            "is_plus": {
+                "name": "IsPlus",
+                "transforms": [
+                    "toBoolValue"
+                ]
+            },
+            "pubdate": {
+                "name": "Pubdate",
+                "transforms": [
+                    "toDateValue"
+                ]
+            },
+            "published": {
+                "name": "Published"
+            },
+            "section": {
+                "name": "Section"
+            },
+            "stories": {
+                "name": "Stories",
+                "propertyMapReference": "Story"
+            },
+            "teaser_headline": {
+                "name": "TeaserHeadline"
+            },
+            "teaser_raw": {
+                "name": "TeaserRaw"
+            },
+            "uuid": {
+                "name": "uuid"
+            }
+        },
+        "List": {
+            "uuid": {
+                "name": "uuid"
+            },
+            "name": {
+                "name": "Name"
+            },
+            "articles": {
+                "name": "Articles",
+                "propertyMapReference": "RelatedArticle"
+            }
+        },
+        "ListArticles": {
+            "articles": {
+                "name": "Articles",
+                "propertyMapReference": "Article"
+            }
+        }
+    }
+}

@@ -1,0 +1,366 @@
+{% extends '@base/main.twig' %}
+
+
+
+{% block page_head %}
+  {% include "@base/article/part/metatags.twig" %}
+  <link rel="amphtml" href="{{ get_permalink() }}?amp=1">
+{% endblock %}
+
+{% block page_stylesheets_scripts %}
+  {{ parent() }}
+  {# include "@base/article/part/vuukle-script.twig" #}
+  <link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/swiper-bundle.min.css">
+{% endblock %}
+
+{% block page_ad_takeover %}
+{% endblock %}
+
+{% block page_content %}
+
+
+
+
+  				
+
+  <div class="container">
+    <div class="article-container" data-triggerView data-url="{{ get_self_link()|split('?')|first }}" viewed="">
+      <div class="row">
+        <div class="col-lg-8 art-lt-cust-nf">
+		<!-- <span class="kt_floater"></span>
+		<script>
+			//if(getCookieValue('mykt_floater')=='true')
+			//{ 
+				//jQuery(".kt_floater").html('<a href="https://navstage.khaleejtimes.com/mykt" class="btn btn-primary" style="position: fixed;top: 500px;z-index: 1001;color: white">My KT</a>');
+			//}
+		</script>	-->
+          <div class="article-wrapper" data-uuid="{{ uuid }}">
+            <div class="article-paragraph-wrapper">
+
+              <ul class="breadcrumbs-nw-nf-lat">
+                {% include "@base/article/breadcrumb.twig" %}
+              </ul>
+
+                {% set metasocial = true %}
+                {% set authorbox = true %}
+                {% set firstimage = true %}
+                {% set firstparagraph = true %}
+				{% set count = 1 %}
+				{% set objcount = false %}
+                {% set videonotembed = true %}
+				{% set nextparaz = false %}
+				{% set paracountz = 1 %}
+                {% if dateline is not null and dateline is not empty %}
+                    {% set dateline = dateline ~ ' - ' %}
+                {% endif %}
+
+
+
+        {% for paragraph in body %}
+				 {% if (contentsubtype=='GALLERY' or contentsubtype=='VIDEO') and contentsubtype!='ARTICLE'%}			 
+						  {% if loop.last %}						 
+						 	{% set objcount = true %}	
+							{% endif %}							
+				{% endif %}
+					{% if (paragraph matches '{<!-- element: (embed|fallback) -->}' or paragraph matches '{<!-- element: (gallery|fallback) -->}' or paragraph matches '{<!-- object: (image|fallback) -->}') and contentsubtype!='ARTICLE' %}
+						
+						 {% endif %}
+                    {% if paragraph is not empty or objcount %}						
+                        {# Inside Author Box Start #}
+                          {% if (paragraph matches '{<!-- element: (body|fallback) -->}' or objcount) and authorbox %}
+                            {% set authorbox = false %}
+                            {% include "@base/article/inline-author.twig" %}
+                        {% endif %}
+                        {# Inside Author Box End #}
+
+                        {# check if dailymotion is embed #}
+                        {# check if dailymotion is embed #}
+                        {% if paragraph matches '{dailymotion.com/embed/video}'  %}
+                            {% set videonotembed = false %}
+                        {% endif %}
+                        {# check if dailymotion is embed #}
+ <!-- /78059622/Test-2022-1x1 --> 
+<div id='div-gpt-ad-1660806156441-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1660806156441-0'); });
+  </script>
+</div>
+
+                        {% if contentsubtype == 'VIDEO' or  contentsubtype == 'GALLERY'%}
+                            {% if paragraph matches '{<!-- object: image -->}' and firstimage %}
+                                {% set firstimage = false %}
+
+                            {% else %}
+                                {{ paragraph|replace({'<span id="dateline"></span>':dateline})|raw }}
+                            {% endif %}
+                        {% else %}
+                            {% if paragraph matches '{<!-- object: image -->}' and firstimage %}
+ </div>
+ 
+						<div class="top-sty-article-lt-dt"> </div>
+						
+                            <div class="article-leftbar-wrap-nf">
+                              <div id="arttopstrywrap" class="article-lt-top-story">
+                                <h2>Top Stories</h2>
+                                  
+                                  <div class="arttopstrywrap-list-dt">
+                                    <a href="/business/tech/dubai-drones-will-deliver-your-food-packages-by-early-2024-municipality-officials-say">
+                                      <img src="https://image.khaleejtimes.com/?uuid=0d205628-6006-54ac-8fe0-298b5ebe11b1&function=original&type=preview" alt="" />
+                                      <h3>Joe Biden to visit Israel, Jordan as Gaza war sparks humanitarian crisis</h3>
+                                      </a>
+                                  </div>
+
+                                     <div class="arttopstrywrap-list-dt">
+                                     <a href="/business/tech/dubai-drones-will-deliver-your-food-packages-by-early-2024-municipality-officials-say">
+                                      <img src="https://image.khaleejtimes.com/?uuid=20912adf-89da-5f94-8169-1b3f9a04a249&function=fit&type=preview&source=false&q=75&maxsize=1500&scaleup=0" alt="" />
+                                      <h3>UAE passengers carrying cash, jewellery over Dh60,000 can declare valuables through new app</h3>
+                                      </a>
+                                  </div>
+
+                                     <div class="arttopstrywrap-list-dt">
+                                     <a href="/business/tech/dubai-drones-will-deliver-your-food-packages-by-early-2024-municipality-officials-say">
+                                      <img src="https://image.khaleejtimes.com/?uuid=55a00cc1-5dbc-4813-99c9-077eaef43c82&function=fit&type=preview&source=false&q=75&maxsize=1500&scaleup=0" alt="" />
+                                      <h3>UAE: Gold prices drop; jewellery shoppers opt for 'lock-in' ahead of festivals</h3></a>
+                                  </div>
+
+                                     <div class="arttopstrywrap-list-dt">
+                                     <a href="/business/tech/dubai-drones-will-deliver-your-food-packages-by-early-2024-municipality-officials-say">
+                                      <img src="https://image.khaleejtimes.com/?uuid=0d205628-6006-54ac-8fe0-298b5ebe11b1&function=original&type=preview" alt="" />
+                                      <h3>Joe Biden to visit Israel, Jordan as Gaza war sparks humanitarian crisis</h3></a>
+                                  </div>
+
+
+                               
+                              </div>
+
+                            </div>
+							
+							
+
+                            <div class="article-nwsplit-arp-wrap-nf asif-test">
+                               {% set firstimage = false %}
+                                {{ paragraph|replace({'image-wrapper':'image-wrapper image-wrapper-first'})|raw }}
+                             {% else %}
+                                {{ paragraph|replace({'<span id="dateline"></span>':dateline})|raw }}
+                            {% if paragraph matches '{<!-- element: body -->}' and firstparagraph and count==2 %}
+                                {% set firstparagraph = false %}
+                                <div style="max-width:300px; margin: 0px auto!important;">
+								
+                               <!-- {% include "@base/article/part/speakol.twig" with { speakol_id: 8782 } %} -->
+                                </div>
+								<div id="adsolut-article"></div>
+								
+								
+								
+                                {% else %}
+                             {% if paragraph matches '{<!-- element: body -->}' and firstparagraph and count==1 %}
+                             {% set count = 2 %}
+                             {% endif %}
+                           {% endif %}
+                        {% endif %}
+                        {% endif %}
+
+                        {# Social medie icons Start #}
+                        {% if paragraph matches '{<!-- element: (preamble|body|fallback) -->}' and metasocial %}
+                            {% set metasocial = false %}
+                            {% include "@base/article/meta-social.twig" %}					
+							
+                        {% endif %}
+                        {# Social medie icons End #}
+
+                    {% endif %}
+					
+					{% if paragraph matches '{<!-- element: body -->}' or paragraph matches '{<!-- element: subheadline1 -->}'%}
+						{% if paragraph matches '{<!-- element: body -->}' and loop.index > 8 and loop.index%3==0   or nextparaz==true and loop.index+1%3!=0 %}										
+							<div id="andbeyond_para_ad_0_{{paracountz}}"></div>
+							{% set paracountz=paracountz+1 %}
+							{% set nextparaz=false %}
+						{%endif%}
+						{% if paragraph matches '{<!-- element: subheadline1 -->}' %}					
+							{% set nextparaz=true %}
+						{%endif%}					
+					{%endif%}		
+                {% endfor %}
+						<!-- /78059622/Test-2022-1x1 --> 
+						<div id='div-gpt-ad-1660806156441-0'>
+						  <script>
+							googletag.cmd.push(function() { googletag.display('div-gpt-ad-1660806156441-0'); });
+						  </script>
+						</div>
+
+
+
+                {% if contentsubtype == 'VIDEO' and videonotembed %}
+                    {% if videoid %}
+                      <div class="facebook-responsive-video mt-4">
+                        <iframe type="text/html"
+                                src="https://www.dailymotion.com/embed/video/{{ videoid }}?autoplay=1"
+                                allow="autoplay"
+                                allowfullscreen=""
+                                width="100%"
+                                height="100%"
+                                frameborder="0">
+                        </iframe>
+                      </div>
+                    {% endif %}
+                {% endif %}
+				
+
+              {% include "@base/article/concepts.twig" %}
+			  
+			  {% include "@base/article/authors.twig" %}
+			  
+			  <div id="agora-article-below-1"></div>
+
+            </div>
+
+            
+
+            
+
+            {% if loadMoreArticles is not empty %}
+              <div class="load-next-article" data-triggerLoadArticle data-article="1"></div>
+            {% endif %}
+
+
+
+            <!-- {% include "@base/article/part/speakol.twig" with { speakol_id: 6437 } %} -->
+            
+            <!-- ANDBEYOND ABM  START  -->
+               
+            <!-- ANDBEYOND ABM  END -->
+
+            {# include "@base/article/part/vuukle.twig" #}
+
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- Speakol Scripts Start -->
+                <!-- {% include "@base/article/part/speakol.twig" with { speakol_id: 6248 } %} -->
+                <br />
+                <!-- {% include "@base/article/part/speakol.twig" with { speakol_id: 6247 } %}  -->
+                <!-- Speakol Scripts End -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="col-sm-12 col-md-12 col-lg-4 art-rt-cust-nf">
+          <div class="article-right-sidebar fixedsticky">
+            {{ render_sidebar("default-article-sidebar") }}
+          </div>
+        </aside>
+      </div>
+    </div>
+	
+
+    <div class="loaded-articles"></div>
+
+    {% if (contentsubtype == 'VIDEO') or  (contentsubtype == 'GALLERY') %}
+      {{ render_sidebar(contentsubtype|lower ~ '-article-below') }}
+    {% else %}
+      {% if moreFromThisConcept is not empty %}
+        {% include "@base/article/more-articles.twig" %}
+      {% endif %}
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block page_stylesheets_scripts_bottom %}
+
+  {{ parent() }}
+{% if uuid=='cefad3c9-ca7c-444e-b1b8-fd99a04aa0a1' %}
+<p>asif</p>
+    {% endif %}
+  <script>
+    var infiniteArticles = {{ loadMoreArticles|map(article => article.permalink)|json_encode|raw }};
+  </script>
+
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/ScrollTrigger.min.js"></script>
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/swiper-bundle.min.js"></script>
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/article.js"></script>
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/scroll-load-more.js"></script>
+
+
+  {% include "@base/article/part/first-impressions.twig" %}
+ <!-- {% include "@base/article/part/vidcrunch.twig" %} -->
+ <!-- <scr__ipt src="https://cdn.speakol.com/widget/js/speakol-widget-v2.js"></script> -->
+   <!-- <script async type="text/javascript" src="https://api.khaleejtimes.com/public/vendors/js/speakol/speakol.js"></script> -->
+{% set url=teaser_headline|lower~ ' ' ~ teaser_body|lower~ ' ' ~ body|join(', ')|raw|lower %}
+{% set urlz = url2|split(' ') %}
+
+{% if search_string_array(["shaikhs","shaikh","condoled","condoles","condole","condolences","condolence","uae sheikh","uae sheikhs","bint","passed away","bin zayed","passes away","uae president","sheikh","khalifa","sheikhs","highness","president","mourning","funeral","mourns","mourned"], url) == false %}
+
+<!-- afp footer code starts here -->
+<!-- afp footer code ends here -->
+
+{% endif %}
+
+
+
+
+
+
+  <!-- Vidcrunch Start -->
+  <!-- <script defer id="vidcrunchJS622199360" src="https://cdn.vidcrunch.com/assets/khaleejtimes-wrapper/index.js"></script> -->
+  <!-- Vidcrunch End -->
+  <style>
+  #aniplayer_vidcrunchJS622199372-1645596554297Wrapper {
+  bottom:58px !important;
+  }
+  .avp-p-wrapper.av-floating {
+  bottom:58px !important;
+
+  }
+
+  #vuukle_alerts_fixed_left{
+  display:none !important;
+  }
+  .ee span svg{
+  left:335px !important;
+  }
+  </style>
+<script>
+
+          jQuery(document).ready(function() {
+ var count= jQuery('.article-paragraph-wrapper').find("p").length;
+			localStorage.setItem("total_paragraphs", count);
+			var total_paragraphs=count;
+
+
+			var value = jQuery('.article-paragraph-wrapper').text();
+			var regex = /\s+/gi;
+			var wordCount = value.trim().split(regex).length;
+			localStorage.setItem("wordCount", wordCount);
+			var wordCount=wordCount;
+
+
+
+			var total_characters =jQuery(".nextarticleid{{ skip }} .article-paragraph-wrapper").text().length;
+			localStorage.setItem("total_characters", total_characters);
+
+
+
+				var page_info={
+				 "total_paragraphs": total_paragraphs,
+				  "wordCount": wordCount,
+				  "total_characters": total_characters
+				};
+});
+
+jQuery(window).load(function () {
+ setTimeout(function() {
+  jQuery(".ee > span > svg").css('left', '335px');
+  jQuery("[id^=gpt_unit_]").css("z-index","0");
+   }, 2000);
+});
+
+jQuery("#vuukle_alerts_fixed_left").hide();
+</script>
+
+<script src="{{ get_stylesheet_directory_uri() }}/assets/js/reading-time.js?version=20220705<"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        new ReadingTime(270, 'Reading time:', 'min', 'words', 'Less than a minute','{{ uuid }}');
+    })
+</script>
+{% endblock %}

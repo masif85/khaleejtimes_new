@@ -1,0 +1,11 @@
+<div class="filter">
+  <p class="prayer-locations">Other locations:</p>
+  <ul class="sub-menu" data-id="prayer-other-locations">
+    {% for menuPage in prayertimesSubMenu %}
+      <li class="sub-menu-item{{ activePage.post_name == menuPage.post_name ? ' active' : '' }}">
+        <a href="{{ get_permalink(menuPage) }}">{{ menuPage.post_title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <ul id="prayer-other-locations" class="mobile-sub-menu shadow-sm"></ul>
+</div>

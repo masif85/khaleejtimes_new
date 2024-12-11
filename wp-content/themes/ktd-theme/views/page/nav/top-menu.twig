@@ -1,0 +1,167 @@
+{% if topmenu %}
+  {% if get_url_param('amp') %}
+    <div class="sticky-header-wrap sticky-div">
+  <div class="container-fluid pl-0 pr-0">
+    <div class="header-row secondary-bg justify-content-lg-between">
+      <div class="container">
+        <nav class="secondary-menu">
+        <div class="kt-nav-icon-nf">
+          <a href="/"><img src="{{ get_stylesheet_directory_uri() }}/assets/images/kt-icon-head.svg" width="40" height="24" alt="KT Icon"></a>
+        </div>
+          <div class="pn-ProductNav_Wrapper">
+            <nav id="pnProductNav" class="pn-ProductNav">
+              <div id="pnProductNavContents" class="pn-ProductNav_Contents">
+               <ul id="nav">
+                {% for item in topmenu %}
+       
+ <li class="menu-item"><a href="{{ item.url }}" class="pn-ProductNav_Link g4a_amn_track_navbar" {% if item.target %} target="_blank"{% endif %}>{{ item.title|raw }}</a></li>
+                {% endfor %}
+                  </ul>
+                 <div class="click">
+                    <i class="fas fa-ellipsis-h"></i>
+                 </div>
+              </div>
+            </nav>
+            <button id="pnAdvancerLeft" class="pn-Advancer pn-Advancer_Left" type="button" aria-label="Left Button">
+              <svg class="pn-Advancer_Icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 551 1024">
+                <path d="M445.44 38.183L-2.53 512l447.97 473.817 85.857-81.173-409.6-433.23v81.172l409.6-433.23L445.44 38.18z"/>
+              </svg>
+            </button>
+            <button id="pnAdvancerRight" class="pn-Advancer pn-Advancer_Right" type="button"  aria-label="Right Button">
+              <svg class="pn-Advancer_Icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 551 1024">
+                <path d="M105.56 985.817L553.53 512 105.56 38.183l-85.857 81.173 409.6 433.23v-81.172l-409.6 433.23 85.856 81.174z"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  </div>
+  {% else %}
+
+  {% set menu_array = ['homepage','prayer-timings','gold-forex','forex_summary','Contact Us','aboutus','advertise','privacypolicy','weather','cinema-listing','cinema-landing-page','KT Shows','Search','Videos','Photos','searchpage','MyKT','author','KT Engage','KT Network','Jobs','Space','Long Reads','Business'] %}    
+    
+{% if section_parent in menu_array or tealiumGroup in menu_array or parentPostName in menu_array or pagetype in menu_array or 'business-technology-review' in get_url_part('second')  or  'supplements' in get_url_part('second')  or  tealiumGroup ==''%}
+
+ <div id="secondary-nav-menu" >
+          <section class="navigation">
+            <div class="nav-container">      
+    
+    <div class="top-main-menu"  role="navigation">
+
+<ul id="nav" class="menu-itemsz">
+ {% for item in topmenu %}       
+ <li class="menu-item {{item.title|replace({' ': '-','/':'-'})|lower}}-menu {% if item.children.isNotEmpty %} dropdown shownitem1 " data-tab="{{ item.ID }}"{%else%}"{%endif%} ><a href="{{ item.url }}" class="pn-ProductNav_Link g4a_amn_track_navbar" {% if item.target %} target="_blank"{% endif %}>{{ item.title|raw }}</a> </li>
+{% endfor %} 
+</ul>
+<div class="click-topmenu">
+                    <img src="https://www.khaleejtimes.com/wp-content/themes/ktd-theme/assets/images/nav-arrow-nf.svg" width="12" height="7" alt="Khaleej Times" />
+                    <!-- <i class="fas fa-chevron-down"></i> -->
+                 </div>
+            {% for items in topmenu %}      
+           {% if items.children.isNotEmpty %}
+           
+ <div class="dropdown-menu itemno{{items.ID}} shownitemz1" data-url="{{items.title|raw}}">
+                          <div class="mega-content">
+                            <div class="container-fluid">
+                              <div class="row">
+                                  {% set totaldivcount = 6 %}
+                                  {% set subitemcount = 0 %}
+                                  {% set divsCount = 0 %}
+                                  {% set totalsubitmes = items.children|length %}
+                                  {% set totalsubitmes = totalsubitmes - 1 %}
+                                  {% for key,subitem in items.children %}
+                                    {% if key == 0 or subitemcount == 0 %}
+                                      {% set divsCount = divsCount + 1 %}
+                                      <div class="col-12 col-sm-4 col-md-2">
+                                        <div class="list-group">
+                                          <ul class="childitems">
+                                    {% endif %}
+                                      <li class="menu-item-sub"><a href="{{subitem.url}}" class="g4a_amn_track_navbar">{{subitem.title}} </a></li>
+                                      {% set subitemcount = subitemcount + 1 %}
+                                      {% if subitemcount == 6 or totalsubitmes == key %}
+                                    </ul>
+                                  </div>
+                                </div>
+                                        {% set subitemcount = 0 %}
+                                      {% endif %}
+                                    {% endfor %}  
+                                    {# </ul>
+                                  </div>
+                                </div> #}
+                                  {% set subnewslimit = totaldivcount - divsCount %} 
+                                  {% set subnews=getsubnews(items.title|raw,subnewslimit) %}
+                                  {% if subnews %}
+                                    {% for snews in subnews %}
+                              <div class="col-12 col-sm-4 col-md-2 drop-img thumb-with-image image-zoom">
+                                  <a href="{{snews.url}}" class="g4a_amn_track_navbar">
+                                  {% set imaglink="https://image.khaleejtimes.com/?uuid="~snews.TeaserImageUuids~"&function=original&type=preview" %}    
+                                  <img loading="lazy" src="https://image.khaleejtimes.com/?uuid={{snews.TeaserImageUuids}}&function=cropresize&type=preview&source=false&q=75&crop_w=0.77125&crop_h=0.91556&{{get_image_type(imaglink,250)}}&x=0.1375&y=0.02222/" alt="">
+                                  <p>{{snews.TeaserHeadline}}</p>
+                                  </a>
+                                </div>   
+                                {% endfor %}
+                                  {% endif %}
+                                                  
+                              </div>
+                            </div>
+                          </div>
+                        </div>     
+        
+   {% endif %}
+    {% endfor %}
+      </div>
+ </div>
+ </section>
+  </div>  
+{% else %} 
+<div id="secondary-nav-menu" >
+          <section class="navigation">
+            <div class="nav-container">    
+    <div class="top-main-menu"  role="navigation">  
+<div class="kt-nav-icon-nf dropdown-nf"><a href="/" class="hme-nav-icn-fn-nf g4a_amn_track_navbar">
+<img src="/images/icons/home_icon.svg" width="20" height="18" alt="KT-Icon-Home"></a>
+      <ul>
+       {% for itemsz in topmenu %}   
+        <li><a href="{{ itemsz.url }}" class="g4a_amn_track_navbar">{{ itemsz.title|raw }}</a></li>
+         {% endfor %}        
+      </ul>
+</div>
+          <ul id="nav" class="menu-itemsz-sub-nas">
+          {% if section_parent %}
+            {% set section=section_parent %}
+          {% elseif sections %}            
+            {% for itemss in sections|slice(0, 1) %}{%set section= itemss.name %}{% endfor %} 
+          {% endif %}        
+         {% if tealiumGroup == 'concept' or  tealiumGroup == 'page'%}                 
+          {% set section=geturi()  %}
+         {% endif %}
+             <li class="menu-item active"><a href="/{{section|replace({' ': '-'})}}" class="g4a_amn_track_navbar">{{section|upper}} </a></li> 
+             {% set itemnum=0 %}
+  {% for items in topmenu %}      
+           {% if items.children.isNotEmpty  %}
+            {% for key,subitem in items.children %}          
+              {% if items.title|lower== section|lower%}
+                 {% set itemnum=itemnum+1 %}
+                 <li class="menu-item"><a href="{{subitem.url}}" class="g4a_amn_track_navbar">{{subitem.title}} </a></li>
+               {%endif%}             
+             {% endfor %} 
+             {% endif %}
+    {% endfor %}
+     <li class="menu-item" style="display:none;">&nbsp;</li>
+          </ul>
+          {% if itemnum>13 %}
+          <div class="click-topmenu">
+                    <img src="https://www.khaleejtimes.com/wp-content/themes/ktd-theme/assets/images/nav-arrow-nf.svg" width="12" height="7" alt="Khaleej Times" />
+                    <!-- <i class="fas fa-chevron-down"></i> -->
+                 </div>
+       {% endif %}
+      
+    </div>
+ </div>
+ </section>
+  </div>      
+{% endif %}  
+   {% endif %}
+{% endif %}

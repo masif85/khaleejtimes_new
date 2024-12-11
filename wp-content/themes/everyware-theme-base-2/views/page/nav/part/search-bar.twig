@@ -1,0 +1,12 @@
+{% set input_placeholder = __('Search for topics and articles', 'ew-base-theme-2') %}
+
+<form class="form-inline search-bar {{class}}" role="search" method="GET" action="/search/">
+	<div class="input-group">
+		<input class="form-control border-0" name="q" type="search" placeholder="{{ input_placeholder }}" aria-label="{{ input_placeholder }}">
+		<div class="input-group-append m-0">
+			<button class="btn border-0" type="submit">
+				<i class="fas fa-search"></i>
+			</button>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,17 @@
+{% for staff in staff %}
+    {% if staff.conceptassociatedwith == siteConceptUUID %}
+        <div class="staff-directory-user col-md-4">
+            <div class="row">
+                
+                <div class="info">
+                    <a href="/staff/?uuid={{ staff.uuid }}"><div class="name">{{ staff.name }}</div></a>
+
+                    <div class="phone">{{ staff.meta_data.phone }}</div> 
+                    <div class="email">{{ staff.meta_data.email }}</div> 
+
+                </div>
+            
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}

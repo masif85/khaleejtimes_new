@@ -1,0 +1,1261 @@
+{% extends '@base/main.twig' %}
+
+{% block page_head %}
+  {% include "@base/page/part/metatags.twig" %}
+  {{ wp_head() }}
+{% endblock %}
+
+{% block page_content %}
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap');
+
+	.primary-header.mob-mb-nf {
+		    visibility: hidden;
+			display: none;
+	}
+	
+	.footer.mt-4 {
+	    margin-top: 0rem!important;
+	}
+	
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  color: #000;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+a {
+  color: #000;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+a:hover {
+  color: #2296e3;
+  text-decoration: none;
+}
+
+::placeholder {
+  color: #000 !important;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12 -18 */
+  color: 000 !important;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  box-shadow: none;
+  background: #FFF;
+}
+
+.container {
+  max-width: 1378px !important;
+}
+
+#logo {
+  position: relative;
+  display: -ms-flexbox;
+  display: block;
+  align-items: center;
+  -ms-flex-align: center;
+  margin-right: auto;
+  max-height: 100%;
+}
+
+#logo a.standard-logo {
+  display: -ms-flexbox;
+  display: block;
+  text-align: center;
+}
+
+.home-nav {
+  border-radius: 8px;
+  border: 2px solid #fff;
+  width: auto;
+  height: auto;
+  background: #0379c1;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 40px 0px 0px 0px;
+  padding: 5px 20px;
+  float: left;
+  color: #fff;
+}
+
+.home-nav:hover {
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.arrow-home {
+  margin-top: -4px;
+  margin-left: 0px;
+}
+
+.banner-blue {
+  background: #0270bd;
+  background: url("https://static.khaleejtimes.com/wp-content/uploads/sites/2/2024/02/27184510/adv-final-desktop-ban-2024.jpg") no-repeat bottom, linear-gradient(#0270bd, #0270bd);
+  background-size: contain;
+  background-position: bottom;
+  padding: 0px;
+  margin: -1px 0 0 0;
+  height: 100%;
+  width: 100%;
+  max-height: 925px;
+  min-height: 925px;
+  max-width: 1920px;
+}
+
+.banner-blue h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  color: #fff;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 0px 0px;
+  margin: 30px auto;
+  float: none;
+  text-align: center;
+  width: 75%;
+}
+
+.media-kit-outer {
+  -webkit-box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.26);
+  box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.26);
+  padding: 20px 10px;
+  margin: 0px auto;
+  width: 75%;
+  height: auto;
+  float: none;
+  margin-bottom: 80px;
+}
+
+.media-kit-outer p {
+  background: #fff;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 0px;
+  margin: 0px;
+  padding-top: 5px;
+}
+
+.media-kit-outer a {
+  background: rgb(246, 210, 90);
+  background: linear-gradient(90deg, rgba(246, 210, 90, 1) 35%, rgba(239, 186, 58, 1) 100%);
+  border-radius: 5px;
+  color: #000;
+  width: auto;
+  padding: 8px 20px;
+  margin: 5px 15px;
+  float: right;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.media-kit-outer a:hover {
+  background: #0178c8;
+  color: #fff;
+}
+
+.contact-queries {
+  padding: 0px 0px;
+  margin: 0px;
+  float: left;
+}
+
+.contact-queries h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  color: #000;
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: uppercase;
+  border-left: 10px solid #0178c8;
+  padding: 0px 20px;
+  margin: 0px;
+  float: left;
+}
+
+.contact-queries ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.contact-queries ul li {
+  margin: 10px 0px;
+  padding: 0px;
+  float: left;
+}
+
+.contact-queries ul li a {
+  margin: 0px 0px;
+  padding: 0px 0px 0px 20px;
+  color: #0379c1;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1.5;
+  float: left;
+}
+
+.contact-queries .phone {
+  color: #000;
+  float: left;
+}
+
+.contact-queries ul li span {
+  margin: 0px 15px 0px 0px;
+  padding: 0px 0px;
+  background: #0379c1;
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.contact-queries ul li span img {
+  padding: 0px 0px;
+}
+
+.contact-queries ul li span:hover {
+  background: #000;
+  color: #fff;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.kt-advertise-content {
+  margin-top: 50px;
+  padding: 0px;
+}
+
+.kt-advertise-content h2 {
+  margin: 0px;
+  padding: 15px 0px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  color: #000;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.kt-advertise-content h3 {
+  margin: 0px;
+  padding: 15px 0px 0px 0px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #000;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.kt-advertise-content ul {
+  margin: 5px 0px;
+  padding: 0px 20px;
+  float: left;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 500;
+}
+
+.kt-advertise-content ul li {
+  margin: 0px 0px;
+  padding: 15px 10px;
+  list-style-image: url('https://static.khaleejtimes.com/wp-content/uploads/sites/2/2024/02/06133206/li-img-kt-advertise.png');
+  float: left;
+}
+
+.kt-advertise-content img {
+  margin: 0px auto;
+  padding: 0px 0px;
+  text-align: center;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+}
+
+.kt-advertisement-form {
+  background: #016bc1;
+  margin: 0px auto;
+  padding: 48px 0px;
+  margin-bottom:0px;
+}
+
+.kt-advertisement-form h3 {
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0px;
+  padding: 0px;
+  font-weight: 800;
+  font-size: 40px;
+  display: block;
+  width: 100%;
+}
+
+.align-self-center {
+  -ms-flex-item-align: center !important;
+  align-self: center !important;
+}
+
+/*--------------------------------------------------------------
+# Advertise-Contact
+--------------------------------------------------------------*/
+
+.advertise-contact form {
+  padding: 20px 0px 0px 0px;
+}
+
+
+
+.advertise-contact .php-email-form {
+  padding: 20px 0px 0px 0px;
+}
+
+.advertise-contact .php-email-form input, .advertise-contact .php-email-form textarea, .advertise-contact .php-email-form select#country {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 16px;
+  color: #000;
+  border: 1px solid #dedede;
+  padding: 17px 14px;
+  height: auto;
+}
+
+
+.advertise-contact .php-email-form button[type=submit] {
+  background: #efb531;
+  border: 0;
+  padding: 10px 22px;
+  color: #000;
+  transition: 0.4s;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.advertise-contact .php-email-form button[type=submit]:hover {
+  background: #fff;
+  border: none;
+  text-decoration: none;
+}
+
+
+
+
+
+.advertise-contact form input, .advertise-contact form textarea, .advertise-contact form select#country {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 16px;
+  color: #000;
+  border: 1px solid #dedede;
+  padding: 17px 14px;
+  height: auto;
+}
+
+
+.advertise-contact form button[type=submit] {
+  background: #efb531;
+  border: 0;
+  padding: 10px 22px;
+  color: #000;
+  transition: 0.4s;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.advertise-contact form button[type=submit]:hover {
+  background: #fff;
+  border: none;
+  text-decoration: none;
+}
+
+.advertise-contact .wpcf7-form .wpcf7-submit {
+  background: #efb531;
+  border: 0;
+  padding: 10px 22px;
+  color: #000;
+  transition: 0.4s;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.advertise-contact .wpcf7-form .wpcf7-submit:hover {
+  background: #fff;
+  border: none;
+  text-decoration: none;
+}
+
+.advertise-contact .wpcf7-form .wpcf7-not-valid-tip {
+    color: #fff!important;
+}
+
+.advertise-contact .wpcf7-form .wpcf7-response-output {
+    color: #fff!important;
+    border: 1px solid #FFF !important;
+
+}
+.advertise-contact .wpcf7-form .wpcf7-response-output {
+    color: #ffb900!important;
+    font-size: 15px !important;
+    border: 1px solid #ffb900 !important;
+     margin-left: 0px;
+    margin-top: 20px;
+    padding-left: 8px;
+	}
+
+
+.row.for-lib-style p label span {
+    margin: 0px;
+    padding: 0px;
+}
+
+.row.for-lib-style2 p span {
+    margin: 0px;
+    padding: 0px;
+}
+
+.row.for-lib-style p {
+    margin-bottom: 15px;
+    font-size:16px;
+    font-weight:normal;
+}
+
+.row.for-lib-style2 p {
+    margin-bottom: 10px;
+    font-size:16px;
+    font-weight:normal;
+}
+
+.ad-form-below-txt {
+  font-style:normal; 
+  padding-left:17px;
+}
+
+@media (max-width: 1440px) {
+  
+  .kt-advertise-content {
+    margin-top: 40px;
+    padding: 0px;
+  }
+
+}
+
+@media (max-width: 1366px) {
+  
+  .banner-blue h1 {
+    font-size: 40px;
+    width: 65%;
+  }
+
+  .banner-blue {
+    max-height: 750px;
+    min-height: 750px;
+    max-width: 100%;
+  }
+
+  .media-kit-outer a {
+    padding: 8px 15px;
+  }
+
+  .home-nav {
+    margin: 20px 0px 0px 0px;
+  }
+
+}
+
+@media (max-width: 1240px) {
+.media-kit-outer a {
+ 
+    font-size: 13px;
+ 
+}
+
+}
+
+
+@media (max-width: 1200px) {
+  
+  .banner-blue h1 {
+    font-size: 40px;
+    width: 74%;
+  }
+
+  .banner-blue {
+    max-height: 680px;
+    min-height: 680px;
+  }
+
+  .media-kit-outer {
+    padding: 20px 10px;
+    width: 90%;
+    margin-bottom: 50px;
+  }
+
+  .contact-queries ul li a {
+    font-size: 28px;
+  }
+
+}
+
+@media (max-width: 1120px) {
+  
+  .media-kit-outer {
+    padding: 20px 10px;
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .contact-queries ul li a {
+    font-size: 26px;
+  }
+
+  .contact-queries h2 {
+    font-size: 45px;
+  }
+
+.contact-queries ul li span {
+
+    padding: 4px 0px;
+   
+}
+
+
+}
+
+@media (max-width: 1080px) {
+
+.media-kit-outer a {
+    padding: 8px 10px;
+}
+
+
+}
+
+@media (max-width: 1024px) {
+  
+  .media-kit-outer {
+    padding: 20px 10px;
+    width: 95%;
+    margin-bottom: 50px;
+  }
+
+  .media-kit-outer a {
+    padding: 8px 10px;
+  }
+
+  .contact-queries ul li a {
+    font-size: 25px;
+  }
+
+  .contact-queries h2 {
+    font-size: 38px;
+  }
+
+  .contact-queries ul li span {
+    width: 44px;
+    height: 44px;
+     padding: 1px 0px;
+  }
+
+  .kt-advertise-content h2 {
+    font-size: 35px;
+  }
+
+
+
+}
+
+
+@media (max-width: 992px) {
+  
+  .contact-queries h2 {
+    font-size: 35px;
+  }
+
+  .kt-advertise-content {
+    margin-top: 20px;
+    padding: 0px;
+  }
+
+    .home-nav {
+    margin: 15px 0px 0px 0px;
+  }
+
+
+  .contact-queries ul li a {
+    font-size: 23px;
+}
+
+.media-kit-outer {
+    padding: 20px 10px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+
+.banner-blue {
+ 
+    max-height: 635px;
+    min-height: 635px;
+
+}
+
+
+}
+
+@media (max-width: 991px) {
+  
+  .contact-queries h2 {
+    font-size: 35px;
+  }
+
+  .kt-advertise-content {
+    margin-top: 20px;
+    padding: 0px;
+  }
+
+    .home-nav {
+    margin: 15px 0px 0px 0px;
+  }
+
+
+  .contact-queries ul li a {
+    font-size: 23px;
+}
+
+.media-kit-outer {
+    padding: 20px 10px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+
+.banner-blue {
+ 
+    max-height: 635px;
+    min-height: 635px;
+
+}
+
+
+
+}
+
+@media (max-width: 768px) {
+  
+  .banner-blue {
+    height: 100%;
+    width: 100%;
+    max-height: 565px;
+    min-height: 565px;
+    max-width: 100%;
+  }
+
+  .banner-blue h1 {
+    font-size: 34px;
+    width: 85%;
+  }
+
+  .media-kit-outer a {
+    padding: 8px 10px;
+    font-size: 14px;
+}
+
+.contact-queries h2 {
+    font-size: 26px;
+    line-height: 1.4;
+}
+
+
+.contact-queries ul li span img {
+    padding: 0px 0px;
+    width: 22px;
+    height: 22px;
+}
+
+.contact-queries ul li span {
+    width: 40px;
+    height: 40px;
+}
+
+.contact-queries ul li a {
+    font-size: 22px;
+}
+
+.kt-advertise-content h2 {
+    font-size: 28px;
+}
+
+
+.media-kit-outer a {
+    padding: 8px 15px;
+    font-size: 13px;
+}
+
+.contact-queries ul li {
+    margin: 6px 0px;
+    padding: 0px;
+    float: left;
+    margin-bottom: 0px;
+}
+
+.kt-advertise-content ul li {
+
+    padding: 8px 10px;
+  
+}
+
+.kt-advertisement-form h3 {
+  
+    font-size: 36px;
+  
+}
+
+.contact-queries ul li span {
+    padding: 1px 0px;
+}
+
+.row.for-lib-style p {
+
+    font-size:16px;
+}
+
+.row.for-lib-style2 p {
+
+    font-size:16px;
+}
+
+    span.wpcf7-list-item-label {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+.media-kit-outer a {
+    padding: 8px 10px;
+    font-size: 14px;
+    float: left;
+    margin-left: 0px;
+}
+
+.contact-queries ul li {
+    margin: 19px 10px;
+    padding: 0px;
+    float: left;
+}
+
+.kt-advertise-content {
+    margin-top: 0px;
+    padding: 0px;
+}
+
+
+.contact-queries h2 {
+
+    line-height: 1.3;
+  
+}
+
+.kt-advertise-content h2 {
+    padding: 10px 0px;
+  
+}
+
+p {
+    margin-bottom: 15px;
+
+}
+
+.kt-advertise-content ul li {
+    padding: 10px;
+
+}
+
+.kt-advertisement-form {
+    margin: 15px auto;
+    margin-bottom: 0px;
+}
+
+.kt-advertise-content h2 {
+    font-size: 26px;
+}
+
+.kt-advertise-content h3 {
+ 
+    font-weight: 800;
+
+}
+
+
+.contact-queries ul li span {
+    padding: 2px 0px;
+}
+
+}
+
+
+@media (max-width: 575.98px) {
+
+
+.ad-form-below-txt {
+  font-style:normal; 
+  padding-left:0px;
+}
+  
+  .banner-blue {
+    background: #0270bd;
+    background: url("https://static.khaleejtimes.com/wp-content/uploads/sites/2/2024/02/27184513/adv-final-mobile-ban-2024.jpg") no-repeat, linear-gradient(#0270bd, #0270bd);
+    background-size: contain;
+    background-position: bottom;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    max-height: 1050px;
+    min-height: 1050px;
+    max-width: 100%;
+  }
+
+  .home-nav {
+    font-weight: 600;
+    margin: 15px 0px 0px 0px;
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+
+  #logo a.standard-logo {
+    margin-top: 15px;
+  }
+
+  .banner-blue h1 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.2;
+    padding: 0px 5px;
+    margin: 25px auto;
+  }
+
+  .media-kit-outer {
+    padding: 20px 10px;
+    width: 95%;
+    margin-bottom: 50px;
+    margin-top: -60px;
+  }
+
+  .media-kit-outer a {
+    width: auto;
+    padding: 8px 20px;
+    margin: 15px auto;
+    float: left;
+    clear: both;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+
+  .contact-queries ul li span {
+    width: 43px;
+    height: 43px;
+}
+
+.contact-queries ul {
+    margin: 15px 0px 10px 0px;
+    padding: 0px;
+    float: left;
+}
+
+.contact-queries ul li:first-child {
+    margin: 5px 0px;
+    padding: 0px;
+	margin-bottom: 10px;
+}
+
+.contact-queries ul li {
+    margin: 5px 0px;
+    padding: 0px;
+}
+
+
+
+
+.contact-queries ul li a {
+
+    padding: 0px 0px 0px 0px;
+ 
+}
+
+.banner-blue h1 {
+
+    width: 95%;
+}
+
+ .media-kit-outer a {margin: 15px auto;} 
+
+.advertise-contact .php-email-form input, .advertise-contact .php-email-form select#country {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form .wpcf7-select {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form select#country  {
+    height: 60px;
+}
+  
+}
+
+@media (max-width: 520px) {
+.banner-blue {
+    max-height: 1000px;
+    min-height: 1000px;
+}
+.contact-queries ul li span img {
+    width: 23px;
+    height: 23px;
+	margin-top: 0px;
+}
+.contact-queries ul li span {
+    width: 40px;
+    height: 40px;
+}
+.kt-advertise-content h2 {
+    font-size: 28px;
+}
+.arrow-home {
+    margin-top: -4px;
+    margin-left: 0px;
+    width: 20px;
+    height: 20px;
+}
+.home-nav {
+    font-weight: 600;
+    margin: 15px 0px 0px 0px;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.advertise-contact .php-email-form input, .advertise-contact .php-email-form select#country {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form .wpcf7-select {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form select#country  {
+    height: 60px;
+}
+
+}
+
+@media (max-width: 480px) {
+.contact-queries h2 {
+    font-size: 27px;
+}
+.banner-blue {
+    max-height: 950px;
+    min-height: 950px;
+}
+.kt-advertise-content h2 {
+    font-size: 26px;
+}
+.contact-queries ul li a {
+    font-size: 20px;
+}
+.advertise-contact .php-email-form input, .advertise-contact .php-email-form select#country {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form .wpcf7-select {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form select#country  {
+    height: 60px;
+}
+
+}
+
+@media (max-width: 400px) {
+.banner-blue h1 {
+    font-size: 26px;
+    margin: 20px auto;
+}
+.banner-blue {
+    max-height: 825px;
+    min-height: 825px;
+}
+.contact-queries h2 {
+    font-size: 26px;
+}
+
+
+.contact-queries ul li span {
+    width: 40px;
+    height: 40px;
+}
+
+.contact-queries ul li span {
+    margin: -5px 8px 0px 0px;
+    padding: 2px 0px;
+  }
+.contact-queries ul li a {
+    font-size: 20px;
+}
+.kt-advertise-content h2 {
+    font-size: 25px;
+}
+.kt-advertise-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
+.kt-advertisement-form h3 {
+   font-size: 30px; 
+}
+.advertise-contact .php-email-form input, .advertise-contact .php-email-form select#country {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form .wpcf7-select {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form select#country  {
+    height: 60px;
+}
+}
+
+@media (max-width: 390px){
+
+.contact-queries ul li a {
+    font-size: 19px;
+}
+.contact-queries ul {
+    margin: 20px 0px 10px 0px;
+    padding: 0px;
+    float: left;
+}
+.contact-queries h2 {
+    font-size: 25px;
+}
+.banner-blue {
+    max-height: 800px;
+    min-height: 800px;
+}
+.advertise-contact .php-email-form input, .advertise-contact .php-email-form select#country {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form .wpcf7-select {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form select#country  {
+    height: 60px;
+}
+}
+
+
+@media (max-width: 385px){
+.contact-queries ul li a {
+    font-size: 19px;
+}
+.contact-queries h2 {
+    font-size: 24px;
+}
+
+.kt-advertise-content h2 {
+    font-size: 23px;
+}
+
+.kt-advertise-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.advertise-contact .php-email-form input, .advertise-contact .php-email-form select#country {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form .wpcf7-select {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form select#country  {
+    height: 60px;
+}
+
+}
+
+@media (max-width: 380px){
+.contact-queries ul li a {
+    font-size: 19px;
+}
+
+.contact-queries h2 {
+    font-size: 24px;
+}
+
+.kt-advertise-content h2 {
+    font-size: 23px;
+}
+
+.banner-blue {
+    max-height: 775px;
+    min-height: 775px;
+}
+
+.advertise-contact .php-email-form input, .advertise-contact .php-email-form select#country {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form .wpcf7-select {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form select#country  {
+    height: 60px;
+}
+}
+
+@media (max-width: 375px){
+.banner-blue h1 {
+    font-size: 24px;
+    margin: 15px auto;
+}
+.banner-blue {
+    max-height: 765px;
+    min-height: 765px;
+}
+
+.kt-advertise-content h2 {
+    font-size: 21px;
+}
+
+.contact-queries ul li a {
+    font-size: 19px;
+}
+
+.kt-advertise-content h3 {
+    font-size: 20px;
+
+}
+
+.kt-advertisement-form h3 {
+    font-size: 26px;
+}
+
+
+.kt-advertisement-form {
+ 
+    padding: 30px 0px;
+    margin-bottom: 0px;
+}
+
+.advertise-contact .php-email-form {
+    padding: 0px 0px 0px 0px;
+}
+
+.contact-queries ul li span {
+    margin: 0px 8px 0px 0px;
+    padding: 2px 0px;
+}
+
+
+.media-kit-outer {
+    padding: 20px 10px;
+    width: 98%;
+    margin-bottom: 35px;
+}
+.advertise-contact .php-email-form input, .advertise-contact .php-email-form select#country {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form .wpcf7-select {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form select#country  {
+    height: 60px;
+}
+
+
+}
+
+
+@media (max-width: 365px){
+
+.media-kit-outer a {
+
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.contact-queries h2 {
+    font-size: 23px;
+}
+
+
+.contact-queries ul li a {
+    font-size: 18px;
+}
+
+.contact-queries ul li span {
+    width: 35px;
+    height: 35px;
+}
+
+
+.contact-queries ul li span img {
+    width: 18px;
+    height: 18px;
+}
+
+
+.kt-advertise-content h2 {
+    font-size: 20px;
+}
+
+.advertise-contact .php-email-form input, .advertise-contact .php-email-form select#country {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form .wpcf7-select {
+    height: 60px;
+}
+.advertise-contact form.wpcf7-form select#country  {
+    height: 60px;
+}
+
+
+}
+
+</style>
+  <main>{{ the_content() }}</main>
+{% endblock %}
+{% block page_stylesheets_scripts_bottom %}
+  {{ parent() }}
+  {{ wp_footer() }}
+{% endblock %}

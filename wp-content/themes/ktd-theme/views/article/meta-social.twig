@@ -1,0 +1,110 @@
+{% if oldGuid %}
+  {% set vuukleUid = oldGuid %}
+{% else %}
+  {% set vuukleUid = uuid|upper %}
+{% endif %}
+<!-- <hr class="gray-line vuukle-far-nf">
+
+<div class="reading-time">
+  <i>
+    <span class="reading-time__label" data-rt-uuid="{{ uuid }}"></span>
+    <span class="reading-time__duration" data-rt-uuid="{{ uuid }}"></span>
+    <span class="reading-time__word-count" data-rt-uuid="{{ uuid }}"></span>
+  </i>
+</div> -->
+
+<div class="timestamp-latnw-nf">
+{% if date(objectUpdated|date("F j, Y, g:i A")) <=  date(pubdate|date("F j, Y, g:i A")) %}  
+   <p style="padding-left: 0px;border-left: 0px solid #DBDBDB;">Published: {{ pubdate|date("D j M Y, g:i A") }} </p>  
+{% else  %}
+    <p>Published: {{ pubdate|date("D j M Y, g:i A") }} </p>  
+    <p>Updated: {{ objectUpdated|date("D j M Y, g:i A") }} </p>
+{% endif %}
+</div>
+
+<div class="auther-wrap" >
+
+     
+        <div class="left">
+        <ul>          
+         {% if authors or author_byline %}
+          {%  if author_byline and author_byline!='Partner Content' and authors|length==0 %}         
+              <li class="auth-by-nf">By</li>               
+          {% endif %}
+          {% if authors %}
+            {% for author in authors %}
+              {%  if author.name!='Partner Content' and loop.first %}         
+                  <li class="auth-by-nf">By</li>               
+              {% endif %}
+              <!-- <a href="#"><img src="images/author-pic2.jpg" /></a> images/vuukle-social.jpg-->
+              {% set link = get_concept_link(author.uuid) %}
+              {% if link and author.name!='Partner Content' %}
+               <li> {% if loop.first %} {% else %}  {% endif %}<a href="{{ link }}">{{ author.name }}</a> </li>
+              {% else %}
+               <li> {% if loop.first %} {% else %}  {% endif %}{{ author.name }} </li>
+              {% endif %}
+            {% endfor %}
+          {% elseif author_byline %}
+           <li>  {{ author_byline }} </li>
+          {% endif %}
+           {% endif %}
+          <!--<span>Dubai</span></h3>-->
+
+
+          </ul>
+        </div>
+     
+
+<!-- <div class="vuukle-powerbar-{{ vuukleUid }} google-news-left-lib">{# include "@base/article/part/social-share.twig" #} </div>  -->
+ <script>
+ jQuery(document).ready(function(){
+jQuery(".sharelink").click(function(event){
+  event.preventDefault();
+   var url = window.location.href;
+  var hiturl=jQuery(this).attr('data-link');
+var type=jQuery(this).attr('data-type');    
+    var link = hiturl + encodeURI(url);
+   window.open(link,'_blank','toolbar=0,status=0,width=626,height=436');
+   
+var utag_data={
+ 'event_action' :  'Social Share',
+ 'event_category'  :  'Social Share - '+type+'',
+ 'event_label'  :  'Conversion Type - '+type+'',
+ 'event_type'  :  'Social click',
+ 'tealium_event'  :  'social_platform_share'
+ };
+ ORA.click({
+    'config': {
+        'applyMutations': true,
+        'sendSessionInfo': true
+    },
+    'data':utag_data});
+   console.log(utag_data);
+   
+});
+});
+</script>
+<div class="right">
+<ul>
+      <li><a href="#" data-link="https://api.whatsapp.com/send?text=" class="sharelink"><img src="/images/WhatsApp-Logo.svg" alt=""></a></li>
+                <li><a href="#" data-link="https://www.facebook.com/share.php?u=" class="sharelink"><img src="/images/facebook-icon.svg" alt=""></a></li>
+                <li><a href="#" data-link="https://twitter.com/intent/tweet?url=" class="sharelink"><img src="/images/twitter-icon.svg" alt=""></a></li>
+                <li><a href="#" data-link="https://www.linkedin.com/shareArticle?mini=true&url=" class="sharelink"><img src="/images/linkedin-icon.svg" alt=""></a></li>   
+
+                <li><div class="dropdown dropdown1{{skip}}">
+                  <button class="btn btn-secondary dropdown-toggle  dropdown-toggle1{{skip}}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Follow us
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://news.google.com/publications/CAAqBwgKMLqnnwkwzfVu?hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank"><span><img class="google-icn-nf" src="/images/google-news.png" alt=""></span>Follow on Google</a></li>
+                    <li><a class="dropdown-item" href="https://www.whatsapp.com/channel/0029Va5dROu3bbUxk7Jh2503" target="_blank"><span><img class="whtspp-icn-nf" src="/images/whatsapp-icon.svg" alt=""></span> Follow on WhatsApp</a></li>
+                    <li><a class="dropdown-item" href="https://t.me/khaleejtimes" target="_blank"><span><img class="teleg-icn-nf" src="/images/telegram.svg" alt=""></span>Follow on Telegram</a></li>
+                  </ul>
+                </div>
+              </li>
+              </ul>
+
+</div>
+</div>
+
+<!-- <hr class="gray-line vuukle-far-nf"> -->

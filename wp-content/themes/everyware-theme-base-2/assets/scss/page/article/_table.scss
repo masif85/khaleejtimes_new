@@ -1,0 +1,47 @@
+.article .article__table {
+
+  padding-bottom: 2px;
+  box-shadow: inset 0 -2px 0 0 rgba(0,0,0,0.15);
+
+  table {
+    line-height: $line-height-base;
+    font-size: $table-font-size;
+    margin: 0;
+  }
+  caption {
+    padding: 16px;
+    caption-side: inherit;
+    background-color: inherit;
+  }
+  thead th {
+      font-weight: inherit;
+      color: $table-head-color;
+  }
+  tbody {
+    border-top: map-get($table-border-widths, "header") solid $table-border-color;
+  }
+  tfoot {
+    border-top: map-get($table-border-widths, "footer") solid $table-border-color;
+    td {
+      padding: $table-cell-padding-footer;
+    }
+  }
+  .article__table_wrapper {
+    border-top: map-get($table-border-widths, "top") solid $table-border-color;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+    &::-webkit-scrollbar:vertical {
+        width: $scrollbar-size;
+    }
+    &::-webkit-scrollbar:horizontal {
+        height: $scrollbar-size;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: $border-radius-lg;
+        border: map-get($table-border-widths, "scrollbar") solid $table-bg;
+        background-color: rgba(0, 0, 0, .5);
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{% if oldGuid %}
+  {% set vuukleUid = oldGuid %}
+{% else %}
+  {% set vuukleUid = uuid|upper %}
+{% endif %}
+<!-- <hr class="gray-line vuukle-far-nf">
+
+<div class="reading-time">
+  <i>
+    <span class="reading-time__label" data-rt-uuid="{{ uuid }}"></span>
+    <span class="reading-time__duration" data-rt-uuid="{{ uuid }}"></span>
+    <span class="reading-time__word-count" data-rt-uuid="{{ uuid }}"></span>
+  </i>
+</div> -->
+
+
+<div class="google-news-main-div-lib d-flex justify-content-between" >
+
+      {% if authors or author_byline %}
+        <div class="article-top-author-nw-nf-left">
+          {% if authors %}
+            {% for author in authors %}
+              <!-- <a href="#"><img src="images/author-pic2.jpg" /></a> images/vuukle-social.jpg-->
+              {% set link = get_concept_link(author.uuid) %}
+              {% if link %}
+                {% if loop.first %}by {% else %} / {% endif %}<a href="{{ link }}"><h3>{{ author.name }}</h3></a>
+              {% else %}
+                <h3>{% if loop.first %}by {% else %} / {% endif %}{{ author.name }}</h3>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <h3>By {{ author_byline }}</h3>
+          {% endif %}
+          <!--<span>Dubai</span></h3>-->
+        </div>
+      {% endif %}
+
+<!-- <div class="vuukle-powerbar-{{ vuukleUid }} google-news-left-lib">{% include "@base/article/part/social-share.twig" %} </div>  -->
+
+<div class="art-top-share-pan-nf d-flex justify-content-end">
+
+<div class="google-news-left-lib">{% include "@base/article/part/social-share.twig" %} </div> 
+ 
+<div class="google-news-image-right-lib">
+
+<div class="google-news-image-right-lib-new">
+ 		
+<ul>
+	
+<li>Follow us on</li>
+<li><a href="https://news.google.com/publications/CAAqBwgKMLqnnwkwzfVu?hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank"><img src="{{ get_stylesheet_directory_uri() }}/assets/images/google-news-icon.svg" alt="google-news" ></a></li>
+<li><a href="https://www.whatsapp.com/channel/0029Va5dROu3bbUxk7Jh2503" target="_blank"><img src="{{ get_stylesheet_directory_uri() }}/assets/images/whatsapp-icon.svg" alt="whatsapp" ></a></li>
+<li><a href="https://t.me/khaleejtimes" target="_blank"><img src="{{ get_stylesheet_directory_uri() }}/assets/images/telegram-icon.svg" alt="telegram" ></a></li>
+
+
+</ul>
+
+
+
+ 	</div>
+
+<!-- <a href="https://news.google.com/publications/CAAqBwgKMLqnnwkwzfVu?hl=en-US&gl=US&ceid=US:en" target="_blank"><img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2023/07/18134758/follow-us-on-google-news-small.png"></a>-->
+
+</div>
+</div>
+</div>
+
+<!-- <hr class="gray-line vuukle-far-nf"> -->

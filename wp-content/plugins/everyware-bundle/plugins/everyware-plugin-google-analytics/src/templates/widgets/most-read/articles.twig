@@ -1,0 +1,17 @@
+{% apply spaceless %}
+    {% if articles|length > 1 %}
+        <section class="{{ render_classes([
+            settings.class_prefix,
+            settings.class_prefix ~ '__container',
+            args.class
+        ]) }}">
+            {% for article in articles %}
+                {{ article|raw }}
+            {% endfor %}
+        </section>
+    {% else %}
+        {% for article in articles %}
+            {{ article|raw }}
+        {% endfor %}
+    {% endif %}
+{% endapply %}

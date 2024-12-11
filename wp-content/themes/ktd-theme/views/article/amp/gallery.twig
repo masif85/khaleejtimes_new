@@ -1,0 +1,40 @@
+{% if images %}
+  <div class="photo-slider">
+    <amp-carousel
+	class="carouselamp"
+      id="carousel-{{ uuid }}"
+      width="540"
+      height="301"
+      layout="responsive"
+      type="slides"
+      role="region"
+      aria-label="photo preview"
+    >
+      {% for image in images %}
+        {{ render_partial('@base/article/amp/gallery-image', { 'src': image.src, 'alttext': image.alttext,'subtitle':image.text }) }}
+		
+	
+
+      {% endfor %}
+    </amp-carousel>
+    <div class="carousel-preview">
+      {% for image in images %}
+        <button on="tap:carousel-{{ uuid }}.goToSlide(index={{ loop.index0 }})" class="capbutton"  data-subtitle="{{ image.text|replace({'"':'\''})|raw }}">
+          <amp-img src="{{ image.src }}"
+            width="100"
+            height="56"
+            alt="{{ image.alttext|striptags|replace({'"':'\''}) }}"
+			 data-subtitle="{{ image.text|replace({'"':'\''})|raw }}"
+          ></amp-img>
+		  
+        </button>
+		
+      {% endfor %}
+    </div>
+
+	
+	 <div class="caption"></div>
+	  
+	 
+  </div>
+{% endif %}

@@ -1,0 +1,38 @@
+{
+  "style": [
+    {
+      "src": [
+        "placeholder-theme/assets/scss/style.scss"
+      ],
+      "dest": "placeholder-theme/assets/dist/css"
+    },
+    {
+      "src": [
+        "everyware-theme-base-2/assets/scss/admin.scss"
+      ],
+      "dest": "placeholder-theme/assets/dist/css/"
+    }
+  ],
+  "copyFiles": [
+    {
+      "src": [
+        "everyware-theme-base-2/assets/images/**/**.*"
+      ],
+      "dest": "placeholder-theme/assets/dist/images"
+    },
+    {
+      "src": [
+        "everyware-theme-base-2/assets/svg/**.svg"
+      ],
+      "dest": "placeholder-theme/assets/dist/svg"
+    },
+    {
+      "src": [
+        "everyware-theme-base-2/assets/js/lib/*.js",
+        "everyware-theme-base-2/assets/dist/js/*"
+      ],
+      "dest": "placeholder-theme/assets/dist/js"
+    }
+  ],
+  "js": []
+}

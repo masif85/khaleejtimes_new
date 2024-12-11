@@ -1,0 +1,61 @@
+<article class="teaser teaser-frontpage-category-side teaser-side-category-border" data-uuid="{{ uuid }}" data-comment-id="{{ comment_id }}">
+<a href="{{ permalink }}">
+    	<div class="row">
+			<div class="teaser-content col-md-12">
+                <div class="teaser-category teaser-time-since-published frontpagecategoryblock">
+                    {% if category_block_side_category_display == 'true' %}
+                        <span>
+                            {% for category in categories %}
+                                {% if loop.first %}
+                                    {{ category.name }}
+                                {% endif %}
+                            {% endfor %}
+                        </span>
+                    {% endif %}
+                    {% if category_block_side_time_display == 'true' %}
+                        <span class="teaser-frontpage-category-side-time">
+                            {% if category_block_side_time_diff_display == 'true' %}
+                                {{ time_diff }} ago
+                            {% else %}
+                                {% block dateline %}
+                                    {% include "@base/teaser/partial/dateline.twig" %}
+                                {% endblock %}
+                            {% endif %}
+                        </span>
+                    {% endif  %}
+                </div>
+
+                <div class="entry-title frontpagecategoryblock">{% block headline %}{% include "@base/teaser/partial/headline.twig" %}{% endblock %}</div>
+
+                <div class="teaser-body frontpagecategoryblock">
+                    {% if category_block_side_summary_display == 'true' %}
+                        <div class="teaser__leadin">
+                        {% if teaser_frontpage_length %}
+                            {{ text|raw|length > teaser_frontpage_length ? text|raw|slice(0, teaser_frontpage_length) ~ '...' : leadin|raw }}
+                        {% else %}
+                            {{ text|raw|length > 60 ? text|raw|slice(0, 80) ~ '...' : text|raw }}
+                        {% endif %}
+                        </div>
+                    {% endif %}
+                    {% if category_block_side_author_display == 'true' %}
+                        <div class="teaser-frontpage-category-side-author">
+                            {% if category_block_side_author_display == 'true' and authors %}
+                                <span class="teaser-frontpage-category-side-author mr-3">
+                                    {# Dashes represent space stripping #}
+                                    {%- for author in authors -%}
+                                        {%- if loop.first -%}
+                                            By {{ author.name -}}
+                                        {%- else -%}
+                                            , {{ author.name -}}
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                                </span>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+</a>
+<hr class="category_side_divider">
+</article>

@@ -1,0 +1,62 @@
+{% extends '@base/main.twig' %}
+
+{% block page_head %}
+    {% include "@base/page/part/metatags.twig" %}
+    {% include "@base/page/part/head-extras.twig" %}
+{% endblock %}
+
+{% block page_content %}
+    <main class="container page__container page__container--res">
+        <div class="row align-items-stretch page__row--res">
+            <div class="col-12 col-xl-9 page__main-col page__col--res">
+                <header class="page__header">
+                    <div class="row">
+                        <div class="col-12 d-none d-md-flex">
+                            <div class="page__panorama">
+                                {{ render_sidebar("concept-page-panorama") }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="page__title">{{ currentPage.title }}</h2>
+                        </div>
+                    </div>
+                </header>
+
+                <section class="page__top-section divide-bottom-sm-up">
+                    {% if topArticles is iterable %}
+                        {% include '@base/concept/top-section.twig' with {'articles': topArticles} only %}
+                    {% else %}
+                        <div class="row align-items-stretch">
+                            <div class="col-12">
+                                <h3>No articles where found for this Concept.</h3>
+                            </div>
+                        </div>
+                    {% endif %}
+                </section>
+
+                <section class="articles-container page__list-section"
+                         data-uuid="{{ uuid }}"
+                         data-posts="{{ fetchCount }}">
+                    {%- if articles is not empty -%}
+                        {% include '@base/concept/generate-article-list.twig' with {'articles': articles} only %}
+                    {%- endif -%}
+                </section>
+
+                {% if loadMore %}
+                    <div class="row align-items-stretch">
+                        <div class="col-12">
+                            <button class="btn btn-primary concept-load-more">
+                                <span>{{ __('Load more articles', 'ew-base-theme-2') }}</span></button>
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div> <!-- .col-12 col-xl-9 -->
+
+            {% include "@base/page/part/sidebar.twig" with {"sidebar":"concept-page-sidebar", "screenSizeUp": "xl"} %}
+        </div>
+    </main>
+{% endblock %}

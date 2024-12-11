@@ -1,0 +1,5 @@
+{% if headline %}
+	<h2 class="teaser__headline">
+		{% if breaking %}<span class="teaser__headline-breaking">{{ breaking|raw }}</span>{% endif %}<span class="teaser__headline-marker">{{ headline|raw }}</span>
+	</h2>
+{% endif %}

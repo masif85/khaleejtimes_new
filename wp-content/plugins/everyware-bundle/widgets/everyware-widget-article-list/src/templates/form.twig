@@ -1,0 +1,54 @@
+{% extends '@projectPlugin/components/admin.twig' %}
+
+{% block form_header %}{% endblock %}
+{% block form %}
+    <div class="oc-query-box">
+        <div class="form-group">
+            <label>Open Content query {{ form.tooltip(translate('Write a query to search Open Content for articles.<hr><i>This query is restricted to <b>contenttype:Article</b></i>.', textdomain), 'top')|raw }}</label>
+            {{ form.textarea(oc_query, { class: 'form-control oc-query-search','rows': 6 })|raw }}
+        </div>
+
+        <div class="form-group">
+            <label>Sort by {{ form.tooltip(translate('Use this field to sort the result.<hr><i>The sorting options are configured in Open Content</i>', textdomain))|raw }}</label>
+            {{ form.select(oc_query_sort, sortings, { class: 'form-control oc-query-sort' })|raw }}
+        </div>
+
+        <div class="form-group">
+            <label>Start from {{ form.tooltip(translate('Use this field to set the position from where the articles will be fetched.<hr><i>Default: 0</i>', textdomain))|raw }}</label>
+            {{ form.input('number', oc_query_start, { class: 'form-control oc-query-start' })|raw }}
+        </div>
+
+        <div class="form-group">
+            <label>Limit {{ form.tooltip(translate('Use this field to set the limit number of articles you would like to fetch.<hr><i>Default: 10</i>', textdomain))|raw }}</label>
+            {{ form.input('number', oc_query_limit, { class: 'form-control oc-query-limit' })|raw }}
+        </div>
+
+        <div class="oc-query-result"></div>
+        <button class="btn btn-primary btn-block oc-query-test">Test query</button>
+    </div>
+
+    <div class="form-group">
+        <label>Teaser layout {{ form.tooltip(translate('Set the layout for the articles of the list.<hr><i>Default: ocarticle-default.php</i>', textdomain))|raw }}</label>
+        {{ form.select(template, templates, { class: 'form-control', placeholder: 'Use Template' })|raw }}
+    </div>
+
+    <hr style="border: 1px solid #ccc">
+
+    <div class="form-section">
+        <div class="form-group">
+            <label for="{{ render_as_list.id() }}">Render as a list widget {{ form.tooltip(translate('<strong>On</strong>: Will render the articles wrapped in an ordered list with the headline on top.<br><strong>Off</strong>: Will remove all wrapping elements including the headline.<hr><i>Default: Off</i>', textdomain))|raw }}</label>
+            <br>
+            {{ form.checkbox(render_as_list)|raw }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ title.id() }}">Title {{ form.tooltip(translate('This is the headline of your list.<br>It will only be shown if <i>Render as plain list</i> is <b>off</b>.', textdomain))|raw }}</label>
+            {{ form.input('text', title, { class: 'form-control' })|raw }}
+        </div>
+
+        <div class="form-group">
+            <label>Link to page {{ form.tooltip(translate('You have the option to link your list to a page. This will render the headline as a link to the choosen page', textdomain))|raw }}</label>
+            {{ form.select(page, pages, { class: 'form-control',  placeholder: 'None' })|raw }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% set pagesZ = {'Sports': '.bordered-left {border-left: solid 10px #82c341!important;}','Entertainment': '.bordered-left {border-left: solid 10px #ffc20e!important;}','Lifestyle': '.bordered-left {border-left: solid 10px #9834d2!important;}'} %}
+<style>
+{{pagesZ[parentPostName]}}
+</style>
+{% if currentPage.post_parent %} {% set page_type="listing" %} {% else %} {% set page_type="main" %} {% endif %}
+{% if parentPostName!='trading' and tealiumGroup!='forex_summary' and tealiumGroup!='prayer-timings' %}
+
+{% endif %}
+
+<script async defer src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+window.googletag = window.googletag || {cmd: []};
+googletag.cmd.push(function() {
+
+var mappingMobLeadfullads = googletag.sizeMapping().
+addSize([1024,0],[970,90]). //desktop
+addSize([768,0],[300,250]). //tablet
+addSize([567,0],[300,250]). //smartphone
+addSize([0,0],[300,250]). //other
+build();
+
+var mappingMobLeadfullads1 = googletag.sizeMapping().
+addSize([1024,0],[728,90]). //desktop
+addSize([768,0],[300,250]). //tablet
+addSize([567,0],[300,250]). //smartphone
+addSize([0,0],[300,250]). //other
+build();
+
+googletag.defineSlot('/78059622/Ramadan-Responsive-Leaderboard', [[970, 90], [300, 250]], 'div-gpt-ad-1709117651947-0').defineSizeMapping(mappingMobLeadfullads).addService(googletag.pubads());
+googletag.defineSlot('/78059622/Ramadan-Responsive-Leaderboard-2', [[728, 90], [300, 250]], 'div-gpt-ad-1709117689606-0').defineSizeMapping(mappingMobLeadfullads1).addService(googletag.pubads());
+googletag.defineSlot('/78059622/Ramadan-Responsive-Leaderboard-3', [[728, 90], [300, 250]], 'div-gpt-ad-1709117723097-0').defineSizeMapping(mappingMobLeadfullads1).addService(googletag.pubads());
+googletag.defineSlot('/78059622/Ramadan-Responsive-Leaderboard-4', [[728, 90], [300, 250]], 'div-gpt-ad-1709117756621-0').defineSizeMapping(mappingMobLeadfullads1).addService(googletag.pubads());
+
+{% if every_device != 'mobile' %}
+googletag.defineSlot('/78059622/Ramadan-Desktop-RHS-300x250', [300, 250], 'div-gpt-ad-1709629814980-0').addService(googletag.pubads());
+googletag.defineSlot('/78059622/Ramadan-Responsive-Deskop-Sticky-300x600', [300, 600], 'div-gpt-ad-1709117797911-0').addService(googletag.pubads());
+{% else %}
+googletag.defineSlot('/78059622/Ramadan-Mobile-Sticky-320x50', [320, 50], 'div-gpt-ad-1709117830146-0').addService(googletag.pubads());
+{% endif %}
+
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>    
+

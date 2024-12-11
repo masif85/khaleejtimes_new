@@ -1,0 +1,49 @@
+<script>
+  var VUUKLE_CONFIG = {
+    apiKey: "841fb3e5-977f-4e2e-be39-fae608323cc5",
+    endlessMode: true,
+    emotes: false,
+  {% if contentsubtype == 'SPONSOREDCONTENT' %}
+    ads: { enabled: false },
+  {% endif %}
+    comments: {
+      hideCommentsWidget: true,
+      hideRecommendedArticles: true,
+    },
+    eventHandler: function(vukkleComment) { // the 'event' here can be named anything
+      console.log(vukkleComment.name, vukkleComment.email); // log the user name and email
+      utag.link({
+        "user_email":vukkleComment.email,
+        "user_firstname":vukkleComment.name,
+        "event_type":"click",
+        "tealium_event":"post_comment"
+      });
+    },
+    powerbar: {
+      enableInterceptor: true,
+      shareInterceptor: function (shareOption, articleUrl, articleTitle) {
+        articleUrl: "{{ get_permalink()|replace({"site.prod.ew.ktd.infomaker.io":'www.khaleejtimes.com'}) }}";        
+		articleTitle: "{{ teaser_headline|replace({"\n":'', "\r":''})|raw}}";		
+        return [articleUrl, articleTitle];
+      }
+    },
+    theme: {
+    powerbarStyles: {
+     'sup': {
+       display: 'none'
+     },
+     '.social-button, social-button:hover, .more-btn, .vuukle-audio-button': {
+       background: 'rgb(255, 255, 255)',
+       border: '1px solid rgb(220, 220, 220)'
+     },
+     '.social-button svg, .more-btn svg, .vuukle-audio-button svg path, .social-button svg path': {
+       fill: 'rgb(0, 0, 0)'
+     },
+     '.vuukle-audio-button span': {
+       color: 'rgb(0, 0, 0)',
+       borderLeft: '1px solid rgba(0,0,0, 0.5)'
+     }
+    }
+  }
+  };
+</script>

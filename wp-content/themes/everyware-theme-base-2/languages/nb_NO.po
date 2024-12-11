@@ -1,0 +1,221 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Base Theme 2\n"
+"POT-Creation-Date: 2019-08-06 06:58+0000\n"
+"PO-Revision-Date: 2019-09-24 10:20+0300\n"
+"Last-Translator: Raimo Virolainen <raimo.virolainen@uptime.eu>\n"
+"Language-Team: Norwegian (Bokmål)\n"
+"Language: nb_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#: inc/theme_customizer_settings.php:15
+msgctxt "Admin"
+msgid "Logo"
+msgstr "Logo"
+
+#: inc/theme_customizer_settings.php:19 inc/theme_customizer_settings.php:24
+#: inc/theme_customizer_settings.php:47 inc/theme_customizer_settings.php:52
+#: inc/theme_customizer_settings.php:86 inc/theme_customizer_settings.php:91
+msgctxt "Admin"
+msgid "Select logo"
+msgstr "Velg logo"
+
+#: inc/theme_customizer_settings.php:20 inc/theme_customizer_settings.php:48
+#: inc/theme_customizer_settings.php:87
+msgctxt "Admin"
+msgid "Change logo"
+msgstr "Endre logo"
+
+#: inc/theme_customizer_settings.php:21 inc/theme_customizer_settings.php:49
+#: inc/theme_customizer_settings.php:88
+msgctxt "Admin"
+msgid "Remove"
+msgstr "Fjern"
+
+#: inc/theme_customizer_settings.php:22 inc/theme_customizer_settings.php:50
+#: inc/theme_customizer_settings.php:89
+msgctxt "Admin"
+msgid "Default"
+msgstr "Standard"
+
+#: inc/theme_customizer_settings.php:23 inc/theme_customizer_settings.php:51
+#: inc/theme_customizer_settings.php:90
+msgctxt "Admin"
+msgid "No logo selected"
+msgstr "Ingen logo valgt"
+
+#: inc/theme_customizer_settings.php:25 inc/theme_customizer_settings.php:53
+#: inc/theme_customizer_settings.php:92
+msgctxt "Admin"
+msgid "Choose logo"
+msgstr "Velg logo"
+
+#: inc/theme_customizer_settings.php:43
+msgctxt "Admin"
+msgid "Navigation Logo"
+msgstr "Navigasjonslogo"
+
+#: inc/theme_customizer_settings.php:60
+msgctxt "Admin"
+msgid "Footer"
+msgstr "Bunnfelt"
+
+#: inc/theme_customizer_settings.php:71
+msgctxt "Admin"
+msgid "Footer Text"
+msgstr "Tekst i bunnfelt"
+
+#: inc/theme_customizer_settings.php:82
+msgctxt "Admin"
+msgid "Footer Logo"
+msgstr "Logo i bunnfelt"
+
+#: inc/theme_customizer_settings.php:99
+msgctxt "Admin"
+msgid "Google Tag"
+msgstr "Google-tagg"
+
+#: inc/theme_customizer_settings.php:110
+msgctxt "Admin"
+msgid "defineSlot 1"
+msgstr "defineSlot 1"
+
+#: inc/theme_customizer_settings.php:121
+msgctxt "Admin"
+msgid "defineSlot 2"
+msgstr "defineSlot 2"
+
+#: inc/theme_customizer_settings.php:132
+msgctxt "Admin"
+msgid "defineSlot 3"
+msgstr "defineSlot 3"
+
+#: inc/theme_customizer_settings.php:143
+msgctxt "Admin"
+msgid "defineSlot 4"
+msgstr "defineSlot 4"
+
+#: inc/theme_customizer_settings.php:154
+msgctxt "Admin"
+msgid "defineSlot 5"
+msgstr "defineSlot 5"
+
+#: inc/theme_customizer_settings.php:165
+msgctxt "Admin"
+msgid "defineSlot 6"
+msgstr "defineSlot 6"
+
+#: inc/theme_customizer_settings.php:176
+msgctxt "Admin"
+msgid "defineSlot 7"
+msgstr "defineSlot 7"
+
+#: inc/theme_customizer_settings.php:187
+msgctxt "Admin"
+msgid "defineSlot 8"
+msgstr "defineSlot 8"
+
+#: inc/theme_customizer_settings.php:198
+msgctxt "Admin"
+msgid "defineSlot 9"
+msgstr "defineSlot 9"
+
+#: inc/theme_customizer_settings.php:209
+msgctxt "Admin"
+msgid "defineSlot 10"
+msgstr "defineSlot 10"
+
+#: inc/theme_customizer_settings.php:216
+msgctxt "Admin"
+msgid "Social Media"
+msgstr "Sosiale medier"
+
+#: inc/theme_customizer_settings.php:227
+msgctxt "Admin"
+msgid "Facebook"
+msgstr "Facebook"
+
+#: inc/theme_customizer_settings.php:238
+msgctxt "Admin"
+msgid "Twitter"
+msgstr "Twitter"
+
+#: inc/theme_customizer_settings.php:249
+msgctxt "Admin"
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: inc/theme_customizer_settings.php:260
+msgctxt "Admin"
+msgid "YouTube"
+msgstr "YouTube"
+
+#: views/article/byline.twig:10
+msgid "Published"
+msgstr "Publisert"
+
+#: views/article/byline.twig:15
+msgid "Last updated"
+msgstr "Sist oppdatert"
+
+#: views/article/gallery.twig:8
+msgid "Previous"
+msgstr "Forrige"
+
+#: views/article/gallery.twig:12
+msgid "Next"
+msgstr "Neste"
+
+#: views/article/gallery.twig:19
+#, php-format
+msgid "Image %s of %s"
+msgstr "Bilde %s av %s"
+
+#: views/article/gallery.twig:35 views/page/part/main-menu.twig:55
+#: views/page/part/main-menu.twig:160
+msgid "Close"
+msgstr "Lukk"
+
+#: views/article/image.twig:19
+msgid "Photo by"
+msgstr "Foto av"
+
+#: views/page/page-not-found.twig:13
+msgid "Uh-oh!"
+msgstr "Oisann!"
+
+#: views/page/page-not-found.twig:14
+msgid "It could be you, or it could be us, but there's no page here."
+msgstr "Det kan være deg, eller det kan være oss, men her er det ingen side."
+
+#: views/page/search.twig:4
+msgid "Search page"
+msgstr "Søkeside"
+
+#: views/page/part/footer.twig:34
+msgid "Back to top"
+msgstr "Tilbake til toppen"
+
+#: views/page/part/main-menu.twig:21 views/page/part/main-menu.twig:51
+msgid "Menu"
+msgstr "Meny"
+
+#: views/page/part/main-menu.twig:28 views/page/part/top-menu.twig:8
+msgid "current"
+msgstr "denne"
+
+#: views/page/part/search-bar.twig:1
+msgid "Search for topics and articles"
+msgstr "Søk etter emner og artikler"
+
+#: views/page/part/top-menu.twig:13
+msgid "Subscription"
+msgstr "Abonnement"
+
+#: views/page/concept-page.twig:36
+msgid "Load more articles"
+msgstr "Last inn flere"

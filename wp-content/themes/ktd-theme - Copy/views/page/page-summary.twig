@@ -1,0 +1,49 @@
+{% extends '@base/main.twig' %}
+
+{% block page_head %}
+  {% include "@base/page/part/metatags.twig" %}
+  {{ wp_head() }}
+{% endblock %}
+
+{% block page_content %}
+  <main>
+
+    <div class=" single contactpage-lt">
+      <div class="container">
+        <div class="row">
+	     <div style="width: 50%;padding-top: 15px;float:left"><h1 class="section-title text-uppercase font-weight-bold bordered-left">Match Page</h1></div>
+
+       <div style="width: 50%;text-align: right; float:right"> <a href="https://www.facebook.com/bparabialubricants/" style="display:inline-block;"> 
+	  
+	 <span style="padding-bottom: 2px;font-size: 10px;font-family:'proxima_novaregular';display:block;">Sponsored By:</span> 
+	  
+<img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2023/03/31130749/300-BP-Visco-logo-1-1.png" alt="Visco" width="128" style="padding-bottom:3px;"></a> </div>
+
+	{% if type=='match' %}
+<!-- <opta-widget widget="match_summary"  competition="3160" season="0" match="{{id}}" template="normal" live="false" show_match_header="true" show_score="true" show_attendance="true" show_date="true" date_format="dddd D MMMM YYYY HH:mm" show_cards="all" show_crests="true" show_team_formation="true" show_goals="true" show_goals_combined="true" show_penalties_missed="true" show_halftime_score="true" show_referee="true" show_subs="true" show_venue="true" show_shootouts="true" show_tooltips="true" show_images="true" show_competition_name="true" competition_naming="full" team_naming="full" player_naming="full" team_link="https://www.khaleejtimes.com/summary" player_link="https://www.khaleejtimes.com/summary" show_live="true" show_logo="false" show_title="true" breakpoints="400, 700" sport="cricket"></opta-widget> -->
+
+<opta-widget widget="match_summary" competition="3160" season="0" match="{{id}}" template="normal" live="true" fast_data="true" show_match_header="true" show_crests="true" show_competition_name="true" show_match_description="true" show_date="true" date_format="dddd D MMMM YYYY HH:mm" show_venue="true" show_officials="on_field" show_toss="true" show_innings_breakdown="true" show_current_batting="true" show_best_batting="1" show_best_bowling="1" show_state_of_play="true" show_lineups="false" side_by_side="true" team_naming="full" player_naming="last_name" team_link="https://khaleejtimes.com/summary" show_live="true" update_end_animation="true" show_logo="false" show_title="true" breakpoints="400, 700" sport="cricket"></opta-widget>
+<opta-widget widget="score_card" competition="3160" season="0" match="{{id}}" template="normal" live="false" show_match_header="false" show_crests="true" show_competition_name="false" show_match_description="true" show_date="true" date_format="dddd D MMMM YYYY HH:mm" show_venue="true" show_officials="on_field" show_toss="true" show_innings_breakdown="true" show_current_batting="true" show_best_batting="1" show_best_bowling="1" show_state_of_play="true" navigation="tabs" default_nav="1" show_batting="true" show_mins_batted="true" show_fours="true" show_sixes="true" show_strike_rate="true" show_bowling="true" show_economy="true" show_dot_balls="true" show_bowling_extras="true" show_fow="true" show_partnerships="true" show_unfinished_partnerships="true" team_naming="full" player_naming="last_name" show_logo="false" show_title="true" breakpoints="400, 700" sport="cricket"></opta-widget>
+
+{% elseif type=='team'%}
+<opta-widget widget="team_profile" competition="3160" season="0" team="{{id}}" template="normal" show_league_position="true" show_crests="true" team_naming="full" show_logo="false" show_title="true" breakpoints="400" sport="cricket"></opta-widget>
+
+<opta-widget widget="squad" competition="3160" season="0" team="{{id}}" template="normal" column_count="1" player_link="https://www.khaleejtimes.com/summary" show_position="true" show_images="true" show_country="true" show_flags="true" show_key="true" squad_numbers_only="true" show_goalkeepers="true" show_defenders="true" show_midfielders="true" show_forwards="true" show_managers="true" show_transferred_players="true" show_goals="true" show_caps="true" order_by="jersey" group_by_position="true" team_naming="full" player_naming="full" show_logo="false" show_title="true" breakpoints="400" sport="cricket"></opta-widget>
+
+{% elseif type=='player_profile'%}
+<opta-widget widget="player_profile" competition="3160" season="0" team="{{id}}" player="{{player}}" template="normal" show_images="true" show_country="true" show_flags="true" date_format="D MMMM YYYY" height_units="m" weight_units="kg" player_naming="full" show_logo="false" show_title="true" breakpoints="400" sport="cricket"></opta-widget>
+	{%endif%}
+ </div>
+ </div>
+ </div>
+  </main>
+{% endblock %}
+
+{% block page_stylesheets_scripts_bottom %}
+  {{ parent() }}
+  {{ wp_footer() }}
+{% endblock %}
+
+
+
+

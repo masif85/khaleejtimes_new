@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html amp lang="en">
+<head>
+  <meta charset="{{ get_bloginfo( 'charset' ) }}" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, maximum-scale=5">
+  <meta name="copyright" content="{{ 'now' | date('Y') }} Galadari Printing and Publishing LLC. All rights reserved." />
+  <meta name="distribution" content="global" />
+  <meta name="twitter:site" content="@khaleejtimes" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:domain" content="{{ site_url() }}" />
+  <meta property="fb:pages" content="211983032863" />
+
+  {% include "@base/article/part/metatags.twig" %}
+
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+  <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
+  <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-dynamic-css-classes-0.1.js">
+
+  {% include "@base/article/amp/head/preload-images.twig" %}
+
+
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
+  <script async custom-element="amp-dynamic-css-classes" src="https://cdn.ampproject.org/v0/amp-dynamic-css-classes-0.1.js"></script>
+
+  {% include "@base/article/amp/head/extensions.twig" %}
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" type="text/css"/>
+
+  {% include "@base/article/amp/head/styles.twig" %}
+
+  {% include "@base/article/amp/head/structured-data.twig" %}
+
+</head>
+
+<body {{ body_class() }}>
+
+{% include "@base/article/amp/part/script-below-body.twig" %}
+
+  <div class="wrapper">
+
+    {% include "@base/article/amp/part/header.twig" %}
+
+    {% if contentsubtype != 'SPONSOREDCONTENT' %}
+      {% include "@base/article/amp/part/ad-mobile.twig" %}
+    {% endif %}
+
+    {% block page_content %}
+      <div class="container">
+        {{ the_content() }}
+      </div>
+    {% endblock %}
+
+    {% include "@base/article/amp/part/footer.twig" %}
+
+  </div>
+
+{% include "@base/article/amp/part/script-bottom-body.twig" %}
+<!-- width=1 height=1
+type="doubleclick"
+data-slot="/78059622/AMP-1X1">
+</amp-ad -->
+</body>
+</html>

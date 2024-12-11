@@ -1,0 +1,19 @@
+{% apply spaceless %}
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for link in links %}
+    <sitemap>
+      <loc>{{ domain }}/sitemap/{{ link.type }}</loc>
+      <lastmod>{{ link.last_updated.toIso8601ZuluString() }}</lastmod>
+    </sitemap>
+    {# if link.type == 'news' %}
+      {% for lang in langs %}
+        <sitemap>
+          <loc>{{ domain }}/sitemap/{{ lang }}/news</loc>
+          <lastmod>{{ link.last_updated.toIso8601ZuluString() }}</lastmod>
+        </sitemap>
+      {% endfor %}
+    {% endif #}
+  {% endfor %}
+</sitemapindex>
+{% endapply %}

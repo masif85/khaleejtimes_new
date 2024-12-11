@@ -1,0 +1,70 @@
+<style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css');
+.socio {
+    position: relative;
+   /*( left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  margin:0;
+  padding:0;
+  display:flex;
+}
+
+.socio .socio-child {
+  list-style: none;
+}
+
+.socio .socio-child a {
+  position: relative;
+  width:40px;
+  height:40px;
+  display:block;
+  text-align:center;
+  margin:0 0px;
+  border-radius: 50%;
+  padding: 4px;
+  box-sizing: border-box;
+  text-decoration:none;
+  transition: .5s;
+}
+
+.socio .socio-child a:hover {
+
+  text-decoration:none;
+}
+
+.socio .socio-child a .fab {
+  width: 100%;
+  height:100%;
+  display:block;
+ background:#fff;
+ border:1px solid #ccc;
+  border-radius: 50%;
+  line-height: calc(40px - 10px);
+  font-size:17px;
+  color: #000;
+  transition: .5s;
+}
+
+
+
+</style>  
+
+<div class="socio">
+	<div class="socio-child"><a href="#" data-link="https://api.whatsapp.com/send?text=" class="sharelink"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></div>
+	<div class="socio-child"><a href="#" data-link="https://www.facebook.com/share.php?u=" class="sharelink"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></div>
+	<div class="socio-child"><a href="#" data-link="https://twitter.com/intent/tweet?url=" class="sharelink"><i class="fab fa-x-twitter" aria-hidden="true"><svg viewBox="0 0 24 24" aria-label="Twitter" role="img" style="width:17px; height:17px;"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg> </i></a></div> 
+	<div class="socio-child"><a href="#" data-link="https://www.linkedin.com/shareArticle?mini=true&url=" class="sharelink"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></div>
+	
+</div>   
+ <script>
+const shares = document.querySelectorAll('.sharelink');
+shares.forEach(share => {
+  share.addEventListener('click', function handleClick(event) {
+  event.preventDefault();
+   var url = window.location.href;   	
+  var hiturl=share.dataset.link;
+   var link = hiturl + encodeURI(url);
+    window.open(link,'_blank','toolbar=0,status=0,width=626,height=436');    
+  });
+});
+</script>   

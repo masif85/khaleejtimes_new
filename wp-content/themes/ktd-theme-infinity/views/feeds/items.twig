@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" >
+   <channel>
+      <title><![CDATA[KT Mobile]]></title>
+      <link>http://www.khaleejtimes.com/</link>
+      <description><![CDATA[Mobile Home]]></description>
+      <language>en-gb</language>
+      <copyright><![CDATA[Copyright {{ "now"|date("Y") }} Galadari Printing and Publishing LLC.]]></copyright>
+      <pubDate>{{ "now"|date("r") }}  </pubDate>
+      <category><![CDATA[{% if section != '*' %}{{ section }}{% endif %} ]]></category>
+       {{ articles|raw }}
+   </channel>
+</rss>

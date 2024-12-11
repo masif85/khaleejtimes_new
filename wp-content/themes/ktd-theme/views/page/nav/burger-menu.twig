@@ -1,0 +1,36 @@
+ {% if meganav %}
+  <div class="container">
+    <div class="row">
+      <div id="ham-burger-menu-cnt" class="left-ham-burgermenu">
+        <div class="burger-main-content-outer-lb">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+ {% for item in meganav %}
+            <div class="accordion-item">
+        <h3 class="accordion-header burger-header-outer" id="flush-heading{{loop.index}}-top-burg"><a href="{{ item.url }}"{% if item.target %} target="_blank"{% endif %}>{{ item.title|raw }}</a> <i class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{loop.index}}-top-burg" aria-expanded="false" aria-controls="flush-collapse{{loop.index}}-top-burg" > </i></h3>
+ {% if item.children.isNotEmpty %}
+              <div id="flush-collapse{{loop.index}}-top-burg" class="accordion-collapse collapse burger-menu-content-lb" aria-labelledby="flush-heading{{loop.index}}-top-burg" data-bs-parent="#accordionFlushExample" >
+                <div class="accordion-body">
+                  <ul>
+                    {% for subitem in item.children %}
+                      <li><a href="{{ subitem.url }}"{% if subitem.target %} target="_blank"{% endif %}>{{ subitem.title|raw }}</a></li>
+                   {% endfor %}
+                  </ul>
+                </div>
+              </div>
+                {% endif %}
+            </div>
+ {% endfor %}
+            <div class="burger-menu-content-bottom-area">
+              <h3 class="burger-menu-title"> <a href="#"> Download our Mobile App </a> </h3>
+              <ul class="follow-us">
+                <li> <a href="https://apps.apple.com/ae/app/khaleej-times-uae-world-news/id909275381" target="_blank"><img src="/images/icons/ios-icon-burger-menu.svg" alt="Khaleej Times IOS icon" width="28" height="28">iPhone | iPad</a></li>
+                <li> <a href="https://play.google.com/store/apps/details?id=com.khaleejtimes&hl=en" target="_blank" ><img src="/images/icons/android-icon-burger-menu.svg" alt="Khaleej Times Android icon" width="28" height="28">Android</a></li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+ {% endif %}

@@ -1,0 +1,19 @@
+{% if oldGuid %}
+  {% set vuukleUid = oldGuid %}
+{% else %}
+  {% set vuukleUid = uuid|upper %}
+{% endif %}
+
+{% if vuukleSource %}
+  <!-- AMP Sharebar Script -->
+  <hr class="gray-line">
+  <amp-iframe width=600 height=120
+              layout="responsive"
+              sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
+              resizable frameborder="0"
+              title="Khaleej Times article sharebar"
+              src="https://cdn.vuukle.com/amp-sharebar.html?{{ vuukleSource }}&comments=true#amp=1"><div overflow tabindex=0 role=button aria-label="">Read more...</div>
+    <amp-img layout="fixed" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/ajax-loader.gif" width="10" height="10" alt="KT Share Loading" placeholder></amp-img>
+  </amp-iframe>
+  <!-- END  AMP Sharebar Script -->
+{% endif %}

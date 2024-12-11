@@ -1,0 +1,15 @@
+<div itemprop="creator" itemscope itemtype="http://schema.org/Person" class="authorbox__creator authorbox__creator--{{placement}}">
+    <dl class="authorbox__creator--dl authorbox__creator--dl--{{placement}}">
+        <dt class="authorbox__creator--name">
+            {%- if author.permalink -%}
+                <a href="{{ author.permalink }}" itemprop="name">{{ author.name }}</a>
+            {%- else -%}
+                <span itemprop="name">{{ author.name }}</span>
+            {%- endif -%}
+        </dt>
+        <dd class="authorbox__creator--description">{% if settings.article_author_short_desc %}{{ author.description_short }} {% endif %}</dd>
+    </dl>
+    {% if placement != 'top' %}
+        {% include "@base/article/meta-contact-info.twig" %}
+    {% endif %}
+</div>

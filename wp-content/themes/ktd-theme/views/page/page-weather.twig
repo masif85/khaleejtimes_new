@@ -1,0 +1,135 @@
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+
+
+<style>
+
+.top-main-menu {
+    max-width: 1126px;
+    margin: 0px auto;
+}
+
+
+
+
+.article-wrapper h1 {
+    padding-top: 2rem;
+}
+
+
+@media (max-width: 991px) {
+
+  div#ew-custom-html-32 {
+    display: none;
+}
+
+div#ew-custom-html-8 {
+ display: none;
+}
+
+}
+
+</style>
+
+
+
+
+
+
+  <main>
+    <div class="single weather">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-8">
+
+            <div class="row no-gutters">
+              <div class="section-header col">
+
+                <h1 class="section-title text-uppercase font-weight-bold bordered-left">Weather</h1>
+
+                <div class="sub-header">
+                  <div class="container">
+                    <div class="row no-gutters">
+                      <div class="col-12">
+
+                        <!-- Weather Tabs -->
+                        <ul class="sub-menu sub-menu-2" data-id="countries">
+                          <li class="sub-menu-item">
+                            <a href="#" data-country="uae" class="country active">United Arab Emirates</a>
+                          </li>
+                          <li class="sub-menu-item">
+                            <a href="#" data-country="bh" class="country">Bahrain</a>
+                          </li>
+                          <li class="sub-menu-item">
+                            <a href="#" data-country="ksa" class="country">Saudi Arabia</a>
+                          </li>
+                          <li class="sub-menu-item">
+                            <a href="#" data-country="om" class="country">Oman</a>
+                          </li>
+                          <li class="sub-menu-item">
+                            <a href="#" data-country="qat" class="country">Qatar</a>
+                          </li>
+                          <li class="sub-menu-item">
+                            <a href="#" data-country="kwt" class="country">Kuwait</a>
+                          </li>
+                        </ul>
+
+                        <ul id="countries" class="mobile-sub-menu shadow-sm"></ul>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Weather Filter -->
+                <div id="city-filter" class="filter"></div>
+
+              </div>
+            </div>
+
+            <!-- Weather Container -->
+            <div id="weather-container"></div>
+
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="col-12 col-lg-4">
+            {{ render_sidebar("default-sidebar") }}
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Ad 970x250 -->
+    <div class="module-17 billboard-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto mx-auto">
+            <!-- /78059622/Responsive-Section-Leaderboard-1 -->
+            <!-- <div id='div-gpt-ad-1613546905867-0'>
+              <script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613546905867-0'); });
+              </script>
+            </div> -->
+            <!-- Tag ID: khaleejtimes_Responsive-Section-Leaderboard-1 -->
+            <div align="center" data-freestar-ad="__320x100 __970x250" id="khaleejtimes_Responsive-Section-Leaderboard-1">
+              <script data-cfasync="false" type="text/javascript">
+                freestar.config.enabled_slots.push({ placementName: "khaleejtimes_Responsive-Section-Leaderboard-1", slotId: "khaleejtimes_Responsive-Section-Leaderboard-1" });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+{% endblock %}
+
+{% block page_stylesheets_scripts_bottom %}
+  {{ parent() }}
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/weather.js"></script>
+{% endblock %}

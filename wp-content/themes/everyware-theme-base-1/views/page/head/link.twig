@@ -1,0 +1,3 @@
+{% for link in head_links %}
+    <link {% for attr, value in link %}{{ attr }}="{{ value }}" {% endfor %}/>
+{% endfor %}

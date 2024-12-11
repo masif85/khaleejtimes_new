@@ -1,0 +1,43 @@
+{% if objectProperties['storytelling'] %}
+    {% set storytelling_type = 'data-storytelling="' ~ objectProperties['storytelling'] ~ '"' %}
+{% else %}
+    {% set storytelling_type = "" %}
+{% endif %}
+
+{% if objectProperties['reveal-type'] %}
+    {% set reveal_type = 'data-reveal-type="' ~ objectProperties['reveal-type'] ~ '"' %}
+{% else %}
+    {% set reveal_type = "" %}
+{% endif %}
+
+{% if cropset['16:9'] %}
+    <div class="article_image_crop image_crop" data-uuid="{{ uuid }}" style="display:none;">
+        <img
+            uuid="{{ uuid }}"
+            srcset="{{ fitSrcset }}"
+            src="{{ fitSrc }}&q=100"
+        >
+    </div>
+{% elseif cropset['4:3'] %}
+    <div class="article_image_crop image_crop" data-uuid="{{ uuid }}" style="display:none;">
+        <img
+            uuid="{{ uuid }}"
+            srcset="{{ fitSrcset }}"
+            src="{{ fitSrc }}&q=100"
+        >
+    </div>
+{% else %}
+    <div class="article_image" data-uuid="{{ uuid }}" {{ storytelling_type|raw }} {{ reveal_type|raw }}>
+        <img
+            uuid="{{ uuid }}"
+            srcset="{{ fitSrcset }}"
+            src="{{ fitSrc }}&q=100"
+        >
+    </div>
+{% endif %}
+
+{#
+{% if text %}
+    <div class="article_image_caption image_text" data-uuid="{{ uuid }}">{{ text|raw }}</div>
+{% endif %}
+#}

@@ -1,0 +1,17 @@
+{% if permalink %}
+    <div class="ew-related border-bottom">
+        <a class="article__related-article rendered_board_article" href="{{ permalink }}" title="{{ title }}">
+            <div>
+                {% if section %}
+                    <h5>{{ section }}</h5>
+                {% endif %}
+                <span class="related-article__text">{{ title }}</span>
+            </div>
+            {% if thumbnail %}
+                <div>
+                    <figure><img src="{{ thumbnail }}"></figure>
+                </div>
+            {% endif %}
+        </a>
+    </div>
+{% endif %}

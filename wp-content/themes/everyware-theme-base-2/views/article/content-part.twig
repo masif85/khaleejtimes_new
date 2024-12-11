@@ -1,0 +1,18 @@
+{% if text %}
+    <div class="article__{{ content_type|replace({'im://content-part/': ''}) }}">
+        <div class="facts__container">
+            {% if title %}
+                {% apply spaceless %}
+                    <h3>
+                        <strong class="facts__subject">{{ subject}}</strong>
+                        {{ title }}
+                    </h3>
+                {% endapply %}
+            {% endif %}
+            <div class="facts__inner">
+                {% set foo = text|replace({'col-12 col-xl-8 offset-xl-4': ''}) %}
+                {{ foo|raw }}
+            </div>
+        </div>
+    </div>
+{% endif %}

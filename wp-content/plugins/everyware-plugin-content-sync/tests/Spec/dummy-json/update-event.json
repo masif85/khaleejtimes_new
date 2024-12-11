@@ -1,0 +1,14 @@
+{
+  "id": 7108,
+  "uuid": "77c72db9-4c9e-40fd-94c7-61796738b2ef",
+  "eventType": "UPDATE",
+  "created": "2021-05-24T06:20:22.000Z",
+  "content": {
+    "uuid": "77c72db9-4c9e-40fd-94c7-61796738b2ef",
+    "version": 4,
+    "created": "2021-05-19T05:39:52.000Z",
+    "source": null,
+    "contentType": "Article",
+    "batch": false
+  }
+}

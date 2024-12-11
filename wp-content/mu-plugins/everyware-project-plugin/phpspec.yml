@@ -1,0 +1,8 @@
+formatter.name: pretty
+bootstrap: tests/Spec/bootstrap.php
+suites:
+  everyware_base_suite:
+    namspace: Everyware\\ProjectPlugin
+    src_path: src
+    spec_path: tests
+    spec_prefix: Spec

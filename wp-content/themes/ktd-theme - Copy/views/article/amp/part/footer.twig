@@ -1,0 +1,170 @@
+
+
+<footer class="footer mt-4">
+  <div class="container">
+
+    <div class="row justify-content-lg-between">
+
+      <div class="col-lg-8 col-md-8 col-sm-12">
+        <div class="footer-logo pt-5 pb-3">
+          <amp-img alt="Khaleej Times"
+                   src="{{ get_stylesheet_directory_uri() }}/assets/images/khaleej-times-footer-logo.png"
+                   width="179"
+                   height="32"
+                   layout="fixed"
+          ></amp-img>
+
+        </div>
+        <div class="footer-copyright-text pt-5 pb-3">
+          ©{{ 'now' | date('Y') }} Galadari Printing and Publishing LLC. All rights reserved.
+        </div>
+      </div>
+
+      {% include "@base/page/part/footer-social-links.twig" %}
+
+    </div>
+
+    <div class="row">
+
+      <div class="footer-left-column">
+
+        {% if footernav %}
+          {% for item in footernav|slice(0,8) %}
+            <div class="footer-lft-column">
+              <amp-accordion id="{{ item.ID }}" disable-session-states>
+                <section>
+                  <h3 class="footer-title">
+                    <a href="{{ item.url }}">{{ item.title|raw }}</a>
+                    <i class="fas fa-chevron-down footer-down-arrow hidden visible-xs"
+                       data-toggle="collapse"
+                       data-target="#collapse{{ item.ID }}"
+                       aria-expanded="false"
+                       aria-controls="collapse{{ item.ID }}">
+                    </i>
+                  </h3>
+                  {% if item.children.isNotEmpty %}
+                    <ul class="footer-links collapse dont-collapse-sm" id="collapse{{ item.ID }}">
+                      {% for subitem in item.children %}
+                        <li><a href="{{ subitem.url }}">{{ subitem.title|raw }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </section>
+              </amp-accordion>
+            </div>
+          {% endfor %}
+        {% endif %}
+
+        <div class="footer-lft-column">
+          <amp-accordion id="more" disable-session-states>
+            <section>
+
+              <h3 class="footer-title text-indent-200-em">
+                MORE USEFUL LINKS
+                <i class="fas fa-chevron-down footer-down-arrow hidden visible-xs" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6"></i>
+              </h3>
+
+              <ul class="footer-links collapse dont-collapse-sm" id="collapse6">
+                <li><a href="/travel">Travel</a></li>
+                <li><a href="/lifestyle/health-and-fitness">Health</a></li>
+                <li><a href="/offbeat">Offbeat</a></li>
+                <li><a href="/uae/legal-view">Legal View</a></li>
+                <li><a href="/opinion/kt-editorials">Opinion & Editorials</a></li>
+                <li><a href="/opinion/letters">Letters</a></li>
+                <li><a href="/photos">Photos</a></li>
+
+                <li><a href="/videos">Videos</a></li>
+                <li><a href="/gold-forex">Gold/Forex</a></li>
+                <li><a href="/prayer-time-uae">Prayer Timings</a></li>
+                <li><a href="/uae-cinema-listing">Cinema Listings</a></li>
+                <li><a href="/flight-arrival-departures-status">Flight Status</a></li>
+                <li><a href="/weather">Weather</a></li>
+                <li><a href="https://epaper.khaleejtimes.com">E-Paper</a></li>
+                <li><a href="https://buzzon.khaleejtimes.com/">Buzzon</a></li>
+                <li><a href="/inspired-living">Inspired Living</a></li>
+
+                <li><a href="/about-us">About Us</a></li>
+                <li><a href="/advertise">Advertise With Us</a></li>
+                <li><a href="/contact-us">Contact Us</a></li>
+                <li><a href="/privacy-notice">Privacy Notice</a></li>
+              </ul>
+
+            </section>
+          </amp-accordion>
+        </div>
+
+      </div>
+
+      <!-- Apps -->
+      <div class="footer-right-column">
+        <div class="col-auto">
+
+          <h3 class="footer-kt-app-download">KT APP DOWNLOAD</h3>
+
+          <ul class="footer-links mob-display-block">
+            <li class="lineheight-2-7">
+              <a href="https://itunes.apple.com/ae/app/khaleej-times/id909275381?mt=8" target="_blank">
+                <amp-img alt="apple"
+                         src="{{ get_stylesheet_directory_uri() }}/assets/images/apple.svg"
+                         width="19"
+                         height="24"
+                         layout="fixed"
+                ></amp-img>
+                iPhone | iPad
+              </a>
+            </li>
+            <li class="lineheight-2-7">
+              <a href="https://play.google.com/store/apps/details?id=com.khaleejtimes&hl=en" target="_blank">
+                <amp-img alt="android"
+                         src="{{ get_stylesheet_directory_uri() }}/assets/images/android.svg"
+                         width="19"
+                         height="24"
+                         layout="fixed"
+                ></amp-img>
+                Android
+              </a>
+            </li>
+            <li class="lineheight-2-7">
+              <a href="https://appgallery5.huawei.com/#/app/C101150783" target="_blank">
+                <amp-img alt="huawei"
+                         src="{{ get_stylesheet_directory_uri() }}/assets/images/huawei.svg"
+                         width="19"
+                         height="24"
+                         layout="fixed"
+                ></amp-img>
+                Huawei
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+     <!-- Logos -->
+      <div class="footer-logos-nf">
+        <a href="https://buzzon.khaleejtimes.com/" target="_blank"><amp-img alt="Buzzon" src="{{ get_stylesheet_directory_uri() }}/assets/images/buzzon.png" width="98" height="50" layout="responsive"></amp-img></a>
+      </div>
+      <div class="footer-logos-nf">
+        <a href="https://www.youngtimes.com/" target="_blank"><amp-img alt="Young Times" src="{{ get_stylesheet_directory_uri() }}/assets/images/yt.png" width="98" height="50" layout="responsive"></amp-img></a>
+      </div>
+      <div class="footer-logos-nf">
+        <a href="https://epaper.khaleejtimes.com" target="_blank"><amp-img alt="E-Paper" src="{{ get_stylesheet_directory_uri() }}/assets/images/epaper.png" width="98" height="50" layout="responsive"></amp-img></a>
+      </div>
+      <div class="footer-logos-nf">
+        <a href="/lifestyle"><amp-img alt="Lifestyle" src="{{ get_stylesheet_directory_uri() }}/assets/images/wknd.png" width="80" height="41" layout="responsive"></amp-img></a>
+      </div>
+      <div class="footer-logos-nf">
+        <a href="https://buzzon.khaleejtimes.com/ad-category/jobs-vacancies/" target="_blank"><amp-img alt="KT Jobs" src="{{ get_stylesheet_directory_uri() }}/assets/images/ktjobs.png" width="98" height="50" layout="responsive"></amp-img></a>
+      </div>
+      <div class="footer-logos-nf">
+        <a href="https://subscriptions.khaleejtimes.com/home/subscription" target="_blank"><amp-img alt="subscribe" src="{{ get_stylesheet_directory_uri() }}/assets/images/subscribe.png" width="98" height="50" layout="responsive"></amp-img></a>
+      </div>
+      <div class="footer-logos-nf">
+        <a href="/competitions" target="_blank"><amp-img alt="competitions" src="{{ get_stylesheet_directory_uri() }}/assets/images/competitions.png" width="98" height="50" layout="responsive"></amp-img></a>
+      </div>
+    </div>
+  </div>
+</footer>
+

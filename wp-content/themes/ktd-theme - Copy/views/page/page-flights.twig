@@ -1,0 +1,122 @@
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+  <main>
+    <div class="single">
+      <div class="container ">
+        <div class="row">
+          <div class="col-12 col-lg-9">
+            <div class="airport-listing">
+              <!-- Heading -->
+              <div class="row">
+                <div class="col-12 section-header">
+                  <h1 class="section-title text-uppercase font-weight-bold bordered-left">GCC Airport Flight Departures / Arrivals</h1>
+                </div>
+              </div>
+
+              <!-- Flights Menu -->
+              <div class="row">
+                <div class="col-12">
+                  <div class="filter">
+                    <ul class="sub-menu" data-id="country">
+                      {% for slug, title in flights.menu %}
+                        <li class="sub-menu-item {{ page.post_name == slug ? 'active' : '' }}">
+                          <a href="/flight-arrival-departures/{{ slug }}">{{ title }}</a>
+                        </li>
+                      {% endfor %}
+                      <li class="sub-menu-item {{ page.post_name == 'flight-arrival-departures-status' ? 'active' : '' }}">
+                        <a href="/flight-arrival-departures-status">Search Flights</a>
+                      </li>
+                    </ul>
+                    <ul id="country" class="mobile-sub-menu shadow-sm"></ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Flights Sub Menu -->
+              {% if flights.all|length > 1 %}
+                <div class="row">
+                  <div class="col-12">
+                    <div class="filter border-none">
+                      <ul class="sub-menu" data-id="city">
+                        <li class="sub-menu-item">
+                          OTHER LOCATIONS:
+                        </li>
+                        {% for slug in flights.all %}
+                          <li class="sub-menu-item">
+                            <a href="/flight-arrival-departures/{{ slug }}">{{ slug|replace({'-': ' '}) }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                      <ul id="city" class="mobile-sub-menu shadow-sm"></ul>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+
+              <!-- iFrame -->
+              <div class="row">
+                <div class="col-12">
+                  <iframe id="ifrm"
+                    src="{{ flights.iframe }}"
+                    width="100%"
+                    height="{{ page.post_name == 'flight-arrival-departures-status' ? '400px' : '620px' }}"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            <!-- /78059622/Responsive-Section-Leaderboard-2 -->
+            <div id='div-gpt-ad-1613547811534-0'>
+              <script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613547811534-0'); });
+              </script>
+            </div>
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="col-12 col-lg-3">
+            {{ render_sidebar("default-sidebar") }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Aviation News -->
+    <div class="aviation-news">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="row no-gutters">
+              <div class="section-header col">
+                <h5 class="section-title text-uppercase font-weight-bold bordered-left">Aviation News</h5>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12">
+                {{ the_content() }}
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+    </div>
+
+    <!-- Ad 970x250 -->
+    <div class="billboard-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto mx-auto">
+            <!-- /78059622/Responsive-Section-Leaderboard-1 -->
+            <div id='div-gpt-ad-1613546905867-0'>
+              <script>
+                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613546905867-0'); });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

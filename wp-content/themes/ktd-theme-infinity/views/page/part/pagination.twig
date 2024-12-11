@@ -1,0 +1,15 @@
+{% if links %}
+  <div class="pagination-inline">
+    <nav aria-label="navigation">
+      <ul class="pagination">
+        {% for link in links %}
+          <li class="page-item{% if link.active %} active{% endif %}{% if not link.url %} disabled{% endif %}">
+             <a class="page-link" href="{% if link.pagenumber==1 %} {{link.page}} {%else%}{{ link.url }} {%endif%}"{% if not link.url %} disabled aria-disabled="true"{% endif %}>
+              {{ link.text }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+{% endif %}

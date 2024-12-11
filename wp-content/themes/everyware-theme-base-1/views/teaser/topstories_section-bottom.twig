@@ -1,0 +1,35 @@
+<article class="topstories_section_bottom" data-uuid="{{ uuid }}" data-comment-id="{{ comment_id }}">
+    <div class="row">
+            
+            <div class="entry-title frontpagefeaturedtop-bottom-title mobile col-sm-12 d-md-none">
+                <a href="{{ permalink }}">
+                    {% include "@base/teaser/partial/headline.twig" %}
+                </a>
+            </div>
+
+            <div class="frontpagefeaturedtop teaser-image {% if featured_top_bottom_image_position == 'left' %}col-md-6 left-image{% endif %} 
+                {% if featured_top_bottom_image_position == 'right' %}col-md-6 order-2 right-image{% endif %}
+                {% if featured_top_bottom_image_position == 'above' %}col-md-12{% endif %}">
+                 <a href="{{ permalink }}">
+                    {% if image %}
+                        {% set image = image|merge({ 'image_endpoint_url': image_endpoint_url }) %}
+                        <div class="teaser__image">
+                            {{ render_partial('@base/teaser/partial/image', image) }}
+                        </div>
+                    {% elseif image_uuid %}
+                        <div class="teaser__image">
+                            <img src="{{ image_endpoint_url }}/?uuid={{ image_uuid }}&function=hardcrop&type=preview&source=false&width=600&height=450">
+                        </div>
+                    {% endif %}
+                 </a>
+            </div>
+
+            <div class="entry-title frontpagefeaturedtop-bottom-title d-none d-md-block {% if featured_top_bottom_image_position == 'left' %}col-md-6 right-headline{% endif %} 
+                {% if featured_top_bottom_image_position == 'right' %}col-md-6 order-1 left-headline{% endif %}
+                {% if featured_top_bottom_image_position == 'above' %}col-md-12{% endif %}">
+                <a href="{{ permalink }}">
+                    {% block headline %}{% include "@base/teaser/partial/headline.twig" %}{% endblock %}
+                </a>
+            </div>
+    </div>
+</article>

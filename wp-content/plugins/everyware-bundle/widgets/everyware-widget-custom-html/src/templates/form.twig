@@ -1,0 +1,11 @@
+{% extends '@projectPlugin/components/admin.twig' %}
+
+{% block form_header %}{% endblock %}
+
+{% block form %}
+  <div class="form-group">
+    <label for="{{ content.id() }}">Content {{ form.tooltip(translate('Html content of the widget', textdomain))|raw }}</label>
+    {{ form.textarea(content, { class:'form-control', rows: 10 })|raw }}
+    {{ form.input('hidden', title )|raw }}
+  </div>
+{% endblock %}

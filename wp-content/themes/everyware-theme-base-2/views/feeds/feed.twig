@@ -1,0 +1,20 @@
+{% apply spaceless %}
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <rss version="2.0"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:dcterms="http://purl.org/dc/terms/"
+         xmlns:media="http://search.yahoo.com/mrss/"
+         xmlns:atom="http://www.w3.org/2005/Atom">
+        <channel>
+            <title>{{ title }}</title>
+            <description>{{ description }}</description>
+            <link>{{ link }}</link>
+            <atom:link href="{{ link }}" rel="self" type="application/rss+xml" />
+            {% block feed %}
+                {% for item in articles %}
+                    {{ item|raw }}
+                {% endfor %}
+            {% endblock %}
+        </channel>
+    </rss>
+{% endapply %}

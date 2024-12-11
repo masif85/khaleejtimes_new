@@ -1,0 +1,28 @@
+{% if images %}
+  <div class="photo-slider">
+    <div id="gallery-top-{{ uuid }}" class="swiper-container gallery-top">
+      <div class="swiper-wrapper">
+        {% set counter = 0 %}
+        {% for image in images %}
+          {% set counter = counter + 1 %}
+          <div class="swiper-slide" data-hash="slide{{ counter }}" data-title="" data-subtitle="{{ image.text|replace({'"':'\''})|raw }}">
+            <img class="img-fluid" srcset="{{ image.srcset }}" src="{{ image.src }}" alt="{{ image.alttext }}">
+          </div>
+        {% endfor %}
+      </div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <div id="gallery-thumbs-{{ uuid }}" class="swiper-container gallery-thumbs">
+      <div class="swiper-wrapper">
+        {% for image in images %}
+          <div class="swiper-slide">
+            <img class="img-fluid" srcset="{{ image.srcset }}" src="{{ image.src }}" alt="{{ image.alttext|replace({'"':'\''}) }}">
+          </div>
+        {% endfor %}
+      </div>
+      <div class="slide-captions"></div>
+    </div>
+  </div>
+{% endif %}

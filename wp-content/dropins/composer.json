@@ -1,0 +1,45 @@
+{
+    "name": "infomaker/everyware-drop-in-plugins",
+    "description": "Contains a couple of files required by wordpress and a cache plugin.",
+    "version": "0.3.0",
+    "type": "wordpress-dropin",
+    "homepage": "https://docs.infomaker.io/everyware/",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Erik Vasquez Petersson",
+            "email": "erik.vasquez.petersson@navigaglobal.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Claes Tillborg",
+            "email": "claes.tillborgjo@navigaglobal.com",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.infomaker.io"
+        },
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "everyware/wordpress-mu-domain-mapping": "~0.1"
+    },
+    "require-dev": {
+        "wpackagist-plugin/redis-cache": "2.0.12"
+    },
+    "scripts": {
+        "cp-redis-dropin": "php -r \"shell_exec('cp -vf ./wp-content/plugins/redis-cache/includes/object-cache.php ./');\"",
+        "post-update-cmd": [
+            "@cp-redis-dropin"
+        ],
+        "post-install-cmd": [
+            "@cp-redis-dropin"
+        ]
+    }
+}

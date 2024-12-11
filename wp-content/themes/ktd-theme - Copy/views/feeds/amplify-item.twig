@@ -1,0 +1,77 @@
+{%- if articles is iterable -%}
+    {% for article in articles %}
+        <item>
+            {% if article.teaser_headline %}
+                <title><![CDATA[{{ article.teaser_headline }} ]]></title>
+            {% endif %}
+            {% if article.section_parent %}
+                <articlecatagory>{{ article.section_parent }}</articlecatagory>
+            {% else %}
+                <articlecatagory>{{ article.section}}</articlecatagory>
+            {% endif %}
+            {% if article.pubdate %}
+                <pubDate>{{ article.pubdate|date("r") }}</pubDate>
+            {% endif %}
+            {% if article.permalink %}
+                <link>{{ article.permalink }}</link>
+            {% endif %}
+            {% if article.uuid %}
+                <guid isPermaLink="false">{{ article.uuid }}</guid>
+            {% endif %}
+            {% if article.teaser_body %}
+                <description><![CDATA[{{article.teaser_body }}]]></description>
+            {% endif %}
+            {% if article.contentsubtype %}
+                <type>{{ article.contentsubtype|capitalize }}</type>
+            {% endif %}
+            {% if article.authors %}
+                {% for author in article.authors %}
+                    <author><![CDATA[{{ author.name }} ]]></author>
+                {% endfor %}
+            {% endif %}
+            {% if article.authors is empty and article.author_byline %}
+                <author>{{ article.author_byline }}</author>
+            {% endif %}
+
+            {% if article.contentsubtype == 'ARTICLE' %}
+                {% if article.section %}
+                    <articlesubcatagory>{{ article.section }}</articlesubcatagory>
+                {% endif %}
+                {% if article.teaser_image_uuids %}
+                    {% for image  in  article.teaser_image_uuids %}
+                        <enclosure url="{{ image_endpoint_url }}/?uuid={{ image }}&amp;function=original&amp;type=preview" length="0" type="image/jpeg" />
+                    {% endfor %}
+                {% else %}
+                    <enclosure url="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/03170252/default_490x276.jpg" length="0" type="image/jpeg" />
+                {% endif %}
+            {% endif %}
+
+            {% if article.contentsubtype == 'VIDEO' %}
+                {% if article.teaser_image_uuids %}
+                    {% for image  in  article.teaser_image_uuids %}
+                        <enclosure url="{{ image_endpoint_url }}/?uuid={{ image }}&amp;function=hardcrop&amp;type=preview&amp;width=480" type="image/jpeg"/>
+                    {% endfor %}
+                {% else %}
+                    <enclosure url="https://www.dailymotion.com/thumbnail/video/{{ article.videoid }}" type="image/jpeg"/>
+                {% endif %}
+                <media:content url="https://www.dailymotion.com/embed/video/{{ article.videoid }}?autoplay=1" type="image/jpeg">
+                    <media:description><![CDATA[{{article.teaser_body }}]]></media:description>
+                    <media:copyright>Khaleej Times</media:copyright>
+                </media:content>
+            {% endif %}
+
+            {% if article.contentsubtype == 'GALLERY' %}
+                {% if article.teaser_image_uuids %}
+                    {% for image  in  article.teaser_image_uuids %}
+                        {% if loop.first %}
+                            <enclosure url="{{ image_endpoint_url }}/?uuid={{ image }}&amp;function=original&amp;type=preview" length="0" type="image/jpeg" />
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <enclosure url="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/03170252/default_490x276.jpg" length="0" type="image/jpeg" />
+                {% endif %}
+            {% endif %}
+
+        </item>
+    {% endfor %}
+{%- endif -%}

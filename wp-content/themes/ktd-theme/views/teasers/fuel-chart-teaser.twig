@@ -1,0 +1,46 @@
+{% apply spaceless %}        
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js"></script>
+<canvas id="line-chart" width="800" height="450"></canvas>
+<script>
+jQuery.noConflict();
+jQuery(document).ready(function() {
+   new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: [{{fuelchart[0]['chartjs_year']|raw}}],
+    datasets: [
+	{% for fuels in fuelchart %}	
+	{ 
+        data: [{{fuels['chartjs']}}],
+        label: "{{fuels['type']}}",
+        borderColor: "{{fuels['color']}}",
+        fill: false
+      },
+	  {% endfor %}
+    ]
+  },
+ options: {
+  responsive: true,
+  maintainAspectRatio: false,
+    title: {
+      display: true,
+      text: 'UAE Fuel Price History (AED per Litre)'
+    },
+	 scales: {
+            y: {
+                ticks: {
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, ticks) {
+                        return 'AED ' + value.toFixed(1);
+                    }
+                }
+            }
+        }
+  }
+});
+});
+</script>
+
+	
+{% endapply %}

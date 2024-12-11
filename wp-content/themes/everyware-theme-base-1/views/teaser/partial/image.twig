@@ -1,0 +1,9 @@
+{% if teaser_source %}
+    {% if teaser_source == 'section_teaser_one_columns' %}
+        <img src="{{ image_endpoint_url }}/?uuid={{ uuid }}&function=hardcrop&type=preview&source=false&width=500&height=300">
+    {% elseif teaser_source == 'section_teaser_two_columns' %}
+        <img src="{{ image_endpoint_url }}/?uuid={{ uuid }}&function=hardcrop&type=preview&source=false&width=500&height=300">
+    {% endif %}
+{% else %}
+    <img src="{{ image_endpoint_url }}/?uuid={{ uuid }}&function=hardcrop&type=preview&source=false&width=600&height=450">
+{% endif %}

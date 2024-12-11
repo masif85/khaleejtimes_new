@@ -1,0 +1,19 @@
+{% apply spaceless %}
+  <!-- Special teaser image -->
+   <a href="{{ permalink }}">
+  <div data-uuid="{{ uuid }}" class="page-takeover centered"{% if image %} style="background: url('{{ render_partial('@base/teasers/partial/image-url', image) }}') no-repeat center center;background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;"{% endif %}>
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-6 offset-lg-3">
+        <div class="takeover">
+          <article class="post takeover-post" style="width: 630px; height: 472.5px;" data-uuid="{{ uuid }}">
+            <div class="post-thumbnail">
+              <div class="icon-overlay icon-2">
+                {% include '@base/teasers/partial/icons.twig' %}
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div></a>
+{% endapply %}

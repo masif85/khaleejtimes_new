@@ -1,0 +1,11 @@
+{% apply spaceless %}
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for month in period|sort|reverse %}
+    <sitemap>
+      <loc>{{ domain }}/sitemap/{{ type }}/{{ month.format('Y/m') }}</loc>
+      <lastmod>{{ month.endOfMonth().isFuture() ? "now"|date("Y-m-d\\TH:i:m\\Z") : month.endOfMonth()|date("Y-m-d\\TH:i:m\\Z") }}</lastmod>
+    </sitemap>
+  {% endfor %}
+</sitemapindex>
+{% endapply %}

@@ -1,0 +1,6 @@
+{% if component.Description %}
+	<div class="plugin-description"><p>{{ component.Description }}</p></div>
+	<div class="{% if component.Active %}active{% else %}inactive{% endif %} second plugin-version-author-uri">Version&nbsp;{{ component.Version|default('0.0.1') }}{% if component.AuthorName %} | {{ translate('Av ', text_domain) }}{% if component.AuthorURI %}
+			<a href="{{ component.AuthorURI }}">{{ component.AuthorName }}</a>{% else %}{{ component.AuthorName }}{% endif %}{% endif %}{% if component.PluginURI %} |
+			<a href="{{ component.PluginURI }}">{{ translate('Besök webbplats', text_domain) }}</a>{% endif %}</div>
+{% endif %}

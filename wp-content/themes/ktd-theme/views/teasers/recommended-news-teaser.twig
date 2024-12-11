@@ -1,0 +1,65 @@
+{% apply spaceless %}
+  <!-- side-by-side teaser -->
+  {% for item in items %}
+    <article class="post left-image-right-content" data-uuid="{{ item.uuid }}">
+      {% if item.image %}
+        <div class="post-thumbnail">
+          <a href="{{ item.permalink }}">
+            {# {{ render_partial('@base/teasers/partial/image', item.image|merge({ 'alttext': item.headline|striptags|replace({'"':'\''}) })) }} #}
+            <img src="{{item.image}}">
+          </a>
+        </div>
+      {% endif %}
+      <div class="entry-container ">
+        <div class="entry-header">
+          {% if item.sectionName %}
+            <p class="category-btn"></p>
+          {% endif %}
+          {# {% include '@base/teasers/partial/headline.twig' %} #}
+          <h2 class="post-title"><a href="{{ item.permalink }}">{{ item.headline }}</a></h2>
+          
+        </div>
+        <div class="entry-summary">
+          {% if item.teaserbody %}
+            <p class="post-summary">{{ item.teaserbody|striptags }}</p>
+          {% endif %}
+          {# {% include '@base/teasers/partial/leadin.twig' %} #}
+          <p class="category">
+            {% if item.sectionName %}
+              {# {% include '@base/teasers/partial/concept.twig' %} #}
+            {% endif %}
+              {# {% include '@base/teasers/partial/date.twig' %} #}
+            {# {% include '@base/teasers/partial/icons.twig' %} #}
+            {% if item.contentsubtype %}
+              <span>
+                {% if item.contentsubtype == 'GALLERY' %}
+                <i class="fas fa-camera text-color-blue photo-icon"></i>
+                {% elseif item.contentsubtype == 'LIVE' %}
+                <i class="fas fa-play text-color-blue photo-icon"></i>
+                {% elseif item.contentsubtype == 'VIDEO' %}
+                <i class="fas fa-video text-color-blue live-icon"></i>
+                {% elseif item.contentsubtype == 'PODCAST' %}
+                <i class="fas fa-microphone text-color-blue audio-icon"></i>
+                {% endif %}
+              </span>
+            {% endif %}
+        {% if tealiumGroup=='coronavirus' %}
+        <span class="reading-time">
+          <i>
+          <span class="reading-time__label" data-rt-uuid="{{ item.uuid }}"></span>
+          <span class="reading-time__duration" data-rt-uuid="{{ item.uuid }}"></span>
+          <span class="reading-time__word-count" data-rt-uuid="{{ item.uuid }}"></span>
+          </i>
+        </span>	
+        <script>
+          document.addEventListener('DOMContentLoaded', (event) => {
+              new ReadingTime(270, 'Reading time:', 'min', 'words', 'Less than a minute','{{ uuid }}');
+          })
+        </script>
+      {%endif%}			
+          </p>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+{% endapply %}

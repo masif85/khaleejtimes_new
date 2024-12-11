@@ -1,0 +1,26 @@
+{% apply spaceless %}
+  {% set rand=random(0, 1000) %}
+  <!-- trending-news-teaser-netcore search-->      
+  <div class="trending-wrap">
+            <div class="sidebar-title line">
+              <span>Trending Stories</span>
+            </div>
+             {% for item in entire %}
+            <article class="trending">
+              <div class="post-title-rows">
+                {% if item.properties.image %}
+                <div class="thumb-with-image image-zoom"> <a href="{{ item.properties.link }}" class="g4a_amn_track_sidebar">
+                <img src="{{item.properties.image|replace({'original': "cropresize"})}}&source=false&q=75&crop_w=0.99999&crop_h=0.9&{{get_image_type(item.properties.image,200) }}&x=1.0E-5&y=0.05" style="aspect-ratio: 2 / 1.4;"> </a>
+                      </div>
+                 {% endif %} 
+                <div class="heading">
+                  <h4> <a href="{{ item.properties.link }}" class="g4a_amn_track_sidebar" title="{{ item.properties.title|raw }}">{{ item.properties.title|raw }}</a> </h4>
+                </div>
+              </div>
+            </article>
+            {% endfor %}
+          </div>         
+{% endapply %}
+
+
+

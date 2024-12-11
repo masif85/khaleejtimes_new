@@ -1,0 +1,44 @@
+.ew-article-list {
+    @include article-list;
+}
+
+ol[class*="__content"] {
+  padding: 0;
+  list-style: none;
+  counter-reset: step-counter;
+  margin-bottom: 0;
+
+  li {
+    display: flex;
+    counter-increment: step-counter;
+
+    article a {
+      padding-left: 0;
+    }
+
+    article {
+      width: 100%;
+      border-bottom: $border-solid-faded;
+      margin-bottom: 0;
+      padding-top: 0;
+    }
+
+    &:last-child article {
+      border-bottom: 0;
+    }
+  }
+}
+
+.row {
+  &.media-section,
+  &.full-black-container {
+    .ew-article-list {
+      @include article-list-dark;
+    }
+    ol[class*="__content"] {
+      article {
+        border-color: $dark-border-color-faded;
+      }
+    }
+  }
+}

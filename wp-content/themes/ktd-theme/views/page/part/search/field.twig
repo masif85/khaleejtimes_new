@@ -1,0 +1,14 @@
+ {% if paramQ %}
+  <div class="recent"> 
+  <!-- <span>{{ paginator.getStart() + 1 }}-{{ paginator.currentTotal() }} of about {{ paginator.total }} Results</span>       -->
+<span>Showing {{ paginator.total }} results</span>
+   <h1 class="small">Search results for ‘{{ paramQ }}’ </h1>   
+  </div>
+{% endif %}
+<div class="search-wrap">
+  
+    <div class="input-group mb-3">     
+      <input type="text" class="form-control searchpage-bar" name="q" value="{{ paramQ }}" placeholder="Results: {{ paramQ }}" >
+      <button type="submit" class="btn btn-outline-secondary">Search</button>
+    </div>
+  </div>

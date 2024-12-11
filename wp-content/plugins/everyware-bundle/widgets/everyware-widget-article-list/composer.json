@@ -1,0 +1,45 @@
+{
+    "name": "infomaker/everyware-widget-article-list",
+    "description": "This package contains the files for the `Article List plugin`. An optional plugin for presenting articles from Open Content.",
+    "version": "0.5.0",
+    "type": "everyware-widget",
+    "homepage": "https://navigaglobal.com",
+    "license": "GPL-3.0-or-later",
+    "support": {
+        "docs": "https://docs.navigaglobal.com/everyware/widgets-and-components/everyware-widget-article-list",
+        "source": "https://composer.infomaker.io/#infomaker/everyware-widget-article-list"
+    },
+    "authors": [
+        {
+            "name": "Naviga Web Team",
+            "homepage": "https://www.navigaglobal.com/web/"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.infomaker.io/"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "infomaker/everyware-project-plugin": "~0.10",
+        "infomaker/everyware": "^2.0"
+    },
+    "require-dev": {
+        "johnpbloch/wordpress-core": "^4.9",
+        "roave/security-advisories": "dev-master",
+        "phpspec/phpspec": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Everyware\\Widget\\ArticleList\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spec\\": "tests/Spec/"
+        }
+    }
+}

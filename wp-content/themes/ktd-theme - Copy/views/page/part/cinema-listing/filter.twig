@@ -1,0 +1,13 @@
+<ul class="sub-menu " data-id="{{ filter_id }}">
+  {% for target, label in filter %}
+    {% if target %}
+      {% set query = {(filter_id): target} %}
+    {% else %}
+      {% set query = {} %}
+    {% endif %}
+    <li class="sub-menu-item">
+      <a href="{{ url ? add_query_arg(query, url) : '#' }}" data-target="{{ target }}" class="{{ class }} {% if target == current_filter %}active{% endif %}">{{ label }}</a>
+    </li>
+  {% endfor %}
+</ul>
+<ul id="{{ filter_id }}" class="mobile-sub-menu shadow-sm"></ul>

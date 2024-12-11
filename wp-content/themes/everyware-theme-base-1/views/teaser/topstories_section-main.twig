@@ -1,0 +1,64 @@
+<article class="topstories_section_main" data-uuid="{{ uuid }}" data-comment-id="{{ comment_id }}">
+	<div class="container">
+    	<div class="row">
+
+            <div class="entry-title frontpagefeaturedtop mobile d-md-none">
+                <a href="{{ permalink }}">{% include "@base/teaser/partial/headline.twig" %}</a>
+            </div>
+
+            <div class="teaser-image {% if featured_top_image_position == 'right' %}col-md-8 order-2 image_right{% elseif featured_top_image_position == 'left' %}col-md-8 image_left {% else %}col-md-12 image_above{% endif %}">
+                <a href="{{ permalink }}">
+                    {% if image %}
+                        {% set image = image|merge({ 'image_endpoint_url': image_endpoint_url }) %}
+                        <div class="teaser__image">
+                            {{ render_partial('@base/teaser/partial/image', image) }}
+                        </div>
+                    {% elseif image_uuid %}
+                        <div class="teaser__image">
+                            <img src="{{ image_endpoint_url }}/?uuid={{ image_uuid }}&function=hardcrop&type=preview&source=false&width=600">
+                        </div>
+                    {% endif %}
+                </a>
+            </div>
+
+            <div class="teaser-content {% if featured_top_image_position == 'right' %}col-md-4 order-1 image_right{% elseif featured_top_image_position == 'left' %}col-md-4 image_left {% else %}col-md-12 image_above{% endif %}">
+                    
+                <div class="entry-title frontpagefeaturedtop d-none d-lg-block">
+                    <a href="{{ permalink }}">{% block headline %}{% include "@base/teaser/partial/headline.twig" %}{% endblock %}</a>
+                </div>
+
+                
+                {% if featured_top_main_show_text == 'true' %}
+                    <div class="teaser-body frontpagefeaturedtop">
+                        {% if text %}
+                            {{ text }}
+                        {% elseif leadin %}
+                            {% block leadin %}{% include "@base/teaser/partial/leadin.twig" %}{% endblock %}
+                        {% else %}
+                            {{ story_text|striptags|slice(0, 100) ~ '...' }}
+                        {% endif %}
+                    </div>
+                {% endif %}
+            
+                <div class="row frontpagefeaturedtop-meta-data">
+
+                    {% if featured_top_main_show_author == 'true' %}
+                        <div class="frontpagefeaturedtop-main-author col-md-6 col-6">
+                            {% for author in authors %}
+                                {% if loop.first %}By {{ author.name }}{% else %}, {{ author.name }}{% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {% if featured_top_main_show_since_published == 'true' %}
+                        <div class="frontpagefeaturedtop-time col-md-6 col-6">{{ time_diff }} ago</div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</article>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19.4" height="24.507" viewBox="0 0 19.4 24.507">
+  <g id="android" transform="translate(-53.35 0.001)">
+    <g id="Group_418" data-name="Group 418" transform="translate(57.434 9.191)">
+      <g id="Group_417" data-name="Group 417">
+        <path id="Path_212" data-name="Path 212" d="M149.4,192.034H139.194a.511.511,0,0,0-.511.511v8.168a2.557,2.557,0,0,0,2.042,2.5v2.6a1.532,1.532,0,0,0,3.063,0v-2.553h1.021v2.553a1.532,1.532,0,0,0,3.063,0v-2.6a2.556,2.556,0,0,0,2.042-2.5v-8.168A.51.51,0,0,0,149.4,192.034Z" transform="translate(-138.683 -192.034)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Group_420" data-name="Group 420" transform="translate(57.434 -0.001)">
+      <g id="Group_419" data-name="Group 419" transform="translate(0 0)">
+        <path id="Path_213" data-name="Path 213" d="M146.972,2.72l.861-2.008a.51.51,0,0,0-.938-.4l-.861,2.009a5.564,5.564,0,0,0-3.465,0L141.705.31a.51.51,0,1,0-.937.4l.861,2.008a5.62,5.62,0,0,0-2.945,4.939.511.511,0,0,0,.511.511h10.211a.511.511,0,0,0,.511-.511A5.621,5.621,0,0,0,146.972,2.72Zm-4.714,3.407a.511.511,0,1,1,.511-.511A.511.511,0,0,1,142.258,6.127Zm4.084,0a.511.511,0,1,1,.511-.511A.511.511,0,0,1,146.342,6.127Z" transform="translate(-138.684 0.001)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Group_422" data-name="Group 422" transform="translate(69.687 9.191)">
+      <g id="Group_421" data-name="Group 421" transform="translate(0)">
+        <path id="Path_214" data-name="Path 214" d="M396.216,192.034a1.533,1.533,0,0,0-1.532,1.532v5.105a1.532,1.532,0,1,0,3.063,0v-5.105A1.533,1.533,0,0,0,396.216,192.034Z" transform="translate(-394.684 -192.034)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Group_424" data-name="Group 424" transform="translate(53.35 9.191)">
+      <g id="Group_423" data-name="Group 423">
+        <path id="Path_215" data-name="Path 215" d="M54.882,192.034a1.533,1.533,0,0,0-1.532,1.532v5.105a1.532,1.532,0,0,0,3.063,0v-5.105A1.533,1.533,0,0,0,54.882,192.034Z" transform="translate(-53.35 -192.034)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

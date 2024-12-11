@@ -1,0 +1,132 @@
+<!-- <div class="sticky-header-wrap sticky-div"> -->
+<header class="primary-top mob-mb-nf">
+  <div class="container text-center ">
+    <div class="row align-items-start nav-top">
+      <div class="col search-col">
+        <div class="row justify-content-start">
+          <ul class="left-side-search">
+            <!--<li><a href="#"><img src="images/icons/burger-menu-bar.svg"></a></li>-->
+            <li>
+            <nav><span id="ham-burger-menu-ctn-top">
+              <ul style="padding:0px;"><li class="ham-burger-menu-bars"></li></ul>
+              </span></nav>
+            </li>
+            <!--<li><a href="#"> <img src="images/icons/search.svg"> <i class="fa fa-search"></i> </a></li>-->
+      <li><a href="/search" class="search-top-bt-openBtn" onclick="openSearch();event.preventDefault()"> <img src="{{ get_stylesheet_directory_uri() }}/assets/images/search-lat-fin-nf-new4.svg" alt="search in Khaleej Times" width="25" height="25"></a> </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Modal -->      
+      <div id="myOverlay" class="search-top-bt-overlay"> <span class="closebtn" onclick="closeSearch()" title="Close Overlay"><img loading="lazy" src="/images/icons/close-button-search.svg"></span>
+        <div class="search-top-bt-overlay-content">
+          <form name="searchform" id="searchform" action="/search">
+            <input type="text" id="search" placeholder="Type here to search news, photos, videos..." name="q" autofocus>
+            <button type="submit">SEARCH</button>
+          </form>
+        </div>
+      </div>
+      <div class="col lang-col">
+        <ul class="menu">
+          <li class="menu-item"> <a href="#">English</a>
+            <ul class="drop-menu">
+              <li class="drop-menu-item arabic-version"> <a href="https://www.khaleejtimes.com/arabic" target="_new">عربي  </a> </li>
+
+              <!-- <li class="drop-menu-item"> <a href="#">Hindi</a> </li>
+                   <li class="drop-menu-item"> <a href="#">Tamil</a> </li> -->
+            </ul>
+          </li>
+          
+        </ul>
+
+        <!-- <ul class="menu">
+          <li class="menu-item"> <a href="#">English</a>
+            <ul class="drop-menu">
+              <li class="drop-menu-item"> <a href="#">Arabic</a> </li>
+              <li class="drop-menu-item"> <a href="#">Hindi</a> </li>
+              <li class="drop-menu-item"> <a href="#">Tamil</a> </li>
+            </ul>
+          </li> -->
+          <!-- <li class="menu-item"><a href="#">Arabic</a></li>
+            <li class="menu-item"><a href="#">Hindi</a></li>
+            <li class="menu-item"><a href="#">Tamil</a></li> --> 
+          <!--<li><a href="#">Malayalam</a></li> -->
+          
+       <!-- </ul> -->
+
+        <select name="languages" aria-label="State" onchange="javascript:handleSelect(this)">
+          <option value="english">English</option>
+          <option class="arabic-mob" value="https://www.khaleejtimes.com/arabic/">عربي  </option>
+         <!-- <option value="hindi">Hindi</option>
+          <option value="Tamil">Tamil</option> -->
+        </select>
+      </div>
+      <div class="col log-col">
+        <div class="row justify-content-end">
+               <ul class="epaper-sign-in-bt" id="userhandler">
+            <li><a href="https://epaper.khaleejtimes.com/?utm_source=website&amp;utm_medium=icon&amp;utm_campaign=epaperclick"><img src="/images/icons/e-paper.svg" alt="epaper icon" width="13" height="17">E-Paper</a></li>            
+            <li id="MG2login" data-mg2-action="login"><a href="#"> <img src="/images/icons/sign-in.svg" alt="ktsignin icon" width="13" height="15">Sign In</a></li>
+
+
+             <li data-mg2-action="hideloggedout" id="MG2Detail" style="display: none;">
+                <div class="dropdown">
+                  <a href="/uae" type="button"  onclick="engageDropdownHandler();event.preventDefault()" class="dropbtn dropdown-toggle auth0_user"><span id="MG2UserName" class="auth0_user " style="display: none;">Hi, <span class="has-spinner"><span class="spinner"><i class="fa fa-spinner fa-spin" style="color:white"></i></span> </span></span></a>
+                        <div id="engageDropdown" class="dropdown-menu">
+                            <!-- <a href="" id="MG2MyAccount" target="_blank">My Account</a> 
+                            <a href="https://subscriptions.khaleejtimes.com/" target="_blank">Subscriptions</a>-->
+                            <a class="dropdown-item" href="/mykt">My KT</a>
+                           <!-- <a class="dropdown-item" href="/trading">Trading</a> -->
+                            <a  class="dropdown-item" href="/contact-us">Contact Us</a>
+                            <a class="dropdown-item" href="/privacy-notice">Privacy Notice</a>
+                            <a class="dropdown-item" href="#" id="MG2logout" data-mg2-action="logout">Sign Out</a>
+                        </div>
+                    </div>
+                </li>          
+
+                </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% set check_nas=get_url_param('nas') %}
+  <!-- nas:- {{check_nas}} -->
+  {% if (every_device=='mobile') or (check_nas=="true") %} 
+    <!-- Burger Nav Start | {{check_nas}}-->
+    {% include "@base/page/nav/burger-menu.twig" %}  
+    <!-- Burger Nav Ends --> 
+  {% endif %}
+  <div class="container text-center mt-2 mb-2 logo-container-nf">
+    <div class="row align-items-start">
+      <div class="col align-items-center"> <a href="/" class="standard-logo"> <!--<img src="images/khaleej-times-logo.svg" alt="khaleejtimes" width="300" height="70" /> -->         
+        <img src="https://www.khaleejtimes.com/wp-content/themes/ktd-theme/assets/images/khaleej-times-logo.svg" width="300" height="70" alt="khaleej times logo"> </a>
+        <div class="calendar-new">
+          <div class="header-left-column calendar-container">
+            <p class="calendar"> {{get_hijri_date()}} | <span> <i class="weather-new">DXB</i> 
+      <img src="/images/icons/weather-sun.svg" class="wicon" alt="ktweather icon" width="23" height="17"  onerror="console.log(this.src); this.src ='/images/icons/weather-sun.svg'; console.log(this.src);"><span class="cweather" style="display: inline-block;min-width: 18px;">0{#get_weather()#}</span>°C </span> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+ <span class="mweather">
+ <script>
+  jQuery.ajax({url: "https://api.khaleejtimes.com/home/get_weather",
+   type: "GET",
+   dataType: "json",
+   success: function (result) { 
+    jQuery(".wicon").attr("src","/images/icons/"+result.type);
+    jQuery({ Counter: 0 }).animate({ Counter: result.temperature }, {
+    duration: 1000,
+    easing: 'swing',
+    step: function (now) {
+
+      jQuery(".cweather").text(Math.ceil(now));
+    }
+    }); 
+   jQuery(".mweather").remove();}});
+ </script>
+ </span>
+<!-- Top Menu -->
+{% include "@base/page/nav/top-menu.twig" %}
+<!-- END Top Menu -->
+</header>

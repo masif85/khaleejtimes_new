@@ -1,0 +1,60 @@
+{% if page_request != '/calendar/' %}
+	{% if start_set and articlesCount > 0  and start_value != 0 %}
+		<div class="section-pagination">
+			<nav aria-label="section-pagination">
+				<ul class="pagination">
+					<li class="page-item">
+							<a class="page-link" href="{{ page_request_noquery }}?{% if searchPage == true %}uuid={{ uuid }}&{% endif %}start={{ previous_start }}" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+							<span class="sr-only">Previous</span>
+						</a>
+					</li>
+					<li class="page-item"><a class="page-link" href="{{ page_request_noquery }}?{% if searchPage == true %}uuid={{ uuid }}&{% endif %}start={{ previous_start }}">{{ previous_link }}</a></li>
+					<li class="page-item activepage"><a class="page-link" href="{{ page_request_noquery }}?start={{ next_start }}">{{ page_number }}</a></li>
+						{% if articlesCount > 9 and searchPage == false %}
+							<li class="page-item"><a class="page-link" href="{{ page_request_noquery }}?start={{ next_start }}">{{ next_link}}</a></li>
+							<li class="page-item">
+							<a class="page-link" href="{{ page_request_noquery }}?start={{ next_start + 10 }}" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+								<span class="sr-only">Next</span>
+							</a>
+							</li>
+						{% endif %}
+						{% if currPage_articleCount > 9 and searchPage == true %}
+							<li class="page-item"><a class="page-link" href="{{ page_request_noquery }}?{% if searchPage == true %}uuid={{ uuid }}&{% endif %}start={{ next_start }}">{{ next_link}}</a></li>
+							<li class="page-item">
+							<a class="page-link" href="{{ page_request_noquery }}?{% if searchPage == true %}uuid={{ uuid }}&{% endif %}start={{ next_start + 10 }}" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+								<span class="sr-only">Next</span>
+							</a>
+							</li>
+						{% endif %}
+						</ul>					
+				</nav>
+		</div>
+	{% elseif articlesCount == 0 %}
+		<p>There is no article content for this page.</p>
+	{% else %}
+	<div class="section-pagination">
+		<nav aria-label="section-pagination">
+			<ul class="pagination">
+				<li class="page-item activepage"><a class="page-link" href="{{ page_request_noquery }}?{% if searchPage == true %}uuid={{ uuid }}&{% endif %}">1</a></li>
+					{% if articlesCount > 10 %}
+						<li class="page-item"><a class="page-link" href="{{ page_request_noquery }}?{% if searchPage == true %}uuid={{ uuid }}&{% endif %}start=10">2</a></li>
+					{% endif %}
+					{% if articlesCount > 20 %}
+						<li class="page-item"><a class="page-link" href="{{ page_request_noquery }}?{% if searchPage == true %}uuid={{ uuid }}&{% endif %}start=20">3</a></li>
+					{% endif %}
+					{% if articlesCount > 10 %}
+						<li class="page-item">
+							<a class="page-link" href="{{ page_request_noquery }}?{% if searchPage == true %}uuid={{ uuid }}&{% endif %}start=10" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+								<span class="sr-only">Next</span>
+							</a>
+						</li>
+					{% endif %}
+			</ul>								
+		</nav>
+	</div>
+	{% endif %}
+{% endif %}

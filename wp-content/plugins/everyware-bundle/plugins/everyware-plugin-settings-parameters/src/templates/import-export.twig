@@ -1,0 +1,20 @@
+<div id="import-export__wrapper">
+	<div class="btn-group pull-right" role="group" aria-label="import/export buttons">
+		<button class="import__btn btn btn-success btn-sm"><i class="fa fa-download"></i> {{ translate('Import settings', text_domain) }}</button>
+		<button class="export__btn btn btn-primary btn-sm"><i class="fa fa-upload"></i> {{ translate('Export settings', text_domain) }}</button>
+	</div>
+
+	<div class="export__wrapper import-export__wrapper">
+		<p class="description">{{ translate('This is a json version of the list and may be used for merging this data into another site.', text_domain) }}</p>
+		<textarea id="export__textarea" class="form-control import-export__textarea" rows="10">{{ export }}</textarea>
+	</div>
+
+	<div class="import__wrapper import-export__wrapper">
+		<p class="description">{{ translate('The imported data will be merged with existing data. Duplicate data may be overwritten.', text_domain) }}</p>
+		<form method="post" action="{{ import_form_action }}" id="import-settings-parameters">
+			<textarea id="import__textarea" name="{{ field_name }}" class="form-control import-export__textarea" rows="10">
+		</textarea>	
+			<input type="submit" name="import-submit" class="btn btn-primary btn-sm pull-right" value="{{ translate('Import', text_domain) }}"/>
+		</form>
+	</div>
+</div>

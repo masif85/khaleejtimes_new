@@ -1,0 +1,58 @@
+{
+    "name": "infomaker/everyware-plugin-network",
+    "description": "Collection of neccessary startup code",
+    "version": "0.3.0",
+    "homepage": "https://www.infomaker.se",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Jonathan Nilsson",
+            "email": "jonathan.nilsson@navigaglobal.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Claes Tillborg",
+            "email": "claes.tillborg@navigaglobal.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Erik Vasquez Petersson",
+            "email": "erik.vasquez.petersson@navigaglobal.com",
+            "role": "Developer"
+        }
+    ],
+    "type": "everyware-mu-plugin",
+    "config": {
+        "sort-packages": true
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://composer.infomaker.io/"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "infomaker/everyware-base": "~0.9"
+    },
+    "require-dev": {
+        "johnpbloch/wordpress-core": "^4.9",
+        "roave/security-advisories": "dev-master",
+        "phpspec/phpspec": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Everyware\\Plugin\\Network\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spec\\": "tests/Spec/"
+        }
+    }
+}

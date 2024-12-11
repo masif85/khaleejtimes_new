@@ -1,0 +1,123 @@
+// Floating image in boards
+
+.content-size-lg-12,
+.content-size-lg-11,
+.content-size-lg-10,
+.content-size-lg-9,
+.content-size-lg-8,
+.content-size-lg-7 {
+  //.teaser--article-default {
+  //	.teaser__container {
+  //		float: left;
+  //		width: 40%;
+  //	}
+  //
+  //	.teaser__image {
+  //		float: right;
+  //		width: 60%;
+  //	}
+  //}
+}
+
+.content-size-md-2,
+.content-size-lg-2 {
+  .teaser--article-default {
+    .teaser__container {
+      margin: 5px;
+    }
+
+    .teaser__image {
+      margin: 5px;
+    }
+  }
+}
+
+// Teaser default styles
+
+.teaser.teaser--article-default {
+
+  .teaser__container {
+    padding-right: $single-gutter-width;
+  }
+
+  .teaser__image .figure {
+    margin: 0;
+  }
+}
+
+.teaser--article-default {
+
+  .teaser {
+
+    &__image .figure {
+      margin: 0;
+    }
+  }
+
+  .figure-img {
+    margin: 0;
+  }
+}
+
+// Title for board content size
+//@include content-size-title(article-default, 12, 36px, 1.25, 24px, 20px);
+//@include content-size-title(article-default, 11, 32px, 1.25, 24px, 20px);
+//@include content-size-title(article-default, 10, 32px, 1.25, 24px, 20px);
+//@include content-size-title(article-default, 9, 24px, 1.25, 20px, 18px);
+//@include content-size-title(article-default, 8, 24px, 1.25, 20px, 18px);
+//@include content-size-title(article-default, 7, 24px, 1.25, 20px, 18px);
+//@include content-size-title(article-default, 6, 24px, 1.25, 20px, 18px);
+//@include content-size-title(article-default, 5, 24px, 1.25, 20px, 18px);
+//@include content-size-title(article-default, 4, 18px, 1.25, 20px, 18px);
+//@include content-size-title(article-default, 3, 18px, 1.25, 20px, 18px);
+//@include content-size-title(article-default, 2, 18px, 1.25, 20px, 18px);
+//@include content-size-title(article-default, 1, 18px, 1.25, 20px, 18px);
+
+
+@include from-board-content-up(md) {
+  .teaser--article-default {
+    .teaser {
+      &__headline {
+        font-size: $teaser-title-font-size-sm;
+      }
+    }
+  }
+}
+
+@include from-board-content-up(lg) {
+  .teaser--article-default {
+    .teaser {
+      &__headline {
+        font-size: $teaser-title-font-size-md;
+        line-height: 1.2;
+      }
+    }
+
+    &.teaser--with-image {
+      .teaser {
+        &__container {
+          float: left;
+          width: 40%;
+          padding-right: $single-gutter-width;
+        }
+
+        &__image {
+          float: right;
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .content-size-lg-12 {
+    .teaser--article-default {
+      .teaser {
+        &__headline {
+          font-size: $teaser-title-font-size-lg;
+        }
+      }
+    }
+  }
+}

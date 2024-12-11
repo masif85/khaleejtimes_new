@@ -1,0 +1,169 @@
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+<div class="container">
+  <div class="row">
+  
+  <div class="container">
+  <section class="kt-section-top">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 col-12 listing-blog-left-side-content">
+
+        <div class="listing-blog-teaser-outer">
+
+        <article class="listing-top-main-teaser">
+                   <div class="article-wrapper author-detail-lead">
+
+          <div class="row author-wrapper-box">
+            {% if avatar %}
+              <div class="col-lg-3 col-md-3 order-lg-1 author-photo">
+                <img src="{{ avatar }}" alt="{{ name }}"/>
+              </div>
+            {% else %}
+              <div class="col-lg-3 col-md-3 order-lg-1 author-photo">
+               <img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2024/10/08160659/avatar-default-img.jpg" alt="{{ name }}"/>
+              </div>
+            {% endif %}
+
+            <div class="col-lg-9 col-md-9 order-lg-2 align-items-center">
+              <h1 class="section-title text-uppercase font-weight-bold">{{ name }}</h1>
+
+  <ul class="author-box-contact-info">
+                {% if meta_data.email %}
+                  <li>
+                    <img src="/images/mail.svg" alt="">
+                    <a href="mailto:{{ meta_data.email }}">{{ meta_data.email }}</a>
+                  </li>
+                {% endif %}
+                {% if meta_data.phone %}
+                  <li>
+                    <i class="fas fa-phone-alt"></i> {{ meta_data.phone }}
+                  </li>
+                {% endif %}
+              </ul>
+              
+            {% if description %}
+             <p class="more">
+                 {{ description }}
+              </p>
+             <!-- <p id="shrinkMe" class="shrinkable">{{ description }}</p> -->
+            {%endif%}
+              <ul class="author-box-social-icons">
+                {% if related_links.facebook %}
+                  <li>
+                    <a href="{{ related_links.facebook }}">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                {% endif %}
+                {% if related_links.twitter %}
+                  <li>
+                    <a href="{{ related_links.twitter }}">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                {% endif %}
+                {% if related_links.linkedin %}
+                  <li>
+                    <a href="{{ related_links.linkedin }}">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </li>
+                {% endif %}
+              </ul>
+
+            
+            </div>
+
+          </div>
+        </div>
+          </article>
+  
+      
+          {% if articles is not empty %}
+<div class="articlesblock">
+                {% for article in articles %}
+
+                    {{ render_partial('@base/teasers/standard-subsection-teaser-author.twig', article) }}
+           {% if loop.index == 3 %}
+           <!-- googleoff: index -->
+           <div id="adsolut-listing"></div>
+           <!-- googleon: index -->
+           {% endif %}
+                  {% if loop.index == 6 %}
+                    <div class="mpu-ad-unit ad-unit">
+                      <!-- /78059622/Responsive-Section-Leaderboard-2 -->
+                      <!-- <div id='div-gpt-ad-1613547811534-0'>
+                        <script>
+                          googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613547811534-0'); });
+                        </script>
+                      </div> -->
+                      <!-- Tag ID: khaleejtimes_Responsive-Section-Leaderboard-2 -->
+                      <div align="center" data-freestar-ad="__320x100 __728x90" id="khaleejtimes_Responsive-Section-Leaderboard-2">
+                        <script data-cfasync="false" type="text/javascript">
+                          freestar.config.enabled_slots.push({ placementName: "khaleejtimes_Responsive-Section-Leaderboard-2", slotId: "khaleejtimes_Responsive-Section-Leaderboard-2" });
+                        </script>
+                      </div>
+                    </div>
+                  {% endif %}
+
+                {% endfor %}
+</div>
+              {% endif %}
+<div class="nextresults"></div>
+   
+      {% if articles|length > 9 %}
+       <div class="button-wrap">
+
+        <a id="load-mores" class="load-more-button-listing" data-page_number="2"><span class="spinner-border spinner-border-sm data-load" style="display:none;" role="status" aria-hidden="true"></span> Load More <i class="fas fa-angle-down"></i></a> </div>
+      {% endif %}
+
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 col-md-12 listing-blog-sidebar">
+        <div class="article-right-sidebar">
+ {{ render_sidebar("default-sidebar") }}
+   </div>
+      </div>
+    </div>
+    </section>
+    </div>
+    </div>
+  
+</div>
+<script>
+jQuery(document).ready(function() {
+    var showChar = 280;
+    var ellipsestext = "...";
+    var moretext = "More <i class='fas fa-angle-right'></i>";
+    var lesstext = "Less";
+    jQuery('.more').each(function() {
+        var content = jQuery(this).html();
+
+        if(content.length > showChar) {
+            var c = content.substr(0, showChar);
+            var h = content.substr(showChar, content.length - showChar);
+            var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span><a href="" class="morelink">' + moretext + '</a></span>';
+
+            jQuery(this).html(html);
+        }
+
+    });
+
+    jQuery(".morelink").click(function(){
+        if(jQuery(this).hasClass("less")) {           
+            jQuery(this).removeClass("less");
+            jQuery(this).html(moretext);
+        } else {
+            jQuery(this).addClass("less");
+
+            jQuery(this).html(lesstext);
+        }
+        jQuery(this).parent().prev().toggle();
+        jQuery(this).prev().toggle();
+        return false;
+    });
+});
+</script>
+{% endblock %}
+

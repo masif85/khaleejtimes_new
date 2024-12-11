@@ -1,0 +1,21 @@
+{% apply spaceless %}
+  <!-- home page top teaser -->
+
+           <div  class="main-top-teaser-content" data-uuid="{{ uuid }}">
+              <div class="row">
+               {% if image %}
+                <div class="col-lg-6 col-md-6">
+                  <div class="post-title-rows">
+                    <div class="thumb-with-image image-zoom"> <a href="{{ permalink }}" title="{{headline}}">
+                     {{ render_partial('@base/teasers/partial/image', image|merge({ 'alttext': headline|striptags|replace({'"':'\''}) })) }} </a> </div>
+                  </div>
+                </div>
+                 {% endif %}
+                <div class="col-lg-6 col-md-6">
+                  <h1><a href="{{ permalink }}" title="{{headline}}">{{headline|striptags|replace({'"':'\''}) }} </a> </h1>
+                  <p><a href="{{ permalink }}">{{teaserbody}}</a></p>
+                </div>
+              </div>
+            </div>
+
+{% endapply %}

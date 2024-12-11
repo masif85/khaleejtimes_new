@@ -1,0 +1,23 @@
+
+<style>
+body {padding:3em;background-color:#ccc;}
+</style>
+
+<script>
+
+var github = 'https://api.khaleejtimes.com/json/syncdata2.php',
+    div = document.getElementsByTagName('div')[0];
+
+request = new XMLHttpRequest();
+request.open('GET', github, true);
+
+request.onload = function() {
+    data = JSON.parse(request.responseText);
+    div.innerHTML = data.items[0].html_url;
+};
+
+
+request.send();
+</script>
+
+<div></div>

@@ -1,0 +1,49 @@
+// Teaser Image Bottom styles
+
+.teaser--article-headline,
+.teaser--article-image-bottom {
+  .teaser {
+    &__link {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__headline {
+      font-size: $teaser-title-font-size-md;
+    }
+
+    &__image {
+      order: 1;
+      margin-top: 10px;
+    }
+  }
+}
+
+// Different styles for larger content sizes.
+@include from-board-content-up(5) {
+  .teaser--article-headline,
+  .teaser--article-image-bottom {
+    .teaser__headline {
+      font-size: $teaser-title-font-size-lg;
+      line-height: $teaser-title-line-height-sm;
+    }
+  }
+}
+
+@include from-board-content-up(6) {
+  .teaser--article-headline,
+  .teaser--article-image-bottom {
+    .teaser__headline {
+      font-size: $teaser-title-font-size-xl;
+    }
+  }
+}
+
+@include from-board-content-up(7) {
+  .teaser--article-headline,
+  .teaser--article-image-bottom {
+    .teaser__headline {
+      font-size: $teaser-title-font-size-xxl;
+    }
+  }
+}

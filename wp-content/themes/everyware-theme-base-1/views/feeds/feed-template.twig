@@ -1,0 +1,31 @@
+<item>
+      <title>{{ article.headline|raw|escape }}</title>
+      <link>{{ article.permalink|raw }}</link>
+      <author>{% if article.authors %}{% for author in article.authors %}{% if article.byline %}{{ article.byline }} | {% endif %}{{ author.name }}{% endfor%}{% elseif article.byline %}{{ article.byline|raw }}{% endif %}</author>
+      <pubDate>{{ article.pubdate|date("D, d M Y G:i:s") }} GMT</pubDate>
+      <guid isPermaLink="false">{{ article.uuid }}</guid>
+      <keywords>{{ article.tags|raw|striptags }}</keywords>
+      <summary>{{ article.leadin }}</summary>
+      {% if article.pageType != 'video' and article.pageType != 'gallery' %}
+      {% for image in article.rss_image_data %}
+      {% if image.uuid %}
+      <media:content type="image/jpg" url="{{ image_endpoint_url }}/?uuid={{ image.uuid }}&amp;function=original&amp;type=preview">
+         <title>{{ image.caption }}</title>
+         <caption>{{ image.caption }}</caption>
+      </media:content>
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+      {% if article.pageType == 'gallery' %}
+      {% for image in article.rss_gallery_image_data %}
+      {% if image.uuid %}
+      <media:content type="image/jpg" url="{{ image_endpoint_url }}/?uuid={{ image.uuid }}&amp;function=original&amp;type=preview">
+         <title>{{ image.caption }}</title>
+         <caption>{{ image.caption }}</caption>
+      </media:content>
+      {% endif %}
+      {% endfor %}            
+      {% endif %}
+      {% if article.pageType == 'video' %}<media:content medium="video" url="{% for videodata in article.videoData %}{{ videodata.url }}{% endfor %}"/>{% endif %}
+      <description><![CDATA[{{ article.story_text|striptags('<br><p><element><a>')|raw }}{% if article.pageType == 'story' and article.videoData %}{% for videodata in article.videoData %}<embed type="oembed">{{ videodata.url }}</embed>{% endfor %}{% endif %}{% if article.pageType == 'story' and article.rss_htmlembed_data %}{% for rss_htmlembed_data in article.rss_htmlembed_data %}<embed type="raw">{{ rss_htmlembed_data.htmlembed|replace({'<text>':"", '</text>': ""})|replace({'<![CDATA[':"", ']]\>': ""})|raw }}</embed>{% endfor %}{% endif %}]]></description>
+</item>

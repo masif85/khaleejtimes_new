@@ -1,0 +1,12 @@
+// Global icludes teasers for all
+@import 'global';
+
+// Teaser by type overwrites
+@import 'article-default';
+@import 'article-headline';
+@import 'article-medium';
+@import 'article-small';
+@import 'article-large';
+@import 'article-below';
+@import 'photo-gallery';
+@import 'article-notice';

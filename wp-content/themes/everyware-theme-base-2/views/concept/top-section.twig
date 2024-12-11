@@ -1,0 +1,30 @@
+{# Evaluate if the articles variable is iterable #}
+{% if articles is iterable %}
+    <div class="row align-items-stretch">
+        {% for article in articles %}
+            <div class="{{ render_classes([
+                'col-12',
+                'col-sm-6',
+                'col-lg-3',
+                'page__top--section--teaser'
+            ]) }}">
+                <div class="{{ render_classes([
+                    'rendered_board_article',
+                    'content-size-xs-12',
+                    'content-size-sm-6',
+                    'content-size-md-6',
+                    'content-size-lg-3',
+                    loop.index == 2 or loop.index == 4 ? 'divide-left-sm-up' : '',
+                    loop.index == 3 ? 'divide-left-lg-up' : ''
+                ]) }}">
+                    {{ render_partial('@base/teasers/article-default.twig', article) }}
+                </div>
+            </div>
+            {% if loop.index == 2 %}
+                <div class="col-12 d-lg-none">
+                    <hr class="row-divider-md">
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

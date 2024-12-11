@@ -1,0 +1,18 @@
+{% apply spaceless %}
+  <!-- recommended-news-teaser-netcore homepage--> 
+  {% for item in items %}
+                  <article class="top-list-thumb-stories">
+                    <div class="post-title-rows">
+             {% if item.properties.image %}
+                <div class="thumb-with-image image-zoom"> <a href="{{ item.properties.link }}"><img src="
+{{item.properties.image|replace({'original': "cropresize"})}}&source=false&q=75&crop_w=0.99999&crop_h=0.9&{{get_image_type(item.properties.image,200) }}&x=1.0E-5&y=0.05" style="aspect-ratio: 2 / 1.4;"> </a>
+                      </div>
+
+             {% endif %}              
+                      <div class="heading">
+                        <h4> <a href="{{ item.properties.link }}"> {{ item.properties.title|raw }}</a> </h4>
+                      </div>
+                    </div>
+                  </article>  
+  {% endfor %}        
+{% endapply %}

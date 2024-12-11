@@ -1,0 +1,12 @@
+// Bootstrap variables with base theme colors
+// ======================================================
+
+// Colors from style guide
+$primary: #35276c;
+$secondary: #7a6640;
+
+$section-colors: (
+    default: #a596fa
+);
+
+@import '../../../everyware-theme-base-2/assets/scss/style';

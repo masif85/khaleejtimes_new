@@ -1,0 +1,58 @@
+{% if pageCount > 1 %}
+    <div class="concepts-pagination__container">
+        <ul class="concepts-pagination__list">
+
+            <li class="concepts-pagination__list-item">
+                {% if currentPage > 2 %}
+                    <a class="btn btn-primary" href="{{ pageUrl }}&paged=1"
+                       title="{{ translations.settingsPage.pagination.first }}">&lt;&lt;</a>
+                {% else %}
+                    <button class="btn btn-default" disabled>&lt;&lt;</button>
+                {% endif %}
+            </li>
+
+            <li class="concepts-pagination__list-item">
+                {% if currentPage > 1 %}
+                    <a class="btn btn-primary" href="{{ pageUrl }}&paged={{ currentPage - 1 }}"
+                       title="{{ translations.settingsPage.pagination.prev }}">&lt;</a>
+                {% else %}
+                    <button class="btn btn-default" disabled>&lt;</button>
+                {% endif %}
+            </li>
+
+            <li class="concepts-pagination__list-item">
+                <form action="{{ pageUrl }}" method="get">
+                    {% for name,value in currentQueryParams %}
+                        <input type="hidden" name="{{ name }}" value="{{ value }}">
+                    {% endfor %}
+                    <button type="submit"
+                            class="btn btn-default">{{ translations.settingsPage.pagination.submit }}</button>
+                    <div class="concepts-pagination__input-group">
+                        <input type="number" min="1" max="{{ pageCount }}" name="paged" class="form-control"
+                               placeholder="1-{{ pageCount }}"
+                               value="{{ currentPage }}">
+                        <div class="input-group-addon">of {{ pageCount }}</div>
+                    </div>
+                </form>
+            </li>
+
+            <li class="concepts-pagination__list-item">
+                {% if currentPage < pageCount %}
+                    <a class="btn btn-primary" href="{{ pageUrl }}&paged={{ currentPage + 1 }}"
+                       title="{{ translations.settingsPage.pagination.next }}">&gt;</a>
+                {% else %}
+                    <button class="btn btn-default" disabled>&gt;</button>
+                {% endif %}
+            </li>
+
+            <li class="concepts-pagination__list-item">
+                {% if currentPage < pageCount - 1 %}
+                    <a class="btn btn-primary" href="{{ pageUrl }}&paged={{ pageCount }}"
+                       title="{{ translations.settingsPage.pagination.end }}">&gt;&gt;</a>
+                {% else %}
+                    <button class="btn btn-default" disabled>&gt;&gt;</button>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+{% endif %}

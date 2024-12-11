@@ -1,0 +1,41 @@
+{% if isFirstImage %}
+<!-- object: firstimage -->
+{% else %}
+<!-- object: image -->
+{% endif %}
+
+{% set showoriginal = 0 %}
+{% for flag in flags %}
+  {% if 'disableAutomaticCrop' in flag %}
+    {% set showoriginal = 1 %}
+  {% endif %}
+{% endfor %}
+
+
+
+<div class="article-lead-img-pan">
+    {% if showoriginal == 1 %}
+      <amp-img src="{% if showoriginal == 1 %}{{ fitSrc }}{% else %}{{ src }}{% endif %}"
+               width="540"
+               height="{{ (height * (540 / width)) |round }}"
+               layout="responsive"
+               alt="{% if alttext %}{{ alttext|striptags|replace({'"':'\''}) }}{% elseif text %}{{ text|striptags|replace({'"':'\''}) }}{% else %}{{ teaser_headline|replace({"\n":'', "\r":'', '"':'\''})|raw }}{% endif %}"></amp-img>
+
+    {% else %}
+      <amp-img src="{% if showoriginal == 1 %}{{ fitSrc }}{% else %}{{ src }}{% endif %}"
+               width="540"
+               height="301"
+               layout="responsive"
+               alt="{% if alttext %}{{ alttext|striptags|replace({'"':'\''}) }}{% elseif text %}{{ text|striptags|replace({'"':'\''}) }}{% else %}{{ teaser_headline|replace({"\n":'', "\r":'', '"':'\''})|raw }}{% endif %}"></amp-img>
+    {% endif %}
+</div>
+
+<!-- Adgebra AMP in-image start -->
+
+
+
+<!-- Adgebra AMP in-image end -->
+
+<div class="article-lead-img-caption">
+  {{ text|raw }}
+</div>

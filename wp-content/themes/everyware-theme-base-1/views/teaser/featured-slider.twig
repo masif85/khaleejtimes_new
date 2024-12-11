@@ -1,0 +1,28 @@
+<div class="row">
+
+    <div class="entry-title frontpage-slider col-md-12 {% if featured_slider_headline_location == 'above'%}above order-1{% else %}below order-2{% endif %}">{% block headline %}{% include "@base/teaser/partial/headline.twig" %}{% endblock %}</div>
+    
+    {% if image %}
+        {% set image = image|merge({ 'image_endpoint_url': image_endpoint_url }) %}
+        <div class="teaser-image frontpagecategoryblock col-md-12 {% if featured_slider_headline_location == 'above'%}order-2{% else %}order-1{% endif %}">
+            {{ render_partial('@base/teaser/partial/image', image) }}
+        </div>
+    {% elseif image_uuid %}
+        <div class="teaser-image frontpagecategoryblock col-md-12 {% if featured_slider_headline_location == 'above'%}order-2{% else %}order-1{% endif %}">
+            <img src="{{ image_endpoint_url }}/?uuid={{ image_uuid }}&function=hardcrop&type=preview&source=false&width=620&height=400">
+        </div>
+    {% endif %}
+    
+    {% if featured_slider_caption_display == 'true' %}
+        <div class="summary-frontpage-slider col-md-12 order-3">
+            {% if text %}
+                {{ text }}
+            {% elseif leadin %}
+                {% block leadin %}{% include "@base/teaser/partial/leadin.twig" %}{% endblock %}
+            {% else %}
+                {{ story_text|striptags|slice(0, 190) ~ '...' }}
+            {% endif %}
+        </div>
+    {% endif %} 
+
+</div>

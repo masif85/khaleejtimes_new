@@ -1,0 +1,7 @@
+<div class="teaser-article-date">
+    {% if updated > pubdate %}
+        <div class="teaser-article-modifieddate">{{ modified_time_label }}{% if not modified_time_label == '' %} {% endif %}{{ updated|date(teaser_time_format, timezone_setting) }}</div>
+    {% else %}
+        <div class="teaser-article-pubdate">{{ published_time_label }}{% if not published_time_label == '' %} {% endif %}{{ pubdate|date(teaser_time_format, timezone_setting) }}</div>
+    {% endif %}
+</div> 

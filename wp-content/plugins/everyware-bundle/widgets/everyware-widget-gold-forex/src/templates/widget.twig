@@ -1,0 +1,13 @@
+{% apply spaceless %}
+  <div class="forex">
+    <h3>{{ title }}</h3>
+    {% for table in tables %}
+      {% set table = table|merge({'first': loop.first}) %}
+      {{ render_partial('@ew-gold-forex/' ~ template, table) }}
+    {% endfor %}
+    
+    {% if page_link %}
+      <h6>View all <a href="{{ page_link }}">Gold &amp; Forex</a></h6>
+    {% endif %}
+  </div>
+{% endapply %}

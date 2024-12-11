@@ -1,0 +1,51 @@
+<script>
+var articles_id = [];
+// setPageType Example
+
+window.monetateQ = window.monetateQ || [];
+window.monetateQ.push([
+  "setPageType","{% if currentPage.post_parent %}listing{% elseif tealiumGroup!='article' && tealiumGroup!='homepage' && tealiumGroup != 'searchpage'%}main{%else%}{{tealiumGroup}}{% endif %}"
+]{% if tealiumGroup == 'article' %},
+"addProductDetails", [{
+    productId: "pidString",
+    sku: "{{ uuid }}"
+  }]{%endif%}{% if tealiumGroup == 'page' ||  tealiumGroup == 'concept' ||  tealiumGroup == 'article'%},
+"addCategories", [{% if tealiumGroup == 'article' %}{% if sections %}{% for sectionzs in sections %}"{{ sectionzs.name }}"{% if loop.last == false %},{% endif %}{% endfor %}{% endif %}{% else %}"{{parentPostName}}"{%if currentPage.post_title%},"{{currentPage.post_title}}"{%endif%}{% endif %}]
+{%endif%}
+);
+{% if tealiumGroup != 'article' %}
+window.monetateQ.push([
+  "trackData"
+]);
+{%endif%}
+
+
+
+
+{% if tealiumGroup == 'article' %}
+
+
+// Sending Multiple to Monetate:
+var pushNewArticle = function(articleId){
+//articleId=articleId.split(",");
+  window.monetateQ = window.monetateQ || [];
+   window.monetateQ.push([
+     "setPageType",
+     "article"
+   ]);
+   articleId.map(a => {
+     window.monetateQ.push([
+      "addProducts", [{
+        "productId": a.replaceAll('-', ''),
+      }]
+     ]);
+   });
+   window.monetateQ.push([
+     "trackData"
+   ]);
+}
+//articles_stack.push("{{ uuid }}");
+pushNewArticle(["{{ uuid }}"]);		
+{%endif%}
+</script>
+

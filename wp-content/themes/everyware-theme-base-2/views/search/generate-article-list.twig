@@ -1,0 +1,18 @@
+{%- if articles is iterable -%}
+    <div class="row align-items-stretch">
+        {% for article in articles %}
+            <div class="col-12">
+                <div class="{{ render_classes([
+                    'rendered_board_article',
+                    'content-size-xs-12',
+                    'content-size-sm-12',
+                    'content-size-md-12',
+                    'content-size-lg-12',
+                    'divide-bottom-sm-up'
+                ]) }}">
+                    {{ render_partial('@base/teasers/article-large.twig', article) }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{%- endif -%}

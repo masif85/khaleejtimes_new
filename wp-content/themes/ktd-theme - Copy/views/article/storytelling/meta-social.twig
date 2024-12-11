@@ -1,0 +1,17 @@
+{% if oldGuid %}
+  {% set vuukleUid = oldGuid %}
+{% else %}
+  {% set vuukleUid = uuid|upper %}
+{% endif %}
+
+<hr class="gray-line vuukle-far-nf">
+<div class="reading-time">
+  <i>
+    <span class="reading-time__label" data-rt-uuid="{{ uuid }}"></span>
+    <span class="reading-time__duration" data-rt-uuid="{{ uuid }}"></span>
+    <span class="reading-time__word-count" data-rt-uuid="{{ uuid }}"></span>
+  </i>
+</div>
+<div class="vuukle-powerbar-{{ vuukleUid }}"></div>
+
+<hr class="gray-line vuukle-far-nf">

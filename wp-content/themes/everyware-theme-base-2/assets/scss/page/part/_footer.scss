@@ -1,0 +1,103 @@
+.footer {
+  font-family: $secondary-font-family;
+  background-color: $primary;
+  color: $white;
+  font-size: $font-size-xs;
+  h2,
+  h3 {
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  p {
+    font-size: $font-size-xs;
+  }
+  img {
+    padding-bottom: $grid-gutter-width;
+  }
+  ul,
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 5px 0;
+    }
+  }
+  a {
+    color: $white;
+  }
+  .footer-container__widget {
+    margin-top: -25px;
+    div.row:first-child() {
+      padding-top: $back-to-top-btn-margin * 2.0;
+      > div {
+        display: grid;
+        border-bottom: $border-solid-faded;
+        @include media-breakpoint-up(md) {
+            padding: 0 0 $grid-gutter-width 0;
+        }
+      }
+      @include media-breakpoint-up(md) {
+        .rendered_board_widget {
+          border-right: $border-solid-faded;
+        }
+      }
+    }
+    div.row:last-child() {
+      padding-top: $grid-gutter-width;
+      padding-bottom: $grid-gutter-width;
+    }
+    div.row {
+      > div:last-child() {
+        .rendered_board_widget {
+          border-right: none;
+        }
+      }
+      > div:first-child() {
+        padding-left: $single-gutter-width
+      }
+    }
+    @include media-breakpoint-up(md) {
+      .row {
+        border-right: $border-solid-faded;
+        border-left: $border-solid-faded;
+      }
+    }
+  }
+  &__container--button {
+    display: flex;
+    justify-content: flex-end;
+    @include media-breakpoint-up(md) {
+      padding: 0 $grid-gutter-width;
+    }
+    @include media-breakpoint-up(lg) {
+      padding: 0 30px;
+    }
+  }
+  .btn {
+    border-radius: $back-to-top-btn-radius;
+    padding: $back-to-top-btn-padding;
+    margin-top: -$back-to-top-btn-margin;
+    box-shadow: 0 2px 4px $nav-shadow-color;
+  }
+  .fa-arrow-up {
+    margin-left: 10px;
+    font-size: 17px;
+  }
+  .rendered_board_widget {
+    height: 100%;
+    padding: 15px 0;
+    @include media-breakpoint-up(md) {
+      padding: 0 $single-gutter-width;
+    }
+    @include media-breakpoint-up(lg) {
+      padding: 0 $grid-gutter-width;
+    }
+  }
+  .social-links {
+    a {
+      border: $border-solid-faded;
+      background-color: transparent;
+    }
+  }
+}

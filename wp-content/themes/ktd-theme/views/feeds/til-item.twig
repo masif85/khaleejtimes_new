@@ -1,0 +1,38 @@
+{%- if articles is iterable -%}
+    {% for article in articles %}
+        <item>
+
+            {% if article.headline %}
+                <title><![CDATA[{{ article.headline }} ]]></title>
+            {% endif %}
+            {% if article.pubdate %}
+                <pubDate>{{ article.pubdate|date("D, j M Y H:i:s +0530") }}</pubDate>
+            {% endif %}
+            {% if article.permalink %}
+                <link>{{ article.permalink }}</link>
+            {% endif %}
+            {% if article.uuid %}
+                <guid isPermaLink="false">{{ article.uuid }}</guid>
+            {% endif %}
+            {% if article.summary %}
+                <description><![CDATA[{{article.summary }}]]></description>
+            {% endif %}
+            {% if article.authors %}
+                {% for author in article.authors %}
+                    <dc:creator><![CDATA[{{ author.name }} ]]></dc:creator>
+                {% endfor %}
+            {% endif %}
+            {% if article.authors is empty and article.author_byline %}
+                <dc:creator>{{ article.author_byline }}</dc:creator>
+            {% endif %}
+            {% if article.body %}
+                <content:encoded><![CDATA[{{ article.body|raw }}]]></content:encoded>
+            {% endif %}
+            {% for image  in  article.images %}
+              <img src="{{ image_endpoint_url }}/?uuid={{ image.uuid }}&amp;function=original&amp;type=preview" class="type:primaryImage"/>
+            {% endfor %}
+        </item>
+    {% endfor %}
+{%- endif -%}
+
+

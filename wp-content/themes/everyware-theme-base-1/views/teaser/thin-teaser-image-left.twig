@@ -1,0 +1,60 @@
+<article class="teaser thin-teaser left {{ teaser_classes|default('teaser--standard') }}" data-uuid="{{ uuid }}" data-comment-id="{{ comment_id }}">
+    <div class="container">
+    	<div class="row">
+
+            <div class="teaser-image thin-teaser col-md-4 col-5">
+                <a href="{{ permalink }}">
+                    {% if image %}
+                        {% set image = image|merge({ 'image_endpoint_url': image_endpoint_url }) %}
+                        {{ render_partial('@base/teaser/partial/image', image) }}
+                    {% elseif image_uuid %}
+                        <img src="{{ image_endpoint_url }}/?uuid={{ image_uuid }}&function=hardcrop&type=preview&source=false&width=600&height=450">
+                    {% endif %}
+                </a>
+            </div>
+
+            <div class="teaser-content col-md-8 col-7">
+                <div class="row">
+                    {% if thin_teaser_category_display == 'true' %}
+                        <div class="teaser-thin-teaser-category">
+                            {% for category in categories %}
+                                {% if loop.first %}
+                                    {{ category.name }} 
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    {% if thin_teaser_time_display == 'true' %}
+                        <div class="teaser-thin-teaser-time">
+                            {% if thin_teaser_time_diff_display == 'true' %}
+                                {{ time_diff }} ago
+                            {% else %}
+                                {% block dateline %}
+                                    {% include "@base/teaser/partial/dateline.twig" %}
+                                {% endblock %}
+                            {% endif %}
+                        </div>
+                    {% endif  %}
+                </div>
+                <a href="{{ permalink }}"><div class="entry-title thin-teaser">{% block headline %}{% include "@base/teaser/partial/headline.twig" %}{% endblock %}</div></a>
+                <div class="teaser-body thin-teaser">
+                    {% if thin_teaser_summary_display == 'true' %}
+                        {% block leadin %}{% include "@base/teaser/partial/leadin-frontpage-category.twig" %}{% endblock %}
+                    {% endif %}
+                    {% if thin_teaser_author_display == 'true' and authors %}
+                        <span class="teaser-thin-teaser-author">
+                            {% for author in authors %}
+                                {% if loop.first %}
+                                    By {{ author.name }}
+                                {% else %}
+                                    , {{ author.name }}
+                                {% endif %}
+                            {% endfor %}
+                        </span>
+                    {% endif %}
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</article>

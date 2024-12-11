@@ -1,0 +1,391 @@
+@mixin border(
+  $viewport: xs,
+  $direction: down,
+  $border: $menu-expand-border,
+  $positions...
+) {
+  @if $direction == down {
+    @include media-breakpoint-down($viewport) {
+      @each $pos in $positions {
+        .border-#{$pos}-#{$viewport}-down {
+          #{'border-'+$pos}: $border;
+        }
+      }
+    }
+  } @else if $direction == up {
+    @include media-breakpoint-up($viewport) {
+      @each $pos in $positions {
+        .border-#{$pos}-#{$viewport}-up {
+          #{'border-'+$pos}: $border;
+        }
+      }
+    }
+  }
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin input-placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+  @include optional-at-root('::-ms-input-placeholder') {
+    @content;
+  }
+}
+
+@mixin links {
+  a,
+  a:link,
+  a:visited,
+  a:active {
+    @content;
+  }
+}
+
+// Set teaser content text sizes and line heights
+
+@mixin teaser-title($titleSize, $titleLine) {
+  font-size: $titleSize;
+  line-height: $titleLine;
+}
+
+// How to use
+// Teaser name, content size, title size, line height
+// @include content-size-title(article-small, md-6, 21px, 24px);
+
+@mixin content-size-title(
+  $teaserName,
+  $screen,
+  $titleSize,
+  $titleLine,
+  $titleTablet,
+  $titleMobile
+) {
+  .rendered_board_article {
+    &.content-size-xs-#{($screen)},
+    &.content-size-sm-#{($screen)},
+    &.content-size-md-#{($screen)},
+    &.content-size-lg-#{($screen)} {
+      .teaser--#{($teaserName)} {
+        .teaser__headline {
+          @include teaser-title($titleSize, $titleLine);
+          @include media-breakpoint-down(md) {
+            @include teaser-title($titleTablet, 1.1);
+          }
+          @include media-breakpoint-down(sm) {
+            @include teaser-title($titleMobile, 1.1);
+          }
+        }
+      }
+    }
+  }
+  .grid-divider-container {
+    &.grid-divider-item-#{($screen)} {
+      .teaser--#{($teaserName)} {
+        .teaser__headline {
+          @include teaser-title($titleSize, $titleLine);
+          @include media-breakpoint-down(md) {
+            @include teaser-title($titleTablet, 1.1);
+          }
+          @include media-breakpoint-down(sm) {
+            @include teaser-title($titleMobile, 1.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin content-size-leadin($teaserName, $screen, $titleSize, $titleLine) {
+  .rendered_board_article {
+    &.content-size-xs-#{($screen)},
+    &.content-size-sm-#{($screen)},
+    &.content-size-md-#{($screen)},
+    &.content-size-lg-#{($screen)} {
+      .teaser--#{($teaserName)} {
+        .teaser__leadin {
+          @include teaser-title($titleSize, $titleLine);
+        }
+      }
+    }
+  }
+  .grid-divider-container {
+    &.grid-divider-item-#{($screen)} {
+      .teaser--#{($teaserName)} {
+        .teaser__leadin {
+          @include teaser-title($titleSize, $titleLine);
+        }
+      }
+    }
+  }
+}
+
+// Image solution for boards
+
+@mixin teaser-floating-image($teaserName, $screen) {
+  .rendered_board_article {
+    &.content-size-xs-#{($screen)},
+    &.content-size-sm-#{($screen)},
+    &.content-size-md-#{($screen)},
+    &.content-size-lg-#{($screen)} {
+      .teaser--#{($teaserName)} {
+        .teaser__image {
+          float: none;
+          padding: 0;
+          width: 100%;
+          height: auto;
+        }
+
+        .teaser__container {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+// Hide teaser image in boards
+
+@mixin teaser-no-image($teaserName, $screenHide) {
+  .rendered_board_article {
+    &.content-size-xs-#{($screenHide)},
+    &.content-size-sm-#{($screenHide)},
+    &.content-size-md-#{($screenHide)},
+    &.content-size-lg-#{($screenHide)} {
+      .teaser--#{($teaserName)} {
+        .teaser__image {
+          float: none;
+          padding-left: 0;
+          display: none;
+          @include media-breakpoint-down(md) {
+            display: block;
+            float: right;
+            padding-left: $margin-article-small;
+          }
+        }
+
+        .teaser__container {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+// Board and teaser lines
+@mixin board-col($number) {
+  .board-col-lg-#{($number)} {
+    &::before {
+      content: '';
+      position: absolute;
+      background: $border-color;
+      height: 100%;
+      width: 1px;
+      left: 0;
+      top: 0;
+    }
+    .board-col-md-#{($number)} {
+      @include media-breakpoint-down(md) {
+        &::before {
+          content: '';
+          position: absolute;
+          background: $border-color;
+          height: 100%;
+          width: 1px;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+    .board-col-sm-#{($number)} {
+      @include media-breakpoint-down(sm) {
+        &::before {
+          content: '';
+          position: absolute;
+          background: $border-color;
+          height: 100%;
+          width: 1px;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+    &:first-child {
+      &::before {
+        width: 0;
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .board-col-sm-12 {
+      &::before {
+        width: 0;
+      }
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    .board-col-xs-12,
+    .board-col-xs-12,
+    .board-col-xs-0 {
+      &::before {
+        width: 0;
+      }
+    }
+  }
+}
+
+@mixin page-headline($color:$primary) {
+  font-family: $font-family-serif;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  line-height: 2;
+  @content;
+  @include headline-border($color);
+}
+
+@mixin headline-border($color:$primary) {
+  &::after {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 3px;
+    margin-top: 6px;
+    background-color: $color;
+  }
+}
+
+@mixin dividers() {
+  @each $name, $size in $grid-breakpoints {
+
+    @include media-breakpoint-up($name) {
+      .divide-top-#{$name}-up {
+        border-top: $divider;
+      }
+
+      .divide-bottom-#{$name}-up {
+        border-bottom: $divider;
+      }
+
+      .divide-right-#{$name}-up {
+        border-right: $divider;
+      }
+
+      .divide-left-#{$name}-up {
+        border-left: $divider;
+      }
+    }
+
+    @include media-breakpoint-down($name) {
+      .divide-top-#{$name}-down {
+        border-top: $divider;
+      }
+
+      .divide-bottom-#{$name}-down {
+        border-bottom: $divider;
+      }
+
+      .divide-right-#{$name}-down {
+        border-right: $divider;
+      }
+
+      .divide-left-#{$name}-down {
+        border-left: $divider;
+      }
+    }
+
+    @include media-breakpoint-only($name) {
+      .divide-top-#{$name} {
+        border-top: $divider;
+      }
+
+      .divide-bottom-#{$name} {
+        border-bottom: $divider;
+      }
+
+      .divide-right-#{$name} {
+        border-right: $divider;
+      }
+
+      .divide-left-#{$name} {
+        border-left: $divider;
+      }
+    }
+  }
+}
+
+@mixin negate-col-gutter() {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+@mixin header-link {
+  a {
+    color: inherit;
+  }
+
+  a:hover {
+    color: $link-hover-color;
+  }
+}
+
+@mixin article-list {
+  &__title {
+    border-bottom: 3px solid $secondary;
+    font-family: $font-family-serif;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    padding-bottom: $half-gutter-width;
+    margin-bottom: $half-gutter-width;
+
+    @include header-link;
+  }
+  &__container {
+    padding: $half-gutter-width;
+
+    .teaser {
+      padding: $half-gutter-width;
+
+      &__container {
+        padding: 0;
+      }
+      .teaser__image {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+  .teaser {
+    padding: $half-gutter-width 0;
+  }
+}
+
+// Override things in article-list, for a dark background.
+@mixin article-list-dark {
+    &__item::before {
+    color: $teaser-dark-title-color;
+  }
+  &__container {
+    background: $gray-900;
+
+    .teaser {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

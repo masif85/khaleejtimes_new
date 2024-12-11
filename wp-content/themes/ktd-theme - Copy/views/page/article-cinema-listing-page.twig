@@ -1,0 +1,109 @@
+{% extends '@base/main.twig' %}
+
+{% block page_head %}
+  {% include "@base/article/part/metatags.twig" %}
+{% endblock %}
+
+{% block page_stylesheets_scripts %}
+  {{ parent() }}
+  {% include "@base/article/part/first-impressions.twig" %}
+  <link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/swiper-bundle.min.css">
+{% endblock %}
+
+{% block page_content %}
+  <main>
+    <div class="single">
+      <div class="container ">
+        <div class="row">
+          <div class="col-12 col-lg-9">
+            <div class="row">
+              <div class="col-12 section-header d-flex justify-content-between">
+                <h1 class="section-title text-uppercase font-weight-bold bordered-left">
+                  UAE CINEMA LISTINGS
+                </h1>
+                <div class="movie-date">{{ date_control }}</div>
+              </div>
+            </div>
+            <div class="movie-listing-landing-page" data-uuid="{{ uuid }}">
+              <div class="row">
+                <div class="col-12">
+                  <article class="post movie-landing-page">
+                    <div class="movie-details">
+                      {% if mainImage %}
+                        <div class="post-thumbnail">
+                          {{ render_partial('@base/teasers/partial/image', mainImage) }}
+                        </div>
+                      {% endif %}
+                      <div class="entry-container">
+                        <div class="entry-header">
+                          <h2 class="post-title">{{ headline }}</h2>
+                        </div>
+                        <div class="entry-summary">
+                          <p class="post-label">
+                            <span class="rate">{{ cinemalisting_mpaa }}</span>
+                            <span class="sep">|</span>
+                            <span class="release-date">{{ pubdate|date("d F Y") }}</span>
+                          </p>
+                          <p class="category">
+                            {% if language_url %}
+                              <a href="{{ language_url }}" class="language">{{ cinemalisting_language|upper }}</a>
+                            {% else %}
+                              <span class="language">{{ cinemalisting_language|upper }}</span>
+                            {% endif %}
+                            {% if cinemalisting_rating %}
+                              <span class="rating">Ratings {{ cinemalisting_rating }}</span>
+                            {% endif %}
+                          </p>
+                          <p class="post-summary">{{ teaser_body }}</p>
+                        </div>
+                      </div>	
+                    </div>
+                    {% if trailer %}
+                      <div class="entry-content movie-preview">
+                        {{ trailer|raw }}
+                      </div>
+                    {% endif %}
+                    {% if gallery %}
+                      <div class="entry-content">
+                        <div class="photo-slider">
+                          {{ gallery|raw }}
+                        </div>
+                      </div>
+                    {% endif %}
+                  </article>
+                </div>
+              </div>
+
+              {% if embed %}
+                <div class="row">
+                  <div class="col-12 section-header">
+                    <h5 class="section-title text-uppercase font-weight-bold bordered-left mt-2 mb-4">Click on the below Cinema to book your tickets</h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    {{ embed|raw }}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+
+            {% include "@base/page/part/cinema-listing/cinemas.twig" %}
+
+            {% include "@base/page/part/ad.twig" with { ad_id: '1613480627440-0' } %}
+
+          </div>
+          <div class="col-12 col-lg-3 cinema-listing-sidebar">
+            {{ render_sidebar("cinema-listing-article-sidebar") }}
+          </div>
+        </div>
+      </div>
+    </div>  
+  </main>
+{% endblock %}
+
+{% block page_stylesheets_scripts_bottom %}
+  {% include "@base/page/part/stylesheets-scripts-bottom.twig" %}
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/swiper-bundle.min.js"></script>
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/article.js"></script>
+{% endblock %}

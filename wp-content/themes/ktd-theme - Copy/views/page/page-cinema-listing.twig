@@ -1,0 +1,24 @@
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+  <main>
+    <div class="single">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-9">
+            {% include "@base/page/part/cinema-listing/movie-listing.twig" %}
+
+            {% include "@base/page/part/ad.twig" with { ad_id: '1613546905867-0' } %}
+            
+            {% include "@base/page/part/cinema-listing/cinemas.twig" %}
+
+            {% include "@base/page/part/ad.twig" with { ad_id: '1613547811534-0' } %}
+          </div>
+          <div class="col-12 col-lg-3 cinema-listing-sidebar">
+            {{ render_sidebar("cinema-listing-sidebar") }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,11 @@
+{
+  "sortings": [{
+    "name": "PubDate",
+    "contentType": null,
+    "sortIndexFields": [{
+      "indexField": "Pubdate",
+      "ascending": "false"
+    }]
+  }],
+  "defaultSorting": "PubDate"
+}

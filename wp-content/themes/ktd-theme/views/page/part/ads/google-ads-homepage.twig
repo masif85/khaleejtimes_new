@@ -1,0 +1,102 @@
+<!--  Freestar scripts start 01May2024  -->
+<link rel="preconnect" href="https://a.pub.network/" crossorigin />
+<link rel="preconnect" href="https://b.pub.network/" crossorigin />
+<link rel="preconnect" href="https://c.pub.network/" crossorigin />
+<link rel="preconnect" href="https://d.pub.network/" crossorigin />
+<link rel="preconnect" href="https://c.amazon-adsystem.com" crossorigin />
+<link rel="preconnect" href="https://s.amazon-adsystem.com" crossorigin />
+<link rel="preconnect" href="https://btloader.com/" crossorigin />
+<link rel="preconnect" href="https://api.btloader.com/" crossorigin />
+<link rel="preconnect" href="https://cdn.confiant-integrations.net" crossorigin />
+
+<link rel="stylesheet" href="https://a.pub.network/khaleejtimes-com/cls.css">
+
+<script data-cfasync="false" type="text/javascript">
+  var freestar = freestar || {};
+  freestar.queue = freestar.queue || [];
+  freestar.config = freestar.config || {};
+  freestar.config.enabled_slots = [];
+  freestar.initCallback = function () { (freestar.config.enabled_slots.length === 0) ? freestar.initCallbackCalled = false : freestar.newAdSlots(freestar.config.enabled_slots) }
+</script>
+<script src="https://a.pub.network/khaleejtimes-com/pubfig.min.js" data-cfasync="false" async></script> 
+<!--  Freestar scripts End -->
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
+<script>
+// adGroup: Homepage
+window.googletag = window.googletag || {cmd: []};
+//var kt_random_value = [0,1];
+//var item = kt_random_value[Math.floor(Math.random()*kt_random_value.length)];
+//kt_random_value = item;
+
+googletag.cmd.push(function() {
+    var mappingMobLeadfullads = googletag.sizeMapping().
+    addSize([1024,0],[970,250]). //desktop
+    addSize([768,0],[320,100]). //tablet
+    addSize([567,0],[320,100]). //smartphone
+    addSize([0,0],[320,100]). //other
+    build();
+	
+	  var mappingBillboardads = googletag.sizeMapping().
+    addSize([1024,0],[710,200]). //desktop
+    addSize([768,0],[320,100]). //tablet
+    addSize([567,0],[320,100]). //smartphone
+    addSize([0,0],[320,100]). //other
+    build();
+
+    var mappingMPUcolads = googletag.sizeMapping().
+    addSize([1024,0],[300,250]). //desktop
+    addSize([768,0],[336,280]). //tablet
+    addSize([567,0],[[336,280],[300,250]]). //smartphone
+    addSize([0,0],[[336,280],[300,250]]). //other
+    build();
+    
+    googletag.pubads().setTargeting('KT_Placment', ['homepage']);
+    //googletag.pubads().setTargeting('KT_competition', [kt_random_value]);
+    googletag.pubads().setPublisherProvidedId(utag_data.tealium_visitor_id);	
+
+    //googletag.defineSlot('/78059622/responsive-homepage-leaderboard-1',[[970,250],[320,100]], 'div-gpt-ad-1613026724350-0').defineSizeMapping(mappingMobLeadfullads).addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/responsive-homepage-leaderboard-2',[[970,250],[320,100]], 'div-gpt-ad-1613026962554-0').defineSizeMapping(mappingMobLeadfullads).addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/Responsive-Homepage-Leaderboard-3',[[970,250],[320,100]], 'div-gpt-ad-1613027317316-0').defineSizeMapping(mappingMobLeadfullads).addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/Responsive-Homepage-Leaderboard-4',[[970,250],[320,100]], 'div-gpt-ad-1693367950622-0').defineSizeMapping(mappingMobLeadfullads).addService(googletag.pubads());
+    googletag.defineSlot('/78059622/Responsive-Billboard-fixed',[[710,200],[320,100]],'div-gpt-ad-1661918936036-0').defineSizeMapping(mappingBillboardads).addService(googletag.pubads());
+
+    //googletag.defineSlot('/78059622/Responsive-Homepage-MPU-1',[[336,280],[300,250]], 'div-gpt-ad-1613027466499-0').defineSizeMapping(mappingMPUcolads).addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/Responsive-Homepage-MPU-2',[[336,280],[300,250]], 'div-gpt-ad-1613027583068-0').defineSizeMapping(mappingMPUcolads).addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/Responsive-Homepage-MPU-5',[[336,280],[300,250]], 'div-gpt-ad-1668145573174-0').defineSizeMapping(mappingMPUcolads).addService(googletag.pubads());
+
+{% if every_device=='mobile' %}
+    //googletag.defineSlot('/78059622/Responsive-Homepage-MPU-3',[[336,280],[300,250]], 'div-gpt-ad-1613027716531-0').defineSizeMapping(mappingMPUcolads).addService(googletag.pubads());    
+    //googletag.defineSlot('/78059622/Responsive-Homepage-MPU-4',[[336,280],[300,250]], 'div-gpt-ad-1613027891286-0').defineSizeMapping(mappingMPUcolads).addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/Responsive-Homepage-MPU-6',[[336,280],[300,250]], 'div-gpt-ad-1668145643180-0').defineSizeMapping(mappingMPUcolads).addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/Responsive-Homepage-MPU-7',[[336,280],[300,250]], 'div-gpt-ad-1668145700665-0').defineSizeMapping(mappingMPUcolads).addService(googletag.pubads());
+{% endif %} 
+
+    googletag.defineSlot('/78059622/Responsive-Homepage-1x1',[1, 1], 'div-gpt-ad-1613624729466-0').addService(googletag.pubads());
+       
+{% if every_device=='mobile' %}
+   {{get_post('801528')|raw}}
+{% endif %} 
+{% if every_device!='mobile' %}
+   {{get_post('789363')|raw}}
+{% endif %}	
+
+    /*
+		googletag.pubads().enableLazyLoad({
+      // Fetch slots within 0 viewports.
+      fetchMarginPercent: 0,
+      // Render slots within 0.
+      renderMarginPercent: 0,
+      // Double the above values on mobile, where viewports are smaller
+      // and users tend to scroll faster.
+      mobileScaling: 2.0
+    });
+    */
+
+    //googletag.pubads().disableInitialLoad();
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+    //googletag.display(anchorSlot);
+});
+</script>

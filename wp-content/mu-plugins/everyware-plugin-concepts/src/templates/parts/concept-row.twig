@@ -1,0 +1,19 @@
+<tr class="concepts-table__row concept-js-table-row" data-index="{{ loop.index }}" data-title="{{ concept.title }}" data-uuid="{{ concept.uuid }}">
+    <td>{{ concept.title }}</td>
+    <td>{{ concept.uuid }}
+        <button class="btn-icon concepts-js-copy concepts-js-tooltip"
+                data-copy="{{ concept.uuid }}"
+                title="Copy to clipboard">
+            <i class="fa fa-clone"></i>
+        </button>
+    </td>
+    <td class="concepts-table__icon_col"><i class="fa concepts-table__icon concepts-table__icon--{{ concept.inWp ? 'exist fa-check' : 'not-exist fa-times' }}"></i></td>
+    <td class="concepts-table__icon_col"><i class="fa concepts-table__icon concepts-table__icon--{{ concept.inOc ? 'exist fa-check' : 'not-exist fa-times' }}"></i></td>
+    <td class="concepts-table__icon_col">
+        <button class="btn-icon concepts-js-sync-single concepts-js-spinner concepts-js-tooltip"
+                data-uuid="{{ concept.uuid }}"
+                title="Synchronize <strong>Concept</strong> with current site">
+            <i class="fa concepts-table__icon fa-refresh"></i>
+        </button>
+    </td>
+</tr>

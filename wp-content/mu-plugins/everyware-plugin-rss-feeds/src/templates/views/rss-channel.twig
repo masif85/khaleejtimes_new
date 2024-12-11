@@ -1,0 +1,9 @@
+<channel xmlns:atom="http://www.w3.org/2005/Atom">
+    <title>{{ title }}</title>
+    <description>{{ description }}</description>
+    <link>{{ link }}</link>
+    <atom:link href="{{ link }}" rel="self" type="application/rss+xml"/>
+    {% for item in items %}
+        {% include '@rssFeedsPlugin/views/rss-item.twig' with item %}
+    {% endfor %}
+</channel>

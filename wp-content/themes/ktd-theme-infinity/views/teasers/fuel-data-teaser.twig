@@ -1,0 +1,29 @@
+{% apply spaceless %}        
+	
+
+<div class="table-responsive">
+                <table class="table table-striped gn-table ">
+                    <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Super 98</th>
+                        <th scope="col">Special 95</th>
+                        <th scope="col">EPlus 91</th>
+                        <th scope="col">Diesel</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+					{% for charts in fueldata %}	
+                            <tr>
+                                <th scope="row">{{charts['date']}}</th>
+                                <td>{{charts['Super98']}}</td>
+                                <td>{{charts['Special95']}}</td>
+                                <td>{{charts['EPlus91']}}</td>
+                                <td>{{charts['Diesel']}}</td>
+                            </tr>            
+		{% endfor %}
+                    </tbody>
+                </table>
+            </div>
+	
+{% endapply %}

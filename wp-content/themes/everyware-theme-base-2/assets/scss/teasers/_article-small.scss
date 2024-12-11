@@ -1,0 +1,102 @@
+// Teaser small styles
+
+.teaser--article-small {
+
+  &.not-loaded {
+    opacity: 0;
+  }
+
+  &.loaded {
+    opacity: 1;
+    transition: $transition-article;
+  }
+
+  .teaser {
+    &__container {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    &__image {
+      float: right;
+      padding-left: $single-gutter-width;
+      display: none;
+    }
+
+    .figure-img {
+      width: 0;
+    }
+
+    //&__leadin {
+    //  @include teaser-title(13px, 1)
+    //}
+  }
+}
+
+// Title for board content size
+//@include content-size-title(article-small, 12, 32px, 1, 24px, 22px);
+//@include content-size-title(article-small, 11, 24px, 1, 24px, 22px);
+//@include content-size-title(article-small, 10, 24px, 1, 24px, 22px);
+//@include content-size-title(article-small, 9, 18px, 1, 17px, 16px);
+//@include content-size-title(article-small, 8, 18px, 1, 17px, 16px);
+//@include content-size-title(article-small, 7, 18px, 1, 17px, 16px);
+//@include content-size-title(article-small, 6, 18px, 1, 17px, 16px);
+//@include content-size-title(article-small, 5, 18px, 1, 17px, 16px);
+//@include content-size-title(article-small, 4, 18px, 1, 17px, 16px);
+//@include content-size-title(article-small, 3, 16px, 1, 17px, 16px);
+//@include content-size-title(article-small, 2, 16px, 1, 17px, 16px);
+//@include content-size-title(article-small, 1, 16px, 1, 17px, 16px);
+
+@include from-board-content-up(xs) {
+  .teaser--article-small {
+    &.teaser--with-image {
+      .teaser {
+        &__image {
+          display: block;
+        }
+      }
+    }
+
+    .figure-img {
+      width: 75px;
+    }
+  }
+}
+
+@include from-board-content-up(sm) {
+  .teaser--article-small {
+    .figure-img {
+      width: 90px;
+    }
+  }
+}
+
+@include from-board-content-up(lg) {
+  .teaser--article-small {
+    .teaser {
+      &__headline {
+        font-size: $teaser-title-font-size-sm;
+      }
+    }
+
+    .figure-img {
+      width: 118px;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .content-size-lg-12 {
+    .teaser--article-small {
+      .teaser {
+        &__headline {
+          font-size: $teaser-title-font-size-md;
+        }
+      }
+
+      .figure-img {
+        width: 130px;
+      }
+    }
+  }
+}

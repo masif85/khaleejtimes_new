@@ -1,0 +1,148 @@
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+
+      <!-- Left Side -->
+      <div class="col-lg-9">
+
+        <!-- Author -->
+        <div class="article-wrapper author-detail-lead">
+
+          <div class="row author-wrapper-box">
+            {% if avatar %}
+              <div class="col-lg-3 col-md-4 order-lg-2 author-photo">
+                <img src="{{ avatar }}" alt="{{ name }}"/>
+              </div>
+            {% endif %}
+
+            <div class="col-lg-9 col-md-8 order-lg-1 align-items-center">
+              <h1 class="section-title text-uppercase font-weight-bold">{{ name }}</h1>
+
+              <ul class="author-box-social-icons">
+                {% if related_links.facebook %}
+                  <li>
+                    <a href="{{ related_links.facebook }}">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                {% endif %}
+                {% if related_links.twitter %}
+                  <li>
+                    <a href="{{ related_links.twitter }}">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                {% endif %}
+                {% if related_links.linkedin %}
+                  <li>
+                    <a href="{{ related_links.linkedin }}">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </li>
+                {% endif %}
+              </ul>
+
+              <ul class="author-box-contact-info">
+                {% if meta_data.email %}
+                  <li>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:{{ meta_data.email }}">{{ meta_data.email }}</a>
+                  </li>
+                {% endif %}
+                {% if meta_data.phone %}
+                  <li>
+                    <i class="fas fa-phone-alt"></i> {{ meta_data.phone }}
+                  </li>
+                {% endif %}
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="subsection author-detail-list-nf">
+          <div class="row">
+            <div class="col-lg-12">
+
+              <!-- Articles -->
+
+              {% if articles is not empty %}
+
+                {% for article in articles %}
+
+                    {{ render_partial('@base/teasers/standard-subsection-teaser.twig', article) }}
+					 {% if loop.index == 3 %}
+					 <!-- googleoff: index -->
+					 <div id="adsolut-listing"></div>
+					 <!-- googleon: index -->
+					 {% endif %}
+                  {% if loop.index == 6 %}
+                    <div class="mpu-ad-unit ad-unit">
+                      <!-- /78059622/Responsive-Section-Leaderboard-2 -->
+                      <!-- <div id='div-gpt-ad-1613547811534-0'>
+                        <script>
+                          googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613547811534-0'); });
+                        </script>
+                      </div> -->
+                      <!-- Tag ID: khaleejtimes_Responsive-Section-Leaderboard-2 -->
+                      <div align="center" data-freestar-ad="__320x100 __728x90" id="khaleejtimes_Responsive-Section-Leaderboard-2">
+                        <script data-cfasync="false" type="text/javascript">
+                          freestar.config.enabled_slots.push({ placementName: "khaleejtimes_Responsive-Section-Leaderboard-2", slotId: "khaleejtimes_Responsive-Section-Leaderboard-2" });
+                        </script>
+                      </div>
+                    </div>
+                  {% endif %}
+
+                {% endfor %}
+
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="pagination-inline">
+              {{ paginator.render() }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Ad -->
+        <div class="module-5 billboard-banner">
+          <div class="container">
+            <div class="row">
+              <div class="col-auto mx-auto">
+                <!-- /78059622/Responsive-Section-Leaderboard-3 -->
+                <!-- <div id='div-gpt-ad-1613548422640-0'>
+                  <script>
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613548422640-0'); });
+                  </script>
+                </div> -->
+                <!-- Tag ID: khaleejtimes_Responsive-Section-Leaderboard-3 -->
+                <div align="center" data-freestar-ad="__320x100 __728x90" id="khaleejtimes_Responsive-Section-Leaderboard-3">
+                  <script data-cfasync="false" type="text/javascript">
+                    freestar.config.enabled_slots.push({ placementName: "khaleejtimes_Responsive-Section-Leaderboard-3", slotId: "khaleejtimes_Responsive-Section-Leaderboard-3" });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- End Left Side -->
+
+      <!-- Right Side -->
+      <aside class="col-sm-12 col-md-12 col-lg-3">
+        <div class="article-right-sidebar">
+          {{ render_sidebar("default-sidebar") }}
+        </div>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}

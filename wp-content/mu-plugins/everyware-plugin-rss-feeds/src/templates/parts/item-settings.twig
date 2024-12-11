@@ -1,0 +1,96 @@
+{% extends '@rssFeedsPlugin/parts/admin.twig' %}
+
+{% block form %}
+
+    <table class="form-table">
+        <tbody>
+        <tr>
+            <th rowspan="5" scope="row">
+                Item data
+            </th>
+            <td>
+                <label>
+                    {{ form.checkbox(has_title)|raw }}
+                    Teaser headline
+                </label>
+            </td>
+            <td>
+                <code>&lt;title&gt;</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    {{ form.checkbox(has_description)|raw }}
+                    Teaser body
+                </label>
+            </td>
+            <td>
+                <code>&lt;description&gt;</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    {{ form.checkbox(has_dc_creator)|raw }}
+                    Author
+                </label>
+            </td>
+            <td>
+                <code>&lt;dc:creator&gt;</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    {{ form.checkbox(has_pub_date)|raw }}
+                    Publication date
+                </label>
+            </td>
+            <td>
+                <code>&lt;pubDate&gt;</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    {{ form.checkbox(has_category)|raw }}
+                    Concept tags
+                </label>
+            </td>
+            <td>
+                <code>&lt;category&gt;</code>
+            </td>
+        </tr>
+        <tr class="spacer">
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <th rowspan="2" scope="row">
+                Media content
+            </th>
+            <td colspan="2">
+                <label>
+                    {{ form.checkbox(has_image)|raw }}
+                    Teaser image
+                </label>
+                –
+                <label>
+                    Width:
+                    {{ form.number(image_width, { max: 5000, size: 5 })|raw }}
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ form.checkbox(has_media_credit)|raw }}
+                Creator
+            </td>
+            <td>
+                <code>&lt;media:credit&gt;</code>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

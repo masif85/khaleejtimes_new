@@ -1,0 +1,22 @@
+{{ message|default('')|raw }}
+<div class="ew-wrap ew-settings-page">
+	<h1>{{ translate(headline, text_domain) }}</h1>
+	<p class="description">{{ translate(description, text_domain) }}</p>
+	{% if tabs %}
+
+		<nav class="nav-tab-wrapper">
+			{% apply spaceless %}
+				{% for tab in tabs %}
+					{% if tab.active %}
+						<span class="nav-tab nav-tab-active">{{ tab.label }}</span>
+					{% else %}
+						<a href="{{ tab.url }}" target class="nav-tab">{{ tab.label }}</a>
+					{% endif %}
+				{% endfor %}
+			{% endapply %}
+		</nav>
+		<div class="nav-tab-content">{{ page_content|raw }}</div>
+	{% else %}
+		<h2>{{ translate('No pages were found!', text_domain) }}</h2>
+	{% endif %}
+</div>

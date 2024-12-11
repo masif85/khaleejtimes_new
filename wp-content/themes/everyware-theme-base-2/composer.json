@@ -1,0 +1,33 @@
+{
+    "name": "infomaker/everyware-theme-base-2",
+    "description": "Base theme for Naviga Web projects",
+    "type": "wordpress-theme",
+    "version": "1.2.0",
+    "homepage": "https://docs.navigaglobal.com/everyware/",
+    "license": "GPL-3.0-or-later",
+    "support": {
+        "docs": "https://docs.navigaglobal.com/everyware/design/everyware-theme-base-2",
+        "source": "https://composer.infomaker.io/#infomaker/everyware-theme-base-2"
+    },
+    "authors": [
+        {
+            "name": "Naviga Web Team",
+            "homepage": "https://www.navigaglobal.com/web/"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.infomaker.io/"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "infomaker/everyware-base": ">=0.14.1",
+        "infomaker/everyware-imengine": ">=0.3.6",
+        "infomaker/everyware-newsml": ">=0.10",
+        "infomaker/everyware-support": ">=0.6",
+        "infomaker/everyware-twig": "^1.1",
+        "infomaker/everyware-theme-eu-resources": ">=0.9"
+    }
+}

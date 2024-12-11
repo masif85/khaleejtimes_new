@@ -1,0 +1,22 @@
+{% apply spaceless %}
+<article class="post breaking-news-black breaking-news-blue">
+  <div class="post-thumbnail">
+    {% if image %}
+      <a href="{{ permalink }}">
+        {{ render_partial('@base/teasers/partial/image', image|merge({ 'alttext': headline|striptags|replace({'"':'\''}) })) }}
+      </a>
+    {% endif %}
+
+  </div>
+  <div class="entry-container">
+    <div class="entry-header">
+      {# if sectionName #}
+        <p class="category-btn"> <a href="#">{{text}}</a>
+          {# include '@base/teasers/partial/concept.twig' #}
+        </p>
+      {# endif #}
+      {% include '@base/teasers/partial/headline.twig' %}
+    </div>
+  </div>
+</article>
+{% endapply %}

@@ -1,0 +1,29 @@
+<ul class="follow-tab">
+  <li><h4>Follow:</h4></li>
+  {% if section %}
+    {% set link = get_concept_link(conceptsectionuuids) %}
+    {% if link %}
+      <li><a href="{{ link }}">{{ section }}</a></li>
+    {% else %}
+      <li>{{ section }}<li>
+    {% endif %}
+  {% endif %}
+
+  {% for tag in tags %}
+    {% set link = get_concept_link(tag.uuid) %}
+    {% if link %}
+      <li><a href="{{ link }}">{{ tag.name }}</a></li>
+    {% else %}
+      <li>{{ tag.name }}</li>
+    {% endif %}
+  {% endfor %}
+
+  {% for place in places %}
+    {% set link = get_concept_link(place.uuid) %}
+    {% if link %}
+      <li><a href="{{ link }}">{{ place.name }}</a></li>
+    {% else %}
+      <li>{{ place.name }}</li>
+    {% endif %}
+  {% endfor %}
+</ul>

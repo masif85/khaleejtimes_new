@@ -1,0 +1,251 @@
+{
+  "dubai": [
+    {
+      "name": "Galleria",
+      "location": "Deira",
+      "contact_details": "04-2737676"
+    },
+    {
+      "name": "Twin Cinema",
+      "location": "Al Quoz",
+      "contact_details": "04-3469707"
+    },
+    {
+      "name": "Novo Cinemas",
+      "location": "Festival City",
+      "contact_details": "04-2328328"
+    },
+    {
+      "name": "Novo Cinemas",
+      "location": "Ibn Batuta Mall",
+      "contact_details": "04-3669898"
+    },
+    {
+      "name": "Novo Cinemas",
+      "location": "Dragon Mart 2",
+      "contact_details": "04-2328523"
+    },
+    {
+      "name": "Novo Cinemas",
+      "location": "Al Ghurair City",
+      "contact_details": "04-2289898"
+    },
+    {
+      "name": "VOX Cinemas",
+      "location": "Grand Hyatt",
+      "contact_details": "600-599905"
+    },
+    {
+      "name": "VOX Cinemas",
+      "location": "Mercato Mall",
+      "contact_details": "600-599905"
+    },
+    {
+      "name": "VOX Cinemas",
+      "location": "Mall Of The Emirates",
+      "contact_details": "600-599905"
+    },
+    {
+      "name": "VOX Cinemas",
+      "location": "Deira City Centre",
+      "contact_details": "600-599905"
+    },
+    {
+      "name": "VOX Cinemas",
+      "location": "Mirdiff City Centre",
+      "contact_details": "600-599905"
+    },
+    {
+      "name": "VOX Cinemas",
+      "location": "Burjuman",
+      "contact_details": "600-599905"
+    },
+    {
+      "name": "Reel Cinemas",
+      "location": "Dubai Mall/Marina Mall/The Beach",
+      "contact_details": "04-4491903"
+    },
+    {
+      "name": "Reel Cinemas",
+      "location": "Jebel Ali Recreation Club",
+      "contact_details": "04-4595100"
+    },
+    {
+      "name": "Cinema City",
+      "location": "Arabian Center - Mirdiff",
+      "contact_details": "04-2845900"
+    }
+  ],
+  "abu-dhabi": [
+    {
+      "name": "National Cinema",
+      "location": "Baniyas Najda St.",
+      "contact_details": "02-6711700"
+    },
+    {
+      "name": "Grand Safeer Cinema",
+      "location": "Musaffah.",
+      "contact_details": "02-5521515"
+    },
+    {
+      "name": "Grand Al MariahÂ",
+      "location": "Al Najda St.",
+      "contact_details": "02-6785000"
+    },
+    {
+      "name": "Novo Cinemas",
+      "location": "World Trade Centre",
+      "contact_details": "02-6343003"
+    },
+    {
+      "name": "Novo Baniyas",
+      "location": "Bawabat Al Sharq Mall",
+      "contact_details": "02-5864877"
+    },
+    {
+      "name": "Oscar Al Raha",
+      "location": "Al Raha",
+      "contact_details": "02-5562008"
+    },
+    {
+      "name": "Oscar Al Wahda",
+      "location": "-",
+      "contact_details": "02-4433244"
+    },
+    {
+      "name": "VOX Cinemas",
+      "location": "Marina Mall",
+      "contact_details": "600-599905"
+    },
+    {
+      "name": "VOX Cinemas",
+      "location": "Nation Towers",
+      "contact_details": "600-599905"
+    },
+    {
+      "name": "Cine Royal",
+      "location": "Khalidiyah Mall",
+      "contact_details": "02-6819444"
+    },
+    {
+      "name": "Cine Royal",
+      "location": "Dalma Mall",
+      "contact_details": "02-5502525"
+    },
+    {
+      "name": "Cine Royal",
+      "location": "Deerfields",
+      "contact_details": "02-5633990"
+    },
+    {
+      "name": "Cine Royal",
+      "location": "Ruwais Mall",
+      "contact_details": "02-8778080"
+    }
+  ],
+  "sharjah": [
+    {
+      "name": "Star Cineplex",
+      "location": "City Centre",
+      "contact_details": "06-5327555"
+    },
+    {
+      "name": "Al Hamra",
+      "location": "Near Lulu Centre",
+      "contact_details": "06-5650953"
+    },
+    {
+      "name": "Novo Cinemas",
+      "location": "Mega Mall",
+      "contact_details": "06-5751888"
+    },
+    {
+      "name": "Novo Cinemas",
+      "location": "Sahara Centre",
+      "contact_details": "06-5316500"
+    },
+    {
+      "name": "Novo Cinemas",
+      "location": "Buhairah Centre",
+      "contact_details": "06-5563300"
+    },
+    {
+      "name": "Oscar Cinema",
+      "location": "Al Shaab",
+      "contact_details": "06-5211122"
+    }
+  ],
+  "al-ain": [
+    {
+      "name": "Club Cinema",
+      "location": "Sports Club",
+      "contact_details": "03-7222476"
+    },
+    {
+      "name": "Oscar Foah",
+      "location": "Al Foah Mall",
+      "contact_details": "03-7843535"
+    },
+    {
+      "name": "Oscar Barari",
+      "location": "Barari Outlet Mall",
+      "contact_details": "03-7221992"
+    },
+    {
+      "name": "Star Cineplex",
+      "location": "Al Ain Mall",
+      "contact_details": "03-7511228"
+    }
+  ],
+  "ras-al-khaimah": [
+    {
+      "name": "Gulf Cinema",
+      "location": "-",
+      "contact_details": "07-2223313"
+    },
+    {
+      "name": "Novo Manar",
+      "location": "Manar Mall",
+      "contact_details": "07-2278888"
+    },
+    {
+      "name": "VOX Cinemas",
+      "location": "Hamra Mall",
+      "contact_details": "600-599905"
+    },
+    {
+      "name": "Cinemax",
+      "location": "Al Naeem Mall",
+      "contact_details": "07-2440222"
+    }
+  ],
+  "fujairah": [
+    {
+      "name": "Star Al Nisr",
+      "location": "-",
+      "contact_details": "09-2236262"
+    },
+    {
+      "name": "VOX Cinemas",
+      "location": "City Centre",
+      "contact_details": "600-599905"
+    },
+    {
+      "name": "Star Dana",
+      "location": "-",
+      "contact_details": "09-2243100"
+    }
+  ],
+  "more": [
+    {
+      "name": "VOX Cinemas",
+      "location": "City Center - Ajman",
+      "contact_details": "600-599905"
+    },
+    {
+      "name": "Granada",
+      "location": "Umm Al Quwain",
+      "contact_details": "06-7656804"
+    }
+  ]
+}

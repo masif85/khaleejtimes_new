@@ -1,0 +1,30 @@
+{{ json_import|raw }}
+<form method="post" action="{{ form_action }}" id="everyware-settings-parameters">
+	<div class="settings-parameters__body">
+		<ol class="sortable-list">
+			{% for parameter in parameters %}
+				<li class="sortable-list__item">
+					{% include '@plugins/settings-parameters-list-input.twig' with { values: parameter } %}
+				</li>
+			{% endfor %}
+		</ol>
+	</div>
+	<div>
+		<button class="btn btn-success btn-sm pull-left sortable-list__item-add" id="add-parameter">
+			<i class="fa fa-plus"></i> {{ translate('Add Parameter', text_domain) }}</button>
+	</div>
+	<div class="pull-right">
+		<button class="btn btn-default btn-sm">{{ translate('Cancel', text_domain) }}</button>
+		<input type="submit" name="{{ submit_key }}" class="btn btn-primary btn-sm" value="{{ translate('Save', text_domain) }}"/>
+	</div>
+</form>
+
+{% if template %}
+	<div id="sortable-list__template-container">
+		<ol>
+			<li class="sortable-list__item sortable-list__item--template">
+				{% include '@plugins/settings-parameters-list-input.twig' with { values: template }%}
+			</li>
+		</ol>
+	</div>
+{% endif %}

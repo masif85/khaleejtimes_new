@@ -1,0 +1,118 @@
+// Teaser Image Left styles
+
+.teaser--article-image-left {
+  .teaser {
+    &__headline {
+      font-size: $teaser-title-font-size-xxs;
+    }
+
+    // Image is hidden at the smaller content sizes.
+    &__image {
+      display: none;
+    }
+
+    // When image IS visible, it appears to the left of the container.
+    &__link {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    &__container {
+      width: 100%;
+    }
+
+    // Leadin is hidden at the smaller content sizes.
+    &__leadin {
+      display: none;
+    }
+  }
+}
+
+// Different styles for larger content sizes.
+@include from-board-content-up(5) {
+  .teaser--article-image-left.teaser--with-image .teaser {
+
+    // Image appears, starting with this content size.
+    &__image {
+      display: block;
+      width: $teaser-sideimage-width-small;
+    }
+
+    &__container {
+      padding-left: $single-gutter-width;
+      width: calc(100% - #{$teaser-sideimage-width-small});
+    }
+  }
+}
+
+@include from-board-content-up(6) {
+  .teaser--article-image-left {
+    &.teaser--with-image .teaser {
+
+      &__image {
+        width: $teaser-sideimage-width-medium;
+      }
+
+      &__container {
+        width: calc(100% - #{$teaser-sideimage-width-medium});
+      }
+    }
+
+    .teaser__headline {
+      font-size: $teaser-title-font-size-xs;
+    }
+  }
+}
+
+@include from-board-content-up(9) {
+  .teaser--article-image-left {
+    &.teaser--with-image {
+      .teaser {
+        &__container {
+          width: 34%;
+        }
+
+        &__image {
+          width: 66%;
+        }
+      }
+    }
+
+    .teaser {
+      &__headline {
+        font-size: $teaser-title-font-size-sm;
+      }
+
+      // Leadin appears, starting with this content size.
+      &__leadin {
+        display: block;
+      }
+    }
+  }
+}
+
+@include from-board-content-up(10) {
+  .teaser--article-image-left .teaser {
+    &__headline {
+      font-size: $teaser-title-font-size-md;
+    }
+  }
+}
+
+@include from-board-content-up(12) {
+  .teaser--article-image-left .teaser {
+    &__headline {
+      font-size: $teaser-title-font-size-lg;
+      line-height: $teaser-title-line-height-sm;
+    }
+  }
+}
+
+@include from-board-content-up(14) {
+  .teaser--article-image-left .teaser {
+    &__headline {
+      font-size: $teaser-title-font-size-xl;
+    }
+  }
+}

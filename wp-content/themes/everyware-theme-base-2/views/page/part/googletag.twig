@@ -1,0 +1,37 @@
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+        var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = "text/javascript";
+        var useSSL = "https:" == document.location.protocol;
+        gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+        var node = document.getElementsByTagName("script")[0];
+        node.parentNode.insertBefore(gads, node);
+    })();
+</script>
+<script type='text/javascript'>
+    googletag.cmd.push(function() {
+        {{ get_option('defineSlot_1')|raw }}
+        {{ get_option('defineSlot_2')|raw }}
+        {{ get_option('defineSlot_3')|raw }}
+        {{ get_option('defineSlot_4')|raw }}
+        {{ get_option('defineSlot_5')|raw }}
+        {{ get_option('defineSlot_6')|raw }}
+        {{ get_option('defineSlot_7')|raw }}
+        {{ get_option('defineSlot_8')|raw }}
+        {{ get_option('defineSlot_9')|raw }}
+        {{ get_option('defineSlot_10')|raw }}
+
+        /*
+        googletag.defineSlot('/13991676/WME-Leaderboard-728x90', [[728, 90], [970, 250]], 'leaderboard').addService(googletag.pubads());
+        googletag.defineSlot('/13991676/WME-MPU1-300x250', [[300, 250], [300, 600]], 'mpu_1').addService(googletag.pubads());
+        googletag.defineSlot('/13991676/WME-MPU2-300x250', [[300, 250], [300, 600]], 'mpu_2').addService(googletag.pubads());
+        googletag.defineSlot('/13991676/WME-MPU3-300x250', [300, 250], 'mpu_3').addService(googletag.pubads());
+        */
+
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+</script>

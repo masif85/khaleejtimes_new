@@ -1,0 +1,27 @@
+<div class="authorbox__wrapper authorbox__wrapper--{{placement}}">
+
+		<div class="authorbox__author authorbox__author--{{placement}}">
+			<div class="authorbox__author--container">
+				{% for author in authors %}
+					{% include "@base/article/creator.twig" %}
+				{% endfor %}
+			</div>
+			{% if settings.article_author_image %}
+				<div class="authorbox__avatar">
+					{% for author in authors %}
+						{% if author.avatar is not empty %}
+							<div class="authorbox__avatar--image--{{placement}}">
+								{% embed "@base/article/link.twig" with {'href': author.permalink } %}
+									{% block inner %}
+										<img src="{{ author.avatar }}" alt=""/>
+									{% endblock %}
+								{% endembed %}
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
+
+	{% include "@base/article/meta-pubdate.twig" %}
+</div>

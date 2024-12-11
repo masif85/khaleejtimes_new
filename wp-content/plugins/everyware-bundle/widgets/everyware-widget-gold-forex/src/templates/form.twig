@@ -1,0 +1,16 @@
+{% extends '@projectPlugin/components/admin.twig' %}
+
+{% block form_header %}{% endblock %}
+{% block form %}
+  <div class="oc-query-box">
+    <div class="form-group">
+      <label for="{{ title.id() }}">Title {{ form.tooltip(translate('This is the headline for the list.', textdomain))|raw }}</label>
+      {{ form.input('text', title, { class: 'form-control' })|raw }}
+    </div>
+
+    <div class="form-group">
+      <label>Template {{ form.tooltip(translate('Select template', textdomain))|raw }}</label>
+      {{ form.select(template, templates, { class: 'form-control' })|raw }}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% apply spaceless %}
+  <!-- section-below top news-teaser-netcore --> 
+<section class="popular-section">
+    <div class="row">
+      <div class="col-12">
+        <div class="most-popuplar-ongoing-viral-outer">
+        <div class="main-side-bartitle-mob"><h5>Most Popular In</h5></div>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><span>Most Popular in</span> {{parentpost}}</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false" tabindex="-1"><span>Most Popular in</span> Khaleej Times</button>
+            </li>
+          </ul>          
+        <div class="tab-content" id="myTabContent">            
+            <div class="tab-pane fade active show" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">            
+            <div class="row">
+          {% for bitem in popular %}
+              <div class="col-12 col-lg-3 col-md-6 col-sm-12 tab-box">
+                <ul>
+                  <li><span>{{loop.index}}</span></li>
+                  <li><h4><a href="{{ bitem.properties.link }}">{{ bitem.properties.title|raw }}</a></h4></li>
+                </ul>
+              </div>        
+          {% endfor %}
+            </div>
+            </div>
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+              <div class="row">
+            {% for eitem in entire %}
+                <div class="col-12 col-lg-3 col-md-6 col-sm-12 tab-box">
+                  <ul>
+                    <!-- <li><span>{#loop.index#}</span></li> -->
+                    <li><div class="entire-website-thumb image-zoom"><img src="
+{{eitem.properties.image|replace({'original': "cropresize"})}}&source=false&q=75&crop_w=0.99999&crop_h=0.9&{{get_image_type(eitem.properties.image,200) }}&x=1.0E-5&y=0.05" ></div></li>
+                    <li><h4><a href="{{ eitem.properties.link }}">{{ eitem.properties.title|raw }}</a></h4></li>
+                  </ul>
+                </div>
+            {% endfor %}
+              </div>
+            </div>
+           </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% endapply %}

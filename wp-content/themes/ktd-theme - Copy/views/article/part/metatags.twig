@@ -1,0 +1,75 @@
+{% set replaced_link = get_permalink()|replace({'?amp=1': ""}) %}
+{% if status == 'preview' %}
+  <meta name="robots" content="noindex, nofollow, noarchive"/>
+  <meta name="googlebot" content="noindex">
+{% else %}
+  {% if noindex == 'true' %}
+    <meta name="robots" content="noindex, follow, noarchive, max-image-preview:large"/>
+  {% else %}
+    <meta name="robots" content="index, follow, noarchive, max-image-preview:large"/>
+  {% endif %}
+{% endif %}
+<title>{{ headline|replace({"\n":'', "\r":''})|raw }} - News | {{ get_bloginfo('name') }}</title>
+
+<link rel="preconnect" href="https://image.khaleejtimes.com" crossorigin />
+<link rel="dns-prefetch" href="https://image.khaleejtimes.com" />
+<link rel="preconnect" href="https://cdn.ampproject.org" crossorigin />
+<link rel="dns-prefetch" href="https://cdn.ampproject.org" />
+<link rel="preconnect" href="https://securepubads.g.doubleclick.net" crossorigin />
+<link rel="dns-prefetch" href="https://securepubads.g.doubleclick.net" />
+<link rel="preconnect" href="https://www.googletagservices.com" crossorigin />
+<link rel="dns-prefetch" href="https://www.googletagservices.com" />
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+<link rel="preconnect" href="https://tpc.googlesyndication.com"  crossorigin />
+<link rel="dns-prefetch" href="https://tpc.googlesyndication.com" />
+<link rel="preconnect" href="https://pagead2.googlesyndication.com"  crossorigin />
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+
+
+<link rel="preconnect" href="https://cdn.taboola.com/" crossorigin />
+<link rel="dns-prefetch" href="https://cdn.taboola.com/" />
+<link rel="preconnect" href="https://images.taboola.com/" crossorigin />
+<link rel="dns-prefetch" href="https://images.taboola.com/" />
+<link rel="preconnect" href="https://trc.taboola.com" crossorigin />
+<link rel="dns-prefetch" href="https://trc.taboola.com" />
+<link rel="preconnect" href="https://vidstat.taboola.com" crossorigin />
+<link rel="dns-prefetch" href="https://vidstat.taboola.com" />
+<link rel="preconnect" href="https://imasdk.googleapis.com" crossorigin />
+<link rel="dns-prefetch" href="https://imasdk.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" />    
+<link rel="preconnect" href="https://a.teads.tv" crossorigin />
+<link rel="dns-prefetch" href="https://a.teads.tv">    
+<link rel="preconnect" href="https://c.amazon-adsystem.com" crossorigin />
+<link rel="dns-prefetch" href="https://c.amazon-adsystem.com"> 
+{% set ptype="" %} 
+{% for items in sections|slice(0, 1) %}{% set ptype=items.name %}{% endfor %}
+<meta property="og:title" content="{{ teaser_headline|replace({"\n":'', "\r":''})|raw }}"/>
+<meta property="twitter:title" content="{{ teaser_headline|replace({"\n":'', "\r":''})|raw }}"/>
+{% set break = false %}{% set first_paragraph = "" %} {% set amp = false %}
+{% for paragraph in body %}{% if paragraph matches '{<amp-}' and amp == false %} {% set amp = true %} {% endif %}{% if not break %}{% if paragraph is not empty %}{% if paragraph matches '{<!-- element: (body|fallback) -->}'  %}{% set first_paragraph = paragraph|striptags|raw|trim|length > 165 ? paragraph|striptags|raw|replace({"\n": "", "\r": "", "\t": ""})|trim|slice(0, 165) ~ '...' : paragraph|striptags|raw|replace({"\n": "", "\r": "", "\t": ""})|trim  %}{% set break = true %}{% endif %}{% endif %}{% endif %}{% endfor %}
+<meta name="description" content="{% if (teaser_body|length<120) and (contentsubtype != 'VIDEO' and contentsubtype != 'GALLERY' and contentsubtype!='CINEMALISTING'  and ptype != 'Podcasts') %}{{first_paragraph|slice(0, 155)}}.. {%else%}{{ teaser_body ? teaser_body|length > 165 ? teaser_body|slice(0, 165) ~ '...' : teaser_body : first_paragraph }} {%endif%}"/>
+<meta property="og:description" content="{% if (teaser_body|length<120) and (contentsubtype != 'VIDEO' and contentsubtype != 'GALLERY' and contentsubtype!='CINEMALISTING'  and ptype != 'Podcasts') %}{{first_paragraph|slice(0, 155)}}.. {%else%} {{ teaser_body ? teaser_body|length > 165 ? teaser_body|slice(0, 165) ~ '...' : teaser_body : first_paragraph }} {%endif%}"/>
+<meta property="twitter:description" content="{% if (teaser_body|length<120) and (contentsubtype != 'VIDEO' and contentsubtype != 'GALLERY' and contentsubtype!='CINEMALISTING'  and ptype != 'Podcasts') %}{{first_paragraph|slice(0, 155)}}.. {%else%} {{ teaser_body ? teaser_body|length > 165 ? teaser_body|slice(0, 165) ~ '...' : teaser_body : first_paragraph }} {%endif%}"/>
+{% if keywords %}
+  <meta name="news_keywords" content="{{ keywords }}"/>
+{% else %}
+  {% if sections %}
+    <meta name="news_keywords" content="{% for items in sections|sort|reverse %}{{ items.name }}{% if loop.last == false %}, {% endif %}{% endfor %}"/>
+  {% endif %}
+{% endif %}
+<meta property="og:url" content="{{ replaced_link }}"/>
+<meta name="twitter:url" content="{{ replaced_link }}"/>
+
+{% if amp == false %}
+ 
+{% endif %}
+
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="{{ get_bloginfo('name') }}"/>
+<meta property="og:image" content="{% if mainImage %}{{mainImage.src|raw}}{% endif %}.jpg" />
+<meta name="twitter:image" content="{% if mainImage %}{{mainImage.src|raw}}{% endif %}.jpg"/>
+<meta name="author" content="{% if authors %}{% for author in authors %}{{ author.name }}{% if loop.last == false %}, {% endif %}{% endfor %}{% elseif author_byline %}{{ author_byline }}{% else %}None{% endif %}">
+<link rel="canonical" href="{% if canonicaltagging and amp == false %}{{ canonicaltagging }}{% else %}{{ replaced_link }}{% endif %}"/>
+<link rel="alternate" hreflang="en" href="{{get_url()}}"/>

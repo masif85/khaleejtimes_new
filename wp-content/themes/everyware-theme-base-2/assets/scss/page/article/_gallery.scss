@@ -1,0 +1,160 @@
+$opener-opened-z-index: 1040;
+
+.carousel {
+  figcaption {
+    h5 {
+      display: inline;
+      font-size: inherit;
+      margin: 0;
+    }
+  }
+
+  .carousel-controls-container {
+    position: absolute;
+    width: 100%;
+    padding-bottom: 56.25%; /* overlay 16:9 image */
+
+    .carousel-controls {
+      position: absolute;
+      width: 108px;
+      height: 44px;
+      bottom: 10px;
+      right: 10px;
+
+      .carousel-control-prev, .carousel-control-next {
+        width: 44px;
+        height: 44px;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        opacity: 0.75;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.75);
+        }
+      }
+
+      .carousel-control-next-icon, .carousel-control-prev-icon {
+        background-image: url("data:image/svg+xml,%3Csvg version='1.2' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' overflow='visible' preserveAspectRatio='none' viewBox='0 0 24 24' width='28' height='28'%3E%3Cg%3E%3Cpath xmlns:default='http://www.w3.org/2000/svg' d='M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z' style='fill: rgb(255, 255, 255);' vector-effect='non-scaling-stroke'/%3E%3C/g%3E%3C/svg%3E");
+        width: 44px;
+        height: 44px;
+      }
+
+      .carousel-control-prev-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &.carousel-opened {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    .carousel-inner {
+      height: 100%;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      z-index: ($opener-opened-z-index+1);
+    }
+  }
+}
+
+// Image opener
+
+.opener-toolbar {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 1;
+}
+
+.opener {
+  .opener-button-close {
+    display:none;
+  }
+
+  .carousel-controls {
+    z-index: 10;
+  }
+
+  .opener-button {
+    cursor: pointer;
+    color: $white;
+    text-shadow: 0px 0px 2px $gray-500;
+    font-size: 24px;
+    padding: 15px;
+  }
+
+}
+
+.opener-image img {
+  cursor:pointer;
+}
+.opener.opener-opened,
+.carousel.opener-opened{
+  width: 100%;
+  height: auto;
+  position: fixed;
+  z-index: $opener-opened-z-index;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: none;
+  @include media-breakpoint-down(md) {
+    padding: 0;
+    .figure-caption {
+      padding: $single-gutter-width;
+    }
+  }
+
+  .opener-image {
+    margin: auto;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    max-width: $max-width-container;
+    position: relative;
+
+    img{
+      cursor: default;
+    }
+  }
+  .opener-button-open {
+    display:none;
+  }
+  .opener-button-close {
+    display:block;
+  }
+
+  .col-12 {
+    padding: 0;
+  }
+
+  .figure {
+    display:block;
+  }
+
+  h5, .figure-caption {
+    color: $white;
+  }
+
+  &:before {
+    background: rgba(0, 0, 0, .8);
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: -3000px -100px;
+    z-index: -1;
+  }
+
+  .close-button {
+    cursor: pointer;
+  }
+}

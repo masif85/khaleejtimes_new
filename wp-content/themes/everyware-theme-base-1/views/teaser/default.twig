@@ -1,0 +1,15 @@
+<article class="teaser default" data-uuid="{{ uuid }}" data-comment-id="{{ comment_id }}">
+    	<div class="row">
+
+        <div class="teaser entry-title">
+            <a href="{{ permalink }}">
+	        {% block headline %}{% include "@base/teaser/partial/headline.twig" %}{% endblock %}
+            </a>
+        </div>
+
+        <div class="teaser-body">
+	        {% block leadin %}{% include "@base/teaser/partial/leadin.twig" %}{% endblock %}
+        </div>
+
+        </div>
+</article>

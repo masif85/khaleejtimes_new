@@ -1,0 +1,36 @@
+{% if authors %}
+<div class="author-wrapper-box">
+  {% for author in authors %}
+    <div class="row">
+      <div class="col-lg-4 col-md-4 order-lg-2 author-photo">
+        {% if author.avatar is not empty %}
+          {% set link = get_concept_link(author.uuid) %}
+          {% if link %}
+            <a href="{{ link }}"><img src="{{ author.avatar|replace({'width=115':'width=300','height=115':'height=300'}) }}" alt="{{ author.name }}" width="300" height="300" /></a>
+          {% else %}
+            <img src="{{ author.avatar|replace({'width=115':'width=300','height=115':'height=300'}) }}" alt="{{ author.name }}" width="300" height="300"  />
+          {% endif %}
+        {% endif %}
+      </div>
+      <div class="col-lg-8 col-md-8 order-lg-1">
+        {% set link = get_concept_link(author.uuid) %}
+        {% if link %}
+          <a href="{{ link }}"><h5>{{ author.name }}</h5></a>
+        {% else %}
+          <h5>{{ author.name }}</h5>
+        {% endif %}
+        <ul class="author-box-social-icons">
+          {% if author.related_links.facebook %}<li><a href="{{ author.related_links.facebook }}"><i class="fab fa-facebook-f"></i></a></li>{% endif %}
+          {% if author.related_links.twitter %}<li><a href="{{ author.related_links.twitter }}"><i class="fab fa-twitter"></i></a></li>{% endif %}
+          {% if author.related_links.linkedin %}<li><a href="{{ author.related_links.linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>{% endif %}
+        </ul>
+
+        <ul class="author-box-contact-info">
+          {% if author.meta_data.email %}<li><i class="fas fa-envelope"></i><a href="mailto:{{ author.meta_data.email }}">{{ author.meta_data.email }}</a></li>{% endif %}
+          {% if author.meta_data.phone %}<li><i class="fas fa-phone-alt"></i>{{ author.meta_data.phone }}</li>{% endif %}
+        </ul>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endif %}

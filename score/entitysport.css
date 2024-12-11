@@ -1,0 +1,66 @@
+.hidemediacss { display:none !important; }
+.entity_sport_cricket_widget.entity-match-center .match-links-mobile {
+    background-color: #31348b;
+    border: 5px solid #31348b;
+    white-space: nowrap;
+}
+.entity_cricket_widget_match-scorecard table th
+{
+	background: #31348b;
+}
+.entity-widget-main-div .entity_sport_cricket_widget.live-scores ul.entity_tabs li a {
+    background-color: #31348b;
+}
+a.entity-cricket-match-row:hover {
+    background: #31348b;
+    color: #fff;
+    border-top: 1px solid #fff;
+}
+
+.kode_header_2 .nav>li>a { color:#fff; }
+.kode_header_2 .logo img { filter2: brightness(0.1) invert(1); max-height: 37px; object-fit: contain; margin-top: 10px; }
+.kode_header_2 .nav>li>a { border-right: 0px solid #f5f5f5; }
+.kode_header_2 .kode_navigation .nav>li {  padding-right: 9px; padding-left: 9px; height: 55px; margin-right: 1px; margin-left: 2px; }
+.kode_header_2 .kode_navigation .nav>li:last-child {  }
+
+.kode_header_2 .kode_navigation .nav>li.active { background:#f5f5f5; cursor:pointer; }
+.kode_header_2 .kode_navigation .nav>li.active a { color: #0f0f0f !important; }
+
+.entity_sport_cricket_widget.entity-match-center .match-links-mobile {
+    background-color: #31348b;
+    border: 5px solid #31348b;
+    white-space: nowrap;
+}
+
+.entity-cricket-match-center-header { background: #7cd7f9; background: #f5f5f5; padding: 35px 15px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); border-radius: 5px; }
+.entity-widget-main-div .manthematch { background: #fff; }
+.entity-widget-main-div.matchcenterdiv { border:0px solid #fff; } 
+.entity_sport_cricket_widget.entity-match-center .match-content { background: #fff; padding: 10px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); border-radius: 5px; }
+
+
+.kode_header_2 .kode_navigation .nav>li:hover {  background:#f5f5f5; cursor:pointer; }
+.kode_header_2 .kode_navigation li ul li a:hover {  color: #fff !important; cursor:pointer; }
+.kode_header_2 .nav>li:hover a { color:#0f0f0f !important; }
+.kode_header_2 .nav>li>a:hover { color:#0f0f0f !important; }
+.kode_header_2 .nav>li>a { padding-right:0px; }
+.kf_cart  i { color: #fbf9ff; } .kf_cart:hover  i { background: #f5f5f5; color: #0f0f0f; }
+.sliding-list-item a { color:#fff; }
+.sliding-list-item img { filter: brightness(0.1) invert(1);  }
+@media screen and (max-width: 992px) { .sliding-menu { display: inline-block; width: 100%; border-top: 0.5px solid #f5f5f561; border-bottom: 0px solid #e8e8e8; } }
+#show-nav i { color:#fff; }
+
+.hideadsmobile { margin-top:10px; margin-bottom:10px; }
+.hideadsdesktop { margin-top:10px; margin-bottom:10px; }
+
+	@media screen and (max-width: 767px)
+		{
+			.hideadsmobile { display:none !important; }
+		}
+		
+	@media screen and (min-width: 768px)
+		{
+			.hideadsdesktop { display:none !important; }
+		}
+		
+.entity-widget-main-div p { line-height: 1.8em; width: 100%; padding: 20px; color: #389fd9; font-weight: 600; font-size: 19px; text-align: center; }		
+		

@@ -1,0 +1,49 @@
+{
+    "name": "infomaker/everyware-plugin-redirect-original-urls",
+    "description": "Plugin to catch old content URL:s and redirect to their new URL:s.",
+    "version": "1.1.0",
+    "homepage": "https://navigaglobal.com/",
+    "license": "GPL-3.0-or-later",
+    "support": {
+        "docs": "https://docs.navigaglobal.com/everyware/widgets-and-components/everyware-plugin-redirect-original-urls",
+        "source": "https://composer.infomaker.io/#infomaker/everyware-plugin-redirect-original-urls"
+    },
+    "type": "everyware-plugin",
+    "authors": [
+        {
+            "name": "Naviga Web Team",
+            "homepage": "https://www.navigaglobal.com/web/"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.infomaker.io/"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "infomaker/everyware": "^1.8 || ^2.0",
+        "infomaker/everyware-project-plugin": ">=0.10",
+        "infomaker/everyware-twig": "^1.0"
+    },
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "Everyware\\Plugin\\RedirectOriginalUrls\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "vendor/johnpbloch/"
+        ],
+        "psr-4": {
+            "Unit\\Everyware\\Plugin\\RedirectOriginalUrls\\": "tests/Unit/"
+        }
+    },
+    "require-dev": {
+        "johnpbloch/wordpress-core": "^4.9",
+        "roave/security-advisories": "dev-master",
+        "phpunit/phpunit": "^9"
+    }
+}

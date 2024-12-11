@@ -1,0 +1,95 @@
+.calender_div {
+	width: 100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.oc_calendar {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	border: 1px solid black;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.oc_calendar thead th {
+	padding: 2px 0 2px 0;
+	font-weight: normal;
+	font-size: 0.9em;
+
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.oc_calendar .week .day {
+	text-align: center;
+	border: 1px solid #ccc;
+	padding: 2px 0;
+	width: 14.2857142857%;
+
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.oc_calendar .week .day_inactive {
+	color: #999;
+}
+
+.oc_calendar .week .day_current {
+	background: #333;
+	color: #fff;
+}
+
+.oc_calendar .week .day a {
+	text-decoration: none;
+	color: #000;
+	font-weight: normal;
+	display: block;
+	height: 100%;
+	width: 100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.oc_calendar .week .day_current a {
+	color: #fff;
+	font-weight: normal;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.cal_head_div{
+	background-color: black;
+}
+
+.oc_calendar_header {
+	text-align: center;
+	padding: 5px;
+	color: white;
+}
+
+.cal_arrow.prev{
+	background-image: url('../images/leftarrow27.png');
+	background-position:center center;
+}
+
+.cal_arrow.next{
+	background-image: url('../images/rightarrow27.png');
+	background-position:center center;
+}
+
+.cal_arrow{
+	padding: 0 20px;
+	margin: 0 30px;
+	background-repeat:no-repeat;
+	width: 16px;
+	background-size: 10px 16px;
+
+}

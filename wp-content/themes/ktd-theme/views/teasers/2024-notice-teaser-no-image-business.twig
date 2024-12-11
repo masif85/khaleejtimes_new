@@ -1,0 +1,10 @@
+{% apply spaceless %}   
+  <!-- notice teaser no image -->
+    <article class="business-list-without-thumb-stories" data-uuid="{{ uuid }}">
+     <div class="post-title-rows">
+                      <div class="heading">
+                        <h4> <a href="{{ permalink }}" title="{{ headline }}"> {{headline|striptags|replace({'"':'\''})}} </a> </h4>
+                      </div>
+                    </div>
+  </article>  
+{% endapply %}

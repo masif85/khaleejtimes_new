@@ -1,0 +1,126 @@
+{
+  "name": "infomaker/everyware-starter-kit",
+  "description": "Everyware Starter kit for creating websites for Everyware",
+  "version": "0.9.0",
+  "homepage": "https://navigaglobal.com/",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Erik Vasquez Petersson",
+      "email": "erik.vasquez.petersson@navigaglobal.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Jonathan Nilsson",
+      "email": "jonathan.nilsson@navigaglobal.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Claes Tillborg",
+      "email": "claes.tillborg@navigaglobal.com",
+      "role": "Developer"
+    }
+  ],
+  "config": {
+    "vendor-dir": "www/vendor",
+    "sort-packages": true
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://composer.infomaker.io/"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "ext-json": "*",
+    "ext-simplexml": "*",
+    "infomaker/everyboard": "^2.0.5",
+    "infomaker/everyware": "^1.7.3",
+    "infomaker/everyware-drop-in-plugins": "~0.2",
+    "infomaker/everyware-nginx-conf": "~0.3",
+    "infomaker/everyware-plugin-cache-invalidator": "~0.1",
+    "infomaker/everyware-plugin-network": "~0.1",
+    "infomaker/everyware-plugin-concepts": "~0.1",
+    "infomaker/everyware-plugin-google-analytics": "*",
+    "infomaker/everyware-widget-section-header": "*",
+    "infomaker/everyware-widget-article-list": "*",
+    "infomaker/everyware-widget-social-media": "*",
+    "infomaker/everyware-plugin-settings-parameters" : "~0.2",
+    "infomaker/everyware-project-plugin": "~0.8",
+    "infomaker/everyware-theme-base-1": "0.4.7",
+    "oomphinc/composer-installers-extender": "^1.1",
+    "wpackagist-plugin/amazon-s3-and-cloudfront": "^2.1.0",
+    "wpackagist-plugin/wp-ses": "^0.8.2"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "USKit\\Base\\": "www/wp-content/themes/everyware-theme-base-1/resources/src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {}
+  },
+  "extra": {
+    "installer-types": [
+      "nginx-conf",
+      "everyware-metabox",
+      "everyware-mu-plugin",
+      "everyware-plugin",
+      "everyware-widget"
+    ],
+    "installer-paths": {
+      "nginx/standard": [
+        "type:nginx-conf"
+      ],
+      "www/wp-content/dropins": [
+        "type:wordpress-dropin"
+      ],
+      "www/wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "www/wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ],
+      "www/wp-content/mu-plugins/{$name}/": [
+        "type:everyware-mu-plugin"
+      ],
+      "www/wp-content/plugins/everyware-bundle/plugins/{$name}/": [
+        "type:everyware-plugin"
+      ],
+      "www/wp-content/plugins/everyware-bundle/widgets/{$name}/": [
+        "type:everyware-widget"
+      ],
+      "www/wp-content/plugins/everyware-bundle/metaboxes/{$name}/": [
+        "type:everyware-metabox"
+      ]
+    }
+  },
+  "scripts": {
+    "cp-dropins": "php -r \"shell_exec('cp -vf ./www/wp-content/dropins/* ./www/wp-content/');\"",
+    "cp-ledge-invalidate": "php -r \"shell_exec('cp -vf ./www/wp-content/mu-plugins/everyware-plugin-cache-invalidator/example.lua ./lua/ledge-invalidate/lua.lua');\"",
+    "cp-nginx-aws": "php -r \"shell_exec('cp -vpfr ./nginx/standard/common ./nginx/standard/aws/');\"",
+    "cp-nginx-dev": "php -r \"shell_exec('cp -vpfr ./nginx/standard/common ./nginx/standard/dev/');\"",
+    "post-update-cmd": [
+      "@cp-dropins",
+      "@cp-nginx-aws",
+      "@cp-nginx-dev",
+      "@cp-ledge-invalidate"
+    ],
+    "post-install-cmd": [
+      "@cp-dropins",
+      "@cp-nginx-aws",
+      "@cp-nginx-dev",
+      "@cp-ledge-invalidate"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

@@ -1,0 +1,60 @@
+
+<article class="draft-rates-wrapper">
+  <div class="draft-rates-head-wrapper">
+    <div class="draft-rates-head-lt">
+      <h3>DRAFT RATE <span>{{ articles["3"].pubdate|date("F d, Y") }}</span></h3>
+      <h6>Updated <span class="time">{{ articles["3"].timeago }}</span>…</h6>
+      <h6>Selected Asian currencies in UAE Dirhams (Rates in 1 Dirham)</h6>
+    </div>
+    <div class="draft-rates-head-rt align-items-end align-self-md-start">
+      <a href="/gold-forex/qatar">QATAR DRAFT RATES</a>
+      <a href="/gold-forex">UAE DRAFT RATES</a>
+    </div>
+  </div>
+  <div class="draft-rates-main-wrapper-nf">
+    <div class="draft-rates-lt-wrap">
+      <h2>BAHRAIN <br>
+        DRAFT RATES</h2>
+      <h4>*SOURCE: UAE EXCHANGE CENTRE L.L.C., UAE. RATES ARE SUBJECT TO FLUCTUATION</h4>
+      <div class="powered-wrap">
+        <span class="sp-powered">Powered by</span>
+        <a target="_blank" href="https://capital.com/?utm_source=khaleejtimescom&utm_campaign=button1">
+        <img  src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2022/06/10135325/237x103-CC-Banners-Khaleejtimes-MCT-5628-EN.png" alt="Capital Bahrain Draft">
+          <!-- <img  src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/11/10151649/capital-230.jpg" alt=""> -->
+        </a>
+      </div>
+    </div>
+    {% if articles["3"].forextable %}
+      {% for object in articles["3"].forextable %}
+        {% if object["@attributes"].type == 'x-im/table' %}
+          <div class="draft-rates-rt-wrap">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                {% for value in object.data.thead.tr.th %}
+                  <th scope="col">{{ value }}</th>
+                {% endfor %}
+              </tr>
+              </thead>
+              <tbody>
+              {% for tr in object.data.tbody.tr %}
+                <tr>
+                  {% for value in tr.td %}
+                    {% if loop.first %}
+                      <th scope="row">{{ value }}</th>
+                    {% else %}
+
+                      <td >{{ value is iterable ? '' : value }}</td>
+                    {% endif %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</article>
+

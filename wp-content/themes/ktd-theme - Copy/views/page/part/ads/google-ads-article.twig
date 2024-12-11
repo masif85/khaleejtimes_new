@@ -1,0 +1,155 @@
+<!--  Freestar scripts start 30Apr2024  -->
+<link rel="preconnect" href="https://a.pub.network/" crossorigin />
+<link rel="preconnect" href="https://b.pub.network/" crossorigin />
+<link rel="preconnect" href="https://c.pub.network/" crossorigin />
+<link rel="preconnect" href="https://d.pub.network/" crossorigin />
+<link rel="preconnect" href="https://c.amazon-adsystem.com" crossorigin />
+<link rel="preconnect" href="https://s.amazon-adsystem.com" crossorigin />
+<link rel="preconnect" href="https://btloader.com/" crossorigin />
+<link rel="preconnect" href="https://api.btloader.com/" crossorigin />
+<link rel="preconnect" href="https://cdn.confiant-integrations.net" crossorigin />
+
+<link rel="stylesheet" href="https://a.pub.network/khaleejtimes-com/cls.css">
+<script data-cfasync="false" type="text/javascript">
+  var freestar = freestar || {};
+  freestar.queue = freestar.queue || [];
+  freestar.config = freestar.config || {};
+  freestar.config.enabled_slots = [];
+  freestar.initCallback = function () { (freestar.config.enabled_slots.length === 0) ? freestar.initCallbackCalled = false : freestar.newAdSlots(freestar.config.enabled_slots) }
+</script>
+<script src="https://a.pub.network/khaleejtimes-com/pubfig.min.js" data-cfasync="false" async></script>
+<!--  Freestar scripts End 30Apr2024 -->
+
+<script async defer src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+// adGroup: article
+// APS script Start 27Apr2024
+/*!function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},targetingKeys:function(){return[]},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");*/
+
+  // initialize apstag and have apstag set bids on the googletag slots when they are returned to the page
+/*  apstag.init({
+    pubID: '5201',
+    adServer: 'googletag',
+    simplerGPT: true
+  });*/
+// APS script End
+window.googletag = window.googletag || {cmd: []};
+//var SlotLB1, SlotLB2;
+//var SlotMPU1, SlotMPU2;
+//var SlotSky1, SlotSky2;
+var breadcrumbsection="{{ section_parent }}"; 
+var breadcrumbsubsection="{% for items in sections|slice(0, 1) %}{{ items.name }}{% endfor %}";
+var articleuuid="{{ uuid }}";
+//var init=0;
+/*
+		var d_session=new Date();
+		d_session.setTime(d_session.getTime()+(1*24*60*60*1000));
+		var expires = "expires="+d_session.toGMTString();
+		var valuez=getCookieValue('user_sessions');
+		if(!valuez)
+		{		
+		valuez=0;
+		}
+		value=Number(valuez)+1;
+		document.cookie = "user_sessions="+ value+";"+expires+";path=/";
+*/
+
+googletag.cmd.push(function() {
+
+    var mappingMobLeadfullads = googletag.sizeMapping().
+    addSize([1024,0],[970,250]). //desktop
+    addSize([768,0],[320,100]). //tablet
+    addSize([567,0],[320,100]). //smartphone
+    addSize([0,0],[320,100]). //other
+    build();
+
+    var mappingMPUcolads = googletag.sizeMapping().
+    addSize([1024,0],[300,250]). //desktop
+    addSize([768,0],[300,250]). //tablet
+    addSize([567,0],[300,250]). //smartphone
+    addSize([0,0],[300,250]). //other
+    build();
+    
+    googletag.pubads().setTargeting('KT_SectionName', [breadcrumbsection]);
+    googletag.pubads().setTargeting('KT_SubSectionName', [breadcrumbsubsection]);
+    googletag.pubads().setTargeting('KT_ArtTarget', [articleuuid]);
+    googletag.pubads().setPublisherProvidedId(utag_data.tealium_visitor_id);
+
+    //SlotLB1 = googletag.defineSlot('/78059622/Responsive-Article-Leaderboard',[[970,250],[320,100]], 'div-gpt-ad-1613480627440-0').defineSizeMapping(mappingMobLeadfullads).addService(googletag.pubads());
+    //SlotLB2 = googletag.defineSlot('/78059622/Responsive-Article-Leaderboard-footer',[[970,250],[320,100]], 'div-gpt-ad-1623646234024-0').defineSizeMapping(mappingMobLeadfullads).addService(googletag.pubads());
+    
+    googletag.defineSlot('/78059622/Responsive-Article-Leaderboard',[[970,250],[320,100]], 'div-gpt-ad-1613480627440-0').defineSizeMapping(mappingMobLeadfullads).addService(googletag.pubads());
+    googletag.defineSlot('/78059622/Responsive-Article-Leaderboard-footer',[[970,250],[320,100]], 'div-gpt-ad-1623646234024-0').defineSizeMapping(mappingMobLeadfullads).addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/Responsive-Article-MPU-336x280', [336, 280], 'div-gpt-ad-1709719517047-0').addService(googletag.pubads());
+
+	{% if every_device=='desktop' %}
+    //SlotMPU1 = googletag.defineSlot('/78059622/Responsive-Article-MPU-1',[300,250], 'div-gpt-ad-1613481060449-0').defineSizeMapping(mappingMPUcolads).addService(googletag.pubads());
+    //SlotMPU2 = googletag.defineSlot('/78059622/Responsive-Article-MPU-2',[300,250], 'div-gpt-ad-1613481175484-0').defineSizeMapping(mappingMPUcolads).addService(googletag.pubads());
+
+    //SlotSky1 = googletag.defineSlot('/78059622/Article-Skyscraper-Right',[120, 600], 'div-gpt-ad-1699245123977-0').addService(googletag.pubads());
+    //SlotSky2 = googletag.defineSlot('/78059622/Article-Skyscraper-Left',[120, 600], 'div-gpt-ad-1699245224511-0').addService(googletag.pubads());
+    
+    googletag.defineSlot('/78059622/Responsive-Article-MPU-1',[300,250], 'div-gpt-ad-1613481060449-0').defineSizeMapping(mappingMPUcolads).addService(googletag.pubads());
+    googletag.defineSlot('/78059622/Responsive-Article-MPU-2',[300,250], 'div-gpt-ad-1613481175484-0').defineSizeMapping(mappingMPUcolads).addService(googletag.pubads());
+
+    googletag.defineSlot('/78059622/Article-Skyscraper-Right',[120, 600], 'div-gpt-ad-1699245123977-0').addService(googletag.pubads());
+    googletag.defineSlot('/78059622/Article-Skyscraper-Left',[120, 600], 'div-gpt-ad-1699245224511-0').addService(googletag.pubads());
+	{% endif %}  
+
+    //googletag.defineSlot('/78059622/Responsive-InArticle-MPU-300x250', [300, 250], 'div-gpt-ad-1711370705840-0').addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/Responsive-InArticle-MPU2-300x250', [300, 250], 'div-gpt-ad-1711370958901-0').addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/Responsive-InArticle-MPU3-300x250', [300, 250], 'div-gpt-ad-1711372673668-0').addService(googletag.pubads());
+    
+    googletag.defineSlot('/23110992253/InArticle-300x250-1', [300, 250], 'div-gpt-ad-1712280361025-0').addService(googletag.pubads());
+    googletag.defineSlot('/23110992253/InArticle-300x250-2', [300, 250], 'div-gpt-ad-1712280510876-0').addService(googletag.pubads());
+    googletag.defineSlot('/23110992253/InArticle-300x250-3', [300, 250], 'div-gpt-ad-1712280684708-0').addService(googletag.pubads());
+
+	if(getCookieValue('user_sessions')==1 || getCookieValue('user_sessions')==4)
+	{	
+    init=1;
+    googletag.defineSlot('/78059622/Responsive-Article-1x1', [1,1], 'div-gpt-ad-1613625644855-0').addService(googletag.pubads());	
+    googletag.defineSlot('/78059622/Responsive-Desktop-Expandable-1x1', [1,1], 'div-gpt-ad-1624862944429-0').addService(googletag.pubads());
+	}
+  
+    googletag.defineSlot('/78059622/Responsive-Article-2', [1,1], 'div-gpt-ad-1636113966289-0').addService(googletag.pubads());
+    googletag.defineSlot('/78059622/Responsive-Article-1x1-3', [1,1], 'div-gpt-ad-1637151091152-0').addService(googletag.pubads());
+    googletag.defineSlot('/78059622/Responsive-InfiniteArticle-1x1', [1,1], 'div-gpt-ad-1644479678407-0').addService(googletag.pubads());
+
+{% if every_device=='mobile' %}
+    {{get_post('808385')|raw}}
+    {{get_post('801528')|raw}}
+{% endif %} 
+{% if every_device!='mobile' %}
+    {{get_post('789378')|raw}}
+{% endif %}
+
+   // googleInterstitialSlot = googletag.defineOutOfPageSlot('/78059622/Google-Interstitial',googletag.enums.OutOfPageFormat.INTERSTITIAL).addService(googletag.pubads());		
+    /*
+    googletag.pubads().enableLazyLoad({
+    // Fetch slots within 0 viewports.
+    fetchMarginPercent: 0,
+    // Render slots within 0.
+    renderMarginPercent: 0,
+    // Double the above values on mobile, where viewports are smaller
+    // and users tend to scroll faster.
+    mobileScaling: 2.0
+    });
+		*/
+    
+    //googletag.pubads().disableInitialLoad();
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+});
+
+//APS script Start 25Apr2024
+/*googletag.cmd.push(function(){ 
+  apstag.fetchBids({ slots: [SlotLB1, SlotLB2, SlotMPU1, SlotMPU2, SlotSky1, SlotSky2], 
+    timeout: 2000 }, 
+  function(bids) {
+    apstag.setDisplayBids(); 
+    googletag.pubads().refresh([SlotLB1, SlotLB2, SlotMPU1, SlotMPU2, SlotSky1, SlotSky2]);
+  }); 
+});*/
+//APS script End
+</script>

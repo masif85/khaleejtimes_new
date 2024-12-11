@@ -1,0 +1,42 @@
+{
+    "name": "infomaker/everyware-plugin-google-analytics",
+    "description": "Plugin for reporting site usage to Google Analytics and presenting content from Google Analytics API on your site. Includes a Most Read widget and settings for Analytics credentials.",
+    "version": "9.0.1",
+    "homepage": "https://navigaglobal.com/",
+    "license": "GPL-3.0-or-later",
+    "type": "everyware-plugin",
+    "authors": [
+        {
+            "name": "Claes Tillborg",
+            "email": "claes.tillborg@navigaglobal.com",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.infomaker.io/"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "infomaker/everyware-project-plugin": "~0.8",
+        "google/analytics-data": "^0.4.0",
+        "guzzlehttp/guzzle": "^6.5.5"
+    },
+    "require-dev": {
+        "johnpbloch/wordpress-core": "^4.9",
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Everyware\\Plugin\\GoogleAnalytics\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spec\\": "tests/Spec/"
+        }
+    }
+}

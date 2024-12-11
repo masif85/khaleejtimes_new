@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:content="https://purl.org/rss/1.0/modules/content/" xmlns:atom="https://www.w3.org/2005/Atom" xmlns:media="https://search.yahoo.com/mrss/">
+   <channel>
+      <atom:link href="{{ current_domain }}/latest-news-feeds" rel="self" type="application/rss+xml" />
+      <title><![CDATA[Khaleej Times - Keeping Track Of Change]]></title>
+      <link>{{ current_domain }}</link>
+      <description><![CDATA[Khaleej Times Online provides complete news coverage from UAE and online utilities like Dubai Gold Rate, Dubai draft rate, UAE Exchange rate, silver rate.]]></description>
+      <mailsubject>Latest News from Khaleej Times</mailsubject>
+      <language>en-gb</language>
+      <copyright><![CDATA[Copyright {{ "now"|date("Y") }} Galadari Printing and Publishing LLC.]]></copyright>
+      <pubDate>{{ "now"|date("l, F d, Y") }}  </pubDate>
+      <category><![CDATA[Khaleej Times Newsletter Feeds]]></category>
+       {{ pagecontent|raw }}
+       {{ articles|raw }}
+   </channel>
+</rss>

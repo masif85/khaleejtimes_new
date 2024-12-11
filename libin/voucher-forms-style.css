@@ -1,0 +1,427 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  background: #f4f4f4;
+}
+.voucher-libin {
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  padding: 95px 8px;
+}
+.voucher-cnt224-libin {
+  width: 100%;
+  max-width: 618px;
+  min-width: 360px;
+  margin: 30px auto;
+  background: none;
+  position: relative;
+  z-index: 103;
+  padding: 15px 0px;
+}
+.voucher-libin .container-lb-form {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  background: #fff;
+  padding: 10px 35px 35px 35px;
+  border-radius: 0px 0px 10px 10px;
+  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);*/
+}
+.voucher-libin .voucher-cnt224-libin h1 {
+  font-size: 25px;
+  background: #0179c8;
+  border-radius: 10px 10px 0px 0px;
+  color: #fff;
+  font-weight: bold;
+  padding: 23px;
+  margin: 0px;
+}
+.voucher-libin .form-voucher-libin-new .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+.voucher-libin .form-voucher-libin-new .input-box label {
+  color: #000;
+}
+.voucher-libin .form-voucher-libin-new :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 8px;
+}
+.voucher-libin .form-voucher-libin-new .input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.voucher-libin .form-voucher-libin-new .column {
+  display: flex;
+  column-gap: 15px;
+}
+.voucher-libin .form-voucher-libin-new .gender-box {
+  margin-top: 20px;
+}
+.voucher-libin .form-voucher-libin-new .gender-box h3 {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.voucher-libin .form-voucher-libin-new :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+.voucher-libin .form-voucher-libin-new .gender {
+  column-gap: 5px;
+}
+.voucher-libin .form-voucher-libin-new .gender input {
+  accent-color: #0179c8;
+}
+.voucher-libin .form-voucher-libin-new .form-voucher-libin-new :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+.voucher-libin .form-voucher-libin-new label {
+  display: inline-block;
+  margin-bottom: 0rem;
+}
+.voucher-libin .form-voucher-libin-new .gender label {
+  color: #707070;
+}
+.voucher-libin .form-voucher-libin-new .address :where(input, .select-box) {
+  margin-top: 0px;
+}
+.voucher-libin .form-voucher-libin-new .select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+  background: none;
+}
+.voucher-libin .form-voucher-libin-new button {
+  height: 50px;
+  width: auto;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #0179c8;
+  padding: 0px 25px;
+  border-radius: 4px;
+  text-align: center;
+  border: none;
+}
+.voucher-libin .form-voucher-libin-new button:hover {
+  background: #222;
+  border: none;
+}
+.voucher-libin i#togglePassword {
+  /* float: right; */
+  margin-top: 8px;
+  z-index: 99;
+  position: absolute;
+  right: 30px;
+  padding: 10px;
+}
+#popup-voucher-overlay-libin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  opacity: 0.7;
+  z-index: 100;
+  display: none;
+}
+.popup-voucher-cnt2024-libin a {
+  text-decoration: none;
+}
+.popup-voucher-libin {
+  width: 100%;
+  margin: 0 auto;
+  display: none;
+  position: fixed;
+  z-index: 101;
+  top: 0px;
+  left: 0px;
+}
+.popup-voucher-cnt2024-libin {
+  width: 40%;
+  max-width: 620px;
+  min-height: 380px;
+  margin: 100px auto;
+  background: url('https://static.khaleejtimes.com/wp-content/uploads/sites/2/2024/01/11125222/gift-voucher-bg.jpg') no-repeat;
+  position: relative;
+  z-index: 103;
+  padding: 15px 35px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #000;
+}
+.coupon-bg {
+  background: url('https://static.khaleejtimes.com/wp-content/uploads/sites/2/2024/01/11131228/coupon-bg.png') no-repeat;
+  padding: 15px 10px;
+  width: auto;
+  margin: 40px auto;
+  min-height: 260px;
+  background-size: contain;
+}
+.coupon-bg .content-text {
+  width: 75%;
+  float: left;
+  margin-top: 0px;
+}
+.coupon-bg .content-text h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #0179c8;
+  font-size: 20px;
+  text-align: center;
+}
+.popup-voucher-cnt2024-libin .coupon-bg .content-text p {
+  clear: both;
+  color: #231f20;
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  line-height: 28px;
+  margin: 5px 0px 0px 0px;
+}
+.popup-voucher-cnt2024-libin .coupon-bg .content-text b {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+.popup-voucher-cnt2024-libin .x {
+  float: right;
+  height: 35px;
+  left: 22px;
+  position: relative;
+  top: -25px;
+  width: 34px;
+}
+.popup-voucher-cnt2024-libin .x:hover {
+  cursor: pointer;
+}
+.popup-voucher-close-libin {
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #0179c8;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #fff;
+  padding: 4px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  text-align: center;
+}
+.popup-voucher-close-libin:hover {
+  background: #0179c8;
+  color: #fff;
+}
+
+.couponcode {
+border: 1px dashed;
+    padding: 0px 6px 0px 6px;
+	font-size:30px;
+}
+
+/*Responsive*/
+
+@media (max-width: 1366px) {
+  .popup-voucher-cnt2024-libin {
+    width: 100%;
+  }
+  
+  .couponcode {
+    border: 1px dashed;
+    padding: 0px 6px 0px 6px;
+    font-size: 24px;
+}
+}
+@media (max-width: 991px) {
+  .popup-voucher-cnt2024-libin {
+    width: 100%;
+    min-width: 380px;
+    min-height: 300px;
+  }
+  .popup-voucher-libin {
+    width: 90%;
+    margin: 0 auto;
+    display: none;
+    position: fixed;
+    z-index: 101;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+  }
+  .coupon-bg .content-text {
+    margin-top: 10px;
+  }
+  .coupon-bg .content-text h4 {
+    font-size: 20px;
+  }
+  .couponcode {
+    border: 1px dashed;
+    padding: 0px 6px 0px 6px;
+    font-size: 24px;
+}
+}
+@media (max-width: 600px) {
+  .coupon-bg .content-text {
+    margin-top: 0px;
+  }
+  .couponcode {
+    border: 1px dashed;
+    padding: 0px 6px 0px 6px;
+    font-size: 22px;
+}
+}
+@media screen and (max-width: 520px) {
+  .voucher-libin .form-voucher-libin-new .form .column {
+    flex-wrap: wrap;
+  }
+  .voucher-libin .form-voucher-libin-new .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+  .voucher-libin .container-lb-form {
+    padding: 0px 20px 20px 20px;
+  }
+  .voucher-libin .voucher-cnt224-libin h1 {
+    font-size: 19px;
+  }
+  .voucher-libin {
+    padding: 0px 10px;
+    margin: 0px;
+  }
+  .coupon-bg {
+    padding: 8px 5px;
+    width: auto;
+    margin: 35px auto;
+    min-height: 200px;
+    background-size: contain;
+  }
+  .popup-voucher-cnt2024-libin .coupon-bg .content-text p {
+    margin: 4px 0px 0px 0px;
+  }
+  .coupon-bg .content-text {
+    width: 70%;
+    margin-top: 0px;
+  }
+  .coupon-bg .content-text h4 {
+    font-size: 20px;
+  }
+  .popup-voucher-cnt2024-libin .coupon-bg .content-text p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  
+  .couponcode {
+    border: 1px dashed;
+    padding: 0px 6px 0px 6px;
+    font-size: 20px;
+}
+}
+@media screen and (max-width: 420px) {
+  .coupon-bg .content-text {
+    margin-top: 0px;
+  }
+  .popup-voucher-cnt2024-libin {
+    width: 100%;
+    min-width: 336px;
+    min-height: 270px;
+  }
+  .popup-voucher-cnt2024-libin {
+    width: 100%;
+    margin: 45px auto;
+    padding: 15px 10px;
+  }
+  .popup-voucher-libin {
+    width: 93%;
+  }
+
+  .voucher-libin {
+    padding: 0px 5px;
+    margin: 0px;
+  }
+  .couponcode {
+    border: 1px dashed;
+    padding: 0px 6px 0px 6px;
+    font-size: 18px;
+}
+
+}
+
+ @media screen and (max-width: 380px) { 
+
+.voucher-cnt224-libin {
+  min-width: 340px;
+ 
+}
+
+.couponcode {
+    border: 1px dashed;
+    padding: 0px 6px 0px 6px;
+    font-size: 18px;
+}
+
+}
+
+
+
+ #cover-spin {
+    position:fixed;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(255,255,255,0.7);
+    z-index:9999;
+    display:none;
+}
+
+@-webkit-keyframes spin {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+#cover-spin::after {
+    content:'';
+    display:block;
+    position:absolute;
+    left:48%;top:40%;
+    width:40px;height:40px;
+    border-style:solid;
+    border-color:black;
+    border-top-color:transparent;
+    border-width: 4px;
+    border-radius:50%;
+    -webkit-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
+}

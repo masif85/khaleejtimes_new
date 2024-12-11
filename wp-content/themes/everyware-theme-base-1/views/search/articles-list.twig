@@ -1,0 +1,59 @@
+{% for article in articles %}
+
+<article class="section-teaser search-teaser teaser">
+ 	<div class="container">
+    	<div class="row">
+
+
+        {% if article.image.uuid %}
+            <div class="teaser-image col-md-4">
+                <a href="{{ article.permalink }}">
+                    <img src="{{ image_endpoint_url }}/?uuid={{ article.image.uuid }}&function=hardcrop&type=preview&source=false&width=500&height=300">
+                </a>
+            </div>
+        {% elseif article.search_image_uuid %}
+            <div class="teaser-image col-md-4">
+                <a href="{{ article.permalink }}">
+                    <img src="{{ image_endpoint_url }}/?uuid={{ article.search_image_uuid }}&function=hardcrop&type=preview&source=false&width=500&height=300">
+                </a>
+            </div>        
+        {% endif %}
+
+        {% if article.image.uuid or article.search_image_uuid %}
+            <div class="teaser-content image col-md-8">
+        {% else %}
+            <div class="teaser-content col-md-12">
+        {% endif %}
+            
+        <div class="entry-title">
+            <a href="{{ article.permalink }}">
+                <h2 class="teaser__headline">
+                    <span class="teaser__headline-marker">{{ article.headline|raw }}</span>
+                </h2>
+            </a>
+        </div>
+
+        <div class="teaser-article-date">
+            {% if article.updated > article.pubdate %}
+                <div class="teaser-article-modifieddate">Updated: {{ article.updated|date("M d, Y", "America/New_York") }} at {{ article.updated|date("h:i A", "America/New_York") }}</div>
+            {% else %}
+                <div class="teaser-article-pubdate">Published: {{ article.pubdate|date("M d, Y", "America/New_York") }} at {{ article.pubdate|date("h:i A", "America/New_York") }}</div>
+            {% endif %}
+        </div> 
+
+        <div class="teaser-body">
+            {% if article.text|length > 25 %}
+                {{ article.text }}
+            {% elseif leadin|length > 25 %}
+                {{ article.leadin }}
+            {% else %}
+                {% if article.story_text|striptags|length > 250 %}{{ article.story_text|striptags|slice(0, 250) ~ '...' }}{% else %}{{ article.story_text|striptags }}{% endif %}
+            {% endif %}
+        </div>
+    
+        </div><!--Closing teaser-content-->
+
+        </div><!--Closing container-->
+    </div><!--Closing row-->
+</article>
+{% endfor %}

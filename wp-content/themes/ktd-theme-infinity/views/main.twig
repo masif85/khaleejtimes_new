@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="{{ get_bloginfo( 'charset' ) }}" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, maximum-scale=5">
+  <meta name="copyright" content="{{ 'now' | date('Y') }} Galadari Printing and Publishing LLC. All rights reserved." />
+  <meta name="distribution" content="global" />
+  <meta name="twitter:site" content="@khaleejtimes" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:domain" content="{{ site_url() }}" />
+  <meta property="fb:pages" content="211983032863" />
+  <meta property="og:site_name" content="Khaleej Times" />
+  <meta property="og:locale" content="en" />
+  <meta property="fb:app_id" content="103101790033337" />
+  {% block page_head %}
+    {% include "@base/page/part/metatags.twig" %}
+  {% endblock %}
+
+  {% block page_stylesheets_scripts %}
+    {% include "@base/page/part/stylesheets-scripts.twig" %}
+  {% endblock %}
+
+  {% block page_head_ads %}
+    {% if adGroup == 'homepage' %}
+      {% include "@base/page/part/ads/google-ads-homepage.twig" %}
+    {% elseif adGroup == 'article' %}
+      {% include "@base/page/part/ads/google-ads-article.twig" %}
+    {% elseif adGroup == 'gold-forex' %}
+      {% include "@base/page/part/ads/google-ads-gold-forex.twig" %}
+    {% else %}
+      {% if parentPostName=='Ramadan Prayer Time Table' %}
+         {% include "@base/page/part/ads/google-ads-ramadan.twig" %}
+      {% else %}
+         {% include "@base/page/part/ads/google-ads-fallback.twig" %}
+      {% endif %}
+    {% endif %}
+  {% endblock %}
+
+  {% include "@base/page/part/engage.twig" %}
+  {# get_header() #}
+  {% include "@base/page/part/custom-placeholder-top.twig" %}
+  {% include "@base/page/part/structured-data-script.twig" with {"value":"script"} %}
+
+</head>
+<body {{ body_class() }} data-device="{{ device }}">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THV3F58"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+{% include "@base/page/part/hpto.twig" %}
+{% include "@base/page/part/tealium-script.twig" %}
+
+
+{% block page_custom_body %}
+  {% include "@base/page/part/custom-placeholder-body.twig" %}
+{% endblock %}
+
+ {%set nas_style=""%}
+
+{% if (adGroup=='homepage' or adGroup=='section' or tealiumGroup=='article') and (parentPostName!='KT Shows') %} {% set nas_style="test_nasweef_homepage"%} {%endif%}  
+
+<div class="wrapper {{nas_style}}">
+  
+{% set pagegroup= ["privacypolicy","contactus","advertise","aboutus"] %}
+{% if pagename not in pagegroup %}
+ <!--  <div class="app-head-btn-nf-row d-flex align-items-center justify-content-center fixedsticky">
+    <div class="app-head-txt-nf2">Enjoy our faster App experience</div>
+    <div class="app-head-btn-nf2"><a href="https://onelink.to/yr8uf7">Open</a></div></div>
+	-->
+{% endif %}
+  {% block page_ad_takeover %}
+  {% include "@base/page/part/ads/google-ads-takeover.twig" %}
+  {% endblock %}
+
+  {% if tealiumGroups != 'sponsored' and tealiumGroup == 'article'  %}
+
+{% set subsectname_main='' %}
+{% for items in sections|sort|reverse|slice(0, 1) %}{% set subsectname_main= items.name %}{% endfor %}
+           <div class="container libin-class">
+    <div class="row">
+      <div class="col-lg-12 d-flex justify-content-center d-block fix-billboard-nf">
+       
+          <div class="fix-billboard-nf-inner fix-billboard-nf-inner-header-top">       
+              <div id='div-gpt-ad-1613480627440-0' style='min-width: 320px; min-height: 100px;'>
+              <script>
+                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613480627440-0'); });
+                </script>
+              </div>
+          </div>       
+      </div>
+    </div>
+  </div>         
+
+                  
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {% block page_header %}
+    <header class="primary-header mob-mb-nf">
+      {# include "@base/page/part/top-ad.twig" #}
+      {# include "@base/page/part/logoarea.twig" #}
+      {% include "@base/page/nav/main-menu.twig" %}
+    </header>	
+	{% if parentPostName=='KT Shows' && page.post_parent==0 %}
+
+<style>
+    
+  .bg-video {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   z-index: 1;
+   overflow: hidden;
+}
+ .bg-video__content {
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+}
+ @media (max-width: 700px) {
+   .bg-video {
+     background: url('https://api.khaleejtimes.com/kt-show-vdo/vdo-thumb.jpg') center center / cover no-repeat;
+  }
+   .bg-video__content {
+     display: inherit;
+  }
+}
+ .ktshow-header {
+   height: 50vh;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom:20px;
+   position: relative;
+   margin-top: -26px;
+}
+ .ktshow-header .headline {
+   margin-top: -20px;
+   font-size: 60px;
+   text-transform: uppercase;
+   background-color: transparent;
+   z-index: 2;
+   color:#FFF;
+   text-shadow: 0 0 8px #000;
+}
+ .ktshow-header .blur-edges {
+   background-image: radial-gradient(transparent, white);
+   height: 100%;
+   width: 100%;
+   z-index: 0;
+   position: absolute;
+}
+ 
+  </style>
+
+  <div class="ktshow-header">
+  <div class="bg-video">
+    <!-- <div class="blur-edges"></div> -->
+    <video class="bg-video__content" autoplay muted loop>
+      <source src="https://api.khaleejtimes.com/kt-show-vdo/dxb.mp4" type="video/mp4">
+      <!-- <source src="https://api.khaleejtimes.com/kt-show-vdo/dxb.webm" type="video/webm"> -->
+      <img src="https://api.khaleejtimes.com/kt-show-vdo/vdo-thumb.jpg" alt="KT Shows">
+    </video>
+  </div>
+  <h1 class="headline">KT SHOWS</h1>
+</div>
+{% endif %}
+  {% endblock %}
+
+  {% block page_content %}
+    <div class="container">
+      {{ the_content() }}
+    </div>
+  {% endblock %}
+
+  {% block page_footer %}
+    <footer class="footer mt-4">
+      {% include "@base/page/part/footer.twig" %}
+      {{ get_footer() }}
+    </footer>
+  {% endblock %}
+</div>
+
+{% block page_stylesheets_scripts_bottom %}
+  {% include "@base/page/part/stylesheets-scripts-bottom.twig" %}
+{% endblock %}
+
+{% block page_custom_js %}
+  {% include "@base/page/part/custom-placeholder-bottom.twig" %}
+{% endblock %}
+<!--
+Cache generated: {{ "now"|date("r") }}
+-->
+</body>
+</html>

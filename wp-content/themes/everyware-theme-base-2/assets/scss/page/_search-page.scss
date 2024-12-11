@@ -1,0 +1,87 @@
+.search {
+  .page {
+    &__header, &__list-section {
+      max-width: breakpoint-min(lg, $grid-breakpoints);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include media-breakpoint-up(sm) {
+      &__header {
+        padding: 0 $single-gutter-width;
+      }
+    }
+  }
+
+  &__form {
+    font-family: $secondary-font-family;
+    padding: $grid-gutter-width /4;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @include border-radius(1px);
+    box-shadow: 1px 1px 4px 0 rgba(100, 100, 100, 0.2);
+    border: 1px solid $gray-100;
+    margin-bottom: $grid-gutter-width /2;
+    color: $gray-700;
+  }
+
+  &__icon {
+    font-size: $font-size-sm;
+    padding: 0 $grid-gutter-width /2;
+  }
+
+  &__hits {
+    font-family: $secondary-font-family;
+    color: $gray-700;
+    font-size: $font-size-sm;
+  }
+
+  &__input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 0 $grid-gutter-width /2;
+    line-height: 2;
+  }
+
+  &__result-title {
+    font-size: $font-size-sm;
+    font-weight: 700;
+    color: $gray-700;
+    line-height: 1.7;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__result-message {
+    padding: $grid-gutter-width /2 0;
+    font-size: $font-size-md;
+    color: $gray-700;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &__form {
+      padding: $grid-gutter-width /2;
+    }
+    &__input {
+      font-size: $font-size-md;
+
+    }
+    &__result-title {
+      font-size: $font-size-md;
+    }
+
+    &__result-message {
+      font-size: $font-size-lg;
+    }
+  }
+
+  // clears the 'X' from Internet Explorer
+  input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+  input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+  // clears the 'X' from Chrome
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration { display: none; }
+}

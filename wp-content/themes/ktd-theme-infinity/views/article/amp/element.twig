@@ -1,0 +1,44 @@
+{% if content %}
+  {% if type == 'blockquote' %}
+    <!-- element: blockquote -->
+    <blockquote class="ew-blockquote blockquote">{{ content | raw }}</blockquote>
+  {% elseif type == 'headline' %}
+    <!-- element: headline -->
+    <h1>{{ content | raw }}</h1>
+  {% elseif type matches '{subheadline[1-6]}' %}
+    <!-- element: subheadline1 -->
+    <h2>{{ content | raw }}</h2>
+  {% elseif type == 'body' and variation == 'horizontal-line' %}
+    <!-- element: body -->
+    <hr class="gray-line">
+  {% elseif type == 'body' %}
+    <!-- element: body -->
+    <p>{{ content|replace({
+        '100%': "930",
+        '99%': "930",
+        'NaN': "523",
+        '<hardreturn>': "",
+        '<img': "<amp-img layout=\'responsive\'",
+        '<iframe': "<amp-iframe sandbox=\'allow-scripts allow-same-origin\' layout=\'responsive\'",
+        '</iframe>': "</amp-iframe>"
+      })|raw }}</p>
+  {% elseif type == 'drophead' %}
+    <!-- element: drophead -->
+    <p class="ew-drophead">{{ content | raw }}</p>
+  {% elseif type == 'preamble' %}
+    <!-- element: preamble -->
+    <h3><span id="dateline"></span>{{ content | raw }}</h3>
+  {% elseif type == 'ordered-list' or type == 'unordered-list' %}
+    <!-- element: list -->
+    <div class="ew-list ew-list--{{ type|replace({'-list':''}) }}">{{ content | raw }}</div>
+  {% elseif type == 'dateline' %}
+    <!-- element: dateline -->
+  {% else %}
+    <!-- element: fallback -->
+    <p>{{ content | raw }}</p>
+  {% endif %}
+{% else %}
+    {% if type == 'body' and variation == 'horizontal-line' %}
+      <hr class="gray-line">
+    {% endif %}
+{% endif %}

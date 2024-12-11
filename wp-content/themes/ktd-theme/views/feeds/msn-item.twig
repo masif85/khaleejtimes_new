@@ -1,0 +1,91 @@
+{%- if articles is iterable -%}
+    {% for article in articles %}
+        <item>
+            {% if article.uuid %}
+                <guid isPermaLink="false">{{ article.uuid }}</guid>
+            {% endif %}
+            {% if article.headline %}
+                <title><![CDATA[{{ article.headline }} ]]></title>
+            {% endif %}
+            {% if article.pubdate %}
+                <pubDate>{{ article.pubdate|date("r") }}</pubDate>
+                <dcterms:modified>{{ article.pubdate|date("r") }}</dcterms:modified>
+            {% endif %}
+            {% if article.permalink %}
+                <link>{{ article.permalink }}</link>
+            {% endif %}
+            {% if article.authors %}
+                {% for author in article.authors %}
+                    <dc:creator><![CDATA[{{ author.name }} ]]></dc:creator>
+                {% endfor %}
+            {% endif %}
+            {% if article.authors is empty and article.author_byline %}
+                <dc:creator>{{ article.author_byline }}</dc:creator>
+            {% endif %}
+            {% if article.summary %}
+                <dcterms:alternative><![CDATA[{{article.summary }}]]></dcterms:alternative>
+                <description><![CDATA[{{article.summary }}]]></description>
+            {% endif %}
+
+{% if subtype == 'VIDEO' %}
+            {% if article.section_parent %}
+                <category>{{ article.section_parent }}</category>
+            {% endif %}
+            {% if article.section %}
+                <subcategory>{{ article.section}}</subcategory>
+            {% endif %}
+            {% if article.videoid %}
+                <media:content url="https://www.dailymotion.com/embed/video/{{ article.videoid }}?autoplay=1" duration="" type="video/mp4" medium="video">
+                    {% if article.teaser_image_uuids %}
+                        {% for image  in  article.teaser_image_uuids %}
+                            <media:thumbnail url="{{ image_endpoint_url }}/?uuid={{ image }}&amp;function=hardcrop&amp;type=preview&amp;width=480" height="480" width="853" />
+                        {% endfor %}
+                    {% else %}
+                        <media:thumbnail url="https://www.dailymotion.com/thumbnail/video/{{ article.videoid }}" height="480" width="853" />
+                    {% endif %}
+                    <media:title><![CDATA[{{ article.headline }} ]]></media:title>
+                    <media:description><![CDATA[{{article.summary }}]]></media:description>
+                    {% if image.caption %}
+                        <media:credit>{{ image.caption }}</media:credit>
+                    {% else %}
+                        <media:credit>Videos - Khaleej Times</media:credit>
+                    {% endif %}
+                </media:content>
+            {% endif %}
+{% endif %}
+{% if subtype == 'GALLERY' %}
+    {% if article.section_parent %}
+        <category>{{ article.section_parent }}</category>
+    {% endif %}
+    {% if article.section %}
+        <subcategory>{{ article.section}}</subcategory>
+    {% endif %}
+    {% for image  in  article.gallery_image %}
+        <media:content url="{{ image_endpoint_url }}/?uuid={{ image.uuid }}&amp;function=original&amp;type=preview" type="image/jpeg" medium="image">
+            {% if image.author %}<media:credit><![CDATA[{{ image.author }}]]></media:credit>{% endif %}
+            <media:title><![CDATA[{{ image.caption }}]]></media:title>
+            <media:text>Khaleej Times - Photos</media:text>
+        </media:content>
+    {% endfor %}
+    {% for image  in  article.images %}
+      <media:content url="{{ image_endpoint_url }}/?uuid={{ image.uuid }}&amp;function=original&amp;type=preview" type="image/jpeg" medium="image">
+        {% if image.author %}<media:credit><![CDATA[{{ image.author }}]]></media:credit>{% endif %}
+        <media:title><![CDATA[{{ image.caption }}]]></media:title>
+        <media:text>Khaleej Times - Photos</media:text>
+      </media:content>
+    {% endfor %}
+{% endif %}
+{% if subtype == 'ARTICLE' %}
+            {% if article.body %}
+                <content:encoded><![CDATA[{{ article.body|raw }}]]></content:encoded>
+            {% endif %}
+            {% for image  in  article.images %}
+                <media:content url="{{ image_endpoint_url }}/?uuid={{ image.uuid }}&amp;function=original&amp;type=preview" type="image/jpeg" medium="image">
+                    <media:title>{{ image.caption }}</media:title>
+                    <media:text>{{ image.caption }}</media:text>
+                </media:content>
+            {% endfor %}
+{% endif %}
+        </item>
+    {% endfor %}
+{%- endif -%}

@@ -1,0 +1,50 @@
+{
+    "name": "infomaker/everyware-plugin-rss-feeds",
+    "description": "This MU plugin comes with management of RSS Feeds in a Wordpress environment. It does so by registering a \"custom post\" with the type of rss-feed. Manual management is therefore handled by Wordpress.",
+    "version": "1.0.1",
+    "type": "everyware-mu-plugin",
+    "homepage": "https://navigaglobal.com/",
+    "license": "GPL-3.0-or-later",
+    "support": {
+        "docs": "https://docs.navigaglobal.com/everyware/mu-plugins/everyware-plugin-rss-feeds",
+        "source": "https://composer.infomaker.io/#infomaker/everyware-plugin-rss-feeds"
+    },
+    "authors": [
+        {
+            "name": "Naviga Web Team",
+            "homepage": "https://www.navigaglobal.com/web/"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.infomaker.io/"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "infomaker/everyware": "^1.8 || ^2.0",
+        "infomaker/everyware-imengine": ">=0.3.6",
+        "infomaker/everyware-newsml": ">=0.9",
+        "infomaker/everyware-project-plugin": ">=0.10"
+    },
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "Everyware\\RssFeeds\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "vendor/johnpbloch/"
+        ],
+        "psr-4": {
+            "Unit\\Everyware\\RssFeeds\\": "tests/Unit/"
+        }
+    },
+    "require-dev": {
+        "johnpbloch/wordpress-core": "^4.9",
+        "roave/security-advisories": "dev-master",
+        "phpunit/phpunit": "^9"
+    }
+}

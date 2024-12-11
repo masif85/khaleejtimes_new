@@ -1,0 +1,4 @@
+<div class="ew-form">
+    {% block form %}{% endblock %}
+    {% if current_version %}{{ form.input('hidden', current_version)|raw }}{% endif %}
+</div>

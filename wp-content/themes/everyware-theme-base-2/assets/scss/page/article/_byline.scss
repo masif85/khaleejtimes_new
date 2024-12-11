@@ -1,0 +1,168 @@
+/*
+  Mixin to make profile pictures overlap each other.
+*/
+@mixin overlap($px, $children) {
+  @for $i from 1 through $children {
+    &:nth-child(#{$i}) {
+      margin-left: -$px;
+    }
+  }
+}
+
+.authorbox {
+  &__wrapper {
+    border-top: $border-solid;
+    border-bottom: $border-solid;
+    &--top {
+      padding: 15px 0;
+    }
+  }
+  //desktop
+  &__author--container {
+    width: 100%;
+    padding-bottom: 15px;
+  }
+  &__author {
+    color: $text-muted;
+    &--bottom--desktop,
+    &--bottom--mobile {
+      display: flex;
+      padding-top: 15px;
+      border-bottom: $border-solid;
+    }
+  }
+
+  /*
+    Name & description style
+  */
+  &__creator {
+    font-family: $secondary-font-family;
+    flex: 1;
+    &--bottom--mobile {
+      padding-bottom: 15px;
+      flex: 1;
+    }
+    &--dl {
+      margin: 0;
+      &--bottom--desktop,
+      &--bottom--mobile {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+      }
+    }
+    &--name {
+      font-family: $primary-font-family;
+      font-size: $font-size-md;
+      padding-right: 10px;
+    }
+    &--description {
+      font-size: $font-size-xs;
+      margin: 0;
+    }
+  }
+  /*
+    Meta data & icons
+  */
+  &__contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__icon--container {
+    width: 100%;
+    margin: 5px 0;
+    font-size: $font-size-sm;
+    word-break: break-all;
+    &--bottom--desktop:last-child,
+    &--bottom--mobile:last-child {
+      margin-bottom: 0;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+    a {
+      display: inline-block;
+      align-items: center;
+    }
+
+    img {
+      height: 16px;
+      width: 15px;
+      display: inline-block;
+      margin-right: 4px;
+    }
+  }
+  &__icon {
+    width: $font-size-sm;
+    margin-right: 5px;
+    text-align: center;
+  }
+
+  /*
+    Date block
+  */
+  &__datetime {
+    padding: $single-gutter-width 0 0 0;
+    font-family: $secondary-font-family;
+    &--bottom--desktop,
+    &--bottom--mobile {
+      padding: 15px 0;
+    }
+  }
+  &__datetime--description {
+    padding: 0;
+    font-size: $font-size-xs;
+
+    &:first-child {
+      margin-bottom: 3px;
+    }
+  }
+  &__datetime--published {
+    opacity: 0.45;
+  }
+
+  &__datetime--value {
+    color: $text-muted;
+  }
+
+  /*
+    Profile pictures
+  */
+  &__avatar {
+    display: flex;
+    align-items: flex-end;
+    img {
+      width: 115px;
+      height: 115px;
+    }
+    /* two images */
+    &--image--bottom--desktop:first-child:nth-last-child(2),
+    &--image--bottom--desktop:first-child:nth-last-child(2)
+      ~ &--image--bottom--desktop {
+      @include overlap(15px, $children: 2);
+    }
+    /* three images */
+    &--image--bottom--desktop:first-child:nth-last-child(3),
+    &--image--bottom--desktop:first-child:nth-last-child(3)
+      ~ &--image--bottom--desktop {
+      @include overlap(30px, $children: 3);
+    }
+    /* four images */
+    &--image--bottom--desktop:first-child:nth-last-child(4),
+    &--image--bottom--desktop:first-child:nth-last-child(4)
+      ~ &--image--bottom--desktop {
+      img {
+        width: 90px;
+        height: 90px;
+      }
+      @include overlap(45px, $children: 4);
+    }
+    /* five images */
+    &--image--bottom--desktop:first-child:nth-last-child(5),
+    &--image--bottom--desktop:first-child:nth-last-child(5)
+      ~ &--image--bottom--desktop {
+      display: none;
+    }
+  }
+}

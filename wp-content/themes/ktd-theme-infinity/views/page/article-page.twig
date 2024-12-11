@@ -1,0 +1,309 @@
+{% extends '@base/main.twig' %}
+{% block page_head %}
+  {% include "@base/article/part/metatags.twig" %}
+  <link rel="amphtml" href="{{ get_permalink() }}?amp=1">
+{% endblock %}
+{% block page_stylesheets_scripts %}
+  {{ parent() }}
+  {# include "@base/article/part/vuukle-script.twig" #}
+  <link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/swiper-bundle.min.css">
+{% endblock %}
+{% block page_ad_takeover %}
+{% endblock %}
+{% block page_content %}  
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12 d-flex justify-content-center d-block fix-billboard-nf">
+      <div class="fix-billboard-nf-inner"> -->
+        <!-- /78059622/Responsive-Article-Leaderboard -->
+       <!-- <div id='div-gpt-ad-1613480627440-0'>
+          <script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613480627440-0'); });
+          </script>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div> -->  
+  <!-- /78059622/Article-Skyscraper-Left -- start-->
+<!-- <div id='div-gpt-ad-1699245224511-0' class='skyscraper-left-lb'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1699245224511-0'); });
+  </script>
+</div> -->
+<!-- /78059622/Article-Skyscraper-Left -- end-->
+  <div class="container">
+    <div class="article-container" data-triggerView data-url="{{ get_self_link()|split('?')|first }}" data-articlez="1" viewed="">
+      <div class="row">
+        <div class="col-lg-8 art-lt-cust-nf">
+
+<div id="floater-bt-article-lb" class="floater-article-btn-0" article-id="1" style="display:none;"> <a> Read next story <img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2024/05/15185234/down-arrow-01.png" style="width:12px; height:13px; margin-left:5px;">  </a></div>
+<script>
+jQuery(".floater-article-btn-0").hide();
+jQuery.fn.isInViewportz = function () { 
+   let elementTop = jQuery(this).offset().top;
+    let elementBottom = elementTop + jQuery(this).outerHeight();
+    let viewportTop = jQuery(window).scrollTop();
+    let viewportBottom = viewportTop + jQuery(window).height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+}
+jQuery(window).scroll(function() { 
+    if (jQuery(".secondpara").isInViewportz() == true ) {    
+     jQuery(".floater-article-btn-0").show();     
+     //jQuery(".floater-article-btn").attr("article-id",next+1);   
+    }
+   else
+    {
+    jQuery(".floater-article-btn-0").hide();           
+    }    
+});
+</script>
+		{% if show_floater_mykt=='netcore' %}
+		<!-- <a href="https://www.khaleejtimes.com/mykt" class="btn btn-primary" style="position: fixed;z-index: 1001;color: white;background-color: #0179c8;">My KT</a> -->
+		{% endif %}
+          <div class="article-wrapper" data-uuid="{{ uuid }}">
+            <div class="article-paragraph-wrapper">
+              <ul class="breadcrumbs-nw-nf-lat">
+                {% include "@base/article/breadcrumb.twig" %}
+              </ul>
+                {% set metasocial = true %}
+                {% set authorbox = true %}
+                {% set firstimage = true %}
+                {% set firstparagraph = true %}
+                {% set scounter=false %}
+                {% set count = 1 %}
+				{% set scount = 1 %}
+                {% set videonotembed = true %}
+				{% set objcount = false %}
+                {% if dateline is not null and dateline is not empty %}
+                    {% set dateline = dateline ~ ' - ' %}
+                {% endif %}
+        {% set totalpara= body|length %}
+         {# set paraend= (totalpara-(15/100*totalpara))|round(0, 'ceil') #}
+         {% set paraend=  totalpara %}
+         {% set counterset=(totalpara-(totalpara)/3)|round(0, 'ceil')  %}
+			{% for paragraph in body %}
+				 {% if (contentsubtype=='GALLERY' or contentsubtype=='VIDEO') and contentsubtype!='ARTICLE'%}			 
+						  {% if loop.last %}						 
+						 	{% set objcount = true %}	
+							{% endif %}							
+				{% endif %}				
+                    {% if paragraph is not empty or objcount %}		
+                        {# Inside Author Box Start #}
+                          {% if (paragraph matches '{<!-- element: (body|fallback) -->}' or objcount) and authorbox %}
+                            {% set authorbox = false %}
+                            {% include "@base/article/inline-author-article.twig" %}
+                        {% endif %}
+                        {# Inside Author Box End #}					
+                        {# check if dailymotion is embed #}
+                        {% if paragraph matches '{dailymotion.com/embed/video}'  %}
+                            {% set videonotembed = false %}
+                        {% endif %}
+                        {% if loop.index==counterset and scounter==false%}         
+                          {% set scounter=true %}                  
+                        <div class="secondpara">
+                       {% endif %}
+                       {% if loop.index==paraend %}
+                        </div>
+                       {% endif %}
+                        {# check if dailymotion is embed #}
+                        {% if contentsubtype == 'VIDEO' or  contentsubtype == 'GALLERY'%}
+                            {% if paragraph matches '{<!-- object: image -->}' and firstimage %}
+                                {% set firstimage = false %}								
+                            {% else %}
+                                {{ paragraph|replace({'<span id="dateline"></span>':dateline})|raw }}
+                            {% endif %}
+                        {% else %}
+{% if paragraph matches '{<!-- object: image -->}' and firstimage %}							
+					</div>							
+					<div class="article-leftbar-wrap-nf topsty-netcore-0">
+                              <div id="arttopstrywrap" class="article-lt-top-story">
+                                <h2>&nbsp;</h2>             
+                                  <div class="arttopstrywrap-list-dt">
+                                    <a href="https://www.khaleejtimes.com/life-and-living/embracing-the-bright-side-a-guide-on-how-to-cultivate-optimism">
+                                      <img src="https://image.khaleejtimes.com/?uuid=82310921-6360-526a-97cc-fc7db7999c04&function=cropresize&type=preview&source=false&q=75&crop_w=0.99999&crop_h=0.8427&width=1500&height=844&x=1.0E-5&y=0.14232" alt="" />
+                                      <h3>Embracing the bright side: A guide on how to cultivate optimism</h3>
+                                      </a>
+                                  </div>
+                                     <div class="arttopstrywrap-list-dt">
+                                     <a href="https://www.khaleejtimes.com/travel/the-power-of-solitude-why-you-should-go-on-a-solo-trip">
+                                      <img src="https://image.khaleejtimes.com/?uuid=ee38c150-5d16-5aa0-a817-e4d2dc0badba&function=cropresize&type=preview&source=false&q=75&crop_w=0.99999&crop_h=0.99956&x=0&y=0&width=1500&height=844" alt="" />
+                                      <h3>The power of solitude: Why you should go on a solo trip</h3>
+                                      </a>
+                                  </div>
+                                     <div class="arttopstrywrap-list-dt">
+                                     <a href="https://www.khaleejtimes.com/life-and-living/how-to-get-your-kids-to-read-essential-tips-for-parents">
+                                      <img src="https://image.khaleejtimes.com/?uuid=c0d11029-2744-51ce-9963-58800b58de7d&function=cropresize&type=preview&source=false&q=75&crop_w=0.99999&crop_h=0.8427&width=1500&height=844&x=1.0E-5&y=0.11423" alt="" />
+                                      <h3>How to get your kids to read: Essential tips for parents</h3></a>
+                                  </div>                           
+                              </div>
+                            </div>							
+							  <div class="article-nwsplit-arp-wrap-nf asif-test">
+                               {% set firstimage = false %}
+                                {{ paragraph|replace({'image-wrapper':'image-wrapper image-wrapper-first'})|raw }}
+                             {% else %}
+                                {{ paragraph|replace({'<span id="dateline"></span>':dateline})|raw }}								
+								{% if paragraph matches '{<!-- element: body -->}'  and  count==2 %}
+							{% set scount=scount+1 %} 
+							 {% endif %}
+								{% if  paragraph matches '{<!-- element: body -->}' and scount==4 %}
+								<!-- googleoff: index -->								
+                        <!-- /78059622/Responsive-InArticle-MPU2-300x250 -->
+                        <!-- <div id='div-gpt-ad-1711370958901-0' style='max-width: 300px; max-height: 250px;margin:0px auto; text-align:center;'>
+                        <script>
+                        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1711370958901-0'); });
+                        </script>
+                        </div><br/> -->
+                        <!-- /23110992253/InArticle-300x250-2 -->
+                        <div id='div-gpt-ad-1712280510876-0' style='max-width: 300px; max-height: 250px;margin:0px auto; text-align:center;'>
+                          <script>
+                            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1712280510876-0'); });
+                          </script>
+                        </div><br/>
+								<!-- googleon: index -->
+								{% endif %}
+                            {% if paragraph matches '{<!-- element: body -->}' and firstparagraph and count==2 %}
+                                {% set firstparagraph = false %}
+                                <!-- /78059622/Responsive-InArticle-MPU-300x250 -->
+                                <!--  <div id='div-gpt-ad-1711370705840-0' style='max-width: 300px; max-height: 250px;margin:0px auto; text-align:center;'>
+                                  <script>
+                                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1711370705840-0'); });
+                                  </script>
+                                  </div><br/> -->
+                                <!-- /23110992253/InArticle-300x250-1 -->
+                                <div id='div-gpt-ad-1712280361025-0' style='max-width: 300px; max-height: 250px;margin:0px auto; text-align:center;'>
+                                <script>
+                                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1712280361025-0'); });
+                                </script>
+                                </div><br/> 
+                                {% else %}
+                             {% if paragraph matches '{<!-- element: body -->}' and firstparagraph and count==1 %}
+                             {% set count = 2 %}
+                             {% endif %}
+                           {% endif %}
+                        {% endif %}						
+                        {% endif %}
+                        {# Social medie icons Start #}
+                        {% if paragraph matches '{<!-- element: (preamble|body|fallback) -->}' and metasocial %}
+                            {% set metasocial = false %}
+                            {% include "@base/article/meta-social.twig" %}
+                        {% endif %}
+                        {# Social medie icons End #}						
+                    {% endif %}
+              {% if loop.last %}
+                   <!-- /78059622/Responsive-InArticle-MPU3-300x250 -->
+                    <!--  <div id='div-gpt-ad-1711372673668-0' style='max-width: 300px; max-height: 250px;margin:0px auto; text-align:center;'>
+                      <script>
+                      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1711372673668-0'); });
+                      </script>
+                      </div> -->
+                      <!-- /23110992253/InArticle-300x250-3 -->
+                      <div id='div-gpt-ad-1712280684708-0' style='max-width: 300px; max-height: 250px;margin:0px auto; text-align:center;'>
+                        <script>
+                          googletag.cmd.push(function() { googletag.display('div-gpt-ad-1712280684708-0'); });
+                        </script>
+                      </div>                      
+                   {% endif %}
+                {% endfor %}
+        {% if contentsubtype == 'VIDEO' and videonotembed %}
+                    {% if videoid %}
+                      <div class="facebook-responsive-video mt-4">
+                        <iframe type="text/html"
+                                src="https://www.dailymotion.com/embed/video/{{ videoid }}?autoplay=1"
+                                allow="autoplay"
+                                allowfullscreen=""
+                                width="100%"
+                                height="100%"
+                                frameborder="0">
+                        </iframe>
+                      </div>
+                    {% endif %}
+                {% endif %}
+              {% include "@base/article/concepts.twig" %}
+           <!-- </div> -->
+            {% include "@base/article/authors.twig" %}
+              <!-- Primis Video - Static-Bottom -->
+             <!-- <script type="text/javascript" language="javascript" src="https://live.primis.tech/live/liveView.php?s=117534"></script> -->
+              <!-- Primis Video  -->		
+					
+             <div itemscope itemtype="https://schema.org/VideoObject"
+              style="position:relative;padding-bottom:56.25%;"><meta itemprop="name" content="Home page and In article videos" />
+			  <meta itemprop="description" content="Home page and In article videos" />
+			  <meta itemprop="uploadDate" content="2024-03-05T08:41:46.000Z" /><meta itemprop="thumbnailUrl" content="https://s1.dmcdn.net/v/VSTCN1bQ4DWmLwX7V/x180" />
+			  <meta itemprop="embedUrl" content="https://geo.dailymotion.com/player/xqmum.html?playlist=x86zwi" />
+			  <iframe src="https://geo.dailymotion.com/player/xqmum.html?playlist=x86zwi&mute=true"
+              allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Dailymotion video player – Home page and In article videos" frameborder="0" width="100%" height="100%" style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+				
+			
+			<div id="agora-article-below-1"></div>
+			
+			
+			 </div>
+			
+			
+            {% if loadMoreArticles is not empty %}
+              <div class="load-next-article" data-triggerLoadArticle data-article="1"></div>
+            {% endif %}
+			
+           <!-- {# include "@base/article/part/speakol.twig" with { speakol_id: 6437 } #} -->
+        <!-- ANDBEYOND ABM  START  -->
+        <!-- ANDBEYOND ABM  END -->
+				{# include "@base/article/part/vuukle.twig" #}
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- Speakol Scripts Start -->
+              <!--  {# include "@base/article/part/speakol.twig" with { speakol_id: 6248 } #} -->
+                <br />
+                <!-- Speakol Scripts End -->
+              </div>
+            </div>
+          </div>
+        </div>
+           <aside class="col-sm-12 col-md-12 col-lg-4 art-rt-cust-nf">
+          <div class="article-right-sidebar fixedsticky">
+            {{ render_sidebar("default-article-sidebar") }}
+          </div>
+        </aside>
+      </div>
+    </div>
+    <div class="loaded-articles"></div>
+    {% if (contentsubtype == 'VIDEO') or  (contentsubtype == 'GALLERY') %}
+      {{ render_sidebar(contentsubtype|lower ~ '-article-below') }}
+    {% else %}
+      {% if moreFromThisConcept is not empty %}
+        {% include "@base/article/more-articles.twig" %}
+      {% endif %}
+    {% endif %}
+  </div>
+
+<!-- /78059622/Article-Skyscraper-Right-- start -->
+<!-- <div id='div-gpt-ad-1699245123977-0' class='skyscraper-right-lb'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1699245123977-0'); });
+  </script>
+</div>  -->
+<!-- /78059622/Article-Skyscraper-Right-- end -->
+
+  
+{% endblock %}
+{% block page_stylesheets_scripts_bottom %}
+  {{ parent() }}
+  <script>
+ 
+   var infiniteArticles = {{ infinitearticles|raw }};
+   var  core_source="netcore";
+    if(infiniteArticles.length==0)
+   {
+    core_source="naviga";
+    infiniteArticles = {{ loadMoreArticles|map(article => article.permalink)|json_encode|raw }};
+   }
+ 
+  </script>
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/ScrollTrigger.min.js"></script>
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/swiper-bundle.min.js"></script>
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/article.js"></script>
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/scroll-load-more.js?v=12995"></script>
+  {% include "@base/article/part/first-impressions.twig" %}
+  <!-- <script async type="text/javascript" src="https://api.khaleejtimes.com/public/vendors/js/speakol/speakol.js"></script> -->
+  <!-- KT -->
+{% endblock %}

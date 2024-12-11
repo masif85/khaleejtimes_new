@@ -1,0 +1,11 @@
+{% extends '@base/main.twig' %}
+
+{% block site_content %}
+    {% block section_menu %}
+        {{ get_template_part('partials/section-menu') }}
+    {% endblock section_menu %}
+
+    <div class="wrapper">
+        {{ the_content()|raw }}
+    </div>
+{% endblock %}

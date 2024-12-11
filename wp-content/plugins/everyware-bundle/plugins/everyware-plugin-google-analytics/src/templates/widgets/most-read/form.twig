@@ -1,0 +1,58 @@
+{% set settings = {up_to_date: true} %}
+{% extends '@projectPlugin/components/admin.twig' %}
+
+{% block form %}
+  <div class="form-group">
+    <label>Match types{{ form.tooltip(translate('Match type of filter value.', textdomain))|raw }}</label>
+    {{ form.select(match_type, match_types, { class: 'form-control' })|raw }}
+  </div>
+
+  <div class="form-group">
+    <label for="{{ filter_value.id() }}">Filter value{{ form.tooltip(translate('This is the filter value that is applied to the google analytics query.', textdomain))|raw }}</label>
+    {{ form.input('text', filter_value, { class: 'form-control' })|raw }}
+  </div>
+
+  <div class="form-group">
+    <label for="{{ case_sensitive.id() }}">Case sensitive{{ form.tooltip(translate('<strong>On</strong>: Applied filter will be case sensitive', textdomain), 'top' )|raw }}</label>
+    {{ form.checkbox(case_sensitive, { class: 'checkbox'})|raw }}
+  </div>
+
+  <hr style="border: 1px solid #ccc">
+
+  <div class="form-group">
+    <label>Start from{{ form.tooltip(translate('Use this field to set the position from where the articles will be fetched.<hr><i>Default: 1</i>', textdomain))|raw }}</label>
+    {{ form.input('number', start, { class: 'form-control' })|raw }}
+  </div>
+
+  <div class="form-group">
+    <label>Limit{{ form.tooltip(translate('Use this field to set the limit number of articles you would like to display.<hr><i>Default: 1</i>', textdomain))|raw }}</label>
+    {{ form.input('number', limit, { class: 'form-control' })|raw }}
+  </div>
+
+  <div class="form-group">
+    <label>Teaser layout{{ form.tooltip(translate('Set the layout for the articles of the list.<hr><i>Default: ocarticle-default.php</i>', textdomain))|raw }}</label>
+    {{ form.select(template, templates, { class: 'form-control', placeholder: 'Use Template' })|raw }}
+  </div>
+
+  <hr style="border: 1px solid #ccc">
+
+  <div class="form-section">
+
+    <div class="form-group">
+      <label for="{{ render_as_list.id() }}">Render as list widget{{ form.tooltip(translate('<strong>On</strong>: Will render the articles wrapped in an ordered list with the headline on top.<br><strong>Off</strong>: Will remove all wrapping elements including the headline.<hr><i>Default: Off</i>', textdomain), 'top' )|raw }}</label>
+      {{ form.checkbox(render_as_list, { class: 'checkbox'})|raw }}
+    </div>
+
+    <div class="form-group">
+      <label for="{{ title.id() }}">Title{{ form.tooltip(translate('This is the headline of your list.<br>It will only be shown if <i>Render as plain list</i> is <b>off</b>.', textdomain))|raw }}</label>
+      {{ form.input('text', title, { class: 'form-control' })|raw }}
+    </div>
+
+    <div class="form-group">
+      <label>Link title to page{{ form.tooltip(translate('You have the option to link your list to a page. This will render the headline as a link to the choosen page', textdomain))|raw }}</label>
+      {{ form.select(page, pages, { class: 'form-control', placeholder: 'None' })|raw }}
+    </div>
+
+  </div>
+
+{% endblock %}

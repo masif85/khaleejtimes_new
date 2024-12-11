@@ -1,0 +1,27 @@
+<section class="page-takeover centered" style="background: url('{{ fullWidthImage.src }}') no-repeat center center;background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-6 offset-lg-3">
+        <div class="takeover">
+          <article class="post takeover-post">
+            {% if contentsubtype %}
+              <div class="post-thumbnail">
+                <div class="icon-overlay icon-2">
+                  {% if contentsubtype == 'GALLERY' %}
+                    <i class="fas fa-camera photo-icon"></i>
+                  {% elseif contentsubtype == 'LIVE' %}
+                    <i class="fas fa-play photo-icon"></i>
+                  {% elseif contentsubtype == 'VIDEO' %}
+                    <i class="fas fa-video live-icon"></i>
+                  {% elseif contentsubtype == 'PODCAST' %}
+                    <i class="fas fa-microphone audio-icon"></i>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

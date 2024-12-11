@@ -1,0 +1,30 @@
+<h4>{{ title }}</h4>
+{% if rows is not empty %}
+  <table class="table table-hover">
+    <tbody>
+      {% for row in rows %}
+        {% if first %}
+          <tr>
+            <td scope="col">
+              <span class="forex-head">1 AED</span>
+            </td>
+            <td scope="col">
+              <span class="forex-item">
+                {{ row.1|split(' ').0 }} {{ str_between(row.0, '(', ')') }}
+              </span>
+            </td>
+          </tr>
+        {% else %}
+          <tr>
+            <td scope="col">
+              <span class="forex-head">{{ row.0 }}</span>
+            </td>
+            <td scope="col">
+              <span class="forex-item">{{ row.1 }} AED</span>
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+{% endif %}

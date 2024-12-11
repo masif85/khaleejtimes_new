@@ -1,0 +1,28 @@
+{% apply spaceless %}        
+	{% for videos in video %}	
+
+<div class="col-6 col-lg-4 board-col-xs-6 board-col-sm-6 board-col-md-4 board-col-lg-4 dtw-videos">
+
+
+									<article class="post top-image-bottom-content">
+										<div class="post-thumbnail">
+										<div class="dtwvideo-icon-nf">
+											<a href="{{videos.video_url}}" class="mediabox"><img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2022/12/05143557/play.png" /></a>
+										</div>
+											<a href="{{videos.video_url}}" class="mediabox">
+												<img src="{{videos.cover_picture}}" class="img-fluid stclass" alt="">
+											</a>
+										</div>
+										<div class="entry-container">
+											<div class="entry-header">
+												<p class="category-btn"><a href="{{videos.video_url}}" class="mediabox">{{videos.sections}}</a></p>
+												<h2 class="post-title"><a href="{{videos.video_url}}" class="mediabox">{{videos['title']}}</a></h2>
+											</div>
+											
+										</div>	
+									</article>
+
+
+</div>
+{% endfor %}	
+{% endapply %}

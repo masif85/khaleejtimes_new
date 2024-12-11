@@ -1,0 +1,45 @@
+{
+    "name": "everyware-theme-base-2",
+    "version": "1.2.0",
+    "description": "Base theme for Naviga Web projects",
+    "main": "gulpfile.js",
+    "vendor": "infomaker",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "gulp": "gulp",
+        "gulp-watch": "gulp watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@bitbucket.org:infomaker/everyware-theme-eu-resources.git"
+    },
+    "license": "GPL-3.0-or-later",
+    "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/preset-env": "^7.8.3",
+        "babelify": "^10.0.0",
+        "browserify": "^16.5.0",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^6.1.0",
+        "gulp-clean-css": "^4.2.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-eslint": "^5.0.0",
+        "gulp-pxtorem": "^3.0.0",
+        "gulp-rename": "^1.4.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-sass-lint": "^1.4.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-uglify": "^3.0.2",
+        "gulp-util": "^3.0.8",
+        "node-sass": "^4.13.1",
+        "through2": "^3.0.1",
+        "vinyl-buffer": "^1.0.1",
+        "vinyl-source-stream": "^2.0.0"
+    },
+    "dependencies": {
+        "bootstrap": "^4.4.1",
+        "jquery": "^3.4.1",
+        "plyr": "^3.5.4",
+        "popper.js": "^1.16.1"
+    }
+}

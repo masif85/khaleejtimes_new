@@ -1,0 +1,840 @@
+{% set lSlug = get_permalink()|replace({(site_url()) : ""}) %}
+
+{% set foo = lSlug|split('/') %}
+{% if 'hi' in foo %}
+{% set lang='Hindi' %}
+
+{% elseif 'ml' in foo %}
+{% set lang='Malayalam' %}
+
+{% elseif 'ta' in foo %}
+{% set lang='Tamil' %}
+
+{%else%}
+
+{% set lang='English' %}
+{% endif %}
+
+{% if tealiumGroup == 'homepage' %}
+<script>
+//homepagesetup
+var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+/*var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null; */
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content'); 
+newsKeywords = newsKeywords || null;
+
+
+
+var utag_data = {
+  "event_type"		:"page_view",
+  "page_url":'{{get_permalink()}}',  
+  "page_category"		:"Top News",
+  "page_currency_code"	:"AED",
+  "page_lang"		:"{{lang}}",
+  "page_type"		:"home_page",
+  "tealium_event"		:"homepage",
+  "user_application"	:"{{ every_device }}"  ,
+ /* "google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,*/
+  "eventtimestamp":event_timestamp_utc, 
+  "NewsKeywords":newsKeywords
+}
+ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+</script>
+{% endif %}
+{% if tealiumGroup == 'searchpage' %}
+<script>
+var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+/*
+var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null;
+*/
+
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+
+newsKeywords = newsKeywords || null;
+
+
+var utag_data = {
+  "event_type"		: "page_view",
+  "page_url":'{{get_permalink()}}',  
+  "page_type"		: "search_page",
+  "search_keyword"	: "{{ paramQ }}",
+  "tealium_event"		: "search_view",
+  "user_application"	: "{{ every_device }}",
+ /*"google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,*/
+  "eventtimestamp":event_timestamp_utc, 
+  "NewsKeywords":newsKeywords
+}
+ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+
+</script>
+{% endif %}
+
+{% if tealiumGroup == 'advertise' %}
+<script>
+var utag_data = {
+  "event_type"			: "page_view",
+  "page_url":'{{get_permalink()}}',  
+  "page_category"			: "advertise",
+  "page_country"			: "eg",
+  "page_currency_code"		: "AED",
+  "page_lang"				: "{{lang}}",
+  "page_section"			: "Advertise with us",
+  "page_type"				: "advertise page",
+  "tealium_event"			: "advertise_view",
+  "user_application"			: "{{ every_device }}"
+} 
+ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+
+</script>
+{% endif %}
+
+{% if tealiumGroup == 'aboutus' %}
+<script>
+var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+/*
+var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null; */
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+
+
+var utag_data = {
+    "event_type"			: "page_view",
+    "page_url":'{{get_permalink()}}',    
+    "page_category"			: "aboutus",
+    "page_country"			: "eg",
+    "page_currency_code"		: "AED",
+    "page_lang"				: "{{lang}}",
+    "page_section"			: "About Us",
+    "page_type"				: "about us",
+    "tealium_event"			: "aboutus_view",
+    "user_application"			: "{{ every_device }}"
+} 
+ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+
+</script>
+{% endif %}
+
+{% if tealiumGroup == 'contactus' %}
+<script>
+  var utag_data = {
+    "event_type" : "page_view",
+    "page_url":'{{get_permalink()}}',    
+    "page_category" : "contact-us",
+    "page_country" : "eg",
+    "page_currency_code" : "AED",
+    "page_lang" : "{{lang}}",
+    "page_section" : "Contact us",
+    "page_type" : "contact_us page",
+    "tealium_event" : "contact_us_view",
+    "user_application" : "{{ every_device }}",
+  /*
+  "google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,
+  */
+  "eventtimestamp":event_timestamp_utc,
+    "NewsKeywords":newsKeywords
+}
+ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+</script>
+{% endif %}
+
+{% if tealiumGroup == 'privacypolicy' %}
+<script>
+
+  var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+/*
+var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null; */
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+ 
+
+
+  var utag_data = {
+    "event_type" : "page_view",
+    "page_url":'{{get_permalink()}}',   
+    "page_category" : "privacy-policy",
+    "page_country" : "eg",
+    "page_currency_code" : "AED",
+    "page_lang" : "{{lang}}",
+    "page_section" : "Privacy Policy",
+    "page_type" : "privacy_policy page",
+    "tealium_event" : "privacy_policy_view",
+    "user_application" : "{{ every_device }}",
+    /*
+   "google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,
+  */
+  "eventtimestamp":event_timestamp_utc,
+    "NewsKeywords":newsKeywords
+ }
+ ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+
+</script>
+{% endif %}
+
+{% if tealiumGroup == 'weather' %}
+  <script>
+  var utag_data = {
+    "event_type"			: "page_view",
+    "page_url":'{{get_permalink()}}',    
+    "page_category"			: "weather",
+    "page_country"			: "eg",
+    "page_currency_code"		: "AED",
+    "page_lang"			: "{{lang}}",
+    "page_section"			: "Weather",
+    "page_type"			: "weather page",
+    "tealium_event"			: "weather_view",
+    "user_application"			: "{{ every_device }}"
+  } 
+  ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+
+  </script>
+{% endif %}
+
+{% if tealiumGroup == 'cinema-listing' %}
+  <script>
+   var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+/*
+var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null;
+*/
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+
+
+
+  var utag_data = {
+    "event_type"			: "page_view",
+    "page_url":'{{get_permalink()}}',   
+    "page_category"			: "uae-cinema-listing",
+    "page_country"			: "eg",
+    "page_currency_code"		: "AED",
+    "page_lang"			: "{{lang}}",
+    "page_section"			: "Cinema listings",
+    "page_type"			: "uae_cinema_listing page",
+    "tealium_event"			: "uae_cinema_listing_view",
+    "user_application"			: "{{ every_device }}",
+    /*
+      "google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,
+  */
+  "eventtimestamp":event_timestamp_utc,
+  "NewsKeywords":newsKeywords
+  }
+  ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+  </script>
+{% endif %}
+
+{% if tealiumGroup == 'cinema-landing-page' %}
+  <script>
+  var utag_data = {
+    "event_type" : "page_view",
+    "page_url":'{{get_permalink()}}',    
+    "movie_title" : "{{ headline }}",
+    "movie_description" : "{{ teaser_body }}",
+    "movie_lang" : "{{ cinemalisting_language }}",
+    "movie_mmpa_ratings" : "{{ cinemalisting_mpaa }}",
+    "page_category" : "uae-cinema-listing",
+    "page_country" : "eg",
+    "page_currency_code" : "AED",
+    "page_lang" : "{{lang}}",
+    "page_type" : "uae_cinema_article page",
+    "page_section" : "Cinema listings",
+    "page_subsection" : "movie english",
+    "tealium_event" : "uae_cinema_article_view",
+    "user_application" : "{{ every_device }}"
+  } 
+  ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+
+  </script>
+{% endif %}
+
+{% if tealiumGroup == 'prayer-timings' %}
+  <script>
+    var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+/*
+var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null;
+*/
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+
+
+  var utag_data = {
+    "event_type"			: "page_view",
+    "page_url":'{{get_permalink()}}',    
+    "page_category"			: "prayertime",
+    "page_country"			: "eg",
+    "page_currency_code"		: "AED",
+    "page_lang"			: "{{lang}}",
+    "page_section"			: "Prayer Timings",
+    "page_type"			: "prayertime page",
+    "tealium_event"			: "prayertime_view",
+    "user_application"			: "{{ every_device }}",
+    /*
+    "google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,
+  */
+  "eventtimestamp":event_timestamp_utc,
+  "NewsKeywords":newsKeywords
+ }
+ ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+  </script>
+{% endif %}
+
+{% if tealiumGroup == 'flight-status' %}
+  <script>
+  var utag_data = {
+    "event_type"			: "page_view",
+    "page_url":'{{get_permalink()}}',    
+    "page_category"			: "flight_arrival_departures_main",
+    "page_country"			: "eg",
+    "page_currency_code"		: "AED",
+    "page_lang"				: "{{lang}}",
+    "page_section"			: "GCC Airport Departures and Arrivals ",
+    "page_type"				: "flight_arrival_departures_main page",
+    "tealium_event"			: "flight_arrival_departures_main_view",
+    "user_application"			: "{{ every_device }}"
+  } 
+  ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+
+  </script>
+{% endif %}
+
+{% if tealiumGroup == 'gold-forex' %}
+  <script>
+   var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+/*
+var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null;
+*/
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+  var utag_data = {
+    "event_type"			: "page_view",
+    "page_url":'{{get_permalink()}}',    
+    "page_category"			: "gold-forex",
+    "page_country"			: "eg",
+    "page_currency_code"	: "AED",
+    "page_lang"				: "{{lang}}",
+    "page_section"			: "Gold/forex",
+    "page_type"				: "gold_forex page",
+    "tealium_event"			: "gold_forex_view",
+    "user_application"		: "{{ every_device }}",
+    /*
+    "google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,
+  */
+  "eventtimestamp":event_timestamp_utc,
+  "NewsKeywords":newsKeywords
+ }
+ ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+  </script>
+{% endif %}
+
+{% if tealiumGroup == 'concept' %}
+  <script>
+  var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+/*
+var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null;
+*/
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+  var utag_data = {
+    "event_type"			: "page_view",
+    "page_url":'{{get_permalink()}}',    
+    "page_category"			: "{% if currentPage.post_parent %}listing{% else %}main{% endif %}",
+    "page_country"			: "eg",
+    "page_currency_code"		: "AED",
+    "page_lang"			: "{{lang}}",
+    "page_section"			: "{% if currentPage.post_parent %}{{ parentPostName }}{% else %}{{ currentPage.post_title }}{% endif %}",
+    {% if currentPage.post_parent %}
+    "page_sub_category"		: "{{ currentPage.post_title }}",
+    "page_subsection"		: "{{ currentPage.post_title }}",
+    {% endif %}
+    "page_type"			: "{% if currentPage.post_parent %}listing page{% else %}main page{% endif %}",
+    "tealium_event"			: "{% if currentPage.post_parent %}listing_view{% else %}main_view{% endif %}",
+    "user_application"			: "{{ every_device }}",
+    /*
+    "google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,
+  */
+  "eventtimestamp":event_timestamp_utc,
+  "NewsKeywords":newsKeywords
+  }  
+  ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+  </script>
+{% endif %}
+
+{% if tealiumGroup=='forex_summary' %}
+  <script>
+          var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+/*
+var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null;
+*/
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+
+  var utag_data = {
+    "event_type"			: "page_view",
+    "page_url":'{{get_permalink()}}',    
+    "page_category"			: "Trading Summary",
+    "page_country"			: "eg",
+	   "page_currency_code"		: "AED",
+    "tvwidgets_symbol"		: "{{type}}",
+    "page_lang"			: "{{lang}}",
+    "page_section"			: "Trading Symbol Summary",
+    "page_type"			: "Summary",
+    "tealium_event"			: "Detail",
+    "user_application"			: "{{ every_device }}",
+    /*
+    "google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,
+  */
+  "eventtimestamp":event_timestamp_utc,
+  "NewsKeywords":newsKeywords
+  }
+  ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+  </script>
+{% endif %}
+
+{% if tealiumGroup == 'article' %}
+  <script>
+  var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+/*
+var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null;
+*/
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+  var utag_data = {
+    "article_authors"			: "{% if authors %}{% for author in authors %}{{ author.name }}{% if loop.last == false %}, {% endif %}{% endfor %}{% elseif author_byline %}{{ author_byline }}{% else %}None{% endif %}",
+    "article_id"				: "{{ uuid }}",
+    "article_publish_date"		: "{{ pubdate|date('Y-m-d') }}T{{ pubdate|date('H:i:s') }}Z",
+    "article_title"				: "{{ headline|replace({"\n":'', "\r":''})|raw }} - News | {{ get_bloginfo('name') }}",
+    "article_type"				: "{% if contentsubtype == 'VIDEO' %}VIDEO{% elseif contentsubtype == 'GALLERY' %}GALLERY{% else %}ARTICLE{% endif %}",
+    "event_type"				: "page_view",
+     "page_category"			: "{% for items in sections|sort|reverse|slice(0, 1) %}{{ items.name }}{% endfor %}",
+    "page_currency_code"		: "AED",
+    "page_url":'{{get_permalink()}}',    
+    "page_lang"					: "{{lang}}",
+    "page_section"				: "{% for items in sections|sort|reverse|slice(0, 1) %}{{ items.name }}{% endfor %}",
+	"chartbeat_section"			: [{% if sections %}{% for sectionzs in sections %}"{{ sectionzs.name }}"{% if loop.last == false %}, {% endif %}{% endfor %}{% endif %}],		
+    {% if section_parent %}
+    "page_subsection"			: "{% for items in sections|slice(0, 1) %}{{ items.name }}{% endfor %}",
+    {% endif %}
+    "page_type"					: "{% if contentsubtype == 'VIDEO' %}video page{% elseif contentsubtype == 'GALLERY' %}gallery page{% else %}article page{% endif %}",
+    "tealium_event"				: "{% if contentsubtype == 'VIDEO' %}video_view{% elseif contentsubtype == 'GALLERY' %}gallery_view{% else %}article_view{% endif %}",
+    "user_application"			: "{{ every_device }}",
+    /*
+    "google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,
+  */
+  "eventtimestamp":event_timestamp_utc,
+  "NewsKeywords":newsKeywords
+ }
+ ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});  
+  //Netcore smartech script  
+  function checkAndFireEvent(bucket, eventName) {
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+    if (scrollTracker[bucket] === 0) {
+      console.log('sending event for ' + bucket + ' bucket');
+      var utag_data = {
+      "article_authors": "{% if authors %}{% for author in authors %}{{ author.name }}{% if loop.last == false %}, {% endif %}{% endfor %}{% elseif author_byline %}{{ author_byline }}{% else %}None{% endif %}",
+      "event_category": 'Article Behavior',
+      "event_action": 'Scroll',
+      "ar_scroll_percentage": bucket,
+      "article_title":"{{ headline|replace({"\n":'', "\r":''})|raw }} - News | {{ get_bloginfo('name') }}",
+      "event_category":"Behavior",
+      "event_name ": "user_scroll",
+      "tealium_event":"article_scroll",
+      "event_type":"page_view",
+      "article_id":"{{ uuid }}",
+      "article_publish_date":"{{ pubdate|date('Y-m-d') }}T{{ pubdate|date('H:i:s') }}Z",
+      "article_type":"{% if contentsubtype == 'VIDEO' %}VIDEO{% elseif contentsubtype == 'GALLERY' %}GALLERY{% else %}ARTICLE{% endif %}",
+      "page_category":"{% for items in sections|sort|reverse|slice(0, 1) %}{{ items.name }}{% endfor %}",
+      "page_currency_code":"AED",
+      "page_lang":"{{lang}}",
+      "page_section":"{% for items in sections|sort|reverse|slice(0, 1) %}{{ items.name }}{% endfor %}",
+      "chartbeat_section": [{% if sections %}{% for sectionzs in sections %}"{{ sectionzs.name }}"{% if loop.last == false %}, {% endif %}{% endfor %}{% endif %}],
+      "page_type":"{% if contentsubtype == 'VIDEO' %}video page{% elseif contentsubtype == 'GALLERY' %}gallery page{% else %}article page{% endif %}",
+      "user_application":"{{ every_device }}",
+      "NewsKeywords":newsKeywords    
+      };
+      console.log(utag_data);
+      window.ORA = window.ORA || { productReady: [] };
+      ORA.productReady.push(['analytics', function (utag_data) {
+        return function () {
+          return ORA.click({ "data": utag_data });
+        };
+      }(utag_data)]);
+      scrollTracker[bucket] = 1;
+    }
+  }
+  </script>
+{% endif %}
+
+{% if tealiumGroup == 'page' %}
+  {% if '/citytimes/' in lSlug %}
+    {% if '/movie-reviews' in lSlug %}
+      <script>
+      var utag_data = {
+        "event_type"			: "page_view",
+        "page_url":'{{get_permalink()}}',        
+        "page_category"			: "moviereview",
+        "page_country"			: "eg",
+        "page_currency_code"		: "AED",
+        "page_lang"			: "{{lang}}",
+        "page_section"			: "City Times",
+        "page_sub_category"		: "Movie reviews",
+        "page_subsection"		: "Movie reviews",
+        "page_type"			: "moviereview page",
+        "tealium_event"			: "moviereview_view",
+        "user_application"			: "{{ every_device }}"
+      } 
+      ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+
+      </script>
+    {% else %}
+      <script>
+      var utag_data = {
+        "event_type"		:"page_view",
+        "page_url":'{{get_permalink()}}',        
+        "page_category"		:"{% if page.post_parent %}citytimes{% else %}City Times Top News{% endif %}",
+        "page_currency_code"	:"AED",
+        "page_lang"		:"{{lang}}",
+        {% if page.post_parent %}
+        "page_section"		: "City Times",
+        "page_sub_category"	: "{{ page.post_title }}",
+        "page_subsection"	: "{{ page.post_title }}",
+        {% endif %}
+        "page_type"		:"{% if page.post_parent %}citytimes page{% else %}city_times_home_page{% endif %}",
+        "tealium_event"		:"{% if page.post_parent %}citytimes_view{% else %}city_times_homepage{% endif %}",
+        "user_application"	:"{{ every_device }}",
+      } 
+      ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+
+      </script>
+    {% endif %}
+  {% elseif '/wknd/' in lSlug %}
+    <script>
+    var utag_data = {
+      "event_type"		:"page_view",
+      "page_url":'{{get_permalink()}}',      
+      "page_category"		:"{% if page.post_parent %}wknd{% else %}WKND Top News{% endif %}",
+      "page_currency_code"	:"AED",
+      "page_lang"		:"{{lang}}",
+      {% if page.post_parent %}
+      "page_section"		: "WKND",
+      "page_sub_category"	: "{{ page.post_title }}",
+      "page_subsection"	: "{{ page.post_title }}",
+      {% endif %}
+      "page_type"		:"{% if page.post_parent %}wknd page{% else %}wknd_home_page{% endif %}",
+      "tealium_event"		:"{% if page.post_parent %}wknd_view{% else %}wknd_homepage{% endif %}",
+      "user_application"	:"{{ every_device }}",
+    } 
+    ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+
+  </script>
+  {% elseif lSlug == '/videos/' %}
+    <script>
+    var utag_data = {
+      "event_type"			: "page_view",
+      "page_url":'{{get_permalink()}}',      
+      "page_category"			: "VIDEO",
+      "page_country"			: "eg",
+      "page_currency_code"		: "AED",
+      "page_lang"				: "{{lang}}",
+      "page_section"			: "Videos",
+      "page_type"				: "video page",
+      "tealium_event"			: "video_view",
+      "user_application"			: "{{ every_device }}"
+    } 
+    ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+
+    </script>
+  {% elseif lSlug == '/photos/' %}
+    <script>
+ var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+/*
+var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null;
+*/
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+
+
+    var utag_data = {
+      "event_type"			: "page_view",
+      "page_url":'{{get_permalink()}}',      
+      "page_category"			: "GALLERY",
+      "page_country"			: "eg",
+      "page_currency_code"		: "AED",
+      "page_lang"				: "{{lang}}",
+      "page_section"			: "Photos",
+      "page_type"				: "gallery page",
+      "tealium_event"			: "gallery_view",
+      "user_application"			: "{{ every_device }}",
+      /*
+    "google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,
+  */
+  "eventtimestamp":event_timestamp_utc,
+  "NewsKeywords":newsKeywords
+ }
+ ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+    </script>
+  {% else %}
+    {# default page #}
+    <script>
+     var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+/*
+var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null;
+*/
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+    var utag_data = {
+      "event_type"			: "page_view",
+      "page_url":'{{get_permalink()}}',      
+      "page_category"			: "{% if page.post_parent %}listing{% else %}main{% endif %}",
+      "page_country"			: "eg",
+      "page_currency_code"		: "AED",
+      "page_lang"			: "{{lang}}",
+      "page_section"			: "{% if page.post_parent %}{{ parentPostName }}{% else %}{{ page.post_title }}{% endif %}",
+      {% if page.post_parent %}
+      "page_sub_category"		: "{{ page.post_title }}",
+      "page_subsection"		: "{{ page.post_title }}",
+      {% endif %}
+      "page_type"			: "{% if page.post_parent %}listing page{% else %}main page{% endif %}",
+      "tealium_event"			: "{% if page.post_parent %}listing_view{% else %}main_view{% endif %}",
+      "user_application"			: "{{ every_device }}",
+      /*
+    "google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,
+  */
+  "eventtimestamp":event_timestamp_utc,
+  "NewsKeywords":newsKeywords
+    }
+  ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+    </script>
+  {% endif %}
+{% endif %}
+
+{#%  if (tealiumGroup == 'article' or tealiumGroup == 'cinema-landing-page')  %#}
+{% if '/photos' in lSlug  || contentsubtype == 'SPONSOREDCONTENT' || tealiumGroup == 'article' %}
+<script>
+function gallerySlideEvent(slidenr) {
+       var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+/*
+var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie)[2];
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null;
+*/
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+
+  
+  var utag_data={
+    article_title	: "{{ headline|replace({"\n":'', "\r":''})|raw }} - News | {{ get_bloginfo('name') }}",
+    event_type	: "page_view",
+    page_url:'{{get_permalink()}}',
+    page_title:'{{tealiumGroup}}',
+    is_article_premium	: "0",
+    page_country	: "eg",
+    page_currency_code	: "AED",
+    page_lang		: "{{lang}}",
+    page_type		: "page",
+    photo_slide	: slidenr,
+    tealium_event	: "photo_slide",
+    user_application	: "{{ every_device }}",
+    /*
+    "google_value":googleid ,
+  "facebook_id" : /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],
+  "tealium_visitorid":tealium_visitor_id,
+  */
+  "eventtimestamp":event_timestamp_utc,
+  "NewsKeywords":newsKeywords
+  }
+  ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+}
+</script>
+{% endif %}

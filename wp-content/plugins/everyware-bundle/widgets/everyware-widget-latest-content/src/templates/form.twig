@@ -1,0 +1,16 @@
+{% extends '@projectPlugin/components/admin.twig' %}
+
+{% block form_header %}{% endblock %}
+{% block form %}
+  <div class="oc-query-box">
+    <div class="form-group">
+      <label for="{{ title.id() }}">Title {{ form.tooltip(translate('This is the headline for latest content section.', textdomain))|raw }}</label>
+      {{ form.input('text', title, { class: 'form-control' })|raw }}
+    </div>
+
+    <div class="form-group">
+      <label>Content type {{ form.tooltip(translate('Select sub content type for widget', textdomain))|raw }}</label>
+      {{ form.select(content_type, types, { class: 'form-control oc-query-sort' })|raw }}
+    </div>
+  </div>
+{% endblock %}

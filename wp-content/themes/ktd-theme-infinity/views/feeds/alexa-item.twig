@@ -1,0 +1,28 @@
+{%- if articles is iterable -%}
+    {% for article in articles %}
+        {% if article.teaser_body %}
+            <item>
+                {% if article.teaser_headline %}
+                    <title><![CDATA[{{ article.teaser_headline }} ]]></title>
+                {% endif %}
+                {% if article.permalink %}
+                    <link>{{ article.permalink }}</link>
+                {% endif %}
+                {% if article.pubdate %}
+                    <pubDate>{{ article.pubdate|date("Y-m-d") }}T{{ article.pubdate|date("H:i:s") }}Z</pubDate>
+                {% endif %}
+                {% if article.uuid %}
+                    <guid>{{ article.uuid }}</guid>
+                {% endif %}
+                {% if article.contentsubtype == 'VIDEO' %}
+                    <description><![CDATA[{{article.teaser_body }}]]></description>
+                    {% if article.videoid %}
+                        <enclosure url="https://www.dailymotion.com/embed/video/{{ article.videoid }}?autoplay=1" type="audio/mpeg"/>
+                    {% endif %}
+                {% else %}
+                    <description><![CDATA[{{ article.teaser_headline }} - {{article.teaser_body }}]]></description>
+                {% endif %}
+            </item>
+        {% endif %}
+    {% endfor %}
+{%- endif -%}

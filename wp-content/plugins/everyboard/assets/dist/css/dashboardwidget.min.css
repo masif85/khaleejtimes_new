@@ -1,0 +1,19 @@
+#eb_dashboard_widget .inside {
+  padding: 0;
+  margin: 0;
+}
+#eb_dashboard_widget .eb_dashboard_widget__content {
+  padding: 0 10px;
+}
+#eb_dashboard_widget .eb_dashboard_widget__footer {
+  border-top: 1px solid #ddd;
+  padding: 10px 5px;
+  display: flex;
+  color: #ddd;
+}
+#eb_dashboard_widget .eb_dashboard_widget__footer-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+}

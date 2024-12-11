@@ -1,0 +1,503 @@
+{
+    "contentType": "Article",
+    "editable": true,
+    "stats": null,
+    "properties": [
+        {
+            "name": "Status",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "usable"
+            ]
+        },
+        {
+            "name": "Channels",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": [
+                "Naviga News",
+                "Local News",
+                "Local News"
+            ]
+        },
+        {
+            "name": "group",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": true,
+            "values": [
+                "Development",
+                "lavendel",
+                "zinnia"
+            ]
+        },
+        {
+            "name": "contenttype",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": true,
+            "values": [
+                "Article"
+            ]
+        },
+        {
+            "name": "mimetype",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": true,
+            "values": [
+                "application/vnd.iptc.g2.newsitem+xml.article"
+            ]
+        },
+        {
+            "name": "Sections",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": [
+                "News"
+            ]
+        },
+        {
+            "name": "HideAds",
+            "type": "BOOLEAN",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "false"
+            ]
+        },
+        {
+            "name": "SocialTeaserHeadline",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "TeaserImageUuids",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "IsPlus",
+            "type": "BOOLEAN",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "false"
+            ]
+        },
+        {
+            "name": "ConceptTagUuids",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "version",
+            "type": "INTEGER",
+            "multiValued": false,
+            "readOnly": true,
+            "values": [
+                "1"
+            ]
+        },
+        {
+            "name": "OriginalUrls",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "Pubdate",
+            "type": "DATE",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "2019-05-31T13:51:48Z"
+            ]
+        },
+        {
+            "name": "Dateline",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "Section",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "News"
+            ]
+        },
+        {
+            "name": "deleted",
+            "type": "BOOLEAN",
+            "multiValued": false,
+            "readOnly": true,
+            "values": [
+                "false"
+            ]
+        },
+        {
+            "name": "Headline",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "Threat of Mexican tariffs, US companies in the crossfire"
+            ]
+        },
+        {
+            "name": "ImageUuids",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": [
+                "75890c0d-083c-5465-a1d9-b0bd02a1b544",
+                "1800b562-4a32-5bcb-82b7-5a79233a644d"
+            ]
+        },
+        {
+            "name": "SocialTeaserImageUuids",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "SocialTeaserRaw",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "indexed_trigger",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": true,
+            "values": [
+                "MANUAL_BATCH"
+            ]
+        },
+        {
+            "name": "IsTest",
+            "type": "BOOLEAN",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "false"
+            ]
+        },
+        {
+            "name": "eventtype",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": true,
+            "values": [
+                "ADD"
+            ]
+        },
+        {
+            "name": "TeaserVignette",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "SeoTeaserHeadline",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "SeoTeaserBody",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "TeaserArticleUuids",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "ConceptAuthorUuids",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": [
+                "ab5b53d7-362c-58d2-9dc0-9febb315c8f7"
+            ]
+        },
+        {
+            "name": "SocialTeaserBody",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "ArticleUuids",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "checksum",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": true,
+            "values": [
+                "cb6445e1c4627536c3e7ee10c649ee6ecb6445e1c4627536c3e7ee10c649ee6e0e5cdabc38459104354bc1badfe11dfb"
+            ]
+        },
+        {
+            "name": "source",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": true,
+            "values": [
+                "AP"
+            ]
+        },
+        {
+            "name": "ConceptPlaceUuids",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "ConceptStoryUuids",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "SocialTeaserText",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "ExternalSystemId",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "6ff3bdaa-b381-5861-9b45-57ec0cbf6760"
+            ]
+        },
+        {
+            "name": "HideComments",
+            "type": "BOOLEAN",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "true"
+            ]
+        },
+        {
+            "name": "Leadin",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "uuid",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": true,
+            "values": [
+                "6ff3bdaa-b381-5861-9b45-57ec0cbf6760"
+            ]
+        },
+        {
+            "name": "metadata_mimetype",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": true,
+            "values": [
+                "application/vnd.iptc.g2.newsitem+xml.article",
+                "application/xml"
+            ]
+        },
+        {
+            "name": "primary",
+            "type": "STREAM",
+            "multiValued": false,
+            "readOnly": true,
+            "values": [
+                "http://xlibris.public.stage.oc.ew.infomaker.io:8443/opencontent/objects/6ff3bdaa-b381-5861-9b45-57ec0cbf6760/files/6ff3bdaa-b381-5861-9b45-57ec0cbf6760.xml"
+            ]
+        },
+        {
+            "name": "ConceptUuids",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": [
+                "ab5b53d7-362c-58d2-9dc0-9febb315c8f7",
+                "c385814e-6408-4ecc-b3ce-232a9259e9e3"
+            ]
+        },
+        {
+            "name": "TeaserBody",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "Text",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "<p class=\"body\">The surprise announcement by President Donald Trump of an escalating tariff regime against Mexico is sending ripples through almost every economic sector in the U.S., pulling at the shares of companies that make cars, operate railroads, or sell anything with produce.</p>\n<p class=\"body\">Trump announced late Thursday that he is slapping a 5% tariff on all Mexican imports, effective June 10, to pressure the country to do more to crack down on the surge of Central American migrants trying to cross the U.S. border.</p>\n<p class=\"body\">He said the percentage will gradually increase — up to 25% — \"until the Illegal Immigration problem is remedied.\"</p>\n<p class=\"body\">So whether it's avocadoes on a taco or a new Chevrolet Blazer SUV in the driveway, if the tariffs go into effect, Americans could feel it.</p>\n<p class=\"body\">Shares of General Motors Co., which imports more vehicles into the U.S. than any other U.S. automaker, tumbled more than 4% in premarket trading Friday.</p>\n<p class=\"body\">Itay Michaeli of Citi Investment Research said in a client note that GM is relatively more exposed than Ford because it has a higher level of production in Mexico for high-margin vehicles such as pickups and crossovers and greater content sourcing from the country.</p>\n<p class=\"body\">\"For GM, we roughly estimate that a 5% tariff could be a several-hundred-million dollar annual earnings hit,\" the analyst wrote.</p>\n<p class=\"body\">One option GM does have that some other automakers don't is that the company should shift production of its pickups and the Equinox from Mexico to Canada temporarily, Michaeli added.</p>\n<p class=\"body\">Elsewhere in the autos sector, Ford Motor Co.'s stock declined 3.7%. Auto parts suppliers with exposure to Mexico are also under pressure. Shares of American Axle &amp; Manufacturing Inc. slid nearly 5.1%.</p>\n<p class=\"body\">Kansas City Southern operates a commercial corridor of the Mexican railroad system and owns a track between Mexico City and Laredo, Texas. It gets almost half its revenue from Mexico each year. Its shares are down 5.8%. Other railroad operators getting squeezed include Union Pacific Corp. — down 2.7% — and CSX Corp., off nearly 2%.</p>\n<p class=\"body\">Shares of Chipotle Mexican Grill Inc. are falling, too.</p>\n"
+            ]
+        },
+        {
+            "name": "metadata",
+            "type": "STREAM",
+            "multiValued": true,
+            "readOnly": true,
+            "values": [
+                "http://xlibris.public.stage.oc.ew.infomaker.io:8443/opencontent/objects/6ff3bdaa-b381-5861-9b45-57ec0cbf6760/files/6ff3bdaa-b381-5861-9b45-57ec0cbf6760.xml",
+                "http://xlibris.public.stage.oc.ew.infomaker.io:8443/opencontent/objects/6ff3bdaa-b381-5861-9b45-57ec0cbf6760/files/source-6ff3bdaa-b381-5861-9b45-57ec0cbf6760.xml"
+            ]
+        },
+        {
+            "name": "updated",
+            "type": "DATE",
+            "multiValued": false,
+            "readOnly": true,
+            "values": [
+                "2019-09-16T09:13:00Z"
+            ]
+        },
+        {
+            "name": "TeaserRaw",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "<?xml version=\"1.0\" encoding=\"UTF-8\"?><object xmlns=\"http://www.infomaker.se/newsml/1.0\" id=\"a2wAh24noSfP7OCg\" type=\"x-im/teaser\"><data/></object>"
+            ]
+        },
+        {
+            "name": "Published",
+            "type": "BOOLEAN",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "true"
+            ]
+        },
+        {
+            "name": "Type",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "created",
+            "type": "DATE",
+            "multiValued": false,
+            "readOnly": true,
+            "values": [
+                "2019-09-16T09:13:00Z"
+            ]
+        },
+        {
+            "name": "SeoTeaserImageUuids",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "indexed_date",
+            "type": "DATE",
+            "multiValued": false,
+            "readOnly": true,
+            "values": [
+                "2020-05-15T09:50:45Z"
+            ]
+        },
+        {
+            "name": "SocialTeaserTitle",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "TeaserHeadline",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": []
+        },
+        {
+            "name": "BodyRaw",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "<?xml version=\"1.0\" encoding=\"UTF-8\"?><idf xmlns=\"http://www.infomaker.se/idf/1.0\" xml:lang=\"en-US\"><group type=\"body\"><element id=\"7LdYvkvZtUCS8JBg\" type=\"headline\">Threat of Mexican tariffs, US companies in the crossfire</element><object id=\"NTMsMTIyLDExMiwxNjQ\" type=\"x-im/image\" uuid=\"75890c0d-083c-5465-a1d9-b0bd02a1b544\"><links><link rel=\"self\" type=\"x-im/image\" uri=\"im://image/GGsMMwxIDjJJP_r6idf6DZYYLXs.jpg\" uuid=\"75890c0d-083c-5465-a1d9-b0bd02a1b544\"><data><width>2400</width><height>1565</height><text>“Sheriff” David Clarke Jr., a We Build the Wall board member, was in Sunland Park Thursday at the site of the citizen-funded bollard border fence is being built on the property of the American Eagle Brick Company. </text><alttext/></data><links><link rel=\"author\" title=\"Mark Lambie\" type=\"x-im/author\" uuid=\"00000000-0000-0000-0000-000000000000\"/></links></link></links></object><element id=\"5q7hLyXTlaeY9S03\" type=\"body\">The surprise announcement by President Donald Trump of an escalating tariff regime against Mexico is sending ripples through almost every economic sector in the U.S., pulling at the shares of companies that make cars, operate railroads, or sell anything with produce.</element><element id=\"BKmOVVXh4nLAdYSg\" type=\"body\">Trump announced late Thursday that he is slapping a 5% tariff on all Mexican imports, effective June 10, to pressure the country to do more to crack down on the surge of Central American migrants trying to cross the U.S. border.</element><element id=\"ikFz8PR2LEhis3jr\" type=\"body\">He said the percentage will gradually increase — up to 25% — \"until the Illegal Immigration problem is remedied.\"</element><element id=\"rVAgqE3DyiMDyGtO\" type=\"body\">So whether it's avocadoes on a taco or a new Chevrolet Blazer SUV in the driveway, if the tariffs go into effect, Americans could feel it.</element><element id=\"ecMDYQHzjTpTZCg8\" type=\"body\">Shares of General Motors Co., which imports more vehicles into the U.S. than any other U.S. automaker, tumbled more than 4% in premarket trading Friday.</element><element id=\"AdrdMykHMgffpKzc\" type=\"body\">Itay Michaeli of Citi Investment Research said in a client note that GM is relatively more exposed than Ford because it has a higher level of production in Mexico for high-margin vehicles such as pickups and crossovers and greater content sourcing from the country.</element><element id=\"zKb5y2hGCVrnIoXS\" type=\"body\">\"For GM, we roughly estimate that a 5% tariff could be a several-hundred-million dollar annual earnings hit,\" the analyst wrote.</element><element id=\"ZazhSTlQ82c13MN8\" type=\"body\">One option GM does have that some other automakers don't is that the company should shift production of its pickups and the Equinox from Mexico to Canada temporarily, Michaeli added.</element><element id=\"Jyg08BWgLGykNybo\" type=\"body\">Elsewhere in the autos sector, Ford Motor Co.'s stock declined 3.7%. Auto parts suppliers with exposure to Mexico are also under pressure. Shares of American Axle &amp; Manufacturing Inc. slid nearly 5.1%.</element><element id=\"fnUjAflUH2ikO9Rm\" type=\"body\">Kansas City Southern operates a commercial corridor of the Mexican railroad system and owns a track between Mexico City and Laredo, Texas. It gets almost half its revenue from Mexico each year. Its shares are down 5.8%. Other railroad operators getting squeezed include Union Pacific Corp. — down 2.7% — and CSX Corp., off nearly 2%.</element><element id=\"iFX3tmCMx5xN5zyW\" type=\"body\">Shares of Chipotle Mexican Grill Inc. are falling, too.</element><object id=\"fy1GeckblxyIU5ek\" type=\"x-im/image\" uuid=\"1800b562-4a32-5bcb-82b7-5a79233a644d\"><links><link rel=\"self\" type=\"x-im/image\" uri=\"im://image/jNY6PvqSJCGIt7hL9oIqDJmudKY.jpg\" uuid=\"1800b562-4a32-5bcb-82b7-5a79233a644d\"><data><width>3272</width><height>2193</height><text>FILE - In this May 10, 2019, file photo a container ship is unloaded at the Virginia International Gateway terminal in Norfolk, Va. On Thursday, May 30, the Commerce Department issues the second estimate of how the U.S. economy performed in the January-March quarter. (AP Photo/Steve Helber, File)</text><alttext/></data><links><link rel=\"author\" title=\"Steve Helber\" type=\"x-im/author\" uuid=\"00000000-0000-0000-0000-000000000000\"/></links></link></links></object></group></idf>"
+            ]
+        },
+        {
+            "name": "ConceptCategoryUuids",
+            "type": "STRING",
+            "multiValued": true,
+            "readOnly": false,
+            "values": [
+                "c385814e-6408-4ecc-b3ce-232a9259e9e3"
+            ]
+        },
+        {
+            "name": "Language",
+            "type": "STRING",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "en-US"
+            ]
+        },
+        {
+            "name": "Updated",
+            "type": "DATE",
+            "multiValued": false,
+            "readOnly": false,
+            "values": [
+                "2019-05-31T13:51:51Z"
+            ]
+        }
+    ]
+}
+

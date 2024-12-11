@@ -1,0 +1,58 @@
+<div class="navbar-wrapper">
+	<div class="container">
+		<nav class="navbar navbar-expand navbar-light">
+
+			{% block main_menu_logo %}
+				{% if get_option('custom_logo_nav') %}
+					<a class="navbar-brand navbar-brand-logo" href="/">
+						<img src="{{ get_option('custom_logo_nav') }}" alt="{{ get_bloginfo('name') }} logo">
+					</a>
+				{% else %}
+					<a class="navbar-brand navbar-brand-icon" href="/">
+						<i class="fa fa-home"></i>
+					</a>
+				{% endif %}
+				<span class="navbar-text navbar-text-main d-none w-100">
+					{{ __('Menu', 'ew-base-theme-2') }}
+				</span>
+			{% endblock %}
+
+			{% block main_menu_nav %}
+				<ul class="navbar-nav mr-auto flex-row navbar-nav-main" aria-expanded="true">
+					{% for item in menu %}
+						<li class="nav-item {% if get_permalink()|lower == item.url|lower  %}active{% endif %}">
+							<a class="nav-link" href="{{ item.url }}" id="menu-id-{{ item.ID }}">{{ item.title }}
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			{% endblock %}
+
+			{% block main_menu_search %}
+				<section class="d-none d-lg-flex">
+					{% include '@base/page/nav/part/search-bar.twig' with {'class': 'form-inline-main'} %}
+				</section>
+			{% endblock %}
+
+			{% block main_menu_collapse_button %}
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-text navbar-text-toggle openicon">
+						<i class="fa fa-bars"></i>
+						<span class="content">{{ __('Menu', 'ew-base-theme-2') }}</span>
+					</span>
+					<span class="navbar-text navbar-text-toggle closeicon">
+						<i class="fa fa-times"></i>
+						<span class="content">{{ __('Close', 'ew-base-theme-2') }}</span>
+					</span>
+				</button>
+			{% endblock %}
+
+		</nav>
+
+	</div>
+	<div class="navbar-background position-absolute w-100">
+		<div class="container">
+			{% include "@base/page/nav/part/menu-extended.twig" %}
+		</div>
+	</div>
+</div>

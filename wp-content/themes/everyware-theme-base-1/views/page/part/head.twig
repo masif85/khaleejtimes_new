@@ -1,0 +1,8 @@
+<head>
+    <title>{{ page_title }}</title>
+
+    {% include '@base/page/head/meta.twig' %}
+    {% include '@base/page/head/link.twig' %}
+    {% include '@base/page/head/script.twig' with { scripts : head_scripts } %}
+    {{ wp_head() | raw }}
+</head>

@@ -1,0 +1,28 @@
+<ul class="tags-btm-nf">
+  {% if section %}
+    {% set link = get_concept_link(conceptsectionuuids) %}
+    {% if link %}
+      <li><a href="{{ link }}">{{ section }}</a></li>
+    {% else %}
+      <li>{{ section }}<li>
+    {% endif %}
+  {% endif %}
+
+  {% for tag in tags %}
+    {% set link = get_concept_link(tag.uuid) %}
+    {% if link %}
+      <a href="{{ link }}"><li>{{ tag.name }}</li></a>
+    {% else %}
+      <li>{{ tag.name }}</li>
+    {% endif %}
+  {% endfor %}
+
+  {% for place in places %}
+    {% set link = get_concept_link(place.uuid) %}
+    {% if link %}
+      <a href="{{ link }}"><li>{{ place.name }}</li></a>
+    {% else %}
+      <li>{{ place.name }}</li>
+    {% endif %}
+  {% endfor %}
+</ul>

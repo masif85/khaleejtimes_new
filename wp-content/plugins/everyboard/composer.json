@@ -1,0 +1,57 @@
+{
+    "name": "infomaker/everyboard",
+    "description": "EveryBoard is a Wordpress plugin that allows users to set up and manage their own responsive pages with dynamic content.",
+    "version": "2.2.0",
+    "type": "wordpress-plugin",
+    "homepage": "https://navigaglobal.com/",
+    "license": "GPL-3.0-or-later",
+    "support": {
+        "docs": "https://docs.navigaglobal.com/everyware/starter-kit-packages/everyboard",
+        "source": "https://composer.infomaker.io/#infomaker/everyboard"
+    },
+    "authors": [
+        {
+            "name": "Naviga Web Team",
+            "homepage": "https://www.navigaglobal.com/web/"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.infomaker.io/"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "infomaker/everyware": "^1.7.3 || ^2.0"
+    },
+    "autoload": {
+        "classmap": [
+            "board/",
+            "list/",
+            "oclist/",
+            "settings/",
+            "widgetprefab/"
+        ],
+        "psr-4": {
+            "Everyware\\Everyboard\\": "src/"
+        }
+    },
+    "require-dev": {
+        "johnpbloch/wordpress-core": "^4.9",
+        "roave/security-advisories": "dev-master",
+        "phpspec/phpspec": "^7.0"
+    },
+    "autoload-dev": {
+        "classmap": [
+            "vendor/johnpbloch/"
+        ],
+        "psr-4": {
+            "Spec\\": "tests/Spec/",
+            "Everyware\\": "src/"
+        },
+        "files": [
+            "tests/Spec/wp-functions.php"
+        ]
+    }
+}

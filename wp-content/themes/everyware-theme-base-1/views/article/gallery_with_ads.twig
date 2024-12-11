@@ -1,0 +1,18 @@
+<div class="gallery-slider">
+   {% set counter = 0 %}
+   {% for image in images %}
+        {% if loop.index % ad_frequency == 0 %}
+                {% set imageItem = image|replace({'col-12 col-xl-8 offset-xl-4': ''}) %}
+                {{ imageItem|raw }}
+                {% set counter = counter + 1 %}
+                <div id="{{ ad_id }}-{{ counter }}" class="{{ ad_id }}-{{ counter }} advertisement">
+                    <script type="text/javascript">
+                        if (googletag !== undefined) {googletag.cmd.push(function() { googletag.display("{{ ad_id }}-{{ counter }}"); })}
+                    </script>
+                </div>
+        {% else %}
+                {% set imageItem = image|replace({'col-12 col-xl-8 offset-xl-4': ''}) %}
+                {{ imageItem|raw }}
+        {% endif %}
+   {% endfor %}
+</div>

@@ -1,0 +1,259 @@
+{% extends '@base/article/amp/layout.twig' %}
+
+{% block page_content %}
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-12">
+        <div class="article-wrapper">
+
+          <div class="row">
+            <div class="col-lg-12">
+              <ul class="breadcrumbs-lt-sidebar">
+                {% include "@base/article/breadcrumb.twig" %}
+              </ul>
+            </div>
+
+            {% set metasocial = true %}
+            {% set authorbox = true %}
+            {% set firstimage = true %}
+            {% set videonotembed = true %}
+
+            {% if dateline is not null and dateline is not empty %}
+              {% set dateline = dateline ~ ' - ' %}
+            {% endif %}
+
+            {% for paragraph in body %}
+              {% if paragraph is not empty %}
+
+                <div class="col-lg-12">
+                  {# Inside Author Box Start #}
+                  {% if paragraph matches '{<!-- element: (body|fallback) -->}' and authorbox %}
+                    {% set authorbox = false %}
+                    {% include "@base/article/inline-author.twig" %}
+                  {% endif %}
+                  {# Inside Author Box End #}
+
+
+                  {% if contentsubtype == 'VIDEO' or  contentsubtype == 'GALLERY' %}
+                      {% if paragraph matches '{<!-- object: firstimage -->}' and firstimage %}
+                          {% set firstimage = false %}
+                      {% else %}
+                       {% if paragraph matches '{embed-responsive}' %}
+                              {% set videonotembed = false %}
+                              {% set videoid=get_video_id(paragraph) %}
+                             {% set videurl=get_vertical(paragraph) %}
+                               {% if videoid!=0 %}
+                                  <div class="facebook-responsive-video mt-4">
+                                     <amp-dailymotion
+                                    data-videoid="{{ videoid }}"
+                                   
+                                      layout="responsive"
+                                      {% if videurl|raw == 'xiqkn.js"' ||  videurl|raw == 'x7zpo"' || videurl|raw == 'xcxww"' || videurl|raw == 'xi4ec"' %}              data-mute="true"        
+                                      width="270"
+                                      height="480"
+                                    {% else %}
+                                     data-mute="true"
+                                      width="480"
+                                      height="270"
+                                    {% endif %}
+                                    ></amp-dailymotion>
+                                  
+                                  </div>
+                                  {% else %}
+                              {{ paragraph|raw }}
+                              {% endif %}
+                            {% else %}
+                              {{ paragraph|replace({'<span id="dateline"></span>':dateline})|raw }}
+                          {% endif %}
+                      {% endif %}
+                  {% else %}
+                      {{ paragraph|replace({'<span id="dateline"></span>':dateline})|raw }}
+                  {% endif %}
+
+
+                  {% if paragraph matches '{<!-- object: firstimage -->}' %}
+                      {% if contentsubtype != 'SPONSOREDCONTENT' %}
+                        {% include "@base/article/amp/part/ad-teads.twig" %}
+                      {% endif %}
+                  {% endif %}
+
+                  {# Social medie icons Start #}
+                  {% if paragraph matches '{<!-- element: (preamble|body|fallback) -->}' and metasocial %}
+                    {% set metasocial = false %}
+                    {# include "@base/article/amp/part/vuukle-share.twig" #}
+					{% include "@base/article/amp/part/social-share.twig" %}
+                  {% endif %}
+                  {# Social medie icons End #}
+                </div>
+                {% if contentsubtype != 'SPONSOREDCONTENT' %}
+                  {% set InsertIndex = (loop.length/2)|round(0, 'floor') %}
+                  {% if loop.length < 7 %}
+                    {% set InsertIndex = (loop.length-1) %}
+                  {% endif %}
+                  
+				  {% if loop.index == 6 %}
+				  <div class="col-lg-12">                  
+            <div class="amp-flying-carpet-text-border" style="font-size:12px;background-color: #000; color: #fff;text-align: center;margin-top:5px;">Advertising</div>
+            <amp-fx-flying-carpet height="300px">
+              <amp-ad
+              data-block-on-consent
+              width="300"
+              height="600"
+              layout="fixed"
+              type="doubleclick"
+              data-slot="/78059622/KT_AMP_FlyingCarpet_300x600"
+              data-lazy-fetch="true"
+              data-loading-strategy="1.25"
+              rtc-config='{
+               "vendors": {
+                  "t13": {
+                    "TAG_ID": "bc677e8a-aead-479e-96d0-85f4e7823129",
+                    "ACCOUNT_ID": "9a3c6c23-453a-4cba-b419-30b908f39a50"
+                  },
+                  "aps": {
+                    "PUB_ID": "600",
+                    "PUB_UUID": "16268e26-dabe-4bf4-a28f-b8f4ee192ed3",
+                    "PARAMS": {
+                      "amp": "1"
+                    }
+                  }
+                }
+             }'
+            >
+            </amp-ad>
+            </amp-fx-flying-carpet>
+            <div class="amp-flying-carpet-text-border" style="font-size:12px;background-color: #000; color: #fff;text-align: center;margin-bottom:5px;">Advertising</div>
+          </div>
+         {% endif %}
+
+			  {% if loop.index == 9 %}
+   			<div class="col-lg-12 d-flex justify-content-center d-block">
+          <amp-ad width=300 height=250
+          type="doubleclick"
+          data-slot="/23110992253/AMP_300x250">
+          </amp-ad>
+        </div>
+		<!--	 /78059622/KT_AMP_300x250 -->
+
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+
+            {% if contentsubtype == 'VIDEO' and videonotembed and paragraph matches '{embed-responsive}'%}
+              {% if videoid %}
+              <div class="col-lg-12">
+                  <div class="facebook-responsive-video mt-4">
+                    <amp-dailymotion
+                      data-videoid="{{ videoid }}"
+                      layout="responsive"
+                      width="480"
+                      height="270"
+                    ></amp-dailymotion>
+                  </div>
+              </div>
+              {% endif %}
+            {% endif %}
+
+          </div>
+
+          {% include "@base/article/concepts.twig" %}
+          {% include "@base/article/amp/part/author-bottom.twig" %}
+
+          {% if contentsubtype != 'SPONSOREDCONTENT' %}
+            {% include "@base/article/amp/part/ad-doubleclick.twig" %}
+            {# include "@base/article/amp/part/vuukle.twig" #}
+          {% endif %}
+		  <!-- Project Agora -->
+		  <amp-embed width=100 height=100
+							type=taboola
+							layout=responsive
+							heights="(min-width:1743px) 513%, (min-width:1490px) 519%,
+							(min-width:1271px) 526%, (min-width:1090px) 534%,
+							(min-width:928px) 543%, (min-width:799px) 553%,
+							(min-width:687px) 566%, (min-width:629px) 581%,
+							(min-width:567px) 596%, (min-width:513px) 613%,
+							(min-width:457px) 635%, (min-width:412px) 664%,
+							(min-width:365px) 687%, (min-width:340px) 716%,
+							746%"
+							data-publisher="khaleejtimes-amp2mena-p13238197"
+							data-mode="sc-belowarticleamp-khaleejtimes"
+							data-placement="Sponsored Below Article AMP"
+							data-target_type="mix"
+							data-tracking="utm_source=projectagora&utm_medium=contentdiscovery"
+							data-article="auto"
+							data-url="">
+					</amp-embed>
+  <!-- End Project Agora -->
+         <!-- {# include "@base/article/amp/part/ad-speakol.twig" #}  -->
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <aside class="col-sm-12 col-md-12 col-lg-3">
+        <div class="article-right-sidebar fixedsticky">
+
+          <!-- Newsletter Sign Up -->
+          <!--
+          <div class="newletter-widget-wrapper">
+            <h3>Sign Up For Breaking News Alerts</h3>
+            <p>Be in the know. Get the latest breaking news delivered straight to your inbox..</p>
+
+            <form class="hide-inputs"
+                  id="submit-form"
+                  name="submit-form"
+                  action-xhr=""
+                  method="post"
+                  novalidate="novalidate"
+            >
+              <div class="form-group">
+                <div class="newsletter-pan">
+                  <input type="email"
+                         class="form-control email-field"
+                         id="email"
+                         name="email"
+                         placeholder="Enter your email address"
+                         required
+                  >
+                </div>
+                <div class="newsletter-btn-pan">
+                  <button type="submit"
+                          id="submit-form-1"
+                          class="btn btn-primary subscribe-btn"
+                  >Submit
+                  </button>
+                </div>
+                <div submit-success>
+                  <template type="amp-mustache">
+                    {# message #}
+                  </template>
+                </div>
+                <div submit-error>
+                  <template type="amp-mustache">
+                    {# message #}
+                  </template>
+                </div>
+                <div class="newsletter-terms">Terms & Conditions Apply</div>
+              </div>
+            </form>
+          </div>
+          -->
+          <!-- END Newsletter Sign Up -->
+
+        </div>
+      </aside>
+    </div>
+
+    {% if contentsubtype != 'SPONSOREDCONTENT' %}
+      {% if moreFromThisConcept is not empty %}
+        {% include "@base/article/amp/part/recommended-articles.twig" %}
+      {% endif %}
+    {% endif %}
+
+  </div>
+{% endblock %}

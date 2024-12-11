@@ -1,0 +1,11 @@
+{% apply spaceless %}
+     {% set counter=counter+1 %} 
+  <!-- notice teaser no image -->
+  <article class="top-list-without-thumb-stories post only-content" data-uuid="{{ uuid }}">
+     <div class="post-title-rows">
+                      <div class="heading">
+                        <h4> <a href="{{ permalink }}" title="{{ headline }}"> {{headline|striptags|replace({'"':'\''})}} </a> </h4>
+                      </div>
+                    </div>
+  </article>
+{% endapply %}

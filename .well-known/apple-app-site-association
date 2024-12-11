@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "paths": ["*"],
+        "appID": "9F8DVJRGH2.com.kt.khaleejtimes.stage"
+      }
+    ],
+    "apps": []
+  }
+}

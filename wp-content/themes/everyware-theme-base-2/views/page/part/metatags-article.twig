@@ -1,0 +1,13 @@
+{% block page_head %}
+    <title>{{ get_the_title() }} | {{ get_bloginfo('name') }}</title>
+    <meta name="description" content="{{ get_bloginfo('description') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="{{ get_bloginfo( 'charset' ) }}" />
+    <meta property="og:title" content="{{ socialTeaser.title }}"/>
+    <meta property="og:description" content="{{ socialTeaser.text }}" />
+    <meta property="og:image" content="{{ socialTeaserImage.src|raw }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ permalink }}" />
+    <meta property="og:site_name" content="{{ get_bloginfo('name') }}" />
+{% endblock %}

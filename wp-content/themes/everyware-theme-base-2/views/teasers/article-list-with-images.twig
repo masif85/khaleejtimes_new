@@ -1,0 +1,21 @@
+{% apply spaceless %}
+<article class="{{ render_classes([
+    'teaser',
+    'teaser--article-list-with-images',
+    image ? 'teaser--with-image' : 'teaser--without-image',
+    classList|join(' ')
+]) }}" data-uuid="{{ uuid }}">
+  <a href="{{ permalink }}" class="teaser-link teaser__link">
+    {% if image %}
+        <div class="teaser__image">
+            {{ render_partial('@base/teasers/partial/image', image) }}
+        </div>
+    {% endif %}
+    <div class="teaser__container__sides mobile">
+        {% if sectionName %}<div class="teaser__kicker">{{ sectionName }}</div>{% endif %}
+        <a href="{{ permalink }}" class="teaser__content"><h3 class="teaser__headline">{{ headline }}</h3></a>
+        <div class="teaser__pubdate"><span>{{ pubdate }}</span></div>
+    </div>
+  </a>
+</article>
+{% endapply %}

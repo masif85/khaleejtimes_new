@@ -1,0 +1,47 @@
+<aside class="col-sm-12 col-md-12 col-lg-2">
+  <div class="article-lt-section">
+    <h6>{% if section_parent %}{{ section_parent }} / {% endif %}{{ section }}</h6>
+    {% if tags or places %}
+      <ul class="breadcrumbs-lt-sidebar">
+
+        {% for tag in tags %}
+          {% set link = get_concept_link(tag.uuid) %}
+          {% if link %}
+            <a href="{{ link }}"><li>{{ tag.name }}</li></a>{% if loop.last == false %} / {% endif %}
+          {% else %}
+            <li>{{ tag.name }}</li>{% if loop.last == false %} / {% endif %}
+          {% endif %}
+        {% endfor %}
+
+        {% if tags and places %} / {% endif %}
+
+        {% for place in places %}
+          {% set link = get_concept_link(place.uuid) %}
+          {% if link %}
+          <a href="{{ link }}"><li>{{ place.name }}</li></a>{% if loop.last == false %} / {% endif %}
+          {% else %}
+            <li>{{ place.name }}</li>{% if loop.last == false %} / {% endif %}
+          {% endif %}
+        {% endfor %}
+
+      </ul>
+    {% endif %}
+    {% include "@base/article/meta-social.twig" %}
+
+    {% if authors %}
+      {% for author in authors %}
+        {% set link = get_concept_link(author.uuid) %}
+        {% if link %}
+          <a href="{{ link }}"><h3>{{ author.name }}</h3></a>
+        {% else %}
+          <h3>{{ author.name }}</h3>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <h3>{{ author_byline }}</h3>
+    {% endif %}
+    {% include "@base/article/meta-pubdate.twig" %}
+
+    <hr class="gray-line">
+  </div>
+</aside>

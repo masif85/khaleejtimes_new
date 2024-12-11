@@ -1,0 +1,9 @@
+<li class='list-group-item'>
+<article class="teaser {{ teaser_classes|default('teaser--standard') }}" data-uuid="{{ uuid }}" data-comment-id="{{ comment_id }}">
+ {% block teaser %}
+     <a class="mostread__link" href="{{ url }}">
+	    {% block headline %}{% include "@base/teaser/partial/mostread-headline.twig" %}{% endblock %}
+     </a>
+ {% endblock %}
+</article>
+</li>

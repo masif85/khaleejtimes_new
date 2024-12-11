@@ -1,0 +1,10 @@
+<li><a href="/">Home</a></li>
+{% for items in sections|slice(0, 2)|sort|reverse %}
+  {% set link = get_concept_link(items.uuid) %}
+  <li>/</li>
+  {% if link %}
+    <li class="active"><a href="{{ link }}">{{ items.name }}</a></li>
+  {% else %}
+    <li class="active">{{ items.name }}</li>
+  {% endif %}
+{% endfor %}

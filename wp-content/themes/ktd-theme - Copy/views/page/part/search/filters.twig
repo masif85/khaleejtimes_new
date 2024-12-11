@@ -1,0 +1,30 @@
+<div class="col-lg-12">
+  <div class="searchfilter-lt">
+    <div class="form-group caret navigation-bar">
+      <input id="reservation" name="daterange" type="text" placeholder="DATE RANGE" autocomplete="off" value="{{ dateRange }}" class="dropdown caret-input calendar-pick-box">
+    </div>
+  </div>
+
+  <div class="searchfilter-rt d-flex align-items-end d-flex justify-content-end">
+    <ul>
+      <li>
+        <div class="form-group">
+          <select name="type" class="form-control sortby">
+            {% for value, title in types %}
+              <option value="{{ value }}"{% if type == value %} selected=""{% endif %}>{{ title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </li>
+      <li>
+        <div class="form-group">
+          <select name="sort" class="form-control sortby">
+            {% for value, title in sortOrders %}
+              <option value="{{ value }}"{% if sort == value %} selected=""{% endif %}>{{ title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.ew-related{
+  a {
+    display: flex;
+    flex-direction: row;
+    padding: $single-gutter-width 0;
+  }
+  .related-article__text {
+    font-weight: $font-weight-bold;
+  }
+  div:first-child() {
+    flex-grow: 2;
+  }
+}

@@ -1,0 +1,53 @@
+{% apply spaceless %}
+  {% set rand=random(0, 1000) %}
+  <!-- trending-news-teaser-netcore --> 
+     <div class="most-popuplar-ongoing-viral-outer">
+          <div class="side-bartitle" style="margin-top:0px;"><h5>Trending In</h5></div>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="Trending-1-tab{{rand}}" data-bs-toggle="tab" data-bs-target="#Trending-1-tab-pane{{rand}}" type="button" role="tab" aria-controls="Trending-1-tab-pane{{rand}}" aria-selected="true" tabindex="-1">{{parentpost }}</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="Trending-2-tab{{rand}}" data-bs-toggle="tab" data-bs-target="#Trending-2-tab-pane{{rand}}" type="button" role="tab" aria-controls="Trending-2-tab-pane{{rand}}" aria-selected="false">Khaleej Times</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade active show" id="Trending-1-tab-pane{{rand}}" role="tabpanel" aria-labelledby="Trending-1-tab{{rand}}" tabindex="0">
+                <div class="most-popuplar-ongoing-viral-contentarea">
+                  {% for item in business %}
+                  <article class="top-list-thumb-stories">
+                    <div class="post-title-rows">
+                  {% if item.properties.image %}
+                <div class="thumb-with-image image-zoom"> <a href="{{ item.properties.link }}?utm_source=netcore&utm_medium=art-rcmd-api&utm_campaign=trending-inarticle-section" class="g4a_amn_track_sidebar"><img src="{{item.properties.image|replace({'original': "cropresize"})}}&source=false&q=75&crop_w=0.99999&crop_h=0.9&{{get_image_type(item.properties.image,200) }}&x=1.0E-5&y=0.05" style="aspect-ratio: 2 / 1.4;"> </a>
+                      </div>
+             {% endif %} 
+                      <div class="heading">
+                       <h4> <a href="{{ item.properties.link }}?utm_source=netcore&utm_medium=art-rcmd-api&utm_campaign=trending-inarticle-section" class="g4a_amn_track_sidebar" title="{{ item.properties.title|raw }}"> {{ item.properties.title|raw }}</a> </h4>
+                      </div>
+                    </div>
+                  </article>
+   {% endfor %}
+                   </div>
+              </div>
+              <div class="tab-pane fade" id="Trending-2-tab-pane{{rand}}" role="tabpanel" aria-labelledby="Trending-2-tab{{rand}}" tabindex="0">
+                <div class="most-popuplar-ongoing-viral-contentarea">
+
+                  {% for item in entire %}
+                  <article class="top-list-thumb-stories">
+                    <div class="post-title-rows">
+               {% if item.properties.image %}
+                <div class="thumb-with-image image-zoom"> <a href="{{ item.properties.link }}?utm_source=netcore&utm_medium=art-rcmd-api&utm_campaign=trending-inarticle-sitewide" class="g4a_amn_track_sidebar">
+                <img src="{{item.properties.image|replace({'original': "cropresize"})}}&source=false&q=75&crop_w=0.99999&crop_h=0.9&{{get_image_type(item.properties.image,200) }}&x=1.0E-5&y=0.05" style="aspect-ratio: 2 / 1.4;"> </a>
+                      </div>
+                {% endif %} 
+                      <div class="heading">
+                        <h4> <a href="{{ item.properties.link }}?utm_source=netcore&utm_medium=art-rcmd-api&utm_campaign=trending-inarticle-sitewide" class="g4a_amn_track_sidebar" title="{{ item.properties.title|raw }}"> {{ item.properties.title|raw }}</a> </h4>
+                      </div>
+                    </div>
+                  </article>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+{% endapply %}

@@ -1,0 +1,424 @@
+<!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"> -->
+<link href="{{ get_stylesheet_directory_uri() }}/assets/css/fonts/google-fonts/google-fonts.css?v=0.0.0.1" rel="stylesheet">
+
+{% if tealiumGroup=='article' %}
+	<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/bootstrap/bootstrap.min.css?ver=20.0.0.1" />
+{% endif %}
+{# if tealiumGroup == 'homepage' or tealiumGroup == 'prayer-timings' or tealiumGroup == 'gold-forex' or tealiumGroup == 'forex_summary' or parentPostName == 'Contact Us' or tealiumGroup == 'aboutus' or tealiumGroup == 'advertise' or tealiumGroup == 'privacypolicy' or tealiumGroup == 'weather' or tealiumGroup == 'cinema-listing' or tealiumGroup == 'cinema-landing-page' or parentPostName=='KT Shows'  or parentPostName=='Search' or parentPostName=='Videos' or parentPostName=="Photos" #}
+
+{% if tealiumGroup!='article'  and tealiumGroup!='concept' %}
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/front-page-body-style.css?ver=20.2.0.3">
+{% endif %}
+{% if tealiumGroup=='concept' or tealiumGroup=='searchpage' %}
+<!-- Add new CSS for new Design -->
+	<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/bootstrap/bootstrap.min.css?ver=20.0.0.1" />
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/sidebar.css?ver=20.0.0.3">
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/listing-blog-page.css?v=20.1.6">
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/search-list-style.css?ver=20.0.0.3">
+<!-- End Add new CSS for new Design -->
+{% endif %}
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/header-style.css?ver=20.1.1.1">
+{# else #}
+	<!-- <link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/header-style-sub.css?ver=1.0.1.9"> -->
+{# endif #}
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/footer-style.css?ver=20.0.3.0">
+{% if tealiumGroup != 'homepage'%}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css?ver=20.0.0.4">
+{% endif %}
+{% if tealiumGroup=='article' %}
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/owl.carousel.min.css?ver=20.0.4.1">
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/article-page-style.css?ver=20.1.1.4">
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/sidebar.css?ver=20.0.1.6">
+ <!-- <link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/article-compress.css?ver=1.0.7" type="text/css" /> -->
+{% endif %}
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/burger-menu.css?ver=20.0.1.6">
+<script src="{{ get_stylesheet_directory_uri() }}/assets/js/jquery-3.7.1.min.js?ver=20.0.0.1" ></script> 
+<script>
+jQuery.noConflict();
+</script>
+<script src="https://navstage.khaleejtimes.com/wp-content/themes/ktd-theme/assets/js/prayer_script.js"></script>
+{% if tealiumGroup == 'homepage'%}
+  <link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/bootstrap/bootstrap.min.css?ver=20.0.0.1" />
+
+{% endif %}
+
+{% if tealiumGroup!='article' and tealiumGroup!='concept' and tealiumGroup!= 'homepage'  %}
+	<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/bootstrap/bootstrap.min.css?ver=20.0.0.1" />
+	<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/sections-page.css?v=20.3.2">
+
+{% endif %}
+
+{% if parentPostName =='KT Shows' or  tealiumGroup == 'gold-forex'%}
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/bootstrap-old/bootstrap.min.css?v=20.2.9" />
+{% endif %}
+
+{%  if tealiumGroup=='article' and (section_parent=='Sports' or section_parent=='World') %}
+<script>
+var collectionpoint="[id*=Responsive-Article-Leaderboard_0] > iframe";
+var secondcollectionpoint=".main_bg_sticky";
+let intervals = setInterval(function () {
+jQuery(collectionpoint).each(function(e) {
+if (e>0 || jQuery(this).contents().find("img").length==0 || jQuery(this).contents().find("img").length>0) { 
+       callforlead();
+      clearInterval(intervals);  
+    } 
+});		
+  }, 500);    
+
+function callforlead()
+{
+  jQuery(collectionpoint).css({"position":"fixed","z-index":9999,"left": 0,"right": 0,"margin": "0 auto","top":"16px","bottom":0});
+  jQuery(secondcollectionpoint).css({"position":"fixed","z-index":9999,"background":"#ffffff8f","width":"100%","height":"250px"}); 
+
+  setTimeout(function() 
+ {  
+  if(jQuery(document).scrollTop()!=0)
+  {   
+    jQuery(collectionpoint).fadeOut(500, function(){
+    jQuery(collectionpoint).css({"position":"","inset":"","z-index":"9999","left": "","right": "","margin": "","top":"","bottom":""});
+    jQuery(secondcollectionpoint).css({"position":"","z-index":"999999","background":"","width":"","height":""});
+   	jQuery(secondcollectionpoint).show();
+    jQuery(collectionpoint).show();
+    });
+  }
+  else
+  {  
+    jQuery(collectionpoint).css({"position":"relative","inset":"","margin":""});   
+    jQuery(secondcollectionpoint).css({"position":"relative","z-index":"999999","background":"","width":"","height":""});
+  }
+  }, 3000);
+}
+</script>
+{% endif %}
+
+
+{%  if tealiumGroup!='article' and tealiumGroup!='concept' and tealiumGroup!= 'homepage' and (parentPostName=='Sports' or parentPostName=='World') %}
+<script>
+var collectionpoint="[id*=Responsive-Section-Leaderboard-1_0] > iframe";
+var secondcollectionpoint=".main_bg_sticky";
+let intervals = setInterval(function () {
+jQuery(collectionpoint).each(function(e) {
+if (e>0 || jQuery(this).contents().find("img").length==0 || jQuery(this).contents().find("img").length>0) { 
+       callforlead();
+      clearInterval(intervals);  
+    } 
+});		
+  }, 500);    
+
+function callforlead()
+{
+  jQuery(collectionpoint).css({"position":"fixed","z-index":9999,"left": 0,"right": 0,"margin": "0 auto","top":"16px","bottom":0});
+  jQuery(secondcollectionpoint).css({"position":"fixed","z-index":9999,"background":"#ffffff8f","width":"100%","height":"250px"}); 
+
+  setTimeout(function() 
+ {  
+  if(jQuery(document).scrollTop()!=0)
+  {   
+    jQuery(collectionpoint).fadeOut(500, function(){
+    jQuery(collectionpoint).css({"position":"","inset":"","z-index":"9999","left": "","right": "","margin": "","top":"","bottom":""});
+    jQuery(secondcollectionpoint).css({"position":"","z-index":"999999","background":"","width":"","height":""});
+   	jQuery(secondcollectionpoint).show();
+    jQuery(collectionpoint).show();
+    });
+  }
+  else
+  {  
+    jQuery(collectionpoint).css({"position":"relative","inset":"","margin":""});   
+    jQuery(secondcollectionpoint).css({"position":"relative","z-index":"999999","background":"","width":"","height":""});
+  }
+  }, 3000);
+}
+</script>
+{% endif %}
+
+
+
+{% if tealiumGroup == 'prayer-timings' or tealiumGroup == 'gold-forex' or tealiumGroup == 'forex_summary' or parentPostName == 'Contact Us' or tealiumGroup == 'aboutus' or tealiumGroup == 'advertise' or tealiumGroup == 'privacypolicy' or tealiumGroup == 'weather' or tealiumGroup == 'cinema-listing' or tealiumGroup == 'cinema-landing-page' or parentPostName=='KT Shows' %}
+<!--- Add static pages code here  -->
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/style-2-18-2021.css?v=20.0.0.2">
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/new-home-layout.css?v=20.3.0">
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/compressed-home-layout.css?v=20.3.0">
+
+<script src="{{ get_stylesheet_directory_uri() }}/assets/js/prayer_script.js?ver=20.0.0.1"></script>
+{%endif%}	
+
+<!-- <link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/jquery-ui.css" /> -->
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/voucher-forms-style.css?ver=20.0.4" />
+
+<script src="https://accounts.google.com/gsi/client" async defer></script> 
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-THV3F58');</script>
+
+
+{% if tealiumGroup=='concept' or tealiumGroup=='article' %}
+	<style>
+ .morecontent span {
+                display: none;
+            }   
+</style>
+{% endif %}
+
+{% if tealiumGroup=='article' %}
+	<script>
+	//jQuery(".khaleej-row").removeClass("invisible");
+	//jQuery(document).ready(function(){
+			//jQuery(".khaleej-row").removeClass("invisible");
+	//});
+	//jQuery(window).scroll(function(){jQuery(".khaleej-row").removeClass("invisible");});
+	jQuery('.dropdown1').hover(function(){ 
+  jQuery('.dropdown-toggle1', this).trigger('click'); 
+});
+	</script>
+ <link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/article-compress.css?ver=1.0.7" type="text/css" />
+{% set datadisplay="display:none !important;" %}
+{% set trigger= get_url_param("nextartilebutton") %}
+{% if trigger==true %}
+	{% set datadisplay="" %}
+{% endif %}
+<style>
+/*-- article page floater button lb start --*/  
+
+   
+#floater-bt-article-lb {  
+	
+    position: fixed;
+    bottom: 110px;
+    z-index: 999;
+    margin: 0px auto;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+#floater-bt-article-lb a{ 
+		
+    color: #fff;
+    background: #0179c8;
+    border-radius: 20px;
+    padding: 10px 15px;
+    width: auto;
+    margin: 0px auto;
+		font-weight: normal;
+    font-size: 14px;
+    border: 0px; 
+    text-decoration: none;
+       font-weight: bold;
+    }
+#floater-bt-article-lb a:hover{ 
+	font-size: 15px;
+	font-weight: bold;
+  }
+/*-- article page floater button lb end --*/
+</style>
+{%endif%}
+{% if adGroup=='section' and parentPostName!='KT Shows' and tealiumGroup!='article' %}
+    <link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/compressed-section-layout.css?ver=20.0.5" type="text/css" />
+{%endif%}
+
+<script type="text/javascript" src="https://d.oracleinfinity.io/infy/acs/account/3635138d8e594c2c1be5bc1f505e5b30/js/media_bu/odc.js"></script> 
+<script type="text/javascript">
+      jQuery(document).ready(function() {
+/* var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null;*/
+  var utag_data = {
+  "prod_event_name": "Visitor Profile Matching"/*,
+  "googlepid": googleid,
+  "facebookid": /_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie)[1],        
+        "tealiumvisitorid": /(v_id:(\w+))/.exec(window.document.cookie)[2]
+        */
+ };
+ console.log(utag_data);
+    ORA.view({
+        "config": {
+            "applyMutations": true,
+            "sendSessionInfo": true
+        },
+        "data": utag_data
+    });
+});
+</script>
+
+<script>
+/*	
+var method="mouseenter";
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+method="click";
+}
+//var h = 0;
+var val = 0;
+jQuery(document).ready(function(){
+jQuery('.click').on(''+method+'',function() {
+   if (jQuery('.pn-ProductNav_Contents ul#nav').hasClass('show')) {
+    jQuery('.pn-ProductNav_Contents ul#nav').removeClass('show');
+    jQuery('.pn-ProductNav_Contents ul#nav li.menu-item').removeClass('drop')
+    return;
+  } 
+  val = -6;
+  jQuery('.pn-ProductNav_Contents ul#nav li.menu-item').each(function() {
+    var of = jQuery(this).offset().top - jQuery('#nav').offset().top;
+	
+    if ( of > 20) {
+      jQuery(this).addClass('drop');	
+      var menu_height=jQuery(this).height()+1; 
+      jQuery(this).css('top', 'calc(100% + ' + val + 'px)');
+      val += menu_height;
+    }
+    jQuery('.pn-ProductNav_Contents ul#nav').addClass('show');
+    });
+  });
+
+jQuery('.pn-ProductNav_Contents').on('mouseleave',function() {
+   if (jQuery('.pn-ProductNav_Contents ul#nav').hasClass('show')) {
+   jQuery('.pn-ProductNav_Contents ul#nav').removeClass('show');
+    jQuery('.pn-ProductNav_Contents ul#nav li.menu-item').removeClass('drop')
+    return;
+  } 
+  })
+  
+}); 
+*/
+</script>
+
+
+<script src='//cdnt.netcoresmartech.com/smartechclient.js'></script>
+<script>
+smartech('create', 'ADGMOT35CHFLVDHBJNIG50K96A9QE9OFJ0MFRRECSBJVVNO5PTBG' );
+smartech('register', 'cdf05e30364b953ee8f1b09e48d0473e');
+smartech('identify', '');
+smartech('dispatch','page browse',{});
+</script>
+
+
+
+{% if page.post_title=='KT Shows' || parentPostName=='KT Shows' %}
+
+<link href="{{ get_stylesheet_directory_uri() }}/assets/dist/mediabox.css" rel="stylesheet" type="text/css">
+<script src="{{ get_stylesheet_directory_uri() }}/assets/dist/mediabox.js"></script>
+<script type="text/javascript">
+       jQuery(document).ready(function(){
+       MediaBox('.mediabox');
+       });
+    </script>
+{%endif%}
+
+{% if page.post_title=='IPL 2023'  ||  tmgroup=='match_summary' %}
+
+{% endif %}
+
+{% if tealiumGroup=='leadform' %}
+
+
+<link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/style-leadform.css" type="text/css" />
+    
+	 <script>
+	  jQuery(document).ready(function(){
+	 	   
+	 jQuery("#myform").on('submit', function(e){  
+	   e.preventDefault();
+	  
+	    var actionurl = e.currentTarget.action;
+	  		jQuery.ajax({
+				url: actionurl,
+				type: "POST",
+				async: false,
+				crossDomain: true,
+				data: jQuery(this).serialize(),
+				 dataType: "jsonp",
+    			jsonp: "jsoncallback",
+				success:function(result){				  
+				jQuery(".msg").html('<div class="alert alert-success alert-dismissible d-flex align-items-center fade show"><i class="bi-check-circle-fill"></i><strong class="mx-2">Thanks for being awesome! , We have received your Information.</strong></div>');	
+				jQuery('#myform').trigger("reset");			
+				gtag('event', 'conversion', {'send_to': 'AW-11045695039/HsK7CM69oYUYEL_c_5Ip'});
+				},
+				error:function(xhr,status,error,result){				
+				 jQuery(".msg").html('<div class="alert alert-danger alert-dismissible d-flex align-items-center fade show"><i class="bi-check-circle-fill"></i><strong class="mx-2">Oops! , Sometimes it happens, can you please try again.</strong></div>');	   				
+				}
+			});	     
+	   
+	});	   
+	});   
+	 </script>
+	 
+	 
+
+{%endif%}
+
+{% if tealiumGroup!='article' %}
+ <!-- <link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/swiper-bundle.min.css" type="text/css" /> -->
+ <style>
+  .lazyload[srcset=""],
+.lazyload:not([srcset]) {
+  /*visibility: hidden;*/
+content: url(https://image.khaleejtimes.com/?uuid=6b5e4369-15ca-52b5-a3cd-432ee563d856&function=original&type=preview);
+    max-height: 100%;
+    max-width: 100%;
+}
+</style>
+{% endif %}
+
+
+{# include '@base/page/part/kibo.twig' #} 
+<script>
+const getCookieValue = (name) => (
+  document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
+)
+
+
+{% if tealiumGroup!= 'homepage' %}
+//var d_session=new Date();
+//d_session.setTime(d_session.getTime()+(1*24*60*60*1000));
+//var expires = "expires="+d_session.toGMTString();
+		var valuez=getCookieValue('user_sessions');
+		if(!valuez)
+		{		
+			valuez=0;
+		}
+		var value=Number(valuez)+1;
+		document.cookie = "user_sessions="+ value+";path=/";
+		if(getCookieValue('user_sessions')>=10)
+		{
+			document.cookie = "user_sessions=0;path=/";
+		}
+
+{% endif %}
+jQuery.noConflict();
+</script>
+{# TODO: Move this to latest content widget style #}
+<style>
+  @-webkit-keyframes spin {
+    from {-webkit-transform:rotate(0deg);}
+    to {-webkit-transform:rotate(360deg);}
+  }
+
+  @keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+  }
+  .loader {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: rgba(255,255,255,0.7);
+    z-index: 1000;
+  }
+  .loader::after {
+    content:'';
+    display:block;
+    position:absolute;
+    left:48%;top:40%;
+    width:40px;height:40px;
+    border-style:solid;
+    border-color:black;
+    border-top-color:transparent;
+    border-width: 4px;
+    border-radius:50%;
+    -webkit-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
+  }
+  .movie-language { display: block !important; }
+</style>

@@ -1,0 +1,43 @@
+<div class="movie-listing-wrapper">
+  <div class="row">
+    {% for movie in movies %}
+      <div class="col-12 col-md-6 col-lg-4"> 
+        <div class="listing">
+          <div class="listing-image">
+            {% if movie.image %}
+              <a href="{{ movie.permalink }}">
+                <img src="{{ movie.image.src }}" class="img-fluid">
+              </a>
+            {% endif %}
+          </div>
+          <div class="listing-detail">
+            <div class="row">
+              <div class="col-12">
+                <h3 class="movie-title">
+                  <a href="{{ movie.permalink }}">{{ movie.headline }}</a>
+                </h3>
+                <p class="dates">{{ movie.pubdate|date("d F Y") }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-7 listing-links">
+                <p>
+                  {% if movie.image %}
+                    <a href="#">{{ movie.cinemaListingMpaa }}</a>
+                  {% endif %}
+                  <a href="{{ movie.permalink }}">WATCH TRAILER</a>
+                </p>
+              </div>
+              <div class="col-5 listing-language">
+                <p><span>{{ movie.cinemaListingLanguage }}</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="loader"></div>
+</div>
+
+{{ paginator.render() }}

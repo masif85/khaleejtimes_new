@@ -1,0 +1,14 @@
+{% apply spaceless %}
+  <!-- section top left page teaser -->
+  <div class="kt-section-top-left">
+            <div class="section-new-left-first">
+                      <div class="post-title-rows">
+                       {% if image %}
+                        <div class="thumb-with-image image-zoom"> <a href="{{ permalink }}">  {{ render_partial('@base/teasers/partial/image', image|merge({ 'alttext': headline|striptags|replace({'"':'\''}) })) }}  </a> </div>
+                         {% endif %}
+<h3><a href="{{ permalink }}">{{headline|striptags|replace({'"':'\''}) }}</a></h3>
+                        <h4> <a href="{{ permalink }}">{{teaserbody}}</a> </h4>
+                      </div>
+                    </div>
+  </div>
+{% endapply %}

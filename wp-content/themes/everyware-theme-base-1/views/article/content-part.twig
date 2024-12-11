@@ -1,0 +1,8 @@
+<!-- the two content-part types are factbox and summary -->
+<section class="content-part content-part--{{ content_type }} article-factbox col-md-4 order-sm-1">
+  <span class="content-part__label">{{ subject }}</span>
+  <header class="content-part__header">
+    <h4 class="content-part__title"> {{ title }}</h4>
+  </header>
+  <div class="content-part__text">{{ text|raw }}</div>
+</section>

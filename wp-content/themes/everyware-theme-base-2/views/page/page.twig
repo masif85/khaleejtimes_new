@@ -1,0 +1,23 @@
+{% extends '@base/main.twig' %}
+
+{% block page_head %}
+    {% include "@base/page/part/metatags.twig" %}
+{% endblock %}
+
+{% block page_content %}
+    <main class="container site-container border-left border-right">
+        {{ the_content() }}
+    </main>
+{% endblock %}
+
+{% block page_custom_js %}
+    <script>
+        $( "#load-more" ).click(function(){
+            $( "#load-more-container" ).html('<img src="https://cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif" alt="Wait" />');
+            $( "#load-more-container" ).load('/load-more/?id={{ getPageID }}&start=10');
+            $( "#load-more" ).remove();
+        });
+    </script>
+
+    {% include "@base/page/part/custom-placeholder-bottom.twig" %}
+{% endblock %}

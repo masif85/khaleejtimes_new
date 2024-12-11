@@ -1,0 +1,25 @@
+<div class="movie-listing">
+  <div class="row">
+      <div class="col-12 section-header d-flex justify-content-between">
+        <h1 class="section-title text-uppercase font-weight-bold bordered-left">UAE CINEMA LISTINGS</h1>
+        <div class="movie-date">{{ date_control }}</div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h3 class="now-showing">Now Showing</h3>
+      <div class="filter">
+        {% include "@base/page/part/cinema-listing/filter.twig" with {
+          'class': 'movie-language-filter',
+          'filter_id': 'language',
+          'current_filter': language,
+          'filter': language_filter,
+          'url': get_permalink()
+        } %}
+      </div>
+    </div>
+  </div>
+  <div id="movie-listings" class="movie-language">
+    {% include "@base/page/part/cinema-listing/movies.twig" %}
+  </div>
+</div>

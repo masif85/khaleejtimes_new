@@ -1,0 +1,31 @@
+{% extends '@base/main.twig' %}
+
+{% block page_head %}
+    {% include "@base/page/part/metatags-article.twig" %}
+    {% include "@base/page/part/head-extras.twig" %}
+{% endblock %}
+
+{% block page_content %}
+    <main class="container page__container page__container--res">
+        <div class="row page__row--res">
+                <div class="col-12 col-xl-3 d-none d-xl-block article__metabox--top page__col--res">
+                    {% include "@base/article/byline-top.twig" with {'placement': "top"} %}
+                </div>
+            {% include "@base/page/part/article-content.twig"%}
+            {% include "@base/page/part/sidebar.twig" with {"sidebar":"ew-sidebar", "screenSizeUp": "lg"} %}
+        </div>
+    </main>
+{% endblock %}
+
+{% block page_custom_js %}
+    <script>
+        $(function () {
+            $('.pop').on('click', function () {
+                $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+                $('#imagemodal').modal('show');
+            });
+        });
+    </script>
+
+    {% include "@base/page/part/custom-placeholder-bottom.twig" %}
+{% endblock %}

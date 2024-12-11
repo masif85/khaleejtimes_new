@@ -1,0 +1,42 @@
+<article class="article col-12 col-md-12 col-lg-8 col-xl-6 page__col--res"
+    {% if categories %}
+        data-categories="{% for category in categories %}
+            {{ category.name}}
+            {% if loop.last != true %}, {% endif %}
+        {% endfor %}"
+    {% endif %}
+    {% if tags %}
+        data-tags="{% for tag in tags %}
+            {{ tag.name }}
+            {% if loop.last != true %}, {% endif %}
+        {% endfor %}"
+    {% endif %}
+    data-uuid="{{ uuid }}" itemscope itemtype="http://schema.org/Article">
+    {% if section %}
+        <meta itemprop="articleSection" content="{{ section }}"/>
+    {% endif %}
+    <div itemprop="articleBody" class="article-body">
+        {% include "@base/article/meta-tags.twig" with {"position":"mobile"} %}
+        {% set byline = true %}
+        {% for paragraph in body %}
+            {% if paragraph is not empty %}
+                    {% if paragraph matches '{<!-- element: (subheadline1|body|fallback) -->}' and byline %}
+                        {% set byline = false %}
+                        <div class="d-xl-none article__metabox--top">
+                            {% include "@base/article/byline-top.twig" with {'placement': "top"} %}
+                        </div>
+                    {% endif %}
+                {{ paragraph|raw }}
+            {% endif %}
+        {% endfor %}
+        <div class="article__metabox--bottom">
+            {% include "@base/article/meta-tags.twig" with {"position":"bottom"} %}
+            {% include "@base/article/meta-social.twig" %}
+            {% if device == 'desktop' %}
+                {% include "@base/article/byline-bottom.twig" with {'placement': "bottom--desktop"}%}
+            {% elseif device == 'mobile' or device == 'tablet' %}
+                {% include "@base/article/byline-bottom-mobile.twig" with {'placement': "bottom--mobile"} %}
+            {% endif %}
+        </div>
+    </div>
+</article>

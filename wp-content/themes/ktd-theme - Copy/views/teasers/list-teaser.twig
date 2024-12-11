@@ -1,0 +1,15 @@
+{% apply spaceless %}
+  <!-- list teaser -->
+  <div class="entry-item" data-uuid="{{ uuid }}">
+    <h4>
+      <a href="{{ permalink }}" title="{{ headline }}" class="color-underline stretched-link">{{ headline }}</a>
+    </h4>
+    {% if sectionName %}
+      <span class="section">
+        {% include '@base/teasers/partial/concept.twig' %}
+      </span>
+    {% endif %}
+    <!-- <span class="time m-2">{{ pubdate }}</span> -->
+    {% include '@base/teasers/partial/icons.twig' %}
+  </div>
+{% endapply %}

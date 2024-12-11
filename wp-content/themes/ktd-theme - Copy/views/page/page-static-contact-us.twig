@@ -1,0 +1,77 @@
+{% extends '@base/main.twig' %}
+
+{% block page_head %}
+  {% include "@base/page/part/metatags.twig" %}
+  {{ wp_head() }}
+{% endblock %}
+
+{% block page_content %}
+  <main>
+
+    <div class=" single contactpage-lt">
+      <div class="container">
+        <div class="row">
+          <aside class="col-sm-12 col-md-12 col-lg-3 left-sidebar">
+            <div class="article-lt-section contactpage-lt">
+              <h6>KHALEEJ TIMES OFFICES
+                (UNITED ARAB EMIRATES)</h6>
+
+              <h5 class="margin-tp-20">Head Office </h5>
+              <p>Khaleej Times Building <br>
+                Latifa Bint Hamdan Street <br>
+                Al Quoz, Dubai<br>
+                P.O. Box 11243</p>
+
+              <!--<p><i class="fas fa-paper-plane"></i> <a href="mailto:news@khaleejtimes.com">news@khaleejtimes.com</a></p>-->
+              <p><i class="fas fa-phone"></i> +971-4-3383535</p>
+
+              <h5>Abu Dhabi Office </h5>
+              <p>#802, 8th Floor<br>
+                Madinat Zayed Tower<br>
+                Madinat Zayed, Abu Dhabi<br>
+                P.O. Box 3082</p>
+
+              <p><i class="fas fa-phone"></i> +971-2-6337666</p>
+              <p><i class="fas fa-fax"></i> +971-2-6351122 </p>
+
+            </div>
+          </aside>
+          <div class="col-lg-6 article-wrapper contact-middle-wrap">
+
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- Content -->
+                {{ the_content() }}
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3">
+            <!-- Right side -->
+            {{ render_sidebar("default-sidebar") }}
+          </div>
+
+
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <!-- Google Map start -->
+            <div id="googlemaps" class="google-map">
+              <iframe height="500" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d115551.27033960182!2d55.20366172460939!3d25.170247761993572!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd078b5acb28f21d6!2sKhaleej+Times!5e0!3m2!1sen!2s!4v1425299408244"> </iframe>
+            </div>
+            <!-- Google Map End -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+{% endblock %}
+
+{% block page_stylesheets_scripts_bottom %}
+  {{ parent() }}
+  {{ wp_footer() }}
+{% endblock %}

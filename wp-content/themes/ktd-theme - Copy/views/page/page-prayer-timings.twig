@@ -1,0 +1,699 @@
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+
+
+<style> 
+
+.nav-overlay-nf {
+    max-width: 1126px;
+}
+
+.is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 1126px;
+    margin: 0 auto;
+    z-index: 1030;
+    padding: 0px 0 1px 0!important;
+}
+
+.wrapper .click {
+    visibility: visible!important;
+}
+
+.wrapper {
+    max-width: 1126px;
+
+}
+
+.newletter-widget-wrapper {
+    max-width: 300px;
+    float: none;
+    margin: 30px auto;
+}
+
+.newletter-widget-wrapper h3 {
+    font-family: 'Montserrat', sans-serif!important;
+    font-weight: 600;
+    font-size: 21px;
+    color: #FFF;
+    line-height: 1.2;
+}
+
+.article-right-sidebar .newletter-widget-wrapper p {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif!important;
+    line-height: 20px;
+    padding-bottom: 0px;
+}
+
+.prayer-times p.prayer-time span {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif !important;
+    margin-top: 10px;
+}
+
+.prayer-times p.prayer-label {
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif!important;
+}
+
+.prayer-timing .section-header p.prayer-details {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif!important;
+}
+
+.prayer-timing .section-header .filter p.prayer-locations {
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 2px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+
+.prayer-counter {
+    width: 87%;
+    margin-left: 23px;
+}
+
+.mobile-sub-menu {
+    display: none;
+    width: 100%;
+    max-width: 30%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 60px;
+    z-index: 99;
+    background: #fff;
+}
+
+.definition h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif !important;
+    margin-top: 15px;
+}
+
+.definition p {
+    margin-bottom: 1.6rem;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+b, strong {
+    font-weight: bolder;
+    font-family: 'Montserrat', sans-serif!important;
+}
+
+.definition ul li {
+    list-style: disc;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-left: 19px;
+    line-height: 26px;
+}
+
+.definition ol li {
+    list-style: decimal;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif!important;
+    font-size:16px;
+    line-height: 26px;
+}
+
+.definition ol li::marker {
+    font-weight: bold;
+}
+
+.draft-rates-rt-wrap .table tbody td {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 11px;
+}
+
+.draft-rates-rt-wrap .table thead th {
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif!important;
+    font-size: 13px;
+}
+
+.draft-rates-rt-wrap .table tbody tr th {
+    font-family: 'Montserrat', sans-serif!important;
+    font-weight:bold;
+}
+
+.newletter-widget-wrapper p {
+    font-family: 'Montserrat', sans-serif!important;
+    font-size: 14px;
+}
+
+.newletter-widget-wrapper .subscribe-btn {
+    font-family: 'Montserrat', sans-serif!important;
+    padding-left: 15px;
+    padding-right: 18px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.newletter-widget-wrapper .form-control.email-field {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif!important;
+}
+
+.count-info p , .count-details p.timer .number , .count-details p.remaining , .count-details p.timer .hour:before , .count-details p.timer .minute:before , .count-details p.timer .second:before   {
+    font-family: 'Montserrat', sans-serif!important;
+}
+
+.count-info {
+    padding: 15px 10px;
+}
+
+.filter .sub-menu .sub-menu-item a {
+    text-transform: capitalize;
+}
+
+.draft-rates-rt-wrap .table tbody tr:nth-child(even) {
+    background: #fff;
+}
+
+
+.draft-rates-rt-wrap .table tbody td {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 11px;
+    border-right: 1px solid #f0f0f0;
+    text-align:center;
+}
+
+
+
+.draft-rates-rt-wrap .table tbody tr:nth-child(odd) {
+    background: none;
+}
+
+.draft-rates-rt-wrap .table tbody tr:nth-child(even) {
+    background: none;
+    padding:10px;
+}
+
+.draft-rates-rt-wrap .table tbody tr {
+    font-size: 12px;
+    font-family: 'proxima_novasemibold';
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.prayer-timing .draft-rates-rt-wrap .table {
+    overflow-x: auto;
+    width: 100% !important;
+    min-width: 100% !important;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    background:#fff;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.draft-rates-rt-wrap .table thead th:nth-child(odd) {
+    background: #1679ba;
+    padding: 10px;
+     text-align:center;
+    font-size: 12px;
+}
+
+.prayer-timing .draft-rates-rt-wrap .table thead th:nth-child(even) {
+    background: #2296e3;
+    padding:10px;
+    font-size: 12px;
+    text-align:center;
+}
+
+
+p.user_attributes {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: bold;
+}
+
+
+.draft-rates-rt-wrap .table tbody tr th {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: bold;
+    border-left: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    padding: 11px;
+     left: -1px;
+    top: auto;
+   margin-top: -1px;
+    border-top-width: 1px;
+    background:#fff;
+    width:auto;
+    position:sticky;
+    text-align:center;
+     font-size: 10px;
+}
+
+table.table.table-hover thead tr th:first-child {
+    position: sticky !important;
+    width: auto;
+    top: 0;
+    left: -1px;
+    text-align:center;
+}
+
+.prayer-times {
+
+    margin-bottom: 0px;
+    padding: 10px 7px !important;
+}
+
+.sub-header .toggle-mobile-sub-menu {
+    display: none;
+}
+
+
+
+@media (max-width: 1399px) {
+
+.newletter-widget-wrapper {
+    background: #222;
+    padding: 5% 4%;
+}
+
+.newletter-widget-wrapper p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 21px;
+}
+
+.prayer-timing .section-header .filter p.prayer-locations {
+    margin-bottom: -10px;
+}
+
+
+}
+
+
+@media (min-width: 1400px) {
+
+
+ul#prayer-other-locations.mobile-sub-menu {
+    background: none;
+}
+
+ul#prayer-other-locations.mobile-sub-menu.shadow-sm{
+box-shadow:none !Important;
+
+}
+
+.toggle-mobile-sub-menu {
+    display: none;
+    right: -30px;
+}
+
+ul#prayer-other-locations.sub-menu {
+    overflow: hidden;
+    padding-right: 30px;
+    font-size: 14px;
+}
+
+
+ul#prayer-other-locations.mobile-sub-menu {
+    display: inline-flex;
+    width: 100%;
+    max-width: 40%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: -7px;
+    top: 27px;
+    z-index: 99;
+    background: none;
+    font-size: 14px;
+}
+
+
+
+ul#prayer-other-locations.mobile-sub-menu li {
+    display: inline;
+    padding: 6px 10px;
+}
+
+.prayer-timing .section-header .filter ul.sub-menu li.sub-menu-item:first-child, .prayer-timing .section-header .filter ul.sub-menu li.sub-menu-item {
+    align-items: center;
+}
+
+.prayer-timing .section-header .filter ul li a {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+
+}
+
+
+
+@media (max-width: 1139px) and (min-width: 1024px) {
+.newletter-widget-wrapper h3 {
+    font-size: 18px !important;
+}
+
+}
+
+@media (max-width: 1024px) {
+
+.prayer-times p.prayer-time span {
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.count-details p.timer {
+    font-size: 25px;
+}
+
+.click {
+        display: none;
+    }
+    .pn-ProductNav_Contents {
+        float: left;
+    }
+    .pn-ProductNav {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        position: relative;
+    }
+    .pn-ProductNav_Contents ul {
+      margin-top: -10px;
+    }
+
+    .kt-nav-icon-nf {
+    width: 40px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 51%;
+    transform: translate(0,-50%);
+}
+
+
+}
+
+
+@media (max-width: 1024px) {
+
+.prayer-counter {
+    width: 96%;
+    margin-left: 5px;
+}
+
+}
+
+
+@media (max-width: 991px) {
+
+
+.sub-header .toggle-mobile-sub-menu {
+    display: block;
+}
+
+.prayer-counter {
+    width: 100%;
+    margin-left: 0px;
+}
+
+.count-details p.remaining {
+   top: 8px;
+}
+
+.count-details p.timer {
+    bottom: 0px;
+}
+
+.newletter-widget-wrapper {
+    padding: 2% 2% 1% 2%;
+    max-width: 100%;
+}
+
+.count-info {
+    padding: 15px 10px;
+}
+
+.prayer-timing .section-header .filter p.prayer-locations {
+    margin-bottom: -6px;
+}
+
+.lib-prayer-timing-mpu-ad {
+    position: relative;
+    min-height: 300px;
+    height: 300px;
+    text-align: center !important;
+    background: #f4f4f4;
+    padding: 25px 0px 20px 0px;
+    display:block;
+}
+
+.lib-prayer-timing-mpu-ad:before {
+    content: "Advertisement";
+    font-size: 10px;
+    z-index: 99;
+    color: #4c5157;
+    font-family: 'proxima_novaregular';
+    display: block;
+    margin: 5px 0 5px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, -10px);
+}
+
+
+
+}
+
+
+@media (max-width: 767px){
+
+.sub-menu li.sub-menu-item:first-child {
+    padding-right: 12px;
+    justify-content: flex-start;
+    align-items: normal;
+}
+
+.prayer-counter {
+    margin-bottom:15px;
+}
+
+.prayer-times {
+    margin-bottom: 15px;
+}
+
+.lib-prayer-timing-mpu-ad {
+    position: relative;
+    min-height: 276px;
+    height: 276px;
+    text-align: center !important;
+    background: #f4f4f4;
+    padding: 25px 0 0px 0;
+}
+
+.lib-prayer-timing-mpu-ad:before {
+    content: "Advertisement";
+    font-size: 10px;
+    z-index: 99;
+    color: #4c5157;
+    font-family: 'proxima_novaregular';
+    display: block;
+    margin: 5px 0 5px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, -10px);
+}
+
+
+}
+
+
+@media (max-width: 575.98px) {
+.prayer-timing .draft-rates-rt-wrap .table thead th {
+    min-width: auto;
+    width: auto !important;
+}
+
+.prayer-times {
+
+    margin-bottom: 15px;
+}
+.single.prayer-timing {
+    margin-top: 0px;
+}
+
+
+
+}
+
+
+@media (max-width: 520px) {
+
+.newletter-widget-wrapper {
+    padding: 3% 2% 1% 3%;
+}
+
+.mobile-sub-menu {
+   max-width: 38%;
+   }
+
+.draft-rates-rt-wrap .table tbody td {
+   padding: 10px;
+   vertical-align:middle;
+}
+
+.sub-menu-item h1, .prayer-timing .section-header .section-title {
+    font-size: 30px;
+}
+
+.sub-menu li.sub-menu-item:not(:first-child) {
+    padding: 10px 13px;
+}
+
+.section-header {
+    padding-bottom: 0rem;
+}
+
+.prayer-timing .section-header p.prayer-details {
+   margin-bottom: 15px;
+
+}
+
+.definition h4 {
+    font-size: 20px;
+}
+
+.sub-menu {
+    bottom: 8px;
+}
+
+.prayer-timing .section-header .filter p.prayer-locations {
+    margin-bottom: -3px;
+}
+
+
+.draft-rates-rt-wrap .table thead th:nth-child(odd) {
+
+    padding: 10px 20px;
+
+    font-size: 14px;
+}
+
+.prayer-timing .draft-rates-rt-wrap .table thead th:nth-child(even) {
+
+    padding:10px 20px;
+    font-size: 14px;
+
+}
+
+.single.prayer-timing {
+    margin-top: 0px;
+}
+
+}
+
+
+@media (max-width: 400px) {
+
+.mobile-sub-menu {
+    max-width: 50%;
+}
+
+}
+
+
+</style>
+
+
+
+  <main>
+    <div class="single prayer-timing">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center d-block">
+            <!-- /78059622/Responsive-Section-Leaderboard-1 -->
+            <div id='div-gpt-ad-1613546905867-0'>
+              <script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613546905867-0'); });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          {% include "@base/page/part/prayer-timings/sub-header.twig" %}
+          <div class="section-header col-12 col-lg-8 col-xl-8">
+            <h2 class="section-title font-weight-bold">{{ activePage.post_title }}</h2>
+            {% include "@base/page/part/prayer-timings/details.twig" %}
+            {% if (prayertimesSubMenu) %}
+              {% include "@base/page/part/prayer-timings/sub-menu.twig" %}
+            {% endif %}
+          </div>
+          {% if (isUAE) %}
+            {% include "@base/page/part/prayer-timings/counter.twig" %}
+          {% endif %}
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            {% if (isUAE) %}
+              {% include "@base/page/part/prayer-timings/prayer-uae.twig" %}
+            {% else %}
+              {% include '@base/page/part/prayer-timings/prayer-' ~ activePage.post_name ~ '.twig' ignore missing %}
+            {% endif %}
+            {% include "@base/page/part/prayer-timings/information.twig" %}
+          </div>
+          <!-- Right Sidebar -->
+          <div class="col-12 col-lg-4">
+            {{ render_sidebar("prayer-timing-sidebar") }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="single">
+      <div class="container">
+        {{ the_content() }}
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% block page_stylesheets_scripts_bottom %}
+  {{ parent() }}
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/weather.js"></script>
+  {% if every_device=='mobile'%} 
+<!-- /78059622/Ramadan-Mobile-Sticky-320x50 -->
+<div id='div-gpt-ad-1709117830146-0' style='min-width: 320px; min-height: 50px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1709117830146-0'); });
+</script>
+</div>
+{% endif %}
+{% endblock %}
+

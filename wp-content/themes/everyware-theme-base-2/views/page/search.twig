@@ -1,0 +1,69 @@
+{% extends '@base/main.twig' %}
+
+{% block page_head %}
+    {% include "@base/page/part/metatags.twig" %}
+    {% include "@base/page/part/head-extras.twig" %}
+{% endblock %}
+
+{% block page_content %}
+    <main class="container page__container page__container--res">
+        <div class="row align-items-stretch page__row--res">
+            <div class="col-12 col-xl-9 col-lg-8 page__main-col page__col--res">
+                <header class="page__header">
+                    <div class="row align-items-stretch">
+                        <div class="col-12">
+                            <section class="page__search-section">
+                                <form class="search__form" role="search" method="GET">
+                                    <span class="search__icon"><i class="fas fa-search"></i></span>
+                                    <input class="search__input" name="q" type="search"
+                                           placeholder="Search for topics and articles"
+                                           aria-label="Search for topics and articles"
+                                           value="{{ query }}">
+                                    <button class="btn btn-primary btn--search" type="submit">Search</button>
+                                </form>
+                                {% if query is not empty %}
+                                    <p class="search__hits">{{ fetchCount }} hits on <strong>{{ query }}</strong></p>
+                                {% endif %}
+                            </section>
+
+                        </div>
+                    </div>
+                </header>
+
+                <section class="articles-container page__list-section"
+                         data-query="{{ query }}"
+                         data-fetched="{{ fetchCount }}">
+                    <div class="row align-items-stretch">
+                        <div class="col-12">
+                            <header class="search__result-header">
+                                <h2 class="search__result-title">Articles</h2>
+                            </header>
+                        </div>
+                    </div>
+
+                    {%- if articles is not empty -%}
+                        {% include '@base/search/generate-article-list.twig' with {'articles': articles} only %}
+                    {% elseif query is not empty %}
+                        <div class="row align-items-stretch">
+                            <div class="col-12">
+                                <p class="search__result-message">Sorry, we didn't find what you were searching for.</p>
+                            </div>
+                        </div>
+                    {%- endif -%}
+                </section>
+
+                {% if loadMore %}
+                    <div class="row align-items-stretch">
+                        <div class="col-12">
+                            <button class="btn btn-primary btn--load-more" data-action="{{ loadMoreAction }}">
+                                <span>{{ __('Load more articles', 'ew-base-theme-2') }}</span></button>
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div> <!-- .col-12 col-xl-9 -->
+
+            {% include "@base/page/part/sidebar.twig" with {"sidebar":"static-page-sidebar", "screenSizeUp": "lg"} %}
+        </div>
+    </main>
+{% endblock %}

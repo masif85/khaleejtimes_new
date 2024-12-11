@@ -1,0 +1,161 @@
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+    <article class="article-page">
+		<div class="article__part--main col-12">
+			<h1 class="article__headline">
+                {{ headline }}
+			</h1>
+
+			<div class="row justify-content-md-center">
+				<div class="col-12">
+					<div id="article-social-media" class="article-social-media">
+						<a href="{{ permalink }}?print">
+							<div class="article-print">
+								<i class="fas fa-print"></i>
+								<p class="articleprinttext">Print</p>
+							</div>
+						</a>
+						<a href="https://www.facebook.com/sharer.php?u={{ permalink }}" target="_blank">
+							<div class="article-facebook">
+								<i class="fab fa-facebook-square"></i>
+								<p class="articlefacebooktext">Facebook</p>
+							</div>
+						</a>
+						<a href="https://twitter.com/intent/tweet?url={{ permalink }}">
+							<div class="article-twitter">
+								<i class="fab fa-twitter"></i>
+								<p class="articletwittertext">Tweet</p>
+							</div>
+						</a>
+						<input type="button" value="-" id="article-font-smaller" class="article-font-smaller article-font-smaller-text article-font-size form-control" onclick="fontSizeUpdateSmaller();">
+
+						<div class="article-font-text article-font-size">
+							<p class="article-font-text">Text Size</p>
+						</div>
+
+						<input type="button" value="+" id="article-font-larger" class="article-font-larger article-font-larger-text article-font-size form-control" onclick="fontSizeUpdateLarger();">
+					</div>
+
+
+					<div class="article-byline">
+						{% if authors %}
+						<div class="article__byline-container article__part">
+							{% for author in authors %}
+								{% if loop.length > 1 %}
+									{% if loop.first == true %}
+									<div class="article__byline-info">
+										<div class="article__byline-name">By {{ author.name }}
+									{% elseif loop.last == false and loop.first == false %}
+								, {{ author.name }} 
+									{% elseif loop.last == true %}
+										and {{ author.name }}</div>
+									</div>
+									{% endif %}
+								{% else %}
+									<div class="article__byline-info">
+										<div class="article__byline-name">By {{ author.name }}</div>
+									</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+						{% endif %}
+					</div>					
+
+					<div class="article-date">
+						{% if updated.date > pubdate.date %}
+							<div class="article-modifieddate">{{ modified_time_label }}{% if not modified_time_label == '' %} {% endif %}{{ updated.date|date(article_time_format, timezone_setting) }}</div>
+						{% else %}
+							<div class="article-pubdate">{{ published_time_label }}{% if not published_time_label == '' %} {% endif %}{{ pubdate.date|date(article_time_format, timezone_setting) }}</div>
+						{% endif %}
+					</div>
+
+					{% if image_uuids|length == '1' %}
+					<div class="article-slider singleimage">
+					{% else %}
+					<div class="article-slider">
+					{% endif %}
+						{% for part in image_uuids %}
+							{% if article_image_ratio != 'original' %}
+								{% if article_image_width %}
+									{% set selected_aspect_ratio = article_image_ratio|split(':') %}
+									{% set article_image_height = (article_image_width / selected_aspect_ratio[0]) * selected_aspect_ratio[1] %}
+									<img src="{{ image_endpoint_url }}/?uuid={{ part }}&function=hardcrop&type=preview&source=false&width={{ article_image_width|round }}&height={{ article_image_height|round }}" uuid="{{ part }}">
+								{% else %}
+									<img src="{{ image_endpoint_url }}/?uuid={{ part }}&function=hardcrop&type=preview&source=false&width=600" uuid="{{ part }}">
+								{% endif %}
+							{% else %}
+								{% if article_image_width %}
+									<img src="{{ image_endpoint_url }}/?uuid={{ part }}&type=preview&source=false&width={{ article_image_width }}" uuid="{{ part }}">
+								{% else %}
+									<img src="{{ image_endpoint_url }}/?uuid={{ part }}&type=preview&source=false&width=600" uuid="{{ part }}">
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+					</div>
+
+					<div class="article-restofcontent">
+                        {{ body | raw }}
+					</div>
+
+					<div class="article-tags">
+					{% for tag in tags %}
+						{% if tag.name %}
+							{% if loop.first %}
+								<span class="heading">Tags: </span>
+							{% endif %}
+							{% if loop.first and loop.length > 1 %}
+								<span class="name">{{ tag.name }},</span>
+							{% elseif not loop.first and not loop.last  %}
+								<span class="name">{{ tag.name }}, </span>
+							{% else %}
+								<span class="name">{{ tag.name }}</span>
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+					</div>
+
+					{% if article_ad_switch and article_ad_id %}
+						<div class="in-article-ad hidden" data-ad-frequency={{ article_ad_frequency }}>
+							<div id="{{ article_ad_id }}" class="box advertisement">
+								<script type="text/javascript">
+									if (googletag !== undefined) {
+										googletag.cmd.push(function() {
+										googletag.display("{{ article_ad_id }}");
+									})
+									}
+								</script>
+							</div>
+						</div>
+					{% endif %}
+
+					{% if use_disqus_comments == 'yes' %}
+						<div id="disqus_thread"></div>
+
+						<script>
+
+						/**
+						*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+						*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+						
+						var disqus_config = function () {
+						this.page.url = '{{ permalink }}';  // Replace PAGE_URL with your page's canonical URL variable
+						this.page.identifier = '{{ uuid }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+						};
+						
+						(function() { // DON'T EDIT BELOW THIS LINE
+						var d = document, s = d.createElement('script');
+						s.src = 'https://{{ disqus_site_id }}.disqus.com/embed.js';
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+						})();
+						</script>
+						<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					{% endif %}
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+{% endblock %}

@@ -1,0 +1,559 @@
+
+<article class="draft-rates-wrapper">
+  <div class="draft-rates-head-wrapper gold-tabs-top">
+    <div class="draft-rates-head-lt draft-top-pan">
+
+     <div class="gold-page-tabs-tp"> 
+   <a href="#draftrate" class="uae-draft-rate-bt active">UAE Draft Rates</a><a href="#goldrate" class="uae-draft-rate-bt">Gold Rate</a><a href="#silverrate" class="uae-draft-rate-bt">Silver Rate</a><a href="#fuelprice" class="uae-draft-rate-bt">Fuel Price</a> 
+   </div>
+      
+    </div>
+    
+  <!-- <div class="draft-rates-head-rt align-items-end align-self-md-start">
+      <a href="/gold-forex/qatar">QATAR DRAFT RATES</a>
+      <a href="/gold-forex/bahrain">BAHRAIN DRAFT RATES</a>
+    </div> -->
+  
+  </div>
+
+  <div class="draft-rates-main-wrapper-nf main-contan-border">
+  
+  <div class="draft-heading-wrap-lat-nf">
+  <div class="draft-heading-wrap-lat-nf-lt">
+    <h3>UAE FOREX Rates (LULU) </h3>
+    
+    <h6>Selected World currencies in UAE Dirhams (Rates in 1 Dirham)</h6>
+  </div>
+ 
+  {% set lulluforexrates= get_lullu_rates('forex-rates') %}    
+  </div>
+     
+          <div class="draft-rates-rt-wrap">
+            <table class="table table-hover">
+              <thead>
+              <tr>                
+                  <th scope="col">Currency</th>
+                  <th scope="col">Rate</th>  
+                  <th scope="col">Sell Rate</th>  
+                  <th scope="col">Buy Rate</th>               
+              </tr>
+              </thead>
+              <tbody>
+            {% for frates  in  lulluforexrates %}     
+                <tr>                 
+                   
+                      <th scope="row">{{frates.toCurrencyName}}</th>  
+                   
+                    <td >{{frates.rate|round(2, 'ceil')}}</td>
+                    <td >{{frates.sellRate|round(2, 'ceil')}}</td>
+                    <td >{{frates.buyRate|round(2, 'ceil')}}</td>
+                                    
+                </tr>
+               {% endfor %}
+              </tbody>
+            </table>
+          </div>   
+  
+  </div>
+
+
+  <div class="draft-rates-main-wrapper-nf main-contan-border">  
+  <div class="draft-heading-wrap-lat-nf">
+  <div class="draft-heading-wrap-lat-nf-lt">
+    <h3>UAE Draft Rates (LULU) </h3>    
+    <h6>Selected Asian currencies in UAE Dirhams (Rates in 1 Dirham)</h6>
+  </div> 
+  {% set lullurates= get_lullu_rates('rates') %}    
+  </div>
+     
+          <div class="draft-rates-rt-wrap">
+            <table class="table table-hover">
+              <thead>
+              <tr>                
+                  <th scope="col">Currency</th>
+                  <th scope="col">Value</th>               
+              </tr>
+              </thead>
+              <tbody>
+            {% for rates  in  lullurates %}     
+                <tr>                 
+                   
+                      <th scope="row">{{rates.toCurrencyName}}</th>  
+                   
+                    <td >{{rates.rate|round(2, 'ceil')}}</td>              
+                                     
+                </tr>
+               {% endfor %}
+              </tbody>
+            </table>
+          </div>    
+  </div>
+
+  <div class="draft-rates-main-wrapper-nf main-contan-border">
+  
+  <div class="draft-heading-wrap-lat-nf">
+  <div class="draft-heading-wrap-lat-nf-lt">
+    <h3>UAE Draft Rates </h3>
+    
+    <h6>Selected Asian currencies in UAE Dirhams (Rates in 1 Dirham)</h6>
+  </div>
+  <div class="draft-heading-wrap-lat-nf-rt">
+    <h6 class="date-blue">{{ articles["0"].pubdate|date("F d, Y") }}</h6>
+    <h6>Updated <span class="time">{{ articles["0"].timeago }}</span>…</h6>
+  </div>
+  
+    
+  </div>
+  
+   <!-- <div class="draft-rates-lt-wrap"> -->
+      <!-- <h2>UAE <br>
+        DRAFT RATES</h2>
+       <h4>*SOURCE: UAE EXCHANGE CENTRE L.L.C., UAE. RATES ARE SUBJECT TO FLUCTUATION</h4> -->
+
+      <!-- <div class="powered-wrap">
+        <span class="sp-powered">Powered by</span>
+        <a target="_blank" href="https://ad.doubleclick.net/ddm/clk/563443067;372470837;o">
+      <img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2023/08/24152043/0283_Khaleej_Times_Campaign_Logo_240x100px.jpg" width="240" height="100" alt="" pinger-seen="true">
+        </a>
+      </div> -->
+
+   <!-- </div> -->
+    {% if articles["0"].forextable %}
+      {% for object in articles["0"].forextable %}
+        {% if object["@attributes"].type == 'x-im/table' %}
+          <div class="draft-rates-rt-wrap">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                {% for value in object.data.thead.tr.th %}
+                  <th scope="col">{{ value }}</th>
+                {% endfor %}
+              </tr>
+              </thead>
+              <tbody>
+              {% for tr in object.data.tbody.tr %}
+                <tr>
+                  {% for value in tr.td %}
+                    {% if loop.first %}
+                      <th scope="row">{{ value }}</th>
+                    {% else %}
+
+                      <td >{{ value is iterable ? '' : value }}</td>
+                    {% endif %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+      
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  
+  </div>
+   <div class="source-info aligncenter"><h4><span class="red-star">*</span>Source : UAE Exchange Centre L.L.C., UAE. Rates are subject to fluctuation</h4></div>
+   
+   <div class="draft-btm-pan-lat">
+    <div class="powered-wrap">
+        <span class="sp-powered">Powered by</span>
+        <a target="_blank" href="https://ad.doubleclick.net/ddm/clk/563443067;372470837;o">
+      <img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2024/01/30133025/etoro-banner1.jpg" width="345" height="50" alt="" pinger-seen="true">
+        </a>
+      </div>
+    
+   <!-- <div class="draft-btm-pan-lat-rt d-flex justify-content-end">
+      <div class="more-currency-btn"><a href="#">Show more currencies</a></div>
+    </div> -->
+    
+    
+   </div>
+   
+</article>
+
+<hr class="gold-divd-nf">
+
+<!-- <div id="netcore-goldforex-wp"></div> 
+
+<div id="agora-goldforex-belowdraft"></div> -->
+
+<!-- /78059622/Responsive-Section-Leaderboard-2 -->
+<!--  <div class="mpu-ad-unit ad-unit">
+  
+  <div id='div-gpt-ad-1613547811534-0'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613547811534-0'); });
+    </script>
+  </div>
+</div>
+ -->
+ 
+ 
+<article class="draft-rates-wrapper">
+
+<div class="draft-rates-main-wrapper-nf main-contan-border">
+  <div class="draft-rates-head-wrapper">
+    <div class="draft-rates-head-lt uae-gold-head-wrapper-lt">
+      <h3><a id="goldrate"></a>UAE Gold Rate (AED) </h3>
+    <h6 class="date-blue">{{ articles["1"].pubdate|date("F d, Y") }}</h6> <h6>| Updated <span class="time">{{ articles["1"].timeago }}</span>…</h6>
+      
+    </div>
+
+    <div class="uae-gold-banner-rt">
+          <a target="_blank" href="https://ad.doubleclick.net/ddm/clk/563490246;372570715;l">
+       <img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2023/08/24152044/0283-10-7-23-Khaleej-Times-Campaign-Fixed-Button-Gold-Forex-Page-GIF.gif" width="300" height="50" alt="Capital" pinger-seen="true">
+        </a>
+    </div>
+
+  </div>
+  <div class="draft-rates-main-wrapper-nf">
+    {% if articles["1"].forextable %}
+      {% for object in articles["1"].forextable %}
+        {% if object["@attributes"].type == 'x-im/table' %}
+          <div class="draft-rates-rt-wrap gold-tab-info-wrap">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                {% for value in object.data.thead.tr.th %}
+                  <th scope="col">{{ value }}</th>
+                {% endfor %}
+              </tr>
+              </thead>
+              <tbody>
+              {% for tr in object.data.tbody.tr %}
+                <tr>
+                  {% for value in tr.td %}
+                    {% if loop.first %}
+                      <th scope="row">{{ value }}</th>
+                    {% else %}
+
+                      <td >{{ value is iterable ? '' : value }}</td>
+                    {% endif %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+  </div>
+  
+    <div class="source-info"><h4><span class="red-star">*</span>Source: Dubai Gold &amp; Jewellery Group</h4></div>
+
+</article>
+
+
+<hr class="gold-divd-nf">
+
+<!-- /78059622/Responsive-Section-MPU-2 -->
+  <!-- <div class="gold-fx-mpu-slot-nf">
+    <div class=" mpu-ad-unit">
+      
+      <div id='div-gpt-ad-1613549587288-0'>
+        <script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613549587288-0'); });
+        </script>
+      </div>
+    </div>
+  </div>
+-->
+
+
+
+
+<!-- /78059622/Responsive-Section-MPU-2 -->
+  <!-- <div class="gold-fx-mpu-slot-nf">
+    <div class=" mpu-ad-unit">
+      
+      <div id='div-gpt-ad-1613549587288-0'>
+        <script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613549587288-0'); });
+        </script>
+      </div>
+    </div>
+  </div> -->
+
+
+ <!-- /78059622/Responsive-Section-Leaderboard-3 -->
+<!-- <div class="mpu-ad-unit ad-unit">
+ 
+  <div id='div-gpt-ad-1613548422640-0'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613548422640-0'); });
+    </script>
+  </div>
+</div> -->
+
+<!-- <div id="adsolut-gold"></div> -->
+
+
+<article class="draft-rates-wrapper">
+
+<div class="draft-rates-main-wrapper-nf main-contan-border">
+  <div class="draft-rates-head-wrapper">
+    <div class="draft-rates-head-lt uae-silver-head-wrapper-lt">
+      <h3><a id="silverrate"></a>Silver Rate (AED) </h3>
+    <h6 class="date-blue">{{ articles["2"].pubdate|date("F d, Y") }}</h6>
+      <h6>| Updated <span class="time">{{ articles["2"].timeago }}</span>…</h6>
+      
+    </div>
+
+    <div class="uae-silver-banner-rt">
+          <a target="_blank" href="https://ad.doubleclick.net/ddm/clk/563490246;372570715;l">
+       <img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2023/08/24152044/0283-10-7-23-Khaleej-Times-Campaign-Fixed-Button-Gold-Forex-Page-GIF.gif" width="300" height="50" alt="Capital" pinger-seen="true">
+        </a>
+    </div>
+
+  </div>
+  <div class="draft-rates-main-wrapper-nf">
+    {% if articles["2"].forextable %}
+      {% for object in articles["2"].forextable %}
+        {% if object["@attributes"].type == 'x-im/table' %}
+          <div class="draft-rates-rt-wrap">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                {% for value in object.data.thead.tr.th %}
+                  <th scope="col">{{ value }}</th>
+                {% endfor %}
+              </tr>
+              </thead>
+              <tbody>
+              {% for tr in object.data.tbody.tr %}
+                <tr>
+                  {% for value in tr.td %}
+                    {% if loop.first %}
+                      <th scope="row">{{ value }}</th>
+                    {% else %}
+
+                      <td >{{ value is iterable ? '' : value }}</td>
+                    {% endif %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+  
+  </div>
+  
+  
+  <div class="source-info"><h4><span class="red-star">*</span>Source: Al Kananah - Silver Jewellery, Dubai</h4></div>
+  
+  
+  <!-- <div class="gold-fx-mpu-slot-nf margin-70min d-flex justify-content-end">
+    <div class="newletter-widget-wrapper">
+      <h3>Sign Up For Breaking News Alerts</h3>
+      <p>Be in the know. Get the latest breaking news delivered straight to your inbox..</p>
+      <form id="submit-form" name="submit-form" action="" method="post" novalidate="novalidate">
+        <div class="form-group">
+          <div class="newsletter-pan">
+            <input type="email" class="form-control email-field" id="email" name="email" required="" placeholder="Enter your email address">
+          </div>
+          <div class="newsletter-btn-pan"><button type="submit" value="SUBMIT" id="submit-form-1" class="btn btn-primary subscribe-btn">Submit</button></div>
+          <div class="newsletter-terms"><input class="form-check-input rounded-0" type="checkbox" id="terms" name="terms" value="1" required=""> <span><a href="/privacy-policy" target="_blank">Terms &amp; Conditions Apply</a></span></div>
+        </div>
+      </form>
+    </div>
+  </div> -->
+  
+  
+</article>
+
+
+
+<hr class="gold-divd-nf">
+
+
+
+<!--------test rates------------>
+
+<article class="draft-rates-wrapper tp-mrgn-25">
+
+<div class="draft-rates-main-wrapper-nf main-contan-border">
+  <div class="draft-rates-head-wrapper">
+    <div class="draft-rates-head-lt uae-gold-head-wrapper-lt">
+      <h3><a id="fuelprice"></a>UAE Fuel Price (AED)</h3>
+    <h6 class="date-blue">{{ articles["5"].pubdate|date("F d, Y") }}</h6>
+      <h6>| Updated <span class="time">{{ articles["5"].timeago }}</span>…</h6>
+     
+    </div>
+
+    <div class="uae-gold-banner-rt">
+          <a target="_blank" href="https://ad.doubleclick.net/ddm/clk/563490246;372570715;l">
+       <img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2023/08/24152044/0283-10-7-23-Khaleej-Times-Campaign-Fixed-Button-Gold-Forex-Page-GIF.gif"  width="300" height="50" alt="Capital" pinger-seen="true">
+        </a>
+    </div>
+
+  </div>
+  
+  <div class="draft-rates-main-wrapper-nf main-contan-border">
+    {% if articles["5"].forextable %}
+      {% for object in articles["5"].forextable %}
+        {% if object["@attributes"].type == 'x-im/table' %}
+          <div class="draft-rates-rt-wrap fuel-info-wrap">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                {% for value in object.data.thead.tr.th %}
+                  <th scope="col">{{ value }}</th>
+                {% endfor %}
+              </tr>
+              </thead>
+              <tbody>
+              {% for tr in object.data.tbody.tr %}
+                <tr>
+                  {% for value in tr.td %}
+                    {% if loop.first %}
+                      <th scope="row">{{ value }}</th>
+                    {% else %}
+              {% if loop.last %}
+               <td >{{ value is iterable ? '' : value }} {% if '+' in value %}<i class="fas fa-arrow-up arrow-up-green"></i>{% else %}<i class="fas fa-arrow-down arrow-down-red"></i>{%endif%}</td>
+              {% else %}
+                      <td >{{ value is iterable ? '' : value }}</td>
+             {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+  </div>
+  
+ <div class="source-info"><h4><span class="red-star">*</span>Source: ADNOC &amp; Company</h4></div>
+
+</article>
+
+<!--------------end test rates---------------->
+
+
+<hr class="gold-divd-nf">
+
+
+<!-- 
+<article class="draft-rates-wrapper">
+{% if exchangerate.forex %}
+
+  <div class="draft-rates-head-wrapper">
+    <div class="draft-rates-head-lt">
+      <h3><a id="exchangerate"></a>EXCHANGE RATE(AED) <span>{{ exchangerateUpd.updated|date("F d, Y") }}</span></h3>
+      <h6>Updated <span class="time">{{ exchangerateUpd.timeago }}</span>…</h6>
+      <h6>Rates supplied by UAE Exchange Centre L.L.C.</h6>
+    </div>
+
+  </div>
+  <div class="draft-rates-main-wrapper-nf">
+    <div class="draft-rates-rt-wrap exchange-rate">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th scope="col" colspan="2">CURRENCIES</th>
+          <th scope="col" colspan="2">UAE</th>
+          <th scope="col" colspan="2">QATAR</th>
+          <th scope="col" colspan="2">OMAN</th>
+        </tr>
+        <tr>
+          <td colspan="2"></td>
+          <td colspan="2">
+            <table>
+              <tbody><tr>
+                <td class="blue-bg-gold">BUY</td>
+                <td class="blue-bg-gold">SELL</td>
+              </tr>
+              </tbody></table>
+          </td>
+          <td colspan="2">
+            <table>
+              <tbody><tr>
+                <td class="gray-bg-gold">BUY</td>
+                <td class="gray-bg-gold">SELL</td>
+              </tr>
+              </tbody></table>
+          </td>
+          <td colspan="2">
+            <table>
+              <tbody><tr>
+                <td class="lightgray-bg-gold">BUY</td>
+                <td class="lightgray-bg-gold">SELL</td>
+              </tr>
+              </tbody></table>
+          </td>
+        </tr>
+        </thead>
+        <tbody>
+{% for object in exchangerate.forex %}
+          <tr>
+            <th scope="row" colspan="2">{{ object.currency}}</th>
+            <td>{{ object.uae_buy is iterable ? '' : object.uae_buy|slice(0, 6) }}</td>
+            <td>{{ object.uae_sell is iterable ? '' : object.uae_sell|slice(0, 6)}}</td>
+            <td>{{ object.qatar_buy is iterable ? '' : object.qatar_buy|slice(0, 6)}}</td>
+            <td>{{ object.qatar_sell is iterable ? '' : object.qatar_sell|slice(0, 6)}}</td>
+            <td>{{ object.oman_buy is iterable ? '' : object.oman_buy|slice(0, 6)}} </td>
+            <td>{{ object.oman_sell is iterable ? '' : object.oman_sell|slice(0, 6)}}</td>
+          </tr>
+{% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endif %}
+
+</article>
+-->
+
+<!-- /78059622/Responsive-Section-HALFPAGE-1 -->
+ <!-- <div class="gold-fx-mpu-slot-nf d-flex justify-content-end">
+    <div class=" mpu-ad-unit">
+      <div id='div-gpt-ad-1613551827567-0'>
+        <script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613551827567-0'); });
+        </script>
+      </div>
+    </div>
+  </div> -->
+
+
+<script>
+    var dNow = new Date();
+
+var event_timestamps_utc = dNow.getUTCFullYear() + '-' + ('0' + (dNow.getUTCMonth() + 1)).slice(-2) + '-' + ('0' + dNow.getUTCDate()).slice(-2) + ' ' + ('0' + dNow.getUTCHours()).slice(-2) + ':' + ('0' + dNow.getUTCMinutes()).slice(-2) + ':' + ('0' + dNow.getUTCSeconds()).slice(-2);
+jQuery(document).ready(function() {
+        jQuery(".uae-draft-rate-bt").click(function() {
+            var events = jQuery(this).text();
+            events = events.split(" ").join("");
+            var utag_data = {
+                'page_category': "gold-forex",
+                'event_type': "button_click",
+                'page_country': "UAE",
+                'page_currency_code': "AED",
+                'page_lang': "English",
+                'page_section': "Gold/forex",
+                'page_type': "gold_forex page",
+                'tealium_event': events,
+                'user_application': "desktop",               
+                "eventtimestamp": event_timestamps_utc
+            }
+            ORA.view({
+                "config": {
+                    "applyMutations": true,
+                    "sendSessionInfo": true
+                },
+                "data": utag_data
+            })
+            console.log(utag_data);
+        });
+    });
+
+    </script>

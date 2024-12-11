@@ -1,0 +1,558 @@
+<!-- <div class="sticky-header-wrap sticky-div"> -->
+  <div class="container">
+  
+    <div class="header-left-epaper-nf">
+			<a href="https://epaper.khaleejtimes.com/?utm_source=website&utm_medium=icon&utm_campaign=epaperclick" target="_blank"> E-Paper</a>
+	</div>
+
+    <div class="row search-burmenu-bar-nf">
+      <div class="col-lg-12 d-flex justify-content-end">
+        <div class="header-right-column" id="userhandler">
+          <ul class="header-right-icons">
+
+
+                <li style="display:none" id="MG2login"  data-mg2-action="login"><a class="blink-bg-sign-in" href="#">Sign In</a></li>
+
+
+                <li data-mg2-action="hideloggedout" id="MG2Detail">
+
+                    <div class="dropdown">
+                        <button type="button" onclick="engageDropdownHandler()" class="dropbtn dropdown-toggle auth0_user"><span id="MG2UserName" class="auth0_user ">Hi, <span class="has-spinner"></span></span></button>
+                        <div id="engageDropdown" class="dropdown-content">
+                            <!-- <a href="" id="MG2MyAccount" target="_blank">My Account</a> 
+                            <a href="https://subscriptions.khaleejtimes.com/" target="_blank">Subscriptions</a>-->
+                            <a href="https://www.khaleejtimes.com/mykt">My KT</a>
+                            <a href="https://www.khaleejtimes.com/trading">Trading</a>
+                            <a href="https://www.khaleejtimes.com/contact-us">Contact Us</a>
+                            <a href="https://www.khaleejtimes.com/privacy-notice">Privacy Notice</a>
+                            <a href="#" id="MG2logout" data-mg2-action="logout">Sign Out</a>
+                        </div>
+                    </div>
+
+                </li>
+            
+
+
+            <li class="header-search"><span><i class="fas fa-search" data-toggle="modal" data-target="#searchModal"></i></span></li>
+            <li class="header-menu-icon pr-0">
+              <!-- <a href="javascript:void(0);"><span class="btn-open"></span></a> -->
+              <div class="hamburger_menu_nf">
+                <span class="btn-open"><i class="fas fa-bars"></i></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-row justify-content-lg-between">
+      <!-- Logo + Prayer Timing Start -->
+      <div id="logo" class="mx-lg-auto col-auto col-lg-6 col-md-12 flex-column order-lg-2 px-0">
+
+        <a href="/" class="standard-logo"><img src="{{ get_stylesheet_directory_uri() }}/assets/images/khaleej-times-logo.svg" width="275" height="49" alt="khaleejtimes" /></a> 
+<!--
+         <a href="/" class="standard-logo"><img src="{{ get_stylesheet_directory_uri() }}/assets/images/kt-logo-a-gif.gif" width="auto" height="auto" alt="khaleejtimes" /></a> -->
+
+        <div class="container">
+
+          <div class="row">
+            <div class="col-lg-12 header-date-count-next-pan justify-content-center d-flex for-mobile-device">
+
+              {{ render_prayertimes('@base/page/nav/prayer-times', '8cdce398-b4c3-491d-b72e-006b62f5f72a') }}
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Logo + Prayer Timing End -->
+
+      <div class="col-auto col-lg-3 board-col-xs-12 board-col-sm-12 board-col-md-3 board-col-lg-3 col-md-3 last-update-time order-lg-1 d-md-flex flex-md-column px-0">
+        <div class="row no-gutters">
+          <div class="col-12">
+            <div class="header-left-column">
+{% set show_ear=false %}
+              {% if adGroup == 'homepage' %}
+                {% set EarPanelType = 'Homepage' %}
+                {% set EarPanelLeftDfpId = '1652856980901' %}
+                {% set EarPanelRightDfpId = '1652857053850' %}
+				{% set ear_data= get_post('789363')|raw %}
+				{% if 'ear_activate=1' in ear_data %}
+				{% set show_ear=true %}
+				{%endif %}				
+              {% elseif adGroup == 'article' %}
+                {% set EarPanelType = 'Article' %}
+                {% set EarPanelLeftDfpId = '1652857412793' %}
+                {% set EarPanelRightDfpId = '1652857619498' %}
+				{% set ear_data= get_post('789378')|raw %}
+				{% if 'ear_activate=1' in ear_data %}
+				{% set show_ear=true %}
+				{%endif %}				
+			 {% elseif adGroup == 'gold-forex' %}
+                {% set EarPanelType = 'Gold-forex' %}
+                {% set EarPanelLeftDfpId = '1652857219494' %}
+                {% set EarPanelRightDfpId = '1652857292061' %}
+				{% set ear_data= get_post('789365')|raw %}
+				{% if 'ear_activate=1' in ear_data %}
+				{% set show_ear=true %}
+				{%endif %}				
+              {% else %}
+                {% set EarPanelType = 'Section' %}
+                {% set EarPanelLeftDfpId = '1652857219494' %}
+                {% set EarPanelRightDfpId = '1652857292061' %}
+				{% set ear_data= get_post('789376')|raw %}
+				{% if 'ear_activate=1' in ear_data %}
+				{% set show_ear=true %}
+				{%endif %}
+				
+              {% endif %}
+			{% if every_device=='desktop' %}
+			{% if show_ear==true %}
+              <!-- /1251894/{{ EarPanelType }}-Ear-Pannel-Left -->
+              <div id='div-gpt-ad-{{ EarPanelLeftDfpId }}-0' style='min-width: 200px; min-height: 90px;'>
+                <script>
+					googletag.cmd.push(function() { googletag.display('div-gpt-ad-{{ EarPanelLeftDfpId }}-0'); });
+                </script>
+              </div>
+			 {% endif %}   
+			{% endif %}  
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-misc col-auto col-lg-3 board-col-xs-12 board-col-sm-12 board-col-md-3 board-col-lg-3 col-md-3 order-lg-3 justify-content-lg-end justify-content-md-end flex-md-column ml-0 px-0 right-earpanel">
+        <div class="row no-gutters">
+          <div class="col-12">
+
+            <div class="header-right-column">
+              <!-- <div class="header-right-column weather-container">
+              <p class="weather">Dubai <i class="fas fa-cloud-sun"></i> 20&deg;C</p>
+            </div>-->
+			{% if every_device=='desktop' %}
+			{% if show_ear==true %}
+              <!-- /1251894/{{ EarPanelType }}-Ear-Pannel-Right -->
+              <div id='div-gpt-ad-{{ EarPanelRightDfpId }}-0' style='min-width: 200px; min-height: 90px;'>
+                <script>
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-{{ EarPanelRightDfpId }}-0'); });
+                </script>
+              </div>
+			  {% endif %}   
+			{% endif %}  
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% if menu %}
+  <div class="container primary-menu-wrapper">
+    <div class="header-row justify-content-lg-between">
+      <nav class="primary-menu mb-1">
+        <ul class="menu-container justify-content-between">
+          {% for item in menu %}
+            <li><a href="{{ item.url }}" class="text-uppercase"{% if item.target %} target="_blank"{% endif %}>{{ item.title|raw }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+	
+	<!-- </div> -->
+
+{% endif %}
+<!-- Mega Nav Start -->
+<div class="nav-overlay-nf">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 mega-nav-column-line">
+        {% for item in meganav %}
+          <div class="mega-nav-left-columns-wrap{% if loop.last %} margin-btm-0{% endif %}">
+            <div class="mega-nav-left-columns-headingwrap">
+                <i class="fas fa-chevron-down mega-nav-down-arrow hidden visible-xs" data-toggle="collapse" data-target="#collapse-mega-nav{{ item.ID }}-{{ item.title|replace({" ":"-"})|raw }}" aria-expanded="false" aria-controls="collapse-mega-nav{{ item.ID }}"></i>
+              <h3 class="mega-nav-left-columns-heading"><a href="{{ item.url }}"{% if item.target %} target="_blank"{% endif %}>{{ item.title|raw }}</a>
+              </h3>
+            </div>
+            {% if item.children.isNotEmpty %}
+              <div class="mega-nav-left-columns-listwrap collapse dont-collapse-sm" id="collapse-mega-nav{{ item.ID }}-{{ item.title|replace({" ":"-"})|raw }}">
+                <ul class="mega-nav-left-columns">
+                  {% for subitem in item.children %}
+                    <li><a href="{{ subitem.url }}"{% if subitem.target %} target="_blank"{% endif %}>{{ subitem.title|raw }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="col-lg-5 mega-nav-right-columns-wrap-pdng">
+
+        {% include "@base/page/nav/mega-nav-right-side-links.twig" %}
+
+        <div class="meganav-app-wrap">
+          <h3 class="mega-nav-left-columns-heading">KT APPDOWNLOAD</h3>
+          <ul class="meganav-app-lists">
+            <li><a href="https://itunes.apple.com/ae/app/khaleej-times/id909275381?mt=8"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/apple.svg" alt="apple" width="19" height="23" loading="lazy"/> iPhone | iPad</a> </li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.khaleejtimes&hl=en"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/android.svg" alt="android" width="19" height="24" loading="lazy"/> Android</a></li>
+            <li><a href="https://appgallery5.huawei.com/#/app/C101150783"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/huawei.svg" alt="huawei" width="19" height="14" loading="lazy"/> Huawei</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Mega Nav Ends -->
+
+
+
+
+
+
+
+<header class="primary-top">
+  <div class="container text-center ">
+    <div class="row align-items-start nav-top">
+      <div class="col search-col">
+        <div class="row justify-content-start">
+          <ul class="left-side-search">
+            <!--<li><a href="#"><img src="images/icons/burger-menu-bar.svg"></a></li>-->
+            <li>
+            <nav><span id="ham-burger-menu-ctn-top">
+              <li class="ham-burger-menu-bars"></li>
+              </span></nav>
+            </li>
+            <!--<li><a href="#"> <img src="images/icons/search.svg"> <i class="fa fa-search"></i> </a></li>-->
+            <li><a class="search-top-bt-openBtn" onclick="openSearch()"> <img src="images/icons/search.svg"></a> </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Modal -->
+      
+      <div id="myOverlay" class="search-top-bt-overlay"> <span class="closebtn" onclick="closeSearch()" title="Close Overlay"><img src="images/icons/close-button-search.svg"></span>
+        <div class="search-top-bt-overlay-content">
+          <form name="searchform" id="searchform" action="/search">
+            <input type="text" id="search" placeholder="Type here to search news, photos, videos..." name="search">
+            <button type="submit">SEARCH</button>
+          </form>
+        </div>
+      </div>
+      <div class="col lang-col">
+        <ul class="menu">
+          <li class="menu-item"> <a href="#">English</a>
+            <ul class="drop-menu">
+              <li class="drop-menu-item"> <a href="#">Arabic</a> </li>
+              <li class="drop-menu-item"> <a href="#">Hindi</a> </li>
+              <li class="drop-menu-item"> <a href="#">Tamil</a> </li>
+            </ul>
+          </li>
+          <!-- <li class="menu-item"><a href="#">Arabic</a></li>
+            <li class="menu-item"><a href="#">Hindi</a></li>
+            <li class="menu-item"><a href="#">Tamil</a></li> --> 
+          <!--<li><a href="#">Malayalam</a></li> -->
+          
+        </ul>
+        <select name="languages" onchange="javascript:handleSelect(this)">
+          <option value="english">English</option>
+          <option value="arabic">Arabic</option>
+          <option value="hindi">Hindi</option>
+          <option value="Tamil">Tamil</option>
+        </select>
+      </div>
+      <div class="col log-col">
+        <div class="row justify-content-end">
+          <ul class="epaper-sign-in-bt">
+            <li><a href="#"><img src="images/icons/e-paper.svg">E-Paper</a></li>
+            <li><a href="#"> <img src="images/icons/sign-in.svg">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center mt-2 mb-2">
+    <div class="row align-items-start">
+      <div class="col align-items-center"> <a href="#" class="standard-logo"> <!--<img src="images/khaleej-times-logo.svg" alt="khaleejtimes" width="300" height="70" /> --> 
+        
+        <img src="https://www.khaleejtimes.com/wp-content/themes/ktd-theme/assets/images/khaleej-times-logo.svg" width="300" height="70"> </a>
+        <div class="calendar-new">
+          <div class="header-left-column calendar-container">
+            <p class="calendar"> Fri, Mar 08, 2024 | Shaban 11, 1445 | <span> <i class="weather-new">DXB </i> <img src="images/icons/weather-sun.svg">28°C </span> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mega Nav Start -->
+  
+  <div class="container">
+    <div class="row">
+      <div id="ham-burger-menu-cnt" class="left-ham-burgermenu">
+        <div class="burger-main-content-outer-lb">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h3 class="accordion-header burger-header-outer" id="flush-headingOne-top-burg"> <a href="https://www.khaleejtimes.com/uae" target="_blank" >UAE</a> <i class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne-top-burg" aria-expanded="false" aria-controls="flush-collapseOne-top-burg" > </i> </h3>
+              <div id="flush-collapseOne-top-burg" class="accordion-collapse collapse burger-menu-content-lb" aria-labelledby="flush-headingOne-top-burg" data-bs-parent="#accordionFlushExample" >
+                <div class="accordion-body">
+                  <ul>
+                    <li> <a href="#">Local Plus</a></li>
+                    <li> <a href="#">Crime</a></li>
+                    <li> <a href="#">Legal</a></li>
+                    <li> <a href="#">Education</a></li>
+                    <li> <a href="#">Government</a></li>
+                    <li> <a href="#">Transport</a></li>
+                    <li> <a href="#">Weather</a></li>
+                    <li> <a href="#">Emergencies</a></li>
+                    <li> <a href="#">Dubai</a></li>
+                    <li> <a href="#">Abu Dhabi</a></li>
+                    <li> <a href="#">Sharjah</a></li>
+                    <li> <a href="#">Ajman</a></li>
+                    <li> <a href="#">Ras Al Khaimah</a></li>
+                    <li> <a href="#">Fujairah</a></li>
+                    <li> <a href="#">Umm Al Quwain</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header burger-header-outer" id="flush-headingTwo-top-burg"> <a href="#" target="_blank" > Life and living</a> <i class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo-top-burg" aria-expanded="false" aria-controls="flush-collapseTwo-top-burg" > </i> </h3>
+              <div id="flush-collapseTwo-top-burg" class="accordion-collapse collapse  burger-menu-content-lb" aria-labelledby="flush-headingTwo-top-burg" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li> <a href="#">Visa & Immigration in UAE</a></li>
+                    <li> <a href="#">Banking in UAE</a></li>
+                    <li> <a href="#">Schooling in UAE</a></li>
+                    <li> <a href="#">Housing in UAE</a></li>
+                    <li> <a href="#">Ramadan 2024</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header burger-header-outer" id="flush-headingThree-top-burg"> <a href="#" target="_blank" > World</a> <i class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree-top-burg" aria-expanded="false" 
+            aria-controls="flush-collapseThree-top-burg" > </i> </h3>
+              <div id="flush-collapseThree-top-burg" class="accordion-collapse collapse  burger-menu-content-lb" aria-labelledby="flush-headingThree-top-burg" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li> <a href="#">Saudi Arabia</a></li>
+                    <li> <a href="#">Bahrain</a></li>
+                    <li> <a href="#">Oman</a></li>
+                    <li> <a href="#">Kuwait</a></li>
+                    <li> <a href="#">Qatar</a></li>
+                    <li> <a href="#">MENA</a></li>
+                    <li> <a href="#">India</a></li>
+                    <li> <a href="#">Pakistan</a></li>
+                    <li> <a href="#">Philippines</a></li>
+                    <li> <a href="#">Americas</a></li>
+                    <li> <a href="#">Europe</a></li>
+                    <li> <a href="#">Africa</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header burger-header-outer" id="flush-headingFour-top-burg"> <a href="#" target="_blank" > Opinion</a> <i class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour-top-burg" aria-expanded="false" 
+            aria-controls="flush-collapseFour-top-burg" > </i> </h3>
+              <div id="flush-collapseFour-top-burg" class="accordion-collapse collapse  burger-menu-content-lb" aria-labelledby="flush-headingFour-top-burg" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li> <a href="#">Columnists</a></li>
+                    <li> <a href="#"> Editorial</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header burger-header-outer" id="flush-headingFive-top-burg"> <a href="#" target="_blank" > Business</a> <i class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive-top-burg" aria-expanded="false" aria-controls="flush-collapseFive-top-burg" > </i> </h3>
+              <div id="flush-collapseFive-top-burg" class="accordion-collapse collapse  burger-menu-content-lb" aria-labelledby="flush-headingFive-top-burg" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li> <a href="#">Auto</a></li>
+                    <li> <a href="#">Aviation</a></li>
+                    <li> <a href="#">Corporate</a></li>
+                    <li> <a href="#">Cryptocurrency</a></li>
+                    <li> <a href="#">Markets</a></li>
+                    <li> <a href="#">Economy</a></li>
+                    <li> <a href="#">Finance</a></li>
+                    <li> <a href="#">Energy</a></li>
+                    <li> <a href="#">Infrastructure</a></li>
+                    <li> <a href="#">Realty</a></li>
+                    <li> <a href="#">Start-Ups</a></li>
+                    <li> <a href="#">Telecom</a></li>
+                    <li> <a href="#">Tech</a></li>
+                    <li> <a href="#">Currency Exchange</a></li>
+                    <li> <a href="#">KT-Network</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header burger-header-outer" id="flush-headingSix-top-burg"> <a href="#" target="_blank" > Sports </a> <i class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix-top-burg" aria-expanded="false" aria-controls="flush-collapseSix-top-burg" > </i> </h3>
+              <div id="flush-collapseSix-top-burg" class="accordion-collapse collapse  burger-menu-content-lb" aria-labelledby="flush-headingSix-top-burg" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li> <a href="#">Football</a></li>
+                    <li> <a href="#">Cricket</a></li>
+                    <li> <a href="#">Tennis</a></li>
+                    <li> <a href="#">Golf</a></li>
+                    <li> <a href="#">Horse Racing</a></li>
+                    <li> <a href="#">Local Sports</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header burger-header-outer" id="flush-headingSeven-top-burg"> <a href="#" target="_blank" > Entertainment </a> <i class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven-top-burg" aria-expanded="false" aria-controls="flush-collapseSeven-top-burg" > </i> </h3>
+              <div id="flush-collapseSeven-top-burg" class="accordion-collapse collapse  burger-menu-content-lb" aria-labelledby="flush-headingSeven-top-burg" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li> <a href="#">Movies</a></li>
+                    <li> <a href="#">OTT</a></li>
+                    <li> <a href="#">Music</a></li>
+                    <li> <a href="#">Local Events</a></li>
+                    <li> <a href="#">Newsmakers</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header burger-header-outer" id="flush-headingEight-top-burg"> <a href="#" target="_blank" > Lifestyle </a> <i class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight-top-burg" aria-expanded="false" aria-controls="flush-collapseEight-top-burg" > </i> </h3>
+              <div id="flush-collapseEight-top-burg" class="accordion-collapse collapse  burger-menu-content-lb" aria-labelledby="flush-headingEight-top-burg" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li> <a href="#">Arts & Culture</a></li>
+                    <li> <a href="#">Beauty</a></li>
+                    <li> <a href="#">Design</a></li>
+                    <li> <a href="#">Fashion</a></li>
+                    <li> <a href="#">Food</a></li>
+                    <li> <a href="#">Health</a></li>
+                    <li> <a href="#">Home</a></li>
+                    <li> <a href="#">Mental Health</a></li>
+                    <li> <a href="#">Parenting</a></li>
+                    <li> <a href="#">Relationships</a></li>
+                    <li> <a href="#">Shopping</a></li>
+                    <li> <a href="#">StayHome</a></li>
+                    <li> <a href="#">Wellness</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header burger-header-outer" id="flush-headingNine-top-burg"> <a href="#" target="_blank" > Travel </a> <i class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine-top-burg" aria-expanded="false" aria-controls="flush-collapseNine-top-burg" > </i> </h3>
+              <div id="flush-collapseNine-top-burg" class="accordion-collapse collapse  burger-menu-content-lb" aria-labelledby="flush-headingNine-top-burg" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li> <a href="#">Staycations</a></li>
+                    <li> <a href="#">Vacations</a></li>
+                    <li> <a href="#">UAE Attractions</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header burger-header-outer" id="flush-headingTen-top-burg"> <a href="#" target="_blank" > Reviews </a> <i class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen-top-burg" aria-expanded="false" aria-controls="flush-collapseTen-top-burg" > </i> </h3>
+              <div id="flush-collapseTen-top-burg" class="accordion-collapse collapse  burger-menu-content-lb" aria-labelledby="flush-headingTen-top-burg" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li> <a href="#">Tech Reviews</a></li>
+                    <li> <a href="#">Motoring Reviews</a></li>
+                    <li> <a href="#">Movie Reviews</a></li>
+                    <li> <a href="#">Book reviews</a></li>
+                    <li> <a href="#">Restaurant Reviews</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header burger-header-outer" id="flush-headingEleven-top-burg"> <a href="#" target="_blank" > Supplements </a> <i class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven-top-burg" aria-expanded="false" aria-controls="flush-collapseEleven-top-burg" > </i> </h3>
+              <div id="flush-collapseEleven-top-burg" class="accordion-collapse collapse  burger-menu-content-lb" aria-labelledby="flush-headingEleven-top-burg" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li> <a href="#">India</a></li>
+                    <li> <a href="#">Italy</a></li>
+                    <li> <a href="#">COP 28 UAE</a></li>
+                    <li> <a href="#">Germany</a></li>
+                    <li> <a href="#">Turkiye</a></li>
+                    <li> <a href="#">BTR</a></li>
+                    <li> <a href="#">Back To School</a></li>
+                    <li> <a href="#"> Eid-Al-Adha</a></li>
+                    <li> <a href="#"> Georgia</a></li>
+                    <li> <a href="#">It’s Summer Time</a></li>
+                    <li> <a href="#">Leading Universities</a></li>
+                    <li> <a href="#">Getex</a></li>
+                    <li> <a href="#">Higher Education</a></li>
+                    <li> <a href="#">Cookbook</a></li>
+                    <li> <a href="#">KT Engage</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header burger-header-outer" id="flush-headingTwelve-top-burg"> <a href="#" target="_blank" > Ktevents </a> <i class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve-top-burg" aria-expanded="false" aria-controls="flush-collapseTwelve-top-burg" > </i> </h3>
+              <div id="flush-collapseTwelve-top-burg" class="accordion-collapse collapse  burger-menu-content-lb" aria-labelledby="flush-headingTwelve-top-burg" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li> <a href="#">India Real Estate Show</a></li>
+                    <li> <a href="#">Future Of Insurance</a></li>
+                    <li> <a href="#">KT Desert Drive</a></li>
+                    <li> <a href="#">New Age Finance & Accounting Summit</a></li>
+                    <li> <a href="#">UniExpo</a></li>
+                    <li> <a href="#">Digital Health Forum</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="burger-menu-content-bottom-area">
+              <h3 class="burger-menu-title"> <a href="#"> Download our Mobile App </a> </h3>
+              <ul class="follow-us">
+                <li> <a href="#"><img src="images/icons/ios-icon-burger-menu.svg">iPhone | iPad</a></li>
+                <li> <a href="#"><img src="images/icons/android-icon-burger-menu.svg">Android</a></li>
+                <li> <a href="#"><img src="images/icons/huawei-icon-burger-menu.svg">Huawei</a></li>
+              </ul>
+              <!--<h3 class="burger-menu-title"> <a href="#"> FOLLOW US </a></h3>
+             
+              <div class="social_burger-menu">
+                <ul>
+                  <li class="fb-color lazyloaded"><a href="https://www.facebook.com/khaleejtimes" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f lazyloaded"></i></a></li>
+                  <li class="tw-color lazyloaded"><a href="https://twitter.com/khaleejtimes" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter twitter-svg" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-label="Twitter" role="img" style="width:19px;height:19px;">
+                      <g>
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"></path>
+                      </g>
+                    </svg>
+                    </i></a></li>
+                  <li class="yt-color lazyloaded"><a href="https://www.youtube.com/khaleejtimes" target="_blank" aria-label="Youtube"><i class="fab fa-youtube lazyloaded"></i></a></li>
+                  <li class="ins-color lazyloaded"><a href="https://instagram.com/khaleejtimes" target="_blank" aria-label="Instagram"><i class="fab fa-instagram lazyloaded"></i></a></li>
+                  <li class="in-color lazyloaded"><a href="https://www.linkedin.com/company/khaleejtimes" target="_blank" aria-label="Linkedin"><i class="fab fa-linkedin-in lazyloaded"></i></a> </li>
+                  <li class="te-color lazyloaded"><a href="https://t.me/khaleejtimes" target="_blank" aria-label="Telegram"><i class="fa fa-paper-plane lazyloaded"></i></a></li>
+                  <li class="wa-color lazyloaded"><a href="https://www.whatsapp.com/channel/0029Va5dROu3bbUxk7Jh2503" target="_blank" aria-label="Whatsapp"><i class="fab fa-whatsapp lazyloaded"> </i></a></li>
+                </ul>
+              </div>--> 
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mega Nav Ends -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Top Menu -->
+{% include "@base/page/nav/top-menu.twig" %}
+<!-- END Top Menu -->
+</header>

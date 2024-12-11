@@ -1,0 +1,29 @@
+{% if objectProperties['storytelling'] %}
+    {% set storytelling_type = 'data-storytelling="' ~ objectProperties['storytelling'] ~ '"' %}
+{% else %}
+    {% set storytelling_type = "" %}
+{% endif %}
+
+{% if objectProperties['presentation'] %}
+    {% set presentation_type = 'data-presentation="' ~ objectProperties['presentation'] ~ '"' %}
+{% else %}
+    {% set presentation_type = "" %}
+{% endif %}
+
+<div class="gallery-slider" {{ storytelling_type|raw }} {{ presentation_type|raw }}>
+    {% for image in images %}
+        <img
+            class="gallery_image"
+            src="{{ image.src|replace({'&q=75': '&q=100', '&type=preview': '&type=primary'}) }}"
+            alt="{{ image.alttext }}"
+            data-uuid="{{ image.uuid }}"
+            {% if cropset %}
+                srcset="
+                {{ cropset['1:1']|replace({'&q=75': '&q=100', '&type=preview': '&type=primary'})  }} 1000w,
+                {{ cropset['16:9']|replace({'&q=75': '&q=100', '&type=preview': '&type=primary'}) }} 1200w
+                "
+                sizes="(min-width:1000px) 100vw, 50vw"
+            {% endif %}
+        />
+    {% endfor %}
+</div>

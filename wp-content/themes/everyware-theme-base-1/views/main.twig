@@ -1,0 +1,12 @@
+{% block site_content_wrapper %}
+
+	<div class="container">
+
+		<div id="main-body">
+			{% block page_content %}
+				{{ the_content() }}
+			{% endblock %}
+		</div>
+
+	</div>
+{% endblock site_content_wrapper %}

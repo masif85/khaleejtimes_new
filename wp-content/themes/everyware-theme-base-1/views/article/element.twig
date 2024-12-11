@@ -1,0 +1,15 @@
+{% if content %}
+    {% if type == 'blockquote' %}
+        <blockquote>{{ content | raw }}</blockquote>
+    {% elseif type == 'preamble' %}
+        <div class="article-summary">
+            <span class="article__body article__leadin">{{ content|raw }}</span>
+        </div>
+    {% elseif type == 'headline' %}
+        <!-- Blank because headline is in article-page.twig -->
+    {% elseif type == 'body' %}
+        <p class="article__body">{{ content | raw }}</p>
+    {% else %}
+        <div>{{ content | raw }}</div>
+    {% endif %}
+{% endif %}

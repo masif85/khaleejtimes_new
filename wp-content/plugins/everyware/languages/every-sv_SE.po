@@ -1,0 +1,783 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Every\n"
+"POT-Creation-Date: 2021-05-26 10:50+0200\n"
+"PO-Revision-Date: 2021-05-26 10:52+0200\n"
+"Last-Translator: \n"
+"Language-Team: Naviga Web\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;_ex;_n;_nx;_n_noop;"
+"_nx_noop\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: admin-style/admin-style.php\n"
+"X-Poedit-SearchPath-2: includes\n"
+"X-Poedit-SearchPath-3: oc_objects\n"
+"X-Poedit-SearchPath-4: src\n"
+"X-Poedit-SearchPath-5: widgets\n"
+"X-Poedit-SearchPath-6: download.php\n"
+"X-Poedit-SearchPath-7: every.php\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: bin\n"
+"X-Poedit-SearchPathExcluded-2: documentation\n"
+"X-Poedit-SearchPathExcluded-3: languages\n"
+"X-Poedit-SearchPathExcluded-4: node_modules\n"
+"X-Poedit-SearchPathExcluded-5: tests\n"
+"X-Poedit-SearchPathExcluded-6: vendor\n"
+
+#: admin-style/admin-style.php:29
+msgid ""
+"A test connection to your Open Content was successfully established and "
+"closed!"
+msgstr ""
+"En testanslutning till din Open Content upprättades och stängdes "
+"framgångsrikt!"
+
+#: admin-style/admin-style.php:30
+msgid "Could not establish a connection to your Open Content!"
+msgstr ""
+"Det gick inte att upprätta en anslutning till den angivna Open Content!"
+
+#: admin-style/admin-style.php:31
+msgid ""
+"A test connection to your S3 Bucket was successfully established and closed!"
+msgstr ""
+"En testanslutning till din S3 Bucket upprättades och stängdes framgångsrikt!"
+
+#: admin-style/admin-style.php:32
+msgid "Could not establish a connection to your S3 Bucket!"
+msgstr "Det gick inte att upprätta en anslutning till din angivna S3 Bucket!"
+
+#: admin-style/admin-style.php:33
+msgid "Open Content Query Builder"
+msgstr "Open Content Query byggare"
+
+#: admin-style/admin-style.php:34
+msgid "Generated Query:"
+msgstr "Genererad fråga:"
+
+#: admin-style/admin-style.php:35 admin-style/admin-style.php:40
+msgid "Add"
+msgstr "Lägg till"
+
+#: admin-style/admin-style.php:36
+msgid "Active rules:"
+msgstr "Aktiva regler:"
+
+#: admin-style/admin-style.php:37
+msgid "Set query to widget"
+msgstr "Lägg till sökfråga"
+
+#: admin-style/admin-style.php:38
+msgid "Query results:"
+msgstr "Frågeresultat:"
+
+#: admin-style/admin-style.php:39
+msgid "Add article slug property"
+msgstr "Lägg till slug egenskap"
+
+#: admin-style/admin-style.php:41 includes/open_content.php:887
+msgid "Register"
+msgstr "Registrera"
+
+#: admin-style/admin-style.php:42
+msgid "Unregister"
+msgstr "Avregistrera"
+
+#: admin-style/admin-style.php:43
+msgid "Successfully registered as listener"
+msgstr "Lyssnaren har blivit registrerad"
+
+#: admin-style/admin-style.php:44
+msgid ""
+"An error has occurred during registration of notifier, please contact an "
+"administrator"
+msgstr ""
+"Ett fel uppstod när notifieraren skulle registreras, vänligen kontakta en "
+"administratör"
+
+#: admin-style/admin-style.php:45
+msgid "Successfully unregistered listener"
+msgstr "Avregistrerade lyssnaren"
+
+#: admin-style/admin-style.php:46
+msgid ""
+"An error has occurred during removal of notifier, please contact an "
+"administrator"
+msgstr ""
+"Ett fel uppstod när notifieraren skulle tas bort, vänligen kontakta en "
+"administratör"
+
+#: admin-style/admin-style.php:47
+msgid "Please input a valid URL for notifier! "
+msgstr "Vänligen ange en giltig URL för notifieraren! "
+
+#: admin-style/admin-style.php:48
+msgid "Successfully purged the article from cache"
+msgstr "Lyckades rensa artikeln från cache"
+
+#: admin-style/admin-style.php:49
+msgid "Error: Could not purge article from cache"
+msgstr "Ett fel uppstod: Kunde inte ta bort artikel från cache"
+
+#: admin-style/admin-style.php:50
+msgid "Could not fetch properties from OC"
+msgstr "Kunde inte hämta egenskaper från OC"
+
+#: admin-style/admin-style.php:51
+msgid "Remove"
+msgstr "Ta bort"
+
+#: admin-style/admin-style.php:52
+msgid "Add Binding"
+msgstr "Lägg till koppling"
+
+#: admin-style/admin-style.php:53
+msgid "Choose binding"
+msgstr "Välj koppling"
+
+#: download.php:86
+msgid "Could not register download, please try again"
+msgstr "Kunde inte registrera nedladdning, var god försök igen"
+
+#: download.php:106
+msgid "Could not write to zip file."
+msgstr "Kunde inte skriva till zip-fil."
+
+#: download.php:110
+msgid "Zip failed: "
+msgstr "Zip misslyckades: "
+
+#: includes/article_events.php:18
+msgid "Every minute"
+msgstr "Varje minut"
+
+#: includes/custom_ajax_handler.php:50
+msgid "Error"
+msgstr "Fel"
+
+#: includes/custom_ajax_handler.php:50
+msgid "Empty or invalid query"
+msgstr "Tom eller felaktig fråga"
+
+#: includes/custom_oc_post_type.php:50
+msgid "Articles"
+msgstr "Artiklar"
+
+#: includes/custom_oc_post_type.php:51
+msgid "Article"
+msgstr "Artikel"
+
+#: includes/custom_oc_post_type.php:52 includes/custom_oc_post_type.php:53
+msgid "Add New Article"
+msgstr "Lägg till Artikel"
+
+#: includes/custom_oc_post_type.php:54
+msgid "Edit Article"
+msgstr "Editera Artikel"
+
+#: includes/custom_oc_post_type.php:55
+msgid "New Article"
+msgstr "Ny Artikel"
+
+#: includes/custom_oc_post_type.php:56
+msgid "View Article"
+msgstr "Se Artikel"
+
+#: includes/custom_oc_post_type.php:57
+msgid "Search Articles"
+msgstr "Sök artiklar"
+
+#: includes/custom_oc_post_type.php:58
+msgid "No Articles Found"
+msgstr "Inga artiklar funna"
+
+#: includes/custom_oc_post_type.php:59
+msgid "No Articles Found In Trash"
+msgstr "Inga artiklar funna i papperskorgen"
+
+#: includes/custom_oc_post_type.php:83
+msgid "Empty cache from this article"
+msgstr "Ta bort artikel från cache"
+
+#: includes/custom_oc_post_type.php:83
+msgid "Purge Cache"
+msgstr "Ta bort från Cache"
+
+#: includes/env_settings.php:172
+msgid "Environment"
+msgstr "Miljöalternativ"
+
+#: includes/env_settings.php:223
+msgid "Environment Options"
+msgstr "Miljöalternativ"
+
+#: includes/env_settings.php:232
+msgid "JSON Cache Flushed"
+msgstr "JSON Cache tömd"
+
+#: includes/env_settings.php:240
+msgid "Use Auth:"
+msgstr "Använd autentisering:"
+
+#: includes/env_settings.php:242
+msgid "Default set to false"
+msgstr "Standardvärde: Nej"
+
+#: includes/env_settings.php:245 includes/env_settings.php:257
+#: includes/env_settings.php:269 includes/env_settings.php:281
+#: includes/env_settings.php:293 includes/env_settings.php:338
+#: includes/env_settings.php:350 includes/open_content.php:722
+#: includes/open_content.php:741
+msgid "Yes"
+msgstr "Ja"
+
+#: includes/env_settings.php:246 includes/env_settings.php:258
+#: includes/env_settings.php:270 includes/env_settings.php:282
+#: includes/env_settings.php:294 includes/env_settings.php:339
+#: includes/env_settings.php:351 includes/open_content.php:725
+#: includes/open_content.php:744
+msgid "No"
+msgstr "Nej"
+
+#: includes/env_settings.php:252
+msgid "Use Trashed:"
+msgstr "Använd papperskorg:"
+
+#: includes/env_settings.php:254
+msgid ""
+"If true, board searches and manual articles will look at Open Content "
+"property \"EveryTrashed\" to see if an article is in the trash or not. "
+"Default set to false."
+msgstr ""
+"Om aktiv så anpassas sökningar och manuella artiklar att titta på Open "
+"Content egenskapen \"EveryTrashed\" för att se om en artikel ligger i "
+"papperskorgen eller ej. Standard satt till nej."
+
+#: includes/env_settings.php:264
+msgid "Use Nginx:"
+msgstr "Använd Nginx:"
+
+#: includes/env_settings.php:266
+msgid "This option is used to add rewrite rules to remove index.php"
+msgstr ""
+"Detta val används för att lägga på omskrivningsregler för att ta bort index."
+"php"
+
+#: includes/env_settings.php:276
+msgid "Use Debug Mode:"
+msgstr "Använd felsökningsläge:"
+
+#: includes/env_settings.php:278
+msgid ""
+"If this option is active, the plugins will activate more debug functionality "
+"for troubleshooting. Default: No"
+msgstr ""
+"Om det här alternativet är aktivt kommer detta plugin att aktivera fler "
+"funktioner för felsökning. Standard: Nej"
+
+#: includes/env_settings.php:288
+msgid "Use EveryStats:"
+msgstr "Använd EveryStats:"
+
+#: includes/env_settings.php:290
+msgid ""
+"If this is enabled, all articles will have a custom field with the view "
+"count of the article."
+msgstr ""
+"Om detta är aktiverat har alla artiklar ett anpassat fält med antalet "
+"visningar av artikeln."
+
+#: includes/env_settings.php:300
+msgid "Environment Query:"
+msgstr "Miljöfråga:"
+
+#: includes/env_settings.php:302
+msgid ""
+"Add a query-rule that will be applied to all queries before they are sent to "
+"Open Content"
+msgstr ""
+"Lägg till en regel som alltid kommer appliceras på frågor innan de sänds "
+"till Open Content"
+
+#: includes/env_settings.php:313
+msgid "Category property:"
+msgstr "Kategoriegenskap:"
+
+#: includes/env_settings.php:325
+msgid ""
+"Choose an Open Content property to be used as the category for articles. "
+"This data will be added to the category taxonomy for the articles created in "
+"Wordpress and can for example be used in the URL for the article."
+msgstr ""
+"Välj en Open Content egenskap som ska användas som kategori för artiklar. "
+"Dessa uppgifter kommer läggas till i kategoriklassificeringen för artiklarna "
+"som skapats i Wordpress och kan sedan användas i t.ex. URL för artikeln."
+
+#: includes/env_settings.php:332
+msgid "Use hierarchy categories:"
+msgstr "Använd hierarkikategorier:"
+
+#: includes/env_settings.php:334
+msgid ""
+"If this option is active, Everyware will create categories hierarchical. "
+"Default: No"
+msgstr ""
+"Om detta alternativet är valt så kommer Everyware att skapa kategorier "
+"hierarkiskt. Standard: Nej"
+
+#: includes/env_settings.php:345
+msgid "Hide future articles:"
+msgstr "Göm framtida artiklar:"
+
+#: includes/env_settings.php:347
+msgid ""
+"Default set to true, if it is true articles with pubdates in the future will "
+"not be rendered."
+msgstr ""
+"Standard satt till ja, om den är ja kommer artiklar med publiceringsdatum i "
+"framtiden inte att bli renderade."
+
+#: includes/env_settings.php:357 includes/open_content.php:928
+#: includes/open_content.php:1037 includes/property_map.php:230
+msgid "Save changes"
+msgstr "Spara ändringar"
+
+#: includes/oc_connection.php:1610
+msgid "Given query returns no matching objects from Open Content"
+msgstr "Given fråga gav inga matchande objekt från Open Content"
+
+#: includes/oc_connection.php:1644
+msgid "Invalid Open Content credentials. Check Open Content Settings"
+msgstr "Felaktig Open Content inloggning. Kolla Open Content Inställningar"
+
+#: includes/oc_connection.php:1647
+msgid "No Response"
+msgstr "Inget svar"
+
+#: includes/oc_connection.php:1668 includes/oc_connection.php:1705
+msgid "Invalid Open Content credentials. Check \"Settings - Open Content\""
+msgstr ""
+"Felaktig Open Content inloggning. Kolla \"Inställningar - Open Content\""
+
+#: includes/oc_connection.php:1672 includes/oc_connection.php:1709
+msgid "No Content types found in Open Content"
+msgstr "Inga innehållstyper funna i Open Content"
+
+#: includes/oc_notifier_stats.php:39
+msgid "Notifier Stats"
+msgstr "Notifier statistik"
+
+#: includes/oc_notifier_stats.php:172
+msgid "Nothing logged"
+msgstr "Inget loggat"
+
+#: includes/open_content.php:533
+msgid "Open Content plugin is now activated"
+msgstr "Open Content plugin är nu aktiverat"
+
+#: includes/open_content.php:534
+msgid "next step is to enter your credentials under"
+msgstr "nästa stag är att fylla i inloggningsuppgifter under"
+
+#: includes/open_content.php:535 includes/open_content.php:642
+msgid "Open Content Settings"
+msgstr "Open Content Inställningar"
+
+#: includes/open_content.php:626
+msgid "OC Settings"
+msgstr "OC Inställningar"
+
+#: includes/open_content.php:628
+msgid "URL Settings"
+msgstr "URL Inställningar"
+
+#: includes/open_content.php:662
+msgid "Username"
+msgstr "Användarnamn"
+
+#: includes/open_content.php:669
+msgid "Password"
+msgstr "Lösenord"
+
+#: includes/open_content.php:679
+msgid "OC Base URL"
+msgstr "OpenContent URL"
+
+#: includes/open_content.php:687
+msgid "Test OC connection"
+msgstr "Testa OC uppkoppling"
+
+#: includes/open_content.php:694
+msgid "Time to cache OC response to minimize traffic"
+msgstr "Tid som OC svar sparas för att minimera antalet förfrågningar"
+
+#: includes/open_content.php:705
+msgid ""
+"Enter time in seconds, default 10 will cache all data for 10 seconds<br /"
+">its recommended to increase this number in production"
+msgstr ""
+"Ange tid i sekunder, ursprungligt värde är 10 sekunder<br />det är "
+"rekommenderat att öka denna siffra i produktion"
+
+#: includes/open_content.php:713
+msgid "Log Cache events (DEV)"
+msgstr "Logga cachehändelser (DEV)"
+
+#: includes/open_content.php:716 includes/open_content.php:735
+msgid "Used in development or debugging"
+msgstr "Används för utveckling eller felsökning"
+
+#: includes/open_content.php:732
+msgid "Bypass object cache"
+msgstr "Kringgå object cache"
+
+#: includes/open_content.php:751
+msgid "Image service settings"
+msgstr "Bildtjänstsinställningar"
+
+#: includes/open_content.php:757
+msgid "Choose image service"
+msgstr "Välj bildservice"
+
+#: includes/open_content.php:759
+msgid "Choose which image service to use for displaying images in admin."
+msgstr "Välj den bildservice som ska användas för att visa bilder i admin."
+
+#: includes/open_content.php:765
+msgid "imengine"
+msgstr "imengine"
+
+#: includes/open_content.php:768
+msgid "imgix"
+msgstr "imgix"
+
+#: includes/open_content.php:775
+msgid "Imengine server:"
+msgstr "Imengine server:"
+
+#: includes/open_content.php:783
+msgid ""
+"Enter the address of the Imengine server you want to use in the Board admin."
+msgstr "Skriv in adressen för Imengine servern ni vill använda i Board admin."
+
+#: includes/open_content.php:790
+msgid "Imgix source:"
+msgstr "Imgix källa:"
+
+#: includes/open_content.php:798
+msgid ""
+"Enter the address of the Imgix source you want to use for displaying picture "
+"in admin interfaces."
+msgstr ""
+"Ange adressen till Imgix-källan du vill använda för att visa bilder i "
+"administrationsgränssnittet."
+
+#: includes/open_content.php:812
+msgid "Read more about Google Analytics"
+msgstr "Läs mer om Google Analytics"
+
+#: includes/open_content.php:829
+msgid "Notifier 2.0"
+msgstr "Notifierare 2.0"
+
+#: includes/open_content.php:888
+msgid "Deregister"
+msgstr "Avregistrera"
+
+#: includes/open_content.php:906
+msgid "Received"
+msgstr "Mottaget"
+
+#: includes/open_content.php:938
+msgid ""
+"Imengine is an optional module that can be used to safely cache images that "
+"are fetched from Open Content"
+msgstr ""
+"Imengine är en valfri modul som kan användas för att säkert cacha bilder som "
+"hämtas från Open Content"
+
+#: includes/open_content.php:941
+msgid ""
+"Imengine will speed up image load time and also enable Crop and Resize "
+"without effect on the image source file in Open Content."
+msgstr ""
+"Imengine kommer att påskynda bildens laddningstid och kommer också aktivera "
+"beskärning och ändra storlek utan att det påverkar bildens källfil i Open "
+"Content."
+
+#: includes/open_content.php:947
+msgid ""
+"Notifier is an optional module that can be used between Everyware and Open "
+"Content."
+msgstr ""
+"Notifieraren är en valfri modul som kan användas mellan Everyware och Open "
+"Content."
+
+#: includes/open_content.php:950
+msgid ""
+"Notifier will then listen for changes in Open Content and if the changes "
+"affect any of the content currently used in Everyware it will send a "
+"notification to let Everyware know about the change."
+msgstr ""
+"Notifieraren lyssnar sedan efter ändringar i Open Content och om ändringarna "
+"påverkar något av innehållet som för närvarande används av Everyware kommer "
+"det att skicka ett meddelande för att informera Everyware om ändringen."
+
+#: includes/open_content.php:953
+msgid ""
+"This enables fast cache \"flush and refill\" by Everyware. All cached data "
+"will be dropped and refilled automatically without a user request to the "
+"public site."
+msgstr ""
+"Detta tillåter snabb cache \"flush and refill\" av Everyware. All cachad "
+"data töms och fylls åter automatiskt utan anrop mot den publika siten."
+
+#: includes/open_content.php:969
+msgid "Article URL Settings"
+msgstr "Artikel URL Inställningar"
+
+#: includes/open_content.php:978
+msgid ""
+"Set the Custom Post Type Slug, the default value is \"article\". This value "
+"will be the first part of the url of every article.<br/><strong>IMPORTANT: "
+"If you change this value after articles has been created all old article "
+"URLs will be changed</strong><br/>so this setting should only be changed "
+"before starting loading articles.<br/><br/><strong>You have to set "
+"\"Permalink Settings\" to \"Post name\" for this to work.</strong>"
+msgstr ""
+"Sätt URL-slug för Custom Post Type, som standard används \"article\". Detta "
+"värde kommer vara den första delen av URL:en för varje artikel.<br/"
+"><strong>VIKTIGT: Om du ändrar denna inställning efter att artiklar har "
+"blivit skapade, kommer alla gamla artiklars URLer ändras.</strong><br/>Denna "
+"inställning bör därför bara ändras innan inladdning av artiklar.<br/><br/"
+"><strong>Du måste ha satt ”Permlänkar” till ”Inläggsnamn” för att detta ska "
+"fungera.</strong>"
+
+#: includes/open_content.php:984
+msgid "Custom Post Type Slug:"
+msgstr "Anpassad Post Typ Slug:"
+
+#: includes/open_content.php:1002
+msgid ""
+"Set max length for the article objects URL-slug and which properties should "
+"be used to generate the slug in order of preference.<br/>NOTE: The changes "
+"here will only apply to new articles that have not yet been created."
+msgstr ""
+"Ställ in maxlängd för artikelobjektens URL-slug och vilka egenskaper som ska "
+"användas för att generera sluggen i önskad ordning. <br/> OBS! Ändringarna "
+"här gäller endast nya artiklar som ännu inte har skapats."
+
+#: includes/open_content.php:1007
+msgid "Article Slug properties:"
+msgstr "Artikel Slug egenskaper:"
+
+#: includes/open_content.php:1028
+msgid "Max length:"
+msgstr "Maxlängd:"
+
+#: includes/open_content.php:1371
+msgid "Incorrect Open Content URL, username or password entered"
+msgstr "Felaktig Open Content URL, användarnamn eller lösenord"
+
+#: includes/open_content.php:1391
+msgid "Incorrect Time To Cache value entered, default value restored"
+msgstr "Felaktig tid för cachning, återställer till standardvärde"
+
+#: includes/property_map.php:75
+msgid "Property Settings"
+msgstr "Egenskapskarta"
+
+#: includes/property_map.php:152
+msgid "Everyware - Open Content Property map"
+msgstr "Everyware - Open Content Egenskapskarta"
+
+#: includes/property_map.php:154
+msgid ""
+"Map the Everyware properties to the corresponding Open Content / Admin "
+"Properties"
+msgstr ""
+"Peka Everyware egenskaper på motsvarande Open Content / Admin egenskaper"
+
+#: includes/property_map.php:157
+msgid "If none of the options are correct, set to / leave as \"Unknown\""
+msgstr "Om ingen av alternativen stämmer, sätt / lämna som \"Unknown\""
+
+#: includes/property_map.php:159
+msgid ""
+"The list on the left are properties used in the Everyware plugin, make sure "
+"they point to the correct properties in the right list."
+msgstr ""
+"Listan till vänster är egenskaperna som används av Everyware. Se till att de "
+"pekar på de korrekta egenskaperna i den högra listan."
+
+#: includes/property_map.php:163
+msgid "You have unsaved changes!"
+msgstr "Du har ej sparade ändringar!"
+
+#: includes/property_map.php:173
+msgid "Properties"
+msgstr "Egenskaper"
+
+#: includes/property_map.php:182
+msgid "Data Source / OC"
+msgstr "Datakälla / OC"
+
+#: includes/property_map.php:197
+msgid "Unknown"
+msgstr "Unknown"
+
+#: includes/property_map.php:217
+msgid "No Auto match found, please select manually"
+msgstr "Ingen automatisk matchning funnen, var god välj manuellt"
+
+#: includes/wp_extension.php:115
+msgid ""
+"This is a preview of your selected every template that shows the structure "
+"of the template and it\\'s widget areas"
+msgstr ""
+"Detta är en förhandsgranskning av din valda every mall som visar mallens "
+"struktur och dess widgetområden"
+
+#: src/DashboardWidget.php:92
+msgid "Could not fetch version information, check back later!"
+msgstr "Kunde inte hämta versionsinformation, kom tillbaka senare!"
+
+#: src/DashboardWidget.php:94
+msgid "Up to date with latest release."
+msgstr "Kör redan senaste versionen."
+
+#: src/DashboardWidget.php:97
+#, php-format
+msgid ""
+"There is a newer version of %s available, update or contact the Naviga Web "
+"Team for more information."
+msgstr ""
+"Det finns en nyare version av %s, uppdatera eller kontakta Naviga Web Team "
+"för mer information."
+
+#: src/DashboardWidget.php:101
+msgid "Latest version"
+msgstr "Senaste version"
+
+#: src/DashboardWidget.php:104
+#, php-format
+msgid "Currently running %s version: "
+msgstr "Aktiv version av %s: "
+
+#: widgets/every_most_read_widget.php:69
+msgid "Limit (number of articles to show)"
+msgstr "Gräns (antal artiklar att visa)"
+
+#: widgets/every_most_read_widget.php:70
+msgid "Start date (Format example: 2013-04-23)"
+msgstr "Startdatum (exempel: 2013-04-23)"
+
+#: widgets/every_most_read_widget.php:71
+msgid "Stop date (Format example: 2013-04-23)"
+msgstr "Slutdatum (exempel: 2013-04-23)"
+
+#: widgets/oc_widget_base.php:283
+msgid "Title:"
+msgstr "Titel:"
+
+#: widgets/oc_widget_base.php:300
+msgid "Open Content Query"
+msgstr "Open Content Fråga"
+
+#: widgets/oc_widget_base.php:304
+msgid "Query:"
+msgstr "Fråga:"
+
+#: widgets/oc_widget_base.php:319
+msgid "Limit:"
+msgstr "Gräns:"
+
+#: widgets/oc_widget_base.php:338
+msgid "Query Builder"
+msgstr "Query byggare"
+
+#: widgets/oc_widget_base.php:339
+msgid "Test query"
+msgstr "Testa fråga"
+
+#: widgets/oc_widget_base.php:360
+msgid "Text Max Length:"
+msgstr "Maxlängd text:"
+
+#: widgets/oc_widget_base.php:374
+msgid "NO Image Text Max Length:"
+msgstr "Maxlängd för Ingen bild-text:"
+
+#: widgets/oc_widget_base.php:387
+msgid "Leadin Max Length:"
+msgstr "Maxlängd ingress:"
+
+#: widgets/oc_widget_base.php:401
+msgid "Image Type:"
+msgstr "Bildtyp:"
+
+#: widgets/oc_widget_base.php:404
+msgid "None"
+msgstr "Ingenting"
+
+#: widgets/oc_widget_base.php:405
+msgid "Thumbnail"
+msgstr "Tumnagel"
+
+#: widgets/oc_widget_base.php:406
+msgid "Preview"
+msgstr "Förhandsgranska"
+
+#: widgets/oc_widget_base.php:407
+msgid "Source"
+msgstr "Källa"
+
+#: widgets/oc_widget_base.php:427
+msgid "Headline first"
+msgstr "Rubrik först"
+
+#: widgets/oc_widget_base.php:428
+msgid "Image First"
+msgstr "Bild först"
+
+#: widgets/oc_widget_base.php:447
+msgid "Article template:"
+msgstr "Artikelmall:"
+
+#: widgets/oc_widget_base.php:469
+msgid "Image template:"
+msgstr "Bildmall:"
+
+#: widgets/oc_widget_base.php:489
+msgid "Template data input:"
+msgstr "Inmatning av malldata:"
+
+#: widgets/oc_widget_base.php:491
+msgid "Single"
+msgstr "Singel"
+
+#: widgets/oc_widget_base.php:492
+msgid "All"
+msgstr "Alla"
+
+#: widgets/oc_widget_base.php:520
+msgid "Sorting:"
+msgstr "Sortering:"
+
+#: widgets/oc_widget_base.php:547
+msgid "CSS classes (for each item):"
+msgstr "CSS klasser (för varje):"
+
+#: widgets/oc_widget_base.php:579
+msgid "Include / Use:"
+msgstr "Inkludera / Använd:"
+
+#: widgets/oc_widget_base.php:596
+msgid "Enable faceting:"
+msgstr "Aktivera fasetering:"

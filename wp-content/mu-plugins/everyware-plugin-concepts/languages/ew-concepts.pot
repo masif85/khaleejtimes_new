@@ -1,0 +1,108 @@
+#,
+msgid ""
+msgstr ""
+"Project-Id-Version: Everyware Concepts\n"
+"POT-Creation-Date: 2019-06-12 09:53+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ConceptAdmin.php:71
+msgid "Concepts are used to add meta data to object from Open Content."
+msgstr ""
+
+#: ConceptAdmin.php:102
+msgid "The type of concept."
+msgstr ""
+
+#: ConceptAdmin.php:132
+#: ConceptAdmin.php:133
+#: ConceptAdmin.php:171
+msgid "Add New %s"
+msgstr ""
+
+#: ConceptAdmin.php:134
+#: ConceptAdmin.php:168
+msgid "Edit %s"
+msgstr ""
+
+#: ConceptAdmin.php:135
+msgid "New %s"
+msgstr ""
+
+#: ConceptAdmin.php:136
+#: ConceptAdmin.php:137
+#: ConceptAdmin.php:169
+msgid "View %s"
+msgstr ""
+
+#: ConceptAdmin.php:138
+#: ConceptAdmin.php:173
+msgid "Search %s"
+msgstr ""
+
+#: ConceptAdmin.php:139
+#: ConceptAdmin.php:177
+msgid "No %s found"
+msgstr ""
+
+#: ConceptAdmin.php:140
+msgid "No %s found in Trash"
+msgstr ""
+
+#: ConceptAdmin.php:141
+msgid "Parent %s"
+msgstr ""
+
+#: ConceptAdmin.php:142
+#: ConceptAdmin.php:167
+msgid "All %s"
+msgstr ""
+
+#: ConceptAdmin.php:143
+msgid "%s Archives"
+msgstr ""
+
+#: ConceptAdmin.php:144
+msgid "%s Attributes"
+msgstr ""
+
+#: ConceptAdmin.php:160
+msgid "Type"
+msgstr ""
+
+#: ConceptAdmin.php:161
+msgid "Types"
+msgstr ""
+
+#: ConceptAdmin.php:170
+msgid "Update %s"
+msgstr ""
+
+#: ConceptAdmin.php:172
+msgid "New %s Name"
+msgstr ""
+
+#: ConceptAdmin.php:174
+msgid "Popular %s"
+msgstr ""
+
+#: ConceptAdmin.php:175
+msgid "Add or remove %s"
+msgstr ""
+
+#: ConceptAdmin.php:176
+msgid "Choose from the most used %s"
+msgstr ""
+
+#: ConceptAdmin.php:178
+msgid "← Back to %s"
+msgstr ""

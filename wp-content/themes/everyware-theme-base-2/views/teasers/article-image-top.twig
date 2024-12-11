@@ -1,0 +1,11 @@
+{% apply spaceless %}
+<article class="{{ render_classes([
+    'teaser',
+    'teaser--article-image-top',
+    'h-100',
+    image ? 'teaser--with-image' : 'teaser--without-image',
+    classList|join(' ')
+]) }}" data-uuid="{{ uuid }}">
+    {% include '@base/teasers/partial/main.twig' ignore missing %}
+</article>
+{% endapply %}

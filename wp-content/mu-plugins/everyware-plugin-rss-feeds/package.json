@@ -1,0 +1,36 @@
+{
+    "name": "everyware-plugin-rss-feeds",
+    "description": "This MU plugin comes with management of RSS Feeds in a Wordpress environment. It does so by registering a \"custom post\" with the type of rss-feed. Manual management is therefore handled by Wordpress.",
+    "version": "1.0.1",
+    "homepage": "https://navigaglobal.com/",
+    "license": "GPL-3.0-or-later",
+    "vendor": "infomaker",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@bitbucket.org:infomaker/everyware-plugin-rss-feeds.git"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "autoprefixer": "^9.7.4",
+        "css-mqpacker": "^7.0.0",
+        "cssnano": "^4.1.10",
+        "gulp": "^4.0.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-deporder": "^1.2.0",
+        "gulp-noop": "^1.0.1",
+        "gulp-postcss": "^8.0.0",
+        "gulp-sass": "^3.1.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-strip-debug": "^3.0.0",
+        "gulp-terser": "^1.4.0",
+        "minimist": "^1.2.0",
+        "postcss-assets": "^5.0.0"
+    },
+    "browserslist": [
+        "last 2 versions",
+        "> 2%"
+    ]
+}

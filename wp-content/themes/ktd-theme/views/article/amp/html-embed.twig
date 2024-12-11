@@ -1,0 +1,34 @@
+ <!-- {{ content|replace({
+      '100%': "930",
+      '99%': "930",
+      'NaN': "523",
+      '<hardreturn>': "",
+      '<img': "<amp-img layout=\'responsive\'",
+      '<iframe': "<amp-iframe sandbox=\'allow-scripts allow-same-origin\' layout=\'responsive\'",
+      '</iframe>': "</amp-iframe>"
+    })|raw
+  }} -->
+  {% if content matches '{.*dailymotion.com/embed/video/(.*?)\?.*}' %}
+    {% set CustomDailyMotionID = replace_regex(content|raw,'/.*dailymotion.com/embed/video/(.*?)\?.*/') %}
+    <div class="facebook-responsive-video mt-4">
+      <amp-dailymotion
+        data-videoid="{{ get_dailymotion_src(content) }}"
+        layout="responsive"
+        width="480"
+        height="270"
+      ></amp-dailymotion>
+    </div>
+  {% else %}
+    <div class="embed-responsive">
+      {{ content|replace({
+        '100%': "930",
+        '99%': "930",
+        'NaN': "523",
+        '<hardreturn>': "",
+        '<img': "<amp-img layout=\'responsive\'",
+        '<iframe': "<amp-iframe sandbox=\'allow-scripts allow-same-origin\' layout=\'responsive\'",
+        '</iframe>': "</amp-iframe>"
+      })|raw
+      }}
+    </div>
+  {% endif %}

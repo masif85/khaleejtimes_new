@@ -1,0 +1,109 @@
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
+<script>
+// adGroup: article
+window.googletag = window.googletag || {cmd: []};
+var breadcrumbsection="{% if section_parent %}{{ section_parent }}{% else %}{{sections[0]['name']}}{% endif %}"; 
+var breadcrumbsubsection="{% for items in sections|slice(0, 1) %}{{ items.name }}{% endfor %}";
+var articleuuid="{{ uuid }}";
+var init=0;
+/*
+        var d_session=new Date();
+        d_session.setTime(d_session.getTime()+(1*24*60*60*1000));
+        var expires = "expires="+d_session.toGMTString();
+        var valuez=getCookieValue('user_sessions');
+        if(!valuez)
+        {       
+        valuez=0;
+        }
+        value=Number(valuez)+1;
+        document.cookie = "user_sessions="+ value+";"+expires+";path=/";
+*/
+
+googletag.cmd.push(function() {
+    var mappingMobLeadfullads = googletag.sizeMapping().
+    addSize([1024,0],[970,250]). //desktop
+    addSize([768,0],[320,100]). //tablet
+    addSize([567,0],[320,100]). //smartphone
+    addSize([0,0],[320,100]). //other
+    build();
+
+    var mappingMPUcolads = googletag.sizeMapping().
+    addSize([1024,0],[300,250]). //desktop
+    addSize([768,0],[300,250]). //tablet
+    addSize([567,0],[300,250]). //smartphone
+    addSize([0,0],[300,250]). //other
+    build();
+    
+    var mappingMPUInArticle = googletag.sizeMapping().
+    addSize([1024,0],[[300,250],[336,280]]). //desktop
+    addSize([768,0],[[300,250],[336,280],[300, 100],[250,250],[300,75],[300,50],[320,50],'fluid']). //tablet
+    addSize([567,0],[[300,250],[336,280],[300, 100],[250,250],[300,75],[300,50],[320,50],'fluid']). //smartphone
+    addSize([0,0],[[300,250],[336,280],[300, 100],[250,250],[300,75],[300,50],[320,50],'fluid']). //other
+    build();
+    
+    googletag.pubads().setTargeting('KT_SectionName', [breadcrumbsection]);
+    googletag.pubads().setTargeting('KT_SubSectionName', [breadcrumbsubsection]);
+    googletag.pubads().setTargeting('KT_ArtTarget', [articleuuid]);
+    googletag.pubads().setPublisherProvidedId(utag_data.tealium_visitor_id);
+    {% if section_parent=='World' or sections[0]['name']=='World' %}
+     googletag.defineSlot('/78059622/Responsive-Article-Leaderboard-World', [[320, 100], [970, 250]], 'div-gpt-ad-1733728113026-0').addService(googletag.pubads());       
+
+   {% else %}
+    googletag.defineSlot('/78059622/Responsive-Article-Leaderboard',[[970,250],[320,100]], 'div-gpt-ad-1613480627440-0').defineSizeMapping(mappingMobLeadfullads).addService(googletag.pubads());
+    {% endif %}
+
+    googletag.defineSlot('/78059622/Responsive-Article-Leaderboard-footer',[[970,250],[320,100]], 'div-gpt-ad-1623646234024-0').defineSizeMapping(mappingMobLeadfullads).addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/Responsive-Article-MPU-336x280', [336, 280], 'div-gpt-ad-1709719517047-0').addService(googletag.pubads());
+    
+    {% if every_device=='desktop' %}
+    googletag.defineSlot('/78059622/Responsive-Article-MPU-1',[300,250], 'div-gpt-ad-1613481060449-0').defineSizeMapping(mappingMPUcolads).addService(googletag.pubads());
+    googletag.defineSlot('/78059622/Responsive-Article-MPU-2',[300,250], 'div-gpt-ad-1613481175484-0').defineSizeMapping(mappingMPUcolads).addService(googletag.pubads());
+    googletag.defineSlot('/78059622/khaleejtimes_Desktop_Article_Page_RHS_300x600', [[300, 250], [300, 600]], 'div-gpt-ad-1730802760648-0').addService(googletag.pubads());
+    {% endif %}  
+
+    //googletag.defineSlot('/78059622/Responsive-InArticle-MPU-300x250', [300, 250], 'div-gpt-ad-1711370705840-0').addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/Responsive-InArticle-MPU2-300x250', [300, 250], 'div-gpt-ad-1711370958901-0').addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/Responsive-InArticle-MPU3-300x250', [300, 250], 'div-gpt-ad-1711372673668-0').addService(googletag.pubads());
+    
+    //googletag.defineSlot('/23110992253/InArticle-300x250-1', [[300,250],[336,280],[300, 100],[250,250],[300,75],[300,50],[320,50],'fluid'], 'div-gpt-ad-1712280361025-0').defineSizeMapping(mappingMPUInArticle).addService(googletag.pubads());
+    googletag.defineSlot('/23110992253/InArticle-300x250-2', [[300,250],[336,280],[300, 100],[250,250],[300,75],[300,50],[320,50],'fluid'], 'div-gpt-ad-1712280510876-0').defineSizeMapping(mappingMPUInArticle).addService(googletag.pubads());
+    googletag.defineSlot('/23110992253/InArticle-300x250-3', [[300,250],[336,280],[300, 100],[250,250],[300,75],[300,50],[320,50],'fluid'], 'div-gpt-ad-1712280684708-0').defineSizeMapping(mappingMPUInArticle).addService(googletag.pubads());
+
+  googletag.defineSlot('/78059622/Responsive-Article-2', [1,1], 'div-gpt-ad-1636113966289-0').addService(googletag.pubads());
+  {% if sections[0]['name']!='Eid Al Etihad' %}
+    if(getCookieValue('user_sessions')==1 || getCookieValue('user_sessions')==4)
+    {   
+    init=1;
+    googletag.defineSlot('/78059622/Responsive-Article-1x1', [1,1], 'div-gpt-ad-1613625644855-0').addService(googletag.pubads());   
+    //googletag.defineSlot('/78059622/Responsive-Desktop-Expandable-1x1', [1,1], 'div-gpt-ad-1624862944429-0').addService(googletag.pubads());
+    }
+    
+    googletag.defineSlot('/78059622/Responsive-Article-1x1-3', [1,1], 'div-gpt-ad-1637151091152-0').addService(googletag.pubads());
+    //googletag.defineSlot('/78059622/Responsive-InfiniteArticle-1x1', [1,1], 'div-gpt-ad-1644479678407-0').addService(googletag.pubads());
+    {% endif %}
+{% if every_device=='mobile' %}
+    {{get_post('808385')|raw}}
+{% endif %} 
+{% if every_device!='mobile' %}
+    {{get_post('789378')|raw}}
+{% endif %}
+
+   // googleInterstitialSlot = googletag.defineOutOfPageSlot('/78059622/Google-Interstitial',googletag.enums.OutOfPageFormat.INTERSTITIAL).addService(googletag.pubads());      
+    /*
+    googletag.pubads().enableLazyLoad({
+    // Fetch slots within 0 viewports.
+    fetchMarginPercent: 0,
+    // Render slots within 0.
+    renderMarginPercent: 0,
+    // Double the above values on mobile, where viewports are smaller
+    // and users tend to scroll faster.
+    mobileScaling: 2.0
+    });
+        */
+    
+    googletag.pubads().disableInitialLoad();
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+});
+</script>

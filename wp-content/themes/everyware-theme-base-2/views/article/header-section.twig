@@ -1,0 +1,8 @@
+{% if teaserImage.src %}
+    <figure class="figure" data-uuid="{{ teaserImage.uuid }}" data-width="{{ teaserImage.width }}" data-height="{{ teaserImage.height }}">
+        <img class="figure-img img-fluid" src="{{ teaserImage.src }}" srcset="{{ teaserImage.srcset }}" alt="">
+        <figcaption class="figure-caption">
+            {{ teaserImage.text }}
+        </figcaption>
+    </figure>
+{% endif %}

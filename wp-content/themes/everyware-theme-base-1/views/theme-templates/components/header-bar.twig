@@ -1,0 +1,81 @@
+<div class="header-region">
+    <div class="container">
+
+        {% if header_widgets == 'on' %}
+            <div class="row header-widgets">
+                {{ header_region_sidebar|raw }}
+            </div>
+
+        {% elseif header_widgets == 'off' %}
+            <div class="row">
+
+            {% if header_left_switch == 'on' and logo_pos == 'right' %}
+                <div id="{{ header_left_code }}" class ="headerleaderboard left advertisement col-md-6">
+                    <script type="text/javascript">
+                        if (googletag !== undefined) {
+                            googletag.cmd.push(function() { googletag.display("{{ header_left_code }}"); })
+                        }
+                    </script>
+                </div>
+            {% endif %}
+
+            {% if logo_pos == 'left' %}
+                {% if header_right_switch == 'on' %}
+                    <div id='header-branding' class="left-logo col-md-6">
+                {% else %}
+                    <div id='header-branding' class='left-logo col-md-4'>
+                {% endif %}
+            {% elseif logo_pos == 'center' %}
+                <div id='header-branding' class='center-logo'>
+                    <div class='text-center'>
+            {% elseif logo_pos == 'right' %}
+                {% if header_left_switch == 'on' %}
+                    <div id='header-branding' class='right-logo col-md-6'>
+                {% else %}
+                    <div id='header-branding' class='right-logo col-md-4 offset-md-6'>
+                {% endif %}
+            {% else %}
+                <div id='header-branding' class='col-md-4 offset-md-2'>
+            {% endif %}
+
+            {% if not has_custom_logo %}
+                {% if is_front_page and is_home %}
+                    <a rel="home" href="{{ home_url }}" title="{{ get_blog_info }}">
+                        <img src="{{ default_logo }}">
+                    </a>
+                {% else %}
+                    <a class="navbar-brand" rel="home" href="{{ home_url }}" title="{{ get_blog_info }}">
+                        <img src="{{ default_logo }}">
+                    </a>
+                {% endif %}
+            {% else %}
+                {% if logo_top_bar_mobile == 'top_bar' %}
+                <div class="top_bar_logo_active d-none d-md-block">
+                    {{ the_custom_logo|raw }}
+                </div>
+                {% else %}
+                {{ the_custom_logo|raw }}
+                {% endif %}
+            {% endif %}
+
+            {% if logo_pos == 'center' %}
+                </div>
+            {% endif %}
+
+            </div>{# Close Logo Div#}
+
+			{% if header_right_switch == 'on' and logo_pos == 'left' %}
+				<div id="{{ header_right_code }}" class="headerleaderboard right advertisement col-md-6">
+                    <script type="text/javascript">
+                        if (googletag !== undefined) {
+                            googletag.cmd.push(function() { googletag.display("{{ header_right_code }}"); })
+                        }
+                    </script>
+				</div>
+			{% endif %}
+		{% endif %}
+
+        </div>{# Close Row Div#}
+    </div>{# Close Container Div#}
+</div>{# Close header-region Div#}
+

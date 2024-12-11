@@ -1,0 +1,367 @@
+
+<script src="{{ get_stylesheet_directory_uri() }}/assets/js/intersection-observer.js"></script>
+<script>
+  window.lazyLoadOptions = {
+    elements_selector: 'img.lazyload',
+    callback_loading: function (element) {
+      if (element.parentNode.offsetWidth) {
+        element.setAttribute('sizes', element.parentNode.offsetWidth + 'px');
+      }
+    }
+  };
+  window.addEventListener("LazyLoad::Initialized", function (event) {
+    window.lazyLoadInstance = event.detail.instance;
+  }, false);
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.4.0/dist/lazyload.min.js"></script>
+<!-- Form Validation Files -->
+<script src="{{ get_stylesheet_directory_uri() }}/assets/js/form-validation/jquery.validate.min.js?v=2024200301"></script>
+<script src="{{ get_stylesheet_directory_uri() }}/assets/js/form-validation/formfunction.js"></script>
+<script src="{{ get_stylesheet_directory_uri() }}/assets/js/jquery-ui.min.js"></script>
+<!-- Form Validation -->
+<script src="{{ get_stylesheet_directory_uri() }}/assets/js/main.js?7222022"></script>
+
+
+
+<script src="{{ get_stylesheet_directory_uri() }}/assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="{{ get_stylesheet_directory_uri() }}/assets/js/countdown.js"></script>
+<script>
+if (window.location.href.indexOf("prayer-time-uae/abu-dhabi") > -1) { 
+      jQuery(".user_attributes").html("<span style='color:red'>*</span>  The timings below are for Dubai. Add four minutes for Abu Dhabi");
+     jQuery(".user_attributes").css({"clear":"both", "padding-top":"10px","margin-bottom":"15px"});
+    }
+
+if (window.location.href.indexOf("prayer-time-uae/ras-al-khaimah") > -1) {  
+      jQuery(".user_attributes").html("<span style='color:red'>*</span> The timings below are for Dubai.  Deduct four minutes for Ras Al Khaimah ");
+    jQuery(".user_attributes").css({"clear":"both", "padding-top":"10px","margin-bottom":"15px"});
+    }
+
+if (window.location.href.indexOf("prayer-time-uae/fujairah") > -1) {  
+      jQuery(".user_attributes").html("<span style='color:red'>*</span> The timings below are for Dubai. Deduct six minutes for Fujairah ");
+    jQuery(".user_attributes").css({"clear":"both", "padding-top":"10px","margin-bottom":"15px"});
+    }
+  
+  // TODO: Move this to latest content widget scripts
+  jQuery(document).ready(function($) {
+    $('.ew-latest-content-filter').on('change', function(e) {
+      var container = $(this).closest('.ew-latest-content-container');
+      var filter = container.find('.ew-latest-content-filter-container');
+      var loader = container.find('.loader');
+      var content = container.find('.ew-latest-content-articles');
+      var data = filter.find('select, input').serializeArray();
+      data.push({name: 'action', value: 'filter_latest_content'});
+      jQuery.ajax({
+        url: '/ajax.php',
+        // url: infomaker.ajaxurl,
+        type: 'POST',
+        data: data,
+        dataType: 'JSON',
+        beforeSend: function() {
+          loader.show();
+        },
+        complete: function(){
+          loader.hide();
+        },
+        success: function(response) {
+          content.html(response.html);
+          lazyLoadInstance.update();
+        }
+      });
+    }); 
+  });  
+jQuery(".newletter-widget-wrapper").mouseenter(
+     function() { 
+      var ORA=[];
+ var dNow = new Date();
+var event_timestamp_utc =dNow.getUTCFullYear() +'-' +('0' + (dNow.getUTCMonth() + 1)).slice(-2) +'-' +('0' + dNow.getUTCDate()).slice(-2) +' ' +('0' + dNow.getUTCHours()).slice(-2) +':' +('0' + dNow.getUTCMinutes()).slice(-2) +':' +('0' + dNow.getUTCSeconds()).slice(-2);
+var tealium_visitor_id=/(v_id:(\w+))/.exec(window.document.cookie);
+tealium_visitor_id = tealium_visitor_id ? tealium_visitor_id[1] : null;
+var match = /_ga=(GA1\.2\.\d+\.\d+)/.exec(window.document.cookie);
+var googleid = match ? match[1] : null;
+
+
+var facebook_id=/_fbp=(fb\.1\.\d+\.\d+)/.exec(window.document.cookie);
+facebook_id = facebook_id ? facebook_id[1] : null;
+
+var newsKeywords = jQuery('meta[name="news_keywords"]').attr('content');
+newsKeywords = newsKeywords || null;
+
+        //utag_data.newsletter_hover="true";
+    //utag_data.newsletter_visitorid=utag_data.tealium_visitor_id;    
+    var utag_data={
+    "event_action"        :"Newsletter Hover", //Required
+    "event_category"      : "Newsletter",  //Required
+    "event_label"       :"Hover ", //Required
+    "newsletter_visitorid"  :"true",
+    "tealium_event"     :"newsletter_hover",
+    "google_value":googleid ,
+  "facebook_id" :facebook_id ,
+  "tealium_visitorid":tealium_visitor_id,
+  "eventtimestamp":event_timestamp_utc,
+  "NewsKeywords":newsKeywords
+ }
+ ORA.view({
+ "config": {
+ "applyMutations": true,
+ "sendSessionInfo": true
+ },
+ "data":utag_data
+});
+     });
+
+
+if(!getCookieValue('random_user'))
+{ 
+var randoms = [1,2];
+var randomz = randoms[Math.floor(Math.random()*randoms.length)];
+document.cookie = "random_user="+randomz+";path=/"; 
+}
+
+
+</script>
+
+{% if contentsubtype != 'SPONSOREDCONTENT' %}
+{% if tealiumGroup != 'article' %}
+{% if parentPostName!='trading' and tealiumGroup!='forex_summary' and tealiumGroup!='prayer-timings' and parentPostName!='Ramadan Prayer Time Table' and tealiumGroup!='advertise' %}
+  <!-- ANDBEYOND ABM  START -->
+    
+  <!-- ANDBEYOND ABM  END -->
+  {% endif %}
+  
+{% endif %}
+
+{% if tealiumGroup == 'article' %}
+<script>
+jQuery(document).ready(function() {
+ jQuery(".hamburger_menu_nf span").on("click", (function() {
+ var nheight=jQuery(".libin-class").height();
+jQuery(".nav-overlay-nf").css({'top':nheight+55+'px'});
+ })); 
+ });
+</script>
+{% set subzsectionz='' %}
+{% for items in sections|slice(0, 1) %}{% if items.name %} {% set subzsectionz= items.name %} {% endif %}{% endfor %}
+{% if (subzsectionz!='World News') and  (section_parent!='Life and Living') and  (section_parent!='UAE') and (subzsectionz!='World News' or section_parent=='') and (subzsectionz!='UAE') %}
+
+ <!-- Adgebra footer code starts here -->
+ <!-- afp footer code starts here -->
+<!-- afp footer code ends here -->
+<!-- Adgebra footer code ends here -->
+ {% endif %}
+{% endif %}
+  {% if every_device == 'mobile' and metaGroup == 'homepage' %}   
+  {% else %}    
+  {% endif %}
+{% endif %}
+{% if tealiumGroup!='article' %}
+ <script src="{{ get_stylesheet_directory_uri() }}/assets/js/swiper-bundle.min.js"></script>
+ <script src="{{ get_stylesheet_directory_uri() }}/assets/js/top-news.js?ver=19092023"></script>
+{% endif %} 
+{% if tealiumGroup=='leadform' %}
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/swiper-custom3.js"></script>  
+{%endif%}    
+<!-- Engage Script Start -->
+<script type="text/javascript">
+    //let btn = document.querySelector(".dropbtn").addEventListener("click", engageDropdownHandler);
+    function engageDropdownHandler() {
+        document.getElementById("engageDropdown").classList.toggle("show");
+    }
+    window.onclick = (event) => {
+        if (!event.target.matches(".auth0_user")) {
+            let dropdowns = document.querySelectorAll(".dropdown-content");
+            let dropdownArr = Array.from(dropdowns);
+            dropdownArr.map((el) => {
+                if (el.classList.contains("show")) {
+                    el.classList.remove("show");
+                }
+            });
+        }
+        else
+        {
+       // dropdown-content.classList.remove("show"); 
+         
+        }
+    };
+  
+   /* window.setTimeout(function () {
+            var spajsval=getCookie("auth0_sub");
+                document.cookie = "auth0_sub=" + spajsval + ";secure; domain=." +                 
+                                location.hostname.split('.').reverse()[1] + "." + 
+                                location.hostname.split('.').reverse()[0] + "; path=/; max-age=" + 45*24*60*60;
+        }, 1000);
+  */
+</script>
+<!-- Engage Script End -->
+<script>
+jQuery(document).ready(function() {
+
+jQuery('a[href="https://epaper.khaleejtimes.com/"]').click(function(e){  
+e.preventDefault();
+jQuery.ajax({
+   url: "https://api.khaleejtimes.com/json/usr_return.php", 
+   type: "GET", 
+   dataType: "jsonp",jsonp: 'jsoncallback',
+   data: {user_id:getCookie('auth0_sub')},
+   success: function (result) { 
+    var usid=result.link;
+    if(result.link!='invalid')
+    {
+    window.open('https://epaper.khaleejtimes.com?token='+usid);   
+    }
+    else
+    {
+    window.open('https://epaper.khaleejtimes.com');   
+    }
+    },
+    error: function (err) {    
+    }
+ }); 
+});
+if(!getCookieValue('adblock_detection'))
+{
+   let block=0;
+   let unblock=0;   
+  var hasAdBlock =async function () {   
+      jQuery.getScript( "https://pagead2.googlesyndication.com/pagead/show_ads.js" )
+          .done(function( script, textStatus ) {
+            block=0;
+            unblock=1;
+            send_list(block,unblock);
+          })
+          .fail(function( jqxhr, settings, exception ) {
+            block=1;
+            unblock=0
+             send_list(block,unblock);
+      });
+  };
+  hasAdBlock();
+  function send_list(block,unblock)
+  {
+  jQuery.ajax({
+          url: "https://marketing.khaleejtimes.com/home/ad_blocker",
+          type: "POST",
+          async: true,       
+          data: { "block" : block,"unblock":unblock},
+           dataType: "json",          
+          success:function(result){                      
+          document.cookie = "adblock_detection=done;domain=" + location.hostname + ";max-age=86400;path=/;";
+          },
+          error:function(xhr,status,error,result){       
+                      
+          }
+        });  
+  }
+}
+
+
+  jQuery.ajax({
+          url: "https://marketing.khaleejtimes.com/home/ad_page_rank",
+          type: "POST",
+          async: true,       
+          data: { "section" : utag_data.page_section,"url":utag_data.page_url,"title":utag_data.article_title},
+           dataType: "json",          
+          success:function(result){                      
+         
+          },
+          error:function(xhr,status,error,result){       
+                      
+          }
+        }); 
+});
+</script>
+{% if every_device=='mobile' %}
+
+<style>
+@media (max-width: 575.98px) {
+.bottom-ad-libin-mobile-fix {
+    margin: 0px auto;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 999;
+    background: #f0f0f0;
+}
+}
+</style>
+<div class="fix-billboard-nf-inner" style="position:absolute;min-height:0px  !important;height:0px !important;">
+<!-- /78059622/Mobile_Homepage_Sticky_320x50 -->
+<!-- <div id='div-gpt-ad-1711431594744-0' style='min-width: 320px; min-height: 50px;' class='bottom-ad-libin-mobile-fix'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1711431594744-0'); });
+  </script>
+</div> -->
+<!-- /23110992253/Mobile_Sticky_320x50 -->
+<div id='div-gpt-ad-1712280148182-0' style='min-width: 320px; min-height: 50px;' class='bottom-ad-libin-mobile-fix'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1712280148182-0'); });
+  </script>
+</div>
+</div>
+{% endif %}
+
+{% if tealiumGroup == 'article'  %}
+
+<script>
+ jQuery(".fix-billboard-nf-inner").attr("style","position:fixed;z-index:9999999999");
+const checkElement = async selector => {
+  while ( document.querySelector(selector) === null) {
+    await new Promise( resolve =>  requestAnimationFrame(resolve) )
+  }
+  return document.querySelector(selector); 
+};
+
+checkElement('.bottom-ad-libin-mobile-fix').then((selector) => {
+   jQuery(".bottom-ad-libin-mobile-fix").hide(); 
+   
+});
+
+
+jQuery(document).ready(function()
+{
+setTimeout(function() {
+checkElement('.bottom-ad-libin-mobile-fix').then((selector) => {
+  jQuery(".bottom-ad-libin-mobile-fix").hide(); 
+});
+jQuery(".bottom-ad-libin-mobile-fix").hide(); 
+ }, 3000);
+});
+
+jQuery(".bottom-ad-libin-mobile-fix").hide();
+window.addEventListener("scroll", function () {  
+ 
+   var billboard = jQuery(".fix-billboard-nf-inner-header-top");
+    var sticky_header = jQuery(".sticky-header-wrap");
+    var billboard_top = billboard.offset().top;
+    var sticky_header_top = sticky_header.offset().top;
+    var billboard_bottom = billboard_top + billboard.height();
+    var sticky_bottom = sticky_header_top + sticky_header.height();
+    var nheight=Math.round(jQuery(".primary-header").height())-50;
+    if (billboard_bottom >= sticky_bottom) {      
+     jQuery(".fix-billboard-nf-inner-header-top").attr("style","position:relative;top:"+nheight+"px;z-index:9999999999");  
+       jQuery(".fix-billboard-nf-inner-header-top").animate({
+        "top": "0px"
+        }, 1000);   
+         try{
+           jQuery(".bottom-ad-libin-mobile-fix").show();      
+          }
+          catch(e)
+          {
+            
+          }
+     } 
+
+ if ( jQuery(window).scrollTop()==0) {
+     jQuery(".fix-billboard-nf-inner-header-top").attr("style","position:fixed;z-index:9999999999");    
+     try{
+         jQuery(".bottom-ad-libin-mobile-fix").hide();        
+        }
+        catch(e)
+        {
+          jQuery(".bottom-ad-libin-mobile-fix").hide();       
+        }
+  }
+}, false); 
+</script>
+{% endif %}

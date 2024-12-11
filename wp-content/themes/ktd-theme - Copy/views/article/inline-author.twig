@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="article-top-author-nw-nf">
+      {% if authors or author_byline %}
+        <div class="article-top-author-nw-nf-left">
+          {% if authors %}
+            {% for author in authors %}
+              <!-- <a href="#"><img src="images/author-pic2.jpg" /></a> images/vuukle-social.jpg-->
+              {% set link = get_concept_link(author.uuid) %}
+              {% if link %}
+                {% if loop.first %}by {% else %} / {% endif %}<a href="{{ link }}"><h3>{{ author.name }}</h3></a>
+              {% else %}
+                <h3>{% if loop.first %}by {% else %} / {% endif %}{{ author.name }}</h3>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <h3>By {{ author_byline }}</h3>
+          {% endif %}
+          <!--<span>Dubai</span></h3>-->
+        </div>
+      {% endif %}
+      <div class="article-top-author-nw-nf-right">
+        {% include "@base/article/meta-pubdate.twig" %}
+      </div>
+    </div>
+  </div>
+</div>
+{% if tealiumGroup == 'article'%}
+ {% if (contentsubtype == 'VIDEO') or  (contentsubtype == 'GALLERY') %}    
+  <div id="adsolut-section"></div>
+ {% endif %}
+  {% endif %}

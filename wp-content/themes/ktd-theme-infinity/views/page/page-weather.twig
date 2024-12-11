@@ -1,0 +1,118 @@
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+  <main>
+    <div class="single weather">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-9">
+
+            <div class="row no-gutters">
+              <div class="section-header col">
+
+                <h1 class="section-title text-uppercase font-weight-bold bordered-left">Weather</h1>
+
+                <div class="sub-header">
+                  <div class="container">
+                    <div class="row no-gutters">
+                      <div class="col-12">
+
+                        <!-- Weather Tabs -->
+                        <ul class="sub-menu sub-menu-2" data-id="countries">
+                          <li class="sub-menu-item">
+                            <a href="#" data-country="uae" class="country active">United Arab Emirates</a>
+                          </li>
+                          <li class="sub-menu-item">
+                            <a href="#" data-country="bh" class="country">Bahrain</a>
+                          </li>
+                          <li class="sub-menu-item">
+                            <a href="#" data-country="ksa" class="country">Saudi Arabia</a>
+                          </li>
+                          <li class="sub-menu-item">
+                            <a href="#" data-country="om" class="country">Oman</a>
+                          </li>
+                          <li class="sub-menu-item">
+                            <a href="#" data-country="qat" class="country">Qatar</a>
+                          </li>
+                          <li class="sub-menu-item">
+                            <a href="#" data-country="kwt" class="country">Kuwait</a>
+                          </li>
+                        </ul>
+
+                        <ul id="countries" class="mobile-sub-menu shadow-sm"></ul>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Weather Filter -->
+                <div id="city-filter" class="filter"></div>
+
+              </div>
+            </div>
+
+            <!-- Weather Container -->
+            <div id="weather-container"></div>
+
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="col-12 col-lg-3">
+            {{ render_sidebar("default-sidebar") }}
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Weather News -->
+    <div class="module-16 weather-news">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-12">
+
+            <div class="weather-news-content">
+
+              <div class="row no-gutters">
+                <div class="section-header col">
+                  <h5 class="section-title text-uppercase font-weight-bold">Weather News</h5>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12">
+                  {{ the_content() }}
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad 970x250 -->
+    <div class="module-17 billboard-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto mx-auto">
+            <!-- /78059622/Responsive-Section-Leaderboard-1 -->
+            <div id='div-gpt-ad-1613546905867-0'>
+              <script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1613546905867-0'); });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+{% endblock %}
+
+{% block page_stylesheets_scripts_bottom %}
+  {{ parent() }}
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/weather.js"></script>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends '@base/main.twig' %}
+
+
+{% block site_content %}
+    {% block article %}
+        <p>THIS IS RUN!</p>
+        {% include '@base/page/article/parts/determine-article-template.twig' %}
+    {% endblock article %}
+{% endblock %}

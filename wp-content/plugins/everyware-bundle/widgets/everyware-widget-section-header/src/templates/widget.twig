@@ -1,0 +1,11 @@
+{% apply spaceless %}
+    {{ args.before_widget|raw }}
+    <h2 class="{{ render_classes([ 'section-headline', args.class ]) }}">
+        {%- if link %}
+            <a href="{{ link }}">{{ title }}</a>
+        {% else %}
+            {{- title -}}
+        {% endif -%}
+    </h2>
+    {{ args.after_widget|raw }}
+{% endapply %}

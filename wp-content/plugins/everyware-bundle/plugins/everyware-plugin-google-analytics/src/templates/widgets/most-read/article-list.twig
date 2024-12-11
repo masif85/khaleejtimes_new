@@ -1,0 +1,26 @@
+{% apply spaceless %}
+    {{ args.before_widget|raw }}
+    <section class="{{ render_classes([settings.class_prefix, settings.class_prefix ~ '__container', args.class ]) }}">
+        {% if title %}
+            <header class="{{ settings.class_prefix }}__header">
+                <h2 class="{{ settings.class_prefix }}__title">
+                    {%- if page is not empty %}
+                        <a class="{{ settings.class_prefix }}__link" href="{{ get_permalink(page) }}">{{ title }}</a>
+                    {% else %}
+                        {{- title -}}
+                    {% endif -%}
+                </h2>
+            </header>
+        {% endif %}
+        <div class="{{ settings.class_prefix }}__body">
+            <ol class="{{ settings.class_prefix }}__content{% if not template %} {{ settings.class_prefix }}__content--list{% endif %}">
+                {% for article in articles %}
+                     <!-- {{article.permalink}} -->
+                    <li class="{{ settings.class_prefix }}__item">{{ article|raw }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        <footer class="{{ settings.class_prefix }}__footer"></footer>
+    </section>
+    {{ args.after_widget|raw }}
+{% endapply %}

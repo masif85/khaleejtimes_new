@@ -1,0 +1,9 @@
+.section-headline {
+  @include page-headline($secondary);
+
+  @include header-link;
+
+  line-height: 1.125;
+  margin-top: 12px;
+  margin-bottom: 0;
+}

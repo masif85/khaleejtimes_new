@@ -1,0 +1,50 @@
+{% macro contact(url, text, itemprop, class, icon, blank = true, wrapper = true) %}
+	<li class="authorbox__icon--container authorbox__contact--{{ class }}" {% if itemprop %} itemscope {% endif %}>
+		{% if wrapper %}
+			<a href="{{ url }}" rel="nofollow" {% if blank %} target="_blank" {% endif %} {% if itemprop %} itemprop="{{ itemprop }}" {% endif %}>
+				<i class="authorbox__icon {{ icon }}"></i>{{ text }}
+			</a>
+		{% else %}
+			<i class="authorbox__icon {{ icon }}" {% if itemprop %} itemprop="{{ itemprop }}" {% endif %}></i>{{ text }}
+		{% endif %}
+	</li>
+{% endmacro %}
+
+{% apply spaceless %}
+<ul class="authorbox__contact-list">
+	{% if author.related_links.twitter and settings.article_author_twitter %}
+		{% set text = '@' ~ author.related_links.twitter|split('/')|last %}
+		{% set url = author.related_links.twitter %}
+		{{ _self.contact(url, text, null, 'twitter', 'fab fa-twitter') }}
+	{% endif %}
+
+	{% if author.related_links.facebook and settings.article_author_facebook %}
+		{% set text = '/' ~ author.related_links.facebook|split('/')|last %}
+		{% set url = author.related_links.facebook %}
+		{{ _self.contact(url, text, null, 'facebook', 'fab fa-facebook') }}
+	{% endif %}
+
+    {% if author.meta_data.email and settings.article_author_email %}
+        {% set text = author.meta_data.email %}
+        {% set url = 'mailto:' ~ author.meta_data.email %}
+        {{ _self.contact(url, text, null, 'mail', 'far fa-envelope', false) }}
+    {% endif %}
+
+	{% if author.meta_data.phone and settings.article_author_phone  %}
+		{% set text = author.meta_data.phone %}
+		{% set url = 'tel:' ~ author.meta_data.phone|replace({' ': ''}) %}
+		{{ _self.contact(url, text, 'telephone', 'phone', 'fas fa-phone', false) }}
+	{% endif %}
+
+	{% if author.meta_data.mobile and settings.article_author_mobile %}
+		{% set text = author.meta_data.mobile %}
+		{% set url = 'tel:' ~ author.meta_data.mobile|replace({' ': ''}) %}
+		{{ _self.contact(url, text, 'telephone', 'mobile', 'fas fa-mobile-alt', false) }}
+	{% endif %}
+
+	{% if author.meta_data.streetAddress and author.meta_data.postalCode and author.meta_data.city and settings.article_author_address %}
+		{% set text = author.meta_data.streetAddress ~ ', ' ~ author.meta_data.postalCode ~ ' ' ~ author.meta_data.city %}
+		{{ _self.contact('#', text, 'address', 'address', 'fas fa-map-pin', false, false) }}
+	{% endif %}
+</ul>
+{% endapply %}

@@ -1,0 +1,12 @@
+<div class="ew-table">
+  <div class="article__table">
+    <div class="article__table_wrapper">
+      <table class="table table-striped table-borderless">
+        {% if caption %}{{ caption | raw }} {% endif %}
+        {{ head | raw }}
+        {{ body | raw }}
+        {{ foot | raw }}
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+// Teaser Image Top styles
+
+.teaser--article-image-top .teaser {
+  &__link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__container {
+    padding-top: $half-gutter-width;
+  }
+
+  &__headline {
+    font-size: $teaser-title-font-size-xxs;
+  }
+}
+
+// Different styles for larger content sizes.
+@include from-board-content-up(4) {
+  .teaser--article-image-top .teaser__headline {
+    font-size: $teaser-title-font-size-xs;
+  }
+}
+
+@include from-board-content-up(5) {
+  .teaser--article-image-top .teaser__headline {
+    font-size: $teaser-title-font-size-sm;
+  }
+}
+
+@include from-board-content-up(6) {
+  .teaser--article-image-top .teaser__headline {
+    font-size: $teaser-title-font-size-md;
+  }
+}
+
+@include from-board-content-up(8) {
+  .teaser--article-image-top .teaser__headline {
+    font-size: $teaser-title-font-size-lg;
+    line-height: $teaser-title-line-height-sm;
+  }
+}
+
+@include from-board-content-up(10) {
+  .teaser--article-image-top .teaser__headline {
+    font-size: $teaser-title-font-size-xl;
+  }
+}
+
+@include from-board-content-up(13) {
+  .teaser--article-image-top .teaser__headline {
+    font-size: $teaser-title-font-size-xxl;
+  }
+}

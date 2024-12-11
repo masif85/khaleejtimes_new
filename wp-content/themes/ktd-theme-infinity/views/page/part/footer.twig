@@ -1,0 +1,93 @@
+<div class="container">
+
+  <div class="row justify-content-lg-between">
+
+    <div class="col-lg-8 col-md-6 col-sm-12">
+      <div class="footer-logo pt-5 pb-3">
+        <img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/khaleej-times-footer-logo.png" alt="khaleejtimes footer" width="179" height="32" loading="lazy"/>
+      </div>
+      <div class="footer-copyright-text pt-5 pb-3">©{{ 'now' | date('Y') }} Galadari Printing and Publishing LLC. All rights reserved.
+      </div>
+    </div>
+
+    {% include "@base/page/part/footer-social-links.twig" %}
+
+  </div>
+  <div class="row">
+
+    <div class="footer-left-column">
+
+      {% if footernav %}
+        {% for item in footernav|slice(0,8) %}
+        <div class="footer-lft-column{% if item.title == 'Entertainment' %} biggercol{% endif %}">
+          <h3 class="footer-title">
+            <a href="{{ item.url }}"{% if item.target %} target="_blank"{% endif %}>{{ item.title|raw }}</a>
+            <i class="fas fa-chevron-down footer-down-arrow hidden visible-xs"
+               data-toggle="collapse"
+               data-target="#collapse{{ item.ID }}"
+               
+               aria-controls="collapse{{ item.ID }}">
+            </i>
+          </h3>
+          {% if item.children.isNotEmpty %}
+          <ul class="footer-links collapse dont-collapse-sm" id="collapse{{ item.ID }}">
+            {% for subitem in item.children %}
+              <li><a href="{{ subitem.url }}"{% if subitem.target %} target="_blank"{% endif %}>{{ subitem.title|raw }}</a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endfor %}
+      {% endif %}
+
+    </div>
+
+    <div class="footer-right-column">
+      <div class="col-auto">
+        <h3 class="footer-kt-app-download">KT APP DOWNLOAD</h3>
+        <ul class="footer-links mob-display-block">
+          <li class="lineheight-2-7"><a target="_blank" href="https://itunes.apple.com/ae/app/khaleej-times/id909275381?mt=8"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/apple.svg" width="19" height="23" alt="khaleej times apple footer" loading="lazy"/> iPhone | iPad</a></li>
+          <li class="lineheight-2-7"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.khaleejtimes&hl=en"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/android.svg" width="19" height="24" alt="khaleej times android footer" loading="lazy"/> Android</a></li>
+          <li class="lineheight-2-7"><a target="_blank" href="https://appgallery5.huawei.com/#/app/C101150783"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/huawei.svg" width="19" height="14"  alt="khaleej times huawei footer" loading="lazy"/> Huawei</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <!--
+    <div class="footer-logos-nf">
+      <a href=""><img src="{{ get_stylesheet_directory_uri() }}/assets/images/ktmobile.png" alt="khaleejtimes mobile"></a>
+    </div>
+    -->
+    <div class="footer-logos-nf">
+      <a target="_blank"  href="https://buzzon.khaleejtimes.com/"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/buzzon.png" alt="khaleejtimes buzzon" width="98" height="50" loading="lazy"/></a>
+    </div>
+    <div class="footer-logos-nf">
+      <a target="_blank"  href="/entertainment"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/citytimes-footer-logo.png" alt="khaleejtimes citytimes" width="98" height="50" loading="lazy"/></a>
+    </div>
+    <div class="footer-logos-nf">
+      <a target="_blank"  href="/competitions"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/competitions.png" alt="khaleejtimes competitions" width="140" height="50" loading="lazy"/></a>
+    </div>
+    <div class="footer-logos-nf">
+      <a target="_blank"  href="https://epaper.khaleejtimes.com/"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/epaper.png" alt="khaleejtimes epaper" width="98" height="50" loading="lazy"/></a>
+    </div>
+       <!--<div class="footer-logos-nf">
+      <a target="_blank" href="http://e.ktinspiredliving.com/"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/inspired.png" alt="khaleejtimes inspired" width="98" height="50" loading="lazy"/></a>
+    </div>
+     <div class="footer-logos-nf">
+      <a target="_blank" href="https://www.khaleejtimes.com/games"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/kt-puzzle.png" alt="khaleejtimes kt-puzzles" width="110" height="50" loading="lazy"/></a>
+    </div>-->
+    <div class="footer-logos-nf">
+      <a target="_blank"  href="https://buzzon.khaleejtimes.com/ad-category/jobs-vacancies/"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/ktjobs.png" alt="khaleejtimes jobs" width="98" height="50" loading="lazy"/></a>
+    </div>
+    <div class="footer-logos-nf">
+      <a target="_blank"  href="https://subscriptions.khaleejtimes.com/home/subscription"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/subscribe.png" alt="khaleejtimes Subscription" width="157" height="50" loading="lazy"/></a>
+    </div>
+    <div class="footer-logos-nf">
+      <a target="_blank"  href="/lifestyle"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/wknd.png" alt="khaleejtimes wknd" width="98" height="50" loading="lazy"/></a>
+    </div>
+    <div class="footer-logos-nf">
+      <a target="_blank"  href="https://www.youngtimes.com/"><img class="lazyload" src="{{ get_stylesheet_directory_uri() }}/assets/images/yt.png" alt="khaleejtimes young times" width="98" height="50" loading="lazy"/></a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,220 @@
+{
+	"board": "Superettan",
+	"rows":
+	[
+		{
+			"index": 1,
+			"cols":
+			[
+				{
+					"index": 1,
+					"width": 80,
+					"content": 
+					[
+						{
+							"type": "widget",
+							"widget_id": "oc-article-13"
+						},
+						{
+							"type": "oc_article",
+							"oc_uuid": "iaosjfr3411351afjop2351kfpo1k341"
+						}
+					]
+				},
+				{
+					"index": 2,
+					"width": 20,
+					"content":
+					[
+						{
+							"type": "wp_post",
+							"post_id": 142
+						}
+					]
+				}
+			]			
+		},
+		{
+			"index": 2,
+			"cols":
+			[
+				{
+					"index": 1,
+					"width": 100,
+					"content": 
+					[
+						{
+							"type": "widget",
+							"widget_id": "oc-articleflow-43"
+						}
+					]
+				}
+			]	
+		}
+	]
+}
+
+// NEW DUMMY for the EveryBoardJson
+
+/* Board object: */
+{
+"board": "myBoard",
+"date": "1392191746644"
+"rows": []
+}
+
+/* Row object: */
+{
+    "index": "1",
+    "settings": {
+        "name": "Row",
+        "css_class": "",
+        "ismobile": "true",
+        "istablet": "true",
+        "isdesktop": "true"
+    },
+    "cols": []
+}
+
+/* Column object: ( colspan: 4 ) */
+{
+    "index": "1",
+    "width": "33",
+    "type": "normal",
+    "settings": {
+        "name": "Column",
+        "css_class": "",
+        "ismobile": "true",
+        "istablet": "true",
+        "isdesktop":"true",
+        "layout": {
+            "mobile": "12",
+            "tablet": "4",
+            "desktop":"4"
+        }
+    }
+}
+/* Combined Json*/
+{
+    "board": "myBoard",
+    "date": "1392191746644"
+    "rows": [
+        {
+            "index": "1",
+            "settings": {
+                "name": "Row",
+                "css_class": "",
+                "ismobile": "true",
+                "istablet": "true",
+                "isdesktop": "true"
+            },
+            "cols": [
+                {
+                "index": "1",
+                "width": "33",
+                "type": "normal",
+                "settings": {
+                    "name": "Column",
+                    "css_class": "",
+                    "ismobile": "true",
+                    "istablet": "true",
+                    "isdesktop":"true",
+                    "layout": {
+                        "mobile": "12",
+                        "tablet": "4",
+                        "desktop":"4"
+                        }
+                    }
+                },
+                {
+                    "index": "2",
+                    "width": "33",
+                    "type": "normal",
+                    "settings": {
+                        "name": "Column",
+                        "css_class": "",
+                        "ismobile": "true",
+                        "istablet": "true",
+                        "isdesktop":"true",
+                        "layout": {
+                            "mobile": "12",
+                            "tablet": "4",
+                            "desktop":"4"
+                        }
+                    }
+                },
+                {
+                    "index": "3",
+                    "width": "33",
+                    "type": "normal",
+                    "settings": {
+                        "name": "Column",
+                        "css_class": "",
+                        "ismobile": "true",
+                        "istablet": "true",
+                        "isdesktop":"true",
+                        "layout": {
+                            "mobile": "12",
+                            "tablet": "4",
+                            "desktop":"4"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
+
+
+// NEW Dummies
+
+/* Board object: */
+{
+    "board": "myBoard",
+    "date": "1392191746644"
+    "rows": []
+}
+
+/* Row object: */
+{
+    "index": "1",
+    "type": "row",
+    "settings": {
+        "name": "Row",
+        "css_class": "",
+        "mobile": {
+            "hidden": false
+        },
+        "tablet": {
+            "hidden": false
+        },
+        "desktop" {
+            "hidden": false
+        }
+    },
+    "cols": []
+}
+
+/* Column object: ( colspan: 4 ) */
+{
+    "index": "1",
+    "width": "33",
+    "type": "col",
+    "settings": {
+        "name": "Column",
+        "css_class": "",
+        "layout": "None",
+        "mobile": {
+            "hidden": false,
+            "colspan": 12
+        },
+        "tablet": {
+            "hidden": false,
+            "colspan": 4
+        },
+        "desktop" {
+            "hidden": false,
+            "colspan": 4
+        }
+    }
+}

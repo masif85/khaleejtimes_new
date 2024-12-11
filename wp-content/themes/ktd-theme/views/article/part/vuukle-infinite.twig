@@ -1,0 +1,26 @@
+{% if oldGuid %}
+  {% set vuukleUid = oldGuid %}
+{% else %}
+  {% set vuukleUid = uuid|upper %}
+{% endif %}
+
+{% if skipthis|trim is empty %}
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="mt-5 mb-5 vuukle-dt-space-nf">
+        <div id="vuukle-emote-{{ vuukleUid }}"></div>
+        <div id="vuukle-comments-{{ vuukleUid }}"></div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<script>
+    window.newVuukleWidgets({
+    elementsIndex: '{{ vuukleUid }}',
+    articleId: '{{ vuukleUid }}',
+    img: '{% if mainImage %}{{ render_partial('@base/teasers/partial/image-url', mainImage) }}{% endif %}',
+    title: '{{ teaser_headline|replace({"\n":'', "\r":''}) }}',
+    url: '{{ get_permalink()|replace({"site.prod.ew.ktd.infomaker.io":'www.khaleejtimes.com'}) }}'
+    });
+</script>

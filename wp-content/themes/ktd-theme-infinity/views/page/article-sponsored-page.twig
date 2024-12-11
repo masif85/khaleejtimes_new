@@ -1,0 +1,86 @@
+{% extends '@base/main.twig' %}
+
+{% block page_head_ads %}
+{% endblock %}
+
+{% block page_head %}
+  {% include "@base/article/part/metatags.twig" %}
+  <link rel="amphtml" href="{{ get_permalink() }}?amp=1">
+{% endblock %}
+
+{% block page_stylesheets_scripts %}
+  {{ parent() }}
+  {# include "@base/article/part/vuukle-script.twig" #}
+  <link rel="stylesheet" href="{{ get_stylesheet_directory_uri() }}/assets/css/swiper-bundle.min.css">
+{% endblock %}
+
+{% block page_ad_takeover %}
+{% endblock %}
+
+{% block page_content %}
+
+<style>
+    @media (max-width: 567px) {
+    .google-news-main-div-lib.d-flex.justify-content-between {
+        width:100%!important;
+        display: block!important;
+        float: left;
+      }
+
+}
+</style>
+
+  <main>
+    <div class="container">
+      {% include "@base/article/sponsored-teaser.twig" %}
+    </div>
+
+    <div class="sponsored sp-wrapper-lt">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-sm-12 col-md-12 col-lg-9 article-wrapper" data-uuid="{{ uuid }}">
+            {% set metasocial = true %}
+            {% set authorbox = true %}
+
+            {% if dateline is not null and dateline is not empty %}
+              {% set dateline = dateline ~ ' - ' %}
+            {% endif %}
+
+            {% for paragraph in body %}
+              {% if paragraph is not empty %}
+
+                {# Inside Author Box Start #}
+                {% if paragraph matches '{<!-- element: (body|fallback) -->}' and authorbox %}
+                  {% set authorbox = false %}
+                  {% include "@base/article/inline-author-article.twig" %}
+                {% endif %}
+                {# Inside Author Box End #}
+
+                {{ paragraph|replace({'<span id="dateline"></span>':dateline})|raw }}
+
+                {# Social medie icons Start #}
+                {% if paragraph matches '{<!-- element: (preamble|body|fallback) -->}' and metasocial %}
+                  {% set metasocial = false %}
+                  {% include "@base/article/meta-social.twig" %}
+                {% endif %}
+                {# Social medie icons End #}
+
+              {% endif %}
+            {% endfor %}
+
+            {% include "@base/article/concepts.twig" %}
+            {% include "@base/article/authors.twig" %}
+            {# include "@base/article/part/vuukle.twig" with { skipthis: true } #}
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% block page_stylesheets_scripts_bottom %}
+  {{ parent() }}
+
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/swiper-bundle.min.js"></script>
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/article.js"></script>
+{% endblock %}

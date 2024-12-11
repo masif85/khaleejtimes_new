@@ -1,0 +1,31 @@
+{
+  "style": [
+    {
+      "src": [
+        "ktd-theme/assets/scss/style.scss"
+      ],
+      "dest": "ktd-theme/assets/dist/css"
+    },
+    {
+      "src": [
+        "everyware-theme-base-2/assets/scss/admin.scss"
+      ],
+      "dest": "ktd-theme/assets/dist/css/"
+    }
+  ],
+  "copyFiles": [
+    {
+      "src": [],
+      "dest": "ktd-theme/assets/dist/images"
+    },
+    {
+      "src": [],
+      "dest": "ktd-theme/assets/dist/svg"
+    },
+    {
+      "src": [],
+      "dest": "ktd-theme/assets/dist/js"
+    }
+  ],
+  "js": []
+}

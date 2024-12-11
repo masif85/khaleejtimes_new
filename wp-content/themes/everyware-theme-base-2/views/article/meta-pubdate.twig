@@ -1,0 +1,12 @@
+<div class="authorbox__datetime authorbox__datetime--{{placement}}">
+    <div class="authorbox__datetime--description">
+        <span class="authorbox__datetime--published">{{ __('Published', 'ew-base-theme-2') }}:</span>
+        <time class="authorbox__datetime--value" itemprop="datePublished" datetime="{{ pubdate|date("c") }}">{{ pubdate|date("D j M Y, g:i A") }}</time>
+    </div>
+    {% if date(updated|date("F j, Y, g:i A")) > date(pubdate|date("F j, Y, g:i A")) %}
+        <div class="authorbox__datetime--description">
+            <span class="authorbox__datetime--published">{{ __('Last updated', 'ew-base-theme-2') }}:</span>
+            <time class="authorbox__datetime--value" itemprop="dateModified" datetime="{{ updated|date("c") }}">{{ updated|date("D j M Y, g:i A")  }}</time>
+        </div>
+    {% endif %}
+</div>

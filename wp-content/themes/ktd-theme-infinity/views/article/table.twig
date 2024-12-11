@@ -1,0 +1,8 @@
+<div class="article-table ">
+  <table class="table table-bordered">
+    {% if caption %}{{ caption | raw }} {% endif %}
+    {{ head | raw }}
+    {{ body | raw }}
+    {{ foot | raw }}
+  </table>
+</div>

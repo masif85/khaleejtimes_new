@@ -1,0 +1,221 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Base Theme 2\n"
+"POT-Creation-Date: 2019-08-06 06:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: inc/theme_customizer_settings.php:15
+msgctxt "Admin"
+msgid "Logo"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:19 inc/theme_customizer_settings.php:24
+#: inc/theme_customizer_settings.php:47 inc/theme_customizer_settings.php:52
+#: inc/theme_customizer_settings.php:86 inc/theme_customizer_settings.php:91
+msgctxt "Admin"
+msgid "Select logo"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:20 inc/theme_customizer_settings.php:48
+#: inc/theme_customizer_settings.php:87
+msgctxt "Admin"
+msgid "Change logo"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:21 inc/theme_customizer_settings.php:49
+#: inc/theme_customizer_settings.php:88
+msgctxt "Admin"
+msgid "Remove"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:22 inc/theme_customizer_settings.php:50
+#: inc/theme_customizer_settings.php:89
+msgctxt "Admin"
+msgid "Default"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:23 inc/theme_customizer_settings.php:51
+#: inc/theme_customizer_settings.php:90
+msgctxt "Admin"
+msgid "No logo selected"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:25 inc/theme_customizer_settings.php:53
+#: inc/theme_customizer_settings.php:92
+msgctxt "Admin"
+msgid "Choose logo"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:43
+msgctxt "Admin"
+msgid "Navigation Logo"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:60
+msgctxt "Admin"
+msgid "Footer"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:71
+msgctxt "Admin"
+msgid "Footer Text"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:82
+msgctxt "Admin"
+msgid "Footer Logo"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:99
+msgctxt "Admin"
+msgid "Google Tag"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:110
+msgctxt "Admin"
+msgid "defineSlot 1"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:121
+msgctxt "Admin"
+msgid "defineSlot 2"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:132
+msgctxt "Admin"
+msgid "defineSlot 3"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:143
+msgctxt "Admin"
+msgid "defineSlot 4"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:154
+msgctxt "Admin"
+msgid "defineSlot 5"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:165
+msgctxt "Admin"
+msgid "defineSlot 6"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:176
+msgctxt "Admin"
+msgid "defineSlot 7"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:187
+msgctxt "Admin"
+msgid "defineSlot 8"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:198
+msgctxt "Admin"
+msgid "defineSlot 9"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:209
+msgctxt "Admin"
+msgid "defineSlot 10"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:216
+msgctxt "Admin"
+msgid "Social Media"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:227
+msgctxt "Admin"
+msgid "Facebook"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:238
+msgctxt "Admin"
+msgid "Twitter"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:249
+msgctxt "Admin"
+msgid "WhatsApp"
+msgstr ""
+
+#: inc/theme_customizer_settings.php:260
+msgctxt "Admin"
+msgid "YouTube"
+msgstr ""
+
+#: views/article/byline.twig:10
+msgid "Published"
+msgstr ""
+
+#: views/article/byline.twig:15
+msgid "Last updated"
+msgstr ""
+
+#: views/article/gallery.twig:8
+msgid "Previous"
+msgstr ""
+
+#: views/article/gallery.twig:12
+msgid "Next"
+msgstr ""
+
+#: views/article/gallery.twig:19
+#, php-format
+msgid "Image %s of %s"
+msgstr ""
+
+#: views/article/gallery.twig:35 views/page/part/main-menu.twig:55
+#: views/page/part/main-menu.twig:160
+msgid "Close"
+msgstr ""
+
+#: views/article/image.twig:19
+msgid "Photo by"
+msgstr ""
+
+#: views/page/page-not-found.twig:13
+msgid "Uh-oh!"
+msgstr ""
+
+#: views/page/page-not-found.twig:14
+msgid "It could be you, or it could be us, but there's no page here."
+msgstr ""
+
+#: views/page/search.twig:4
+msgid "Search page"
+msgstr ""
+
+#: views/page/part/footer.twig:34
+msgid "Back to top"
+msgstr ""
+
+#: views/page/part/main-menu.twig:21 views/page/part/main-menu.twig:51
+msgid "Menu"
+msgstr ""
+
+#: views/page/part/main-menu.twig:28 views/page/part/top-menu.twig:8
+msgid "current"
+msgstr ""
+
+#: views/page/part/search-bar.twig:1
+msgid "Search for topics and articles"
+msgstr ""
+
+#: views/page/part/top-menu.twig:13
+msgid "Subscription"
+msgstr ""
+
+#: views/page/concept-page.twig:36
+msgid "Load more articles"
+msgstr ""

@@ -1,0 +1,12 @@
+<div class="sortable-list__drag-handle">{% include "@projectPlugin/utilities/draghandle.twig" %}</div>
+<button class="delete-parameter sortable-list__item-delete {{values.id}}"><i class="fa fa-times"></i></button>
+<div class="sortable-list__item-content">
+	<div class="settings-field__wrapper">
+		<label class="settings-field__label">{{ translate(values.label_key|title, text_domain) }}</label>
+		<input class="settings-field__input" id="{{values.id}}" type="text" name="fields[key][]" placeholder="{{ translate(values.label_key|title, text_domain) }}" value="{{ values.key }}"/>
+	</div>	
+	<div class="settings-field__wrapper">
+		<label class="settings-field__label">{{ translate(values.label_value|title, text_domain) }}</label>
+		<input class="settings-field__input" type="text" name="fields[value][]" placeholder="{{ translate(values.label_value|title, text_domain) }}" value="{{ values.value }}"/>
+	</div>
+</div>

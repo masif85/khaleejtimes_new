@@ -1,0 +1,8 @@
+{% if plugin_status_url %}
+	<h2 class="screen-reader-text">Filter plugins list</h2>
+	<ul class="subsubsub components-page__filter-links">
+		<li class="all"><a class="components-page__filter-link" data-filter="all" href="#all">{{ translate('All', text_domain) }} <span class="count">({{ total_count }})</span></a> |</li>
+		<li class="active"><a class="components-page__filter-link" data-filter="active" href="#active">{{ translate('Activa', text_domain) }} <span class="count">({{ active_count }})</span></a> |</li>
+		<li class="inactive"><a class="components-page__filter-link" data-filter="inactive" href="#inactive">{{ translate('Inactive', text_domain) }} <span class="count">({{ inactive_count }})</span></a></li>
+	</ul>
+{% endif %}

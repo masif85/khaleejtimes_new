@@ -1,0 +1,42 @@
+{% if vuukleSource %}
+  <!-- AMP Emotes Script 
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="mt-5 mb-5">
+        <amp-iframe width=600 height=200
+                    layout="responsive"
+                    sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
+                    resizable frameborder="0"
+                    src="https://cdn.vuukle.com/amp-emotes.html?{{ vuukleSource }}&comments=true#amp=1">
+          <div overflow tabindex=0 role=button aria-label="">&nbsp;</div>
+        </amp-iframe>
+      </div>
+    </div>
+  </div>
+ END AMP Emotes Script -->
+
+  <!-- AMP Comments Script -->
+  <amp-iframe width=600 height=140 layout="responsive" sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
+              resizable frameborder="0" src="https://cdn.vuukle.com/amp.html?{{ vuukleSource }}&comments=true&emotes=false#amp=1">
+    <div overflow tabindex=0 role=button aria-label=""> </div>
+  </amp-iframe>
+  <!-- END AMP Comments Script -->
+{% endif %}
+
+<!-- Vuukle AMP Ad Unit Script -->
+<amp-ad width="336" height="280"
+        type="doubleclick"
+        data-slot="/213794966,78059622/amp/khaleejtimes.com"
+        data-enable-refresh="45"
+        data-multi-size="250x250,320x100,320x50,300x250,336x280"
+        rtc-config={"urls":["https://pb.vuukle.com/openrtb2/amp?tag_id=khaleejtimes.com&w=ATTR(width)&h=ATTR(height)&ow=ATTR(data-override-width)&oh=ATTR(data-override-height)&ms=ATTR(data-multi-size)&slot=ATTR(data-slot)&targeting=TGT&curl=CANONICAL_URL&timeout=TIMEOUT&adcid=ADCID&purl=HREF"]}>
+</amp-ad>
+
+<amp-iframe width="1" title="User Sync"
+            height="1"
+            sandbox="allow-scripts allow-same-origin"
+            frameborder="0"
+            src="https://pb.vuukle.com/load-cookie-with-consent.html?max_sync_count=50&defaultGdprScope=0">
+  <amp-img layout="fill" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" placeholder></amp-img>
+</amp-iframe>
+<!-- END Vuukle AMP Ad Unit Script -->

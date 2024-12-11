@@ -1,0 +1,19 @@
+<li><a href="/">Home</a></li>
+{% for items in sections|slice(0, 2)|sort|reverse %}
+{% if items.name=='WKND'%}
+{% set new_name='Lifestyle' %}
+{% set link='/lifestyle' %}
+{% elseif items.name=='CityTimes'%}
+{% set new_name='Entertainment' %}
+{% set link='/entertainment' %}
+{% else %}
+{% set new_name=items.name %}
+{% set link = get_concept_link(items.uuid) %}
+{% endif %}
+  <li>/</li>
+  {% if link %}  
+    <li class="active"><a href="{{ link }}">{{ new_name }}</a></li>
+  {% else %}
+    <li class="active">{{ new_name }}</li>
+  {% endif %}
+{% endfor %}

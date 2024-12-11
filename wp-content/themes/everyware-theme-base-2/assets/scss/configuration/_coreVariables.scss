@@ -1,0 +1,10 @@
+// Typography
+// ======================================================
+$use-custom-fonts: false !default;
+
+@if not $use-custom-fonts {
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|PT+Serif:400,700);
+}
+
+$primary-font-family: 'PT Serif', serif !default;
+$secondary-font-family: 'Open Sans', sans-serif !default;

@@ -1,0 +1,132 @@
+{# General macros #}
+{% macro input(type, data, class, attr = []) %}
+    <input type="{{ type|default('text') }}"
+    id="{{ data.id }}"
+    name="{{ data.name }}"
+    class="ew-widget-form__input {{ class }}"
+    value="{{ data.value|e }}"{% for key, value in attr %} {{ key }}="{{ value }}"{% endfor %}/>
+{% endmacro %}
+
+{% macro checkbox(data, class, attr = []) %}
+    {% import _self as form %}
+    {% if data.value == 'on' %}
+        {% set attr = { 'checked': 'checked' }|merge(attr) %}
+    {% endif %}
+    <input type="checkbox"
+    id="{{ data.id }}"
+    name="{{ data.name }}"
+    class="ew-widget-form__input {{ class }}"
+    value="on" {% for key, value in attr %} {{ key }}="{{ value }}"{% endfor %}/>
+{% endmacro %}
+
+{% macro textarea(data, class, attr = []) %}
+    {% set attr = { 'rows': 3, 'cols': 40 }|merge(attr) %}
+
+    <textarea id="{{ data.id }}"
+    name="{{ data.name }}"
+    class="{{ class }}"{% for key, value in attr %} {{ key }}="{{ value }}"{% endfor %}>{{ data.value|e }}</textarea>
+{% endmacro %}
+
+{% macro select(list, data, placeholder, class, attr = []) %}
+    <select class="{{ class }}"
+    id="{{ data.id }}"
+    name="{{ data.name }}"{% for key, value in attr %} {{ key }}="{{ value }}"{% endfor %}>
+    {% if placeholder %}<option value="">(( {{ placeholder }} ))</option>{% endif %}
+    {% for list in list %}
+        <option value="{{ list.value }}"{% if data.value == list.value %} selected="selected"{% endif %}>{{ list.text }}</option>
+    {% endfor %}
+    </select>
+{% endmacro %}
+
+{# Everyware specific macros #}
+{% macro text_field(data, label, attr = []) %}
+    {% import _self as form %}
+    <div class="form-group">
+        {% if label is not empty %}
+            <label class="control-label" for="{{ data.id }}">{{ label }}:</label>
+        {% endif %}
+        {{ form.input('text', data, 'form-control', attr) }}
+    </div>
+{% endmacro %}
+
+{% macro textarea_field(data, label, attr = []) %}
+    {% import _self as form %}
+    <div class="form-group">
+        {% if label is not empty %}
+            <label class="control-label" for="{{ data.id }}">{{ label }}:</label>
+        {% endif %}
+        {{ form.textarea(data, 'form-control', attr ) }}
+    </div>
+{% endmacro %}
+
+{% macro number_field(data, label, attr = []) %}
+    {% import _self as form %}
+    <div class="form-group">
+        {% if label is not empty %}
+            <label class="control-label" for="{{ data.id }}">{{ label }}:</label>
+        {% endif %}
+        {{ form.input('number', data, 'form-control', { 'placeholder': '' }|merge(attr)) }}
+    </div>
+{% endmacro %}
+
+{% macro small_number_field(data, label, attr = []) %}
+    {% import _self as form %}
+    <div class="form-group">
+        {% if label is not empty %}
+            <label class="control-label" for="{{ data.id }}">{{ label }}:</label>
+        {% endif %}
+        {{ form.input('number', data, 'form-control ew-widget-form__input--small', { 'placeholder': '' }|merge(attr)) }}
+    </div>
+{% endmacro %}
+
+{% macro select_field(list, data, label, attr) %}
+    {% import _self as form %}
+    <div class="form-group">
+        {% if label is not empty %}
+            <label class="control-label" for="{{ data.id }}">{{ label }}:</label>
+        {% endif %}
+        {{ form.select(list, data, label, 'form-control', attr) }}
+    </div>
+{% endmacro %}
+
+{% macro checkbox_field(data, label, attr = []) %}
+    {% import _self as form %}
+    <div class="checkbox">
+        {% if label is not empty %}
+            <label for="{{ data.id }}">
+                {{ form.checkbox(data, 'checkbox', attr) }}{{ label }}
+            </label>
+        {% else %}
+            {{ form.checkbox(data, 'checkbox', attr) }}
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro image_upload(data, label, id_prefix ) %}
+    {% import _self as form %}
+    {{ form.input('hidden', data, 'hidden') }}
+    <span class="ew-image__placeholder image_placeholder" id="{{ id_prefix }}placeholder">
+        {% if data.value is not empty %}
+            <span class="ew-image__wrapper img_wrapper">
+                <img class="ew-img__object" src="{{ (data.value ~ '?' ~ date().timestamp) }}"/>
+                <span class="ew-image__icon--remove remove fa fa-times"></span>
+            </span>
+        {% endif %}
+    </span>
+    <input type="button" class="upload_button" value="{{ label }}"/>
+{% endmacro %}
+
+{% macro tooltip(text, position) %}
+    {% if text %}
+    <button type="button" class="ew-tooltip" data-placement="{{ position|default('left') }}" title="<p>{{ text }}</p>"><i class="fa fa-question"></i></button>
+    {% endif %}
+{% endmacro %}
+
+{% macro toggle_button(data, on_label, off_label) %}
+    {% import _self as form %}
+    <div class="checkbox-toggle-wrapper">
+        <label for="{{ data.id }}" class="checkbox-toggle-not-checked">{{ off_label|default('off') }}</label>
+        <div class="checkbox-toggle">{{ form.checkbox(data, 'checkbox') }}<label for="{{ data.id }}"></label></div>
+        <label for="{{ data.id }}" class="checkbox-toggle-checked">{{ on_label|default('on') }}</label>
+    </div>
+{% endmacro %}

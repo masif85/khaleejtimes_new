@@ -1,0 +1,22 @@
+{% if 'quote' in content_type %}
+
+  {% if image %}
+
+    <div class="quote-wrap">
+              <div class="left"> <h6> <img src="/images/quote.svg" alt=""> {{ data.quote }}</h6>
+                  <p>- {{ data.source }}</p>
+              </div>
+              <div class="right">
+                <div class="wrap">
+                   <img class="img-fluid lazyload" srcset="{{ image.srcset }}" src="{{ image.src }}">
+                </div>
+              </div>
+            </div>
+              {% else %}
+                  <div class="quote-wrap">
+              <div class="left">{{ data.quote }}</h6>
+                  <p>- {{ data.source }}</p>
+              </div>           
+            </div>
+  {% endif %}
+{% endif %}

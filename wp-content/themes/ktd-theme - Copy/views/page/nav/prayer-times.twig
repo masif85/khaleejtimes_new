@@ -1,0 +1,56 @@
+{% if content %}
+  {% for object in content.object %}
+    {% if object["@attributes"].type == 'x-im/content-part' %}
+      {% if object.links.link["@attributes"].uri == 'im://content-part/prayer-times' %}
+        <div class="calendar-lb-new" >
+          <div class="header-left-column calendar-container">
+            <p class="calendar">{{ "now"|date("D, M d, Y") }} | {% if content %}{{ object.data.islamicdate }}{% endif %}</p>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<div class="counter-lb-new"  >
+  <div class="header-counter-nf">
+    <a href="/prayer-time-uae" target="_blank">
+      <img src="{{ get_stylesheet_directory_uri() }}/assets/images/masjid-small-nf.svg" class="masjid-header-nf" alt="prayer time in uae" width="24" height="28" />
+      <img src="{{ get_stylesheet_directory_uri() }}/assets/images/masjid-small-hover-nf.svg" class="masjid-header-nf-hover" alt="prayer time in uae" width="24" height="28" />
+      <span class="prayertime-header timer counter">
+        <span class="number hour e-m-hours" id="pray_time_js_H" >00</span>:<span class="number minute e-m-minutes" id="pray_time_js_M">00</span>:<span class="number second e-m-seconds" id="pray_time_js_S">00</span>
+      </span>
+    </a>
+  </div>
+</div>
+
+<div class="prayer-lb-new">
+  <div class="header-nxt-prayer-nf">
+    <a href="/prayer-time-uae" target="_blank">
+      <span id="pray_time_js"></span>
+    </a>
+  </div>
+</div>
+
+
+{% if content %}
+  {% for object in content.object %}
+    {% if object["@attributes"].type == 'x-im/content-part' %}
+      {% if object.links.link["@attributes"].uri == 'im://content-part/prayer-times' %}
+        <script>
+            var NSC_pt_cy = (new Date).getFullYear();
+            var NSC_pt_cm = (new Date).getMonth();
+            var NSC_pt_cd = (new Date).getDate();
+            var NSC_pt_cs = (new Date).getSeconds();
+            var NCS_fajar_time   = new Date(NSC_pt_cy,(NSC_pt_cm+1),NSC_pt_cd,"{{ object.data.fajr|slice(0, 2) }}","{{ object.data.fajr|slice(3, 2) }}",NSC_pt_cs); //24 Hour Based
+            var NCS_duhar_time   = new Date(NSC_pt_cy,(NSC_pt_cm+1),NSC_pt_cd,"{{ object.data.dhuhr|slice(0, 2) }}","{{ object.data.dhuhr|slice(3, 2) }}",NSC_pt_cs); //24 Hour Based
+            var NCS_asr_time     = new Date(NSC_pt_cy,(NSC_pt_cm+1),NSC_pt_cd,"{{ object.data.asr|slice(0, 2) }}","{{ object.data.asr|slice(3, 2) }}",NSC_pt_cs); //24 Hour Based
+            var NCS_maghrib_time = new Date(NSC_pt_cy,(NSC_pt_cm+1),NSC_pt_cd,"{{ object.data.magrib|slice(0, 2) }}","{{ object.data.magrib|slice(3, 2) }}",NSC_pt_cs); //24 Hour Based
+            var NCS_isha_time    = new Date(NSC_pt_cy,(NSC_pt_cm+1),NSC_pt_cd,"{{ object.data.isha|slice(0, 2) }}","{{ object.data.isha|slice(3, 2) }}",NSC_pt_cs); //24 Hour Based
+
+            RunClientPrayerTimes(1);
+        </script>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}

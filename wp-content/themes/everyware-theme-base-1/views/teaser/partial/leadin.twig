@@ -1,0 +1,23 @@
+{% if text %}
+    <div class="teaser__leadin">
+        {% if text is iterable %}
+            {% for paragraph in text %}
+                {% if teaser_section_front_length %}
+                    {{ text|raw|length > teaser_section_front_length ? text|raw|slice(0, teaser_section_front_length) ~ '...' : text|raw }}
+                {% elseif teaser_frontpage_length %}
+                    {{ text|raw|length > teaser_frontpage_length ? text|raw|slice(0, teaser_frontpage_length) ~ '...' : text|raw }}
+                {% else %}
+                    {{ text|raw|length > 150 ? text|raw|slice(0, 160) ~ '...' : text|raw }}
+                {% endif %}
+            {% endfor %}
+        {% else %}
+                {% if teaser_section_front_length %}
+                    {{ text|raw|length > teaser_section_front_length ? text|raw|slice(0, teaser_section_front_length) ~ '...' : text|raw }}
+                {% elseif teaser_frontpage_length %}
+                    {{ text|raw|length > teaser_frontpage_length ? text|raw|slice(0, teaser_frontpage_length) ~ '...' : text|raw }}
+                {% else %}
+                    {{ text|raw|length > 150 ? text|raw|slice(0, 160) ~ '...' : text|raw }}
+                {% endif %}
+        {% endif %}
+    </div>
+{% endif %}

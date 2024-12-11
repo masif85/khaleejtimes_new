@@ -1,0 +1,19 @@
+{% apply spaceless %}
+  <!-- recommended-news-teaser-netcore -->
+ 
+     
+                              <div id="sidebar" class="article-lt-top-story">
+                                <h2>Top Stories</h2>  
+                                  {% for item in items %}           
+                                  <div class="arttopstrywrap-list-dt">
+                                    <a href="{{ item.properties.link }}?utm_source=netcore&utm_medium=art-rcmd-api&utm_campaign=top-stories-inarticle" class="g4a_amn_track_sidebar" title="{{ item.properties.title|raw }}">
+                                    <div class="thumb-with-image image-zoom">
+                                   <img src="{{item.properties.image}}" style="aspect-ratio: 4 / 3;">
+                                    </div>
+                                    <h3>{{ item.properties.title|raw }}</h3></a>
+                                  </div>
+                           {% endfor %}
+                              </div>
+                         
+                          
+{% endapply %}

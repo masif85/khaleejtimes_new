@@ -1,0 +1,91 @@
+.page {
+  &__container {
+    @include dividers();
+    padding-top: $grid-gutter-width;
+    hr.row-divider-md {
+      display: none;
+      margin: $single-gutter-width 0;
+      border-top: $border-solid;
+      @include media-breakpoint-up(sm) {
+        display: block;
+      }
+    }
+    .teaser {
+      border-bottom: $border-solid;
+    }
+  }
+  &__title {
+    @include page-headline($secondary);
+  }
+  &__search-section {
+    margin-top: $single-gutter-width;
+  }
+  &__top-section {
+    @include media-breakpoint-up(lg) {
+      margin-left: -$grid-gutter-width;
+      margin-right: -$grid-gutter-width;
+      padding: 0 $grid-gutter-width;
+    }
+    .rendered_board_article {
+      height: 100%;
+    }
+  }
+  &__list-section {
+    .rendered_board_article {
+      height: 100%;
+    }
+    .teaser--article-small .teaser__container {
+      padding: $single-gutter-width;
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    &__container {
+      border-left: $border-solid;
+      border-right: $border-solid;
+      .teaser {
+        border-bottom: 0;
+      }
+    }
+    &__container--res {
+      padding: $grid-gutter-width $grid-gutter-width 0;
+    }
+    &__row--res {
+      margin-left: -$grid-gutter-width;
+      margin-right: -$grid-gutter-width;
+    }
+    &__row--res > &__col--res,
+    &__row--res > [class*="page__col--res-"] {
+      padding: 0 $grid-gutter-width;
+    }
+    &__top-section {
+      padding-bottom: $single-gutter-width;
+      .teaser.teaser--article-default {
+        @include make-col-ready();
+        margin: 0;
+        padding-top: 0;
+      }
+    }
+    &__top--section--teaser {
+      padding: 0;
+    }
+    &__list-section {
+      padding: $single-gutter-width 0;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    &__list-section {
+      .teaser--article-small .teaser__container {
+        padding: 0;
+      }
+      .teaser--article-small {
+        padding: $single-gutter-width 0;
+      }
+    }
+  }
+  .site-container {
+    padding-left: 0;
+    padding-right: 0;
+    border-left: rgba(0,0,0,0.12);
+    border-right: rgba(0,0,0,0.12);
+  }
+}

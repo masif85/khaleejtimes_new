@@ -1,0 +1,139 @@
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+
+<style>
+.wrapper {
+    width: 100%;
+    max-width: 1126px;
+    margin: 0 auto;
+    box-shadow: none;
+    background: #FFF;
+}
+/*
+select:required:invalid {
+  color: gray;
+}
+option[value=""][disabled] {
+  display: none;
+}
+option {
+  color: black;
+}
+*/
+</style>
+
+<div class="container">
+  <div class="row">
+  
+  <div class="container">
+  <section class="kt-section-top">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 col-12 listing-blog-left-side-content">
+
+        <div class="search-list-outer">
+
+
+    
+        <div class="search-filter-wrap">
+          <form name="searchform" id="searchform" method="get" action="/search">
+            {% include "@base/page/part/search/field.twig" %}
+
+            <div class="row">
+              {% include "@base/page/part/search/filters.twig" %}
+            </div>
+          </form>
+        </div>
+
+        {% if paramQ %}
+          <div class="tab-content" id="myTabContent" style="padding-top: 20px;">
+          <div class="articlesblock">
+          {% include "@base/page/part/search/results.twig" %}
+           </div>
+          </div>
+        {% endif %}
+
+       <div class="nextresults"></div> 
+     <div class="button-wrap">
+        <a id="load-mores" class="load-more-button-listing" data-page_number="2"><span class="spinner-border spinner-border-sm data-load" style="display:none;" role="status" aria-hidden="true"></span> Load More <i class="fas fa-angle-down"></i></a> </div>
+</div>
+  </div>
+         <div class="col-12 col-lg-4 col-md-12 listing-blog-sidebar">
+        <div class="article-right-sidebar">
+ {{ render_sidebar("search-trending-sidebar") }}
+   </div>
+      </div>
+    
+
+    </div>
+    </section>
+    </div>
+    </div>
+  
+</div>
+{% endblock %}
+
+{% block page_stylesheets_scripts_bottom %}
+<script type="text/javascript"> 
+jQuery(document).ready(function(){
+  if(jQuery(".top-list-thumb-stories").contents().length<16 )
+  {
+    jQuery(".button-wrap").toggle();
+  }
+      jQuery(".tabs").hide();
+      jQuery(".ARTICLE").show();
+      jQuery(".nav-link").hide();
+      jQuery(".tabs").each(function(){
+      jQuery(".nav-link").removeClass('active');
+      if(jQuery(this).contents().length>0)
+      {
+        var taget=jQuery(this).attr("data-parent");
+        jQuery("."+taget+"nml").addClass("active");
+         jQuery("."+taget+"nml").show();
+         jQuery("."+taget).show();
+         var moveable=jQuery("."+taget+"nml").parent().html();
+         jQuery("."+taget+"nml").parent().remove();
+         jQuery(".nav-tabs").prepend('<li class="nav-item">'+moveable+'</li>')
+         return true;
+      }
+});
+
+jQuery(".nav-link").click(function(){
+    var selector=jQuery(this).attr('data-bs-target');
+    jQuery(".nav-link").removeClass('active');
+    jQuery(this).addClass('active');
+    jQuery(".tabs").hide();
+    jQuery(selector).show();
+});
+
+  var rooms = jQuery('.top-list-thumb-stories');
+  var roomList = jQuery('.articlesblock');
+jQuery('.search-sele-nf').change( function() {
+            if(jQuery(this).val() == 'newest'){
+               sortAsc();
+            }
+            else if(jQuery(this).val() == 'oldest'){
+                sortDesc();
+            }
+        });
+        function sortAsc(){
+            roomList.empty();
+            rooms.sort(function(a, b){
+              return jQuery(a).data('worth')-jQuery(b).data('worth')
+            });
+            roomList.append(rooms);
+        }
+        function sortDesc(){
+            roomList.empty();
+            rooms.sort(function(a, b){
+              return jQuery(b).data('worth')-jQuery(a).data('worth')
+            });
+            roomList.append(rooms); 
+        }
+});
+</script> 
+  {% include "@base/page/part/stylesheets-scripts-bottom.twig" %}
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/calendar/moment.min.js"></script>
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/calendar/daterangepicker/daterangepicker.js"></script>
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/calendar/initialize.js"></script>
+{% endblock %}       

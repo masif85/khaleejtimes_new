@@ -1,0 +1,31 @@
+{%- if articles is iterable -%}
+    {% set rows = articles|length/2 %}
+
+    {% for i in 1..rows|round %}
+        <div class="row align-items-stretch">
+            {% set articleCol = (i - 1) * 2 %}
+            {% for article in articles|slice( articleCol , 2) %}
+                <div class="{{ render_classes([
+                    'col-12',
+                    'col-sm-6',
+                    loop.first ? 'divide-right-sm-up' : ''
+                ]) }}">
+                    <div class="{{ render_classes([
+                        'rendered_board_article',
+                        'content-size-xs-12',
+                        'content-size-sm-6',
+                        'content-size-md-6',
+                        'content-size-lg-6'
+                    ]) }}">
+                        {{ render_partial('@base/teasers/article-small.twig', article) }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row align-items-stretch">
+            <div class="col-12">
+                <hr class="row-divider-md">
+            </div>
+        </div>
+    {% endfor %}
+{%- endif -%}

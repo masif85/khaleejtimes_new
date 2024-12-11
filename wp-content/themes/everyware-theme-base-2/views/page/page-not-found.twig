@@ -1,0 +1,18 @@
+{% extends '@base/main.twig' %}
+
+{% block page_head %}
+    <title>404 | {{ get_bloginfo('name') }}</title>
+    <meta name="description" content="page cannot be found">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="{{ get_bloginfo( 'charset' ) }}"/>
+{% endblock %}
+{% block page_content %}
+    <main class="site-container container-border my-4">
+        <div class="row">
+            <div class="col-xl-12 text-center py-5 pb-5">
+                <h1>{{ __('Uh-oh!', 'ew-base-theme-2') }}</h1>
+                <h4>{{ __("It could be you, or it could be us, but there's no page here.", 'ew-base-theme-2') }}</h4>
+            </div>
+        </div>
+    </main>
+{% endblock %}

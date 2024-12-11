@@ -1,0 +1,29 @@
+{% apply spaceless %}
+<article class="{{ render_classes([
+    'teaser',
+    'teaser--article-default',
+    'h-100',
+    image ? 'teaser--with-image' : 'teaser--without-image',
+    classList|join(' ')
+]) }}" data-uuid="{{ uuid }}">
+    <a href="{{ permalink }}" class="teaser-link teaser__link">
+        {% include '@base/teasers/partial/header.twig' ignore missing %}
+        {% if image %}
+            <div class="teaser__image">
+                {{ render_partial('@base/teasers/partial/image', image) }}
+            </div>
+        {% endif %}
+        <div class="teaser__container">
+            <div class="teaser__content">
+                {% include '@base/teasers/partial/kicker.twig' %}
+                {% include '@base/teasers/partial/headline.twig' %}
+                {% include '@base/teasers/partial/leadin.twig' %}
+            </div>
+            <div class="teaser__footer">
+                {% include '@base/teasers/partial/date.twig' %}
+            </div>
+        </div>
+        {% include '@base/teasers/partial/footer.twig' ignore missing %}
+    </a>
+</article>
+{% endapply %}

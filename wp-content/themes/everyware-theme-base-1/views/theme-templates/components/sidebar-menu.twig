@@ -1,0 +1,23 @@
+<div class="sidebarMenuCloseButton" onclick="closeNav()"><i class="fa fa-close"></i></div>
+	{{ sidebar_menu|raw }}
+<div id="sidemenuDim" class="closed" {% if hamburger_menu_type == 'sidebar' %}onclick="closeNav()"{% else %}onclick="toggleDropdown()"{% endif %}></div>
+
+{% if sidebar_search_switch == 'on' %}
+	{% if sidebar_search_switch_position == 'above' %}	
+		<div class="sidebar-menu-search-above">
+			{{ search_form|raw }}
+		</div>
+	{% elseif sidebar_search_switch_position == 'below' %}
+		<div class="sidebar-menu-search-below">
+			{{ search_form|raw }}
+		</div>
+	{% endif %}
+{% endif %}
+
+{% if sidebar_menu_logo_switch == 'on' %}
+	{% if sidebar_menu_logo_image %}
+		<div class="sidebar_menu_logo"><img class="sidebar_menu_logo_image" src="{{ sidebar_menu_logo_image }}"></div>
+	{% else %}
+		<div class="sidebar_menu_logo"><img class="sidebar_menu_logo_image" src="{{ default_sidebar_logo }}"></div>
+	{% endif %}
+{% endif %}

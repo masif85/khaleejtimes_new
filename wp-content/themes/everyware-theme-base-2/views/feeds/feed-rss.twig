@@ -1,0 +1,35 @@
+<item>
+    {% if title %}
+        <title>{{ title|raw }}</title>
+    {% endif %}
+
+    {% if permalink %}
+        <link>{{ permalink }}</link>
+    {% endif %}
+
+    {% if authors %}
+        {% for author in authors %}
+            <dcterms:creator>{{ author }}</dcterms:creator>
+        {% endfor %}
+    {% endif %}
+
+    {% if publisher %}
+        <dcterms:publisher>{{ publisher }}</dcterms:publisher>
+    {% endif %}
+
+    {% if uuid %}
+        <guid isPermaLink="false">{{ uuid }}</guid>
+    {% endif %}
+
+    {% if pubdate %}
+        <pubDate>{{ pubdate|date("r") }}</pubDate>
+    {% endif %}
+
+    <dcterms:accessRights>{{ accessRights|default('gratis') }}</dcterms:accessRights>
+
+    {% if images %}
+        {% for image in images %}
+            <media:content url="{{ image }}" type="{{ image.type|default('image/jpeg') }}"></media:content>
+        {% endfor %}
+    {% endif %}
+</item>

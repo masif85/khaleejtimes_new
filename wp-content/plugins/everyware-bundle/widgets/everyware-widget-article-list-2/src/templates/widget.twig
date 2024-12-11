@@ -1,0 +1,14 @@
+{% apply spaceless %}
+  <div class="{{ class }}">
+    {% if title %}
+      <div class="row no-gutters">
+          <div class="section-header col">
+            <h5 class="section-title text-uppercase font-weight-bold bordered-left">{{ title }}</h5>
+          </div>
+      </div>
+    {% endif %}
+    {% for article in articles %}
+        {{ article|raw }}
+    {% endfor %}
+  </div>
+{% endapply %}

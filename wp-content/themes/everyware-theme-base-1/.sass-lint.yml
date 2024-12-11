@@ -1,0 +1,14 @@
+---
+files:
+  include: assets/scss/**/*.scss
+options:
+  formatter: stylish
+  merge-default-rules: false
+rules:
+  class-name-format:
+  - 2
+  -
+    allow-leading-underscore: false
+    convention: strictbem
+  no-ids: 2
+...

@@ -1,0 +1,10 @@
+<div class="ew-wrap ew-settings-page">
+    <h1>{{ title }}</h1>
+    {% if hasAccess %}
+        {% block pageContent %}{% endblock %}
+    {% else %}
+        {% block pageNoAccess %}
+            <h3>{{ translations.noPageAccess }}</h3>
+        {% endblock %}
+    {% endif %}
+</div>

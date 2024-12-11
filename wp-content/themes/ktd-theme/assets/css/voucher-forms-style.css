@@ -1,0 +1,763 @@
+/* Import Google font - Poppins */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap');
+* {
+ 
+  font-family: 'Montserrat', sans-serif;
+} */
+.pcalendar{
+	position: absolute;    
+    right: 25px;
+    top: 65px;
+    font-size: 24px;
+}
+.voucher-libin {
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  /*padding: 95px 8px; */
+}
+.voucher-cnt224-libin {
+  width: 100%;
+  /*max-width: 618px; */
+  min-width: 360px;
+ /*  margin: 30px auto; */
+  background: none;
+  position: relative;
+  z-index: 103;
+  /* padding: 15px 0px; */
+}
+.voucher-libin .container-lb-form {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  background: #fff;
+  padding: 10px 35px 35px 35px;
+  border-radius: 0px 0px 10px 10px;
+  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);*/
+}
+.voucher-libin .voucher-cnt224-libin h1 {
+  font-size: 25px;
+  background: #0179c8;
+  /* border-radius: 10px 10px 0px 0px; */
+  color: #fff;
+  font-weight: bold;
+  padding: 23px;
+  margin: 0px;
+}
+
+.additional-profile {
+
+   font-size: 25px;
+  background: #0179c8;
+  border-radius: 10px 10px 0px 0px; 
+  color: #fff;
+  font-weight: bold;
+  padding: 23px;
+  margin: 0px; 
+  font-family: 'Montserrat', sans-serif;
+}
+
+.profileco .modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: none !important;
+  background-clip: padding-box;
+  border:none !important;
+  border-radius: .3rem;
+  outline: 0;
+  /*background: none !important;*/
+}
+
+.profileco .voucher-libin .container-lb-form {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  background: #fff;
+  padding: 10px 35px 35px 35px;
+  border-radius: 0px 0px 10px 10px;
+  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);*/
+}
+
+.profileco .modal-backdrop.show { opacity: .8; }
+
+
+.profileco .modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+
+
+.voucher-libin .form-voucher-libin-new .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.voucher-libin .form-voucher-libin-new .input-box p{
+  font-family: 'Montserrat', sans-serif;
+  margin: 0; 
+}
+
+.voucher-libin .form-voucher-libin-new .input-box label {
+  color: #000;
+}
+.voucher-libin .form-voucher-libin-new :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 8px;
+}
+.voucher-libin .form-voucher-libin-new .input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.voucher-libin .form-voucher-libin-new .column {
+  display: flex;
+  column-gap: 15px;
+}
+.voucher-libin .form-voucher-libin-new .gender-box {
+  margin-top: 20px;
+}
+.voucher-libin .form-voucher-libin-new .gender-box h3 {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.voucher-libin .form-voucher-libin-new :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+  margin-top:10px;
+}
+.voucher-libin .form-voucher-libin-new .gender {
+  column-gap: 5px;
+}
+.voucher-libin .form-voucher-libin-new .gender input {
+  accent-color: #0179c8;
+  margin-top: -1px;
+
+}
+.voucher-libin .form-voucher-libin-new .form-voucher-libin-new :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+.voucher-libin .form-voucher-libin-new label {
+  display: inline-block;
+  margin-bottom: 0rem;
+}
+.voucher-libin .form-voucher-libin-new .gender label {
+  color: #707070;
+}
+.voucher-libin .form-voucher-libin-new .address :where(input, .select-box) {
+  margin-top: 0px;
+}
+.voucher-libin .form-voucher-libin-new .select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+  background: none;
+}
+.voucher-libin .form-voucher-libin-new button {
+  height: 50px;
+  width: auto;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #0179c8;
+  padding: 0px 25px;
+  border-radius: 4px;
+  text-align: center;
+  border: none;
+}
+.voucher-libin .form-voucher-libin-new button:hover {
+  background: #222;
+  border: none;
+}
+.voucher-libin i#togglePassword {
+  /* float: right; */
+  margin-top: 8px;
+  z-index: 99;
+  position: absolute;
+  right: 30px;
+  padding: 10px;
+}
+#popup-voucher-overlay-libin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  opacity: 0.7;
+  z-index: 100;
+  display: none;
+}
+
+
+
+.popup-voucher-cnt2024-libin a {
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.popup-voucher-libin {
+  width: 100%;
+  margin: 0 auto;
+  display: none;
+  position: fixed;
+  z-index: 101;
+  top: 0px;
+  left: 0px;
+}
+.popup-voucher-cnt2024-libin {
+  width: 40%;
+  max-width: 620px;
+  min-height: 380px;
+  margin: 146px auto;
+  background: url('https://static.khaleejtimes.com/wp-content/uploads/sites/2/2024/03/05134020/gift-voucher-bg.jpg') no-repeat;
+  position: relative;
+  z-index: 103;
+  padding: 15px 35px;
+  border-radius: 5px;
+
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 0px max(100vh, 100vw) !important;
+}
+
+.popup-voucher-cnt2024-libin .coupon-bg .content-text p {
+    clear: both;
+    color: #ff0000;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    line-height: 28px;
+    margin: 5px 0px 10px 0px;
+}
+.popup-voucher-cnt2024-libin .coupon-bg .content-text b {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+.popup-voucher-cnt2024-libin .x {
+  float: right;
+  height: 35px;
+  left: 22px;
+  position: relative;
+  top: -25px;
+  width: 34px;
+}
+.popup-voucher-cnt2024-libin .x:hover {
+  cursor: pointer;
+}
+.popup-voucher-close-libin {
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #0179c8;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #fff;
+  padding: 4px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  text-align: center;
+}
+.popup-voucher-close-libin:hover {
+  background: #0179c8;
+  color: #fff;
+}
+
+
+
+button.close.clos2.pfbuttons.popup-voucher-close-libin span {
+    color: #fff;
+    background: none;
+}
+
+button.close.clos2.pfbuttons.popup-voucher-close-libin:hover {
+  background: #000;
+  color: #fff;
+}
+
+button.close.clos2.pfbuttons.popup-voucher-close-libin {
+    color: #fff;
+    background-color: #0179c8;
+    font-weight: normal;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+button.close.clos2.pfbuttons.popup-voucher-close-libin:hover {
+    color: #fff;
+    background-color: #000;
+    
+}
+
+
+
+a.terms-bottom {
+    text-align: center;
+    font-weight: normal;
+    color: #000;
+    font-size: 13px;
+    margin-top: 15px;
+    float: left;
+    width: 100%;
+}
+
+a.terms-bottom:hover{
+color: #0179c8;
+
+}
+
+/*popup form new changes feb 16 - 2024 start*/
+
+button.skip {
+    color: #000 !important;
+    font-weight: normal !important;
+    text-decoration: underline;
+    font-size: 14px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    background: none !important;
+}
+
+button.skip:hover {
+    color: #0179c8 !important;
+}
+
+.social_footer li {
+
+    list-style: none;
+}
+
+.pincode-logo{
+   width:44%; 
+   margin-bottom:5px;
+}
+
+
+/*popup form new changes feb 16 - 2024 end*/
+
+
+/* TC modal-popup styles feb 19 - 2024 start*/
+
+
+ .libin-tc-popup.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 0px max(100vh, 100vw);
+    z-index: 99;
+}
+
+ .libin-tc-popup .modal-lg, .libin-tc-popup .modal-xl {
+    max-width: 800px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 0px max(100vh, 100vw);
+    border-radius: 5px;
+}
+
+ .libin-tc-popup h5.modal-title {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+ .libin-tc-popup h5.modal-title {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin: 5px 15px;
+}
+
+ .libin-tc-popup .modal-body ul {
+    margin: 0px 35px !important;
+    width: 90%;
+    line-height: 35px;
+    padding: 0px;
+
+    list-style: disc;
+}
+
+.libin-tc-popup .modal-body {
+    margin: 0px;
+    padding-bottom: 2rem;
+    padding-top: 5px;
+}
+
+.libin-tc-popup button.close {
+    border-radius: 50%;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    /* left: 0px; */
+    font-weight: normal;
+    font-size: 35px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.libin-tc-popup button.close {
+    background-color: #0179c8;
+}
+
+.libin-tc-popup .modal-content {
+    height: 100%;
+    border-radius: 5px !important;
+    border: 0;
+}
+
+.libin-tc-popup .modal-header {
+    padding-bottom: 0px;
+    margin-bottom: 0px !important;
+}
+
+ul.lib-voucher-tc-asf li {
+	list-style:disc;
+}
+
+
+/* TC modal-popup styles feb 19 - 2024 end*/
+
+/*new-style-starts-27-june-2024*/
+
+.terms-condition-text{
+  color: #000;
+  text-decoration: underline;
+}
+
+.terms-condition-text:hover{
+  color: #0179c8;
+  text-decoration: none;
+}
+
+.hiddenCB div {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hiddenCB input[type="checkbox"],
+.hiddenCB input[type="radio"] {
+  display: none;
+  
+}
+
+.hiddenCB label {
+    border: none;
+    border-radius: 4px;
+    padding: 4px 12px;
+    margin: 10px 5px 10px 0px;
+    float: left;
+    cursor: pointer;
+    background: #f0f0f0;
+}
+
+.hiddenCB input[type="checkbox"]+label:hover{
+    background:#222;
+ border: none;
+  color: #fff;
+}
+
+.hiddenCB input[type="checkbox"]:checked+label {
+  background:#222;
+  color: #fff;
+}
+
+.hiddenCB input[type="checkbox"]:checked+label:hover{
+  background:#222;
+  color: #fff;
+}
+
+.hiddenCB input[type="checkbox"]:checked+label:disabled {
+  background: #f0f0f0;
+  color: #000;
+}
+
+.hiddenCB input[type="checkbox"]:disabled,.hiddenCB input[type="radio"]:disabled {
+  background: #f0f0f0;
+  color: #000;
+  
+}
+
+
+input[type="checkbox"]:disabled + label:hover {
+  background: #f0f0f0;
+color: #000 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*new-style-ends-27-june-2024*/
+
+/*Responsive*/
+
+
+
+@media (max-width: 1366px) {
+  .popup-voucher-cnt2024-libin {
+    width: 100%;
+  }
+  
+
+}
+@media (max-width: 991px) {
+  .popup-voucher-cnt2024-libin {
+    width: 100%;
+    min-width: 380px;
+    min-height: 300px;
+  }
+  .popup-voucher-libin {
+    width: 90%;
+    margin: 0 auto;
+    display: none;
+    position: fixed;
+    z-index: 101;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+  }
+
+}
+
+@media (max-width: 575.98px) {
+
+.voucher-libin .form-voucher-libin-new :where(.gender-option, .gender) {
+  margin-top:0px;
+}
+
+}
+
+@media screen and (max-width: 520px) {
+  .voucher-libin .form-voucher-libin-new .form .column {
+    flex-wrap: wrap;
+  }
+  .voucher-libin .form-voucher-libin-new .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+  .voucher-libin .container-lb-form {
+    padding: 0px 20px 20px 20px;
+  }
+  .voucher-libin .voucher-cnt224-libin h1 {
+    font-size: 19px;
+  }
+
+ .additional-profile  {
+    font-size: 19px;
+  }
+
+
+  .voucher-libin {
+  /*  padding: 0px 10px; */
+    margin: 0px;
+  }
+  
+
+  
+
+
+.pincode-logo{
+   width:50%; 
+   margin-bottom:5px;
+}
+
+.coupon-libin-copy-svg {
+    width: 26px;
+    height: 23px;
+  
+}
+
+.voucher-libin .form-voucher-libin-new :where(.gender-option, .gender) {
+  margin-top:0px;
+}
+
+/* TC modal-popup styles feb 19 - 2024 start*/
+
+.libin-tc-popup h5.modal-title {
+font-size: 25px;
+margin: 5px 5px;
+}
+
+
+.libin-tc-popup button.close {
+
+right: -6px;
+top: -6px;
+width: 30px;
+height: 30px;
+font-size: 30px;
+
+}
+
+
+.libin-tc-popup .modal-body ul {
+
+ line-height: 30px;
+
+}
+
+/* TC modal-popup styles feb 19 - 2024 end*/
+
+
+}
+
+@media (max-width: 480px) {
+
+
+
+a.terms-bottom {
+
+
+    margin-top: 6px;
+
+}
+
+
+
+}
+
+
+
+@media screen and (max-width: 420px) {
+ 
+  .popup-voucher-cnt2024-libin {
+    width: 100%;
+    min-width: 336px;
+    min-height: 270px;
+  }
+
+
+.popup-voucher-cnt2024-libin {
+    width: 100%;
+    margin: 64px auto;
+    padding: 15px 10px;
+}
+
+
+  .popup-voucher-libin {
+    width: 93%;
+  }
+
+  .voucher-libin {
+   /* padding: 0px 5px; */
+    margin: 0px;
+  }
+
+
+
+.voucher-libin .form-voucher-libin-new .select-box select {
+  height: 45px;
+ 
+}
+
+
+}
+
+
+
+
+
+ @media screen and (max-width: 380px) { 
+
+.voucher-cnt224-libin {
+  min-width: 340px;
+ 
+}
+
+
+
+}
+
+
+
+ #cover-spin {
+    position:fixed;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(255,255,255,0.7);
+    z-index:9999;
+    display:none;
+}
+
+@-webkit-keyframes spin {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+#cover-spin::after {
+    content:'';
+    display:block;
+    position:absolute;
+    left:48%;top:40%;
+    width:40px;height:40px;
+    border-style:solid;
+    border-color:black;
+    border-top-color:transparent;
+    border-width: 4px;
+    border-radius:50%;
+    -webkit-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
+}
+
+button.pfbuttons:disabled {
+  cursor: default;
+  background: #CCC;
+}
+
+button.pfbuttons:hover:disabled {
+  cursor: default;
+  background: #CCC;
+}

@@ -1,0 +1,13 @@
+{% include "@base/article/meta-tags.twig" with {"position":"top"} %}
+{% include "@base/article/meta-social.twig" %}
+
+<div class="authorbox__wrapper authorbox__wrapper--{{placement}}">
+    {% if authors %}
+        <div>
+            {% for author in authors %}
+                {% include "@base/article/creator.twig" %}
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% include "@base/article/meta-pubdate.twig" %}
+</div>

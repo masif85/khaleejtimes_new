@@ -1,0 +1,51 @@
+{
+    "name": "infomaker/everyware",
+    "description": "Everyware is a Wordpress plugin that allows communication with Open Content",
+    "version": "2.0.4",
+    "homepage": "https://navigaglobal.com/",
+    "license": "GPL-3.0-or-later",
+    "support": {
+        "docs": "https://docs.navigaglobal.com/everyware/starter-kit-packages/everyware",
+        "source": "https://composer.infomaker.io/#infomaker/everyware"
+    },
+    "authors": [
+        {
+            "name": "Naviga Web Team",
+            "homepage": "https://www.navigaglobal.com/web/"
+        }
+    ],
+    "type": "wordpress-plugin",
+    "require": {
+        "php": "^7.2",
+        "guzzlehttp/guzzle": "^6.5 || ^7.0",
+        "psr/simple-cache": "^1.0",
+        "psr/log": "^1.1"
+    },
+    "autoload": {
+        "classmap": [
+            "includes/",
+            "oc_objects/",
+            "widgets/"
+        ],
+        "psr-4": {
+            "Everyware\\": "src/"
+        }
+    },
+    "require-dev": {
+        "johnpbloch/wordpress-core": "^4.9",
+        "roave/security-advisories": "dev-master",
+        "phpspec/phpspec": "^7.0"
+    },
+    "autoload-dev": {
+        "classmap": [
+            "vendor/johnpbloch/"
+        ],
+        "psr-4": {
+            "Spec\\": "tests/Spec/",
+            "Everyware\\": "src/"
+        },
+        "files": [
+            "tests/Spec/wp-functions.php"
+        ]
+    }
+}

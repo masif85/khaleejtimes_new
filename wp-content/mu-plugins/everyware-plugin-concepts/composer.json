@@ -1,0 +1,64 @@
+{
+    "name": "infomaker/everyware-plugin-concepts",
+    "description": "This MU plugin comes with management of Concepts in a Wordpress environment. It does so by registering a \"custom post\" with the type of concept. Manual management is therefore handled by Wordpress. It also opens up some ajax CRUD-endpoints.",
+    "version": "0.2.6",
+    "homepage": "https://navigaglobal.com/",
+    "license": "GPL-3.0-or-later",
+    "type": "everyware-mu-plugin",
+    "support": {
+        "docs": "https://docs.navigaglobal.com/everyware/mu-plugins/everyware-plugin-concepts",
+        "source": "https://composer.infomaker.io/#infomaker/everyware-plugin-concepts"
+    },
+    "authors": [
+        {
+            "name": "Naviga Web Team",
+            "homepage": "https://www.navigaglobal.com/web/"
+        }
+    ],
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.infomaker.io/"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "symfony/console": "^4.4",
+        "symfony/filesystem": "^4.4",
+        "infomaker/everyware": "^1.8 || ^2.0",
+        "infomaker/everyware-support": "~0.5",
+        "infomaker/everyware-project-plugin": "~0.8",
+        "psr/simple-cache": "^1.0",
+        "psr/log": "^1.1",
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "Everyware\\Concepts\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "vendor/johnpbloch/"
+        ],
+        "psr-4": {
+            "Spec\\": "tests/Spec/"
+        },
+        "files": [
+            "tests/Spec/wp-functions.php"
+        ]
+    },
+    "require-dev": {
+        "johnpbloch/wordpress-core": "^4.9",
+        "roave/security-advisories": "dev-master",
+        "phpspec/phpspec": "^7.0"
+    },
+    "bin": [
+        "concepts"
+    ]
+}

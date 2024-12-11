@@ -1,0 +1,8 @@
+formatter.name: pretty
+bootstrap: tests/Spec/bootstrap.php
+suites:
+  default:
+    namspace: Everyware\Everyboard
+    src_path: src
+    spec_path: tests
+    spec_prefix: Spec

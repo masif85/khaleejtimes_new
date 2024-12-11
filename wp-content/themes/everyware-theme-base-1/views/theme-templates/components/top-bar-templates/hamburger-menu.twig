@@ -1,0 +1,25 @@
+<div class="hamburger-menu dropdown {% if logo_top_bar_mobile == 'top_bar' %}with-top-image{% else %}no-top-image{% endif %}">
+	<div class="row">
+		<button class="btn dropdown-toggle closed d-none d-lg-block" type="button" onclick="toggleDropdown()" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			{% if hamburger_menu_text != 'None' %}
+				{{ hamburger_menu_text }} <i class="fa fa-bars" aria-hidden="true"></i>
+			{% else %}
+				<i class="fa fa-bars" aria-hidden="true"></i>
+			{% endif %}
+		</button>
+			{% if logo_top_bar_mobile == 'top_bar' %}
+				<button class="btn dropdown-toggle closed dropdownTrigger mobile col-2 with-top-image d-lg-none" type="button" onclick="toggleDropdown()" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</button>
+				<div class="top_bar_logo mobile col-10 d-md-none">{% if top_bar_logo_image %}<img src="{{ top_bar_logo_image }}">{% else %}{{ the_custom_logo|raw }}{% endif %}</div>
+			{% else %}
+				<button class="btn dropdown-toggle closed dropdownTrigger mobile col-1 d-lg-none" type="button" onclick="toggleDropdown()" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</button>
+				{% if logo_top_bar_mobile_on_scroll == 'move_logo' %}
+					<div class="top_bar_logo_on_scroll_image mobile col-10 d-lg-none">{% if top_bar_logo_image %}<img src="{{ top_bar_logo_image }}">{% else %}{{ the_custom_logo|raw }}{% endif %}</div>
+				{% endif %}
+			{% endif %}
+		{{ drop_nav_menu|raw }}
+	</div>
+</div>

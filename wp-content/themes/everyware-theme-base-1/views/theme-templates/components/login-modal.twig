@@ -1,0 +1,13 @@
+<form id="login" action="login" method="post">
+	<h1 class="login-modal-title">Log In</h1>
+	<hr class="login-modal-line">
+    <p class="status"></p>
+    <label id="login-modal-username" for="username"><i class="fa fa-user"></i></label>
+    <input id="username" type="text" name="username" placeholder="Username">
+    <label id="login-modal-password" for="password"><i class="fa fa-lock"></i></label>
+    <input id="password" type="password" name="password" placeholder="Password">
+    <a class="lost" href="/wp-login.php?action=lostpassword">Reset Password</a>
+    <input class="login-modal-button btn btn-primary submit" type="submit" value="Login" name="submit">
+    <a class="close" href="#"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+    {{ wp_nonce_field|raw }}
+</form>

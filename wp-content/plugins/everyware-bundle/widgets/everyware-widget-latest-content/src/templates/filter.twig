@@ -1,0 +1,31 @@
+{% apply spaceless %}
+  <div class="row no-gutters">
+    <div class="section-header col">
+      <h5 class="section-title text-uppercase font-weight-bold">{{ title }}</h5>
+      <div class="media-filter {{ settings.class_prefix }}-filter-container">
+        <input type="hidden" name="content_type" value="{{ content_type }}">
+        <ul>
+          <li>
+            <p>Category 
+              <select name="section" class="{{ settings.class_prefix }}-filter">
+                <option value="">All</option>
+                {% for section in sections %}
+                  <option value="{{ section }}">{{ section|capitalize }}</option>
+                {% endfor %}
+              </select>
+            </p>
+          </li>
+          <li>
+            <p>Sort By 
+              <select name="sort" class="{{ settings.class_prefix }}-filter">
+                {% for value, label in sort %}
+                  <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+              </select>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endapply %}

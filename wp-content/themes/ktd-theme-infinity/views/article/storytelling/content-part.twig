@@ -1,0 +1,22 @@
+{% if 'quote' in content_type %}
+  {% if image %}
+    <blockquote class="blockquote-nf-pic">
+      <div class="blockquote-nf-pic-inner">
+        <div class="full-column-bq">
+          <p class="mb-0">{{ data.quote }}</p>
+        </div>
+        <div class="blockquote-footer">{{ data.source }}</div>
+      </div>
+      <div class="full-column-bq-pic">
+        <img class="img-fluid lazyload" srcset="{{ image.srcset }}" sizes="314px" src="{{ image.src }}">
+      </div>
+    </blockquote>
+  {% else %}
+    <blockquote class="blockquote-nf">
+      <div class="full-column-bq">
+        <p class="mb-0">{{ data.quote }}</p>
+      </div>
+      <div class="blockquote-footer">{{ data.source }}</div>
+    </blockquote>
+  {% endif %}
+{% endif %}

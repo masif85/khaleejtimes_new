@@ -1,0 +1,99 @@
+{% set replaced_link = get_permalink()|replace({'?_refresh=true': ""}) %}
+{% if page.post_title %}
+{# Flight, default pages, static pages and search #}
+{% set metatitle = page.post_title %}
+{% elseif currentPage.post_title %}
+{# Concepts #}
+{% set metatitle = currentPage.post_title %}
+{% endif %}
+{% if metaGroup == 'search'  %}
+    <meta name="robots" content="noindex, follow, noarchive, max-image-preview:large" />
+{% else %}
+    <meta name="robots" content="index, follow, noarchive, max-image-preview:large" />
+{% endif %}
+<meta property="og:type" content="website" />
+<title>{% if getMetaTitle %}{{ getMetaTitle }}{% else %}{{ get_bloginfo('name') }} - {{ metatitle }}{% endif %}{% if pageUrlParam && pageUrlParam>1%}-page {{ pageUrlParam }}{% endif %}</title>
+{% if getMetaDescription %}
+<meta name="description" content="{{ getMetaDescription|length > 165 ? getMetaDescription|slice(0, 165) ~ '...' : getMetaDescription  }}{% if pageUrlParam && pageUrlParam>1%}-page {{ pageUrlParam }}{% endif %}" />
+{% endif %}
+{% if getMetaKeywords %}
+<meta name="keywords" content="{{ getMetaKeywords }}" />
+{% endif %}
+{% if metaGroup == 'homepage' or metaGroup == 'goldforex' %}
+{% if metaGroup == 'homepage' %}
+<meta name="news_keywords" content="Dubai News, UAE News, Latest news, Abu Dhabi News, Arab news, Sharjah News, Gulf News, Business News, Sports News, Jobs in Dubai"/>
+<link rel="preconnect" href="https://image.khaleejtimes.com" crossorigin />
+<link rel="dns-prefetch" href="https://image.khaleejtimes.com" />
+<link rel="preconnect" href="https://ads.pubmatic.com" crossorigin />
+<link rel="dns-prefetch" href="https://ads.pubmatic.com" />
+<link rel="preconnect" href="https://securepubads.g.doubleclick.net" crossorigin />
+<link rel="dns-prefetch" href="https://securepubads.g.doubleclick.net" />
+<link rel="preconnect" href="https://www.googletagservices.com" crossorigin />
+<link rel="dns-prefetch" href="https://www.googletagservices.com" />
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+<link rel="preconnect" href="https://tpc.googlesyndication.com"  crossorigin />
+<link rel="dns-prefetch" href="https://tpc.googlesyndication.com" />
+<link rel="preconnect" href="https://pagead2.googlesyndication.com"  crossorigin />
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+<link rel="preconnect" href="https://cdn.taboola.com" crossorigin />
+<link rel="dns-prefetch" href="https://cdn.taboola.com" />
+<link rel="preconnect" href="https://trc.taboola.com" crossorigin />
+<link rel="dns-prefetch" href="https://trc.taboola.com" />
+<link rel="preconnect" href="https://imasdk.googleapis.com" crossorigin />
+<link rel="dns-prefetch" href="https://imasdk.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" />    
+<link rel="preconnect" href="https://cdn.izooto.com" crossorigin />
+<link rel="dns-prefetch" href="https://cdn.izooto.com"> 
+<link rel="preconnect" href="https://player.avplayer.com" crossorigin />
+<link rel="dns-prefetch" href="https://player.avplayer.com"> 
+<link rel="preconnect" href="https://cdn.ampproject.org" crossorigin />
+<link rel="dns-prefetch" href="https://cdn.ampproject.org" />
+<link rel="preconnect" href="https://a.teads.tv" crossorigin />
+<link rel="dns-prefetch" href="https://a.teads.tv">
+<link rel="preconnect" href="https://c.amazon-adsystem.com" crossorigin />
+<link rel="dns-prefetch" href="https://c.amazon-adsystem.com"> 
+<link rel="preconnect" href="https://cdnt.netcoresmartech.com" crossorigin />
+<link rel="dns-prefetch" href="https://cdnt.netcoresmartech.com"> 
+<link rel="preconnect" href="https://cdn.wgchrrammzv.com" crossorigin />
+<link rel="dns-prefetch" href="https://cdn.wgchrrammzv.com"> 
+<link rel="preconnect" href="https://cdn.pranmcpkx.com" crossorigin />
+<link rel="dns-prefetch" href="https://cdn.pranmcpkx.com"> 
+<link rel="preconnect" href="https://player.aniview.com" crossorigin />
+<link rel="dns-prefetch" href="https://player.aniview.com"> 
+{% endif %}
+
+{% endif %}
+<link rel="canonical" href="{{ replaced_link }}{% if paramQ %}?q={{paramQ|replace({' ': "+"})}}{%endif%}{% if pageUrlParam && pageUrlParam>1%}?pagenr={{ pageUrlParam }}{% endif %}" />
+<link rel="alternate" hreflang="en" href="{{ get_url() }}{% if paramQ %}?q={{paramQ|replace({' ': "+"})}}{%endif%}{% if pageUrlParam && pageUrlParam>1 && ('pagenr' not in get_url() )%}?pagenr={{ pageUrlParam }}{% endif %}" />
+{% set urlpartext="" %}
+{% if pageUrlParam && pageUrlParam>1%} 
+{% set urlpartext="?pagenr="~pageUrlParam %}
+{% endif %}
+<meta name="twitter:url" content="{{ replaced_link }}{{urlpartext}}" />
+{% if description  %}
+    <meta name="description" content="{{description}}{{urlpartext}}" />
+    <meta name="og:description" content="{{description}}{{urlpartext}}" />
+    <meta name="twitter:description" content="{{description}}{{urlpartext}}" />
+{% endif  %}
+
+<meta property="og:url" content="{{ replaced_link }}{% if pageUrlParam && pageUrlParam>1%}?pagenr={{ pageUrlParam }}{% endif %}" />
+{% if (getMetaTitle) or (metatitle) or (get_bloginfo('name')) %}
+<meta property="og:title" content="{% if getMetaTitle %}{{ getMetaTitle }}{% else %}{{ get_bloginfo('name') }} - {{ metatitle }}{% endif %}" />
+<meta name="twitter:title" content="{% if getMetaTitle %}{{ getMetaTitle }}{% else %}{{ get_bloginfo('name') }} - {{ metatitle }}{% endif %}" />
+{% endif %}
+{% if getMetaDescription %}
+<meta property="og:description" content="{{ getMetaDescription|length > 165 ? getMetaDescription|slice(0, 165) ~ '...' : getMetaDescription  }}" />
+<meta name="twitter:description" content="{{ getMetaDescription|length > 165 ? getMetaDescription|slice(0, 165) ~ '...' : getMetaDescription  }}" />
+{% endif %}
+{% if metaGroup == 'goldforex' %}
+<meta property="og:image" content="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/16142933/Gold-Forex-800x600-1.jpg" />
+<meta name="twitter:image" content="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/16142934/Gold-Forex-434x434-1.jpg" />
+{% else %}
+<meta property="og:image" content="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/15105224/KT1586079.jpg" />
+<meta name="twitter:image" content="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/15105224/KT1586079.jpg" />
+{% endif %}
+{% if metaGroup == 'homepage' %}
+    <meta name="ahrefs-site-verification" content="45d32ece4543bb11b9bd2df2c7ec463f399d1c8375bbea2a3824faa1acd8894f" />
+{% endif %}

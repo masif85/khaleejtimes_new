@@ -1,0 +1,14 @@
+{
+  "id": 7109,
+  "uuid": "ec5ffbe9-76ba-5ee2-a9b0-7b19392474a8",
+  "eventType": "DELETE",
+  "created": "2021-05-26T06:51:12.000Z",
+  "content": {
+    "uuid": "ec5ffbe9-76ba-5ee2-a9b0-7b19392474a8",
+    "version": 11,
+    "created": "2021-04-09T09:17:21.000Z",
+    "source": null,
+    "contentType": "Concept",
+    "batch": false
+  }
+}

@@ -1,0 +1,46 @@
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="search-filter-wrap">
+          <form name="searchform" id="searchform" method="get" action="/search">
+            {% include "@base/page/part/search/field.twig" %}
+
+            <div class="row">
+              {% include "@base/page/part/search/filters.twig" %}
+            </div>
+          </form>
+        </div>
+
+        {% if paramQ %}
+          {% include "@base/page/part/search/results.twig" %}
+        {% endif %}
+
+        <div class="container">
+          <div class="row">
+            <div class="col-auto mx-auto">
+              <!-- /78059622/Responsive-Section-Leaderboard-1 -->
+              {% include "@base/page/part/ad.twig" with { ad_id: '1613546905867-0' } %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="col-sm-12 col-md-12 col-lg-3">
+        <div class="article-right-sidebar">
+          <!-- Right side -->
+          {{ render_sidebar("default-sidebar") }}
+        </div>
+      </aside>
+    </div>
+  </div>
+{% endblock %}
+
+{% block page_stylesheets_scripts_bottom %}
+  {% include "@base/page/part/stylesheets-scripts-bottom.twig" %}
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/calendar/moment.min.js"></script>
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/calendar/daterangepicker/daterangepicker.js"></script>
+  <script src="{{ get_stylesheet_directory_uri() }}/assets/js/calendar/initialize.js"></script>
+{% endblock %}

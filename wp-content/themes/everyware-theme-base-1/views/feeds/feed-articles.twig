@@ -1,0 +1,4 @@
+{# USED FOR ALL FEEDS BESIDES TOP STORIES #}
+{% for article in articles %}
+      {% include "@base/feeds/feed-template.twig" %}
+{% endfor %}

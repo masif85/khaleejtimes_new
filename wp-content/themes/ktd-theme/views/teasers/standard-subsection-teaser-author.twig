@@ -1,0 +1,35 @@
+{% apply spaceless %}
+<!-- standard subsection teaser author page -->
+  <article class="listing-normal-teasers card-article-list-itemn" data-uuid="{{ uuid }}">
+  <div class="row">
+    {% if image %}
+      <div class="col-lg-3 col-md-3 col-4">
+                <div class="post-title-rows">
+      <div class="thumb-with-image image-zoom">
+        <a href="{{ permalink }}">
+          {{ render_partial('@base/teasers/partial/image-authors', image|merge({ 'alttext': headline|striptags|replace({'"':'\''}) })) }}
+        </a>
+      </div>
+       </div>
+  </div>
+    {% endif %}
+    <div class="col-lg-9 col-md-9 col-8">
+      <div class="entry-header">     
+        {% include '@base/teasers/partial/headline.twig' %}
+      </div>
+      <div class="entry-summary">
+        {% include '@base/teasers/partial/leadin.twig' %}
+        <p class="category">
+          {% if sectionName %}
+           &nbsp;
+           <!-- {% include '@base/teasers/partial/concept.twig' %} -->
+          {% endif %}
+          <!-- {% include '@base/teasers/partial/date.twig' %} -->
+          {# include '@base/teasers/partial/icons.twig' #}
+        </p>
+      </div>
+    </div>
+    </div>
+  </article>
+{% endapply %}
+

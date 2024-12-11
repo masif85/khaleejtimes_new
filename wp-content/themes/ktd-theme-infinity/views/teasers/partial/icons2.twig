@@ -1,0 +1,14 @@
+{% if contentsubtype %}
+  <span>
+    {% if contentsubtype == 'GALLERY' %}
+    <i class="fas fa-camera text-color-blue photo-icon"></i>
+    {% elseif contentsubtype == 'LIVE' %}
+    <i class="fas fa-play text-color-blue photo-icon"></i>
+    {% elseif contentsubtype == 'VIDEO' %}
+    <!-- <i class="fas fa-play text-color-blue live-icon"></i> -->
+    <img src="{{ get_stylesheet_directory_uri() }}/assets/images/play_icon_nw_nf_2.svg" width="20" height="18" alt="Video Icon" />
+    {% elseif contentsubtype == 'PODCAST' %}
+    <i class="fas fa-microphone text-color-blue audio-icon"></i>
+    {% endif %}
+  </span>
+{% endif %}

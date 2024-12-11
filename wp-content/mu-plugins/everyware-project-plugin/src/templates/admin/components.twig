@@ -1,0 +1,39 @@
+<div id="components-page__wrap" class="wrap">
+	{% block header %}
+		<h1>{{ translate(component_type|default('Components '), text_domain) }}</h1>
+		{% if description %}<p class="description">{{ description }}</p>{% endif %}
+	{% endblock %}
+
+	<form method="post" action="{{ form_action }}">
+		{% block component_list %}
+			<div class="tablenav top">
+				{% block list_filter %}{% include '@projectPlugin/admin/components/list-filter.twig' %}{% endblock %}
+				<div class="tablenav-pages one-page"><span class="displaying-num">{{ components|length }} {{ translate('items', text_domain) }}</span></div>
+			</div>
+			<table class="wp-list-table widefat plugins">
+				<thead>
+				<tr>
+					{% block table_head %}
+						<th scope="col" class="manage-column column-cb check-column"></th>
+						<th scope="col" id="name" class="manage-column column-name column-primary">{{ translate(component_type|default('Name'), text_domain) }}</th>
+						<th scope="col" id="description" class="manage-column column-description">{{ translate('Description', text_domain) }}</th>
+					{% endblock %}
+				</tr>
+				</thead>
+				<tbody id="components-page__list">
+				{% for file, component in components %}
+					<tr class="component {% if component.Active %}active{% if plugin_status == 'inactive' %} hidden{% endif %}{% else %}inactive{% if plugin_status == 'active' %} hidden{% endif %}{% endif %}">
+						<th class="check-column" scope="row">
+							<label class="screen-reader-text" for="{{ file }}">{{ translate('Select', text_domain) }} {{ component.Name }}</label>
+							<input id="{{ file }}" name="active_components[{{ component.Path }}]" type="checkbox" value="1"{% if component.Active %} CHECKED{% endif %} />
+						</th>
+						<td class="plugin-title column-primary"><label for="{{ file }}"><strong>{{ component.Name }}</strong></label></td>
+						<td class="column-description desc">{% include '@projectPlugin/admin/components/component-description.twig' %}</td>
+					</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+		{% endblock %}
+		{% block submit %}<p><input type="submit" name="everyware-component-submit" class="button button-primary" value="{{ translate('Save', text_domain) }}"/></p>{% endblock %}
+	</form>
+</div>

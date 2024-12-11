@@ -1,0 +1,70 @@
+{%- if articles is iterable -%}
+    {% for article in articles %}
+        <item>
+            {% if article.headline %}
+            <title><![CDATA[{{ article.headline }} ]]></title>
+            {% endif %}
+            {% if article.permalink %}
+                <link>{{ article.permalink }}</link>
+            {% endif %}
+            {% if article.uuid %}
+                <guid isPermaLink="false">{{ article.uuid }}</guid>
+            {% endif %}
+            {% if article.pubdate %}
+                <pubDate>{{ article.pubdate|date("Y-m-d") }}T{{ article.pubdate|date("H:i:s") }}Z</pubDate>
+            {% endif %}
+            {% if article.summary %}
+                <description><![CDATA[{{article.summary }}]]></description>
+            {% endif %}
+            {% if article.authors %}
+                {% for author in article.authors %}
+                    <author><![CDATA[{{ author.name }} ]]></author>
+                {% endfor %}
+            {% endif %}
+
+            <content:encoded>
+                <![CDATA[
+                <!doctype html>
+                <html lang="en" prefix="op: http://media.facebook.com/op#">
+                <head>
+                    <meta charset="utf-8">
+                    <link rel="canonical" href="{{ article.permalink }}">
+                    <meta property="op:markup_version" content="v1.0">
+                </head>
+                <body>
+                <article>
+                    <header>
+                        {% if article.images %}
+                            {% for image  in  article.images %}
+                                {% if loop.first %}
+                                    <img src="{{ image_endpoint_url }}/?uuid={{ image.uuid }}&amp;function=original&amp;type=preview"/>
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            <img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/03170252/default_490x276.jpg"/>
+                        {% endif %}
+                        <br />
+                        {{ article.headline }}
+                    </header>
+
+                    {% if article.body %}
+                        <p>{{ article.body|replace({'<p>': '', '</p>': "<br />"})|replace({'&lt;': '<', '&gt;': ">"})|raw}}</p>
+                    {% endif %}
+                    <footer>
+                        <ul class="op-related-articles">
+                            <li><a href="https://www.facebook.com/khaleejtimes"><img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/09165740/social_facebook.jpg" alt="Facebook - Khaleej Times"></a></li>
+                            <li><a href="https://twitter.com/khaleejtimes"><img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/09165741/social_twitter.jpg" alt="Twitter - Khaleej Times"></a></li>
+                            <li><a href="https://www.youtube.com/khaleejtimes"><img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/09165741/youtube.png"  alt="YouTube - Khaleej Times"></a></li>
+                            <li><a href="https://instagram.com/khaleejtimes"><img src="https://static.khaleejtimes.com/wp-content/uploads/sites/2/2021/03/09165741/social_instagram.jpg"  alt="Instagram - Khaleej Times"></a></li>
+                        </ul>
+                    </footer>
+                </article>
+                </body>
+                </html>
+                ]]>
+            </content:encoded>
+        </item>
+    {% endfor %}
+{%- endif -%}
+
+

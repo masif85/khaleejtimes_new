@@ -1,0 +1,80 @@
+{% extends '@base/main.twig' %}
+
+{% block page_content %}
+    <main class="site-container container-border">
+        
+        <header class="entry-header">
+			<h1 class="entry-title">{{name}}</h1>				
+        </header>
+
+            {% for article in articles %}
+
+            {% set time_diff = '5 hours' %}
+
+                {# START CATEGORY BLOCK #}
+                {% if loop.index == 1 %}
+                    <div class="concepts-categoryblock">
+                        <div class="row align-items-stretch">
+                {% endif %}
+                    {% if loop.index == 1 %}
+                        {# Section Main Category #}
+                        {% set article = article|merge({ 'image_endpoint_url': image_endpoint_url }) %}
+                        {% set article = article|merge({ 'category_block_main_category_display': 'true' }) %}
+                        {% set article = article|merge({ 'category_block_main_time_diff_display': 'false' }) %}
+                        {% set article = article|merge({ 'category_block_main_summary_display': 'true' }) %}
+                        {% set article = article|merge({ 'category_block_main_author_display': 'true' }) %}
+                        {% set article = article|merge({ 'category_block_main_time_display': 'false' }) %}
+                        {% set article = article|merge({ 'time_diff': time_diff }) %}
+
+                        <div class="concepts-categoryblock-main col-12 col-md-6">
+                            {{ render_partial('@base/teaser/category-block-main.twig', article) }}
+                        </div>
+                    {% endif %}
+
+                    {% if loop.index > 1 and loop.index <= 4 %}
+                        {% if loop.index == 2 %}
+                            <div class="concepts-categoryblock-side col-12 col-md-6">
+                        {% endif %}
+
+                            {# Section Side Category #}
+                            {% set article = article|merge({ 'image_endpoint_url': image_endpoint_url }) %}
+                            {% set article = article|merge({ 'category_block_side_category_display': 'true' }) %}
+                            {% set article = article|merge({ 'category_block_side_time_diff_display': 'false' }) %}
+                            {% set article = article|merge({ 'category_block_side_summary_display': 'true' }) %}
+                            {% set article = article|merge({ 'category_block_side_author_display': 'true' }) %}
+                            {% set article = article|merge({ 'category_block_side_time_display': 'false' }) %}
+                            {% set article = article|merge({ 'time_diff': time_diff }) %}
+
+                            {{ render_partial('@base/teaser/category-block-side.twig', article) }}
+
+                        {% if loop.index == 4 %}
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% if loop.index == 4 %}
+                    </div>
+                </div>
+                <hr class="concept_page_category_block_divider">
+                {% endif %}
+                {# END CATEGORY BLOCK #}
+
+                {% if loop.index > 4 %}
+                    {# Section Main Category #}
+                    {% set article = article|merge({ 'image_endpoint_url': image_endpoint_url }) %}
+                    {% set article = article|merge({ 'teaser_time_display': 'on' }) %}
+                    {% set article = article|merge({ 'timezone_setting': timezone_setting }) %}
+                    {% set article = article|merge({ 'teaser_time_format': teaser_time_format }) %}
+                    {% set article = article|merge({ 'published_time_label': published_time_label }) %}
+                    {% set article = article|merge({ 'modified_time_label': modified_time_label }) %}
+                    {% set article = article|merge({ 'teaser_section_front_length': teaser_section_front_length }) %}
+                    {% set article = article|merge({ 'time_diff': time_diff }) %}
+
+                    <div class="concepts-articlelist col-12 col-md-12">
+                        {{ render_partial('@base/teaser/section-teaser-one-column.twig', article) }}
+                    </div>
+                {% endif %}                      
+
+            {% endfor %}
+
+    </main>
+{% endblock %}

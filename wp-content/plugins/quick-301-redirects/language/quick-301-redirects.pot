@@ -1,0 +1,104 @@
+# Copyright (C) 2016 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: quick-301-redirects 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2019-02-21 16:35+0530\n"
+"PO-Revision-Date: 2016-09-09 18:54+0530\n"
+"Last-Translator: \n"
+"Language-Team: Dishant Patel\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;_nx;_n_noop;_nx_noop;"
+"translate_nooped_plural;esc_html__;esc_html_e;esc_html_x;"
+"esc_attr__;esc_attr_e;esc_attr_x;number_format_i18n;date_i18n\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: quick-301-redirects.php:46
+msgid "Settings"
+msgstr ""
+
+#: quick-301-redirects.php:71 quick-301-redirects.php:91
+msgid "Quick 301 Redirects"
+msgstr ""
+
+#: quick-301-redirects.php:86
+msgid "Settings saved"
+msgstr ""
+
+#: quick-301-redirects.php:96
+msgid "Upload Bluk csv file successfully."
+msgstr ""
+
+#: quick-301-redirects.php:106
+msgid "Request"
+msgstr ""
+
+#: quick-301-redirects.php:107
+msgid "Destination"
+msgstr ""
+
+#: quick-301-redirects.php:112
+msgid "Example: /page.html"
+msgstr ""
+
+#: quick-301-redirects.php:113
+#, php-format
+msgid "Example:  %s/page/"
+msgstr ""
+
+#: quick-301-redirects.php:125
+msgid "Add"
+msgstr ""
+
+#: quick-301-redirects.php:131
+msgid "Save Changes"
+msgstr ""
+
+#: quick-301-redirects.php:137
+msgid "Delete Redirect option"
+msgstr ""
+
+#: quick-301-redirects.php:138
+msgid "Delete This Redirect 301 link?"
+msgstr ""
+
+#: quick-301-redirects.php:139
+msgid "don't ask me again"
+msgstr ""
+
+#: quick-301-redirects.php:154 quick-301-redirects.php:288
+msgid "Delete"
+msgstr ""
+
+#: quick-301-redirects.php:308
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: quick-301-redirects.php:346
+msgid "Invalid file type. The importer supports CSV file formats."
+msgstr ""
+
+#: quick-301-redirects.php:362
+msgid "Import 301 Redirects from a CSV file"
+msgstr ""
+
+#: quick-301-redirects.php:367
+msgid "Choose a CSV file from your computer:"
+msgstr ""
+
+#: quick-301-redirects.php:377
+#, php-format
+msgid "Maximum size: %s"
+msgstr ""
+
+#: quick-301-redirects.php:385
+msgid "Import CSV File"
+msgstr ""

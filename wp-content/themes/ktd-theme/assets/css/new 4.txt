@@ -1,0 +1,33 @@
+<script>       
+ setTimeout(function () {
+ jQuery(".primary-header").attr('style','display: block !important');
+   jQuery(".ins-preview-wrapper").remove();
+        header =  document.querySelector(".primary-header");
+        stickyElem = document.querySelector(".sticky-div");
+        mega = document.querySelector(".nav-overlay-nf");
+        if (header != null && stickyElem != null && mega != null) {
+            stickyElemBottom = stickyElem.getBoundingClientRect().bottom;
+            stickyElemPos = stickyElem.getBoundingClientRect().bottom + window.pageYOffset;
+            currStickyPos = header.getBoundingClientRect().bottom + window.pageYOffset + 50;
+            window.onscroll = function () {
+                stickyElemPos2 = stickyElem.getBoundingClientRect().bottom + window.pageYOffset;
+                stickyElemPos3 = stickyElem.getBoundingClientRect().bottom;
+                if (window.pageYOffset < currStickyPos && window.pageYOffset > stickyElemBottom) {
+                    mega.style.top = "-" + stickyElemPos2 + "px";
+                } else {
+                    mega.style.top = stickyElemPos3 + "px";
+                }
+                if (window.pageYOffset > currStickyPos) {
+                    stickyElem.classList.add("is-sticky");
+                    stickyElem.classList.add("shadow-sm");
+                    mega.classList.add("is-sticky-enabled");
+                } else {
+                    stickyElem.classList.remove("is-sticky");
+                    stickyElem.classList.remove("shadow-sm");
+                    mega.classList.remove("is-sticky-enabled");
+                }
+            };
+        }
+     }, 1000);
+
+</script>

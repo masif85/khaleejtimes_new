@@ -1,0 +1,10 @@
+{%- if articles is iterable -%}
+   
+	 {% for article in articles|slice(0,5) %}
+       <item>
+             <title>{{  article.headline }} </title>
+    </item>
+    {% endfor %}
+{%- endif -%}
+
+

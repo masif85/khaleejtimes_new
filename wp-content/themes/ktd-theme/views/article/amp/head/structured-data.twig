@@ -1,0 +1,6 @@
+{% if structuredData %}
+  <!-- Structured Data -->
+  <script type="application/ld+json">    
+	{{ structuredData|json_encode|replace({"&#8216;":"'","&#8217;":"'","&#8220;":"'","&#8221;":"'"})|raw }}
+  </script>
+{% endif %}

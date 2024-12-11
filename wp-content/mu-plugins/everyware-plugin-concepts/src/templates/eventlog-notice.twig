@@ -1,0 +1,7 @@
+{% apply spaceless %}
+    <div id="{{ slug }}-notice" class="notice notice-{{ noticeType }} is-dismissible">
+        <p><strong>{{ headline }}</strong></p>
+        <hr>
+        <p>— {{ message|raw }}</p>
+    </div>
+{% endapply %}

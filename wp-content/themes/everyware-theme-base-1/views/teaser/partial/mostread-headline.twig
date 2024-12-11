@@ -1,0 +1,5 @@
+{% if headline %}
+	<h2 class="mostread__headline">
+		{% if breaking %}<span class="mostread__headline-breaking">{{ breaking|raw }}</span>{% endif %}<span class="mostread__headline-marker">{{ headline|raw }}</span>
+	</h2>
+{% endif %}

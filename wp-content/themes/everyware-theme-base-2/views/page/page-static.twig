@@ -1,0 +1,18 @@
+{% extends '@base/main.twig' %}
+
+{% block page_head %}
+    {% include "@base/page/part/metatags.twig" %}
+{% endblock %}
+
+{% block page_content %}
+    <main class="container page__container page__container--res">
+
+        <div class="row page__row--res">
+            <div class="col-12 col-xl-9 page__main-col page__col--res">
+                {{ the_content() }}
+            </div>
+            {% include "@base/page/part/sidebar.twig" with {"sidebar":"static-page-sidebar", "screenSizeUp": "lg"} %}
+        </div>
+
+    </main>
+{% endblock %}

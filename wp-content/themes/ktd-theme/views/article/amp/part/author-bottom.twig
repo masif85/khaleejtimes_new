@@ -1,0 +1,57 @@
+<div class="row author-wrapper-box">
+
+  {% if authors %}
+    {% for author in authors %}
+      {% if author.avatar is not empty %}
+        {% set link = get_concept_link(author.uuid) %}
+        <div class="col-lg-4 col-md-4 order-lg-2 author-photo">
+          {% if link %}
+            <a href="{{ link }}">
+              <amp-img src="{{ author.avatar|replace({'width=115':'width=540','height=115':'height=540'}) }}"
+                       alt="{{ author.name }}"
+                       width="540"
+                       height="540"
+                       layout="responsive"
+              ></amp-img>
+            </a>
+          {% else %}
+            <amp-img src="{{ author.avatar|replace({'width=115':'width=540','height=115':'height=540'}) }}"
+                     alt="{{ author.name }}"
+                     width="540"
+                     height="540"
+                     layout="responsive"
+            ></amp-img>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  <div class="col-lg-8 col-md-8 order-lg-1">
+    {% if authors %}
+      {% for author in authors %}
+        {% set link = get_concept_link(author.uuid) %}
+        {% if link %}
+          <a href="{{ link }}"><h5>{{ author.name }}</h5></a>
+        {% else %}
+          <h5>{{ author.name }}</h5>
+        {% endif %}
+        <ul class="author-box-social-icons">
+          {% if author.related_links.facebook %}<li><a href="{{ author.related_links.facebook }}"><i class="fab fa-facebook-f"></i></a></li>{% endif %}
+          {% if author.related_links.twitter %}<li><a href="{{ author.related_links.twitter }}"><i class="fab fa-twitter"></i></a></li>{% endif %}
+          {% if author.related_links.linkedin %}<li><a href="{{ author.related_links.linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>{% endif %}
+        </ul>
+
+        <ul class="author-box-contact-info">
+          {% if author.meta_data.email %}<li><i class="fas fa-envelope"></i><a href="mailto:{{ author.meta_data.email }}">{{ author.meta_data.email }}</a></li>{% endif %}
+          {% if author.meta_data.phone %}<li><i class="fas fa-phone-alt"></i>{{ author.meta_data.phone }}</li>{% endif %}
+        </ul>
+      {% endfor %}
+    {% else %}
+      <h5>{{ author_byline }}</h5>
+    {% endif %}
+
+    {% include "@base/article/meta-pubdate.twig" %}
+  </div>
+
+</div>

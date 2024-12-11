@@ -1,0 +1,70 @@
+{% set replaced_link = get_permalink()|replace({'?amp=1': ""}) %}
+<!-- NewRelic Tag Only for AMP, auto injection turned off Start -->
+<!-- NewRelic Tag Only for AMP, auto injection turned off End -->
+
+<!-- Chartbeat Tag Start -->
+<amp-analytics type="chartbeat">
+  <script type="application/json">
+    {
+      "vars": {
+        "uid": "66153",
+        "domain": "khaleejtimes.com",
+        "sections": "{% if sections %}{% for items in sections|sort|reverse %}{{ items.name }}{% if loop.last == false %}, {% endif %}{% endfor %}{% else %}None{% endif %}",
+        "authors": "{% if authors %}{% for author in authors %}{{ author.name }}{% if loop.last == false %}, {% endif %}{% endfor %}{% elseif author_byline %}{{ author_byline }}{% else %}None{% endif %}",
+        "canonicalPath": "{{ replaced_link }}",
+        "title": "{{ teaser_headline|replace({"\n":'', "\r":''})|raw }}"
+      }
+    }
+  </script>
+</amp-analytics>
+<!-- Chartbeat Tag End -->
+
+<!-- Google Analytics 4 Start -->
+<amp-analytics type="gtag" data-credentials="include">
+<script type="application/json">
+{
+  "vars" : {
+    "config" : {
+      "G-20XHFD5NCB": { "groups": "default" },
+      "G-2VVVMDVFQ8": { "groups": "default" }
+    }
+  }
+}
+</script>
+</amp-analytics>
+<!-- Google Analytics 4 End -->
+
+{% if contentsubtype != 'SPONSOREDCONTENT' %}
+  <!-- Freestar StickyAd Start -->
+  <amp-sticky-ad layout="nodisplay">
+    <amp-ad
+      data-block-on-consent
+      width="320"
+      height="50"
+      layout="fixed"
+      data-multi-size="300x50,320x50"
+      data-multi-size-validation="false"
+      type="doubleclick"
+      data-slot="/78059622/khaleejtimes_AMP_Sticky"
+      data-enable-refresh="30"
+      data-lazy-fetch="true"
+      rtc-config='{
+       "vendors": {
+          "t13": {
+            "TAG_ID": "5ba822f8-15c2-4a28-b669-f3f791726fc2",
+            "ACCOUNT_ID": "9a3c6c23-453a-4cba-b419-30b908f39a50"
+          },
+          "aps": {
+            "PUB_ID": "600",
+            "PUB_UUID": "16268e26-dabe-4bf4-a28f-b8f4ee192ed3",
+            "PARAMS": {
+              "amp": "1"
+            }
+          }
+        }
+     }'
+    >
+    </amp-ad>
+  </amp-sticky-ad>
+  <!-- Freestar StickyAd End -->
+{% endif %}

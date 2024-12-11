@@ -1,0 +1,17 @@
+<!-- Recommended Articles -->
+<div class="row no-gutters">
+  <div class="section-header col">
+    <h5 class="section-title text-uppercase font-weight-bold bordered-left">
+      Recommended for you
+    </h5>
+  </div>
+</div>
+
+{% for article in moreFromThisConcept %}
+  {% if loop.first %}<div class="row">{% endif %}
+  <div class="col-lg-3">
+    {{ render_partial('@base/article/amp/part/single-article.twig', article) }}
+  </div>
+  {% if loop.index == 4 %}</div><div class="row">{% endif %}
+  {% if loop.last %}</div>{% endif %}
+{% endfor %}

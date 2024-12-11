@@ -1,0 +1,30 @@
+{% apply spaceless %}
+  <!-- partnered large teaser -->
+  <article class="post featured left-image-middle-content-right-footer" data-uuid="{{ uuid }}">
+    {% if image %}
+      <div class="post-thumbnail">
+        <a href="{{ permalink }}">
+          {{ render_partial('@base/teasers/partial/image', image|merge({ 'alttext': headline|striptags|replace({'"':'\''}) })) }}
+        </a>
+      </div>
+    {% endif %}
+    <div class="entry-container">
+      <div class="entry-header">
+        <p class="category-btn">
+          {% include '@base/teasers/partial/concept.twig' %}
+          <!-- {% include '@base/teasers/partial/date.twig' %} -->
+          {% include '@base/teasers/partial/icons.twig' %}
+        </p>
+        {% include '@base/teasers/partial/headline.twig' %}
+      </div>
+      <div class="entry-summary">
+        {% include '@base/teasers/partial/leadin.twig' %}
+        <!--
+        <p class="category">
+          {# include '@base/teasers/partial/concept.twig' #}
+        </p>
+        -->
+      </div>
+    </div>
+  </article>
+{% endapply %}

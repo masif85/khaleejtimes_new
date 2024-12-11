@@ -1,0 +1,312 @@
+$content-size-extra-small: get-size-from-col($content-size-extra-small-columns, $eb-screen-lg-min);
+$content-size-small: get-size-from-col($content-size-small-columns, $eb-screen-lg-min);
+$content-size-medium: get-size-from-col($content-size-medium-columns, $eb-screen-lg-min);
+$content-size-large: get-size-from-col($content-size-large-columns, $eb-screen-lg-min);
+$content-size-extra-large: get-size-from-col($content-size-extra-large-columns, $eb-screen-lg-min);
+
+$single-column-size: floor($eb-screen-lg-min / $content-size-grid-columns);
+
+$eb-screen-xs-max: ($eb-screen-sm-min - 1);
+$eb-screen-sm-max: ($eb-screen-md-min - 1);
+$eb-screen-md-max: ($eb-screen-lg-min - 1);
+
+/**
+ * Use to add style to content considered to be in an "Extra Small" column.
+ */
+@mixin in-extra-small-board-content {
+  $current-content-size: $content-size-extra-small;
+
+  /** xs-screen */
+  @if $single-column-size * $content-size-extra-large-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-extra-small-columns), ($single-column-size * $content-size-small-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+
+    @include render-content-size-media(($single-column-size * $content-size-small-columns), ($single-column-size * $content-size-medium-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+
+    @include render-content-size-media(($single-column-size * $content-size-medium-columns), ($single-column-size * $content-size-large-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+
+    @include render-content-size-media(($single-column-size * $content-size-large-columns), ($single-column-size * $content-size-extra-large-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+
+    @include render-content-size-media(($single-column-size * $content-size-extra-large-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+
+  } @else if $single-column-size * $content-size-large-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-extra-small-columns), ($single-column-size * $content-size-small-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+
+    @include render-content-size-media(($single-column-size * $content-size-small-columns), ($single-column-size * $content-size-medium-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+
+    @include render-content-size-media(($single-column-size * $content-size-medium-columns), ($single-column-size * $content-size-large-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+
+    @include render-content-size-media(($single-column-size * $content-size-large-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+
+  } @else if $single-column-size * $content-size-medium-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-extra-small-columns), ($single-column-size * $content-size-small-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+    @include render-content-size-media(($single-column-size * $content-size-small-columns), ($single-column-size * $content-size-medium-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+    @include render-content-size-media(($single-column-size * $content-size-medium-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+  } @else if $single-column-size * $content-size-small-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-extra-small-columns), ($single-column-size * $content-size-small-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+    @include render-content-size-media(($single-column-size * $content-size-small-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+  } @else if $single-column-size * $content-size-extra-small-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-extra-small-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+  }
+
+  /** sm-screen */
+  @if $single-column-size * $content-size-extra-small-columns < $eb-screen-sm-max {
+    @include render-content-size-media($eb-screen-sm-min, $eb-screen-sm-max, $current-content-size, "content-size-sm") {
+      @content;
+    }
+  }
+
+  /** md-screen */
+  @if $single-column-size * $content-size-extra-small-columns < $eb-screen-md-max {
+    @include render-content-size-media($eb-screen-md-min, $eb-screen-md-max, $current-content-size, "content-size-md") {
+      @content;
+    }
+  }
+
+  /** lg-screen */
+  @include render-content-size-media($eb-screen-lg-min, false, $content-size-extra-small, "content-size-lg") {
+    @content;
+  }
+}
+
+/**
+ * Use to add style to content considered to be in a "Small" column.
+ */
+@mixin in-small-board-content {
+  $current-content-size: $content-size-small;
+
+  /** xs-screen */
+  @if $single-column-size * $content-size-extra-large-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-small-columns), ($single-column-size * $content-size-medium-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+    @include render-content-size-media(($single-column-size * $content-size-medium-columns), ($single-column-size * $content-size-large-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+    @include render-content-size-media(($single-column-size * $content-size-large-columns), ($single-column-size * $content-size-extra-large-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+    @include render-content-size-media(($single-column-size * $content-size-extra-large-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+  } @else if $single-column-size * $content-size-large-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-small-columns), ($single-column-size * $content-size-medium-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+    @include render-content-size-media(($single-column-size * $content-size-medium-columns), ($single-column-size * $content-size-large-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+    @include render-content-size-media(($single-column-size * $content-size-large-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+  } @else if $single-column-size * $content-size-medium-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-small-columns), ($single-column-size * $content-size-medium-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+    @include render-content-size-media(($single-column-size * $content-size-medium-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+  } @else if $single-column-size * $content-size-small-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-small-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+  }
+
+  /** sm-screen */
+  @if $single-column-size * $content-size-small-columns < $eb-screen-sm-max {
+    @include render-content-size-media($eb-screen-sm-min, $eb-screen-sm-max, $current-content-size, "content-size-sm") {
+      @content;
+    }
+  }
+
+  /** md-screen */
+  @if $single-column-size * $content-size-small-columns < $eb-screen-md-max {
+    @include render-content-size-media($eb-screen-md-min, $eb-screen-md-max, $current-content-size, "content-size-md") {
+      @content;
+    }
+  }
+
+  /** lg-screen */
+  @include render-content-size-media($eb-screen-lg-min, false, $current-content-size, "content-size-lg") {
+    @content;
+  }
+}
+
+/**
+ * Use to add style to content considered to be in a "Medium" column.
+ */
+@mixin in-medium-board-content {
+  $current-content-size: $content-size-medium;
+
+  /** xs-screen */
+  @if $single-column-size * $content-size-extra-large-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-medium-columns), ($single-column-size * $content-size-large-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+    @include render-content-size-media(($single-column-size * $content-size-large-columns), ($single-column-size * $content-size-extra-large-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+    @include render-content-size-media(($single-column-size * $content-size-extra-large-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+  } @else if $single-column-size * $content-size-large-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-medium-columns), ($single-column-size * $content-size-large-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+    @include render-content-size-media(($single-column-size * $content-size-large-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+  } @else if $single-column-size * $content-size-medium-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-medium-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+  }
+
+  /** sm-screen */
+  @if $single-column-size * $content-size-medium-columns < $eb-screen-sm-max {
+    @include render-content-size-media($eb-screen-sm-min, $eb-screen-sm-max, $content-size-medium, "content-size-sm") {
+      @content;
+    }
+  }
+
+  /** md-screen */
+  @if $single-column-size * $content-size-medium-columns < $eb-screen-md-max {
+    @include render-content-size-media($eb-screen-md-min, $eb-screen-md-max, $content-size-medium, "content-size-md") {
+      @content;
+    }
+  }
+
+  /** lg-screen */
+  @include render-content-size-media($eb-screen-lg-min, false, $content-size-medium, "content-size-lg") {
+    @content;
+  }
+}
+
+/**
+ * Use to add style to content considered to be in a "Large" column.
+ */
+@mixin in-large-board-content {
+  $current-content-size: $content-size-large;
+
+  /** xs-screen */
+  @if $single-column-size * $content-size-extra-large-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-large-columns), ($single-column-size * $content-size-extra-large-columns) - 1, $current-content-size, "content-size-xs") {
+      @content;
+    }
+    @include render-content-size-media(($single-column-size * $content-size-extra-large-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+  } @else if $single-column-size * $content-size-large-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-large-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+  }
+
+  /** sm-screen */
+  @if $single-column-size * $content-size-large-columns < $eb-screen-sm-max {
+    @include render-content-size-media($eb-screen-sm-min, $eb-screen-sm-max, $current-content-size, "content-size-sm") {
+      @content;
+    }
+  }
+
+  /** md-screen */
+  @if $single-column-size * $content-size-large-columns < $eb-screen-md-max {
+    @include render-content-size-media($eb-screen-md-min, $eb-screen-md-max, $current-content-size, "content-size-md") {
+      @content;
+    }
+  }
+
+  /** lg-screen */
+  @include render-content-size-media($eb-screen-lg-min, false, $current-content-size, "content-size-lg") {
+    @content;
+  }
+}
+
+/**
+ * Use to add style to content considered to be in an "Extra Large" column.
+ */
+@mixin in-extra-large-board-content {
+  $current-content-size: $content-size-extra-large;
+
+  /** xs-screen */
+  @if $single-column-size * $content-size-extra-large-columns < $eb-screen-xs-max {
+    @include render-content-size-media(($single-column-size * $content-size-extra-large-columns), $eb-screen-xs-max, $current-content-size, "content-size-xs") {
+      @content;
+    }
+  }
+
+  /** sm-screen */
+  @if $single-column-size * $content-size-extra-large-columns < $eb-screen-sm-max {
+    @include render-content-size-media($eb-screen-sm-min, $eb-screen-sm-max, $current-content-size, "content-size-sm") {
+      @content;
+    }
+  }
+
+  /** md-screen */
+  @if $single-column-size * $content-size-extra-large-columns < $eb-screen-md-max {
+    @include render-content-size-media($eb-screen-md-min, $eb-screen-md-max, $current-content-size, "content-size-md") {
+      @content;
+    }
+  }
+
+  /** lg-screen */
+  @include render-content-size-media($eb-screen-lg-min, false, $current-content-size, "content-size-lg") {
+    @content;
+  }
+}
+
+/**
+ * Use to add style to content considered to be in the column size sent in as string.
+ */
+@mixin from-board-content-up($size) {
+  @if $size == "extra small" or $size == xs {
+    @include in-extra-small-board-content {
+      @content;
+    }
+  } @else if $size == "small" or $size == sm {
+    @include in-small-board-content {
+      @content;
+    }
+  } @else if $size == "medium" or $size == md {
+    @include in-medium-board-content {
+      @content;
+    }
+  } @else if $size == "large" or $size == lg {
+    @include in-large-board-content {
+      @content;
+    }
+  } @else if $size == "extra large" or $size == xl {
+    @include in-extra-large-board-content {
+      @content;
+    }
+  }
+}

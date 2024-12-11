@@ -1,0 +1,26 @@
+{% if sponsorTeaserImageUuid %}
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-9">
+      <div class="sponsored-by">
+        {% if sponsorTeaserLabel %}<p class="text-center">{{ sponsorTeaserLabel }}</p>{% endif %}
+        <p class="text-center">
+          {% if sponsorTeaserImageLink %}
+            <a href="{{ sponsorTeaserImageLink }}" target="_blank"><img src="{{ image_endpoint_url }}/?uuid={{ sponsorTeaserImageUuid }}&amp;function=cover&amp;type=primary&amp;maxsize=500&amp;q=100" class="mw-100"></a>
+          {% else %}
+            <img src="{{ image_endpoint_url }}/?uuid={{ sponsorTeaserImageUuid }}&amp;function=cover&amp;type=primary&amp;maxsize=500&amp;q=100" class="mw-100">
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% if sponsorTeaserHeadline %}
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-9">
+      <div class="post-header sponsored-title-nf">
+        <h1 class="post-title text-center">{{ sponsorTeaserHeadline }}</h1>
+      </div>
+    </div>
+  </div>
+{% endif %}

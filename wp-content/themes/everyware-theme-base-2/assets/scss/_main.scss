@@ -1,0 +1,40 @@
+/* ********** General ********** */
+
+body {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@each $section, $color in $section-colors {
+  .topic-label-line.#{$section} {
+    background-color: $color;
+  }
+}
+
+/* ********** Global vars ********** */
+
+mark {
+  display: inline-block;
+}
+
+// Keyboard focus
+a:focus,
+button:focus {
+  outline: none;
+}
+
+p {
+  font-size: $font-size-md;
+}
+
+h1 {
+  @include media-breakpoint-up(sm) {
+    font-size: $h1-font-size-lg;
+  }
+}
+main {
+  padding-bottom: $content-padding-bottom;
+  flex: 1;
+}

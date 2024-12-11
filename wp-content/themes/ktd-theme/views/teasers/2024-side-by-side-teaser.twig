@@ -1,0 +1,12 @@
+{% apply spaceless %}
+  <!-- side-by-side teaser -->
+
+   <article class="top-list-thumb-stories">
+                        <div class="post-title-rows">
+                          <div class="thumb-with-image image-zoom"> <a href="{{ permalink }}" title="{{ headline }}"> {{ render_partial('@base/teasers/partial/image', image|merge({ 'alttext': headline|striptags|replace({'"':'\''}) })) }} </a> </div>
+                          <div class="heading">
+                            <h4> <a href="{{ permalink }}" title="{{ headline }}"> {{headline|striptags|replace({'"':'\''})}} </a> </h4>
+                          </div>
+                        </div>
+                      </article>
+{% endapply %}
